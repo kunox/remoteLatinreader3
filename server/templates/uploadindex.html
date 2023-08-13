@@ -1,0 +1,115 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ドラッグ&ドロップでファイルをアップロード</title>
+    <style type="text/css">
+        body {
+            font-family: 'Yu Gothic','Hiragino Kaku Gothic Pro';
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+            border: solid 1px black;
+            width: 80%;padding:0 2%; overflow: scroll;height:100vh;
+        }
+        #drop-zone {
+            background-color: #ffffff;
+        }
+        #text-input {
+            height:100px;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+<h2>LRファイルを編集するためにアップロードする</h2>
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <div id="drop-zone" style="border: 1px solid; padding: 30px;">
+        <p>LatinReader用に整形されたHTMLファイル(LRファイル）をドラッグ＆ドロップ もしくは</p>
+        <input type="file" name="file" id="file-input">
+    </div>
+</form>
+<h2>ラテン語のテキストを下にコピー、ペーストしてください。LRファイルに変換します。</h2>
+<div id="drop-zone2" style="border: 1px solid; padding: 3px;">
+    <input id="title" type="text" size="30" value="headerに表示されるタイトル" style="margin:10px 0px;">
+    <textarea id="text-input" spellcheck=false placeholder="ラテン文を複数行にするには、改行コードでテキストを区切ってください"></textarea>
+    <button id="convstart" >変換</button>
+</div>
+
+</div>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+<script>
+    $(function($){
+        $("#drop-zone").on('dragover', function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            this.style.background = "#e1e7f0";
+        });
+        $("#drop-zone").on('dragleave',function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            this.style.background = "#ffffff";
+        });
+        $("#drop-zone").on('drop', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            var file = e.originalEvent.dataTransfer.files[0];
+            var reader = new FileReader();
+            reader.readAsText(file)
+            reader.addEventListener('load', function(e){
+                e.stopPropagation();
+                e.preventDefault();
+                var data = reader.result;
+                if(checkLR(data)){
+                    postForm("/upload3", {"data": data, "flag":"0"})
+                }
+                else {
+                    alert("Formatが違います")
+                }
+            },false)
+        });
+        $("#convstart").on("click", function(){
+            var c = $("#text-input").val();
+            var name = $("#title").val();
+            if(c.length > 0){
+                postForm("/upload3", {"data": c, "flag":name})
+            }
+        });
+    })
+
+
+    function checkLR(data){
+        var result0 = data.length > 0
+        var result1 = data.indexOf('id="outer"') >0;
+        var result2 = data.indexOf('class="latin"') > 0;
+        var result3 = data.indexOf('class="spnote"') >0;
+        if(result0 && result1 && result2 && result3){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    function lrformat(content){
+        // postForm("upload3", {"data": content, "flag":"1"})
+    }
+
+
+var postForm = function (url, data) {
+    var $form = $('<form/>', { 'action': url, 'method': 'post' });
+    for (var key in data) {
+        $form.append($('<input/>', { 'type': 'hidden', 'name': key, 'value': data[key] }));
+     }
+    $form.appendTo(document.body);
+    var test = $form.serialize();
+    $form.submit();
+};
+
+
+
+</script>

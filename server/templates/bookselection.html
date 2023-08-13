@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="../assets/css/bookselection.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="side">
+            <!-- <h2 style="text-align: center;">Book Selection</h2> -->
+            <a class="sidetabs">Bookを開く</a>
+            <div class="sidetab" id="libindex">
+                <ul>
+                    <li>De Bello Gallico</li>
+                    <li>Ciceronis De Legibus</li>
+                    <li>Ciceronis De Officiis</li>
+                    <li>Taciti De Orgine et Situ Germanaorum</li>
+                    <li>Taciti Historiae</li>
+                    <li>Plini Epistulae</li>
+                    <li>FabulaeFaciles</li>
+                </ul>
+            </div>
+            <div class="sidetabs" id="switchuser"> ログイン</div>
+             <div class="sidetab" id ="usersw"> 
+                <!-- <ul>
+                    <li>一般ユーザー</li>
+                    <li>登録ユーザー</li>
+                </ul> -->
+            </div> 
+
+            <div class="sidetabs">ダウンロードしたTextを編集する</div>
+            <div class="sidetab"></div>
+        </section>
+
+        <section class="main">
+            <div id ="name" style="text-align: right;margin-right: 20px;">一般</div>
+            <div id="bookindex">
+                <div style=" text-align: center;height:100vh">
+                    <p style="font-size: 36px;">No Book opened</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="dlg" style="display:none;">
+        <input type="text" id="uname">
+    </div>
+
+    <script>
+        jQuery(function ($) {
+            addSideTabsHandler();
+            addSideClickHander();
+        });
+
+        function addSideTabsHandler() {
+            $(".sidetabs").mouseover(function () {
+                prevcolor = $(this).css("background-color");
+                $(this).css("background-color", "LightGray");
+            });
+            $(".sidetabs").mouseleave(function () {
+                $(this).css("background-color", prevcolor)
+            });
+            $(".sidetabs").on("click", tabsclick);
+
+            $("#switchuser").on("click", function(){
+                if(username.length > 0){        // すでにLog-inされているので、Log-out
+                    username = "";
+                    $("#name").text("User :  anonymous");
+                    $("#switchuser").text("ログイン")
+                    clearindexscreen();
+                }
+                else {
+                    $("#dlg").dialog({
+                        modal: true,
+                        title: "ユーザー名を入れてください",
+                        buttons: {
+                        "OK": function(){
+                            username0 = $("#uname").val();
+                            $.post("/setUsername", {"uname": username0})
+                                .done(function(data){
+                                    if(data.length > 0) {
+                                        username = username0;
+                                        $("#name").text("User : " + username);
+                                        clearindexscreen();
+                                        $("#switchuser").text("ログアウト")
+                                        $("#dlg").dialog("close");
+                                    }
+                                    else {
+                                        $("#uname").val("");
+                                    }
+                                })
+                            // $(this).dialog("close");
+                            },
+                        "Cancel": function(){
+                            $(this).dialog("close");
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+
+        function clearindexscreen(){
+            var noindex = `                <div style=" text-align: center;height:100vh">
+                    <p style="font-size: 36px;">No Book opened</p>
+                </div>
+`
+            $("#bookindex").empty();
+            $("#bookindex").append(noindex);
+        }
+
+        function addSideClickHander() {
+            $(".sidetab").on("mouseover", "li", function () {
+                beforecolor = $(this).css("color");
+                $(this).css("color", "lime");
+            });
+            $(".sidetab").on("mouseleave", "li", function () {
+                $(this).css("color", beforecolor);
+            })
+            $("#libindex").on("click", "li", bookselected);
+        }
+
+        var username = "";      // UserNameはこちらで持つ
+        var foldername= "";         // 後で、ファイルロードのときに使う
+        var liber = [];             // Liberの名前が入る （Directoryの名前）
+        var extension;
+        var whichCell = "books";              // 現在の表示がOriginal TextかWorkingか
+        var array = [];                        // geifilelistで戻ってきた文字列の配列
+
+        function bookselected() {
+            foldername = $(this).text();
+            showindex2(foldername);
+        }
+
+
+        function showindex2(bookname){
+            foldername = bookname;
+            $.post("/getBookIndex", { "fname": bookname,"uname":username })  //URL, data,success data, data type
+                .done(function (data) {
+                    $("#bookindex").empty();
+                    $("#bookindex").append(data);
+                    addIndexTabHandler();
+                    addSelectionHandler();
+                    addSelectionHandlerf();
+                    extension = "." + $("#extension").text();
+                });
+        }
+
+        //ChapSelectionが選択されたとき
+        function addSelectionHandler() {
+            $(".tab").on("mouseover", "div", function () {
+                beforecolor = $(this).css("color");
+                $(this).css("color", "lime");
+            });
+            $(".tab").on("mouseleave", "div", function () {
+                $(this).css("color", beforecolor);
+            })
+            $(".tab").on("click", "div", pclick);   // pclickでChapter Open（別ページで）
+        }
+
+        function addSelectionHandlerf() {
+            $(".tabf").on("mouseover", "div", function () {
+                beforecolor = $(this).css("color");
+                $(this).css("color", "lime");
+            });
+            $(".tabf").on("mouseleave", "div", function () {
+                $(this).css("color", beforecolor);
+            })
+            $(".tabf").on("click", "div", pclick);   // pclickでChapter Open（別ページで）
+        }
+
+
+        // var foldername;         // 後で、ファイルロードのときに使う
+        // var extension ;
+        // book indexがクリックされたとき
+
+        function pclick() {
+            var volname = $(this).parent().prev().text();       // liebel Iなど
+            var name = $(this).text();                      // chap 1など
+            if($(this).hasClass('exist'))
+                var param = { "cell": username, "uname":username, "bookname": foldername, "vol": volname, "fname": name, "ext": extension }
+            else
+                var param = { "cell": "", "uname":username, "bookname": foldername, "vol": volname, "fname": name, "ext": extension }
+            postForm2("/showpage", param, "_blank");
+            // $(this).addClass("exist");
+        }
+
+        function addIndexTabHandler() {
+            $(".tabs").mouseover(function () {
+                $(this).css("background-color", "royalblue")
+            });
+            $(".tabs").mouseleave(function () {
+                $(this).css("background-color", "midnightblue")
+            });
+            $(".tabs").on("click", tabsclick);
+        }
+
+        function tabsclick() {
+            $this = $(this);
+            var cdiv = $(this).next();
+            var state = cdiv.css("display");
+            if (state == "none") {
+                $this.css("background-color", "royalblue");
+                cdiv.slideDown(500);
+            }
+            else {
+                $this.css("background-color", "midnightblue");
+                cdiv.slideUp(500);
+            }
+        }
+
+
+
+        // $formのtargetをセットすることが肝要
+        function postForm2(url, data, windowname) {
+            var $form = $('<form/>', { 'action': url, 'method': 'post', 'target': windowname });
+            for (var key in data) {
+                $form.append($('<input/>', { 'type': 'hidden', 'name': key, 'value': data[key] }));
+            }
+            $form.appendTo(document.body);
+            $form.submit();
+        };
+
+
+        var postForm = function (url, data) {
+            var $form = $('<form/>', { 'action': url, 'method': 'post' });
+            for (var key in data) {
+                $form.append($('<input/>', { 'type': 'hidden', 'name': key, 'value': data[key] }));
+            }
+            $form.appendTo(document.body);
+            var test = $form.serialize();
+            $form.submit();
+        }
+
+    </script>
+</body>
+
+</html>

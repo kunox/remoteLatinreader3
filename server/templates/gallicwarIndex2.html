@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href ="/assets/css/indexcss.css">
+<!-- <script src="./scripts/jquery-1.11.2.js" type="text/javascript"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+<script>
+    var localMode = false;
+
+    jQuery(function ($) {
+        tCreation("#tab1", 54);
+        tCreation("#tab2", 35);
+        tCreation("#tab3", 29);
+        tCreation("#tab4", 38);
+        tCreation("#tab5", 58);
+        tCreation("#tab6", 44);
+        tCreation("#tab7", 90);
+        addTabsHandler();
+
+        // window.external.CSreqVolChap();     // C#側に最後のVol,Chapを要求。
+        addClickHander();
+    });
+
+
+
+    function tCreation(tname, num) {
+        var jo = $(tname);
+        for (var i = 1; i <= num; i++)
+            //jo.append("<P>Chapter " + i + "</p>");
+            jo.append("<div>Chapter " + i + "</div>");
+    }
+
+    var beforecolor = "white";
+    var yellowobj = [null, null, null, null, null, null, null];
+    var savedchapters = ["1", "2", "3", "4", "5", "6", "7"];
+
+    function addClickHander() {
+        $(".tab").on("mouseover", "div", function () {
+            beforecolor = $(this).css("color");
+            $(this).css("color", "lime");
+        });
+        $(".tab").on("mouseleave", "div", function () {
+            $(this).css("color", beforecolor);
+        })
+        $(".tab").on("click", "div", pclick);
+    }
+
+    function addTabsHandler() {
+        $(".tabs").mouseover(function () { $(this).css("background-color", "royalblue") });
+        $(".tabs").mouseleave(function () { $(this).css("background-color", "midnightblue") });
+        $(".tabs").on("click", tabsclick);
+    }
+
+    function pclick() {
+        beforecolor = "yellow";
+        var volname = $(this).parent().prev().text();
+        var name = $(this).text();
+        var sa = name.split(" ");
+        var savol = volname.split(" ");
+        var chaphere = sa[1];
+        var volhere = romanNum(savol[1]);
+        var volNumber = Number(volhere) - 1;
+        if (yellowobj[volNumber] != null) {
+            yellowobj[volNumber].css("color", "white");
+        }
+        yellowobj[volNumber] = $(this);
+
+        // var para ="vol=" + volhere + "&chap =" + chaphere
+        var para = {
+            vol: volhere,
+            chap: chaphere
+        }
+        postForm2('/showpage', para); // form形式でサーバーに送る
+    }
+
+    function tabsclick() {
+        var cdiv = $(this).next();
+        var state = cdiv.css("display");
+        if (state == "none")
+            cdiv.slideDown(500);
+        else
+            //cdiv.css("display", "none");
+            cdiv.slideUp(500);
+    }
+
+
+    function romanNum(rnum) {
+        if (rnum == "I")
+            return 1;
+        if (rnum == "II")
+            return 2;
+        if (rnum == "III")
+            return 3;
+        if (rnum == "IV")
+            return 4;
+        if (rnum == "V")
+            return 5;
+        if (rnum == "VI")
+            return 6;
+        if (rnum == "VII")
+            return 7
+        return 0;
+    }
+
+
+    var postForm = function (url, data) {
+        var $form = $('<form/>', { 'action': url, 'method': 'post' });
+        $form.append($('<input/>', { 'type': 'hidden', 'name': 'result', 'value': data }));
+        // for (var key in data) {
+        //     $form.append($('<input/>', { 'type': 'hidden', 'name': key, 'value': data[key] }));
+        //  }
+        $form.appendTo(document.body);
+        $form.submit();
+    };
+
+
+    // $formのtargetをセットすることが肝要
+    function postForm2(url, data) {
+        window.open('', 'sample');
+        var $form = $('<form/>', { 'action': url, 'method': 'post', 'target': 'sample' });
+        for (var key in data) {
+            $form.append($('<input/>', { 'type': 'hidden', 'name': key, 'value': data[key] }));
+        }
+        $form.appendTo(document.body);
+        $form.submit();
+    };
+</script>
+</head>
+
+<body id="bodyportion">
+    <div id="outer">
+        <div id="header">
+            <img src="/assets/images/dbgmidnightblue.png" alt="de bello gallico" style="margin-top:30px;" />
+        </div>
+
+        <div id="l1" class="tabs">Liber I</div>
+        <div id="tab1" class="tab">
+        </div>
+        <img src="/assets/images/caesarLow.png" alt="Caesar" align="right" style="margin-top:60px;margin-left:20px;" />
+        <div id="l2" class="tabs">Liber II</div>
+        <div id="tab2" class="tab">
+        </div>
+
+        <div id="l3" class="tabs">Liber III</div>
+        <div id="tab3" class="tab">
+        </div>
+        <div id="l4" class="tabs">Liber IV</div>
+        <div id="tab4" class="tab">
+        </div>
+        <div id="l5" class="tabs">Liber V</div>
+        <div id="tab5" class="tab">
+        </div>
+        <div id="l6" class="tabs">Liber VI</div>
+        <div id="tab6" class="tab">
+        </div>
+        <div id="l7" class="tabs">Liber VII</div>
+        <div id="tab7" class="tab">
+        </div>
+    </div>
+</body>
+
+</html>

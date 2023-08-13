@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='remote latinreader' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function (event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+            if($("#saveoption").length){
+                $("#saveoption").hide();
+                $("#downloadsave").hide();
+            }
+            insertButtons2();
+            $("#outer").css("width","96%");
+        }
+        function insertButtons2(){
+            if(!$(".lbtn1").length){
+                $(".spacer").each(function(index, elem) {
+                    var target = $(elem);
+                    var tx1 = target.html();
+                    var color = "style='color:#5f9ea0;'";
+                    if (target.next().next().attr("class") != "spnote")
+                        color = "style='color:black;'";
+                    target.html(tx1 + "<button class='lbtn2'>Translation</button><button class='lbtn1'>Notes</button>");
+                });
+            }
+            $(".lbtn1").on("click", function() {
+                var target = $(this).parent().next().next();
+                if (target.attr("class") != "spnote") {
+                    target = target.next();
+                    if (target.attr("class") != "spnote") // 編集中の場合
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+            $(".lbtn2").on("click", function() {
+                var target = $(this).parent().next().next().next();
+                if (target.attr("class") != "translation") {
+                    target = target.next();
+                    if (target.attr("class") != "translation")
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+        }
+
+        function btoggle(obj, btn) {
+            obj.toggle(function() {
+                if ($(this).is(":visible"))
+                    btn.css("color", "black");
+                else
+                    btn.css("color", "#5f9ea0");
+            });
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 2.8rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+
+        /* 追加のボタン*/
+        .lbtn1,
+        .lbtn2,
+        .lbtn3,
+        .lbtn4 {
+            float: right;
+            margin-top: 2px;
+            margin-right: 6px;
+            height: 16px;
+            font-size: 10px;
+            padding: 1px;
+            font-weight: bold;
+            /* vertical-align: bottom; */
+            border: none;
+        }
+
+
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 2.8rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+
+        }
+
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+
+        a.note1:hover span {
+            display: block;
+        }
+
+        .latin span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 3.5rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        .latin span::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.8rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.5rem;
+            left: 2.0rem;
+        }
+    </style>
+</head>
+

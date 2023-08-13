@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        #tabcontrol a{
+            display: inline-block;            /* インラインブロック化 */
+            border-width: 1px 1px 0px 1px;    /* 下以外の枠線を引く */
+            border-style: solid;              /* 枠線の種類：実線 */
+            border-color: black;              /* 枠線の色：黒色 */
+            border-radius: 0.75em 0.75em 0 0; /* 枠線の左上角と右上角だけを丸く */
+            padding: 0.75em 1em;              /* 内側の余白 */
+            text-decoration: none;            /* リンクの下線を消す */
+            color: black;                     /* 文字色：黒色 */
+            background-color: white;          /* 背景色：白色 */
+            font-weight: bold;                /* 太字 */
+            position: relative;               /* JavaScriptでz-indexを調整するために必要 */
+        }
+        #tabcontrol a:hover {
+            text-decoration: underline;
+        }
+
+        #tabbody div {
+            border: 1px solid black; /* 枠線：黒色の実線を1pxの太さで引く */
+            margin-top: -1px;        /* 上側にあるタブと1pxだけ重ねるために「-1px」を指定 */
+            padding: 1em;            /* 内側の余白量 */
+            background-color: white; /* 背景色：白色 */
+            position: relative;      /* z-indexを調整するために必要 */
+            z-index: 0;              /* 重なり順序を「最も背面」にするため */
+        }
+    </style>
+</head>
+<body>
+    <p id="tabcontrol">
+        <a href ="#page1">Original Text</a>
+        <a href="#page2">Working Text</a>
+    </p>
+
+    <div id="tabbody">
+        <section bookselection>
+            <h2>Select original Text</h2>
+            <ul>
+                <li>Ciceronis De Legibus</li>
+                <li>Ciceronis De Officiis</li>
+                <li>Tacti De Orgine et Situ Germanaorum</li>
+                <li>Caesaris De Bello Gallico</li>
+                <li>Tacti Historiae</li>
+                <li>Plinius Epistulae</li>
+                <li>FabulaeFaciles</li>
+            </ul>
+
+        </section>
+        <div id="page2">this is tab2</div>
+    </div>
+</body>
+</html>
