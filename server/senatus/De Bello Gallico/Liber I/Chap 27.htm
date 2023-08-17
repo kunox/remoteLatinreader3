@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 27</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[27]<span></span></a>
+
+<a class="note0">Helvētiī<span><br><br></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note1">rērum<span>res 属格<br></span></a>
+<a class="note1">inopiā<span>inopia, inopiae 名詞 (1st) F   :lack, need; poverty, destitution, dearth, want, scarcity; 奪格<br></span></a>
+<a class="note1">adductī<span>adduco, adducere, adduxi, adductus 動詞 (3rd) TRANS   :lead up/to/away; bring up/to; persuade, induce; lead, bring; contract, tighten;完了分詞　受動態　複　主格<br></span></a>
+<a class="note0">lēgātōs<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">dēditiōne<span>deditio, deditionis 名詞 (3rd) F   :surrender (of combatants/town/possessions); cession of right/title; 単　奪格<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">eum<span>Caesar</span></a>
+<a class="note1">mīsērunt.<span>mitto 3 複 完了</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>ヘルウェティは全てのものに欠乏して降伏の使者をカエサルに送った。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quī<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">eum<span>Caesar</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">itinere<span></span></a>
+<a class="note1">convēnissent<span>convenio, convenire, conveni, conventus 動詞 (4th)   :|meet/assemble; go to meet; come together;3 複 過去完了 接続法<br></span></a>
+<a class="note0">sēque<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">pedēs<span><br><br></span></a>
+<a class="note1">prōiēcissent<span>= projecissent <br>proicio, proicere, projeci, projectus 動詞 (3rd) TRANS   :throw down, throw out; abandon; throw away; 3 複 過去完了 接続法<br></span></a>
+<a class="note1">suppliciterque<span>suppliciter, 副詞   :suppliantly, in an attitude of humble entreaty;</span></a>
+<a class="note1">locūti<span>loquor, loqui, locutus sum 動詞 (3rd) DEP   :speak, tell; talk; mention; say, utter; phrase;完了分詞　受動 m 複　主格<br></span></a>
+<a class="note1">flentēs<span>fleo, flere, flevi, fletus 動詞 (2nd)   :cry for; cry, weep; 現在分詞 複　主格<br></span></a>
+<a class="note0">pācem<span><br><br></span></a>
+<a class="note1">petīssent,<span><strong>petivissent</strong>で petoの3複過去完了 接続法　peto, petere, petivi, petitus 動詞 (3rd)   :attack; aim at; desire; <strong>beg</strong>, entreat, ask (for); reach towards, make for;<br></span></a>
+<a class="note1">atque<span>atque, 接続詞   :and, as well/soon as; together with; and moreover/even; and too/also/now; yet;</span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note1">quō<span>関係代名詞　qui 奪格<br></span></a>
+<a class="note1">tum<span>副詞　;= at that time, next</span></a>
+<a class="note0">essent<span></span></a>
+<a class="note1">suum<span>suus 単　対格　所有形容詞である</span></a>
+<a class="note1">adventum<span>adventus adventus M 単　対格　;= arrival, approach, visit</span></a>
+<a class="note1">expectāre<span>expecto, expectare, expectavi, expectatus 動詞 (1st)   :await, expect; anticipate; hope for; 不定詞<br></span></a>
+<a class="note1">iussisset,<span>jubeo, jubere, jussi, jussus 動詞 (2nd) TRANS   :order/tell/command/direct; enjoin/command; decree/enact; request/ask/bid; pray3 単 過去完了 能動態 接続法 <br>主語はCaesar</span></a>
+<a class="note1">pāruērunt.<span>pareo, parere, parui, paritus 動詞 (2nd) INTRANS   :obey, be subject/obedient to; submit/yield/comply; pay attention; attend to; 3 複 完了 能動態 直説法<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><font style="background-color: rgb(0, 255, 255);">cumからiussissetまでが一つの節。主文はparueruntのみ。そうしないと、iussissetが接続法の理由がない。</font></p>
+<p>qui cum = these when</p>
+<p>pacem petissent,　（Caesar)iussisset, paruerunt.: <strong>途中で主語が変わる、</strong></p>
+<p>in itinere convenissent　：（旅の）途中で出会う</p>
+<p><strong>suppliciterque locut</strong>：分詞構文　嘆願者のように話し</p>
+<p><strong>flentes：</strong>現在分詞　泣いている～？　どこにかかる？　<font style="background-color: rgb(255, 255, 0);">泣きながら、と副詞的にpetissentに掛ける</font></p>
+<p><strong>現在分詞が動詞とともに使われ同時に進行しているように使われることがある。</strong>laeti inveniunt. (見つけて喜んだ）Plato scribens est mortuus.（プラトーは書きながら死んだ）</p>
+<p><strong>quo tum essent　</strong>＝whereever thay are quoは関係代名詞でlocoに掛かる　essentが接続法なのはby attractionと言われ、主節の接続法に「引きづられて」接続法になっている（NewLatin324)</p>
+<p><strong>suum adventum</strong> 「彼の（カエサル）到着」</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>彼らは途中でカエサルと会った時、彼の足下に身を投げて嘆願者のように話しながら、泣きながら、和平を懇願した。（カエサル）は彼らにどこに居るにせよ今いるところで自分の到着を待つように命じ、彼らはそれに従った。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span><br><br></span></a>
+<a class="note1">postquam<span>=after</span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">pervēnit,<span>pervenio, pervenire, perveni, perventus 動詞 (4th)   :come to; reach; arrive; 3 単 完了 能動態<br></span></a>
+<a class="note1">obsidēs,<span>obses, obsidis 名詞 (3rd) C   :hostage; pledge, security; 対格<br></span></a>
+<a class="note1">arma,<span>armum, armi 名詞 (2nd) N   :arms (pl.), weapons, armor, shield; close fighting weapons; equipment; force; 対格</span></a>
+<a class="note1">servōs<span>servus, servi 名詞 (2nd) M   :slave; servant;対格<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note1">perfūgissent,<span>perfugio, perfugere, perfugi, - 動詞 (3rd)   :flee, desert; take refuge;3 複 過去完了 能動態 接続法<br></span></a>
+<a class="note1">poposcit.<span>posco, poscere, poposci, - 動詞 (3rd)   :ask, demand;3 単 完了 能動態 直説法</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>servos qui ad eos perfugissent　：slaves who runaway to them</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>カエサルはそこに到着の後、人質、武器、そして彼らの元に逃げた奴隷たちを要求した。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Dum<span>dum, 接続詞   :while, as long as, until; provided that;</span></a>
+<a class="note0">ea<span></span></a>
+<a class="note1">conquīruntur<span>conquiro, conquirere, conquisivi, conquisitus 動詞 (3rd) TRANS   :seek out; hunt/rake up; investigate; collect; search out/down/for diligently; 3 複 現在 受動態<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cōnferuntur,<span>confero, conferre, contuli, collatus 動詞 TRANS   :bring together, carry/convey; collect/gather, compare; unite, add; direct/aim; 3 複 現在 受動態<br></span></a>
+<a class="note1">[nocte<span>nox noctis F 単　奪格　;= night</span></a>
+<a class="note1">intermissā]<span>intermitto, intermittere, intermisi, intermissus 動詞 (3rd)   :interrupt; omit; stop; leave off (temporarily); leave a gap; 完了分詞　受動態　f単　奪格<br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note1">VI<span>sex</span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note1">pāgī<span>pagus, pagi 名詞 (2nd) M   :country district/community, canton;属格<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">Verbigenus<span></span></a>
+<a class="note0">appellātur,<span><br><br></span></a>
+<a class="note1">sīve<span>sive, 接続詞   :or if; or;<br></span></a>
+<a class="note1">timōre<span>timor, timoris 名詞 (3rd) M   :fear; dread;奪格<br></span></a>
+<a class="note1">perterritī,<span>perterreo, perterrere, perterrui, perterritus 動詞 (2nd) TRANS   :frighten greatly, terrify; 完了分詞　受動 m 複　主格<br></span></a>
+<a class="note1">nē<span>＝lest (~するといけないから）<br></span></a>
+<a class="note1">armīs<span>armum, armi 名詞 (2nd) N   :arms (pl.), weapons, armor, shield; close fighting weapons; equipment; force;奪格<br></span></a>
+<a class="note1">trāditīs<span>trado, tradere, tradidi, traditus 動詞 (3rd)   :hand over, surrender; deliver; bequeath; relate;完了分詞　受動　奪格<br></span></a>
+<a class="note1">suppliciō<span>supplicium, supplici(i) 名詞 (2nd) N   :punishment, suffering; supplication; torture;奪格 単<br></span></a>
+<a class="note1">adficerentur,<span>adficio, adficere, adfeci, adfectus 動詞 (3rd) TRANS   :affect, make impression; move, influence; cause (hurt/death), afflict, weaken; <br>3 複 未完了 受動態 接続法</span></a>
+<a class="note0">sīve<span><br><br></span></a>
+<a class="note0">spē<span><br><br></span></a>
+<a class="note1">salūtis<span>salus, salutis 名詞 (3rd) F   :health; prosperity; good wish; greeting; salvation, safety;属格<br></span></a>
+<a class="note1">inductī,<span>induco, inducere, induxi, inductus 動詞 (3rd)   :lead in, bring in (performers); induce, influence; introduce;完了分詞　受動<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">tantā<span>tantus, tanta, tantum 形容詞   :of such size; so great, so much;<br></span></a>
+<a class="note1">multitūdine<span>multitudo, multitudinis 名詞 (3rd) F   :multitude, great number; crowd; rabble, mob;奪格<br></span></a>
+<a class="note1">dēditīciōrum<span>dediticius, deditici(i) 名詞 (2nd) M   :prisoners of war, captives (the surrendered);属格<br></span></a>
+<a class="note0">suam<span></span></a>
+<a class="note0">fugam<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">occultārī<span>occulto, occultare, occultavi, occultatus 動詞 (1st)   :hide; conceal;不定詞　受動<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">omnīnō<span>omnino, 副詞   :entirely, altogether;<br></span></a>
+<a class="note1">ignōrārī<span>ignoro, ignorare, ignoravi, ignoratus 動詞 (1st)   :not know; be unfamiliar with; disregard; ignore; be ignorant of; 不定詞　受動<br></span></a>
+<a class="note0">posse<span></span></a>
+<a class="note1">exīstimārent,<span>existimo, existimare, existimavi, existimatus 動詞 (1st) TRANS   :value/esteem; form/hold opinion/view; think/suppose; estimate; judge/consider;(3 複 未完了 能動態 接続法<br></span></a>
+<a class="note0">prīma<span><br><br></span></a>
+<a class="note0">nocte<span></span></a>
+<a class="note0">ē<span><br><br></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">Helvētiōrum<span><br><br></span></a>
+<a class="note1">ēgressī<span>egredior, egredi, egressus sum 動詞 (3rd) DEP   :go/march/come out; set sail; land, disembark; surpass, go beyond;完了分詞　受動<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note0">fīnēsque<span><br><br></span></a>
+<a class="note0">Germānōrum<span><br><br></span></a>
+<a class="note1">contendērunt.<span>contendo, contendere, contendi, contentus 動詞 (3rd)   :|||hurl, shoot; direct; travel; extend; rush to, be in a hurry, hasten;3 複 完了 能動態 直説法<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>dum ea conquiruntur</strong> : dumに導かれる節は通常、直説法、歴史的現在を取る。（NewLatin293.1)</p>
+<p>circiter hominum milia VI　contenderunt.</p>
+<p>ea　：　要求されていた人質、武器など</p>
+<p>conquiruntur et conferuntur　：捜され、集められるだが、能動態で訳すほうが良い</p>
+<p><strong>nocte intermissa　</strong>：　独立奪格　夜が更けてから</p>
+<p>perterriti : milia sexと共に分詞構文。次のsive ... inductiも同様。</p>
+<p><strong>ne armis traditis supplicio adficerentur　</strong>：　armnis traditis(独立奪格で、武器を渡すと）supplicio=punishment, adficio = cause、afflict&nbsp;&nbsp;罰によって苦しまされる（罰がくだされる）</p>
+<p><strong>dediticiorum</strong>　：戦争で自発的に降伏した捕虜のこと（奴隷にされないという条件）</p>
+<p><strong>in tanta multitudine dediticiorum</strong>：捕虜の沢山の数→沢山の捕虜でhomorum miliaと同じ感じ</p>
+<p>prima nocte　：夜の最初の方</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>それら（要求されたもの）を調達し集めている間に、約６０００人の人、その人の国はウェルビンゲンと呼ばれていたが、武器を渡すと罰を受けるかもしれないという恐怖にかられたか、ないしはあまりに多くの捕虜が居るので彼ら自身の逃亡は見つからないか無視されるかもしれないという希望に駆られて、夜の最初の頃にヘルウェティのキャンプから逃亡し、ライン川のゲルマンの領地の方に急いだ。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

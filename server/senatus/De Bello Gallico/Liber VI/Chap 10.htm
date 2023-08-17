@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 10</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[10]<span></span></a>
+
+<a class="note0">Interim<span></span></a>
+<a class="note0">paucīs<span><br><br></span></a>
+<a class="note0">post<span></span></a>
+<a class="note0">diēbus<span><br><br></span></a>
+<a class="note1">fit<span>facio facere, feci, factus V (3rd) TRANS  <br>:make/build/construct/create/cause/do; have built/made; fashion; work (metal);<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Ubiīs<span><br><br></span></a>
+<a class="note0">certior<span></span></a>
+<a class="note0">Suēbōs<span><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">ūnum<span><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note0">cōgere<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">eīs<span><br><br></span></a>
+<a class="note1">nātiōnibus<span>natio nationis N (3rd) F  <br>:nation, people; birth; race, class, set; gentiles; heathens;<br>(X 複数  与格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">sub<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">sint<span>sum esse, fui, futurus V  <br>:be;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">imperiō<span><br><br></span></a>
+<a class="note1">dēnūntiāre,<span>denuntio denuntiare, denuntiavi, denuntiatus V (1st)  <br>:<strong>give notice</strong>, <strong>warn</strong>/foretell; threaten/enjoin/declare intent to injure; intimate;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">auxilia<span></span></a>
+<a class="note0">peditātūs<span><br><br></span></a>
+<a class="note0">equitātūsque<span><br><br></span></a>
+<a class="note1">mittant.<span>mitto mittere, misi, missus V (3rd)  <br>:send, throw, hurl, cast; let out, release, dismiss; disregard;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>fit certior ab Ubiis</strong>. fitはfacioの受動。「Ubii族から知らされた」</p>
+<p><strong>Suebos cogere omnes copias in unum locum</strong>.</p>
+<p><strong>denuntiare eis nationonibus ut</strong> ~. 「～以下をするように申し伝える」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>その間、数日後にUbii族から次のように知らされた。Suebi族が全軍勢を一箇所に集め、また彼らの支配下にある国に対し、歩兵、騎兵の援軍を送るように通達を出している、と。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note1">cognitīs<span>cognosco cognoscere, cognovi, cognitus V (3rd) TRANS  <br>:become acquainted with/aware of; recognize; learn, find to be; inquire/examine;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note1">frūmentāriam<span>frumentarius frumentaria, frumentarium ADJ  <br>:grain producing; of/concerning grain;<br>(f 単数 対格)<br></span></a>
+<a class="note1">prōvidet,<span>provideo providere, providi, provisus V (2nd)  <br>:foresee; provide for, make provision; with DAT;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">castrīs<span>castra castrae N (1st) F  <br>:camp, military camp/field; army; fort, fortress; war service; day's march;<br>(c <strong>複数  与格</strong>)<br></span></a>
+<a class="note1">idōneum<span>idoneus idonea, idoneum ADJ  <br>:<strong>suitable</strong>, appropriate, adequate, having right qualities; qualified, able; apt;<br>&nbsp;(n 単数 対格)<br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">dēligit;<span>deligo deligere, delegi, delectus V (3rd) TRANS  <br>:pick/pluck off, cull; choose, select, levy (soldiers), enroll; conduct a levy;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">Ubiīs<span>Ubius Ubii N (2nd) M  <br>:Ubii, German tribe, west of Rhine near Coblenz;<br>(X 複数  与格)<br></span></a>
+<a class="note0">imperat<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">pecora<span>pecus pecoris N (3rd) N  <br>:cattle, herd, flock;<br>(n 複数  対格)<br></span></a>
+<a class="note1">dēdūcant<span>deduco deducere, deduxi, deductus V (3rd) TRANS  <br>:<strong>lead</strong>/draw//pull/bring/stretch down/<strong>away</strong>/out/off; escort; eject/evict (claimant);<br>(３人称 複数  現在 能動態 接続法 )<br><br></span></a>
+<a class="note0">suaque<span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">agrīs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">oppida<span></span></a>
+<a class="note1">cōnferant,<span>confero conferre, contuli, collatus V TRANS  <br>:bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note1">spērāns<span>spero sperare, speravi, speratus V (1st)  <br>:hope for; trust; look forward to; hope;<br>(現在 分詞 能動態  単数 主格),<br></span></a>
+<a class="note1">barbarōs<span>barbarus barbari N (2nd) M  <br>:barbarian, uncivilized person; foreigner (not Greek/Roman);<br>(c 複数  対格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">imperītōs<span>imperitus imperita, imperitum ADJ  <br>:unskilled, inexperienced (in); unfamiliar, ignorant (of) (w/GEN);<br>(m 複数  対格)<br></span></a>
+<a class="note1">hominēs<span>homo hominis N (3rd) M  <br>:man, human being, person, fellow;<br>(c 複数  対格), <br></span></a>
+<a class="note1">inopiā<span>inopia inopiae N (1st) F  <br>:lack, need; poverty, destitution, dearth, want, scarcity;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">cibāriōrum<span>cibarium cibari(i) N (2nd) N  <br>:ration/<strong>allowance of food </strong>(pl.); <strong>food</strong>, provisions; food for animals, feed/fodder;<br>(X 複数  属格)<br></span></a>
+<a class="note1">adductōs<span>adduco adducere, adduxi, adductus V (3rd) TRANS  <br>:lead up/to/away; bring up/to; persuade, induce; lead, bring; contract, tighten;<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">inīquam<span>iniquus iniqua -um, iniquior -or -us, iniquissimus -a -um ADJ  <br>:unjust, unfair; disadvantageous, uneven; unkind, hostile;<br>(f 単数 対格)<br></span></a>
+<a class="note0">pugnandī<span><br><br></span></a>
+<a class="note1">condiciōnem<span>condicio condicionis N (3rd) F  <br>:agreement/contract; terms, proposal/option/alternative; situation; stipulation;<br>(c 単数 対格)<br></span></a>
+<a class="note1">posse<span>possumには未来分詞、未来不定詞がない！！<br><br></span></a>
+<a class="note1">dēdūcī;<span>deduco deducere, deduxi, deductus V (3rd) TRANS  <br>:lead/draw//pull/<strong>bring</strong>/stretch down/away/out/off; escort; eject/evict (claimant);<br>(  現在 受動態 不定詞 )<br><br></span></a>
+<a class="note0">mandat,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">crēbrōs<span>creber crebra -um, crebrior -or -us, creberrimus -a -um ADJ  <br>:thick/crowded/packed/close set; frequent/repeated, constant; numerous/abundant;<br>(m 複数  対格)<br></span></a>
+<a class="note0">explōrātōrēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Suēbōs<span><br><br></span></a>
+<a class="note0">mittant<span></span></a>
+<a class="note1">quaeque<span>quisque quaeque,quodque ADJECT  <br>:(w/-que) any; each;<br>&nbsp;(f 複数  主格)<br></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">gerantur<span></span></a>
+<a class="note1">cognōscant.<span>cognosco cognoscere, cognovi, cognitus V (3rd) TRANS  <br>:become acquainted with/aware of; recognize; learn, find to be; inquire/examine;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>providet</strong> rem frumentariam. <strong>deligit</strong> locum castris. <strong>imperat</strong> Ubiis, sperans ~. <strong>mandat</strong> ~. が骨子</p>
+<p>imperat Ubiis ut <strong>deducant pecora, conferant suaque ommnia ex agris in oppida.</strong> 「家畜を追い立て、自分たちのものをすべて畑から町の中に搬入する事」</p>
+<p><strong>sperans</strong> barbaros atque imperitos <strong>homnes</strong>, adductos inopia cibariorum, <strong>posse deduci</strong> ad iniquam pugnandi condiconem. 「野蛮で経験のない人が、食べ物の必要性によって導かれ、戦いの悪い条件をもってきてくれるかも知れないと望みながら」</p>
+<p>mandat ut mittant exploratores in Suebos, cognoscant quae gerantur apud eos. <strong>qua geranturは間接疑問</strong>。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>これらの事を知るにいたり、食料の手当を行い、野営地ののために適当な場所を選択し、Ubiiに次のように命じた。家畜を追い立て、自分たちの全部のものを畑から引き上げ、町のなかに運び込むこと。それはもしかすると、野蛮で未経験な人間たちが、食べ物の必要性に引かれて、戦いを不利な条件で始めてくれるかも知れないと思ったからであるが。更にSuebiに多くの斥候を送り、そこで何が行われているか見つけることを命じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Illī<span><br><br></span></a>
+<a class="note1">imperāta<span>imperatum imperati N (2nd) N  <br>:command, order;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note1">faciunt<span>facio facere, feci, factus V (3rd) TRANS  <br>:|act/<strong>take action</strong>/be active; (bowels); <strong>act</strong>/work (things), function, be effective;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">paucīs<span><br><br></span></a>
+<a class="note0">diēbus<span><br><br></span></a>
+<a class="note0">intermissīs<span><br><br></span></a>
+<a class="note1">referunt:<span>refero referre, rettuli, relatus V  <br>:|<strong>report</strong> (on), bring back news; record/enter; propose/open debate; assign/count;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">Suēbōs<span><br><br></span></a>
+<a class="note0">omnēs,<span><br><br></span></a>
+<a class="note0">posteāquam<span><br><br></span></a>
+<a class="note1">certiōrēs<span>certus certa -um, certior -or -us, certissimus -a -um ADJ  比較級<br>:fixed, settled, firm; <strong>certain</strong>; <strong>trusty</strong>/reliable; sure; resolved, determined;<br>(c 複数  主格),<br></span></a>
+<a class="note1">nūntiī<span>nuntius nunti(i) N (2nd) M  <br>:<strong>messenger</strong>/herald/envoy; message (oral), warning; report; messenger's speech;<br>(c 複数  主格),<br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">exercitū<span><br><br></span></a>
+<a class="note0">Rōmānōrum<span><br><br></span></a>
+<a class="note1">vēnerint,<span>venio venire, veni, ventus V (4th)  <br>:come;<br>&nbsp;(３人称 複数  完了 能動態 接続法 )<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note0">sociōrumque<span><br><br></span></a>
+<a class="note0">cōpiīs,<span><br><br></span></a>
+<a class="note1">quās<span>qui quae, quod PRON  <br>:which?, what?; what kind of?;<br>(f 複数  対格)<br></span></a>
+<a class="note1">coēgissent,<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">penitus<span>penitus ADV <br>:inside; deep within; thoroughly;<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">extrēmōs<span>exter extera -um, exterior -or -us, extremus -a -um ADJ  最上級<br>:outer/external; outward; on outside, <strong>far</strong>; of another country, foreign; strange;<br>(m 複数  対格)<br></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">recēpisse:<span>recipio recipere, recepi, receptus V (3rd)  <br>:keep back; recover; undertake; guarantee; accept, take in; take back;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">silvam<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">ibi<span>ibi ADV <br>:there, in that place; thereupon;<br><br></span></a>
+<a class="note1">īnfīnītā<span>infinitus infinita, infinitum ADJ  <br>:boundless, unlimited, endless; infinite;<br>&nbsp;(f 単数 奪格)<br></span></a>
+<a class="note1">magnitūdine,<span>magnitudo magnitudinis N (3rd) F  <br>:size, magnitude, bulk; greatness. importance, intensity;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">appellātur<span><br><br></span></a>
+<a class="note0">Bacēnis;<span><br><br></span></a>
+<a class="note0">hanc<span></span></a>
+<a class="note0">longē<span><br><br></span></a>
+<a class="note1">intrōrsus<span>introrsus ADV <br>:within, inside, to within, inwards, inwardly, internally;<br><br></span></a>
+<a class="note1">pertinēre<span>pertineo pertinere, pertinui, pertentus V (2nd)  <br>:reach; extend; relate to; concerns, pertain to;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note1">nātīvō<span>nativus nativa, nativum ADJ  <br>:original; innate; <strong>natural</strong>; born;<br>(n 単数 奪格)<br></span></a>
+<a class="note1">mūrō<span>murus muri N (2nd) M  <br>:wall, city wall;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">obiectam<span>obicio obicere, objeci, objectus V (3rd) TRANS  <br>:throw before/to, cast; object, oppose; upbraid; throw in one's teeth; present;<br>(完了 分詞 受動態 f 単数 対格)<br></span></a>
+<a class="note0">Chēruscōs<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Suēbis<span><br><br></span></a>
+<a class="note0">Sūebōsque<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Chēruscīs<span><br><br></span></a>
+<a class="note1">iniūriīs<span>injuria injuriae N (1st) F  <br>:injury; injustice, wrong, offense; insult, abuse; sexual assault;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note1">incursiōnibusque<span>incursio incursionis N (3rd) F  <br>:onrush, attack, raid; incursion;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">prohibēre:<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">initium<span></span></a>
+<a class="note0">silvae<span></span></a>
+<a class="note0">Suēbōs<span><br><br></span></a>
+<a class="note0">adventum<span></span></a>
+<a class="note0">Rōmānōrum<span><br><br></span></a>
+<a class="note0">exspectāre<span><br><br></span></a>
+<a class="note1">cōnstituisse.<span>constituo constituere, constitui, constitutus V (3rd)  <br>:|decide/resolve; decree/ordain; appoint, post/station (troops); settle (colony);<br>(  完了 能動態 不定詞 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>Illi faciunt inperata. 「彼らは命令を実行した」</p>
+<p>Suebos 以下は間接話法。</p>
+<p><strong>Suebos omnes recepisset se ad extremos fines cum omnibus suis sociorumque copiis.</strong> がその骨子。「Suebi族は自分たちと同盟者の全財産をもって領地の奥深く引きこもった」（と報告した）</p>
+<p>postquam certore nuntii de exercitu Romanorum venerint. 「より確かな、ローマ軍に関する使者が来た後」</p>
+<p><strong>silvam esse inifinita magnitudine</strong>. infinita magnutudineは性質の奪格で、叙述的に使われる。</p>
+<p><strong>Suebos constitisset exspectare adventum Romanorum ad eius slivae initum</strong>.「その森の始まるところでSuebiはローマ軍の到着を待つことにした」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>彼らは命令を実行し、数日の間をおいて報告した。Suebiは、ローマ軍に関するより確かな情報を得た後、全員、自分たちや同盟国の集めた軍勢と共に、領地の一番奥に引きこもった。非常に深い森があって、それはBacenisと呼ばれている。それは内部のほうに大変長く入り組んでおり、自然の境界として、CherusciをSuebiから、SuebiをCherusciから　互いに侵略する事を防いでいる。その森の入口で、Suebiはローマの到着を待つことに決めた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

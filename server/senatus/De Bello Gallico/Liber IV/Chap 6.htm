@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 6</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[6]<span></span></a>
+
+<a class="note0">Quā<span><br><br></span></a>
+<a class="note1">cōnsuētūdine<span>consuetudo consuetudinis N (3rd) F  <br>:habit/custom/usage/way; normal/general/customary practice, tradition/convention;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">cognitā<span>cognosco cognoscere, cognovi, cognitus V (3rd) TRANS  <br>:become acquainted with/aware of; recognize; learn, find to be; inquire/examine;<br>(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note0">Caesar,<span></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">graviōrī<span><br><br></span></a>
+<a class="note0">bellō,<span><br><br></span></a>
+<a class="note1">occurreret,<span>occurro occurrere, ocuucurri, occursus 3単　未完了接続法 ;= run to meet, oppose, resist, come to mind, occur (with DAT)</span></a>
+<a class="note1">mātūrius<span>maturus matura -um, maturior -or -us, maturissimus -a -um ADJ  比較級<br>:early, speedy; ripe; mature, mellow; timely, seasonable;<br>&nbsp;(n 単数 対格)<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">cōnsuērat<span>=consueveratconsuesco consuescere, consuevi, consuetus 3単　過去完了　;= accustom oneself, be accustomed<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note1">proficīscitur.<span>proficiscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>consuetudine cognita : 独立奪格 これらの習慣をよく知っているので</p>
+<p>Caesar proficiscitur ad exsercitum : カエサルは軍隊に向かって出発した。</p>
+<p>ne occurret graviori bello : occurretは与格支配。graviori belloは与格。（occurretの主語はCaesar)</p>
+<p>maturius quam consuerat : 習慣になっている時期よりは早く</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらよく知っているのでカエサルは、より大きな戦いに遭わないように、いつもより早い時期に軍隊に向かって出発した。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">vēnisset,<span>venio venire, veni, ventus V (4th)  <br>:come;<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">fore<span>sumの未来不定詞</span></a>
+<a class="note1">suspicātus<span>suspicor suspicari, suspicatus sum V (1st) DEP  <br>:mistrust, suspect; suppose;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">facta<span></span></a>
+<a class="note1">cognōvit:<span>cognosco cognoscere, cognovi, cognitus V (3rd) TRANS  <br>:become acquainted with/aware of; recognize; learn, find to be; inquire/examine;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note1">missās<span>mitto mittere, misi, missus V (3rd)  <br>:send, throw, hurl, cast; let out, release, dismiss; disregard;<br>(完了 分詞 受動態 f 複数  対格)<br></span></a>
+<a class="note1">lēgātiōnēs<span>legatio legationis N (3rd) F  <br>:embassy; member of an embassy; mission;<br>(c 複数  対格)<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">nūllīs<span><br><br></span></a>
+<a class="note0">cīvitātibus<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Germānōs<span><br><br></span></a>
+<a class="note1">invītātōsque<span>invito invitare, invitavi, invitatus V (1st)  <br>:invite, summon; challenge, incite; encourage; attract, allure, entice;<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Rhēnō<span><br><br></span></a>
+<a class="note1">discēderent:<span>discedo discedere, discessi, discessus V (3rd)  <br>:go/march off, depart, withdraw; scatter, dissipate; abandon; lay down (arms);<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">omnia<span>omne omnis N 複　対格　;= all things(pl), everything</span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">postulāssent<span>postulo postulare, postulavi, postulatus V (1st)  <br>:demand, claim; require; ask/pray for;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">fore<span>未来　不定詞</span></a>
+<a class="note1">parāta.<span>paro parare, paravi, paratus V (1st) TRANS  <br>:prepare; furnish/supply/provide; produce; obtain/get; buy; raise; put up; plan;<br>(完了 分詞 受動態 n 複数  主格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><b>cum venisset eo</b> : 時を表すcumが接続法で使われると、その時の「状況、環境」を表す。（NewLatin288)　eo=ad exercitum</p>
+<p>cognovit ea (esse) facta quae suspicatus erat fore: 主語はもちろんカエサル。「それが起きていた事を知った」「カエサルが起きるのではないかと心配していたこと。」 具体的には以下に記述がある。</p>
+<p><b>legationes (esse) missas invitatosque (esse</b>) uti : 間接話法　「使節が送られ、～すべく招聘された」invitatosの意味上の主語はeos(m複対格）でGermanosの事。uti以下は意志法から派生した名詞節（接続法　NewLatin295）</p>
+<p><b>omnia fore parata.</b> <b>fore parataは未来完了不定詞　</b>受動態ではforeを使って未来完了不定詞を作ることがある。（NewLatin270.4)　「全ての事は用意されているであろう。」omnia対格で主語。</p>
+<p><b>omnia quae postulavissent ab se </b>: postulavissetは過去完了、接続法であり、ここでは<b>未来完了時制</b>を表す。</p>
+<p>（ラテン語には接続法の未来、未来完了がないので接続法過去完了を歴史時制に続けて未来完了を表す。（NewLatin269 1(b))</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>そこに来た時、起こるのではないかと疑っていたことが起きているのを知った。即ち、幾つかの部族からゲルマンに対し使節が送られ、ライン河か（こちらに）来るよう招待している。彼らが要求するものは全て用意されている、と言って。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quā<span><br><br></span></a>
+<a class="note1">spē<span>奪格<br></span></a>
+<a class="note1">adductī<span>adduco adducere, adduxi, adductus V (3rd) TRANS  <br>:lead up/to/away; bring up/to; persuade, induce; lead, bring; contract, tighten;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note1">Germānī<span>複　主格<br></span></a>
+<a class="note1">lātius<span>latus lata -um, latior -or -us, latissimus -a -um ADJ  比較級<br>:wide, broad; spacious, extensive;<br>&nbsp;(n 単数 対格に起因する副詞<br></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note1">vagābantur<span>vagor vagari, vagatus sum V (1st) DEP  <br>:wander, roam;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Eburōnum<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Condrūsōrum,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">Trēverōrum<span><br><br></span></a>
+<a class="note1">clientēs,<span>cliens clientis N (3rd) C  <br>:client, dependent (of a patron), vassal; client state/its citizens, allies;<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note1">pervēnerant.<span>pervenio pervenire, perveni, perventus V (4th)  <br>:come to; reach; arrive;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>adducti qua spe : これらの希望によって誘発され、</p>
+<p><b>Germani vagabantur, pervenerant</b></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらの希望によって誘発されて、ゲルマンはいまやより広い地域をさまよい、EburonesとCondrusiとの境界、そこはTreveri族の属国であったところだが、まで進出してきた。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Prīncipibus<span>princeps principis N (3rd) M  <br>:leader/chief, first/leading member/citizen/man; master/expert; founder/proposer;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">Gallice<span>Gallicus gallica, galliun形容詞のｍ単　呼格　？</span></a>
+<a class="note1">ēvocātīs<span>evoco evocare, evocavi, evocatus V (1st)  <br>:call forth; lure/entice out; summon, evoke;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">cognōverat<span>３単　過去完了<br></span></a>
+<a class="note1">dissimulanda<span>dissimulo dissimulare, dissimuravi, dissmulatus 未来分詞　受動　ｎ複主格　;= conceal, dissemble, disguise, hide, ignore</span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">exīstimāvit,<span>existimo existimare, existimavi, existimatus V (1st) TRANS  <br>:value/esteem; form/hold opinion/view; think/suppose; estimate; judge/consider;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">eōrumque<span><br><br></span></a>
+<a class="note1">animīs<span>animus animi m 複　奪格　;= mind<br></span></a>
+<a class="note1">permulsīs<span>permulceo permulcere, permulsi, permulsus V (2nd)  <br>:rub gently, stroke, touch gently; charm, please, beguile; soothe, alleviate;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cōnfīrmātīs<span>confirmo confirmare, confirmavi, confirmatus V (1st) TRANS  <br>:strengthen, develop, build up (w/troops); make secure/firm; reassure; secure;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">equitātū<span>equitatus equitatus N (4th) M  <br>:cavalry, horse-soldiers; equestrian order; bodies of cavalry (pl.);<br>(X 単数 奪格)<br></span></a>
+<a class="note1">imperātō<span>impero imperare, imperavi, imperatus V (1st)  <br>:order, command, levy; rule (over) (w/DAT);<br>&nbsp;(完了 分詞 受動態 m 単数 奪格),&nbsp; <br></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Germānīs<span><br><br></span></a>
+<a class="note1">gerere<span>gero 不定詞　;= bear, carry, manage</span></a>
+<a class="note1">cōnstituit.<span>constituo constituere, constitui, constitutus V (3rd)  <br>:|decide/resolve; decree/ordain; appoint, post/station (troops); settle (colony);<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Principibus Gallice evocatis : Galliceは呼格で、ちょっと変！　Galliaeのテキスト多し。この場合、ガリアの、と属格で良い。独立奪格、「ガリアの指導者たちを呼び出し」</p>
+<p><b>Caesar existmavit ea dissimulanda sibi</b> : sibiが難しい。「カエサルはそのことを隠すべきと考えた」sibiはカエサルの事を指すのであろうが、彼自身に対して隠す、というのもおかしい。<b>quae cognoverat sibi </b>で「それを彼自身に対し知らしめている」、というニュアンスか？cognoscoは他動詞であり、間接目的語を持てる。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>ガリアの指導者たちを呼びだしたが、カエサルは自分が知っている事を話さないほうが良いと考えた。彼らの気持ちを慰撫し刺激して、騎兵を命令し、ゲルマンとの戦いを宣言した。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

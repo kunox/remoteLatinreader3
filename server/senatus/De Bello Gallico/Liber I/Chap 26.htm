@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 26</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[26]<span></span></a>
+
+<a class="note1">Ita<span>＝thus</span></a>
+<a class="note1">ancipitī<span>anceps, (gen.), ancipitis 形容詞   :two headed, two fold, two meanings; faces two/opposite directions/fronts; twofold; 単　奪格<br></span></a>
+<a class="note1">proeliō<span>ploelium 単　奪格<br></span></a>
+<a class="note1">diū<span>diu, diutius, diutissime 副詞   :(for) a long/considerable time/while; long since;<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">ācriter<span>acriter, acrius, acerrime 副詞   :sharply, vigilantly, fiercely; severely, steadfastly; keenly, accurately;<br></span></a>
+<a class="note1">pugnātum<span>pugno = battle 完了分詞　受動態、　m単　主格</span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>pugnatum est. 非人称の受動形</p>
+<p>ancpiti proelio : 原因の奪格、手段の奪格か</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>かくして二方面に渡る長く厳しい戦いであった。(が続いた。）</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Diūtius<span>diu の比較級　for longer<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">sustinēre<span>sustineo, sustinere, sustinui, sustentus 動詞 (2nd)  <br> :support; check; put off; put up with; sustain; hold back;不定詞<br></span></a>
+<a class="note0">nostrōrum<span><br><br></span></a>
+<a class="note1">impetūs<span>impetus, impetus 名詞 (4th) M   :attack, assault, charge; attempt; impetus, vigor; violent mental urge, fury; 対格<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">possent,<span></span></a>
+<a class="note1">alterī<span>alter, altera, alterum 形容詞   :one (of two); second/another; former/latter;複主格<br></span></a>
+<a class="note0">sē,<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">coeperant,<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">montem<span></span></a>
+<a class="note1">recēpērunt,<span>recipio, recipere, recepi, receptus 動詞 (3rd)   :keep back; recover; undertake; guarantee; accept, take in; take back; 3 複 完了 能動態<br></span></a>
+<a class="note0">alterī<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">impedīmenta<span>impedimentum, impedimenti 名詞 (2nd) N   :hindrance, impediment; heavy baggage (of an army) (pl.);対格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">carrōs<span><br><br></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">contulērunt.<span>confero, conferre, contuli, collatus 動詞 TRANS   :bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;3 複 完了<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>ut coeperant　：as they had begun</p>
+<p><strong>alteri ~ altri</strong> : one ~ , the other ~</p>
+<p>receperunt se : recipioを他動詞的に使って「自分自身を引き上げた」</p>
+<p>contulerunt se : conferoは他動詞なので、その目的語「自身をまとめた」</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>我軍の攻撃を長時間支えられなかったので、一つは始めた時のように山の方へ引き返し、もう一つは彼らの輜重や馬車の方向へ向かった。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Nam<span>nam, 接続詞   :for, on the other hand; for instance;</span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note0">tōtō<span><br><br></span></a>
+<a class="note1">proeliō,<span>proelium 奪格（時の奪格）<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">ab<span>from</span></a>
+<a class="note1">hōrā<span>hora, horae 名詞 (1st) F   :hour; time; season;<br></span></a>
+<a class="note1">septimā<span>７<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">vesperum<span>vesper, vesperi 名詞 (2nd) M   :evening; evening star; west; <br>対格</span></a>
+<a class="note1">pugnātum<span>pugno 受動態、完了分詞<br></span></a>
+<a class="note1">sit,<span>3 単 現在 接続法</span></a>
+<a class="note1">āversum<span><strike>aversum, aversi 名詞 (2nd) N   :back, back/hinder part; other side, obverse; 対格</strike> averto 完了分詞、受動　ｍ単　対格　形容詞的にhostemを修飾 ;= turn away, rout, withdraw<br></span></a>
+<a class="note0">hostem<span></span></a>
+<a class="note0">vidēre<span><br><br></span></a>
+<a class="note0">nēmō<span><br><br></span></a>
+<a class="note1">potuit.<span>3 単 完了 <br>possum</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>toto proelio</strong> : 時の奪格で、この場合「いつ」ではなく<u>「経過時間」</u>を表す。</p>
+<p><strong>cum ~ sit</strong> : この場合のcumは<strong>反意節</strong>を導く　cumで始まる反意節は接続法が用いられる（NewLatin 309.3)「～だが」</p>
+<p>hora septima: １日夜明けから日暮れまでを１２分割。従って第７時は12時～午後1時</p>
+<p><strong>pugnatum sit　</strong>：受け身形　1行目と同じ <u>sitは歴史的現在時制で</u>、この場合第二時制（歴史時制）として使われており、potuitと時制の一致をなしている。（直説法完了は歴史時制）</p>
+<p>aversum hostem : aversumはavertoの完了分詞受動でhostemを修飾。敗走した敵</p>
+<p>nemo potuit vedere.「誰も敵の背中を見ることは出来なかった」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>この戦いの全体の時間、それは１2時から夕方まで戦闘は行われたが、敵は一人も敗走したわけではなかった。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ad<span></span></a>
+<a class="note0">multam<span></span></a>
+<a class="note1">noctem<span>nox, noctis 名詞 (3rd) F   :night対格</span></a>
+<a class="note1">etiam<span>＝and also</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">impedīmenta<span><br><br></span></a>
+<a class="note1">pugnātum<span>pugno 完了分詞　受動<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">proptereā<span>=for this reason<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">prō<span></span></a>
+<a class="note1">vāllō<span>vallum, valli 名詞 (2nd) N   :wall, rampart; entrenchment, line of palisades, stakes; 奪格<br></span></a>
+<a class="note1">carrōs<span>対格<br></span></a>
+<a class="note1">obiēcerunt<span>obicio, obicere, objeci, objectus 動詞 (3rd) TRANS   :throw before/to, cast; object, oppose; upbraid; throw in one's teeth; present;3 複 完了<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">ē<span>e, 前置詞 (奪格)  :out of, from; by reason of; according to; because of, as a result of;<br></span></a>
+<a class="note0">locō<span></span></a>
+<a class="note0">superiōre<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">nostrōs<span><br></span></a>
+<a class="note1">venientēs<span>venio 現在分詞<br></span></a>
+<a class="note1">tēla<span>telum, teli 名詞 (2nd) N   :dart, spear; weapon, javelin; bullet (gun);複　対格<br></span></a>
+<a class="note1">coniciēbant<span>conicio, conicere, conjeci, conjectus 動詞 (3rd) TRANS   :throw/put/pile together; conclude, infer/guess; assign, make go; classify, put;<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">nūllī<span><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">carrōs<span><br><br></span></a>
+<a class="note1">rotasque<span>rota, rotae 名詞 (1st) F   :wheel (rotate);対格</span></a>
+<a class="note1">matarās<span>matara, matarae 名詞 (1st) F   :javelin, spear;対格</span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">trāgulās<span>tragula, tragulae 名詞 (1st) F   :dart, javelin;対格</span></a>
+<a class="note1">subiciēbant<span>subicio, subicere, subjeci, subjectus 動詞 (3rd) TRANS   :throw under, place under; make subject; expose;3 複 未完了<br></span></a>
+<a class="note0">nostrōsque<span><br><br></span></a>
+<a class="note1">vulnerābant.<span>vulnero, vulnerare, vulneravi, vulneratus 動詞 (1st) TRANS   :wound/injure/harm, pain/distress; inflict wound on; damage (things/interest of); 3 複 未完了<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>pugnatum est, というのが主文　propterea quod(quod以下に記述するような理由で、具合に）</p>
+<p><strong>Ad multam noctem</strong>：until late night</p>
+<p><strong>pro vallo carros obiecerunt　</strong>：　pro=~の代わりにというのがあるので、「壁の代わりに馬車を積んだ」</p>
+<p><strong>e loco superiore</strong> : eは奪格支配、</p>
+<p><strong>in nostros venientes　</strong>：進軍する我軍</p>
+<p>coniciebant = conicio (上から投げる）　subiciebant = subicio(下から投げる）</p>
+<p>carros rotasqueは　carros raedasqueとなっているテキスト多し（Bennet, Janes, walker, AGはredas?,Hodges etc)</p>
+<p><u>readasの場合は馬車の間から、になるか？</u></p>
+<p>carrusは2輪の馬車、raedasは別名[traveler]と呼ばれ4輪の馬車 </p>
+<p><a class="imageshow">matara et tegula図<span>../images/matara et tragula.png</span></a></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>夜遅くまで、輜重の側でも戦いが続いた。というのは、彼らは馬車をバリケードにしており、場所が有利であったので（上にあったので）進軍する我軍に、Tela（槍）を上から投げ、またいくつかは馬車の車輪を通してMataraとかTragulaを下から投げつけ、我軍を傷めつけた。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Diū<span>diu, diutius, diutissime 副詞   :(for) a long/considerable time/while; long since;<br></span></a>
+<a class="note1">cum<span>afterの訳あり</span></a>
+<a class="note1">esset<span>3 単　未完了　接続法</span></a>
+<a class="note0">pugnātum,<span><br><br></span></a>
+<a class="note1">impedīmentīs<span>impedimentum 奪格<br></span></a>
+<a class="note1">castrīsque<span>castrum, castri 名詞 (2nd) N   :fort/fortress; camp (pl.), military camp/field; army; war service; day's march;奪格<br></span></a>
+<a class="note1">nostrī<span>複　主格</span></a>
+<a class="note1">potītī<span>potior, poti, potitus sum 動詞 (3rd) DEP   :||be/become master of (w/GEN/ABL), get possession, submission, hold of; <br>完了分詞　受動態 m複　主格<br></span></a>
+<a class="note0">sunt.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>cum esset pugnatum</strong> : cumで始まる節で、動詞が接続法の場合は何か起きた「状況、環境」を表す。「時点」を表すのではなく。（New Latin288.B)</p>
+<p><strong>impedimentis castrisque</strong>:<u>&nbsp;utor, fruor, potior, vescorなどの動詞は奪格支配となる</u>。これは「手段の奪格」の変種。（NewLatin218.1）　castris potitus est = 彼は陣地で自分を強くした。→　陣地を獲得した。</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>長い戦いのあと、我軍は輜重とキャンプを奪いとった。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Ibi<span>ibi, 副詞   :there, in that place; thereupon;</span></a>
+<a class="note0">Orgetorīgis<span><br><br></span></a>
+<a class="note0">fīlia<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ūnus<span><br><br></span></a>
+<a class="note0">ē<span><br><br></span></a>
+<a class="note1">fīliīs<span><br></span></a>
+<a class="note1">captus<span>m 単数</span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>unus e fillis</strong> : fillisは複　奪格、eは奪格支配で、from　ここは全体の属格でも良いのだが、e, ex＋奪格を使用する場合も多い。（NewLatin201.1.(a))</p>
+<p>captus est　：ｍ　単数で　近いunus e fillisに性と数を合わせている。</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>そこでオルゲトリックスの娘とその息子の一人が捕えられた。</p>
+</div>
+</div>
+<div class="spacer">Line7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ex<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">proeliō<span><br><br></span></a>
+<a class="note1">circiter<span>circiter, 副詞   :nearly, not far from, almost, approximately, around, about;</span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note0">mīlia<span></span></a>
+<a class="note1">CXXX<span>centum et triginta 130</span></a>
+<a class="note1">superfuērunt<span>supersum, superesse, superfui, superfuturus 動詞   :be left over; survive; be in excess/superfluous (to); remain to be performed;  <br>3 複 完了<br></span></a>
+<a class="note0">eāque<span><br><br></span></a>
+<a class="note0">tōtā<span><br><br></span></a>
+<a class="note1">nocte<span>nox 奪格</span></a>
+<a class="note1">continenter<span>continenter, 副詞   :unbroken/continuously/without pause, uninterruptedly; repeatedly/successively;</span></a>
+<a class="note1">iērunt<span>eo 3 複 完了<br></span></a>
+<a class="note1">[nūllam<span>nullus 対格<br></span></a>
+<a class="note1">partem<span>pars 対格 <br>時の経過の対格</span></a>
+<a class="note1">noctis<span>nox 属格</span></a>
+<a class="note1">itinere<span>itiner 奪格 N</span></a>
+<a class="note1">intermissō];<span>intermitto, intermittere, intermisi, intermissus 動詞 (3rd)   :interrupt; omit; <strong>stop</strong>; leave off (temporarily); <strong>leave a gap</strong>; 完了分詞　受動態 n 単　奪格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note1">Lingonum<span>Lingones　現Langres　ビブラクテから９０マイルほど</span></a>
+<a class="note1">diē<span>奪格<br></span></a>
+<a class="note1">quārtō<span>序数　４<br></span></a>
+<a class="note1">pervēnērunt,<span>pervenio, pervenire, perveni, perventus 動詞 (4th)   :come to; reach; arrive;3 複 完了<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">propter<span>propter, 前置詞 (対格)  :near; on account of; by means of; because of;</span></a>
+<a class="note1">vulnera<span>vulnus, vulneris 名詞 (3rd) N   :wound; mental/emotional hurt; injury to one's interests; wound of love;</span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">propter<span></span></a>
+<a class="note1">sepultūram<span>sepultura, sepulturae 名詞 (1st) F   :burial; grave;対格<br></span></a>
+<a class="note1">occisōrum<span>occido, occidere, occidi, occisus 動詞 (3rd)   :kill, murder, slaughter, slay; cut/knock down; weary, be the death/ruin of;完了分詞　受動態　属格<br></span></a>
+<a class="note0">nostrī<span><br><br></span></a>
+<a class="note1">[trīduum<span>triduum, tridui 名詞 (2nd) N   :three days;<br></span></a>
+<a class="note1">morātī]<span>moror, morari, moratus sum 動詞 (1st) DEP   :delay; stay, stay behind; devote attention to; <br>完了分詞　受動態 m　複　主格<br></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note1">sequī<span>sequor, sequi, secutus sum 動詞 (3rd) DEP   :|support/back/side with; obey, observe; pursue/chase不定詞<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">potuissent.<span>3 複 過去完了接続法</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>hominum milia CXXX</strong> superfuerunt, ~pervenerunt,&nbsp;&nbsp;(quum proter ~sequi non potuissent.)</p>
+<p>Centum et triginta CXXX</p>
+<p><strong>tota nocte continenter ierunt = nullam partem noctis itinere intermisso</strong> : tautologyでOudendorpなどは前半部分は削除すべきとの意見</p>
+<p>itinere intermisso : 独立奪格　「旅路が夜の如何なる部分をも中断することなく」</p>
+<p><strong>nullam partem noctis</strong> : 時間経過の対格　= no part of night</p>
+<p>die quarto：４日目に、</p>
+<p>cum : 理由を表す従属節、　そのためpotuissentと接続法</p>
+<p>nostri triduum morati : 分詞構文　「３日遅れた味方は」</p>
+<p>eos = hominum milia CXXX の人たち</p>
+<p>triduum : 2日、3日、4日はbiduum, triduum, quadriduumと言って、duo dieなどとは言わない。</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>この戦いから１３０００0人が生き残った。夜の間も行軍して、４日めにリンゴネスの領地に到着した。と言うのは味方の負傷兵や死者の埋葬（3日間の遅れ）などで敵を追跡するが出来なかったからである。</p>
+</div>
+</div>
+<div class="spacer">Line8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Caesar<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Lingonās<span><br><br></span></a>
+<a class="note1">litterās<span>littera, litterae 名詞 (1st) F   :letter (alphabet); (pl.) letter, epistle; literature, books, records, account;対格<br></span></a>
+<a class="note1">nūntiōsque<span>nuntius, nunti(i) 名詞 (2nd) M   :messenger/herald/envoy; message (oral), warning; report; messenger's speech; 対格<br></span></a>
+<a class="note1">mīsit,<span>mitto ３単　完了<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note1">frūmentō<span>frumentum, frumenti 名詞 (2nd) N   :grain; crops;奪格<br></span></a>
+<a class="note1">nēve<span>接続詞　;= or not et neの代わりに使われる<br></span></a>
+<a class="note1">aliā<span>alia, 副詞   :by another/different way/route;<br></span></a>
+<a class="note1">rē<span>res 奪格<br></span></a>
+<a class="note1">iuvārent:<span>juvo, juvare, juvi, jutus 動詞 (1st)   :help, assist, aid, support, serve, further; please, delight, gratify; 3 複 未完了 能動態 接続法</span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">iūvissent,<span>juvo 3 複 過去完了 能動態 接続法</span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">eōdem<span><br><br></span></a>
+<a class="note1">locō<span>単　奪格　<br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note1">Helvētiōs<span>対格<br></span></a>
+<a class="note1">habitūrum.<span>habeo 未来分詞　esseを追加 <br>未来不定詞でmisitに依存<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>ne eos frumento neve alia re iuvarent</strong> : frumento, reは奪格、手段の奪格で、「食料、その他の物によって助けないように」</p>
+<p>iuvarent : 「命令、忠告の名詞節」で接続法</p>
+<p><strong>qui si iuvissent　</strong>＝　if who(=Lingones) help : iuvissent : <u>直説法、未来完了は間接話法では接続法、完了になる</u>。（NewLatin319)<font style="background-color: rgb(204, 255, 255);"> quiはLingonesを指す関係代名詞　主格 複</font></p>
+<p>se = Lingnus</p>
+<p><u>seが不定詞の主語とも取れるが、その場合目的語がなくなる。(Caesar) milites pontem facere jussit,と同様、seをhabiturumの目的語と考える。</u></p>
+<p><strong>eodem loco = same line</strong> ; locoはローマ人が用いた<u>算盤からの比喩</u>で用いられる。（Janes　500) <strong>場所の奪格</strong></p>
+<p><font style="background-color: rgb(204, 255, 255);">quo : locoを指す。同じく奪格</font></p>
+<p>eodem loco quo Helvetios habiturum.: <strong>eodem loco habiturum (esse) quo Helvetios (haberet)　主語はカエサル</strong></p>
+<p>カエサルはヘルウェイティを持っていたのと同じ位置に自身（Lingonas)を持つであろう事。litteras misitから推測できるsaying にあたる言葉を補って、間接話法、平叙文で不定詞になっている。</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>カエサルはリンゴネスに向かってメッセージを送り、伝えた。ヘルウェティに対し食料その他のことで援助しないこと。もし援助する場合には彼らもヘルウェティと同様とみなすであろう事など。</p>
+</div>
+</div>
+<div class="spacer">Line9</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipse<span></span></a>
+<a class="note1">trīduō<span>triduum, tridui 名詞 (2nd) N   :three days; 奪格<br></span></a>
+<a class="note1">intermissō<span>intermitto, intermittere, intermisi, intermissus 動詞 (3rd)   :interrupt; omit; stop;奪格<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">cōpiīs<span><br><br></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">sequī<span><br><br></span></a>
+<a class="note1">coepit.<span>coepio 3 単 完了 能動態</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>triduo intermisso : 独立奪格</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>彼自身は三日間の中断ののち、全軍を率い彼らの追撃を始めた。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

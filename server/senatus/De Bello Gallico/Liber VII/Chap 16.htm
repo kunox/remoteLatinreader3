@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 16</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[16]<span></span></a>
+
+<a class="note0">Vercingetorīx<span><br><br></span></a>
+<a class="note0">minōribus<span><br><br></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">itineribus<span></span></a>
+<a class="note1">subsequitur<span>subsequor subsequi, subsecutus sum V (3rd) DEP  <br>:follow close after; pursue; support;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">dēligit<span>deligo deligere, delegi, delectus V (3rd) TRANS  <br>:pick/pluck off, cull; choose, select, levy (soldiers), enroll; conduct a levy;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">palūdibus<span><br><br></span></a>
+<a class="note0">silvīsque<span><br><br></span></a>
+<a class="note1">mūnītum<span>munio munire, munivi, munitus V (4th)  <br>:fortify; strengthen; protect, defend, safeguard; build (road);<br>(完了 分詞 受動態 m 単数 対格), <br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Avaricō<span><br><br></span></a>
+<a class="note1">longē<span>longe longius, longissime ADV <br>:far (off), distant, a long way; by far; for a long while, far (in future/past);<br><br></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note0">XVI.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Vercingetorix subsequitur Caesarem minoribus itineribus. ： minoribus itinere 「ゆっくりした進軍」</p>
+<p>deligit locum castris, munitum paludibus silvisque. paludibus, silvis は手段の奪格, munitum完了分詞でlocumを修飾する。「沼と森によって防御された場所を砦として選んだ」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Vercingetorixはゆっくりした進み方でCaesarを追い、沼と森で守られた場所を駐屯地として選んだ。それはAvaricumの町から１６マイルのところである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ibi<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">certōs<span><br><br></span></a>
+<a class="note0">explōrātōrēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">singula<span>singulus singula, singulum ADJ  <br>:apiece (pl.); <strong>every</strong>; <strong>one each</strong> /at a time; individual/separate/single; several;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note1">diēī<span>dies diei N (5th) C  <br>:day; daylight; (sunlit hours); (24 hours from midnight); open sky; weather;<br>(c 単数 属格)<br></span></a>
+<a class="note1">tempora<span>tempus temporis N (3rd) N  <br>:time, condition, right time; season, occasion; necessity;<br>(n 複数  対格)<br></span></a>
+<a class="note1">quae<span>quis quis, quid PRON  <br>:who?, which one?, what man?, <strong>what thing</strong>? (type/nature); what kind of; what?;<br>&nbsp;(n 複数  対格),<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Avaricum<span></span></a>
+<a class="note0">agerentur<span></span></a>
+<a class="note0">cognōscēbat<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">quid<span>quis quis, quid PRON  <br>:who?, which one?, what man?, <strong>what thing</strong>? (type/nature); what kind of; what?;<br>&nbsp;(n 単数 対格)<br></span></a>
+<a class="note1">fierī<span>fio feri, factus sum V SEMIDEP  <br>:happen, come about; result (from); take place, be held, occur, arise (event);<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">vellet<span>volo velle, volui, - V  <br>:wish, want, prefer; be willing, will;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">imperābat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>certos exploratores : fixed scoutで常雇いの、いつものというニュアンス。</p>
+<p>in singula tempora diei : 一日のうち、毎時、毎時に</p>
+<p>cognoscebat quae agerentur ad Avaricum : quae以下は間接疑問文「Avariciumで何が起きたかを知り（聞き））</p>
+<p>imperabat quid vellet fieri : velletの主語はVercingetorix 「何が為される事を望むかを命令した」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>そこでVercingetorixは通例の斥候部隊を通して、毎時ごとにAvaricumで何が起きているかを知り、また何をして欲しいかを命令することができた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Omnēs<span><br><br></span></a>
+<a class="note1">nostrās<span>noster nostra, nostrum ADJ  <br>:our;<br>(f 複数  対格)<br></span></a>
+<a class="note1">pābulātiōnēs<span>pabulatio pabulationis N (3rd) F  <br>:foraging;<br>(c 複数  対格)<br></span></a>
+<a class="note1">frūmentātiōnēsque<span>frumentatio frumentationis N (3rd) F  <br>:foraging; collecting of grain;<br>(c 複数  対格)<br></span></a>
+<a class="note0">observābat<span><br><br></span></a>
+<a class="note1">dispersōsque,<span>dispergo dispergere, dispersi, dispersus V (3rd)  <br>:scatter (about), disperse;<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">longius<span></span></a>
+<a class="note1">necessāriō<span>necessario ADV <br>:unavoidably, without option; necessarily, of necessity; inevitably/unavoidably;<br><br></span></a>
+<a class="note1">prōcēderent,<span>procedo procedere, processi, processus V (3rd)  <br>:proceed; advance; appear;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">adoriēbātur<span>adorior adoriri, adortus sum V (4th) DEP  <br>:assail/assault/attack, rise against (military/political/plague); accost/address;<br>(３人称 単数 未完了 受動態 直説法 )<br></span></a>
+<a class="note0">magnōque<span><br><br></span></a>
+<a class="note1">incommodō<span>incommodum incommodi N (2nd) N  <br>:disadvantage, inconvenience, setback, harm, detriment; defeat/disaster; ailment;<br>(X 単数 与格)<br></span></a>
+<a class="note1">adficiēbat,<span>adficio adficere, adfeci, adfectus V (3rd) TRANS  <br>:affect, make impression; move, influence; cause (hurt/death), afflict, weaken;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">etsī,<span><br><br></span></a>
+<a class="note1">quantum<span>quantum ADV <br>:so much as; how much; how far;<br><br></span></a>
+<a class="note1">ratiōne<span>ratio rationis N (3rd) F  <br>:account, reckoning, invoice; <strong>plan</strong>; prudence; method; reasoning; rule; regard;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">prōvidērī<span>provideo providere, providi, provisus V (2nd)  <br>:foresee; provide for, make provision; with DAT;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">poterat,<span>possum posse, potui, - V  <br>:be able, can;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">nostrīs<span><br><br></span></a>
+<a class="note1">occurrēbātur,<span>occurro occurrere, occucurri, occursus V (3rd)  <br>:run to meet; oppose, resist; come to mind, occur (with DAT);<br>(３人称 単数 未完了 受動態 直説法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">incertīs<span>incertus incerta, incertum ADJ  <br>:uncertain; unsure, inconstant, variable; doubtful;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">temporibus<span>tempus temporis N (3rd) N  <br>:time, condition, right time; season, occasion; necessity;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">dīversīsque<span>diversus diversa, diversum ADJ  <br>:opposite; separate, apart; diverse, unlike, different; hostile;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">itineribus<span></span></a>
+<a class="note1">īrētur.<span>eo ire, ivi(ii), itus V  <br>:go, walk; march, advance; pass; flow; pass (time); ride; sail;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p><strong>observabat omnes nostras pabulationes frumentationesque</strong>. 主語はVercingetorix。彼はローマ軍の兵糧作業を監視していたと言う事。</p>
+<p><strong>adoriebantur dispersos.</strong> dispersosは完了分詞で名詞として目的語になっている。「分散した（彼らを）攻撃した」</p>
+<p><strong>adficiebat magno incommodo</strong> : incommodoは与格で間接目的語</p>
+<p><strong>etsi occurrebatur ab nostris</strong>.&nbsp; occurrebaturはincommodis(与格）が省略されていると考えられる。非人称用法。「それは我軍によって対処される」</p>
+<p><strong>quantum poterat provideri ratione</strong>. rationeは手段の奪格で、ut以下で説明される。poteratも非人称。quantumは　as far as の意で「計画によって予測出来る範囲で」</p>
+<p>ut iretur incertis temporibus, diversis itineribus. ２つの独立奪格。「毎回違う時間に、または違う道筋で出て行く事」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>（Vercingetorixは）我々のすべての糧米、補給作業を監視しており、必要に駆られて遠くに出ていくと攻撃を加え、甚大な被害を与えた。しかし、それはうまく計画をすることで一定の対処が可能ではあった。つまり出動を不定期にしたり、異なる道筋を使うなどの事である。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

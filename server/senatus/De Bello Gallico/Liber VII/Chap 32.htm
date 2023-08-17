@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 32</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[32]<span></span></a>
+
+<a class="note0">Caesar<span></span></a>
+<a class="note0">Avaricī<span><br><br></span></a>
+<a class="note0">complūrēs<span><br><br></span></a>
+<a class="note1">diēs<span>dies diei N (5th) C  <br>:day; daylight; (sunlit hours); (24 hours from midnight); open sky; weather;<br>(c 複数  対格)<br></span></a>
+<a class="note1">commorātus<span>commoror commorari, commoratus sum V (1st) DEP  <br>:stop/stay/remain, abide; linger, delay; detain, be delayed (menses); dwell on;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note1">summamque<span>summus summa, summum ADJ  最上級<br>:highest, the top of; greatest; last; the end of;<br>(f 単数 対格)<br></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note0">cōpiam<span><br><br></span></a>
+<a class="note1">frūmentī<span>frumentum frumenti N (2nd) N  <br>:grain; crops;<br>(n 単数 属格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">reliquī<span><br><br></span></a>
+<a class="note0">commeātūs<span><br><br></span></a>
+<a class="note1">nactus<span>nanciscor nancisci, nactus sum V (3rd) DEP  <br>:obtain, get; find, meet with, receive, stumble on, light on;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">labōre<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">inopiā<span>inopia inopiae N (1st) F  <br>:lack, need; poverty, destitution, dearth, want, scarcity;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">refēcit.<span>reficio reficere, refeci, refectus V (3rd)  <br>:rebuild, repair, restore;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Avarici complures dies : 時空の対格（NewLatin 181.1)で時間の期間を表す。逐語的には「Avaricumの多くの日々を」</p>
+<p>commoratus, nactus : 分詞構文「留まったCaesarは」「補給したCaesarは」実際には、留まって、補給して、元気を回復した、と続く。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Caesarはしばらくの間Avaricumに滞在して、最高の食料やその他の消耗備品を補給し部隊を労働と不足から回復させた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Iam<span></span></a>
+<a class="note1">prope<span>prope propius, proxime ADV <br>:near, nearly; close by; almost;<br><br></span></a>
+<a class="note1">hieme<span>hiemps hiemis N (3rd) F  <br>:winter, winter time; rainy season; cold, frost; storm, stormy weather;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">cōnfectā<span>conficio conficere, additional, forms V TRANS  <br>:make, construct; prepare, complete, accomplish; cause; perform; do thoroughly;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">ipsō<span>ipse ipsa, ipsum PRON  <br>:himself/herself/itself; the very/real/actual one; in person; themselves (pl.);<br>(n 単数 奪格)<br></span></a>
+<a class="note1">annī<span>annus anni N (2nd) M  <br>:year (astronomical/civil); age, time of life; year's produce; circuit, course;<br>(X 単数 属格)<br></span></a>
+<a class="note1">tempore<span>tempus temporis N (3rd) N  <br>:time, condition, right time; season, occasion; necessity;<br>(n 単数 奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">gerendum<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">vocārētur<span>voco vocare, vocavi, vocatus V (1st)  <br>:call, summon; name; call upon;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">hostem<span></span></a>
+<a class="note0">proficīscī<span><br><br></span></a>
+<a class="note1">cōnstituisset,<span>constituo constituere, constitui, constitutus V (3rd)  <br>:|decide/resolve; decree/ordain; appoint, post/station (troops); settle (colony);<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">sīve<span>sive CONJ <br>:or if; or;<br><br></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">palūdibus<span><br><br></span></a>
+<a class="note0">silvīsque<span><br><br></span></a>
+<a class="note1">ēlicere<span>elicio elicere, elicui, elicitus V (3rd)  <br>:draw/pull out/forth, entice, elicit, coax;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">sīve<span><br><br></span></a>
+<a class="note1">obsidiōne<span>obsidio obsidionis N (3rd) F  <br>:siege; blockade;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">premere<span>premo premere, pressi, pressus V (3rd)  <br>:press, press hard, pursue; oppress; overwhelm;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">posset,<span></span></a>
+<a class="note0">lēgātī<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">prīncipēs<span><br><br></span></a>
+<a class="note0">Aeduōrum<span><br><br></span></a>
+<a class="note1">veniunt<span>venio venire, veni, ventus V (4th)  <br>:come;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">ōrātum<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">maximē<span><br><br></span></a>
+<a class="note1">necessāriō<span>necessarius necessaria, necessarium ADJ  <br>:necessary/needed/essential/indispensable; vital/private (body part); close tied;<br>(n 単数 奪格)<br><br></span></a>
+<a class="note1">tempore<span>tempus temporis N (3rd) N  <br>:time, condition, right time; season, occasion; necessity;<br>(n 単数 奪格)<br></span></a>
+<a class="note1">cīvitātī<span>civitas civitatis N (3rd) F  <br>:community/city/town/state; citizens; citizen rights/citizenship; naturalization;<br>(X 単数 与格)<br></span></a>
+<a class="note1">subveniat:<span>subvenio subvenire, subveni, subventus V (4th)  <br>:come to help, assist; rescue;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">summō<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">perīculō<span><br><br></span></a>
+<a class="note0">rem,<span></span></a>
+<a class="note0">quod,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">singulī<span>singuli <br>配分数 1<br>(m 複数  主格)<br></span></a>
+<a class="note1">magistrātūs<span>magistratus magistratus N (4th) M  <br>:magistracy, civil office; office; magistrate, functionary;<br>(c 複数  対格)<br></span></a>
+<a class="note1">antīquitus<span>antiquitus ADV <br>:formerly, in former/ancient/olden times, from antiquity; long ago/before;<br><br></span></a>
+<a class="note1">creārī<span>creo creare, creavi, creatus V (1st) TRANS  <br>:create/bring into being/make; procreate; beget/sire; give birth to;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">rēgiam<span>regius regia, regium ADJ  <br>:royal, of a king, regal;<br>(f 単数 対格)<br></span></a>
+<a class="note1">potestātem<span>potestas potestatis N (3rd) F  <br>:power, rule, force; strength, ability; chance, opportunity;<br>(c 単数 対格)<br></span></a>
+<a class="note0">annum<span></span></a>
+<a class="note1">obtinēre<span>obtineo obtinere, obtinui, obtentus V (2nd)  <br>:get hold of; maintain; obtain; hold fast, occupy; prevail;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">cōnsuēssent,<span>consuesco consuescere, consuevi, consuetus V (3rd)  <br>:accustom oneself; become/be accustomed/used; inure, habituate; familiarize;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">duo<span>duo -ae o, secundus -a -um, bini -ae -a, bis NUM  2<br>:two (pl.);<br>(m 複数  主格)<br></span></a>
+<a class="note1">magistrātum<span>magistratus magistratus N (4th) M  <br>:magistracy, civil office; office; magistrate, functionary;<br>(c 単数 対格)<br></span></a>
+<a class="note1">gerant<span>gero gerere, gessi, gestus V (3rd)  <br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">uterque<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note0">lēgibus<span><br><br></span></a>
+<a class="note0">creātum<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">dīcat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p><strong>hieme confecta</strong> : 独立奪格「冬が終わり」</p>
+<p>cum 反意節のCUMか時のcumか？多分反意節（NewLatin309.3)</p>
+<p><strong>ipso anni tempore</strong> : 原因の奪格。「1年のうちで適当な季節だったので」</p>
+<p><strong>legati veniunt oratum ut ~</strong> : oratumは分詞構文。「ut~を言うlegatiが来た。」が逐語訳</p>
+<p>ut subveniat civitati maxime necessario tempore. subveniatの主語はCaesar「Caesarは部族を助ける」</p>
+<p><font color="#ff0000">maxime necessario temporeがよく解らない。付帯状況の奪格か</font>？「非常な必要性がある状況」<font color="#ff0000">Liber I Chap16</font>に　[tam necessario tempore]がある。これは時の奪格のように思えるが...</p>
+<p>rem esse in summo periculo.</p>
+<p>cum consuessent singuli magistratus creari, duo magistratum gerant. sibguli, duoは配分数で複数のみ</p>
+<p><strong>uterque dicat se creatum esse legibus</strong>. 「各々が自分が法的に選ばれたと主張する」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>今や冬も終わりに近づき、戦いを継続するのに良い季節となった。そして、敵に向かって進軍を開始し、敵を沼や森から引きずり出すか、または遮断することで敵に圧力をかけるかしようとしたが、Aedui族の有力者が使者として訪れ、話した。部族が大変な状況であり助けを頼みたい。状況は非常に危険である。と言うのは、昔からの通例では、政府代表は一人で、そのものが一年の支配する権限を保持するのだが、二人の代表が作られ彼らは自分が法により選ばれたものであると主張しているからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hōrum<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">alterum<span>alter altera, alterum ADJ  <br>:one (of two); second/another; former/latter;<br>(m 単数 対格)<br></span></a>
+<a class="note0">Convictolitāvem,<span><br><br></span></a>
+<a class="note1">flōrentem<span>florens florentis (gen.), florentior -or -us, florentissimus -a -um ADJ  <br>:blooming/in bloom, flowering; flowery, bright/shining; flourishing, prosperous;<br>(c 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">illūstrem<span>illustris illustre, illustrior -or -us, illustrissimus -a -um ADJ  <br>:bright, shining, brilliant; clear, lucid; illustrious, <strong>distinguished</strong>, famous;<br>(c 単数 対格)<br></span></a>
+<a class="note0">adulēscentem,<span><br><br></span></a>
+<a class="note0">alterum<span></span></a>
+<a class="note0">Cotum,<span></span></a>
+<a class="note1">antīquissimā<span>antiquus antiqua -um, antiquior -or -us, antiquissimus -a -um ADJ  最上級<br>:old/ancient/aged; time-honored; simple/classic; venerable; archaic/outdated;<br>&nbsp;(n 複数  対格<br></span></a>
+<a class="note0">familiā<span><br><br></span></a>
+<a class="note0">nātum<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ipsum<span></span></a>
+<a class="note0">hominem<span></span></a>
+<a class="note0">summae<span></span></a>
+<a class="note0">potentiae<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">magnae<span></span></a>
+<a class="note1">cognātiōnis,<span>cognatio cognationis N (3rd) F  <br>:blood relation/relationship; kinsmen/relatives, family; consanguinity; affinity;<br>(X 単数 属格)<br></span></a>
+<a class="note0">cuius<span></span></a>
+<a class="note0">frāter<span><br><br></span></a>
+<a class="note0">Valetiācus<span><br><br></span></a>
+<a class="note0">proximō<span><br><br></span></a>
+<a class="note0">annō<span><br><br></span></a>
+<a class="note1">eundem<span>idem eadem, idem PRON  <br>:(w/-dem ONLY, idem, eadem, idem) same, the same, the very same, also;<br>(m 単数 対格)<br></span></a>
+<a class="note0">magistrātum<span><br><br></span></a>
+<a class="note1">gesserit.<span>gero gerere, gessi, gestus V (3rd)  <br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>&nbsp;(３人称 単数 完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>horum alterum esse Convictolitavem : そのうちの一人がConvictolitavisである。</p>
+<p>florentem = influential, powerful<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>そのうちの一人はConvictolitavisである。影響力のある偉い若者である。もう一人はCotusで、古くからの家柄の生まれで、彼自身も大変権力のある人物であり、沢山の血縁を持ち、彼の兄弟であるValentiacusは同じ政府で前任の代表であった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Cīvitātem<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">omnem<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">armīs;<span><br><br></span></a>
+<a class="note1">dīvīsum<span>divido dividere, divisi, divisus V (3rd)  <br>:divide; separate, break up; share, distribute; distinguish;<br>(完了 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note1">senātum,<span>senatus senatus N (4th) M  <br>:senate;<br>(c 単数 対格)<br></span></a>
+<a class="note0">dīvīsum<span><br><br></span></a>
+<a class="note0">populum,<span></span></a>
+<a class="note0">suās<span><br><br></span></a>
+<a class="note0">cuiusque<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">clientēlās.<span>clientela clientelae N (1st) F  <br>:clientship; vassalage; patronage; protection; clients; vassals; allies (pl.);<br>(c 複数  対格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>divisum (esse) senatum<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>部族は皆武装している。長老会も分裂し、平民も分裂して、各々自身の郎党、被支援者たちともどもに。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quod<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">diūtius<span>diu diutius, diutissime ADV <br>:(for) a long/considerable time/while; long since;<br><br></span></a>
+<a class="note1">alātur<span>alo alere, alui, altus V (3rd) TRANS  <br>:feed, nourish, rear, nurse, suckle; cherish; support, maintain, develop;<br>(３人称 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note1">contrōversia,<span>controversia controversiae N (1st) F  <br>:controversy/dispute; debate; moot case debated in school, forensic exercise;<br>(c 単数 主格)<br></span></a>
+<a class="note1">fore<span>sum esse, fui, futurus V  <br>:be;<br>(  未来 能動態 不定詞 )<br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">pars<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note0">cīvitātis<span><br><br></span></a>
+<a class="note1">cōnflīgat.<span>confligo confligere, conflixi, conflictus V (3rd)  <br>:clash, collide; contend/fight/combat; be in conflict/at war; argue/disagree;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>uti pars civitatis confligat cum parte. 部族の部分が他の部分と衝突する事。（結果の名詞節）<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>もし長くこの闘争が続くようなら、部族内で衝突が起きるであろう。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Id<span></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note1">accidat,<span>accidit accidere, accidit, accisus est V (3rd) IMPERS  <br>:happens, turns out, befalls; fall upon; come to pass, occur;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">positum<span>pono ponere, posui, positus V (3rd) TRANS  <br>:put/place/set; station/post (troops); pitch (camp); situate; set up; erect;<br>(完了 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">dīligentiā<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">auctōritāte.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>postium (esse)か？<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>それを阻止するものは、（Caesarの）尊厳と権威にある。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

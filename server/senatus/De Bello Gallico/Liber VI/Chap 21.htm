@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 21</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[21]<span></span></a>
+
+<a class="note0">Germānī<span><br><br></span></a>
+<a class="note1">multum<span>multum plus, plurimum ADV <br>:much, greatly, plenty, very; more; most;<br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">hāc<span><br><br></span></a>
+<a class="note0">cōnsuētūdine<span><br><br></span></a>
+<a class="note1">differunt.<span>differo differre, distuli, dilatus V  <br>:postpone/delay/<strong>differ</strong>; put off, keep waiting; give respite to; differ, disagree;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>ゲルマンはこの生活習慣からは大きく異なっている。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Nam<span>nam CONJ <br>:for, on the other hand; for instance;<br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">druidēs<span></span></a>
+<a class="note0">habent,<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">dīvīnīs<span>divinus divina -um, divinior -or -us, divinissimus -a -um ADJ  <br>:divine, of a deity/god, godlike; sacred; divinely inspired, prophetic; natural;<br>(X 複数  与格)<br></span></a>
+<a class="note1">praesint,<span>praesum praeesse, praefui, praefuturus V  <br>:be in charge/control/head (of) (w/DAT); take the lead (in); be present (at);<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">sacrificiīs<span>sacrificium sacrifici(i) N (2nd) N  <br>:sacrifice, offering to a deity;<br>(X 複数&nbsp; 与格)？<br><br></span></a>
+<a class="note1">student.<span>studeo studere, studui, - V (2nd)  <br>:desire, be eager for; busy oneself with; strive;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>praesum, studeoは与格支配。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>神の事柄を司るDruidを持つことは無いし、犠牲に対しても熱心ではない。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Deōrum<span><br><br></span></a>
+<a class="note1">numerō<span>numerus numeri N (2nd) M  <br>:number/sum/total/<strong>rank</strong>; (superior) numerical strength/plurality; <strong>category</strong>; tally;<br>&nbsp;(X 単数 与格)<br><br></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">sōlōs<span><br><br></span></a>
+<a class="note1">dūcunt,<span>duco ducere, additional, forms V  <br>:lead, command; think, consider, regard; prolong;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note1">cernunt<span>cerno cernere, crevi, cretus V (3rd) TRANS  <br>:sift, separate, distinguish, discern, resolve, determine; see; examine; decide;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quōrum<span><br><br></span></a>
+<a class="note1">apertē<span>aperte apertius, apertissime ADV <br>:openly, publicly; manifestly; w/o disguise/reserve; plainly, clearly, frankly;<br><br></span></a>
+<a class="note1">opibus<span>ops opis N (3rd) F  <br>:power, might; help; influence; resources/wealth (pl.);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">iuvantur,<span>juvo juvare, juvi, jutus V (1st)  <br>:help, assist, aid, support, serve, further; please, delight, gratify;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note0">Sōlem<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Vulcānum<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Lūnam,<span><br><br></span></a>
+<a class="note0">reliquōs<span><br><br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">fāmā<span><br><br></span></a>
+<a class="note1">quidem<span>quidem ADV <br>:indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;<br><br></span></a>
+<a class="note1">accēpērunt.<span>accipio accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>Deorum numero</strong> : Chap 6のhostium numero(=as enemy), Chap13 servorum loco habetur と同様の意味。（～として）habeo = ducunt numeroはカテゴリという意味もあり、間接目的語の与格、と思われる。</p>
+<p><strong>ducunt Deorum numero , eos solos</strong>. 「彼らかはeosだけを神として考えた」eosはquos cernunt, quorum opibus juvanturで説明される・「彼らが調べて、それらの力で明らかなご利益のあるものだけを神だと考えた」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>彼らは、調べてその力が明らかにご利益のあるものだけを神として考えた。即ち、太陽、火、月である。その他のものはたとえ名前だけでも認めなかった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Vīta<span><br><br><br></span></a>
+<a class="note0">omnis<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">vēnātiōnibus<span>venatio venationis N (3rd) F  <br>:hunting; the chase;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">studiīs<span>studium studi(i) N (2nd) N  <br>:eagerness, enthusiasm, zeal, spirit; devotion, pursuit, study;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">reī<span></span></a>
+<a class="note0">mīlitāris<span><br><br></span></a>
+<a class="note1">cōnsistit:<span>consisto consistere, constiti, constitus V (3rd)  <br>:|||come about, exist; fall due (tax); be established; remain valid/applicable;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">parvulīs<span>parvulus parvuli N (2nd) M  <br>:infancy, <strong>childhood</strong>; small child, infant;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">labōri<span>labor laboris N (3rd) M  <br>:labor/toil/exertion/effort/work; task/undertaking; production; childbirth;<br>(X 単数 与格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">dūritiae<span>duritia duritiae N (1st) F  <br>:<strong>hardness</strong>, insensibility; <strong>hardship</strong>, oppressiveness; strictness, rigor;<br>&nbsp;(c 単数 与格)<br></span></a>
+<a class="note1">student.<span>studeo studere, studui, - V (2nd)  <br>:<strong>desire</strong>, be eager for; busy oneself with; strive;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>omnis vita consistit in ~ :　生活のすべては～から成っている。</p>
+<p>ab parvulis : 子供の時から<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>生活のすべては、狩りと軍事に関する事から成っている。子供のときから労働と厳しさに熱意を持つ。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quī<span><br><br></span></a>
+<a class="note1">diūtissimē<span>diu diutius, diutissime ADV <br>:(for) a long/considerable time/while; long since;<br><br></span></a>
+<a class="note1">impuberēs<span>impubes (gen.), impuberis ADJ  <br>:below age of puberty, <strong>under age</strong>, youthful; beardless; chaste/virgin/celibate;<br>(c 複数&nbsp; 対格)<br><br></span></a>
+<a class="note1">permānsērunt,<span>permaneo permanere, permansi, permansus V (2nd)  <br>:last, continue; remain; endure;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">maximam<span></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note1">ferunt<span>fero ferre, tuli, latus V  <br>:bring, bear; tell/speak of; consider; carry off, win, receive, produce; get;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note1">laudem:<span>laus laudis N (3rd) F  <br>:praise, approval, merit; glory; renown;<br>(c 単数 対格)<br></span></a>
+<a class="note1">hōc<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note1">alī<span>alo alere, alui, alitus V (3rd) TRANS  <br>:feed, nourish, rear, <strong>nurse</strong>, suckle; cherish; support, maintain, develop;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">statūram,<span>statura staturae N (1st) F  <br>:height, stature;<br>(c 単数 対格)<br></span></a>
+<a class="note0">alī<span><br><br></span></a>
+<a class="note1">vīrēs<span>vis vis N (3rd) F  <br>:strength (sg. only), force, power, might, violence;<br>(c 複数  対格)<br></span></a>
+<a class="note1">nervōsque<span>nervus nervi N (2nd) M  <br>:|strength; vigor, nerve, force, power; sexual power, virility; penis (rude);<br>(c 複数  対格)<br></span></a>
+<a class="note1">cōnfīrmārī<span>confirmo confirmare, confirmavi, confirmatus V (1st) TRANS  <br>:strengthen, develop, build up (w/troops); make secure/firm; reassure; secure;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">putant.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>(ei) qui permanserunt impuberes dutissime. 長い間若者を続ける人、名詞節で主語。動詞はferunt</p>
+<p>hoc staturam ali : hoc 手段、原因の奪格。「そのことにより、栄養が身長にいきわたり」</p>
+<p>hoc statram ali, vires ali, nervos confimari : hocは全体にかかる。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>長く青年期に留まる人が、仲間内では最大の褒美を勝ち得た。それにより、身長、頑健さ、男性的な強さが養われると考えた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Intrā<span>intra PREP ACC <br>:within, inside; during; under;<br><br></span></a>
+<a class="note1">annum<span>annus anni N (2nd) M  <br>:year (astronomical/civil); age, time of life; year's produce; circuit, course;<br>(c 単数 対格)<br></span></a>
+<a class="note1">vērō<span>vero ADV <br>:yes; in truth; certainly; truly, to be sure; however;<br><br></span></a>
+<a class="note1">vīcēsimum<span>vicesimus <br>序数 20<br>(m 単数 対格)<br></span></a>
+<a class="note0">fēminae<span><br><br></span></a>
+<a class="note1">nōtitiam<span>notitia notitiae N (1st) F  <br>:notice; acquaintance;<br>(c 単数 対格)<br></span></a>
+<a class="note0">habuisse<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">turpissimīs<span>turpis turpe, turpior -or -us, turpissimus -a -um ADJ  最上級<br>:ugly; nasty; <strong>disgraceful</strong>; indecent; base, shameful, disgusting, repulsive;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">habent<span></span></a>
+<a class="note0">rēbus;<span><br><br></span></a>
+<a class="note0">cuius<span><br><br></span></a>
+<a class="note1">reī<span>reus rea, reum ADJ  <br>:liable to (penalty of); guilty;<br>(n 単数 属格), <br></span></a>
+<a class="note0">nūlla<span><br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">occultātiō,<span>occultatio occultationis N (3rd) F  <br>:concealment;<br>(X 単数 主格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">prōmiscuē<span>promiscuus promiscua, promiscuum ADJ  <br>:common, shared general, indiscriminate;<br>(m 単数 呼格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">flūminibus<span><br><br></span></a>
+<a class="note1">perluuntur<span>perluo perluere, perlui, perlutus V (3rd)  <br>:wash off or thoroughly, bathe;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">pellibus<span>pellis pellis N (3rd) F  <br>:<strong>skin</strong>, hide; pelt;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">parvīs<span><br><br></span></a>
+<a class="note1">rēnōnum<span>reno renonis N (3rd) M  <br>:reindeer-skin; deerskin garment; fur cloak;<br>(c 複数  属格)<br></span></a>
+<a class="note1">tegimentīs<span>tegimentum tegimenti N (2nd) N  <br>:covering/cover/protection; <strong>clothing</strong>; body armor; skin/shell/husk (animal/fruit);<br>(X 複数  奪格)<br></span></a>
+<a class="note0">ūtuntur<span><br><br></span></a>
+<a class="note0">māgnā<span><br><br></span></a>
+<a class="note0">corporis<span></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note0">nūdā.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>habuisse feminae notitiam intra vicesimum annum: intraは対格支配の前置詞で、vicesimum annumで一致。「20年の間に女性と知り合うになること」</p>
+<p>habent in turpissimis rebus : この場合の主語は「彼ら」でhabentは考える、保つの意。habisseの不定詞句が目的句。</p>
+<p>「～知り合うことは、最も恥ずべきことと考えた」（知り合うことを恥ずべき事柄に保持した）</p>
+<p>nulla est occultatio cujus rei : cujus rei = of that matter 「そのことについて何も隠すことは無かった」</p>
+<p>perluuntur in fluminibus promiscue : 「無差別に河で水浴びをする（男女混合と言う事）<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>実に20歳になる前に女性の知識を持つことは最も恥ずべきこととした。と言うのは、このことに関して何も隠し立てをしなかったからである。男女区別なく河で水浴びをしたし、その時は皮膚または小さな布を用いるだけで、身体の多くが裸であった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

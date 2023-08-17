@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 2</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[2]<span></span></a>
+
+<a class="note1">Mercātōribus<span>mercator 複　与格<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">aditus<span>aditus aditus M 単　主格　;= approach, access, attack</span></a>
+<a class="note1">magis<span>副詞　;= to greater extent, more, rather</span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">bellō<span>bellum 単　奪格<br></span></a>
+<a class="note1">cēperint<span>capio capere, cepi, captus V (3rd) TRANS  <br>:take hold, seize; grasp; take bribe; arrest/capture; put on; occupy; captivate;<br>(３人称 複数  完了 能動態 接続法 )<br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">vēndant<span>vendo vendere, vendidi, venditus V (3rd)  <br>:sell;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note1">habeant,<span>3複現在　接続法</span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">ūllam<span><br><br></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">importārī<span>importo importare, importavi, importatus V (1st)  <br>:bring in, convey; import; bring about, cause;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">dēsīderent.<span>desidero desiderare, desideravi, desideratus V (1st) TRANS  <br>:desire/want, long/wish for, request, require/need; miss, lack; lose;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>mercatoribus est aditus : aditusは名詞で、mercatoribusは[<strong>所有の与格</strong>] 「商人はアクセスを持っている」</p>
+<p>ut habeant (eos) quibus vendant : eosはquibusの先行詞でhabeantの目的語。「その人に対して売る、人がいないかと」</p>
+<p><strong>quibusは与格</strong>で間接目的語。売るものはquae bello ceperintで「戦争で使うもの」belloは場所の奪格。ceperintはhabeantに誘引された接続法。「戦争に使うものを誰かに売ると言うよりは」</p>
+<p><strong>quam = than</strong>, <strong>quo = because</strong>&nbsp; magnis quamと言うのは殆どnonと同じ意味で、non quod= non quoという表現と同じであり、接続法になる。（NewLatin286.1.b)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>商人達は訪問していて、それは自分たちのために輸入するというより、誰かに戦争で使うものを売るためであった。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quīn<span>副詞　in fact<br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">iūmentīs,<span>jumentum jumenti N (2nd) N  <br>:mule; beast of burden;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">maximē<span><br><br></span></a>
+<a class="note0">Gallī<span><br><br></span></a>
+<a class="note1">dēlectantur<span>delector delectari, delectatus sum V (1st) DEP  <br>:delight, please, amuse, fascinate; charm, lure, entice; be a source of delight;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note1">quaeque<span>quisque quaeque,quidque INDEF <br>:(w/-que) each, each one; every, everybody, everything (more than 2); whatever;<br>(n 複数  対格)<br></span></a>
+<a class="note1">impēnsō<span>impensus impensa, impensum ADJ  <br>:immoderate, excessive;<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note1">parant<span>paro parare, paravi, paratus TRANS ３複　現在　;= prepare, furnish, supply</span></a>
+<a class="note1">pretiō,<span>pretium preti(i) N (2nd) N  <br>:price/value/worth; reward/pay; money; prayer/request;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">Germānī<span><br><br></span></a>
+<a class="note1">importātīs<span>importo importare, importavi, importatus V (1st)  <br>:bring in, convey; import; bring about, cause;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">ūtuntur,<span><br><br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note1">nāta,<span>nascor nasci, natus sum V (3rd) DEP  <br>:be produced spontaneously, come into existence/being; spring forth, grow; live;<br>(完了 分詞 受動態 n 複数  主格)<br></span></a>
+<a class="note1">parva<span>parvus n 複　主格　;= small</span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">dēfōrmia,<span>deformis deforme, deformior -or -us, deformissimus -a -um ADJ  <br>:deformed/ illformed/ misshapen/disfigured; shameful/ degrading/ base; ugly/ loathsome<br>(n 複数  主格)<br></span></a>
+<a class="note1">haec<span>n 複　対格　efficiuntの目的語</span></a>
+<a class="note1">cotīdiānā<span>cotidianus cotidiana, cotidianum ADJ  <br>:daily, everyday; usual/habitual, normal/regular; ordinary/common/unremarkable;<br>(f 単数 奪格)<br></span></a>
+<a class="note1">exercitātiōne<span>exercitatio exercitationis N (3rd) F  <br>:exercise, <strong>training</strong>, practice; discipline;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">summī<span>summum summi N (2nd) N  <br>:top; summit, end, last; highest place; top surface; (voice) highest, loudest;<br>(n 単数 属格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">sint<span></span></a>
+<a class="note1">labōris<span>labor laboris N (3rd) M  <br>:labor/toil/exertion/effort/work; task/undertaking; production; childbirth;<br>(X 単数 属格)<br></span></a>
+<a class="note1">efficiunt.<span>efficio ３複　現在　;= briigng about, effect, excute, accomplish</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>jumntis</strong> : 馬のこと。utunturに依存して奪格(NewLatin218.1)</p>
+<p>quibus : delectantur(delector)は奪格支配</p>
+<p><strong>quaeque </strong>= et quae</p>
+<p><strong>haec ut sint efficiunt</strong> : haecはefficiuntの目的語で「それを～にした」ut sintは目的のut節でto be とかbeingの意。</p>
+<p><strong>ut sint summi laboris</strong> : 逐語的には「最高の労働力であるように」laborisは性質の属格で、それを叙述的に使用（NewLatin203)</p>
+<p>cotidiana exercitatione : 毎日の訓練によって　手段の奪格。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>実際のところ、馬に関してであるが、ガリア人はそれを大層大切にして、それに対しては高い金を払うが、ゲルマン人は輸入したものは使わない。むしろ、彼らの中で育ったもの、それは小さくて不格好であるが、それを毎日の訓練によって最高の労働力に仕立てている。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Equestribus<span>equester equestris equestre 形容詞　複　奪格</span></a>
+<a class="note1">proeliīs<span>proelium N 複　奪格　;= battle<br></span></a>
+<a class="note0">saepe<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">equīs<span><br><br></span></a>
+<a class="note1">dēsiliunt<span>desilio desilire, desilivi, desultus V (4th) TRANS  <br>:leap/jump down, dismount, alight; (chariot); jump headlong, venture heedlessly;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">pedibus<span>pes pedis N (3rd) M  <br>:foot;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">proeliantur,<span>proelior proeliari, proeliatus sum V (1st) DEP  <br>:fight;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note1">equōs<span>equus equi N (2nd) M  <br>:horse; steed;<br>(c 複数  対格)<br></span></a>
+<a class="note0">eōdem<span><br><br></span></a>
+<a class="note1">remanēre<span>remaneo remanere, remansi, remansus V (2nd)  <br>:stay behind; continue, remain;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">vēstīgiō<span>vestigium vestigi(i) N (2nd) N  <br>:step, track; trace; footstep;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">adsuēfēcērunt,<span>adsuefacio adsuefacere, adsuefeci, adsuefactus V (3rd) TRANS  <br>:accustom (to), habituate, inure; make accustomed/used (to), train;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">celeriter,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">ūsus<span>usus usus M 単　主格 ;= use, experience, skill, custom, <strong>この場合need</strong><br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">recipiunt:<span>recipio recipere, recepi, receptus ３複　現在　;= keep back, recover, accept</span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">mōribus<span>mos moris N (3rd) M  <br>:custom, habit; mood, manner, fashion; character (pl.), behavior, morals;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">turpius<span>turpis turpe, turpior -or -us, turpissimus -a -um ADJ  比較級<br>:ugly; nasty; disgraceful; indecent; base, shameful, disgusting, repulsive;<br>&nbsp;(n 単数 対格), <br></span></a>
+<a class="note1">quicquam<span>=quidquam ｎ単　対格　;= anything, any,</span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">inertius<span>iner ineris inerior, inerissimus 形容詞　比較級　n単　対格　;= helpless, weak, inactive, sluggish, unskilful,imcopotent</span></a>
+<a class="note0">habētur<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">ephippiīs<span>ephippium ephippi(i) N (2nd) N  <br>:pad saddle, horse blanket (to ride on);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">ūtī.<span>utor uti, usus sum V (3rd) DEP  <br>:use, make use of, enjoy; enjoy the friendship of (with ABL);<br>(  現在 受動態 不定詞 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>equestribus proeliis : 一種の独立奪格 「騎馬の戦いの時」</p>
+<p>pedibus = on foot [<strong>付帯状況の奪格</strong>]</p>
+<p>eodem vestigio : 場所の奪格で前置詞なしの場合。(NewLatin228.1) 「同じ場所で」</p>
+<p>cum usus est : ususはこの場合必要、というニュアンス。</p>
+<p>eorum moribus : 「彼らの慣習によって」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>騎馬による戦いの時にはよく馬から降りて戦った。馬を訓練して同じ場所に留まるようにして、必要になれば素早く馬を確保した。また彼らの慣習によれば、鞍を使用することは最も醜悪で不ざまなことであった。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Itaque<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">quemvīs<span>quivis quaevis, quidvis   <br>:(w/-vis) whoever it be, whom you please; any whatever;<br>(m 単数 対格)<br></span></a>
+<a class="note1">numerum<span>numenus numeri M 単　対格　;= number , sum, total</span></a>
+<a class="note1">ephippiātōrum<span>ephippiatus ephippiata, ephippiatum ADJ  <br>:riding with a saddle;<br>(m 複数  属格)<br></span></a>
+<a class="note1">equitum<span>eques equitis N (3rd) M  <br>:horseman/cavalryman/rider; horsemen (pl.), cavalry; equestrian order;<br>(c 複数  属格)<br></span></a>
+<a class="note1">quamvīs<span>quamvis 副詞　;= however much, although</span></a>
+<a class="note0">paucī<span><br><br></span></a>
+<a class="note1">adīre<span>adeo adire, adivi(ii), aditus V  <br>:approach; attack; visit, address; undertake; take possession (inheritance);<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">audent.<span>audeo audere, ausus sum V (2nd) SEMIDEP  <br>:intend, be prepared; dare/have courage (to go/do), act boldly, venture, risk;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>quemvis : quivisという不定形容詞の対格でnumerum(対格）を修飾 adは対格支配</p>
+<p>quamvis : これは副詞で、hoever much, althoughという意味。quamvis pauciで「しかしそれは少なかったのだが」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>従って、数はともかく鞍を装着した馬、実際それは少なかった、に対し敢えて売り込んだ。</p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Vīnum<span>vinum vini N 単　主格　;= wine<br></span></a>
+<a class="note1">omnīnō<span>副詞　;= entirely, altogether<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">importārī<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">patiuntur,<span>patior pati, passus sum V (3rd) DEP  <br>:suffer; allow; undergo, endure; permit;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note1">rē<span>res rei F 単　奪格<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">labōrem<span>labor laboris N (3rd) M  <br>:labor/toil/exertion/effort/work; task/undertaking; production; childbirth;<br>(c 単数 対格)<br></span></a>
+<a class="note1">ferendum<span>fero ferre, tuli, latus V  <br>:bring, bear; tell/speak of; consider; carry off, win, receive, produce; get;<br>(未来 分詞 受動態 m 単数 対格)<br>ここは動形容詞<br><br></span></a>
+<a class="note1">remollēscere<span>remollesco remollescere, -, - V (3rd)  <br>:become soft again; grow soft;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">hominēs<span>M 複　対格<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">effēminārī<span>effemino effeminare, effeminavi, effeminatus 不定詞　;= weaken, enervate, unman<br></span></a>
+<a class="note1">arbitrantur.<span>arbitror arbitrori, arbitratus sum DEP ３複　受動　;= observe, witness, testify, decide,judge</span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p>vinum 最初にあるのは強調のため。</p>
+<p>ad laborem ferendum : 労働を成すためには　「働くことについては」動形容詞文（NewLatin 339.2)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>酒は輸入を完全に禁止されていた。というのもそれによって、働くということに関しては、人は軟弱になり、弱くなると思われていたからである。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a>
+</div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

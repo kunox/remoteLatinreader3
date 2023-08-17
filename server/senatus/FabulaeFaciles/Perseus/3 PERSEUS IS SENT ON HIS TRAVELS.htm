@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 3 PERSEUS IS SENT ON HIS TRAVELS.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 2.5vw;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Perseus<span></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0">multōs<span></span></a>
+<a class="note0">annōs<span></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note1">habitābat,<span>hăbĭto habitare, habitavi, habitatus V (1st)  X<br>:inhabit, dwell; live, stay;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">mātre<span></span></a>
+<a class="note0">suā<span></span></a>
+<a class="note1">vītam<span>vīta vitae N (1st) F <br>:life, career, livelihood; mode of life;<br>(単数 対格) <br></span></a>
+<a class="note1">beātam<span>bĕātus beata -um, beatior -or -us, beatissimus -a -um ADJ  <br>:happy, fortunate, bringing happiness; rich, wealthy, copious, sumptuous;<br>(F 単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">agēbat.<span>ăgo agere, egi, actus V (3rd)  X<br>:drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); deliver (speech);<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">At<span>at CONJ <br>&gt;:but, but on the other hand; on the contrary; while, whereas; but yet; at least;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Polydectēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Danaën<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">magnopere<span>magnopere ADV <br>&gt;:greatly, exceedingly; with great effort; very much; particularly, especially;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">amābat,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">mātrimōnium<span>mātrĭmōnĭum matrimoni(i) N (2nd) N <br>:marriage; matrimony;<br>(単数 対格) <br></span></a>
+<a class="note1">dūcere<span>dūco ducere, additional, forms V  X<br>:lead, command; think, consider, regard; prolong;<br>&nbsp;不定詞<br></span></a>
+<a class="note0">volēbat.<span></span></a>
+<a class="note0">Hoc<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">cōnsilium<span>consĭlĭum consili(i) N (2nd) N <br>:|decision/resolution; intention/purpose/policy/plan/action; diplomacy/strategy;<br>(単数 主格) <br></span></a>
+<a class="note0">Perseō<span></span></a>
+<a class="note1">minimē<span>parvus parva -um, minor -or -us, minimus -a -um ADJ  最上級<br>:small, little, cheap; unimportant; (SUPER) smallest, least;<br>(M 単数 呼格) <br></span></a>
+<a class="note1">grātum<span>grātus grata -um, gratior -or -us, gratissimus -a -um ADJ  <br>:pleasing, acceptable, agreeable, welcome; dear, beloved; grateful, thankful;<br>(N 単数 主格)&nbsp; <br></span></a>
+<a class="note0">erat.<span></span></a>
+<a class="note0">Polydectēs<span></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0">Perseum<span></span></a>
+<a class="note1">dīmittere<span>dīmitto dimittere, dimisi, dimissus V (3rd) TRANS  <br>:send away/off; allow to go, let go/off; disband, discharge, dismiss (soldiers);<br>&nbsp;不定詞<br></span></a>
+<a class="note0">cōnstituit.<span></span></a>
+<a class="note0">Tum<span></span></a>
+<a class="note1">iuvenem<span>jŭvĕnis juvenis N (3rd) C <br>:youth, young man/woman;<br>(単数 対格) <br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">vocāvit<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note1">dīxit:<span>dīco dicere, dixi, dictus V (3rd)  X<br>:say, declare, state; allege, declare positively; assert; plead (case);<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note1">"Turpe<span>turpe turpis N (3rd) N <br>&gt;:disgrace; shame, reproach; base/shameful thing;<br>(単数 主格)<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">hanc<span></span></a>
+<a class="note1">ignāvam<span>ignāvus ignava -um, ignavior -or -us, ignavissimus -a -um ADJ  <br>:lazy/idle/sluggish; spiritless; cowardly, faint-hearted; ignoble, mean; useless;<br>(F 単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vītam<span></span></a>
+<a class="note1">agere;<span>ăgo agere, egi, actus V (3rd)  X<br>:drive/urge/conduct/<strong>act</strong>; spend (time w/cum); thank (w/gratias); deliver (speech);<br>&nbsp;不定詞<br></span></a>
+<a class="note1">iam<span>jam ADV <br>&gt;:now, already, by/even now; besides;<br><br></span></a>
+<a class="note1">dūdum<span>dudum ADV <br>&gt;:little while ago; formerly;<br><br></span></a>
+<a class="note0">tū<span></span></a>
+<a class="note0">adulēscēns<span><br><br></span></a>
+<a class="note0">es.<span></span></a>
+<a class="note1">Quō<span>quo ADV <br>&gt;:where, to what place; <strong>to what purpose</strong>; for which reason, therefore;<br><br></span></a>
+<a class="note1">ūsque<span>usque ADV <br>&gt;:all the way, right on; all the time, continuously, at every point, always;<br><br></span></a>
+<a class="note0">hīc<span></span></a>
+<a class="note1">manēbis?<span>mănĕo manere, mansi, mansus V (2nd)  X<br>:remain, <strong>stay</strong>, abide; wait for; continue, endure, last; spend the night (sexual);<br>(2 単数 未来 能動態 直接法) <br></span></a>
+<a class="note0">Tempus<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">arma<span></span></a>
+<a class="note0">capere<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">virtūtem<span></span></a>
+<a class="note1">praestāre.<span>praestō praestare, praestavi, praestatus V (1st)  X<br>:excel, surpass, be outstanding/superior/best/greater/preferable (to); <strong>prevail;</strong><br>&nbsp;不定詞<br></span></a>
+<a class="note0">Hinc<span></span></a>
+<a class="note1">abī,<span>ăbĕo abire, abivi(ii), abitus V INTRANS  <br>:depart, go away; go off, go forth; pass away, die, disappear; be changed;<br>(2 単数 現在 能動態 <strong>命令法</strong>) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">caput<span>căpŭt capitis N (3rd) N <br>:head; person; life; leader; top; source/mouth (river); capital (punishment);<br>&nbsp;(単数 対格) <br></span></a>
+<a class="note0">Medūsae<span></span></a>
+<a class="note0">mihi<span></span></a>
+<a class="note1">refer.”<span>rĕfĕro referre, rettuli, relatus V  X<br>:bring/carry back/again/home; move/draw/force back, withdraw; go back, return;<br>(2 単数 現在 能動態 命令法) <br></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" style="font-size: 1.5vw;" spellcheck="false"><p>multos annos : 長年の間、時空の対格といわれ、時間の期間空間の距離は対格で表す。（B.181.1)</p>
+<p>minine : parvusの最上級 minimusの副詞形、<strong>副詞の最上級は形容詞の単数属格の語尾、iをeにする</strong>。（B.76.2)</p>
+<p><strong>turple est</strong> の主語は、agere ignavam vitam である。これは「主語の対格をとる不定詞」と言われ「無為な生活をすること」の意。これらの主語の対格付きの不定詞は非人称動詞の主語としてよく使われる。無為な生活をおくることは恥である、となる。（B.330)</p>
+<p><strong>arma capere, praestare virtutem</strong> も同じく主語の対格付きの不定詞で、文の主語になっている。</p>
+<p>quo usque : quoは疑問副詞でこの場合「どの程度」のような意味。usqueは up to (point)で「まで」の意。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 1.5vw;" spellcheck="false"><p>Perseusはそこで長年の間暮らし、母親とともに幸せに過ごした。ところがPolydectesはDanaeを大層、愛するようになり、結婚できる関係になることを望んだのです。これはPerseusにとっては最も望まない計画でした。そこでPolydectesはPerseusを追い出そうと決めたのでした。若者を自身の前に呼び出し言いました。「無為な生活をおくることは恥ずべきことである。君は十分に大人である。どの程度になるまで、ここに留まるつもりなのか？武器を取り、勇気を示すときである。ここを去り、私にMedusaの首をもって来なさい」<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

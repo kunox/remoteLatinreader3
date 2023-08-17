@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 17</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[17]<span></span></a>
+
+<a class="note1">Deum<span>Deus Dei N (2nd) M  <br>:God (Christian text); god; divine essence/being, supreme being; statue of god;<br>(c 単数 対格)<br></span></a>
+<a class="note0">maximē<span><br><br></span></a>
+<a class="note0">Mercurium<span></span></a>
+<a class="note1">colunt.<span>colo colere, colui, cultus V (3rd)  <br>:|honor, cherish, <strong>worship</strong>; tend, take care of; adorn, dress, decorate, embellish;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>colunt maxime Deum, Mercurium. : DeumとMercuriumは同格。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼らは神のなかでも、Mercuriusを特に崇めていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Huius<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(X 単数 <strong>属格</strong>)<br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">plūrima<span><br><br></span></a>
+<a class="note0">simulācra:<span><br><br></span></a>
+<a class="note1">hunc<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(m 単数<strong> 対格)</strong><br></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note1">inventōrem<span>inventor inventoris N (3rd) M  <br>:inventor; author; discoverer;<br>(c 単数 対格)<br></span></a>
+<a class="note1">artium<span>ars artis N (3rd) F  <br>:skill/craft/art; trick, wile; science, knowledge; method, way; character (pl.);<br>(c 複数  属格)<br></span></a>
+<a class="note1">ferunt,<span>fero ferre, tuli, latus V  <br>:bring, bear; tell/speak of; consider; carry off, win, receive, produce; get;<br>(３人称 複数  現在 能動態 直説法 )<br><br></span></a>
+<a class="note0">hunc<span></span></a>
+<a class="note1">viārum<span>via viae N (1st) F  <br>:way, road, street; journey;<br>(c 複数  属格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">itinerum<span></span></a>
+<a class="note1">ducem,<span>dux ducis N (3rd) M  <br>:leader, guide; commander, general; Duke (medieval, Bee);<br>(c 単数 対格)<br></span></a>
+<a class="note0">hunc<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">quaestūs<span>quaestus quaestus N (4th) M  <br>:gain, profit;<br>&nbsp;(c 複数  対格)<br></span></a>
+<a class="note1">pecūniae<span>pecunia pecuniae N (1st) F  <br>:money; property;<br>(c 単数 属格)<br></span></a>
+<a class="note1">mercātūrāsque<span>mercatura mercaturae N (1st) F  <br>:trade, commerce;<br>(c 複数  対格)<br></span></a>
+<a class="note0">habēre<span><br><br></span></a>
+<a class="note1">vim<span>vis viris N (3rd) F  <br>:strength (bodily) (pl.), force, power, might, violence; resources; large body;<br>(f 単数 対格)<br></span></a>
+<a class="note0">maximam<span></span></a>
+<a class="note0">arbitrantur.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>sunt plurima huius simulacra. : huiusはMercuriusを指す。それの像はたくさんある。</p>
+<p><strong>ferunt hunc omnium inventorem artium</strong>, <strong>(ferunt) hunc viarum atque itinerum ducem</strong>. feroはここではConsiderの意。huncとinventoremは述語対格（NewLatin177.1)「（彼らは）それをすべての技術の発明家だと見なし、また道、旅程のガイドだと見なした」</p>
+<p>arbitratur hunc habere maxmam vim ad quaestus pecuniae mercaturasque.「それは金銭的利益また貿易に関して最大の力をもっていると考えられた。」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それらの像はたくさんある。彼らはそれはすべての技術の発明者であると見なし、また道や旅の案内人であると見倣す。更に、それは金銭的利益、貿易などについての最大の力をもつと考えた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Post<span></span></a>
+<a class="note0">hunc<span></span></a>
+<a class="note1">Apollinem<span>Apollo Apollinis N (3rd) M  <br>:Apollo; (Roman god of prophecy, music, poetry, archery, medicine);<br>(c 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">Mārtem<span>Mars Martis N (3rd) M  <br>:Mars, Roman god of war; warlike spirit, fighting, battle, army, force of arms;<br>(c 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">Iovem<span>Jupiter Jovis N (3rd) M  <br>:Jupiter; (Roman chief/sky god); (supreme being); heavens/sky (poetic);<br>(c 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">Minervam.<span>Minerva Minervae N (1st) F  <br>:Minerva, Roman goddess of wisdom;<br>(c 単数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Apollinemなど対格で、coluntが省略されていると考える。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それらのあとは、Apollo,Mars, Jupiter、Minervaである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dē<span><br><br></span></a>
+<a class="note0">hīs<span></span></a>
+<a class="note0">eandem<span></span></a>
+<a class="note0">ferē,<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">reliquae<span></span></a>
+<a class="note1">gentēs,<span>gens gentis N (3rd) F  <br>:tribe, clan; nation, people; Gentiles;<br>(c 複数  主格)<br></span></a>
+<a class="note0">habent<span></span></a>
+<a class="note1">opīniōnem:<span>opinio opinionis N (3rd) F  <br>:belief, idea, opinion; rumor (Plater);<br>(c 単数 対格)<br></span></a>
+<a class="note0">Apollinem<span></span></a>
+<a class="note1">morbōs<span>morbus morbi N (2nd) M  <br>:sickness, illness, weakness; disease; distemper; distress; vice;<br>(c 複数  対格)<br></span></a>
+<a class="note1">dēpellere,<span>depello depellere, depuli, depulsus V (3rd)  <br>:drive/push out//off/away/aside, repel; expel; remove, wean; banish utterly;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">Minervam<span></span></a>
+<a class="note1">operum<span>opus operis N (3rd) N  <br>:need; work; fortifications (pl.), works;<br>(n 複数  属格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">artificiōrum<span>artificium artifici(i) N (2nd) N  <br>:art/craft/trade; skill/talent/craftsmanship; art work; method/trick; technology;<br>(X 複数  属格)<br></span></a>
+<a class="note0">initia<span></span></a>
+<a class="note1">trādere,<span>trado tradere, tradidi, traditus V (3rd)  <br>:hand over, surrender; deliver; bequeath; relate;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">Iovem<span></span></a>
+<a class="note0">imperium<span></span></a>
+<a class="note1">caelestium<span>caelestis caeleste, caelestior -or -us, caelestissimus -a -um ADJ  <br>:heavenly, of heavens/sky, from heaven/sky; celestial; divine; of the_Gods;<br>(X 複数  属格)<br></span></a>
+<a class="note1">tenēre,<span>teneo tenere, tenui, tentus V (2nd)  <br>:hold, keep; comprehend; possess; master; preserve;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">Mārtem<span><br><br></span></a>
+<a class="note1">bella<span>bellum belli N (2nd) N  <br>:war, warfare; battle, combat, fight; (at/in) (the) war(s); military force, arms;<br>&nbsp;(n <strong>複数  対格)</strong><br></span></a>
+<a class="note1">regere.<span>rego regere, rexi, rectus V (3rd)  <br>:<strong>rule</strong>, <strong>guide</strong>; manage, direct;<br>(  現在 能動態 不定詞 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>quamは副詞として、「比較して同じレベルにあるもの」を意味する。= as</p>
+<p>habent sandem opinionem : 同じ信心をもっている。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それらについては彼らは、大方の部族で大体、同じような考えをもっている。Apolloは病を癒し、Minervaは仕事や技術を教え、Jupiterは神々の国を支配し、Marsは戦いを司る。</p>
+</div></div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Huic,<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(X 単数 与格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">proeliō<span>proelium proeli(i) N (2nd) N  <br>:battle/fight/bout/conflict/dispute; armed/hostile encounter; bout of strength;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">dīmicāre<span>dimico dimicare, dimicui, dimicatus V (1st) INTRANS  <br>:fight, battle; struggle/ contend/ strive; brandish weapons; be in conflict/ peril;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">cōnstituērunt,<span>constituo constituere, constitui, constitutus V (3rd)  <br>:set up/in position, erect; place/dispose/locate; (call a) halt; plant (trees);<br>(３人称 複数  完了 能動態 <strong>直説法 )</strong><br></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">bellō<span><br><br></span></a>
+<a class="note1">cēperint<span>capio capere, cepi, captus V (3rd) TRANS  <br>:take hold, seize; grasp; take bribe; arrest/capture; put on; occupy; captivate;<br>(３人称 複数  完了 能動態 接続法 )<br></span></a>
+<a class="note1">plērumque<span>plerumque ADV <br>:generally, commonly; mostly, for the most part; often, frequently;<br><br></span></a>
+<a class="note1">dēvovent:<span>devoveo devovere, devovi, devotus V (2nd) TRANS  <br>:devote, consecrate; vow, promise solemnly; mark out, appoint; curse, execrate;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">superāvērunt,<span>supero superare, superavi, superatus V (1st)  <br>:overcome, conquer; survive; outdo; surpass, be above, have the upper hand;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note1">animālia<span>animalis animalis, animale ADJ  <br>:made of air; animal, of living creatures, living, live, animate; vital;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note0">capta<span></span></a>
+<a class="note1">immolant<span>immolo immolare, immolavi, immolatus V (1st)  <br>:sacrifice, offer (victim) in sacrifice; sprinkle with sacred meal; immolate;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note1">reliquāsque<span>reliquus reliqua, reliquum ADJ  <br>:rest of/remaining/available/left; surviving; future/further; yet to be/owed;<br>(f 複数  対格)<br></span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">ūnum<span><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">cōnferunt.<span>confero conferre, contuli, collatus V TRANS  <br>:bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>proelio dimicare : 戦争をする時。proelio奪格は一種の手段の奪格で、慣用句。（NewLatin 218.7)</p>
+<p>cum + 直接法現在 は繰り返しを表す事がある（Whenever ~) (NewLatin 289.1)</p>
+<p>devovent ea quae ceperint plerumque bello. 「戦いの時に取るであろうものを捧げる」ceperint接続法、完了で未来完了を表す。（NewLatin 269.1)<font color="#ff0000"> belloが奪格なのは？「時の奪格」ではin belloであるべき？</font></p>
+<p><font color="#ff0000"></font>cum superaverunt = post victoriam<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼に対して（Mars?)人が戦いをする事になった時、多くの場合戦いで取る様なものを捧げた。征服した時には、捕らえた動物を犠牲にし、残りは一つの場所に集めた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Multīs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">cīvitātibus<span><br><br></span></a>
+<a class="note0">hārum<span><br><br></span></a>
+<a class="note0">rērum<span><br><br></span></a>
+<a class="note1">exstrūctōs<span>exstruo exstruere, exstruxi, exstructus V (3rd)  <br>:pile/build up, raise, build, construct;<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note1">tumulōs<span>tumulus tumuli N (2nd) M  <br>:mound, hillock; mound, tomb;<br>(c 複数  対格)<br></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note1">cōnsecrātīs<span>consecratus consecrata -um, consecratior -or -us, consecratissimus -a -um ADJ  <br>:consecrated, holy, sacred;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">cōnspicārī<span>conspicor conspicari, conspicatus sum V (1st) DEP  <br>:catch sight of, see; observe, notice; perceive; be conspicuous; be regarded;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">licet;<span>licet licere, licuit, licitus est V (2nd) IMPERS  <br>:it is permitted, one may; it is all right, lawful, allowed, permitted;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">saepe<span></span></a>
+<a class="note0">accidit,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">neglēctā<span>neglego neglegere, neglexi, neglectus V (3rd) TRANS  <br>:disregard, neglect, ignore, regard of no consequence; do nothing about; despise;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note1">quispiam<span>quispiam quaepiam, quidpiam INDEF <br>:(w/-piam) any/somebody, any, some, any/something;<br>(m 単数 主格), (m 複数  主格)<br></span></a>
+<a class="note1">religiōne<span>religio religionis N (3rd) F  <br>:supernatural constraint/taboo; obligation; sanction; worship; rite; sanctity;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">capta<span>captum capti N (2nd) N  <br>:catch; (e.g. fish);<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">occultāre<span>occulto occultare, occultavi, occultatus V (1st)  <br>:<strong>hide</strong>; conceal;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">posita<span>pono ponere, posivi, postus V (3rd) TRANS  <br>:put, place, set; station; (archaic form of perf. of pono);<br>&nbsp;(完了 分詞 受動態 n 複数  対格)<br></span></a>
+<a class="note1">tollere<span>tollo tollere, sustuli, sublatus V (3rd) TRANS  <br>:lift, raise; destroy; remove, <strong>steal</strong>; take/lift up/away;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">audēret,<span>audeo audere, ausus sum V (2nd) SEMIDEP  <br>:intend, be prepared; dare/have courage (to go/do), act boldly, venture, risk;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">gravissimumque<span></span></a>
+<a class="note0">eī<span><br><br></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note1">supplicium<span>supplicium supplici(i) N (2nd) N  <br>:punishment, suffering; supplication; torture;<br>(n 単数 主格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">cruciātū<span>cruciatus cruciatus N (4th) M  <br>:torture/cruelty; torture form/apparatus; suffering, severe physical/mental pain;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">cōnstitūtum<span><br><br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>in multis civitatibus : 多くの国で、</p>
+<p>licet conspicari tumulos exstructos harum rerum. : licet conspicari 見られることが許されていた。tumulos exstructosがconspicariの主語で、「積み重なった塊が見られることが許されていた」</p>
+<p><strong>consecratis locis</strong> : 場所の奪格。形容詞と一緒だと前置詞なしでもちられる。</p>
+<p>accidit : 主語は続くut節。</p>
+<p>neglecta religione : 独立奪格「信仰を無視して」</p>
+<p>quispiam auderet aut occultare capta aut tollere posita. 「誰かが取得物を隠したり、置かれたものをとったりすること」</p>
+<p>ei rei, gravissimum supplicium est constitutum. 「それらの事に対して最も厳しい懲罰が決められていた。」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>多くの国では、これらの積み重なった塊が見られた。また余りよく起きたことではないが、誰かが信仰を無視して、取得物を自身の内に隠したり、置かれたものを盗んだりした場合には、最も重い懲罰が拷問とともに、決められていた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

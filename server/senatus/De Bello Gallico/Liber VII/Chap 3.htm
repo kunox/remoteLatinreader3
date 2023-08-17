@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 3</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[3]<span></span></a>
+
+<a class="note0">Ubi<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">diēs<span><br><br></span></a>
+<a class="note0">vēnit,<span><br><br></span></a>
+<a class="note0">Carnutēs<span><br><br></span></a>
+<a class="note0">Cotuāto<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Conconnetodumnō<span><br><br></span></a>
+<a class="note1">ducibus,<span>dux ducis N (3rd) M  <br>:leader, guide; commander, general; Duke (medieval, Bee);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">dēspērātīs<span>desperatus desperata -um, desperatior -or -us, desperatissimus -a -um ADJ  <br>:desperate/hopeless; despairing/lacking hope; desperately ill/situated; reckless;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">hominibus,<span>homo hominis N (3rd) M  <br>:man, human being, person, fellow;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">Cēnabum<span>Cenabum Cenabi N (2nd) N  <br>:Cenabum; town in Gaul; Orleans;<br>(n 単数 対格)<br></span></a>
+<a class="note0">signō<span><br><br></span></a>
+<a class="note0">datō<span><br><br></span></a>
+<a class="note1">concurrunt<span>concurro concurrere, concucurri, concursus V (3rd) INTRANS  <br>:|charge, fight/engage in battle; come running up/in large numbers; rally;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note1">cīvēsque<span>civis civis N (3rd) C  <br>:fellow citizen; countryman/woman; citizen, free person; a Roman citizen;<br>(c 複数  対格)<br><br></span></a>
+<a class="note0">Rōmānōs,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">negōtiandī<span>negotior negotiari, negotiatus sum V (1st) DEP  <br>:do business, trade;<br>&nbsp;(未来 分詞 受動態 n 単数 属格)<br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note1">cōnstiterant,<span>consisto consistere, constiti, constitus V (3rd)  <br>:||make a stand; stay, remain (fixed), stand still/erect/upright; correspond to;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">Gaium<span></span></a>
+<a class="note0">Fūfium<span><br><br></span></a>
+<a class="note0">Citam,<span></span></a>
+<a class="note1">honestum<span>honestus honesta -um, honestior -or -us, honestissimus -a -um ADJ  <br>:distinguished, reputable, respected, <strong>honorable</strong>, upright, honest; worthy;<br>&nbsp;(m 単数 対格)<br></span></a>
+<a class="note1">equitem<span>eques equitis N (3rd) M  <br>:|knight (abb. eq.); (wealthy enough to own his own horse); horse (Bee);<br>(c 単数 対格)<br></span></a>
+<a class="note0">Rōmānum,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note0">frūmentāriae<span><br><br></span></a>
+<a class="note1">iussū<span>jussus jussus N (4th) M  <br>:order, command, decree, ordinance;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note1">praeerat,<span>praesum praeesse, praefui, praefuturus V  <br>:be in charge/control/head (of) (w/DAT); take the lead (in); be present (at);<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">interficiunt<span></span></a>
+<a class="note1">bonaque<span>bonum boni N (2nd) N  <br>:good, good thing, profit, advantage; goods (pl.), possessions, wealth, estate;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">dīripiunt.<span>diripio diripere, diripui, direptus V (3rd) TRANS  <br>:||plunder, pillage, spoil, lay waste; seize and divide; steal/rob; distress;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>    <div class="construction" id="sheet1" style="display: none; background-color: rgb(255, 255, 248);">
+<div class="constline" id="10" style="border: currentColor; border-image: none;"  spellcheck="false">
+<p>ubi ea dies venit,<br></p>
+</div>
+<div class="constline" id="11" style="border: currentColor; border-image: none;"  spellcheck="false"><p>Carnutes<br></p>
+</div><div class="constline" id="12" style="border: currentColor; border-image: none; margin-left: 41px;"  spellcheck="false">Cotuāto et Conconnetodumnō, ducibus, dēsperātīs hominibus,</div><div class="constline" id="13" style="border: currentColor; border-image: none;"  spellcheck="false"> concurrunt</div><div class="constline" id="14" style="border: currentColor; border-image: none;"  spellcheck="false"> Cēnabum</div><div class="constline" id="15" style="border: currentColor; border-image: none; margin-left: 41px;"  spellcheck="false">signō datō</div><div class="constline" id="16" style="border: currentColor; border-image: none;"  spellcheck="false"> interficiunt</div><div class="constline" id="17" style="border: currentColor; border-image: none;"  spellcheck="false">cīvēsque Rōmānōs,</div><div class="constline" id="18" style="border: currentColor; border-image: none; margin-left: 41px;"  spellcheck="false">quī cōnstiterant, ibi negōtiandī causā</div><div class="constline" id="19" style="border: currentColor; border-image: none; margin-left: 81px;"  spellcheck="false">in hīs Gaium Fūfium Citam, honestum equitem Rōmānum,</div><div class="constline" id="110" style="border: currentColor; border-image: none; margin-left: 121px;"  spellcheck="false">quī praeērat, iussū Caesaris reī frūmentāriae</div><div class="constline" id="111" style="border: currentColor; border-image: none;"  spellcheck="false"> dīripiunt.</div><div class="constline" id="112" style="border: currentColor; border-image: none;"  spellcheck="false">eōrum bonaque</div></div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Catuato はCatuatus（人名）の奪格　Conconnetodumnoは同様にConconnetodumnusの奪格、この二人がCarnutesのリーダーであった。Contuato et ~ ducibus :一種の独立奪格。彼らを指導者として</p>
+<p>Cenabumは現在のオルレアンにあたる都市。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>その（約束した）日が来て、Canutesは　CatuatusとConconnetodumnusという二人の絶望した人間を指導者として、戦いのシグナを立てCenabumに侵攻した。そこでローマの市民、彼らは貿易のためにそこに滞在しており、その中にはローマでも尊厳あるGaius Funius Citusも、Caesarからの司令で兵糧の調達を指揮していたが、彼らを殺し、また彼らの財産を略奪した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Celeriter<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">cīvitātēs<span><br><br></span></a>
+<a class="note1">fāma<span>fama famae N (1st) F  <br>:rumor; reputation; tradition; fame, public opinion, ill repute; report, news;<br>(c 単数 主格)<br></span></a>
+<a class="note1">perfertur.<span>perfero perferre, pertuli, perlatus V  <br>:carry through; bear, endure to the end, suffer; announce;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>fama perfertur celeriter.<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>噂は瞬く間にガリア全土に伝わった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note1">ubicumque<span>ubicumque ADV <br>:wherever, in whatever place; in any place, wherever that may be, somewhere;<br><br></span></a>
+<a class="note0">maior<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">illūstrior<span>illustris illustre, illustrior -or -us, illustrissimus -a -um ADJ  比較級<br>:bright, shining, brilliant; clear, lucid; illustrious, distinguished, famous;<br>(c 単数 主格)<br></span></a>
+<a class="note1">incidit<span>incido incidere, incidi, incasus V (3rd)  <br>:happen; fall into, fall in with, meet; fall upon, assail;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">rēs,<span><br><br></span></a>
+<a class="note1">clāmōre<span>clamor clamoris N (3rd) M  <br>:shout, outcry/protest; loud <strong>shouting</strong> (approval/joy), applause; clamor/noise/din;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">agrōs<span><br><br></span></a>
+<a class="note1">regiōnēsque<span>regio regionis N (3rd) F  <br>:area, region; neighborhood; district, country; direction;<br>(c 複数  対格)<br></span></a>
+<a class="note1">significant;<span>significo significare, significavi, significatus V (1st)  <br>:signify, indicate, show;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">hunc<span></span></a>
+<a class="note0">aliī<span><br><br></span></a>
+<a class="note1">deinceps<span>deinceps (gen.), deincipis ADJ  <br>:following, next in succession;<br>(X 単数 主格), <br></span></a>
+<a class="note1">excipiunt<span>excipio excipere, excepi, exceptus V (3rd)  <br>:take out; remove; follow; receive; ward off, relieve;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">proximīs<span>proximus proximi N (2nd) M  <br>:neighbor; nearest one;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">trādunt,<span>trado tradere, tradidi, traditus V (3rd)  <br>:hand over, surrender; deliver; bequeath; relate;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note1">accidit.<span>accidit accidere, accidit, accisus est V (3rd) IMPERS  <br>:happens, turns out, befalls; fall upon; come to pass, occur;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>ubicumque maior atque illustrior res incidit : 大きくて特筆すべきことが起きたとは何時でも、</p>
+<p>significant clamore : 叫ぶことで示した。</p>
+<p>deinceps alii excipiunt ：次の誰かが受取り、</p>
+<p>tradunt proximis : 近くの人に受け渡した。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>彼らは何か大きな特筆すべき出来事があると、領地や野原で叫ぶことで、それを示す。そしてそれを次に誰かが受取、それを近隣の人に伝える。こうしてそれは起きる。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">Cēnabī<span>Cenabum Cenabi N (2nd) N  <br>:Cenabum; town in Gaul; Orleans;<br>(X 単数 <strong>処格</strong>)<br></span></a>
+<a class="note0">oriente<span></span></a>
+<a class="note0">sōle<span><br><br></span></a>
+<a class="note1">gesta<span>gero gerere, gessi, gestus V (3rd)  <br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>(完了 分詞 受動態 f 単数 主格)<br></span></a>
+<a class="note0">essent,<span></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note0">prīmam<span><br><br></span></a>
+<a class="note1">cōnfectam<span>conficio conficere, additional, forms V TRANS  <br>:make, construct; prepare, complete, accomplish; cause; perform; do thoroughly;<br>(完了 分詞 受動態 f 単数 対格)<br></span></a>
+<a class="note0">vigiliam<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnibus<span><br><br></span></a>
+<a class="note0">Arvernōrum<span><br><br></span></a>
+<a class="note0">audītā<span><br><br></span></a>
+<a class="note0">sunt,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">spatium<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">mīlium<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">centum<span></span></a>
+<a class="note0">LX.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>qua essent gesta. 起きたこと（間接疑問）</p>
+<p>oriente sole : 独立奪格　「夜明けに」</p>
+<p>Cenabi : 処格。</p>
+<p>ante primam vigiliam confectam ：最初の警戒時（夜、9時～10時）が終わる前に</p>
+<p>sunt audita :　主語はquae essent gesta</p>
+<p>LX = sexaginta <br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>このようにして、夜明けにCenabiで起きたことは、最初の警戒時が終わる前にArvernorumの領地に伝わった。それは約１６０マイルの距離であった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

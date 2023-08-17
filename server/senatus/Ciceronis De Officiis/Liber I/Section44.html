@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 44 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[44]<span></span></a>
+<a class="note1">Alter<span>alter altera, alterum ADJ  <br>:|<strong>second</strong>/ further / next/ other/ latter/ some person/ thing (PRONominal ADJ); either;<br>(M 単数 主格)<br></span></a>
+<a class="note0">locus<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">cautionis,<span></span></a>
+<a class="note0">ne<span></span></a>
+<a class="note0">benignitas<span></span></a>
+<a class="note0">maior<span></span></a>
+<a class="note0">esset<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">facultates,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">benigniores<span>bĕnignus benigna -um, benignior -or -us, benignissimus -a -um ADJ  比較級<br>:kind, favorable, obliging; kindly, mild, affable; liberal, bounteous;<br>(M 複数 主格),<br></span></a>
+<a class="note0">volunt<span></span></a>
+<a class="note0">esse,<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">res<span></span></a>
+<a class="note1">patitur,<span>pătĭor pati, passus sum V (3rd) DEP  <br>:suffer; allow; undergo, endure; permit;<br>( 3 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">primum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eo<span></span></a>
+<a class="note1">peccant,<span>pecco peccare, peccavi, peccatus V (1st) INTRANS  <br>:|make mistake; make slip in speaking; act incorrectly; go wrong, be faulty;<br>( 3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">iniuriosi<span>injūrĭōsus injuriosa, injuriosum ADJ  <br>:wrongful, insulting;<br>(M 複数 主格), (M 単数 属格), (N 単数 属格), (M 複数 呼格)<br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">proximos;<span>proxĭmus proximi N (2nd) M  <br>:neighbor; nearest one;<br>(複数 対格)<br></span></a>
+<a class="note0">quas<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note1">copias<span>cōpĭa copiae N (1st) F  <br>:plenty, abundance, supply; troops (pl.), supplies; forces; resources; wealth;<br>(複数 対格)<br></span></a>
+<a class="note0">his<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">suppeditari<span>suppĕdĭto suppeditare, suppeditavi, suppeditatus V (1st)  <br>:be/make available when/as required, supply with/needs (of);<br>受動態 不定詞<br></span></a>
+<a class="note1">aequius<span>aequus aequa -um, aequior -or -us, aequissimus -a -um ADJ  比較級<br>:level, even, equal, like; just, kind, impartial, fair; patient, contented;<br>(N 単数 主格)<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">relinqui<span>rĕlinquo relinquere, reliqui, relictus V (3rd)  <br>:leave behind, abandon; (pass.) be left, remain; bequeath;<br>受動態 不定詞<br></span></a>
+<a class="note0">eas<span></span></a>
+<a class="note1">transferunt<span>transfĕro transferre, transtuli, translatus V TRANS  <br>:transport/convey/transfer/shift; transpose; carry/bring across/over; transplant;<br>( 3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">alienos.<span>ălĭēnus alieni N (2nd) M  <br>:foreigner; outsider; stranger to the family; person/slave of another house;<br>(複数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>benignitas ne esset major quam facultates.: 「慈善は能力を超えて行うべきではない」</p>
+<p>quod qui volunt esse benigniores. 「というのは、慈善者で有りたいと思うものは」</p>
+<p>quod iniurios sunt in proximos. 「近親者に対し不正義であるからである。」</p>
+<p><font color="#ff0000">quas以下の構文、難解。</font>quasはcopiasを指していると思われるが…</p>
+<p>copias quas suppenditari et relinqui est aequius. 残され相続されることがより正しいと思われる財産、</p>
+<p>transferunt ea ad alienos. 「それを他人に移譲する」なにか尻切れトンボの終わっている？<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>２つ目の注意点は慈善を能力以上に行わないことである。自身が耐えられる以上に慈善でありたいと願うものは、誤りを犯している。舞う第一には近親者に対して不正義である。それは本来引き継がれ残されるべき財産を他人に移譲してしまうわけだからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Inest<span>insum inesse, infui, infuturus V  <br>:be in/on/there; belong to; be involved in;<br>( 3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">tali<span>tālis talis, tale ADJ  <br>:such; so great; so excellent; of such kind;<br>&nbsp;(F 単数 奪格)<br><br></span></a>
+<a class="note1">liberalitate<span>lībĕrālĭtas liberalitatis N (3rd) F  <br>:courtesy, kindness, nobleness; generosity; frankness; gift;<br>(単数 奪格)<br></span></a>
+<a class="note1">cupiditas<span>cŭpĭdĭtas cupiditatis N (3rd) F  <br>:enthusiasm/eagerness/passion; (carnal) desire; lust; greed/usury/fraud; ambition<br>(単数 主格),<br></span></a>
+<a class="note1">plerumque<span>plerumque ADV <br>&gt;:generally, commonly; mostly, for the most part; often, frequently;<br><br></span></a>
+<a class="note1">rapiendi<span>răpĭo rapere, rapui, raptus V (3rd)  <br>:drag off; snatch; destroy; seize, carry off; pillage; hurry;<br>未来分詞 受動態(N 単数 属格),<br>動名詞<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">auferendi<span>aufĕro auferre, abstuli, ablatus V TRANS  <br>:bear/ carry/ take/ fetch/ sweep/ snatch away/off, remove, withdraw; steal, obtain;<br>未来分詞 受動態(N 単数 属格),<br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">iniuriam,<span>injūrĭa injuriae N (1st) F  <br>:injury; injustice, wrong, offense; insult, abuse; sexual assault;<br>(単数 対格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">largiendum<span>largĭo largire, largivi, largitus V (4th)  <br>:give bountifully; lavish;<br>未来分詞 受動態, (N 単数 対格), <br></span></a>
+<a class="note1">suppetant<span>suppĕto suppetere, suppetivi, suppetitus V (3rd)  <br>:be at hand; be equal to; be sufficient for;<br>( 3 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">copiae.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>cupiditas rapiendi et auferendi inest in tali liberalitate. 動名詞の属格は目的、同格の属格として名詞を修飾する。「掠め取り盗むという渇望が入っている」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらの慈善には、非常に多くの場合、強奪、簒奪の渇望が入っていることが多い。そのために気前よく財産をばらまくのである。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Videre<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">licet<span>lĭcĕo licere, licui, - V (2nd) INTRANS  <br>:fetch (price); (with ABL or GEN);<br>( 3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">plerosque<span>plērus plera, plerum ADJ  <br>:(w/que) the majority, most, very great part; about all; very many, a good many;<br>(M 複数 対格)<br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">tam<span></span></a>
+<a class="note0">natura<span></span></a>
+<a class="note1">liberales<span>lībĕrālis liberalis, liberale ADJ  <br>:honorable; courteous, well bred, gentlemanly; liberal; generous;<br>(M 複数 対格), <br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">quadam<span>quīdam quaedam, quoddam   <br>:(w/-dam) certain;  a certain thing; somebody, one, something;<br>(F 単数 奪格)<br></span></a>
+<a class="note1">gloria<span>glōrĭa gloriae N (1st) F  <br>:glory, fame; ambition; renown; vainglory, boasting;<br>&nbsp;(単数 奪格)<br></span></a>
+<a class="note1">ductos,<span>dūco ducere, additional, forms V  <br>:lead, command; think, consider, regard; prolong;<br>完了分詞 ( 受動態 )(M 複数 対格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">benefici<span></span></a>
+<a class="note0">videantur<span></span></a>
+<a class="note0">facere<span></span></a>
+<a class="note0">multa,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">proficisci<span>prŏfĭciscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>受動態 不定詞<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">ostentatione<span>ostentātĭo ostentationis N (3rd) F  <br>:exhibition, display; showing off;<br>(単数 奪格)<br></span></a>
+<a class="note0">magis<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">a<span></span></a>
+<a class="note1">voluntate<span>vŏluntas voluntatis N (3rd) F  <br>:will, desire; purpose; good will; wish, favor, consent;<br>(単数 奪格)<br></span></a>
+<a class="note0">videantur.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>plerosque videre non tam natura liberales quam ductos gloria. quadam gloriaは手段の奪格。videreをコピュラ動詞とする、長い不定詞。不定詞主語はplerosで補語はliberales quam doctus. 「自然な好意ではなく何らかの栄光に導かれた多くのものがある。」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>多くの自然ではなくむしろ何らかの栄光のための善行を目にする。見せるために行う多くの善行が、自発的なものより遥かに多く見られる。<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Talis<span>tālis talis, tale ADJ  <br>:such; so great; so excellent; of such kind;<br>&nbsp;(F 単数 主格),<br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">simulatio<span>sĭmŭlātĭo simulationis N (3rd) F  <br>:pretense, deceit;<br>(単数 主格),<br></span></a>
+<a class="note1">vanitati<span>vānĭtas vanitatis N (3rd) F  <br>:emptiness, untruthfulness; futility, foolishness, empty pride;<br>(単数 与格), <br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">coniunctior<span>conjunctus conjuncta, conjunctum ADJ  <br>:adjoining/contiguous/linked; connected/contemporary (time), continuous; complex;<br>(M 単数 主格) 比較級<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">liberalitati<span>lībĕrālĭtas liberalitatis N (3rd) F  <br>:courtesy, kindness, nobleness; generosity; frankness; gift;<br>(単数 与格), <br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">honestati.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>talis simulatio est vanitati. vanitatiは目的、方向の与格。「それらの振りをすることは馬鹿げた虚栄である」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>それらのふりを装うことは慈善とか栄誉というより馬鹿げた虚栄である。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

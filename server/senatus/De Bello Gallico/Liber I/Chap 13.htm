@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 13</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[13]<span></span></a>
+
+<a class="note0">Hōc<span><br><br></span></a>
+<a class="note1">proeliō<span>proelium, proeli(i) 名詞 (2nd) N   :battle/fight/ bout/conflict/dispute; armed/hostile encounter;奪格<br></span></a>
+<a class="note0">factō,<span><br><br></span></a>
+<a class="note1">reliquās<span>reliquus, reliqua, reliquum 形容詞   :rest of　対格<br></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note0">Helvētiōrum<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">cōnsequī<span>consequor, consequi, consecutus sum 動詞 (3rd) DEP   :follow, go/come after; attend on; <b>pursue</b>; catch up with,
+不定詞
+</span></a>
+<a class="note1">posset,<span>3 単 未完了 能動態 接続法)</span></a>
+<a class="note1">pontem<span>pons （ｍ）対格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Ararī<span><br><br></span></a>
+<a class="note1">faciendum<span>facio動形容詞　ｍ対格</span></a>
+<a class="note1">cūrat<span>curo, curare, curavi, curatus 動詞 (1st)   :arrange/see/attend to; take care of;3 単 現在  <br>カエサルが主語</span></a>
+<a class="note1">atque<span>atque, 接続詞   :and, as well/soon as; together with;</span></a>
+<a class="note1">ita<span>ita, 副詞   :thus, so; therefore;</span></a>
+<a class="note1">exercitum<span>exercitus, exercitus 名詞 (4th) M   :army, infantry; swarm, flock;対格</span></a>
+<a class="note1">trādūcit.<span>traduco, traducere, traduxi, traductus 動詞 (3rd) TRANS   :bring across/over, move/transfer;3 単 現在
+</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>(Caesar)<b> curat atque traduct </b>: カエサルがアレンジして渡らせた。</p>
+<p>proelio facto : 独立奪格</p>
+<p>reliquas copias Helvetiorum ut consequi posset　：　utの位置がずれている、reliquasを強調するため　本来はut ~ consequi(不定詞）posset 目的を表すut節</p>
+<p><strong>faciendum</strong> : 動名詞も同型であるが、動名詞は目的語には使えない。動名詞、<u>対格は必ず前置詞と共に用いられる</u>。従ってこれは動形容詞で、動形容詞構文。対格でcuratの目的語</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>これらの戦いを終え、残りのヘルウェティの部隊に追い付くために、カエサルはアラル河に橋を作らせ（作ることをアレンジした）、自身の軍隊を渡らせた。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Helvētiī<span><br><br></span></a>
+<a class="note1">repentīnō<span>repentinus, repentina, repentinum 形容詞   :sudden, hasty; <b>unexpected</b>; 奪格
+</span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note1">adventū<span>adventus, adventus 名詞 (4th) M   :arrival, approach; visit, appearquuance,奪格<br></span></a>
+<a class="note1">commōtī<span>commoveo, commovere, commovi, commotus 動詞 (2nd) TRANS   :|waken; provoke; move (money/camp);  <br>完了 分詞 受動態 m 複 主格<br></span></a>
+<a class="note1">cum<span>cum, 副詞   :when, at the time/on each occasion/in the situation that; after; since/although;quum</span></a>
+<a class="note1">id<span>feciesseの目的語</span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">ipsī<span><br><br></span></a>
+<a class="note1">diēbus<span>dies与格、奪格 <br>（時の奪格？）</span></a>
+<a class="note1">XX<span>viginti = twenty</span></a>
+<a class="note1">aegerrimē<span>aegreの最上級 <br>副詞　scarcely, hardlym, painfully<br></span></a>
+<a class="note1">cōnfēcerant,<span>confacio, confacere, confeci, confactus 動詞 (3rd) TRANS   :make together;3 複 過去完了
+</span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">flūmen<span></span></a>
+<a class="note1">trānsīrent,<span>3 複 未完了 能動態 接続法)<br></span></a>
+<a class="note1">illum<span>those 単数　対格 <br>多分ローマ軍のこと <br>fecisseの意味上の主語</span></a>
+<a class="note0">ūnō<span><br><br></span></a>
+<a class="note0">diē<span><br><br></span></a>
+<a class="note1">fēcisse<span>完了 能動態 不定詞
+facio
+</span></a>
+<a class="note1">intellegerent,<span>intellego, intellegere, intellexi, intellectus 動詞 (3rd)   :understand; realize; <br>3 複 未完了 能動態 接続法</span></a>
+<a class="note1">lēgātōs<span>この場合legoの完了形、名詞化 <br>軍事用語ではlieutenant(副官）<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note1">mittunt;<span>3 複 現在  <br>mitto</span></a>
+<a class="note1">cuius<span>qui 属格<br></span></a>
+<a class="note1">lēgātiōnis<span>legatio, legationis 名詞 (3rd) F   :embassy; member of an embassy; mission;属格<br></span></a>
+<a class="note0">Dīvicō<span><br><br><br></span></a>
+<a class="note0">prīnceps<span><br><br></span></a>
+<a class="note0">fuit,<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">bellō<span>奪格<br></span></a>
+<a class="note0">Cassiānō<span><br><br></span></a>
+<a class="note1">dux<span>dux, ducis 名詞 (3rd) M   :leader, guide; commander, general; Duke (medieval, Bee);  <br>主格</span></a>
+<a class="note0">Helvētiōrum<span><br><br></span></a>
+<a class="note0">fuerat.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p> Helvetii mittunt　legatos ad eum　：　彼らに使者を送る。</p>
+<p>legatosはlegatusの対格ではなく、legoの完了分詞の名詞化。軍事用語ではLieutenantの事</p>
+<p>repentino eius adventu commoti　：　commoveo完了分詞、受動　分詞構文　突然の出現にびっくりさせられた（ヘルウェティ）</p>
+<p><span style="background-color: rgb(255, 255, 0);">aegerrimus = <b>aeger</b>(形容詞)の最上級　副詞は形容詞最上級の最後をeにしたもの</span></p>
+<p><b>(</b>形容詞　最上級は第一、第二変化、aegerrimiが属格、それの語尾をeにしたもの）<b></b></p>
+<b>
+</b><p><b>aegre</b>= 副詞　aegrius(比較), aegrissime(最上)</p>
+<p>XX = viginti = twenty</p>
+<p><font color="#0000ff"><b>cum ~ intellegerent </b>: When realized ~, since they realized that~</font></p>
+<font color="#0000ff">
+</font><p><font color="#0000ff"></font>id quod ispsi～：彼ら自身が～した其のことを、idはquodの先行詞で、後のfecisseの目的語</p>
+<p>illum uno die fecisse　id：　彼らが（それを）一日で行ったという事</p>
+<p>cuius legationis：その使者のなかで　＝of which 使者は複数</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>突然の（カエサル軍の）出現に動揺したヘルウェティ族は、彼らが大変な苦労で２０日かかった渡河を彼らが（illum)一日でやり遂げた事を認識して、彼らに使者を送った。その使者の中での第一人者はディウィコであった。彼はカシウスの戦いでのヘルウェティ側の指揮者であった。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Is<span></span></a>
+<a class="note1">ita<span>ita, 副詞   :thus, so; therefore</span></a>
+<a class="note1">cum<span>with</span></a>
+<a class="note1">Caesare<span>奪格</span></a>
+<a class="note1">ēgit:<span>ago, agere, egi, actus 動詞 (3rd)   :drive/urge/conduct/act; spend (time w/cum);3 単 完了<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">pācem<span>f対格
+</span></a>
+<a class="note0">populus<span></span></a>
+<a class="note1">Rōmānus<span>主格<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Helvētiīs<span><br><br></span></a>
+<a class="note1">faceret,<span>3 単 未完了 能動態 接続法</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note1">itūrōs<span>eo :(未来 分詞 能動態 m 複 対格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">ibi<span>ibi, 副詞   :there, in that place; thereupon;</span></a>
+<a class="note1">futūrōs<span>sum :(未来 分詞 能動態 m 複 対格)<br></span></a>
+<a class="note0">Helvētiōs<span><br><br></span></a>
+<a class="note1">ubi<span>ubi, 接続詞   :where, whereby;</span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">cōnstituisset<span>constituo, constituere, constitui, constitutus 動詞 (3rd)   :|decide/resolve; <br>(3 単 過去完了 能動態 接続法)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">voluisset;<span>volo, velle, volui, - 動詞   :wish, want, prefer; be willing, will; <br>(3 単 過去完了 能動態 接続法)</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Is　egit ita cum Caesare: 彼はカエサルに対して次のように訴えた。（以下は彼の言い分を間接的に述べているので接続法が使われている。）</p>
+<p>以下彼の言い分(<strong>間接話法　：主文は不定詞で従属節は接続法</strong>）</p>
+<p>ituros atque ibi futuros Helvetios : <strong>ituros (esse), furturos (esse)</strong>でこれが不定詞、未来。意味上の主語はHelvetios（対格）でヘルウェティは（そこに）行き住むであろう、の意。</p>
+<p>in eam parem :　「そこ」でubi以下で説明されている場所で</p>
+<p>Caesar constituisset atque esse voluisset　：カエサルが決めて望むところ　「過去の事実と反する場合には過去完了、接続法を用いる」</p>
+<p>以下ずっとLine６まで間接話法</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>彼（ディウィコ）は次のようにカエサルに向かって論じた：もしローマ人民がヘルウェティと和平を成すならば、ヘルウェティはカエサルが決め、カエサルの望むところに行ってそこで暮らすであろう。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">sīn<span>sin, 接続詞   :but if; if on the contrary;<br></span></a>
+<a class="note1">bellō<span>奪格<br></span></a>
+<a class="note1">persequī<span>persequor, persequi, persecutus sum 動詞 (3rd) DEP   :follow up, pursue; overtake, <strong>attack</strong>; 現在 受動態 不定詞<br></span></a>
+<a class="note1">persevērāret,<span>persevero, perseverare, perseveravi, perseveratus 動詞 (1st)   :persist, persevere; continue; 3 単 未完了 能動態 接続法) <br>（主語はカエサル）</span></a>
+<a class="note1">reminīscerētur<span>reminiscor, reminisci, - 動詞 (3rd) DEP   :call to mind, recollect;3 単 未完了 受動態 接続法)カエサル　命令文の間接話法</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">veteris<span>vetus, veteris (gen.), veterior -or -us, veterrimus -a -um 形容詞   :old, aged, ancient; former; <br>属格</span></a>
+<a class="note1">incommodī<span>incommodum, incommodi 名詞 (2nd) N   :disadvantage, inconvenience, setback,disagreeable;  <br>disobliging;属格</span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note1">Rōmānī<span>複属格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">prīstinae<span>pristinus, pristina, pristinum 形容詞   :former, oldtime, original; pristine;
+</span></a>
+<a class="note1">virtūtis<span>virtus, virtutis 名詞 (3rd) F   :strength/power; courage/bravery;属格<br></span></a>
+<a class="note1">Helvētiōrum.<span>属格<br></span></a>
+<a class="note1">Quod<span>quod, 接続詞   :because, as far as, insofar as;
+副詞　with respect to which
+</span></a>
+<a class="note1">imprōvīsō<span>improvisus, improvisa, improvisum 形容詞   :unforeseen/unexpected; <br>奪格(手段の奪格）、副詞的に<br></span></a>
+<a class="note0">ūnum<span><br><br></span></a>
+<a class="note1">pāgum<span>pagus, pagi 名詞 (2nd) M   :country district/community, canton; 対格<br></span></a>
+<a class="note1">adortus<span>adorior, adoriri, adortus sum 動詞 (4th) DEP   :assail/assault/attack, rise against (military/political/plague); <br>完了分詞主格</span></a>
+<a class="note1">esset,<span>３単未完了 接続法<br></span></a>
+<a class="note1">cum<span>cum, 副詞   :when, at the time/on each occasion/in the situation that;</span></a>
+<a class="note1">iī<span>=ei qui以下で説明<br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note0">trānsīssent<span><br><br></span></a>
+<a class="note1">suīs<span>suus, sui 名詞 (2nd) M   :his men (pl.), his friends; <br>与格<br></span></a>
+<a class="note1">auxilium<span>auxilium, auxili(i) 名詞 (2nd) N   :help, assistance; remedy/antidote　対格</span></a>
+<a class="note1">ferre<span>fero, ferre, tuli, latus 動詞   :bring, bear; tell/speak of; consider; carry off <br>不定詞</span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">possent,<span></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">ob<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">suae<span>与格 <br>suae virtuti</span></a>
+<a class="note1">magnopere<span>magnopere, 副詞   :greatly, exceedingly; with great effort; very much; particularly, especially;</span></a>
+<a class="note1">virtūtī<span>virtus, virtutis 名詞 (3rd) F   :strength/power; courage/bravery;与格　受益の与格<br></span></a>
+<a class="note1">tribueret<span>tribuo, tribuere, tribui, tributus 動詞 (3rd)   :divide, assign; present; grant, allot, bestow, attribute;(3 単 未完了 能動態 接続法)</span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">ipsōs<span>対格 <br>この場合Helvetiiを指す<br></span></a>
+<a class="note1">dēspiceret.<span>despicio, despicere, despexi, despectus 動詞 (3rd)   :look down on/over; relax attention; disdain, despise; express contempt for;(3 単 未完了 能動態 接続法)<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>sin bello persequi perseveraret　：主語はカエサル, カエサルが「戦いによって攻撃する事に拘るならば」が逐語訳、（接続法は依然、間接話法のなかである事を示す）belloは<strong>手段の奪格</strong>。</p>
+<p>reminisceretur　：思い出せ。et以下を。（カエサルが）<strong>間接話法の命令形は全て接続法</strong>。(NewLatin316)</p>
+<p>et veteris incommodi populi Romani　昔のローマの敗戦と</p>
+<p>et pristinae virtutis Helvetiorum.　ヘルウェティの以前の強さを　属格になっているのは？　<strong>reminiscorが属格支配 (</strong>他にmemini, obliviscorなど　NewLatin206)</p>
+<p>Quod 以下も訴えのなか、quodはこの場合接続詞で、直接法の名詞節。「～に関しては」の意。（NewLatin299)（ここでは間接話法の中なので接続法になっている）</p>
+<p>ne aut suae magnopere virtuti tribueret aut ipsos despiceret.:自軍を過大に評価したり、我々を見下さないように。</p>
+<p>(<b>magnopere = magnō opere </b>opere はopusの奪格)</p>
+<p><strong>Quod adortus esset, improviso unum pagum</strong> ：「（カエサルが）一つの地域を突然攻撃した事に付いては」adortus essetは完了時制で、話している時より前に終わっている事を示す。</p>
+<p>cum ii、 qui flumen transissent, suis auxilium ferre non possent : iiはeiでqui以下で説明されている「河を渡った人々」。これが主語で彼らは自身の部下たちに援助（auxilium)をfero出来なかった、 ヘルウェティが主語で、既に河を渡っていたので援軍として駆けつけられなかった、という意味</p>
+<p>ob eam rem : そのことから</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>もしカエサルが戦いを続ける事に拘るなら、昔のローマの惨めな状況とヘルウェティの以前の強さを思い出してほしい。奇襲によって一つの地方を征服したという点について言えば、河を既に渡っていたので援軍を送ることができなかっただけあり、其のことによって、自軍に対して過大に強いと評価したり、我らを見下すようなことはしてはならない。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Sē<span>Sui対格 <br>語り手自身 <br>ディウィコまたはヘルウェティ全体？<br></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note1">patribus<span>pater 奪格</span></a>
+<a class="note1">māiōribusque<span>major, majoris 名詞 (3rd) M   :ancestors (pl.);<br></span></a>
+<a class="note1">suīs<span>suus奪格<br></span></a>
+<a class="note1">didicisse,<span>disco, discere, didici, discitus 動詞 (3rd) TRANS   :learn; hear, get to know, become acquainted with <br>完了　不定詞</span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">magis<span>magis, 副詞   :to greater extent, more nearly; rather, instead; more;</span></a>
+<a class="note1">virtūte<span>virtus, virtutis 名詞 (3rd) F   :strength/power; courage/bravery;奪格<br></span></a>
+<a class="note1">contenderent<span>contendo, contendere, contendi, contentus 動詞 (3rd)   :|compete/contend (fight/law), dispute; compare/match/contrast; demand/press for; <br>(3 複 未完了 能動態 接続法)</span></a>
+<a class="note1">quam<span>＝than</span></a>
+<a class="note1">dolō<span>dolus, doli 名詞 (2nd) M   :trick, device, deceit, treachery, trickery, cunning, fraud; 奪格<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">īnsidiīs<span>insidia, insidiae 名詞 (1st) F   :ambush/ambuscade (pl.); plot; treachery, treacherous attack/device; trap/snare; <br>奪格<br></span></a>
+<a class="note1">nīterentur.<span>nitor, niti, nisus sum 動詞 (3rd) DEP   :press/lean upon; struggle; advance; depend on (with abl.); (3 複 未完了 受動態 接続法)<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Se　ita didicisse, ：間接話法の自身であるから語り手のこと.。間接話法の主語。itaはut以下で説明される。</p>
+<p>ut contenderent virtute : 力をもって戦う</p>
+<p>magis quam = rather than</p>
+<p>niterentur.dolo aut insidiis : トリックや陰謀に頼る</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>我らは父とか先祖から学んだ、トリックや欺瞞に頼るより力で闘えと。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quārē<span>quare, 副詞   :in what way? how? by which means, whereby; why; wherefore, therefore, hence;<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note1">committeret<span>committo, committere, commisi, commissus 動詞 (3rd)   :|engage (battle), set against; begin/start; bring about; commit; incur; forfeit; <br>(3 単 未完了 能動態 接続法) <br>カエサルが、間接命令法の接続法</span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">is<span></span></a>
+<a class="note1">locus<span>主格</span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note1">cōnstitissent<span>consisto, consistere, constiti, constitus 動詞 (3rd)   :stop/stand/halt/cease; <br>3 複 過去完了 能動態 接続法)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">calamitāte<span>calamitas, calamitatis 名詞 (3rd) F   :loss, damage, harm; misfortune/disaster; military defeat; blight, crop failure; <br>奪格<br></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">interneciōne<span>internecio, internecionis 名詞 (3rd) F   :slaughter, massacre; extermination, total destruction of life; cause of such;奪格<br></span></a>
+<a class="note1">exercitūs<span>exercitus, exercitus 名詞 (4th) M   :army, infantry; swarm, flock;属格<br></span></a>
+<a class="note1">nōmen<span>nomen, nominis 名詞 (3rd) N   :name, family name;対格、　N<br></span></a>
+<a class="note1">caperet<span>capio, capere, cepi, captus 動詞 (3rd) TRANS   :take hold, seize; grasp; (3 単 未完了 能動態 接続法)　主語はis locus</span></a>
+<a class="note1">aut<span>or</span></a>
+<a class="note1">memoriam<span>memoria, memoriae 名詞 (1st) F   :memory, recollection; history; time within memory <br>対格</span></a>
+<a class="note1">prōderet.<span>prodo, prodere, prodidi, proditus 動詞 (3rd) TRANS   :project, thrust forward; bring forth, produce, give birth to; create; nominate; (3 単 未完了 能動態 接続法)
+</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>ne committeret　</strong>：戦いを始めるな、間接話法の命令文</p>
+<p>ut is locus ~ capret nomen : 結果を表すut文　その場所が名前を捕まえる</p>
+<p>ut is locus, ubi constitissent, : 彼が立っている、其の場所</p>
+<p>ex calamitate populi Romani et internecione exercitus　：ローマ人民の災厄と軍隊の破壊によって（奪格）</p>
+<p>memoriam proderet.　記憶を作る　→　記念すべき場所になる（主語はis locus)</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>従って、どうか戦いを始めないでほしい、（始めると）我々の今立っている場所がローマ人民の災厄と軍隊の壊滅によって呼ばれる様になる、または記憶される様になる。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

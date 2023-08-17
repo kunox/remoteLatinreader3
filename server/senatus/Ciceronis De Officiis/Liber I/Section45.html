@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 45 </h1>
+</div>
+<div class="spacer">Line0</div>
+</a><div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[45]<span></span></a>
+<a class="note0">Tertium<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">propositum,<span>prōpōno proponere, proposui, propositus V (3rd)  <br>:display; propose; relate; put or place forward;<br>完了分詞 ( 受動態 )(N 単数 主格), <br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">beneficentia<span></span></a>
+<a class="note1">dilectus<span>dīlectus dilectus N (4th) M  <br>:|selection/choosing; choice (between possibilities), discrimination/distinction;<br>(単数 主格)<br><br></span></a>
+<a class="note0">esset<span></span></a>
+<a class="note1">dignitatis;<span>dignĭtas dignitatis N (3rd) F  <br>:worth, excellence; fitness/suitability (for task),; honor, esteem, standing;<br>(単数 属格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">mores<span>mos moris N (3rd) M  <br>:custom, habit; mood, manner, fashion; <strong>character </strong>(pl.), behavior, morals;<br>(複数 主格)<br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">erunt<span><br><br></span></a>
+<a class="note1">spectandi,<span>specto spectare, spectavi, spectatus V (1st)  <br>:observe, watch, look at, see; test; consider;<br>未来分詞 受動態(M 複数 主格),<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">quem<span>quī quae, quod PRON ADECT<br>:which?, what?; what kind of?;<br>(M 単数 対格)<br></span></a>
+<a class="note1">beneficium<span>bĕnĕfĭcĭum benefici(i) N (2nd) N  <br>:kindness, favor, benefit, service, help; privilege, right;<br>(単数 主格),<br></span></a>
+<a class="note1">conferetur,<span>confĕro conferre, contuli, collatus V TRANS  <br>:|discuss/debate/confer; oppose; pit/match against another; blame; <strong>bestow</strong>/assign;<br>( 3 単数 未来 受動態 直接法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">animus<span>ănĭmus animi N (2nd) M  <br>:mind; intellect; soul; feelings; heart; spirit, courage, character, pride; air;<br>(単数 主格)<br></span></a>
+<a class="note1">erga<span>erga PREP ACC <br>&gt;:towards, opposite (friendly);<br><br></span></a>
+<a class="note0">nos<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">communitas<span>commūnĭtas communitatis N (3rd) F  <br>:partnership, joint possession/use/participation; fellowship; community, kinship;<br>(単数 主格),<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">societas<span></span></a>
+<a class="note0">vitae<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">nostras<span></span></a>
+<a class="note1">utilitates<span>ūtĭlĭtas utilitatis N (3rd) F  <br>:usefulness, advantage;<br>(複数 対格), <br><br></span></a>
+<a class="note0">officia<span></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note1">collata;<span>confĕro conferre, contuli, collatus V TRANS  <br>:|discuss/debate/confer; oppose; pit/match against another; blame; <strong>bestow</strong>/assign;<br>完了分詞 ( 受動態 )(N 複数 対格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">concurrant<span>concurro concurrere, concucurri, concursus V (3rd) INTRANS  <br>:run/assemble/knock/snap together; agree, fit, concur; coincide; make same claim;<br>( 3 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">omnia,<span></span></a>
+<a class="note1">optabile<span>optābĭlis optabilis, optabile ADJ  <br>:desirable, to be wished for; desired, longed for;<br>(N 単数 主格), <br></span></a>
+<a class="note0">est;<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">minus,<span></span></a>
+<a class="note0">plures<span></span></a>
+<a class="note0">causae<span></span></a>
+<a class="note0">maioresque<span></span></a>
+<a class="note1">ponderis<span>pondus ponderis N (3rd) N  <br>:weight, burden, impediment;<br>(単数 属格)<br></span></a>
+<a class="note0">plus<span></span></a>
+<a class="note1">habebunt.<span>hăbĕo habere, habui, habitus V (2nd)  <br>:have, hold, consider, think, reason; manage, keep; spend/pass (time);<br>( 3 複数 未来 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>delectus esset dignitatis. diginitatisは性質の属格か？「選択することが良いことである」</p>
+<p>in quo : よくわからないが、漠然を前を指す。「そこにおいては」</p>
+<p>eius mores erunt spectandi. 彼らの性格が観察されるべきである。</p>
+<p>in quem beneficium conferetur. beneficiumが主語で、「受益者になるものにおいて」</p>
+<p>(quem) officia (est)ante collata ad nostras utilitates. 「受益前に我々の利益になるいかなる貢献があるか？」</p>
+<p>optabile est ut omnia concurrant. 「理想はすべてが集まっていることである」</p>
+<p>si minus (sin) : 「もしそれより少なくても」</p>
+<p>plures causae, maioresque habebunt plus ponderis. 「より多い事象、優れているものを持つものがより多い重みを持つ」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>３つ目に上げることは、受益者の中で選択を行うことである。そこにおいては、性格も観察されるべきである。利権を与えられるそのものにおいて、我々に対する彼らの気持ちや協調性、社会性などや、また受益の前に我々の有用性に対していかなる貢献をがあるなどなどである。理想的にはそれらが集まっていることだが、もしそうでないにせよ、より多くの事柄、優れているものがより多くの重みを持つであろう。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

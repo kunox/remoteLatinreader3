@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 21 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[21]<span></span></a>
+<a class="note0">Sunt<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">privata<span>privatus privata, privatum ADJ  <br>:private; personal; ordinary;<br>&nbsp;(N 複数 主格)<br></span></a>
+<a class="note1">nulla<span>nullus nulla, nullum (gen -ius) ADJ  <br>:no; none, not any; (PRONominal ADJ)<br>(N 複数 主格)<br></span></a>
+<a class="note0">natura,<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">vetere<span>vetus veteris (gen.), veterior -or -us, veterrimus -a -um ADJ  <br>:old, aged, ancient; former; veteran, experienced; long standing, chronic;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">occupatione,<span>occupatio occupationis N (3rd) F  <br>:occupation, employment;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">quondam<span>quondam ADV <br>:formerly, once, at one time; some day, hereafter;<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">vacua<span>vacuus vacua, vacuum ADJ  <br>:empty, vacant, unoccupied; devoid of, free of;<br>&nbsp;(F 単数 奪格)<br></span></a>
+<a class="note1">venerunt,<span>venio venire, veni, ventus V (4th)  <br>:come;<br>(3 複数 完了 能動態 直接法 )<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">victoria,<span>victoria victoriae N (1st) F  <br>:victory;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">bello<span></span></a>
+<a class="note1">potiti<span>potior poti, potitus sum V (3rd) DEP  <br>:obtain, acquire; grasp; attain, reach (goal); come by (experiences);<br>&nbsp;(完了 分詞 受動態 M 複数 主格)<br></span></a>
+<a class="note0">sunt,<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">lege,<span>lex legis N (3rd) F  <br>:law; motion, bill, statute; principle; condition;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note1">pactione,<span>pactio pactionis N (3rd) F  <br>:bargain, agreement;<br>(C 単数 奪格)<br></span></a>
+<a class="note1">condicione,<span>condicio condicionis N (3rd) F  <br>:agreement/contract; terms, proposal/option/alternative; situation; stipulation;<br>(C 単数 奪格)<br></span></a>
+<a class="note1">sorte;<span>sors sortis N (3rd) F  <br>:lot, fate; oracular response;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note0">fit,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ager<span></span></a>
+<a class="note0">Arpinas<span></span></a>
+<a class="note0">Arpinatium<span></span></a>
+<a class="note0">dicatur,<span></span></a>
+<a class="note0">Tusculanus<span></span></a>
+<a class="note0">Tusculanorum;<span></span></a>
+<a class="note0">similisque<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">privatarum<span>privatus privata, privatum ADJ  <br>:private; personal; ordinary;<br>(F 複数 属格)<br></span></a>
+<a class="note1">possessionum<span>possessio possessionis N (3rd) F  <br>:possession, property;<br>(C 複数 属格)<br></span></a>
+<a class="note1">discriptio.<span>discriptio discriptionis N (3rd) F  <br>:assignment, division;<br>(X 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>privata nulla sunt natura. : 個人の所有というものは自然なものではない。生来のものではない。</p>
+<p>aut vetere occupatione, aut victoria aut lege, pactione, condicione, sorte, ex quo fit : 「長いあいだの所有によって、あるいは戦勝によって、また法律、売買契約、合意、抽選など、どれかによってなされる。」つまり何らかの人為的な操作の結果で、自然に備わったものではないと言うこと。</p>
+<p>ut qui quondam ~ : ut occupatione tenent, qui ~ </p>
+<p>ut ager Arpinas Arpinatium dicatur : utは結果の名詞節？「アルプスはアルプスの人に属すと言える」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>個人の所有というものは自然に備わった概念ではない。何らかの例えば、昔から所有している事によって、恰もそれが以前には所有者が居なかった場合、または戦勝によって、それが戦いによって得られたという場合、あるいは法律により、売買契約により、合意により、または抽選によって、それらのいずれかによって成されるものである。同様に、アルプスはアルプスの人に属すと言えるし、トスカナはトスカナの人に属すと言える。個人の所有ということも似たようなものである。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ex<span></span></a>
+<a class="note0">quo,<span></span></a>
+<a class="note1">quia<span>quia CONJ <br>:because;<br><br></span></a>
+<a class="note1">suum<span>suum sui N (2nd) N  <br>:his property (pl.);<br>&nbsp;(N 単数 対格)<br></span></a>
+<a class="note1">cuiusque<span>quis quis, quid PRON  <br>:who?, which one?, what man?, what thing? (type/nature); what kind of; what?;<br>(X 単数 属格)<br></span></a>
+<a class="note0">fit<span></span></a>
+<a class="note0">eorum,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">natura<span>natura naturae N (1st) F  <br>:nature; birth; character;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note1">fuerant<span>sum esse, fui, futurus V  <br>:be;<br>(3 複数 過去完了 能動態 直接法 )<br></span></a>
+<a class="note0">communia,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">cuique<span></span></a>
+<a class="note1">optigit,<span>optingo optingere, optigi, - V (3rd) INTRANS  <br>:befall, occur (to advantage/ disadvantage); fall to as one's lot;<br>(3 単数 完了 能動態 直接法 )<br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note1">quisque<span>quisque quaeque,quidque INDEF <br>:(w/-que) each, each one; every, everybody, everything (more than 2); whatever;<br>(M 単数 主格)<br><br></span></a>
+<a class="note1">teneat;<span>teneo tenere, tenui, tentus V (2nd)  <br>:hold, keep; comprehend; possess; master; preserve;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">e<span>e PREP ABL <br>:<strong>out of</strong>, from; by reason of; according to; because of, as a result of;<br><br><br></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">quis<span></span></a>
+<a class="note0">[quaevis]<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">appetet,<span>appeto appetere, appetivi, appetitus V (3rd) TRANS  <br>:seek/grasp after, desire; assail; strive eagerly/long for; approach, near;<br>(3 単数 未来 能動態 直接法 )<br></span></a>
+<a class="note1">violabit<span>violo violare, violavi, violatus V (1st)  <br>:violate, dishonor; outrage;<br>(3 単数 未来 能動態 直接法 )<br></span></a>
+<a class="note0">ius<span></span></a>
+<a class="note0">humanae<span></span></a>
+<a class="note1">societatis.<span>societas societatis N (3rd) F  <br>:society; alliance/partnership; trading company; fellowship, communion;<br>(X 単数 属格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>quia eorum, quae natura fuerant communia, suum cuisque fit</strong>, : 「なぜならそれらのもの、自然により、公共のものであったものが、誰かの所有になる。」</p>
+<p><strong>quisque teneat id quod cuique optigit.</strong>&nbsp; 　「各々、彼らのもとに落ちてきたものを保持する」</p>
+<p>e quo : quoはその前の各々自分のところに落ちてきたものを保持する、事をさし、「それ以外のもの」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>これらのことより、それらの自然により公共のものであったものが誰かの所有になるという限り、各々は自分のところに落ちてきたものを保持するべきである。それ以上のものを取ろうとすれば、それは人の社会正義を犯すことになる。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

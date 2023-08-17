@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 90</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[90]<span></span></a>
+
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">cōnfectīs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Aeduōs<span><br><br></span></a>
+<a class="note0">proficīscitur;<span><br><br></span></a>
+<a class="note0">cīvitātem<span><br><br></span></a>
+<a class="note0">recipit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらの事をなし終えて、Aeduiに出立した。その部族を残した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span><br><br></span></a>
+<a class="note0">lēgātī<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Arvernīs<span><br><br></span></a>
+<a class="note0">missī<span><br><br></span></a>
+<a class="note1">quae<span>quis quis, quid PRON  <br>:who?, which one?, what man?, what thing? (type/nature); what kind of; what?;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note0">imperāret<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">factūrōs<span><br><br></span></a>
+<a class="note0">pollicentur.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>legati pollicentur se facturos (esse) quae imperaret. 「使者は命ぜられていることを行うと約束した」quae imperaretは間接疑問文<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>そこでArverniから派遣されている使者が（Caesarが）命じることを行うであろうと約束した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Imperat<span></span></a>
+<a class="note0">magnum<span><br><br></span></a>
+<a class="note0">numerum<span></span></a>
+<a class="note0">obsidum.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>膨大な数の人質を命じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Legiōnēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hīberna<span><br><br></span></a>
+<a class="note0">mittit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>軍団を冬営のため送り出した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Captīvōrum<span><br><br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">viginti<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">Aeduīs<span><br><br></span></a>
+<a class="note0">Arvernīsque<span><br><br></span></a>
+<a class="note1">reddit.<span>reddo reddere, reddidi, redditus V (3rd)  <br>:return; restore; deliver; <strong>hand over</strong>, pay back, render, give back; translate;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>約２万の捕虜はAeduiとArverniに引き渡した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Titum<span></span></a>
+<a class="note0">Labiēnum<span><br><br></span></a>
+<a class="note0">duābus<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">equitātū<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Sēquanōs<span><br><br></span></a>
+<a class="note0">proficīscī<span><br><br></span></a>
+<a class="note0">iubet:<span></span></a>
+<a class="note0">huic<span></span></a>
+<a class="note0">Marcum<span></span></a>
+<a class="note0">Semprōnium<span><br><br></span></a>
+<a class="note0">Rutilum<span></span></a>
+<a class="note1">attribuit.<span>attribuo attribuere, attribui, attributus V (3rd) TRANS  <br>:assign/allot/attribute/impute to; grant, pay; appoint, put under jurisdiction;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>huic = Labienus<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Labienusには２つの軍団と騎兵部隊と共にSequaniに行くよう命じた。M. Sempronius Rutilusを彼に付けた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Gaium<span></span></a>
+<a class="note0">Fabium<span></span></a>
+<a class="note0">lēgātum<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Lucium<span></span></a>
+<a class="note0">Minucium<span></span></a>
+<a class="note0">Basilum<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note0">duābus<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Rēmīs<span><br><br></span></a>
+<a class="note1">collocat,<span>colloco collocare, collocavi, collocatus V (1st) TRANS  <br>:place/put/set in order/proper position, arrange; station, post, position; apply;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">fīnitimīs<span><br><br></span></a>
+<a class="note0">Bellovacīs<span><br><br></span></a>
+<a class="note1">calamitātem<span>calamitas calamitatis N (3rd) F  <br>:loss, damage, harm; misfortune/disaster; military defeat; blight, crop failure;<br>(c 単数 対格)<br></span></a>
+<a class="note0">accipiant.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>ne accipiant quam calamitatem ab finitimis Bellovaci. quamはここでは不定形容詞quiの女性形。如何なる災厄も<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Gaius Fabius司令官とLucius Minucius Basilusを２軍団とともにRemisに配置した。如何なる災厄もBellovaci族の領地から受けないようにである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Gaium<span></span></a>
+<a class="note0">Antistium<span></span></a>
+<a class="note0">Rēgīnum<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Ambivaretōs,<span><br><br></span></a>
+<a class="note0">Titum<span></span></a>
+<a class="note0">Sextium<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Biturīgēs,<span><br><br></span></a>
+<a class="note0">Gaium<span></span></a>
+<a class="note0">Canīnium<span><br><br></span></a>
+<a class="note0">Rebilum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Rutēnōs<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">singulīs<span><br><br></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note0">mittit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>G. A. ReginusをAmbivareteに、T. SextiusをBiturigesに、C. Caninius RelibiusをRuteniに夫々１軍団と共に送った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 9</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quīntum<span></span></a>
+<a class="note0">Tullium<span></span></a>
+<a class="note0">Cicerōnem<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Publium<span></span></a>
+<a class="note0">Sulpicium<span></span></a>
+<a class="note0">Cabillōni<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Matiscōne<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Aeduīs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Ararim<span></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note0">frūmentāriae<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">collocat.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Q. Tullius CiceroとP. Sulpicius CabilloとMatisscoをAuduiのArar（河）に食料の調達のために配置した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 10</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipse<span></span></a>
+<a class="note0">Bibracte<span></span></a>
+<a class="note0">hiemāre<span><br><br></span></a>
+<a class="note0">cōnstituit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>自身はBibracteにて冬営することとした。<br></p>
+</div>
+</div>
+<div class="spacer">Line 11</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">litterīs<span><br><br></span></a>
+<a class="note0">cognitīs<span><br><br></span></a>
+<a class="note1">Rōmae<span>Roma Romae N (1st) F  <br>:Rome;<br>(c 単数 処格)<br></span></a>
+<a class="note0">diērum<span><br><br></span></a>
+<a class="note0">viginti<span></span></a>
+<a class="note1">supplicātiō<span>supplicatio supplicationis N (3rd) F  <br>:thanksgiving; supplication;<br>(X 単数 主格)<br></span></a>
+<a class="note1">redditur.<span>reddo reddere, reddidi, redditus V (3rd)  <br>:return; restore; deliver; hand over, pay back, render, give back; translate;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらの手紙はローマで認められ、２０日間の感謝祭が催された。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

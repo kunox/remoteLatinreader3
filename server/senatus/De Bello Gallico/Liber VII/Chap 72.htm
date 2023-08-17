@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 72</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[72]<span></span></a>
+
+<a class="note0">Quibus<span></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">cognitīs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">perfugīs<span>perfuga perfugae N (1st) M  <br>:deserter;<br>(c 複数  奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">captīvīs,<span><br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note1">genera<span>genus generis N (3rd) N  <br>:|noble birth; kind/sort/variety; class/rank; mode　/method / <strong>style</strong> /fashion /way;<br>(n 複数  対格)<br><br></span></a>
+<a class="note1">mūnītiōnis<span>munitio munitionis N (3rd) F  <br>:fortifying; fortification;<br>(X 単数 属格)<br></span></a>
+<a class="note0">īnstituit.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>haec : hicとilleはよく「これから述べるもの」を指す。（NewLatin246.2)<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらの事を、逃亡者や捕虜から知ったCaesarは次のように包囲工事を命じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Fossam<span></span></a>
+<a class="note0">pedum<span></span></a>
+<a class="note0">viginti<span></span></a>
+<a class="note1">dīrēctīs<span>directus directa -um, directior -or -us, directissimus -a -um ADJ  <br>:|<strong>vertical</strong>, upright, perpendicular; simple; forthright/undisguised; strict legal;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">lateribus<span>latus lateris N (3rd) N  <br>:side; flank;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">dūxit,<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">fossae<span></span></a>
+<a class="note1">sōlum<span>solum soli N (2nd) N  <br>:bottom, ground, floor; soil, land;<br>(n 単数 主格)<br></span></a>
+<a class="note1">tantundem<span>tantundem ADV <br>:just as much;<br><br></span></a>
+<a class="note1">patēret<span>pateo patere, patui, - V (2nd)  <br>:<strong>stand open</strong>, <strong>be open; extend</strong>; be well known; <strong>lie open</strong>, be accessible;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note1">quantum<span>quantum ADV <br>:so much as; how much; how far;<br><br></span></a>
+<a class="note0">summae<span></span></a>
+<a class="note0">fossae<span></span></a>
+<a class="note1">labra<span>labrum labri N (2nd) N  <br>:lip (of person/ vessel/ ditch/ river), rim, edge;<br>(n 複数  主格),<br></span></a>
+<a class="note1">distārent.<span>disto distare, -, - V (1st)  <br>:stand apart, be distant; be different;<br>(３人称 複数  未完了 能動態 接続法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>fossae solum pateret quantum summae fossae labra distarent. fossae solumは塹壕の底、summaeは底に対して上端部。「塹壕の底が口が広がっているのと同じだけ広がって居るように」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>２０フィート（広さ）垂直の壁を持った塹壕、つまり塹壕の底が上端部と同じだけ広がっているようなものを命じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Reliquās<span><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">mūnītiōnēs<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note0">fossā<span><br><br></span></a>
+<a class="note0">pedēs<span><br><br><br></span></a>
+<a class="note1">quadringentōs<span>quadringenti -ae -a, quadringentesimus -a -um, quadringeni -ae -a, quadringentie(n)s NUM  400<br>:four hundred;<br>(m 複数  対格)<br><br></span></a>
+<a class="note1">redūxit,<span>reduco reducere, reduxi, reductus V (3rd)  <br>:lead back, bring back; restore; reduce;<br>(３人称 単数 完了 能動態 直説法 )<br><br></span></a>
+<a class="note0">[id]<span></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note0">cōnsiliō,<span><br><br></span></a>
+<a class="note1">quoniam<span>quoniam CONJ <br>:because, since, seeing that;<br><br></span></a>
+<a class="note0">tantum<span></span></a>
+<a class="note0">esset<span></span></a>
+<a class="note1">necessāriō<span>necessario ADV <br>:unavoidably, without option; necessarily, of necessity; inevitably/unavoidably;<br><br></span></a>
+<a class="note0">spatium<span></span></a>
+<a class="note1">complexus,<span>complector complecti, complexus sum V (3rd) DEP  <br>:<strong>embrace</strong>, hug; welcome; encircle, encompass; <strong>attain</strong>; include, bring in, involve;<br>(完了 分詞 受動態 m 単数 主格)<br><br><br></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note0">facile<span></span></a>
+<a class="note0">tōtum<span><br><br></span></a>
+<a class="note1">corpus<span>corpus corporis N (3rd) N  <br>:body; person, self; virility; flesh; corpse; trunk;<strong> frame(work)</strong>; collection/sum;<br>(n 単数 対格<br></span></a>
+<a class="note1">corōnā<span>corona coronae N (1st) F  <br>:crown; garland, wreath; halo/ring; <strong>circle of men</strong>/ troops;<br>(c 単数 奪格)<br><br></span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note1">cingerētur,<span>cingo cingere, cinxi, cinctus V (3rd) TRANS  <br>:surround/encircle/ring; enclose; beleaguer; accompany; gird, equip; ring (tree);<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">imprōvīsō<span>improvisus improvisa, improvisum ADJ  <br>:unforeseen/unexpected;<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">noctū<span>noctu ADV <br>:by night, at night;<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">mūnītiōnēs<span><br><br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">multitūdō<span><br><br><br></span></a>
+<a class="note1">advolāret<span>advolo advolare, advolavi, advolatus V (1st)  <br>:fly to, dash to (w/DAT or ad + ACC), hasten towards;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">interdiū<span>interdiu ADV <br>:in the daytime, by day;<br><br></span></a>
+<a class="note0">tēla<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note1">operī<span>opus operis N (3rd) N  <br>:need; work; fortifications (pl.), works;<br>(X 単数 与格)<br></span></a>
+<a class="note1">dēstinātōs<span>destino destinare, destinavi, destinatus V (1st) TRANS  <br>:|determine/intend; settle on, arrange; design; send, address, dedicate (Bee);<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note0">conicere<span></span></a>
+<a class="note0">possent.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>ab ea fossa quadringentos pedes. : 実際には４００フィートよりずっと広いそうである。多分passusのつもりだったのではないかとの由。（１passus = 5 pedes)</p>
+<p>(atque id fecit) hoc consilio : それは以下のようなつもりで成された。(hicは「以下のように」の意　Line１同様）</p>
+<p>quoniam tatum spatium esset complexus neccesario, nec ~ cingeretur, ne ~ advolaret, ~ possent</p>
+<p>de improviso : 突然に（慣用句）</p>
+<p><strong>nec facile totum corpus cingeretur corona militum</strong>. corpusのところがopusのテキスト多し。corona militumは円陣の兵で取り囲むこと？「作業全部が容易に敵兵によって取り囲まれないように」</p>
+<p>nostros destinatos operi : 作業に割り当てられた味方の兵　作業中の兵<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>残りの包囲要塞化はその塹壕から４００フィート下がったところで行なった。それは次のようなつもりからであった。そのような大きな間隔を擁することは必須であったからである。それは全ての作業が容易に敵兵によって囲まれないように、また、突然、夜にそれらの包囲施設にむかって敵が大勢で向かってくることがないように、また昼間に作業中の味方に向かって投げやりなどを投げることが可能でないようにである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hōc<span><br><br></span></a>
+<a class="note0">intermissō<span></span></a>
+<a class="note1">spatiō<span>spatium spati(i) N (2nd) N  <br>:space; area/expanse, room (for); intervening space, gap/interval; length/width;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">duās<span><br><br></span></a>
+<a class="note0">fossās<span><br><br></span></a>
+<a class="note0">quīndecim<span></span></a>
+<a class="note0">pedēs<span><br><br></span></a>
+<a class="note1">lātās,<span>latus lata -um, latior -or -us, latissimus -a -um ADJ  <br>:wide, broad; spacious, extensive;<br>(f 複数  対格)<br></span></a>
+<a class="note0">eādem<span><br><br></span></a>
+<a class="note0">altitūdine<span><br><br></span></a>
+<a class="note1">perdūxit,<span>perduco perducere, perduxi, perductus V (3rd)  <br>:lead, guide; prolong; induce, conduct, bring through;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">quārum<span><br><br></span></a>
+<a class="note1">interiōrem<span>interior interior, interius ADJ  比較級<br>:inner, interior, middle; more remote; more intimate;<br>(c 単数 対格)<br></span></a>
+<a class="note1">campestribus<span>campestris campestris, campestre ADJ  <br>:level, even, flat, of level field; on open plain/field; plain-dwelling;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">dēmissīs<span>demissus demissa -um, demissior -or -us, demississimus -a -um ADJ  <br>:low/low-lying; of low altitude; keeping low (people); slanting/hanging/let down;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note1">aquā<span>aqua aquae N (1st) F  <br>:water; sea, lake; river, stream; rain, rainfall (pl.), rainwater; spa; urine;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">flūmine<span><br><br></span></a>
+<a class="note1">dērīvātā<span>derivo derivare, derivavi, derivatus V (1st) TRANS  <br>:draw/lead off (river/fluid), divert/turn aside; derive/draw on; form derivative;<br>(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note1">complēvit.<span>compleo complere, complevi, completus V (2nd) TRANS  <br>:fill (up/in); be big enough to fill; occupy space, crowd; furnish/supply/man;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>quarum interiorem : その内側の塹壕を　（対格でcomplevitの目的語）</p>
+<p>campestribus ac demissis locis&nbsp;: 多分「付帯状況の奪格」で「平坦で低い場所で」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>この間の空間に２つの塹壕を通した。１５フィートの広さで、同じ高さのもので、その内側のものは、平坦で低い場所だったので、河から引いた水で満たした。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Post<span></span></a>
+<a class="note0">eās<span><br><br></span></a>
+<a class="note1">aggerem<span>agger aggeris N (3rd) M  <br>:rampart (or material for); causeway, pier; heap/pile/mound; dam/dike; mud wall;<br>(c 単数 対格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">vāllum<span>vallus valli N (2nd) M  <br>:stake, palisade, point, post, pole;<br>(c 単数 対格)<br></span></a>
+<a class="note1">duodecim<span>duodecim duodecimus -a -um, duodeni -ae -a, duodecie(n)s NUM  12<br>:twelve;<br><br></span></a>
+<a class="note0">pedum<span></span></a>
+<a class="note1">exstrūxit.<span>exstruo exstruere, exstruxi, exstructus V (3rd)  <br>:pile/build up, raise, build, construct;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>aggerは攻城のための長い坂道のような接近路、攻略路を意味する場合が多い。ここでは普通の土塁を指す。その盛った土の上にVallus(木材で作った大きな杭、これを打ち込み並べた壁）を打ち込み１２フィートの高さにしたもの。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>その後ろには１２フィートの高さの土塁と堡塁を作った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Huic<span></span></a>
+<a class="note1">lōrīcam<span>lorica loricae N (1st) F  <br>:coat of mail; breastwork, <strong>parapet</strong>, fortification;<br>(c 単数 対格)<br><br></span></a>
+<a class="note1">pinnāsque<span>pinna pinnae N (1st) F  <br>:feather; wing; fin; <strong>battlement</strong>/parapet, spire/steeple; flap; water wheel paddle;<br>(c 複数  対格)<br><br></span></a>
+<a class="note1">adiēcit<span>adicio adicere, adjeci, adjectus V (3rd) TRANS  <br>:add, increase, raise; add to (DAT/ad+ACC); suggest; hurl (weapon); throw to/at;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note1">grandibus<span>grandis grandis, grande ADJ  <br>:full-grown, grown up; large, great, grand, tall, lofty; powerful; aged, old;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">cervīs<span>cerva cervae N (1st) F  <br>:doe, hind; deer;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note1">ēminentibus<span>emineo eminere, eminui, - V (2nd)  <br>:stand out; be prominent/preeminent, excel; project;<br>(現在 分詞 能動態  複数  奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">commissūrās<span>commissura commissurae N (1st) F  <br>:joint, juncture, seam, gap; intersection, common point; boundary/dividing line;<br>(c 複数  対格)<br></span></a>
+<a class="note1">pluteōrum<span>pluteus plutei N (2nd) M  <br>:movable screen; breastwork, shed;<br>(X 複数  属格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">aggeris,<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">ascēnsum<span>ascensus ascensus N (4th) M  <br>:ascent; act of scaling (walls); approach; a stage/step in advancement; height;<br>(c 単数 対格)<br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note1">tardārent,<span>tardo tardare, tardavi, tardatus V (1st)  <br>:check, retard; hinder;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">turrēs<span>turris turris N (3rd) F  <br>:tower; high building, palace, citadel; dove tower, dove cot;<br>(c 複数  対格)<br></span></a>
+<a class="note0">tōtō<span><br><br></span></a>
+<a class="note1">opere<span>opus operis N (3rd) N  <br>:need; work; fortifications (pl.), works;<br>(n 単数 奪格)<br></span></a>
+<a class="note1">circumdedit,<span>circumdo circumdare, circumdedi, circumdatus V (1st) TRANS  <br>:surround; envelop, post/put/place/build around; enclose; beset; pass around;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">pedēs<span><br><br></span></a>
+<a class="note1">LXXX<span>octoginta 80<br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">distārent.<span>disto distare, -, - V (1st)  <br>:stand apart, be distant; be different;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p><strong>iorica</strong> : これはどうも銃眼を備えた低い壁。胸墻。</p>
+<p><strong>pinna</strong> : 同じく銃眼を備えた壁。胸壁。同じようなもののようである。</p>
+<p><strong>cerva</strong> : 直訳すると鹿であるが、ここでは先の二股になった小枝のようなものを指すらしい。</p>
+<p><strong>pluteus</strong> : 胸の高さの臨時の壁。移動可能。多くは木材、小枝などで作られる。ここではlorica, pinnaは実はこのpluteusを横に繋げて作ったものを指す。これらは下の部分が土（agger)で埋められて固定されているという構造らしい。</p>
+<p>grandibus cervis : 結合の奪格。</p>
+<p>quae distarent inter se LXXX pedes. quaeはturrisを指す。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>これらに銃眼のある胸壁、胸の高さの壁を付く加え、それらにはこの移動可能な壁と地面にとの結合部に向かっている大きな角のような木の枝がついており、それが登ってくる敵を防いでいた。そしてこれらの作業で攻撃櫓、それは８０フィートの間隔で配置されていたが、を取り囲んだ。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

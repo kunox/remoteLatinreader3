@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 14</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[14]<span></span></a>
+
+<a class="note0">Vercingetorīx<span><br><br></span></a>
+<a class="note1">tot<span>tot NUM <br>:as/so often, so many times, such a great number of times; that number of times;<br><br></span></a>
+<a class="note1">continuīs<span>continuus continua, continuum ADJ  <br>:|continuous, connected/hanging together; uninterrupted; indivisible; lasting;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">incommodīs<span>incommodum incommodi N (2nd) N  <br>:disadvantage, inconvenience, setback, harm, detriment; <strong>defeat</strong>/disaster; ailment;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">Vellaunodūnī,<span><br><br></span></a>
+<a class="note1">Cēnabī,<span>Cenabum Cenabi N (2nd) N  <br>:Cenabum; town in Gaul; Orleans;<br>&nbsp;(X 単数 <strong>処格</strong>)<br></span></a>
+<a class="note0">Noviodūnī<span><br><br></span></a>
+<a class="note1">acceptīs<span>accipio accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; <strong>admit</strong>, let in, hear, learn; obey;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br><br></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">concilium<span></span></a>
+<a class="note0">convocat.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Vellaunoduni, Cenabi, Novioduniは処格（NewLatin 232.1 第一、第二変化名詞の町の名前が「何処に」を表す時）</p>
+<p>incommodis acceptis : 独立奪格であろう。acceptisという動詞がちょっと変だが、「敗戦を受けた、被った」という感じか？<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Vercingetorixは、Vellaunodum、Cenabum、Noviodunumという場所での連続した敗戦を受けて、部下たちを戦略会議に呼んだ。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Docet<span></span></a>
+<a class="note1">longē<span>longe longius, longissime ADV <br>:far (off), distant, a long way; by far; for a long while, far (in future/past);<br><br></span></a>
+<a class="note1">aliā<span>alius alia, aliud ADJ  <br>:other, another; <strong>different</strong>, changed;<br>&nbsp;(f 単数 奪格), <br><br></span></a>
+<a class="note1">ratiōne<span>ratio rationis N (3rd) F  <br>:account, reckoning, invoice; plan; prudence; <strong>method</strong>; reasoning; rule; regard;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">gerendum<span>gero gerere, gessi, gestus V (3rd)  <br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>&nbsp;(未来 分詞 受動態 n 単数 対格), <br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">anteā<span>antea ADV <br>:before, before this; formerly, previously, in the past;<br><br></span></a>
+<a class="note0">gestum<span></span></a>
+<a class="note0">sit.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>docet <strong>bellum esse gerendum</strong> alia ratioone. alia rationeは手段の奪格で「戦いは異なるやり方で行われるべきである」</p>
+</div></div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>（Vercingetorixは）以前とは全く違うやり方で戦いが行われるべきであると教えた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Omnibus<span></span></a>
+<a class="note1">modīs<span>modus modi N (2nd) M  <br>:manner, mode, <strong>way</strong>, <strong>method</strong>; rule, rhythm, beat, measure, size; bound, limit;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">huic<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(X 単数 与格)<br></span></a>
+<a class="note1">reī<span>res rei N (5th) F  <br>:thing; event/affair/business; fact; cause; property;<br>(c 単数 与格)<br></span></a>
+<a class="note1">studendum,<span>studeo studere, studui, - V (2nd)  <br>:desire, be eager for; busy oneself with; strive;<br>(未来 分詞 受動態 n 単数 対格), <br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">pābulātiōne<span>pabulatio pabulationis N (3rd) F  <br>:foraging;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">commeātū<span>commeatus commeatus N (4th) M  <br>:supplies/provisions; <strong>goods</strong>; voyage; passage; convoy /caravan; furlough/ leave;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">prohibeantur.<span>prohibeo prohibere, prohibui, prohibitus V (2nd)  <br>:hinder, restrain; forbid, prevent;<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>&nbsp;<strong>studendum (est)</strong> : veniendum estなどと同じ、自動詞受動の、非人称用法か？「それらの事に対し熱心であらねばならぬ」huic rei は ut以下で説明されている。</p>
+<p><strong>omnibus modis</strong> : 手段の奪格で「あらゆる方法をもって」</p>
+<p><strong>ut prohibeantur Romani pabulatione et commeatu</strong>. pabulatione, commeatuは分離の奪格で、「ローマ軍を飼葉、食料などから禁止する」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>あらゆる手段を使って、ローマ軍を飼葉、食料から遮断することに全力を挙げるべきである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Id<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">facile,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">equitātū<span><br><br></span></a>
+<a class="note1">ipsī<span>ipse ipsa, ipsum PRON  <br>:himself/herself/itself; the very/real/actual one; in person; themselves (pl.);<br>&nbsp;(m 複数  主格)<br></span></a>
+<a class="note1">abundent<span>abundo abundare, abundavi, abundatus V (1st)  <br>:abound (in), have in large measure; overdo, exceed; overflow; be rich/numerous;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">annī<span><br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note1">subleventur.<span>sublevo sublevare, sublevavi, sublevatus V (1st)  <br>:lift up, raise; support; assist; lighten;<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>id esse facile. 暗黙の間接話法<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>それは容易である。何故なら我らは沢山の騎兵をもち、かつ季節によっても助けられるからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Pābulum<span><br><br></span></a>
+<a class="note1">secārī<span>seco secare, secavi, secatus V (1st) TRANS  <br>:cut, sever; decide; divide in two/halve/split; slice/chop/cut up/carve; detach;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">posse;<span></span></a>
+<a class="note1">necessāriō<span>necessario ADV <br>:unavoidably, without option; necessarily, of necessity; inevitably/unavoidably;<br><br></span></a>
+<a class="note1">dispersōs<span>dispergo dispergere, dispersi, dispersus V (3rd)  <br>:scatter (about), disperse;<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note1">hostēs<span>hostis hostis N (3rd) C  <br>:enemy (of the state); stranger, foreigner; the enemy (pl.);<br>(c 複数  対格), <br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">aedificiīs<span>aedificium aedifici(i) N (2nd) N  <br>:building; edifice, structure;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">petere:<span>peto petere, petivi, petitus V (3rd)  <br>:attack; aim at; desire; beg, entreat, ask (for); reach towards, make for;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">hōs<span><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">cotīdiē<span>cotidie ADV <br>:daily, every day; day by day; usually, ordinarily, commonly;<br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">equitibus<span></span></a>
+<a class="note1">dēlērī<span>deleo delere, delevi, deletus V (2nd) TRANS  <br>:|destroy completely, demolish/obliterate/crush; ruin; overthrow; nullify/annul;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">posse.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>間接話法、継続。</p>
+<p>non posse secari pabulum. 「飼葉を収穫することは出来ない」</p>
+<p>hostes petere ex aedificiis. exがちょっと変だが「敵は建物を狙う」</p>
+<p>omnes hos : <font color="#0000ff">破壊されるのは、散開した敵か、それとも倉庫か？</font><br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>飼葉は収穫は出来ない。止むを得ず散開した敵は建物から得ようとするであろうが、それらはすべて毎日騎兵により破壊することができる。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Praetereā<span>praeterea ADV <br>:besides, thereafter; in addition;<br><br></span></a>
+<a class="note0">salūtis<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">reī<span>res rei N (5th) F  <br>:thing; event/affair/business; fact; cause; property;<br>(c 単数 属格)<br></span></a>
+<a class="note1">familiāris<span>familiaris familiaris, familiare ADJ  <br>:domestic; of family; intimate;<br>(X 単数 属格), <br></span></a>
+<a class="note1">commoda<span>commodum commodi N (2nd) N  <br>:convenience, advantage, benefit; interest, profit, yield; wages, reward; gift;<br>(n 複数  主格), <br></span></a>
+<a class="note1">neglegenda:<span>neglego neglegere, neglexi, neglectus V (3rd) TRANS  <br>:disregard, neglect, ignore, regard of no consequence; do nothing about; despise;<br>&nbsp;(未来 分詞 受動態 n 複数  主格)<br></span></a>
+<a class="note1">vīcōs<span>vicus vici N (2nd) M  <br>:village; hamlet; street, row of houses;<br>(c 複数  対格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">aedificia<span>aedificium aedifici(i) N (2nd) N  <br>:building; edifice, structure;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note1">incendī<span>incendo incendere, incendi, incensus V (3rd) TRANS  <br>:set on fire; set fire to, kindle, burn; cause to flame/burn; keep fire burning;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">oportēre<span>oporteo oportere, oportui, oportuitus V (2nd) INTRANS  <br>:require (to be done), order;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note0">spatiō<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">viā<span>via viae N (1st) F  <br>:way, road, street; journey;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">quōque<span></span></a>
+<a class="note1">versus,<span>quoqueversus　１語で、すべての方向に、という副詞<br><br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">pābulandī<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">adīre<span>adeo adire, adivi(ii), aditus V  <br>:approach; attack; visit, address; undertake; take possession (inheritance);<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">posse<span></span></a>
+<a class="note0">videantur.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>rei familiaris commoda : domestic thing's interest で「個人的な関心」</p>
+<p>commoda (esse) neglegenda : 間接話法が続いている。</p>
+<p>quoqueversus : 一語で「あらゆる方向に」副詞</p>
+<p>ab via : a Boiaというテキストもある。Boiaだとある特定の町であろうが、場所は不明。viaだと道筋、という解釈。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>更に、全体の安全のためには、個人的な関心は無視されなければならない。村や建物などは、（ローマ軍が）飼葉のために接近できると思われる道筋からすべての方向に渡って、火を掛けられるべきである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hārum<span><br><br></span></a>
+<a class="note1">ipsīs<span>ipse ipsa, ipsum PRON  <br>:himself/herself/itself; the very/real/actual one; in person; themselves (pl.);<br>(X 複数  与格)<br></span></a>
+<a class="note0">rērum<span><br><br></span></a>
+<a class="note1">cōpiam<span>copia copiae N (1st) F  <br>:plenty, abundance, supply; troops (pl.), supplies; forces; resources; wealth;<br>(c 単数 対格)<br></span></a>
+<a class="note1">suppetere,<span>suppeto suppetere, suppetivi, suppetitus V (3rd)  <br>:be at hand; be equal to; be sufficient for;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">quod,<span></span></a>
+<a class="note0">quōrum<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnibus<span><br><br></span></a>
+<a class="note1">bellum<span>bellum belli N (2nd) N  <br>:war, warfare; battle, combat, fight; (at/in) (the) war(s); military force, arms;<br>(n 単数 主格), <br></span></a>
+<a class="note1">gerātur,<span>gero gerere, gessi, gestus V (3rd)  <br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>(３人称 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">opibus<span>ops opis N (3rd) F  <br>:power, might; help; influence; resources/wealth (pl.);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">subleventur:<span>sublevo sublevare, sublevavi, sublevatus V (1st)  <br>:lift up, raise; support; assist; lighten;<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+<a class="note0">Rōmānōs<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">inopiam<span>inopia inopiae N (1st) F  <br>:lack, need; poverty, destitution, dearth, want, scarcity;<br>(c 単数 対格)<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">lātūrōs<span>fero ferre, tuli, latus V  <br>:bring, bear; tell/speak of; consider; carry off, win, receive, produce; get;<br>(未来 分詞 能動態 m 複数  対格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note0">perīculō<span><br><br></span></a>
+<a class="note0">longius<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">prōcessūrōs;<span>procedo procedere, processi, processus V (3rd)  <br>:proceed; advance; appear;<br>(未来 分詞 能動態 m 複数  対格)<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">interesse,<span></span></a>
+<a class="note0">ipsōsne<span><br><br></span></a>
+<a class="note1">interficiant,<span>interficio interficere, interfeci, interfectus V (3rd)  <br>:kill; destroy;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note1">impedīmentīsne<span>impedimentum impedimenti N (2nd) N  <br>:hindrance, impediment; heavy baggage (of an army) (pl.);<br>&nbsp;(X 複数  奪格)<br><br></span></a>
+<a class="note1">exuant,<span>exuo exuere, exui, exutus V (3rd)  <br>:pull off; undress, take off; strip, deprive of; lay aside, cast off;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">āmissīs<span>amitto amittere, amisi, amissus V (3rd) TRANS  <br>:lose; lose by death; send away, dismiss; part with; let go/slip/fall, drop;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note0">gerī<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">possit.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="display: block; background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>esseの省略が多い。</p>
+<p>harum rerum copiam suppetere ipsis&nbsp;: copiam が対格主語、逐語的には「それらのものの豊富は彼ら自身のために手元にある」⇒「それら糧秣は十分彼ら自身のためには手元にある」</p>
+<p><strong>quod eorum opibus subleventur, in quorum finibus bellum geratur</strong>. eorumはquorumの先行詞。「戦闘が領土内で行われる者共の補給により助けられるから」</p>
+<p>Romanos, aut non laturos (esse) inopiam, aut processuros (eese) longius ab castris (cum) magno periculo.</p>
+<p>magno periculoは随伴の奪格で、軍事の場合は、形容詞で修飾されるとcumなしで使われる。（NewLatin222.1)</p>
+<p>「ローマ軍は不足に耐えられなるか、大きな危険を犯して軍陣から更に遠くに出てくるかである。」</p>
+<p>neque interesse : it doesn't matter 「どちらかは問題ではない」</p>
+<p>ne interficiant ipso, ne exuant impedimentis : ここのne ~ neの構文は非常に稀で、ここだけだそうである。通常はutrum ~ an、また　ne~ an~のテキストもある。「彼らを殺すか、輜重から切り離すか」</p>
+<p>ipsoは対格なのでipsoを殺すとなるがipsoはローマ軍を指していることに文脈からはなるが、自身というとvercingetorix側のように聞こえるが...？」</p>
+<p>quibus amissis : 独立奪格　quibusはimpedimentaを指し、「それらがなければ戦えない」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>彼ら自身には糧秣は豊富にある。何故なら戦場となる領土の者たちからの助けがあるからである。ローマ軍は糧秣不足に耐えられなくなるか、非常な危険を犯して野営地から遠くまで出ていくかである。彼らを殺すか、あるいは補給から切り離すかは違いがない。補給なしでは戦うことは出来ないのであるから。<br></p>
+</div>
+</div>
+<div class="spacer">Line 8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Praetereā<span><br><br></span></a>
+<a class="note0">oppida<span></span></a>
+<a class="note0">incendī<span><br><br></span></a>
+<a class="note0">oportēre,<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">mūnītiōne<span>munitio munitionis N (3rd) F  <br>:fortifying; fortification;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">locī<span><br><br></span></a>
+<a class="note0">nātūrā<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note0">sint<span></span></a>
+<a class="note0">perīculō<span><br><br></span></a>
+<a class="note1">tūta,<span>tutus tuta -um, tutior -or -us, tutissimus -a -um ADJ  <br>:safe, prudent; secure; protected;<br>(f 単数 主格)<br></span></a>
+<a class="note1">neu<span>neu CONJ <br>:or not, and not; (for negative of IMP);<br><br></span></a>
+<a class="note1">suīs<span>suus sui N (2nd) M  <br>:<strong>his men</strong> (pl.), his friends;<br>&nbsp;(X 複数  与格)<br></span></a>
+<a class="note0">sint<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">dētractandam<span>detracto detractare, detractavi, detractatus V (1st) TRANS  <br>:refuse (to undertake/undergo), decline, reject, evade, recoil from;<br>(未来 分詞 受動態 f 単数 対格)<br></span></a>
+<a class="note1">mīlitiam<span>militia militiae N (1st) F  <br>:<strong>military service</strong>/organization; campaign; war; soldiers (collectively), army;<br>(c 単数 対格)<br></span></a>
+<a class="note1">receptācula<span>receptaculum receptaculi N (2nd) N  <br>:receptacle; place of refuge, shelter;<br>&nbsp;(n 複数&nbsp; 主格)<br><br></span></a>
+<a class="note0">neu<span></span></a>
+<a class="note0">Rōmānīs<span><br><br></span></a>
+<a class="note1">prōposita<span>propono proponere, proposui, propositus V (3rd)  <br>:display; propose; relate; put or place forward;<br>(完了 分詞 受動態 n 複数  主格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">cōpiam<span><br><br></span></a>
+<a class="note1">commeātūs<span>commeatus commeatus N (4th) M  <br>:supplies/provisions; goods; voyage; passage; convoy/ caravan; furlough/ leave;<br>(c 単数 属格)<br></span></a>
+<a class="note1">praedamque<span>praeda praedae N (1st) F  <br>:booty, loot, spoils, plunder, prey;<br>(c 単数 対格)<br></span></a>
+<a class="note1">tollendam.<span>tollo tollere, sustuli, sublatus V (3rd) TRANS  <br>:lift, raise; destroy; remove, steal; take/lift up/away;<br>(未来 分詞 受動態 f 単数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p><strong>oppida, quae non sint tuta ab omni periculo munitione et loci natura</strong>. munitione, naturaは手段の奪格「要塞化、地形等によってあらゆる危険から安全でない町は」</p>
+<p><strong>(oppida) neu sint receptacula suis ad detractandam militiam</strong>. detractandam militiamは動形容詞構文。「自軍の人間が兵事から逃れるための避難所にならない様に」</p>
+<p><strong>(oppida) neu (esse) proposita Romanis ad tollendam copiam commeatus</strong>. 「（町が）ローマ軍に豊富な兵糧を調達するために提供されることがないように」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>更に、要塞化、地形などによってあらゆる事から安全になっていない町は燃やすべきである。自軍の兵事を忌諱する人間の避難所にならない様に、またローマ軍にたいして豊富な兵糧を取り去る、あるいは略奪するための機会を提供しないように。<br></p>
+</div>
+</div>
+<div class="spacer">Line 9</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Haec<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">gravia<span>gravis grave, gravior -or -us, gravissimus -a -um ADJ  <br>:heavy; <strong>painful</strong>; important; serious; pregnant; grave, oppressive, burdensome;<br>(n 複数  対格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">acerba<span>acerbus acerba -um, acerbior -or -us, acerbissimus -a -um ADJ  <br>:harsh, strident, <strong>bitter</strong>, <strong>sour</strong>; unripe, green, unfinished; grievous; gloomy;<br>(n 複数  対格)<br></span></a>
+<a class="note0">videantur,<span></span></a>
+<a class="note1">multō<span>multo ADV <br>:much, by much, a great deal, very; most; by far; long (before/after);<br><br></span></a>
+<a class="note1">illa<span>ille illa, illud PRON  <br>:that; those (pl.); also DEMONST; that person/thing; the well known; the former;<br>(n 複数  対格)<br></span></a>
+<a class="note0">gravius<span></span></a>
+<a class="note1">aestimāre,<span>aestimo aestimare, aestimavi, aestimatus V (1st) TRANS  <br>:value, assess; estimate; reckon; consider, judge (situation); esteem;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">līberōs,<span>liber liberi N (2nd) M  <br>:children (pl.); (sg. VOC) child;<br>(c 複数  対格)<br></span></a>
+<a class="note1">coniugēs<span>conjunx conjugis N (3rd) C  <br>:spouse/mate/ consort; husband/ wife/ bride/ fiancee/ intended; concubine; yokemate;<br>(c 複数  対格), <br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">servitūtem<span><br><br></span></a>
+<a class="note1">abstrahī,<span>abstraho abstrahere, abstraxi, abstractus V (3rd) TRANS  <br>:drag away from, remove forcibly, abort; carry off to execution; split;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">ipsōs<span><br><br></span></a>
+<a class="note0">interficī;<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note1">necesse<span>necesse undeclined ADJ <br>:necessary, essential; unavoidable, compulsory, inevitable; a natural law; true;<br><br></span></a>
+<a class="note1">accidere<span>accidit accidere, accidit, accisus est V (3rd) IMPERS  <br>:happens, turns out, befalls; fall upon; come to pass, occur;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">victīs.<span>vinco vincere, vici, victus V (3rd)  <br>:conquer, defeat, excel; outlast; succeed;<br>(完了 分詞 受動態  複数  与格),<br></span></a>
+</p>
+</div><div class="construction" id="sheet9" style="display: none;">
+<div class="constline" id="90" spellcheck="false">
+<p><br></p>
+</div>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>si haec videreantur gravia aut acerba, </p>
+<p>(se) aestimare illa multo gravius. 「（私は）それはずっと厳しいと考える。」graviusは副詞。省略のseが不定詞主語。</p>
+<p>quae sit necesse accidere victis. victisは完了分詞与格で、形容詞的に使われ名詞化している。つまり「被征服者に対し」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>もしそれが厳しく辛いことだと考えるなら、私は次の方がずっと厳しいと考える。つまり子供たちや伴侶が奴隷にされ、自身は殺されることで、それは被征服者には必然的に起きることである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

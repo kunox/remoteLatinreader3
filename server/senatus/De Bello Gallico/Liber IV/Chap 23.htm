@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 23</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[23]<span></span></a>
+
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note1">cōnstitūtīs<span>constituo constituere, constitui, constitutus V (3rd)  <br>:||establish/create/institute; draw up, arrange/set in order; make up, form; fix;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">rēbus,<span><br><br></span></a>
+<a class="note1">nactus<span>nanciscor nancisci, nactus sum V (3rd) DEP  <br>:obtain, get; find, meet with, receive, stumble on, light on;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">idōneam<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">nāvigandum<span><br><br></span></a>
+<a class="note0">tempestātem<span><br><br></span></a>
+<a class="note1">III.<span>tertia<br><br></span></a>
+<a class="note0">ferē<span><br><br></span></a>
+<a class="note1">vigiliā<span>vigilia vigiliae N (1st) F  <br>:watch (fourth part of the night), vigil, wakefulness;<br>(c 単数 主格)<br></span></a>
+<a class="note1">solvit<span>solvo solvere, solvi, solutus V (3rd)  <br>:loosen, release, unbind, untie, free; open; <strong>set sail</strong>; scatter; pay off/back;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">equitēsque<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">ulteriōrem<span>ulterior -or -us, ultimus -a -um ADJ  比較級<br>:far; farther; farthest, latest; last; highest, greatest;<br>(c 単数 対格)<br></span></a>
+<a class="note0">portum<span></span></a>
+<a class="note1">prōgredī<span>progredior progredi, progressus sum V (3rd) DEP  <br>:go, come forth, go forward, march forward; advance. proceed. make progress;<br>(  現在 受動態 不定詞 )<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note1">cōnscendere<span>conscendo conscendere, conscendi, conscensus V (3rd)  <br>:climb up, ascend, scale; rise to; mount (horse); board (ship)/embark/set out;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">sequī<span>sequor sequi, secutus sum V (3rd) DEP  <br>:follow; escort/attend/accompany; aim at/reach after/strive for/make for/seek;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">iussit.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>his rebus constitutis : 独立奪格　「これらの事を整えておいて」</p>
+<p>idoneam tempestatem nactus, solvit. 分詞構文、「適当な風を得たので、帆を上げた。」</p>
+<p>jussit equitesque progredi, conscendere naves sequi se<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらの事柄を手配しておいて、航海に適切な風が吹き出したので殆ど第三夜警時（真夜中ごろ）帆を上げ、遠くの港にいる騎兵達にも、進軍して、船に乗り込み我に続けと命令した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ā<span><br><br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">paulō<span>paulum pauli N (2nd) N  <br>:little/small; (only a) small amount/quantity/extent; little bit/while; trifle;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">tardius<span>tardus tarda -um, tardior -or -us, tardissimus -a -um ADJ  比較級<br>:slow, limping; deliberate; late;<br>&nbsp;(n 単数 対格)<br>ここでは中性単数対格に由来する<strong>副詞</strong><br></span></a>
+<a class="note0">esset<span></span></a>
+<a class="note1">administrātum,<span>administro administrare, administravi, administratus V (1st)  <br>:administer, manage, direct; assist; operate, conduct; maneuver (ship); bestow;<br>(完了 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note0">hōrā<span><br><br></span></a>
+<a class="note1">diēī<span>C 単　属格<br><br><br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note1">IIII.<span>quatra<br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">prīmīs<span><br><br></span></a>
+<a class="note0">nāvibus<span><br><br></span></a>
+<a class="note0">Britanniam<span></span></a>
+<a class="note1">attigit<span>attigo attigere, attigi, attactus V (3rd) TRANS  <br>:touch, touch/border on; reach, arrive at, achieve; mention briefly; belong to;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">collibus<span>collis collis N (3rd) M  <br>:hill, hillock, eminence, hill-top; mound; high ground; mountains (pl.) (poetic);<br>(X 複数  奪格)<br></span></a>
+<a class="note1">expositās<span>expono exponere, exposui, expositus V (3rd)  <br>:set/put forth/out; abandon, expose; publish; explain, relate; disembark;<br>(完了 分詞 受動態 f 複数  対格)<br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note1">armātās<span>armo armare, armavi, armatus V (1st) TRANS  <br>:equip, fit with armor; arm; strengthen; rouse, stir; incite war; rig (ship);<br>(完了 分詞 受動態 f 複数  対格)<br></span></a>
+<a class="note1">cōnspexit.<span>conspicio conspicere, conspexi, conspectus V (3rd) TRANS  <br>:observe/see/witness; notice; watch; gaze/stare on; catch/be in sight of; face;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>administratum esse. 逐語的には「実行された」非人称。自動詞の受身形は非人称として使用される。（NewLatin138.4)</p>
+<p>a quibusは奪格で「彼らにより」前の騎兵を指していると思われる。</p>
+<p>esset administratum cum paulo tardius. tardiusはここでは中性単数対格に由来する副詞。「ゆっくりと」cum pauloはpauloを名詞として「多少の」</p>
+<p>ipse attigit Britanniam quarta hora. 自身は第4刻ごろに着いた。（午前9時頃か）</p>
+<p>vigiliaは夜警時で、日の入りから夜明けまでを４等分。horaは昼間（夜明けから日の入りまで）を１２等分<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼らによる命令の実行は多少の遅れがあったが、自身は最初の船でブリタニアにその日の第四刻ごろに到着した。そこで全ての丘に武装した敵の軍勢に気がついた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Cuius<span></span></a>
+<a class="note0">locī<span><br><br></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">nātūrā<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note1">montibus<span>mons montis N (3rd) M  <br>:mountain; huge rock; <strong>towering heap</strong>;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">angustīs<span>angustus angusta -um, angustior -or -us, angustissimus -a -um ADJ  <br>:narrow, steep, close, confined; scanty, poor; low, mean; narrowminded, petty;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">mare<span>N 単　主格<br><br><br></span></a>
+<a class="note1">continēbātur,<span>contineo continere, continui, contentus V (2nd) TRANS  <br>:|hinder, contain/shut in/confine; stay; restrain/hold back; comprise/form basis;<br>(３人称 単数 未完了 受動態 直説法 )<br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note0">superiōribus<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">lītus<span>litus litoris N (3rd) N  <br>:<strong>shore</strong>, seashore, coast, strand; river bank; beach, landing place;<br>(n 単数 対格)<br></span></a>
+<a class="note0">tēlum<span><br><br></span></a>
+<a class="note1">adigī<span>adigo adigere, adegi, adactus V (3rd) TRANS  <br>:drive in/to (cattle), force, impel; cast, hurl; consign (curse); bind (oath);<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">posset.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>cuius loci natura erat haec; 「その場所の自然は次のようであった」</p>
+<p>mare continebatur : contineoにはshut in, limitという訳がある。海が、切り立った崖により切断されている、境が付けられている、というニュアンスか。</p>
+<p>teglum posset adigi : teglumが主語で、逐語的には「槍が投げられる事が出来る」</p>
+</div></div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>その場所の自然は次のようであった。つまり、切り立った急な断崖によって、海と切り分けられており、その上の場所から槍を投げるのは容易であった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hunc<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">ēgrediendum<span>egredior egredi, egressus sum V (3rd) DEP  <br>:go/march/come out; set sail; land, disembark; surpass, go beyond;<br>(未来 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note1">nēquāquam<span>副詞　;= by no means<br><br><br></span></a>
+<a class="note0">idōneum<span><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">arbitrātus,<span><br><br></span></a>
+<a class="note0">dum<span></span></a>
+<a class="note0">reliquae<span></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">convenīrent<span>convenio convenire, conveni, conventus V (4th)  <br>:|meet/assemble; go to meet; come together; (have sex); converge; visit/approach;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">hōram<span><br><br></span></a>
+<a class="note1">nōnam<span>nonam 序数　９　f 単　対格<br><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">ancorīs<span>ancora ancorae N (1st) F  <br>:anchor; grappling iron/hook;<br>(c 複数  奪格)<br></span></a>
+<a class="note1">expectāvit.<span>expecto expectare, expectavi, expectatus V (1st)  <br>:await, expect; anticipate; hope for;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>ad egrediendum : ad + 動名詞で目的を表す。</p>
+<p>dum reliquae naves convenirent eo : 接続法なのはdum　に導かれる時の節で、予測、期待を表す場合なので。（NewLatin293.3)</p>
+<p>eoはこの場合副詞で、there, at that placeの意。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>如何なる理由でも、そこは下船するのに適当な場所ではないと考え、残りの船が来るのを待つ間、第９刻時まで錨をおろして待った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Interim<span></span></a>
+<a class="note0">lēgātīs<span><br><br></span></a>
+<a class="note0">tribūnīsque<span><br><br></span></a>
+<a class="note1">mīlitum<span>miles militis M 複　属格　;= soldier, soldiery, foot soldier<br><br><br></span></a>
+<a class="note0">convocātis<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Volusēnō<span><br><br></span></a>
+<a class="note0">cognōvisset<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">fierī<span><br><br></span></a>
+<a class="note0">vellet<span></span></a>
+<a class="note1">ostendit<span>ostendo ostendere, ostendi, ostensus V (3rd)  <br>:show; reveal; make clear, point out, display, exhibit;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">monuitque,<span>moneo monere, monui, monitus V (2nd)  <br>:remind, advise, warn; teach; admonish; foretell, presage;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note0">mīlitāris<span><br><br></span></a>
+<a class="note1">ratiō,<span>ratio rationis N (3rd) F  <br>:account, reckoning, invoice; plan; prudence; method; reasoning; rule; regard;<br>(X 単数 主格)<br></span></a>
+<a class="note0">maximēque<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">maritimae<span>martitimus 形容詞　ｆ複　主格　;= maritime, of the sea, naval<br><br></span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note1">postulārent,<span>postulo postulare, postulavi, postulatus V (1st)  <br>:demand, claim; require; ask/pray for;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">ut,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">celerem<span>celer celeris celere 形容詞　単　対格　;= swift, quick<br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">īnstabilem<span>instabilis instabilis, instabile ADJ  <br>:unsteady, shaky; unstable; inconstant;<br>(c 単数 対格)<br></span></a>
+<a class="note1">mōtum<span>motus motus N (4th) M  <br>:movement, motion; riot, commotion, disturbance; gesture; emotion;<br>(c 単数 対格)<br></span></a>
+<a class="note0">habērent,<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">nūtum<span>nutus nutus N (4th) M  <br>:nod; command, will;<br>(c 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">tempus<span>tempus temporis N (3rd) N  <br>:time, condition, right time; season, occasion; necessity;<br>(n 単数 対格)<br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">administrārentur.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>骨子は</p>
+<p>１）<strong>ostendit quae cognovisset ex Voluseno et quae vellet fieri.</strong> 「Volsenusから知った事や何が成し遂げたいのかをはっきりさせ」</p>
+<p>2)<strong> monuit ut omnes res administrarentur ad nutum et ad tempus.</strong>　「全ての事が頷くだけで瞬時に彼らによって行われるよう警告した」</p>
+<p>militum legatis tribunisque convocatis : 独立奪格　「歩兵隊の軍団長や将校などを集め」</p>
+<p><strong>ut militaris rei ratio, ut maritimae res postularent</strong> : 軍の規定や特に海戦の事柄が要求するように、</p>
+<p><strong>cum haberent celerem atque instabilem motum</strong> : （それは）素早い不安定な変化があるものだから　cumは原因節のcum　(NewLatin286.2) 主語がないが前文のmaritimae resを指していると考える。</p>
+<p><font color="#ff0000">ut quae celerem atque instablilem motum haberent</font> ：のテキスト多し。（Bennett, A&amp;G, Hodges, など）<em><u>その場合にはquaeが関係代名詞として前のresを受けてutで導かれる原因節となる。そうするとmonuitの目的節を導くutがなくなるがこれはNewLatin295.8　で説明しているut 無しの場合としている。</u></em><br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>軍団長や将校達を集めて、（カエサルは）Volesnusから報告の有ったことや、何を成し遂げたいのかなどはっきりさせ、軍規が、特に海戦の事柄が要求するように、全てのことが頷くだけで瞬時にして彼らにより実行されなければならないと警告した。と言うのは（海戦では）物事は素早くかつ不安定な変化をするからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">dīmissīs<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">ventum<span>ventus venti m 単対格　;= wind<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">aestum<span>aestus aestus N (4th) M  <br>:agitation, passion, seething; raging, boiling; heat/fire; <strong>sea tide</strong>/spray/swell;<br>(c 単数 対格)<br></span></a>
+<a class="note0">ūnō<span><br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0">nactus<span></span></a>
+<a class="note1">secundum<span>secundus secunda -um, secundior -or -us, secundissimus -a -um ADJ  <br>:|favorable, fair (wind/current); fortunate, propitious; smooth, w/the grain;<br>&nbsp;(n 単数 対格), <br></span></a>
+<a class="note0">datō<span><br><br></span></a>
+<a class="note0">signō<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">sublātīs<span>tollo tollere, sustuli, sublatus V (3rd) TRANS  <br>:lift, raise; destroy; remove, steal; take/lift up/away;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">ancorīs<span>ancora ancorae N (1st) F  <br>:anchor; grappling iron/hook;<br>(c 複数  奪格)<br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note0">septem<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note1">prōgressus,<span>progredior progredi, progressus sum V (3rd) DEP  <br>:go, come forth, go forward, march forward; advance. proceed. make progress;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note1">apertō<span>apertus aperta -um, apertior -or -us, apertissimus -a -um ADJ  <br>:open/public/free; uncovered/exposed/opened; frank/clear/manifest; cloudless;<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">plānō<span>planus plana -um, planior -or -us, planissimus -a -um ADJ  <br>:level, flat;<br>(n 単数 奪格)<br><br></span></a>
+<a class="note1">lītore<span>litus litoris N (3rd) N  <br>:shore, seashore, coast, strand; river bank; beach, landing place;<br>(n 単数 奪格)<br><br></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note1">cōnstituit.<span>constituo constituere, constitui, constitutus V (3rd)  <br>:set up/in position, erect; place/dispose/<strong>locate</strong>; (call a) halt; plant (trees);<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>his dismissis : 独立奪格　「解散して」</p>
+<p>nactus secundum ventum et aestum uno tempore 「一度に良い風、良い潮を得て」分詞構文</p>
+<p>dato signo et sublatis ancoris 独立奪格　二つ　「信号が与えられ、錨が上げられ」</p>
+<p>progressus septem milia pasuum 「７マイル進んで」分詞構文</p>
+<p><strong>consuituit naves aperto ac plano litore</strong>. これが主文。船を開けて平らな岸に持って行った。litore奪格は場所の奪格　（NewLatin228.2)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらを解散したあと、一度に良い風、良い潮を得たので、信号が与えられ、錨が巻き上げられ、素早く７マイルをその場所から進み、開けて平らな岸辺に上陸した。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 7 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[7]<span></span></a>
+<a class="note1">Placet<span>placet placere, -, placitus est V (2nd) IMPERS  <br>:it is pleasing/satisfying, gives pleasure; is believed/settled/agreed/<strong>decided</strong>;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">igitur,<span></span></a>
+<a class="note1">quoniam<span>quoniam CONJ <br>:because, since, seeing that;<br><br></span></a>
+<a class="note0">omnis<span></span></a>
+<a class="note1">disputatio<span>disputatio disputationis N (3rd) F  <br>:discussion, debate, dispute, argument;<br>(X 単数 主格)<br></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">officio<span></span></a>
+<a class="note1">futura<span>sum esse, fui, futurus V  <br>:be;<br>(未来 分詞 能動態 F 単数 主格)<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">ante<span>ante ADV <br>:before, previously, first, before this, earlier; in front/advance of; forwards;<br><br></span></a>
+<a class="note1">definire,<span>definio definire, definivi, definitus V (4th) TRANS  <br>:define/bound/fix/limit/mark; restrict/confine; assign, ordain; lay down (rule);<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note0">officium,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">Panaetio<span></span></a>
+<a class="note1">praetermissum<span>praetermitto praetermittere, praetermisi, praetermissus V (3rd)  <br>:let pass; pass over; omit; overlook;<br>(完了 分詞 受動態 M 単数 対格),<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">miror.<span>miror mirari, miratus sum V (1st) DEP  <br>:be amazed/surprised/bewildered (at); look in wonder/awe/admiration at;<br>(１ 単数 現在 受動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>placet definire. 不定詞は非人称動詞の主語となる。NewLatin 327.1 「定義することを決めた」</p>
+<p>omnis disputatio est futura de Officio. disputatio 主語（ｆ単）補語としてfutura(beingの未来分詞で～しようとしている）「すべての議論はOfficiumに関するものであろう」</p>
+<p>anteは副詞で、「最初に」の意？</p>
+<p>quod minor esse praetermissum a Panaetio. 「Panaetiusによって省かれたということに驚いているが」の意であろう。quodは関係代名詞？</p>
+<p>Panaetius : BC110　ローマのストア派のFounder、Ciceroが主として追っているのは彼の哲学。彼は哲学の実用性を強調した。（実社会での応用など）<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>すべての議論はOfficiumに関することであろうので、最初にOfficiumとは何かということを定義することから始めたいと思う。その定義がPanaetiusによって省かれたことに驚いているのであるが。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Omnis<span></span></a>
+<a class="note1">enim,<span>enim CONJ <br>:namely (postpos.); indeed; in fact; for; I mean, for instance, that is to say;<br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">a<span></span></a>
+<a class="note1">ratione<span>ratio rationis N (3rd) F  <br>:account, reckoning, invoice; plan; prudence; method; reasoning; rule; regard;<br>(C 単数 奪格)<br></span></a>
+<a class="note1">suscipitur<span>suscipio suscipere, suscepi, susceptus V (3rd)  <br>:undertake; support; accept, receive, take up;<br>(3 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">de<span></span></a>
+<a class="note1">aliqua<span>aliqui aliqua, aliquod PRON  <br>:any; some;<br>(F 単数 奪格)<br></span></a>
+<a class="note0">re<span></span></a>
+<a class="note1">institutio,<span>institutio institutionis N (3rd) F  <br>:institution; arrangement; instruction, education;<br>(X 単数 主格)<br></span></a>
+<a class="note1">debet<span>debeo debere, debui, debitus V (2nd)  <br>:owe; be indebted/responsible for/obliged/bound/destined; ought, must, should;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">definitione<span></span></a>
+<a class="note1">proficisci,<span>proficiscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">intellegatur,<span></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note1">disputetur.<span>disputo disputare, disputavi, disputatus V (1st)  <br>:discuss, debate, argue;<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>omnis institutio de aliqua re, quae suscipitur a ratione : 「すべての如何なるものに関する命題、それは法則、論理、によって支えられているのも　」　先行詞の埋込（NewLatin 251)でquaeの先行詞はinstitutio.<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>すべての、如何なるものについての、論理によって支えられる命題というものは、定義から始めるべきである。そうすることで、人々は、それが何で何に関して議論されているのかを知ることができる。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Omnis<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">officio<span></span></a>
+<a class="note1">duplex<span>duplex (gen.), duplicis ADJ  <br>:twofold, double; divided; two-faced;<br>(X 単数 主格),<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">quaestio.<span>quaestio quaestionis N (3rd) F  <br>:questioning, inquiry; investigation;<br>(X 単数 主格),<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>Officiumに関する主題は二重である。<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Unum<span></span></a>
+<a class="note0">genus<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">pertinet<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">finem<span></span></a>
+<a class="note0">bonorum,<span></span></a>
+<a class="note0">alterum,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">positum<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">praeceptis,<span>praeceptum praecepti N (2nd) N  <br>:teaching, lesson, precept; order, command;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omnes<span></span></a>
+<a class="note0">partes<span></span></a>
+<a class="note0">usus<span></span></a>
+<a class="note0">vitae<span></span></a>
+<a class="note1">conformari<span>conformo conformare, conformavi, conformatus V (1st) TRANS  <br>:shape/mold skillfully; outline, describe; train/educate/teach; make to agree;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">possit.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>quod pertinet ad finem bonorum :<strike> 間接疑問文で名詞節「何が究極の善の方に繋がるか</strike>」間接疑問文は動詞は接続法。ここは関係代名詞　中性主格。<strong>unum genus est id, quod ~</strong>　であろう。「それが究極善につながるもの」</p>
+<p>quod positum est in praeceptis: <strike>「何が教えの中にあるべきか</strike>」「それが教えの中に位置するもの」</p>
+<p>quibus usus possit conformari. : 「それにより使用が形作られることが可能になる。」→　指針となりうるようなの意<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>一つは究極の善につながるようなもの。2つ目はそれを使って日々のあらゆる場面に於いて指針となりうるような、教えが含まれているというような種類である。<br></p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Superioris<span>superus supera -um, superior -or -us, supremus -a -um ADJ  比較級<br>:above, high; higher, upper, of this world; greatest, last, highest;<br>(C 単数 属格), (N 単数 属格)<br></span></a>
+<a class="note1">generis<span>genus generis N (3rd) N  <br>:|noble birth; kind/sort/variety; class/rank; mode/method/style/fashion/way;<br>(X 単数 属格)<br></span></a>
+<a class="note1">huiusmodi<span>副詞<br><span>Of this kind, <span>such</span></span><br><span><span>
+likewise, the like</span><br></span><br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">exempla,<span>exemplum exempli N (2nd) N  <br>:example, sample, specimen; instance; precedent, case; warning, deterrent;<br>(N 複数 主格), <br></span></a>
+<a class="note0">omniane<span></span></a>
+<a class="note0">officia<span></span></a>
+<a class="note1">perfecta<span>perfectus perfecta, perfectum ADJ  <br>:perfect, complete; excellent;<br>(F 単数 主格)<br></span></a>
+<a class="note0">sint,<span></span></a>
+<a class="note1">num<span>num ADV <br>:if, whether; now, surely not, really, then (asking question expecting neg);<br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">officium<span></span></a>
+<a class="note0">aliud<span></span></a>
+<a class="note0">alio<span></span></a>
+<a class="note1">maius<span>magnus magna -um, major -or -us, maximus -a -um ADJ  比較級<br>:large/great/big/vast/huge; much; powerful; tall/ long/ broad; extensive/spacious;<br>(N 単数 主格), <br></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">generis<span></span></a>
+<a class="note1">eiusdem.<span>idem eadem, idem PRON  <br>:(w/-dem ONLY, idem, eadem, idem) same, the same, the very same, also;<br>(X 単数 属格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>exempla sunt superioris generis. : 所有の属格（NewLatin198)「（次の）例は最初の（命題）に関する類のものである」</p>
+<p>omniane officia sint perfecta : neがついて疑問文。独立文での接続法のうち、「<strong>審議の接続法</strong>」と呼ばれるもの。（NewLatin277)</p>
+<p>quae sunt generis eiusdem. : 同じ種類のもの　＝　などなどの意<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>以下の例題は最初の種類の物に関するものである。すべてのOfficiumは完全であるのか？どのOfficiumが他のものより優れているか？などなど。<br></p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quorum<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">officiorum<span></span></a>
+<a class="note1">praecepta<span>praeceptum praecepti N (2nd) N  <br>:teaching, lesson, precept; order, command;<br>(N 複数 主格), <br></span></a>
+<a class="note1">traduntur,<span>trado tradere, tradidi, traditus V (3rd)  <br>:hand over, surrender; deliver; bequeath; relate;<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note1">quamquam<span>quamquam CONJ <br>:though, although; yet; nevertheless;<br><br></span></a>
+<a class="note0">pertinent<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">finem<span></span></a>
+<a class="note0">bonorum,<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">minus<span>minus ADV <br>:less; not so well; not quite;<br><br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note1">apparet,<span>apparet apparere, -, - V (2nd) IMPERS  <br>:it is apparent/evident/clear/certain/visible/noticeable/found; it appears;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">quia<span>quia CONJ <br>:because;<br><br></span></a>
+<a class="note1">magis<span>magis ADV <br>:to greater extent, more nearly; rather, instead; more; (forms COMP w/DJ);<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">institutionem<span>institutio institutionis N (3rd) F  <br>:institution; arrangement; instruction, education;<br>(C 単数 対格)<br></span></a>
+<a class="note0">vitae<span></span></a>
+<a class="note1">communis<span>communis communis, commune ADJ  <br>:|ordinary; sociable, courteous obliging; related, having something in common;<br>(X 単数 属格), <br></span></a>
+<a class="note1">spectare<span>specto spectare, spectavi, spectatus V (1st)  <br>:observe, watch, look at, see; test; consider;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">videntur;<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">nobis<span></span></a>
+<a class="note0">his<span></span></a>
+<a class="note0">libris<span></span></a>
+<a class="note1">explicandum.<span>explico explicare, explicavi, explicatus V (1st)  <br>:unfold, extend; set forth, display, exhibit, explain, disentangle;<br>(未来 分詞 受動態 N 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>ea, quorum officiorum praecepta traduntur, pertinent ad finem bonorum. : 「それらのOfficumの教え（定め）が供給するものは、究極の善に関連している」これは多分上でいう2番めの命題のことを言っている。</p>
+<p><strong>ea officium, quorum praecepta traduntur, pertinent</strong>~ : で先行詞は本来officiumであるが、関係詞節に取り込まれた先行詞が、時に関係詞の格と合致することがある。（A&amp;G <font style="background-color: rgb(255, 255, 0);">NewLatin 306.a</font>)</p>
+<p>videntur spectare ad institutionem. 「規制の方向を向いていることが見て取れる」回りくどいが「規制の方向」だと思われる</p>
+<p>de quibus&nbsp;est explicandum nobis libris. : nobis libris 手段の奪格で「私の本によって」動形容詞explicandum+estで～されるべきである。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それらのOfficiumの教えが供給するものは、究極の善に関連しているが、しかし明白であるということも無い。何故なら、それらは日常の生活の指示について見ているようであるからである。それについては私は更に本のなかで説明するであろう。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

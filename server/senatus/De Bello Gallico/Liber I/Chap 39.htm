@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 39</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[39]<span></span></a>
+
+<a class="note1">Dum<span>dum, 接続詞   :while, as long as, until; provided that;</span></a>
+<a class="note1">paucōs<span>paucus, pauci 名詞 (2nd) M few; a few; a select few; <br>対格<br></span></a>
+<a class="note0">diēs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Vesontiōnem<span><br><br></span></a>
+<a class="note0">reī<span></span></a>
+<a class="note1">frūmentāriae<span>frumentarius, frumentaria, frumentarium 形容詞   :grain producing; of/concerning grain; 属格<br></span></a>
+<a class="note1">commeātūsque<span>commeatus, commeatus 名詞 (4th) M   :supplies/provisions; goods; voyage; passage; convoy/caravan; furlough/leave; 属格<br></span></a>
+<a class="note1">causā<span>causa, 前置詞 (属格)  :for sake/purpose of (preceded by GEN.), on account/behalf of, with a view to;<br></span></a>
+<a class="note1">morātur,<span>moror, morari, moratus sum 動詞 (1st) DEP   :delay; stay, stay behind; devote attention to;(3 単 現在 受動態 直説法<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">percontātiōne<span>percontatio, percontationis 名詞 (3rd) F   :questioning, inquiry; 単　奪格<br></span></a>
+<a class="note0">nostrōrum<span><br><br></span></a>
+<a class="note1">vōcibusque<span>vox, vocis 名詞 (3rd) F   :voice, tone, expression;複　奪格<br></span></a>
+<a class="note0">Gallōrum<span><br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">mercātōrum,<span>mercator 属格<br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">ingentī<span>ingens, ingentis (gen.), ingentior -or -us, ingentissimus -a -um 形容詞   :not natural, immoderate; huge, vast, enormous; mighty;奪格<br></span></a>
+<a class="note1">magnitūdine<span>magnitudo, magnitudinis 名詞 (3rd) F   :size, magnitude, bulk; greatness. importance, intensity; 単　奪格<br></span></a>
+<a class="note0">corporum<span></span></a>
+<a class="note1">Germānōs,<span>複　対格<br></span></a>
+<a class="note0">incrēdibilī<span><br><br></span></a>
+<a class="note0">virtūte<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">exercitātiōne<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">armīs<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">praedicābant<span>praedico, praedicare, praedicavi, praedicatus 動詞 (1st) TRANS   :proclaim/declare/make known/publish/announce formally; praise/recommend; 3 複 未完了 能動態 直説法)<br></span></a>
+<a class="note1">(saepe<span>saepenumeroで副詞<br>;= repeatedly, on many occation<br><br></span></a>
+<a class="note0">numerō<span></span></a>
+<a class="note1">sēsē<span>彼ら（ゲルマンと戦う人？）</span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">hīs<span></span></a>
+<a class="note1">congressōs<span>congredior, congredi, congressus sum 動詞 (3rd) DEP   :meet, approach, near; join in battle, come to grips; contend/engage (at law);完了 分詞 受動態 m 複 対格<br></span></a>
+<a class="note0">nē<span></span></a>
+<a class="note1">vultum<span>vultus, vultus 名詞 (4th) M   :face, expression; looks; 対格</span></a>
+<a class="note1">quidem<span>quidem, 副詞   :indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;</span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">aciem<span>acies, aciei 名詞 (5th) F   :sharpness, sharp edge, point; battle line/array; sight, glance; pupil of eye; 対格</span></a>
+<a class="note1">oculōrum<span>oculus, oculi 名詞 (2nd) M   :eye;属格<br></span></a>
+<a class="note1">dīcēbant<span>dico 3 複 未完了 能動態 直説法 <br>主語は前の文と同じ <br>更に言うには、と言う感じか？<br></span></a>
+<a class="note1">ferre<span>fero, ferre, tuli, latus 動詞   :bring, bear; tell/speak of; consider; carry off, win, receive, produce; get;不定詞</span></a>
+<a class="note0">potuisse),<span></span></a>
+<a class="note1">tantus<span>tantus tanta, tantum 形容詞　m単　主格　;= of such size, so great, so much<br><br></span></a>
+<a class="note1">subitō<span>subito, 副詞   :suddenly, unexpectedly; at once, at short notice, quickly; in no time at all;</span></a>
+<a class="note1">timor<span>timor, timoris 名詞 (3rd) M   :fear; dread;主格</span></a>
+<a class="note0">omnem<span></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note1">occupāvit<span>occupo, occupare, occupavi, occupatus 動詞 (1st)   :seize; gain; overtake; capture, occupy; attack; 3 単 完了 能動態 直説法<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">mediocriter<span>mediocriter, mediocrius, mediocrissime 副詞   :to moderate/subdued extent/degree, ordinarily/moderately/tolerably; not very;</span></a>
+<a class="note1">omnium<span>属格</span></a>
+<a class="note1">mentēs<span>mens, mentis 名詞 (3rd) F   :mind; reason, intellect, judgment; courage;対格<br></span></a>
+<a class="note1">animosque<span>animus, animi 名詞 (2nd) M   :mind; intellect; soul; feelings; heart; spirit, courage, character, pride; air; 対格</span></a>
+<a class="note1">perturbāret.<span>perturbo, perturbare, perturbavi, perturbatus 動詞 (1st)   :confuse, throw into confusion; disturb, perturb, trouble; alarm;3 単 未完了 能動態 接続法)<br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false">
+<p>Dum moratur ad Vesontionem paucos dies causa rei furmentarie commeatusque : (カエサル）がウェソンティオに2,3日、穀物や補給のことでとどまっている時に、</p>
+<p><strong>ex </strong>percontatione nostrorum : 我軍の兵士の質問と、</p>
+<p>vocibusque Gallorum ac mercatorum　：ガリア人と貿易商人たちの声（話）によって、</p>
+<p><strong>qui (Gallus ac mercator) praedicabant : 彼らは公言した。</strong></p>
+<p>ingenti magnitudine corporum Germanos, incredibili virtute atque exercitatione in armis esse：ゲルマンは、とてつもないサイズの身体で、武器の扱いには大変剛勇で経験豊かである</p>
+<p>saepenumero一語で副詞、「度々」</p>
+<p>cum his congressos　：彼らと戦闘状態になると（分詞構文）</p>
+<p>ne vultum quidem atque aciem oculorum：彼らの顔、目だけでも　（見るのは耐え難い）</p>
+<p><br></p>
+<p><u>主たる文は　tantus timor occupavit omnem exercitum. である。</u>ex percontatione vocibusque がその原因で、残りはその原因の詳しい内容である。</p>
+<u>
+</u></div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>カエサルが食料や補給のことで２，３日ウェソンティオに滞在している時のこと、ローマ兵がガリア人と貿易商人などに尋ね話をして、（ガリア人貿易商人が）ゲルマンは恐ろしく強健な身体をもち、武器については剛勇で経験に富んでいる、と公言し更に、彼らと戦いが始まると、彼らの顔や目さえも耐え難い、と言い募ったので、突然軍全体を恐怖が襲い、みんなの勇気、知性などが普通ではない状態に混乱した。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīc<span><br><br></span></a>
+<a class="note0">prīmum<span><br><br></span></a>
+<a class="note1">ortus<span>orior, ori, oritus sum 動詞 (3rd) DEP   :rise (sun/river); arise/emerge, crop up; get up (wake); begin; originate from;完了 分詞 受動態 m 単 主格</span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note1">tribūnīs<span>tribunus, tribuni 名詞 (2nd) M   :tribune;奪格<br></span></a>
+<a class="note1">mīlitum,<span>miles, militis 名詞 (3rd) M   :soldier; foot soldier; soldiery;属格<br></span></a>
+<a class="note1">praefectīs,<span>praefectus, praefecti 名詞 (2nd) M   :commander; prefect;奪格<br></span></a>
+<a class="note1">reliquīsque<span>reliquus, reliqua, reliquum 形容詞   :rest of/remaining/available/left; surviving; future/further; yet to be/owed;奪格</span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">urbe<span></span></a>
+<a class="note1">amīcitiae<span>amicitia, amicitiae 名詞 (1st) F   :friendship, bond between friends; alliance, association; friendly relations; 属格<br></span></a>
+<a class="note1">causā<span>causa, causae 名詞 (1st) F   :cause/reason/motive;奪格 <br>好意の理由によって</span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">secūtī<span>secor, seci, secutus sum 動詞 (3rd) DEP   :follow; escort/attend/accompany; aim at/reach after/strive for/make for/seek;完了 分詞 受動態 m 複　主格　分詞構文<br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">magnum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">rē<span></span></a>
+<a class="note0">mīlitārī<span><br><br></span></a>
+<a class="note1">ūsum<span>usus, usus 名詞 (4th) M   :use, enjoyment; experience, skill, advantage; custom;対格<br></span></a>
+<a class="note0">habēbant:<span></span></a>
+<a class="note0">quōrum<span></span></a>
+<a class="note1">alius<span>alius, alia, aliud 形容詞   :other, another; different, changed;m 単　 主格<br></span></a>
+<a class="note1">aliā<span>alius, alia, aliud 形容詞   :other, another; different, changed; f単　主格<br><br><br></span></a>
+<a class="note1">causā<span>causa, causae 名詞 (1st) F   :cause/reason/motive; 奪格</span></a>
+<a class="note1">inlātā,<span>infero　＝bring/carry in <br>完了 分詞 受動態 f 単 奪格<br><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">proficīscendum<span>proficiscor, proficisci, profectus sum 動詞 (3rd) DEP   :depart, set out; proceed;未来 分詞 受動態 m 単 対格) ここはad + 動名詞で目的を表す？<br></span></a>
+<a class="note1">necessāriam<span>necessarius, necessaria, necessarium 形容詞　inevitable,　fateful, critical ｆ単　対格<br><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">dīceret,<span>3単　未完了　接続法<br><br><br></span></a>
+<a class="note1">petēbat<span>peto, petere, petivi, petitus 動詞 (3rd)   :attack; aim at; desire; beg, entreat, ask (for); reach towards, make for; 3 単 未完了 能動態 直説法<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note1">voluntāte<span>voluntas, voluntatis 名詞 (3rd) F   :will, desire; purpose; good will; wish, favor, consent;奪格（付随）<br></span></a>
+<a class="note1">discēdere<span>discedo, discedere, discessi, discessus 動詞 (3rd)   :go/march off, depart, withdraw; scatter,不定詞<br></span></a>
+<a class="note1">licēret;<span>licet, licere, licuit, licitus est 動詞 (2nd) IMPERS   :it is permitted, one may; it is all right, lawful, allowed, permitted;3 単 未完了 能動態 接続法<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">nūllī<span>nullus, nulli 名詞 (2nd) M   :no one;<br></span></a>
+<a class="note1">pudōre<span>pudor, pudoris 名詞 (3rd) M   :decency, shame; sense of honor; modesty; bashfulness; 奪格<br></span></a>
+<a class="note1">adductī,<span>adduco, adducere, adduxi, adductus 動詞 (3rd) TRANS   :lead up/to/away; bring up/to; persuade, induce; lead, bring; contract, tighten;完了 分詞 受動態 m 複 主格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">timōris<span>timor 属格<br></span></a>
+<a class="note1">suspīciōnem<span>suspicio, suspicionis 名詞 (3rd) F   :suspicion; mistrust;対格<br></span></a>
+<a class="note1">vitārent,<span>vito, vitare, vitavi, vitatus 動詞 (1st)   :avoid, shun; evade;3 複 未完了 能動態 接続法<br></span></a>
+<a class="note1">remanēbant.<span>remaneo, remanere, remansi, remansus 動詞 (2nd)   :stay behind; continue, remain;3 複 未完了 能動態 直説法<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>tribunis militum　：leagteの下でcenturion（百人隊長）の上　高級将校（トリブヌス）幕僚 直訳　兵士のトリブヌス</p>
+<p>praefecti : 普通は騎兵の指揮官、しかしこの場合はローマ人で、カエサルについてきた人で、名目上この階級を与えられている。</p>
+<p><strong>Hic ortus est primum a ~: この恐怖は最初　～から起きた。（Hicが主語）</strong></p>
+<p>ex urbe amicitiae causa Caesarem secuti　：Urbeはローマのこと。ローマからカエサルを、好意の理由で追ってきている（人）　：　qui ... secti ：分詞構文　「好意の理由によって」とは軍人ではなく、多分元のカエサルの債権者関連の人々で、軍隊の中での地位をもとめていた人たちのことである。</p>
+<p>qui ---- non magnum in re militari usum habebant:　軍事についての経験が多く持っていない人</p>
+<p><strong>quorum alius alia causa inlata　</strong>：<font color="#0000ff">Aliusは別の格と一緒に繰り返され、二つの文を簡潔に表現する。（NewLatin253.2、AG351.c)</font></p>
+<p>この場合、後半の causa inlataは独立奪格になっていて、付帯状況を表していると考えられる。「ある者はある理由を持ち出し、他の者は別な理由を持ちだして」</p>
+<p><strong>quam diceret, sibi ad proficiscendum necessariam esse</strong> : 主語はquam diceret 「言ったこと,言った内容」で、それがesse necessariam 避けられない、sibiは単純に for themself と解釈。ad proficiscendumはどう解釈するか？</p>
+<p><strike>① ad proficiscendum [Ad + 動名詞]と考え、「彼らは</strike><strike>出発するために必要である」　sibi esse necessariam ad proficiscendum　sibiは彼らのために（言う）</strike>
+<strike>
+</strike></p>
+<p>②　proficisccendumを動形容詞と考えると　「出発する必要」　その場合sibiは変則的な「行為者の与格」この場合adが余るが、これはad domumの省略と考える？</p>
+<p>→　どちらも多少ともしっくりしない！！！！<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>これらは最初に歩兵のトリブヌス、訓練のために随行している人たち、残りは、ローマからカエサルについてきている、軍事の経験があまりない人たちから起きた。彼らは色々な理由を付けており、彼らは出発する必要がある、と言う。そして、カエサルの同意で撤退する許可を求めた。不名誉に感じ、恐れていることを疑われる事を避けるため残る人も皆無ではなかった。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hī<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">vultum<span>vultus, vultus 名詞 (4th) M   :face, expression; looks; 対格</span></a>
+<a class="note1">fingere<span>fingo, fingere, finxi, fictus 動詞 (3rd) TRANS   :mold, form, shape; create, invent; produce; imagine; compose; devise, contrive</span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">interdum<span>interdum, 副詞   :sometimes, now and then;</span></a>
+<a class="note1">lacrimās<span>lacrima, lacrimae 名詞 (1st) F   :tear; exuded gum/sap; bit of lead;対格<br></span></a>
+<a class="note1">tenēre<span>teneo, tenere, tenui, tentus 動詞 (2nd)   :hold, keep; comprehend; possess; master; preserve;不定詞<br></span></a>
+<a class="note1">poterant:<span>possum 3 複 未完了 能動態 直説法</span></a>
+<a class="note1">abditī<span>abdo, abdere, abdidi, abditus 動詞 (3rd) TRANS   :remove, put away, set aside; depart, go away; hide, keep secret, conceal; 完了 分詞 受動態 m 複 主格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">tabernāculis<span>tabernaculum, tabernaculi 名詞 (2nd) N   :|tabernacle; canopy, covered shrine, niche; reliquary; receptacle for Host;奪格<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note1">fātum<span>fatum, fati 名詞 (2nd) N   :utterance, oracle; fate, destiny; 対格<br></span></a>
+<a class="note1">querēbantur<span>queror, queri, questus sum 動詞 (3rd) DEP   :complain; protest, grumble, gripe;<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">familiāribus<span>familiaris, familiaris 名詞 (3rd) C   :member of household (family/servant/esp. slave); familiar acquaintance/friend;<br></span></a>
+<a class="note0">suīs<span></span></a>
+<a class="note1">commūne<span>communis, communis, commune 形容詞   :common/joint/public; general/universal; 対格<br></span></a>
+<a class="note0">perīculum<span><br><br></span></a>
+<a class="note1">miserābantur.<span>miseror, miserari, miseratus sum 動詞 (1st) DEP   :pity, feel sorry for;3 複 未完了 受動態 直説法)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>vultum fingere : voltumは顔の表情の事。表情を作る。</p>
+<p>interdum = at times interimは　＝meanwhile で異なるので注意。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼らは（nonnullus)は顔色をつくろうこともできず、何人かは涙を隠すこともできなかった。テントのなかに隠れて自身の運命を呪うか友人たちと共通の危険について嘆くなどをしていた。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Vulgō<span>vulgo, 副詞   :generally, usually; universally; publicly, in/to the crowd/multitude/world;<br></span></a>
+<a class="note0">tōtis<span><br><br></span></a>
+<a class="note1">castrīs<span>castra, castrae 名詞 (1st) F   :camp, military camp/field; army;場所の奪格<br></span></a>
+<a class="note1">testāmenta<span>testamentum, testamenti 名詞 (2nd) N   :will, testament; covenant;<br></span></a>
+<a class="note1">obsignābantur.<span>obsigno, obsignare, obsignavi, obsignatus 動詞 (1st)   :sign,<strong> seal</strong>;<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>totis castris : 場所の奪格で、totusなどで修飾されると前置詞なしで使われる。（NewLatin228)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>全般的にはキャンプ全体で、皆、遺言書を封印した。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hōrum<span>hic 属格<br></span></a>
+<a class="note1">vōcibus<span>vox, vocis 名詞 (3rd) F   :voice, tone, expression;奪格<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">timōre<span>timor 奪格<br></span></a>
+<a class="note1">paulātim<span>paulatim, 副詞   :little by little, by degrees, gradually; a small amount at a time, bit by bit;<br></span></a>
+<a class="note1">etiam<span>etiam, 接続詞   :and also, besides/furthermore, in addition/as well</span></a>
+<a class="note1">iī<span>=ei is複　ｍ　主格<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">magnum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">ūsum<span><br><br></span></a>
+<a class="note0">habēbant,<span><br><br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note0">centuriōnēsque<span><br><br></span></a>
+<a class="note1">quīque<span>= et qui<br><br></span></a>
+<a class="note0">equitātuī<span><br><br></span></a>
+<a class="note0">praeerant,<span></span></a>
+<a class="note1">perturbābantur.<span>perturbo, perturbare, perturbavi, perturbatus 動詞 (1st)   :confuse, throw into confusion; disturb, perturb, trouble; alarm;<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>quique equitatui praeerant : quiqueはet quiと同じ。qui praeerant equitatui. 騎兵を指揮しているもの。praesumはDAT支配。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼らの声と恐怖によって少しずつ、キャンプの中では軍事の経験豊かな、兵士、百人隊長、騎兵指揮者なども混乱してきた。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quī<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note1">timidōs<span>timidus, timida -um, timidior -or -us, timidissimus -a -um 形容詞   :timid; cowardly; fearful,複　対格<br></span></a>
+<a class="note1">exīstimārī<span>existimo, existimare, existimavi, existimatus 動詞 (1st) TRANS   :value/esteem;不定詞 受動態<br></span></a>
+<a class="note1">volēbant,<span>volo, velle, volui, - 動詞   :wish, want, prefer; be willing, will; 3 複 未完了 能動態 直説法<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note1">hostem<span>hostis, hostis 名詞 (3rd) C   :enemy (of the state); stranger, foreigner;対格</span></a>
+<a class="note1">verērī,<span>vereor, vereri, veritus sum 動詞 (2nd) DEP   :revere, respect; fear; dread;不定詞<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">angustiās<span>angustia, angustiae 名詞 (1st) F   :narrow passage/place/space (pl.), 複　対格<br></span></a>
+<a class="note1">itineris<span>属格</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">magnitūdinem<span>magnitudo, magnitudinis 名詞 (3rd) F   :size, magnitude, bulk; greatness. importance, intensity; 対格　単<br></span></a>
+<a class="note1">silvārum<span>silva, silvae 名詞 (1st) F   :wood, forest (sylvan);属格<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">intercēderent<span>intercedo, intercedere, intercessi, intercessus 動詞 (3rd)   :intervene; intercede, interrupt; hinder;3 複 未完了 能動態 接続法<br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note1">ipsōs<span>対格<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">Ariovistum,<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note1">frūmentāriam,<span>frumentarius, frumentaria, frumentarium 形容詞   :grain producing; of/concerning grain; 単　対格<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">satis<span>satis, 副詞   :enough, adequately; sufficiently; well enough, quite; fairly, pretty;</span></a>
+<a class="note1">commodē<span>commode, commodius, commodissime 副詞   :conveniently/neatly/tidily; aptly/well; suitably/properly/fittingly; tastefully;<br></span></a>
+<a class="note1">supportārī<span>supporto, supportare, supportavi, - 動詞 (1st)   :carry up, transport;受動態　不定詞<br></span></a>
+<a class="note0">posset,<span></span></a>
+<a class="note0">timēre<span><br><br></span></a>
+<a class="note1">dīcēbant.<span>qui　の動詞<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Qui se existimari volebant　：自身が思われたいと望んだ人は　dicebantが動詞。</p>
+<p>ex his minus timidos　：　彼らから（比べて）怯えていない</p>
+<p>aut rem frumentariam, ut satis commode supportari posset, timere dicebant.</p>
+<p>→　本来は　ut res furmentaria satis commodde surportari　とutの中にあるべき。</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>自分が他の人達よりも怯えていないと思われたい人は、敵を恐れている訳ではない、むしろ狭い行程と大きな森、それは我軍とアリオウィストゥスの間に広がっていたが、または、食料、それが十分にかつ適宜調達できるか、そういうことを恐れているのだと言った。</p>
+</div>
+</div>
+<div class="spacer">Line7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nōn<span><br><br></span></a>
+<a class="note0">nūllī<span><br><br></span></a>
+<a class="note1">etiam<span>also</span></a>
+<a class="note0">Caesarī<span><br><br></span></a>
+<a class="note1">nūntiābant,<span>nuntio, nuntiare, nuntiavi, nuntiatus 動詞 (1st) TRANS   :announce/report/bring word/give warning3 複 未完了 能動態 直説法<br></span></a>
+<a class="note1">cum<span>＝when</span></a>
+<a class="note1">castra<span>castrum, castri 名詞 (2nd) N   :fort/fortress; camp (pl.), military camp/field; army; war service; day's march;複　対格</span></a>
+<a class="note1">movērī<span>moveo　不定詞<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">signa<span>signum, signi 名詞 (2nd) N   :battle standard; indication; seal; 連隊旗のようなもの？CHap25にも出てくる　複　対格</span></a>
+<a class="note1">ferrī<span>fero, ferre, tuli, latus 動詞   :bring, bear; tell/speak of; consider; carry off,不定詞　受動態<br></span></a>
+<a class="note1">iussisset,<span>jubeo, jubere, jussi, jussus 動詞 (2nd) TRANS   :order/tell/command/direct; 3 単 過去完了 能動態 接続法</span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">fore<span>futuros esse <br>sumの未来分詞　能動　＋ esseで不定詞</span></a>
+<a class="note1">dictō<span>dictum, dicti 名詞 (2nd) N   :words/utterance/remark; one's word/promise;与格<br></span></a>
+<a class="note1">audientēs<span>audio  現在 分詞 能動態 m,f 主格　対格<br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">propter<span>propter, 前置詞 (対格)  :near; on account of; by means of; because of;</span></a>
+<a class="note1">timōrem<span>timor 対格<br></span></a>
+<a class="note0">signa<span></span></a>
+<a class="note1">lātūrōs.<span>fero, ferre, tuli, latus 動詞   :bring, bear; tell/speak of; consider; carry off, win, receive, produce; get;未来 分詞 能動態 m 複 対格) ＋esseで不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>cum castra moveri ac signa ferri iussisset　：when ～　野営地の移動、シグナを上げて進めが命令された時に、</p>
+<p>milites non fore audeientes dicto: 兵士は彼の言葉に対し、聞こうとはしないであろう。fore (esse)で<strong>未来不定詞</strong></p>
+<p><strong>sum audeientes dico : </strong>dicoは間接目的語の与格(NewLatin187.2.a)</p>
+<p>neque signa luturos propter timorem : 恐怖のためシグナを進める事をしないであろう。laturos (esse)で<strong>未来不定詞</strong></p>
+<p>fero signaは決まった用語で、進軍する事。軍事用語。</p>
+<strong>
+</strong></div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>何人かはカエサルに行ってきた。もし野営地を移動する、シグナの掲げて進むということが命令されても、兵士はその言葉を聞く状態ではなく、また恐怖からシグナを進める事もしないであろう。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

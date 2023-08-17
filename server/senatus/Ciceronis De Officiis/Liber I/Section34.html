@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='remote latinreader' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function (event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+            if($("#saveoption").length){
+                $("#saveoption").hide();
+                $("#downloadsave").hide();
+            }
+            insertButtons2();
+            $("#outer").css("width","96%");
+        }
+        function insertButtons2(){
+            if(!$(".lbtn1").length){
+                $(".spacer").each(function(index, elem) {
+                    var target = $(elem);
+                    var tx1 = target.html();
+                    var color = "style='color:#5f9ea0;'";
+                    if (target.next().next().attr("class") != "spnote")
+                        color = "style='color:black;'";
+                    target.html(tx1 + "<button class='lbtn2'>Translation</button><button class='lbtn1'>Notes</button>");
+                });
+            }
+            $(".lbtn1").on("click", function() {
+                var target = $(this).parent().next().next();
+                if (target.attr("class") != "spnote") {
+                    target = target.next();
+                    if (target.attr("class") != "spnote") // 編集中の場合
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+            $(".lbtn2").on("click", function() {
+                var target = $(this).parent().next().next().next();
+                if (target.attr("class") != "translation") {
+                    target = target.next();
+                    if (target.attr("class") != "translation")
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+        }
+
+        function btoggle(obj, btn) {
+            obj.toggle(function() {
+                if ($(this).is(":visible"))
+                    btn.css("color", "black");
+                else
+                    btn.css("color", "#5f9ea0");
+            });
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 2.8rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+
+        /* 追加のボタン*/
+        .lbtn1,
+        .lbtn2,
+        .lbtn3,
+        .lbtn4 {
+            float: right;
+            margin-top: 2px;
+            margin-right: 6px;
+            height: 16px;
+            font-size: 10px;
+            padding: 1px;
+            font-weight: bold;
+            /* vertical-align: bottom; */
+            border: none;
+        }
+
+
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 2.8rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+
+        }
+
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+
+        a.note1:hover span {
+            display: block;
+        }
+
+        .latin span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 3.5rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        .latin span::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.8rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.5rem;
+            left: 2.0rem;
+        }
+    </style>
+</head>
+
+
+<body id="bodyportion">
+        <div id="outer">
+    
+		<a name="begin"></a>
+<div id="header">
+<h1> Liber I: Section 34 </h1>
+
+<div class="boxright">
+<input id="saveoption" class="rbtn1" type="button" value="保存する" style="font-size: 12px; font-family: meiryo; ">
+<input id="downloadsave" class="rbtn1" type="button" value="ダウンロード" style="font-size: 12px; font-family: meiryo; display: none;">
+</div></div>
+
+
+<div class="spacer">Line0<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+</a><a class="note0">[34]<span></span></a>
+<a class="note0">Sunt<span></span></a>
+<a class="note1">autem<span><b>autem</b>,CONJ <br><b>&gt;:but (postpositive), on the other hand/contrary; while, however; moreover, also;</b><br></span></a>
+<a class="note1">quaedam<span>quidam quaedam, quoddam   <br>:(w/-dam) certain; as INDEF a certain thing; somebody, one, something;<br>&nbsp;(F 複数 主格)<br></span></a>
+<a class="note0">officia<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">adversus<span>adversus PREP ACC <br>:facing, opposite, against, <strong>towards;</strong> contrary to; face to face, in presence of;<br><br><br></span></a>
+<a class="note0">eos<span></span></a>
+<a class="note1">servanda,<span><b>servo</b>,servare, servavi, servatus V (1st)  X<br><b>:watch over; protect, store, keep, guard, preserve, save;</b><br>【動形容詞 (N 複数 主格) 】</span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">iniuriam<span></span></a>
+<a class="note1">acceperis.<span>accipio accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>(2 単数 未来完了 能動態 直接法 ), <br></span></a>
+</p>
+</div>
+
+    <div class="spnote" style="background-color: rgb(255, 255, 248);" contenteditable="false">
+<div class="innerdiv" spellcheck="false"><p>officia sunt servanda adversus eos, a quibus iniuriam acceperis.　servandaは動形容詞。保たれるべきである。<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>ある種のOfficiumはたとえ、それから不正義を受けようとも保たれなければならない。<br></p>
+</div>
+</div>
+<div class="spacer">Line1<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Est<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note1">ulciscendi<span><b>ulciscor</b>,ulcisci, ultus sum V (3rd) DEP  <br><b>:avenge; punish;</b><br>【動名詞 (属格)】</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">puniendi<span><b>pūnĭor</b>,puniri, punitus sum V (4th) DEP  <br><b>:punish (person/offense), inflict punishment; avenge, extract retribution;</b><br>【動名詞 (属格)】</span></a>
+<a class="note1">modus;<span><b>mŏdus</b>,modi N (2nd) M <br><b>:manner, mode, way, method; rule, rhythm, beat, measure, size; bound, limit;</b><br>(単数 主格) </span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">haud<span>haud ADV <br>:not, not at all, by no means; not (as a particle);<br><br></span></a>
+<a class="note1">scio<span>scio scire, scivi(ii), scitus V TRANS  <br>:know, understand;<br>(１ 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">an<span>an CONJ <br>:can it be that (introduces question expecting negative answer/further question);<br><br></span></a>
+<a class="note1">satis<span>satis undeclined ADJ <br>:enough, adequate, sufficient; satisfactory;<br><br></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note0">eum,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">lacessierit<span>lacesso lacessere, lacessivi, lacessitus V (3rd)  <br>:provoke, excite, harass, challenge, harass; attack, assail;<br>(3 単数 完了 能動態 接続法 )<br></span></a>
+<a class="note1">iniuriae<span>injuria injuriae N (1st) F  <br>:injury; injustice, wrong, offense; insult, abuse; sexual assault;<br>(C 単数 与格)<br></span></a>
+<a class="note0">suae<span></span></a>
+<a class="note1">paenitere,<span>paeniteo paenitere, paenitui, - V (2nd)  <br>:displease; (cause to) regret; repent, be sorry;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note0">ne<span></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note1">tale<span>talis talis, tale ADJ  <br>:such; so great; so excellent; of such kind;<br>(N 単数 対格)<br></span></a>
+<a class="note1">posthac<span>posthac ADV <br>:after this, in the future, hereafter, from now on; thereafter, from then on;<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">ceteri<span>ceterus cetera, ceterum ADJ  <br>:the_other; the_others (pl.). the_remaining/rest, all the_rest;<br>(M 複数 主格)<br><br></span></a>
+<a class="note0">sint<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">iniuriam<span></span></a>
+<a class="note1">tardiores.<span>tardus tarda -um, tardior -or -us, tardissimus -a -um ADJ  比較級<br>:slow, limping; deliberate; late;<br>(C 複数 主格), <br></span></a>
+</p>
+</div>
+
+    <div class="spnote" style="background-color: rgb(255, 255, 248);" contenteditable="false">
+<div class="innerdiv" spellcheck="false"><p><s>modus : これも訳がよくわからない。limitとかmeansとかあるけど…（あとの文から解るか？</s>）</p><p>ulciscendi modus, 目的、同格の動名詞で名詞を修飾 「仇討ちの限度」</p>
+<p><strong>scio haud an eum paenitere suae iniuriae sit satis.</strong> eum paenitereが主語。「自分のなした不正に対して後悔することが十分か否か、全く解らない。」anはNOを期待する前置詞なので、「そうは思わないけど」というニュアンスか？qui lacessieritはeumにかかる。</p>
+<p><strong>ut ipse (faciant) ne quid tale posthac</strong>. quidは不定代名詞quisの対格。quid taleで同様の何かの意。ne quid + 副詞で良く動詞が省略される。</p>
+<p>ceteri sint tardiores ad iniuriam. 「不正に対して躊躇する」<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>仇討ち、懲罰には限度がある。むしろ、私は全く確信はないが、そのあなたに不正を成したその人間が後悔をして、以後同じようなことをしなくなる、または不正に対して躊躇することが十分かどうかである。<br></p>
+</div>
+</div>
+<div class="spacer">Line2<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Atque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">re<span></span></a>
+<a class="note0">publica<span></span></a>
+<a class="note0">maxime<span></span></a>
+<a class="note1">conservanda<span>conservo conservare, conservavi, conservatus V (1st)  <br>:keep safe/intact, save (from danger); preserve, maintain; spare; keep/observe;<br>&nbsp;(未来 分詞 受動態 N 複数 主格)<br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">iura<span>jus juris N (3rd) N  <br>:law; legal system; code; <strong>right</strong>; duty; justice; court; binding decision; oath;<br>(N 複数 主格)<br></span></a>
+<a class="note0">belli.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false"><p>iura belli sunt maxime conservanda in re publica.<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>また、戦いの正当性は、国事において最も保たれなければならないものである。<br></p>
+</div>
+</div>
+<div class="spacer">Line3<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Nam<span>nam CONJ <br>:for, on the other hand; for instance;<br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">sint<span></span></a>
+<a class="note0">duo<span></span></a>
+<a class="note0">genera<span></span></a>
+<a class="note1">decertandi,<span>decerto decertare, decertavi, decertatus V (1st)  <br>:fight (issue out/to the finish); contend/dispute/argue; struggle/compete over;<br>(未来 分詞 受動態 N 単数 属格)<br>動名詞<br></span></a>
+<a class="note0">unum<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">disceptationem,<span>disceptatio disceptationis N (3rd) F  <br>:debate; dispute; discussion; judgment, judicial award;<br>(C 単数 対格)<br></span></a>
+<a class="note0">alterum<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">vim,<span>vis viris N (3rd) F  <br>:strength (bodily) (pl.), force, power, might, violence; resources; large body;<br>(F 単数 対格)<br></span></a>
+<a class="note0">cumque<span></span></a>
+<a class="note0">illud<span></span></a>
+<a class="note1">proprium<span>proprius propria, proprium ADJ  <br>:own, very own; individual; special, particular, characteristic;<br>(N 単数 主格), <br></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note1">hominis,<span>homo hominis N (3rd) M  <br>:man, human being, person, fellow;<br>(X 単数 属格)<br></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note1">beluarum,<span>belua beluae N (1st) F  <br>:beast, wild animal (incl. sea creature); monster, brute (great size/ferocity);<br>(C 複数 属格)<br></span></a>
+<a class="note1">confugiendum<span>confugio confugere, confugi, confugitus V (3rd) INTRANS  <br>:flee (for refuge/ safety/ protection); take refuge; <strong>have recourse</strong>/appeal to;<br>&nbsp;(未来 分詞 受動態 N 単数 主格), <br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">posterius,<span>posterus postera -um, posterior -or -us, postremus -a -um ADJ  比較級<br>:coming after, following, next; COMP next in order, <strong>latter;</strong> SUPER last/hindmost;<br>(N 単数 対格)<br><br></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">uti<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">licet<span>liceo licere, licui, - V (2nd) INTRANS  <br>:fetch (price); (with ABL or GEN);<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">superiore.<span>superus supera -um, superior -or -us, supremus -a -um ADJ  比較級<br>:above, high; higher, upper, of this world; greatest, last, highest;<br>(X 単数 奪格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false"><p>duo genera decertandi sint : decertandiは動名詞でgeneraを修飾。「争い方には２つある」</p>
+<p>illud, hoc : illeは前者、hicは後者（NewLatin246.1)</p>
+<p>cumは2つともbecause, sinceの意。</p>
+<p>est configiendum ad posterius si non licet uti supeiore. : これが主文。confugiendumは動形容詞で義務を表す。utiはutorの不定詞で、目的語に奪格（superiore)を取り、licetの主語。「もし優れたほうを使えない時に次善の方向に資源を使うべきである。」superioreは話し合いによる方法、posteriusは力による方法を指すと思われる。<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>争い方には2通りある。一つは議論によるものでもう一つは力によるものである。前者は人間の特質であり、後者は獣のそれである。したがって、より良い方法が使えないときにのみ、力による方法のほうに資源を投入すべきである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+    </body>
+    <html>
+    

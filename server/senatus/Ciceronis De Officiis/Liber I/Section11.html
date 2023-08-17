@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 11 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[11]<span></span></a>
+<a class="note1">Principio<span>principio principiare, principiavi, principiatus V (1st)  <br>:begin to speak; begin to peak (medieval);<br>(１ 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">generi<span></span></a>
+<a class="note0">animantium<span></span></a>
+<a class="note0">omni<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">natura<span></span></a>
+<a class="note1">tributum,<span>tribuo tribuere, tribui, tributus V (3rd)  <br>:divide, assign; present; grant, allot, bestow, attribute;<br>&nbsp;(完了 分詞 受動態 N 単数 主格)<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">se,<span></span></a>
+<a class="note0">vitam<span></span></a>
+<a class="note0">corpusque<span></span></a>
+<a class="note1">tueatur,<span>tueor tueri, tuitus sum V (2nd) DEP  <br>:see, look at; <strong>protect</strong>, watch; uphold;<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note1">declinet<span>declino declinare, declinavi, declinatus V (1st)  <br>:|avoid/stray; vary/be different; bend/sink down, subside/decline; lower/descend;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">ea,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">nocitura<span>noceo nocere, nocui, nocitus V (2nd)  <br>:harm, hurt; injure (with DAT);<br>&nbsp;(未来 分詞 能動態 N 複数 対格), <br></span></a>
+<a class="note0">videantur,<span></span></a>
+<a class="note1">omniaque,<span>omne omnis N (3rd) N  <br>:all things (pl.); everything; a/the whole, entity, unit;<br>&nbsp;(N 複数 対格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">sint<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">vivendum<span>vivo vivere, vixi, victus V (3rd)  <br>:be alive, live; survive; reside;<br>&nbsp;(未来 分詞 受動態 N 単数 対格), <br></span></a>
+<a class="note1">necessaria<span>necessarius necessaria, necessarium ADJ  <br>:necessary/needed/essential/indispensable; vital/private (body part); close tied;<br>(N 複数 主格)<br></span></a>
+<a class="note1">anquirat<span>anquiro anquirere, anquisivi, anquisitus V (3rd)  <br>:seek, search diligently after, inquire into, examine judicially; indict;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">paret,<span>paro parare, paravi, paratus V (1st) TRANS  <br>:prepare; furnish/supply/provide; produce; obtain/get; buy; raise; put up; plan;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">pastum,<span>pastus pastus N (4th) M  <br>:pasture, feeding ground; pasturage;<br>(C 単数 対格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">latibula,<span>latibulum latibuli N (2nd) N  <br>:hiding-place, den;<br>(N 複数 対格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">alia<span></span></a>
+<a class="note0">generis<span></span></a>
+<a class="note0">eiusdem.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>principio = first of all</p>
+<p>ut ~ est tributum omni animantium generi. : generiは与格。すべての命あるものにut以下のことが備わっている。</p>
+<p>１）ut se, vitam corpusque tueatur : 自身、命、身体を守る事</p>
+<p>２）declinet ea, quae videantur nocitura (esse) : 傷つけるであろうと思われることを避ける事</p>
+<p>３）anquirat et parat omnia, quae sint necessaria ad vivendum : 生きるために必要であるあらゆるものを探し揃える事<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>最初にいうが、すべての命あるものに対しては以下のようなことが自然により備わっているものである。一つは自身、命、体を守ること、また傷つけるであろうものを避ける事、さらに、生きるために必要なすべてのもの、それらは食料であり、住まいであり、その他のものであるが、を探し揃える事である。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Commune<span>commune communis N (3rd) N  <br>:|common feature, characteristic, general rule/terms; general; common lot/remedy;<br>&nbsp;(X 単数 主格)<br></span></a>
+<a class="note1">item<span>item ADV <br>:likewise; besides, also, similarly;<br><br></span></a>
+<a class="note1">animantium<span>animans (gen.), animantis ADJ  <br>:living, having life;<br>(X 複数 属格)<br></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">coniunctionis<span>conjunctio conjunctionis N (3rd) F  <br>:union; mutual love/familiarity, match, fellowship; joint occurrence/conjunction;<br>(X 単数 属格)<br></span></a>
+<a class="note1">appetitus<span>appetitus appetitus N (4th) M  <br>:appetite, desire; esp. natural/instinctive desire;<br>(C 単数 主格),<br></span></a>
+<a class="note1">procreandi<span>procreo procreare, procreavi, procreatus V (1st)  <br>:bring into existence, beget, procreate; produce, create;<br>&nbsp;(未来 分詞 受動態 N 単数 属格)<br></span></a>
+<a class="note0">causa<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cura<span>cura curae N (1st) F  <br>:concern, worry, anxiety, trouble; attention, care, pains, zeal; cure, treatment;<br>(C 単数 主格), <br></span></a>
+<a class="note1">quaedam<span>quidam quaedam, quoddam   <br>:(w/-dam) certain; as INDEF a certain thing; somebody, one, something;<br>(F 単数 主格), 不定形容詞<br><br></span></a>
+<a class="note0">eorum,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">procreata<span>procreo procreare, procreavi, procreatus V (1st)  <br>:bring into existence, beget, procreate; produce, create;<br>(完了 分詞 受動態 F 単数 主格),<br></span></a>
+<a class="note0">sint.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>coniunctionis appetius est commune. : 結婚のような結びつきを持つ本能は共通である。</p>
+<p>procreandi causa : 子孫繁栄のために</p>
+<p>eorum quaedam cura : 彼らの誰かの世話、誰かへの関心</p>
+<p>quae sint procreata. 先行詞はquaedamで「それは子孫」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>同様にすべての生き物にとって、子孫繁栄のために婚姻のような結びつきへの本能は共通のものである。また、子孫に対する関心、世話についても同断である。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sed<span></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">hominem<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">beluam<span>belua beluae N (1st) F  <br>:beast, wild animal (incl. sea creature); monster, brute (great size/ferocity);<br>(C 単数 対格)<br></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0">maxime<span></span></a>
+<a class="note1">interest,<span>intersum interesse, interfui, interfuturus V  <br>:be/lie between, be in the midst; be present; take part in; be different;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note1">tantum,<span>tantum ADV <br>:so much, so far; hardly, only;<br><br></span></a>
+<a class="note1">quantum<span>quantum ADV <br>:so much as; how much; how far;<br><br></span></a>
+<a class="note1">sensu<span>sensus sensus N (4th) M  <br>:feeling, sense;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">movetur,<span>moveo movere, movi, motus V (2nd)  <br>:move, stir, agitate, affect, provoke, disturb;<br>(3 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">id<span>is ea, id PRON  <br>:he/she/it/they (by GENDER/NUMBER); DEMONST: that, he/she/it, they/them;<br>(N 単数 対格)<br></span></a>
+<a class="note1">solum,<span>solus sola, solum (gen -ius) ADJ  <br>:<strong>only</strong>, single; lonely; alone, having no companion/ friend/ protector; unique;<br>&nbsp;(N 単数 対格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">adest<span>adsum adesse, adfui, adfuturus V  <br>:be near, be present, be in attendance, arrive, appear; aid (w/DAT);<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">quodque<span>quisque quaeque,quodque ADJECT  <br>:(w/-que) any; each;<br>(N 単数 主格), (N 単数 対格)<br></span></a>
+<a class="note1">praesens<span>praesens (gen.), praesentis ADJ  <br>:<strong>present</strong>; at hand; existing; prompt, in person; propitious;<br>(X 単数 主格), <br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">se<span></span></a>
+<a class="note1">accommodat,<span>accommodo accommodare, accommodavi, accommodatus V (1st) TRANS  <br>:adapt, adjust to, fit, suit; apply to, fasten on; apply/devote oneself to;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">paulum<span>paulus paula, paulum ADJ  <br>:little; small; (only a) small amount/quantity of/little bit of;<br>&nbsp;(N 単数 対格)<br></span></a>
+<a class="note1">admodum<span>admodum ADV <br>:very, exceedingly, greatly, quite; excessively; just so; certainly, completely;<br><br></span></a>
+<a class="note1">sentiens<span>sentio sentire, sensi, sensus V (4th)  <br>:perceive, feel, experience; think, realize, see, understand;<br>&nbsp;(現在 分詞 能動態 N 単数 対格)<br></span></a>
+<a class="note1">praeteritum<span>praeteritum praeteriti N (2nd) N  <br>:past (pl.); past times; bygone events;<br>&nbsp;(N 単数 対格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">futurum.<span>futurus futura, futurum ADJ  <br>:about to be; future;<br>&nbsp;(M 単数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>hoc interest, quod ~ : quodは名詞節を導きhocと同格である。（NewLatin 299.1) 「quod以下の違いが存在する。」</p>
+<p>tantum, quantum は２つとも同義。ラテン語によくある繰り返し。</p>
+<p>quod節のなかに２つの動詞、movetur と accomodat seである。</p>
+<p><strong>accomodat se ad id solum quod adest&nbsp;<font color="#0000ff">que quod </font>est&nbsp;praesens.</strong> ここのquodは関係代名詞でidが先行詞。「すぐ近くにあるもので、現在のもの」</p>
+<p>paulum ~はsolumに対応して、accommodat se ad id paulum~. と思われる。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>しかしながら、人と動物の間には大きな違いがある。動物はせいぜい、感覚によって動き回るだけであり、自分を身近にあるものまたは現在あるものにのみ対応させ、過去や未来の理解などは殆ど無い。<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Homo<span></span></a>
+<a class="note0">autem,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">rationis<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">particeps,<span>particeps participis N (3rd) C  <br>:sharer, partaker;<br>(X 単数 主格)<br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">consequentia<span>consequens consequentis (gen.), consequentior -or -us, consequentissimus -a -um ADJ  <br>:subsequent/ later; <strong>as a logical consequence;</strong> reasonable/ consistent; analogous;<br>&nbsp;(N 複数 対格)<br></span></a>
+<a class="note1">cernit,<span>cerno cernere, crevi, cretus V (3rd) TRANS  <br>:sift, separate, distinguish, discern, resolve, determine; see; examine; decide;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">causas<span>causa causae N (1st) F  <br>:cause/reason/motive; origin, source, derivation; responsibility/blame; symptom;<br>(C 複数 対格)<br></span></a>
+<a class="note0">rerum<span></span></a>
+<a class="note0">videt<span></span></a>
+<a class="note0">earumque<span></span></a>
+<a class="note1">praegressus<span>praegredior praegredi, praegressus sum V (3rd) DEP  <br>:go ahead; go before, precede; surpass;<br>(完了 分詞 受動態 M 単数 主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">quasi<span>quasi CONJ <br>:as if, just as if, as though; as it were; about;<br><br></span></a>
+<a class="note1">antecessiones<span>antecessio antecessionis N (3rd) F  <br>:going forward/before, preceding; what leads to action/state; antecedents;<br>(C 複数 対格)<br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">ignorat,<span>ignoro ignorare, ignoravi, ignoratus V (1st)  <br>:not know; be unfamiliar with; disregard; ignore; be ignorant of;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">similitudines<span>similitudo similitudinis N (3rd) F  <br>:likeness, imitation; similarity, resemblance; by-word (Plater); parable;<br>(C 複数 対格)<br></span></a>
+<a class="note1">comparat<span>comparo comparare, comparavi, comparatus V (1st) TRANS  <br>:|place together, match, couple, pair; set/pit against; treat as equal; compare;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">rebusque<span></span></a>
+<a class="note1">praesentibus<span>praesente praesentis N (3rd) N  <br>:present circumstance;<br>&nbsp;(X 複数 与格)<br></span></a>
+<a class="note1">adiungit<span>adjungo adjungere, adjunxi, adjunctus V (3rd) TRANS  <br>:add, attach, join to, add to, support; apply to; harness, yoke; direct; confer;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">adnectit<span>adnecto adnectere, adnexui, adnexus V (3rd) TRANS  <br>:tie on/to, tie up (ship); bind to; fasten on; attach, connect, join, annex;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">futuras,<span>futurus futura, futurum ADJ  <br>:about to be; future;<br>(F 複数 対格)<br></span></a>
+<a class="note0">facile<span></span></a>
+<a class="note0">totius<span></span></a>
+<a class="note0">vitae<span></span></a>
+<a class="note1">cursum<span>cursus cursus N (4th) M  <br>:|course/direction, line of advance, orbit; voyage/passage; race; career; series;<br>(C 単数 対格)<br></span></a>
+<a class="note0">videt<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eamque<span></span></a>
+<a class="note1">degendam<span>dego degere, degi, - V (3rd) INTRANS  <br>:spend/bide one's time in; wait; remain alive, live on, endure; continue;<br>(未来 分詞 受動態 F 単数 対格)<br></span></a>
+<a class="note1">praeparat<span>praeparo praeparare, praeparavi, praeparatus V (1st)  <br>:prepare;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">res<span>res rei N (5th) F  <br>:thing; event/affair/business; fact; cause; property;<br>&nbsp;(C 複数 対格)<br></span></a>
+<a class="note1">necessarias.<span>necessarius necessaria, necessarium ADJ  <br>:necessary/ needed/ essential/ indispensable; vital/private (body part); close tied;<br>(F 複数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>quod est rationis parti</strong>ceps: 「なぜなら、理屈の所有者であるので」「理性を授けられているので」</p>
+<p><strong>per quam</strong> : rationisを指し、「それを使って」</p>
+<p>earumque praegressus et quasi antecessiones non ignorat. : <font color="#ff0000">praegressusが難しい</font>。意味的にはantecessiones(前に起きたこと）に対して（今後起きること）という意味であろうが、主格しかない、ignoratの目的語とするには対格が必要。他方で、<strong>progressus</strong>とのMSSもあり、これだと対格があり、意味もadvanceで通じるか？</p>
+<p>quasi = 謂わば、の意。antecessioが造語なのでその弁解風。</p>
+<p>全体の構文としては、</p>
+<p>Homo cernit consequentia, 「論理的帰結を理解し」</p>
+<p>videt rerum causas : 「物事の原因を知り」</p>
+<p>non ignorat earum praegressus et quasi antecessiones : 「それの来るべきものと起きたことの（因果関係を）無視せず」</p>
+<p>comparat similitudines rebus : 「物事に類似性を適用し」</p>
+<p>adjungit praesentibus : 「現在の状況に適応し」</p>
+<p>adnectit futuras : 「将来に結びつけ」</p>
+<p>videt totius vitae cursum : 「全人生のコースを見通し」</p>
+<p>ad eam degendam praeparat res necessarias.: 「来るべきことに対して必要なものを用意する」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>一方、人間は、理性を授かっているので、それを通して、物事の帰結を分けて、物事の原因を理解し、それらの来るべきものと起きたことを無視せず、物事の類似性を当てはめ、現在の状況に適応し将来に結びつけ、全人生の行く末を用意に見通し、来るべきにそなえ必要なものを用意する。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

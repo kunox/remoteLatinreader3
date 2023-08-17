@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 45</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[45]<span></span></a>
+
+<a class="note0">Multa<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Caesare<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note1">sententiam<span>sententia, sententiae 名詞 (1st) F   :opinion, feeling, way of thinking; thought,対格</span></a>
+<a class="note0">dicta<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">quārē<span><br><br></span></a>
+<a class="note1">negōtiō<span>negotium negoti(i) N (2nd) N  <br>:pain, trouble, annoyance, distress; work, business, activity, job;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">dēsistere<span>desisto, desistere, destiti, destitus 動詞 (3rd)   :stop/cease/desist (from); give up, 不定詞<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">posset:<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">suam<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">cōnsuētūdinem<span>consuetudo, consuetudinis 名詞 (3rd) F   :habit/custom/usage/way; normal/general/customary practice, tradition/convention;  <br>対格<br></span></a>
+<a class="note1">patī<span>patior, pati, passus sum 動詞 (3rd) DEP   :suffer; allow; undergo, endure; permit;不定詞<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">optimē<span>副詞<br></span></a>
+<a class="note1">meritōs<span>mereo, merere, merui, meritus 動詞 (2nd)   :earn; deserve/merit/have right; win/gain/incur; earn soldier/whore pay, serve;完了分詞受動<br></span></a>
+<a class="note1">sociōs<span>socius, soci(i) 名詞 (2nd) M   :associate, companion; ally;対格<br></span></a>
+<a class="note1">dēsereret,<span>desero, deserere, deserui, desertus 動詞 (3rd) TRANS   :leave/depart/quit/desert; forsake/abandon/give up;3 単 未完了 能動態 接続法<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">iūdicāre<span>judico, judicare, judicavi, judicatus 動詞 (1st)   :judge, give judgment;不定詞<br></span></a>
+<a class="note1">Galliam<span>対格</span></a>
+<a class="note1">potius<span>potius, 副詞   :rather, more, preferably;</span></a>
+<a class="note1">esse<span>属格を伴って、=belong to</span></a>
+<a class="note1">Ariovistī<span>属格、所有の属格<br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī.<span><br><br></span></a>
+<a class="note0">Bellō<span><br><br></span></a>
+<a class="note1">superātōs<span>supero, superare, superavi, superatus 動詞 (1st)   :overcome, conquer; survive; <br>完了分詞　受動<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">Arvernōs<span>Arvernus, Arverni N (2nd) M   :Arverni (pl.); (tribe of SE Gaul - in Caesar's Gallic War); 対格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Rutēnōs<span><br><br></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note1">Q.<span>Quitus</span></a>
+<a class="note0">Fabiō<span><br><br></span></a>
+<a class="note0">Maximō,<span><br><br></span></a>
+<a class="note1">quibus<span>qui quae, quod PRON  <br>:who, which; (relative pronoun);<br>(X 複数  与格),<br></span></a>
+<a class="note0">populus<span></span></a>
+<a class="note0">Rōmānus<span><br><br></span></a>
+<a class="note1">ignōvisset<span>ignosco, ignoscere, ignovi, ignotus 動詞 (3rd)   :pardon, forgive (with DAT);3 単 過去完了 能動態 接続法<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">prōvinciam<span>provincia provinciae N (1st) F  <br>:province; office; duty; command;<br>(c 単数 対格)<br></span></a>
+<a class="note1">redēgisset<span>redigo, redigere, redegi, redactus 動詞 (3rd)   :drive back; reduce; render; 3 単 過去完了 能動態 接続法)<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">stīpendium<span>stipendium, stipendi(i) 名詞 (2nd) N   :tribute, stipend; pay, wages; military service;<br></span></a>
+<a class="note1">posuisset.<span>pono, ponere, posivi, postus 動詞 (3rd) TRANS   :put, place, set; station; (archaic form of perf. of pono);</span></a>
+</p>
+</div>
+<div class="spnote" style="display: block; " >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Multa dicta sunt a Caesare</strong> ：多くの言葉がカエサルから（その考え方について）なされた</p>
+<p>multaが形容詞、名詞化で主語。sunt dicta dictaが完了分詞で、受け身という解釈もできる。(どちらか決定要素はあるか？）</p>
+<p><strong>in eam sententiam quae = to this effect why</strong> 何故～なのかについて</p>
+<p><strong>non posset: desistere negotio</strong> ：その行為を止めることができない事 (negotio 分離の奪格）</p>
+<p><strong>neque suam consuetudinem neque populi Romani pati</strong> ：consuetudinem(対格でpatiの主語）彼自身のまたローマの伝統から許されない</p>
+<p>ut desereret, optime meritos socios：大変資格のある同盟軍を見捨てる</p>
+<p><strong>neque se iudicare</strong> :彼は（カエサル）は思わない、正当化できない。</p>
+<p><strong>Galliam esse Ariovisti potius quam populi Romani</strong>. : esse + 属格で　＝belong to (<strong>所有の属格</strong>、NewLatin 198. 2) ガリアがアリオウィストゥスのもであるとは、むしろローマの</p>
+<p>Arvernos et Rutenos esse superatos Bello a Q. Fabio Maximo：ArverniとRuteniはファビオマクシムスによって戦いで降伏している</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>多くの言葉がカエサルから、何故彼がその行為を止めることができないか、その考え方についてなされた。すなわちローマのまた彼自身の伝統から言って大変資格のある同盟者を見捨てるということは許されないことなのである。また彼はガリアがアリオウィストゥスに属するよりはむしろローマに属するものと考える。ArveniとRuteniはQuitus Fabius Maximusによって戦いで降伏している。彼らをローマ軍は許して、領地を減らしたり賠償をとったりはしていないが。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quod<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">antīquissimum<span>antiquus, antiqua -um, antiquior -or -us, antiquissimus -a -um 形容詞   :old/ancient/aged; time-honored; 対格<br></span></a>
+<a class="note1">quodque<span>quisque, quaeque,quodque ADJECT   :(w/-que) any; each; <br>対格</span></a>
+<a class="note0">tempus<span></span></a>
+<a class="note1">spectārī<span>specto, spectare, spectavi, spectatus 動詞 (1st)   :observe, watch, look at, see; test; consider;不定詞<br></span></a>
+<a class="note1">oportēret,<span>] oportet, oportere, oportuit, - 動詞 (2nd) IMPERS   :it is right/proper/necessary; it is becoming; it behooves; ought;3 単 未完了 能動態 接続法<br></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">iūstissimum<span>justus, justa -um, justior -or -us, justissimus -a -um 形容詞   :just, fair, equitable; right, lawful, justified; regular, proper;<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note1">imperium;<span>imperium, imperi(i) 名詞 (2nd) N   :command; authority; rule, supreme power; the state, the empire;</span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">iūdicium<span>judicium, judici(i) 名詞 (2nd) N   :|judgment/sentence/verdict; judging;<br></span></a>
+<a class="note1">senātus<span>属格<br></span></a>
+<a class="note1">observārī<span>observo, observare, observavi, observatus 動詞 (1st)   :watch, observe; heed;不定詞<br></span></a>
+<a class="note0">oportēret,<span><br><br></span></a>
+<a class="note0">līberam<span><br><br></span></a>
+<a class="note1">dēbēre<span>debeo debere, debui, debitus V (2nd)  <br>:owe; be indebted/responsible for/obliged/bound/destined; ought, must, should;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">Galliam,<span></span></a>
+<a class="note1">quam<span>qui f　単数　対格　Galliamを受ける？</span></a>
+<a class="note1">bellō<span>奪格　付帯状況の奪格　戦争の下で<br></span></a>
+<a class="note1">victam<span>vinco  <br>完了分詞　受動 <br>分詞構文　敗戦したけれども</span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note0">lēgibus<span><br><br></span></a>
+<a class="note1">ūtī<span>utor, uti, usus sum 動詞 (3rd) DEP   :use, make use of, enjoy; enjoy the friendship of (with ABL); 不定詞<br></span></a>
+<a class="note1">voluisset.<span>volo 3 単 過去完了 能動態 接続法</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Quod si oporteret, quodque antiquissimum tempus spectari :もし各々の最も古い時代が考慮されるべきであるならば</p>
+<p>imperium; populi Romani esse iustissimum in Gallia :ローマ人民のガリアの支配が最も権利がある</p>
+<p>si oporteret, iudicium senatus observari ：もし長老会（議会？）の判断がなされるべしであれば</p>
+<p>Galliam, debere esse liberam ：ガリアは自由であるべきだ</p>
+<p>voluisset.uti suis legibus ：自身の法を使用する事を望む(望むのはSenatu)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>もし各々の最も古い時代が考慮されるべきであれば、ローマ人民のガリアの支配が有効である。もし長老会の意志を尊重すべきであれば、ガリアは自由であるべきである。それは戦争に負けても自身の法を使用する事を望むからである。（許されているからである）</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 85</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[85]<span></span></a>
+
+<a class="note0">Caesar<span></span></a>
+<a class="note0">idōneum<span><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">nactus<span>nanciscor nancisci, nactus sum V (3rd) DEP  <br>:obtain, get; find, meet with, receive, stumble on, light on;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note1">quāque<span>quisque quaeque,quidque INDEF <br>:(w/-que) each, each one; every, everybody, everything (more than 2); whatever;<br>(f 単数 奪格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note0">gerātur<span><br><br></span></a>
+<a class="note0">cognōscit;<span><br><br></span></a>
+<a class="note1">labōrantibus<span>laboro laborare, laboravi, laboratus V (1st)  <br>:work, labor; produce, take pains; be troubled /sick/oppressed, <strong>be in distress;</strong><br>(現在 分詞 能動態  複数  与格), <br></span></a>
+<a class="note1">summittit.<span>summitto summittere, summisi, summissus V (3rd)  <br>:allow to grow long; emit, put forth, raise; lower, moderate, relieve; submit;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Caesar congnoscit quid geratur quaque ex parte. : 「Caesarは全てのところで何が起きているか知り得た」</p>
+<p>submmittit laborantibus. 短すぎて目的語（救援？）が抜けているが意味は「窮状にあるところに（助けを）送った」であろう。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>適当な場所を得て、Caesarは全てのところで何が起きているかを知り、窮状へは援軍を送った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Utrīsque<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">animum<span></span></a>
+<a class="note1">occurrit<span>occurro occurrere, occucurri, occursus V (3rd)  <br>:run to meet; oppose, resist; come to mind, occur (with DAT);<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">ūnum<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">illud<span></span></a>
+<a class="note0">tempus,<span></span></a>
+<a class="note1">quō<span>quo ADV <br>:where, to what place; to what purpose; for which reason, therefore;<br><br></span></a>
+<a class="note0">maximē<span><br><br></span></a>
+<a class="note1">contendī<span>contendo contendere, contendi, contentus V (3rd)  <br>:stretch, draw tight, make taut; draw/bend (bow/catapult); tune; stretch out;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">conveniat:<span>convenio convenire, conveni, conventus V (4th)  <br>:<strong>be appropriate to</strong>, fit, be correctly shaped/consistent; harmonize, agree, tally;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">Gallī,<span><br><br></span></a>
+<a class="note0">nisi<span></span></a>
+<a class="note1">perfrēgerint<span>perfringo perfringere, perfregi, perfractus V (3rd)  <br>:break through;<br>&nbsp;(３人称 複数  完了 能動態 接続法 )<br></span></a>
+<a class="note0">mūnītiōnēs,<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note0">salūte<span><br><br></span></a>
+<a class="note1">dēspērant;<span>despero desperare, desperavi, desperatus V (1st)  <br>:despair (of); have no/give up hope (of/that); give up as hopeless (of cure);<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">Rōmānī,<span><br><br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note1">obtinuerint,<span>obtineo obtinere, obtinui, obtentus V (2nd)  <br>:get hold of; maintain; obtain; hold fast, occupy; prevail;<br>(３人称 複数  完了 能動態 接続法 )<br></span></a>
+<a class="note0">fīnem<span><br><br></span></a>
+<a class="note0">labōrum<span><br><br></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note0">exspectant.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p><strong>utrisque occurrit ad animum</strong>:　両方側で心に起きた、が逐語訳。</p>
+<p><strong>illud esse unum tempus quo maxime contendi conveniat.</strong>&nbsp;「これが最大の戦いが相応しいただ一度のときである」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>両陣営で、それがただ一度のときであり、そこには最大限の戦いが相応しいという考えがあった。ガリア勢はもし防衛線を突破できなかれば自分たちの安全は絶望的になり、ローマ勢は、もしこれを耐えれば、全ての今までの労力を終わらせる事ができると考えた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Maximē<span>maxime ADV <br>:especially, chiefly; certainly; most, very much; (forms SUPER w/ADJ/ADV);<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">superiōrēs<span><br><br></span></a>
+<a class="note0">mūnītiōnēs<span><br><br></span></a>
+<a class="note1">labōrātur,<span>laboro laborare, laboravi, laboratus V (1st)  <br>:work, labor; produce, take pains; <strong>be troubled</strong>/ sick/oppressed, <strong>be in distress</strong>;<br>(３人称 単数 現在 受動態 直説法 )<br><br></span></a>
+<a class="note1">quō<span>quo ADV <br>:where, to what place; to what purpose; for which reason, therefore;<br><br></span></a>
+<a class="note0">Vercassivellaunum<span></span></a>
+<a class="note1">missum<span>mitto mittere, misi, missus V (3rd)  <br>:send, throw, hurl, cast; let out, release, dismiss; disregard;<br>(完了 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">dēmōnstrāvimus.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>特に上の方にある砦で苦しまされた。そこは、前に言ったようにVercassivellaunusが送られたところである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Inīquum<span>iniquus iniqua -um, iniquior -or -us, iniquissimus -a -um ADJ  <br>:unjust, unfair; disadvantageous, uneven; unkind, hostile;<br>(n 単数 主格<br></span></a>
+<a class="note0">locī<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">dēclīvitātem<span>declivitas declivitatis N (3rd) F  <br>:declivity, slope, descent; tendency to slope down; falling gradient;<br>(c 単数 対格)<br></span></a>
+<a class="note1">fastīgium<span>fastigium fastigi(i) N (2nd) N  <br>:peak, summit, top; slope, declivity, <strong>descent</strong>; gable, roof; sharp point, tip;<br>(n 単数 主格),<br></span></a>
+<a class="note0">magnum<span></span></a>
+<a class="note0">habet<span></span></a>
+<a class="note1">mōmentum.<span>momentum momenti N (2nd) N  <br>:moment, importance, influence; motion, movement; impulse, effort;<br>&nbsp;(n 単数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>結構、変な文である。</p>
+<p>件の砦は、山の中腹にありAlesiaに向かって下りである。Vはその山の背後から、山を越えて攻めているので上から攻めることになる。</p>
+<p>iniquum fastigium loci habet magnum momentum ad declivitem. 「不利な下りの場所は下り坂に向かって大きな打撃力を持つ」多分、全てローマ側からの記述であろうが、普通は有利な場所から下って大きな打撃を与える、という？<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>不利な下りの場所では（上からの攻撃は）大きな打撃力を持っていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Aliī<span>alii CONJ <br>:some ... others (alii ... alii);<br><br></span></a>
+<a class="note0">telā<span><br><br></span></a>
+<a class="note0">coniciunt,<span></span></a>
+<a class="note0">aliī<span><br><br></span></a>
+<a class="note0">testūdine<span><br><br></span></a>
+<a class="note0">factā<span><br><br></span></a>
+<a class="note1">subeunt;<span>subeo subire, subivi(ii), subitus V INTRANS  <br>:|place/be placed under/in support; come up w/aid; assume a form; undergo, endure<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note1">dēfatīgātīs<span>defatigo defatigare, defatigavi, defatigatus V (1st) TRANS  <br>:tire (out), exhaust; break force of; (PASS) lose heart, weary, be discouraged;<br>(完了 分詞 受動態  複数  与格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">vicem<span></span></a>
+<a class="note1">integrī<span>integer integri N (2nd) M  <br>:fresh troops (pl.);<br>(c 複数  主格)<br></span></a>
+<a class="note1">succēdunt.<span>succedo succedere, successi, successus V (3rd)  <br>:climb; advance; follow; succeed in;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>あるところでは槍が投げられ、別のところでは亀甲覆いが作られ使われた。疲れて弱ったものは新手が引き継いた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Agger<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">ūniversīs<span>universus universi N (2nd) M  <br>:whole world; all men (pl.), everybody, the mass;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">mūnītiōnem<span><br><br></span></a>
+<a class="note1">coniectus<span>conicio conicere, conjeci, conjectus V (3rd) TRANS  <br>:throw/put/pile together; conclude, infer/guess; assign, make go; classify, put;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">ascēnsum<span>ascensus ascensus N (4th) M  <br>:ascent; act of scaling (walls); approach; a stage/step in advancement; height;<br>(c 単数 対格)<br></span></a>
+<a class="note1">dat<span>do dare, dedi, datus V (1st) TRANS  <br>:give; dedicate; sell; pay; grant/bestow/impart/offer/lend; devote; allow; make;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">Gallīs<span>Gallus Galla, Gallum ADJ  <br>:Gallic, of Gaul/the Gauls; class of gladiator w/Gallic armor; (also Galatian?);<br>(X 複数  与格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">terrā<span><br><br></span></a>
+<a class="note0">occultāverant<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">contegit;<span>contego contegere, contexi, contectus V (3rd) TRANS  <br>:cover up, conceal, hide; protect; clothe; roof over; bury/entomb; strew thickly;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note0">arma<span></span></a>
+<a class="note0">nostrīs<span><br><br></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note0">vīrēs<span><br><br></span></a>
+<a class="note1">suppetunt.<span>suppeto suppetere, suppetivi, suppetitus V (3rd)  <br>:be at hand; be equal to; be sufficient for;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>agger dat ascensum Gallis. 投げた土が盛り上がって、ガリア勢に登る道を与えた。</p>
+<p>et contegit ea quae Romani occultaverant in terra. 「それはローマ勢が地面に隠したものを覆った」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>土があらゆるところから防衛施設に向かって投げられ、それがガリア勢に登る手段を与え、またローマ軍が地面に隠したものを覆ってしまった。そして今や、味方は武器も強さも十分ではなかった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

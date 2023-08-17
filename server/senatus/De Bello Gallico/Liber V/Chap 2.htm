@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 2</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[2]<span></span></a>
+
+<a class="note0">Hīs<span></span></a>
+<a class="note1">cōnfectīs<span>conficio ;= complete<br><br></span></a>
+<a class="note0">rēbus<span></span></a>
+<a class="note0">conventibusque<span></span></a>
+<a class="note0">perāctis,<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">citeriōrem<span><br><br></span></a>
+<a class="note0">Galliam<span></span></a>
+<a class="note1">revertitur<span>revertor reverti, reversus DEP ３単　受動　;= turn back, go back, return<br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">inde<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note0">proficīscitur.<span></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>his confectis rebus : 独立奪格</p>
+<p>conventibus peractis : 独立奪格</p>
+<p>revertitur in citerionem Galliam : 内ガリアに戻った。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>これらを片付け、巡回裁判の仕事も終わって、内ガリアに戻り、そこから軍団のいるところに向かった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">vēnisset,<span></span></a>
+<a class="note1">circuitīs<span>circueo circuire, circuivi, circuitus 完了分詞　受動　複　奪格　;= encircle, surround, circulate<br><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">hībernīs,<span><br><br></span></a>
+<a class="note1">singulārī<span>singularis 形容詞　単　奪格　;= alone, unique, single<br><br><br></span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note1">studiō<span>studium studi(i) N　単　奪格　;= eagerness, enthusiasm, zeal<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">summa<span></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note0">rērum<span></span></a>
+<a class="note1">inopia<span>inopia inopiae F 単　奪格　;= lack, need, poverty, destitution, dearth, want, scarcity<br><br><br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note1">sescentās<span>sescenti 600 ｆ単　対格<br><br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">generis<span></span></a>
+<a class="note1">cuius<span>quis 単　属格　;= of wihci<br><br><br></span></a>
+<a class="note0">suprā<span></span></a>
+<a class="note0">dēmōnstrāvimus<span><br><br></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">longas<span></span></a>
+<a class="note1">XXVIII<span>viginti octo<br><br></span></a>
+<a class="note1">invenit<span>invenio ３単　完了　;= come upon, find, discover<br><br></span></a>
+<a class="note1">instrūctās<span>insttruo instruere, instruxi, instructus 完了分詞　受動　ｆ複対格　;= construct, uild, prepare<br><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">multum<span></span></a>
+<a class="note1">abesse<span>absum 不定詞　;= be away<br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eō<span></span></a>
+<a class="note1">quīn<span>前置詞　;= so that not, but that, that<br><br><br></span></a>
+<a class="note0">paucīs<span></span></a>
+<a class="note1">diēbus<span>c 複　奪格<br><br><br></span></a>
+<a class="note1">dēdūcī<span>deduco 受動　不定詞　;= launch, bring downstream (ship)<br><br><br></span></a>
+<a class="note0">possint.<span></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>cum venisset eo : そこに到着した時、</p>
+<p>circuitis omnibus hebernis : 独立奪格　「冬営地を全体を回ってみると」circutisはcirceo, circumeoという他動詞もあり、そちらを使っているテキストもあり。</p>
+<p>骨子は</p>
+<p><strong>invenit circiter sescentas naves et XXVIII longas instructas.</strong>「建造された約６００隻の船と２８隻の戦闘艇を発見した。」</p>
+<p>eius generis cuijus supra demonstravimus は属格でnavesを修飾。「先に私が述べたものの種類の」</p>
+<p>singulari militum studio in summa inopia omnium rerum : 原因の奪格で、instructasを修飾。in summa inopia omnium rerumは「すべてのものが足りない状態の中で」の意。</p>
+<p><u>neque multum abesse ab eo : これは文法的には対格主語である、navesの不定詞動詞にあたる</u>。つまり、それからそんなに離れていない船を発見したわけである。</p>
+<p>eo quin paucis diebus deducit possint. quinは前置詞か副詞で、関係代名詞ではないが、「ゆるくeoと同格」で、eoを説明している。すなわち「数日で完成しそうな」状態。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>そこに到着して、冬営地を一周りして、前に渡しが述べたような種類の、建造された約６００隻の船と２８隻の戦闘艇を発見した。ひとえに兵士たちの熱意によって、あらゆる物資が不足している中での成果であった。しかもそれらは数日で完成しそうな状態であった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Collaudātīs<span>collaudo colladare, collaudavi, collaudatus 完了分詞　受動　複　奪格　;= praise, extol hightly<br><br><br></span></a>
+<a class="note0">mīlitibus<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">eīs<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">negōtiō<span>negotium negoti(i) N 単　与格　;= pain, trouble, annoyance, business, activity, job<br><br><br></span></a>
+<a class="note1">praefuerant,<span>praesum ３複　過去完了　;= be in charfe (w/DAT)<br><br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">fierī<span></span></a>
+<a class="note1">velit<span>3 単　現在　接続法<br><br></span></a>
+<a class="note1">ostendit<span>ostendo ３単　;= show, reveal<br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">omnēs<span>C複　対格<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">portum<span></span></a>
+<a class="note0">Itium<span></span></a>
+<a class="note1">convenīre<span>convenio 不定詞　;= meet, assemble, come together<br><br><br></span></a>
+<a class="note0">iubet,<span></span></a>
+<a class="note0">quō<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">portū<span></span></a>
+<a class="note1">commodissimum<span>commodus 最上級　形容詞　ｎ単　対格　;= suitable, convenient<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Britanniam<span></span></a>
+<a class="note1">trāiectum<span>traicio traicere, trajeci, trajectus 完了分詞 受動、ｎ単　対格　;= transfer, transport<br><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">cognōverat,<span>３単　過去完了<br><br><br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">mīlium<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note1">XXX<span>triginta<br><br></span></a>
+<a class="note1">trānsmissum<span>transmissus 形容詞　ｎ単　対格　;= crossing, passage<br><br></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">continentī:<span></span></a>
+<a class="note0">huic<span></span></a>
+<a class="note0">reī<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">satis<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">vīsum<span><br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">mīlitum<span></span></a>
+<a class="note0">relīquit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>全体の骨格は</p>
+<p>Caesar 1) <strong>ostendit</strong> quod velit fieri, 2) <strong>jubet</strong> omnes convenire ad portum Itium.</p>
+<p><strong>reliquit</strong> quod est visum esse satis.</p>
+<p>circiter milium pasuum XXX : pasuum は奪格、性質の奪格（NewLatin203.2)<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>兵士たちとそれを指揮した人たちを賞賛して、何をやりたいかを示し、すべてをItiumの港に運ぶよう命じた。そこは、ブリタニアへ渡るには最も便利であることを知っていたからであり、約３０ローママイルしか、大陸と離れていなかった。それを行うのに十分と思われる兵士をそこに残した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipse<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">legiōnibus<span></span></a>
+<a class="note0">expedītīs<span><br><br></span></a>
+<a class="note1">IIII<span>quatuor = 4<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">equitibus<span></span></a>
+<a class="note1">DCCC<span>octingentis = 800<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span></span></a>
+<a class="note0">Trēverōrum<span></span></a>
+<a class="note0">proficīscitur,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">hī<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">concilia<span>concillium n 複　対格　;= council<br><br></span></a>
+<a class="note0">veniēbant<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">imperiō<span></span></a>
+<a class="note1">pārēbant<span>pareo INTRANS ３複　未完了　;= obey, be subject<br><br><br></span></a>
+<a class="note0">Germanōsque<span></span></a>
+<a class="note1">Trānsrhēnānōs<span>transrhenanus 形容詞　m複　対格　;= beyond the Rhine<br><br><br></span></a>
+<a class="note1">sollicitāre<span>sollicito sollicitare, sollicitavi, sollicitatus 不定詞　;= disturb, stir up, arouse<br><br><br></span></a>
+<a class="note0">dīcēbantur.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>Ipse proficiscitur in fines Treverorum. が骨子。</p>
+<p>concilia はcoucilで、ガリアにおける長老会、元老院とかそういう感じの機関。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>彼自身は、軽装の４個軍団と８００の騎兵を率いてTreveri族のもとに向かった。と言うのは彼らは一度もガリアの評議会に来ないし、命令に従うこともなく、更には、ライン河を超えてゲルマンを荒らしていると言われていた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

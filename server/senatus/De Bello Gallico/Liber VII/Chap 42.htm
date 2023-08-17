@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 42</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[42]<span></span></a>
+
+<a class="note0">Dum<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Gergoviam<span></span></a>
+<a class="note0">geruntur,<span></span></a>
+<a class="note0">Aeduī<span><br><br></span></a>
+<a class="note0">prīmīs<span><br><br></span></a>
+<a class="note0">nūntiīs<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Litaviccō<span><br><br></span></a>
+<a class="note0">acceptīs<span><br><br></span></a>
+<a class="note0">nūllum<span><br><br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">cōgnōscendum<span><br><br></span></a>
+<a class="note0">spatium<span></span></a>
+<a class="note0">relinquunt.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>dum haec geruntur ad Gergoviam 「Gergoviaでこれらの事が起きている時」</p>
+<p>Aedui relinquunt sibi nullum spatium ad congscendum.<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらのことがGergoviaで起きている時、Aeduiは最初の報告をLitaviccusから受取り、確認するための余地を全く残さなかった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Impellit<span>impello impellere, impuli, impulsus V (3rd) TRANS  <br>:drive/persuade/impel; urge on/action; push/thrust/strike against; overthrow;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">aliōs<span><br><br></span></a>
+<a class="note1">avāritia,<span>avaritia avaritiae N (1st) F  <br>:greed, avarice; rapacity; miserliness, stinginess, meanness;<br>(c 単数 主格)<br></span></a>
+<a class="note0">aliōs<span><br><br></span></a>
+<a class="note1">īrācundia<span>iracundia iracundiae N (1st) F  <br>:irascibility, hot temper; passion; resentment; anger; wrath (Ecc);<br>(c 単数 主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">temeritās,<span>temeritas temeritatis N (3rd) F  <br>:rashness; temerity;<br>(X 単数 主格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">maximē<span>maxime ADV <br>:especially, chiefly; certainly; most, very much; (forms SUPER w/ADJ/ADV);<br><br></span></a>
+<a class="note0">illī<span><br><br></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note1">generī<span>genus generis N (3rd) N  <br>:birth/descent/origin; race/family/house/stock/ancestry; offspring/descent;<br>(X 単数 与格)<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">innāta,<span>innatus innata, innatum ADJ  <br>:natural, inborn;<br>(f 単数 主格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">levem<span>levis leve, levior -or -us, levissimus -a -um ADJ  <br>:light, thin, trivial, trifling, slight; gentle; fickle, capricious; nimble;<br>(c 単数 対格)<br></span></a>
+<a class="note1">audītiōnem<span>auditio auditionis N (3rd) F  <br>:hearing, act/sense of hearing; report, hearsay, rumor; lecture, recital;<br>(c 単数 対格)<br></span></a>
+<a class="note0">habeant<span></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note0">rē<span></span></a>
+<a class="note1">compertā.<span>compertus comperta, compertum ADJ  <br>:ascertained, proved, verified;<br>&nbsp;(f 単数 奪格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>avaritia impellit alios, iracundia et temeritas (impellit) alios. 「強欲があるものたちを駆り立て、短気で性急な性格が他の者達を駆り立てた。</p>
+<p>quae est innata illi generi hominium. illiは与格。「それらはそういう種類の人達にとっては自然であるのだが」</p>
+<p>ut habeant levem auditionem pro re comperta. 結果のUT節。「そして、ちょっとした噂話を確実なものだと考える。」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>ある者は強欲故に駆り立てられまたある者は短気で性急なことで駆り立てられた。もっともそれらはそういう種類のひとには自然なことではある。結果として単なる噂話を確かなものと考える。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Bona<span>bonum boni N (2nd) N  <br>:good, good thing, profit, advantage; <strong>goods</strong> (pl.), possessions, wealth, estate;<br>(n 複数  対格)<br></span></a>
+<a class="note1">cīvium<span>civis civis N (3rd) C  <br>:fellow citizen; countryman/woman; citizen, free person; a Roman citizen;<br>(c 複数  属格)<br></span></a>
+<a class="note0">Rōmānōrum<span><br><br></span></a>
+<a class="note1">dīripiunt,<span>diripio diripere, diripui, direptus V (3rd) TRANS  <br>:||plunder, pillage, spoil, lay waste; seize and divide; steal/rob; distress;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note1">caedēs<span>caedes caedis N (3rd) F  <br>:murder/slaughter/massacre; assassination; feuding; slain/victims; blood/gore;<br>(c 複数  対格)<br></span></a>
+<a class="note0">faciunt,<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">servitūtem<span><br><br></span></a>
+<a class="note1">abstrahunt.<span>abstraho abstrahere, abstraxi, abstractus V (3rd) TRANS  <br>:drag away from, remove forcibly, abort; carry off to execution; split;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>彼らはローマ人達の金品を荒らし、殺人を犯し、奴隷の身分に貶める。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Adiuvat<span>adjuvo adjuvare, adjuvavi, adjuvatus V (1st) TRANS  <br>:help, aid, abet, encourage, favor; cherish, sustain; be of use, be profitable;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note1">prōclīnātam<span>proclino proclinare, proclinavi, proclinatus V (1st)  <br>:tilt forward; cause to totter;<br>(完了 分詞 受動態 f 単数 対格)<br></span></a>
+<a class="note0">Convictolitavis<span></span></a>
+<a class="note1">plēbemque<span>plebs plebis N (3rd) F  <br>:common people, general citizens, commons/plebeians; lower class/ranks; mob/mass;<br>(c 単数 対格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">furōrem<span>furor furoris N (3rd) M  <br>:madness, rage, fury, frenzy; passionate love;<br>(c 単数 対格)<br></span></a>
+<a class="note0">impellit,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">facinore<span>facinus facinoris N (3rd) N  <br>:deed; crime; outrage;<br>(n 単数 奪格)<br></span></a>
+<a class="note1">admissō<span>admitto admittere, admisi, admissus V (3rd) TRANS  <br>:urge on, put to a gallop; let in, <strong>admit</strong>, receive; grant, <strong>permit</strong>, let go;<br>(完了 分詞 受動態 n 単数 奪格)<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">sānitātem<span>sanitas sanitatis N (3rd) F  <br>:sanity, reason; health;<br>(c 単数 対格)<br></span></a>
+<a class="note1">revertī<span>revertor reverti, reversus sum V (3rd) DEP  <br>:turn back, go back, return; recur;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">pudeat.<span>pudet pudere, -, puditus est V (2nd) IMPERS  <br>:it shames, make ashamed;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Convictolitavis adjuvat proclinatam rem. 「Convictolitavisは事態を更に進める事を助けた」が逐語訳。</p>
+<p>impellit plebem ad furorem ut facinore admisso, pudeat reverti ad sanitatem. facinore admisso独立奪格で「犯罪をおかすことによって」pudeatは非人称動詞で、「健全な精神に戻ることは恥ずかしい」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Convictolitavisは事態を更にすすめた。普通の人を狂気に駆り立て、犯罪を犯すことで正常な気持ちに戻ることは恥ずかしいこととなった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Marcum<span></span></a>
+<a class="note0">Aristium,<span></span></a>
+<a class="note0">tribūnum<span><br><br></span></a>
+<a class="note0">mīlitum,<span><br><br></span></a>
+<a class="note1">iter<span>iter itineris N (3rd) N  <br>:journey; road; passage, path; march<br>(n 単数 対格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">legiōnem<span><br><br></span></a>
+<a class="note1">facientem<span>facio facere, feci, factus V (3rd) TRANS  <br>:make/build/construct/create/cause/do; have built/made; fashion; work (metal);<br>(現在 分詞 能動態 c 単数 対格)<br></span></a>
+<a class="note1">fidē<span>fides fidei N (5th) F  <br>:faith, loyalty; honesty; credit; confidence, trust, belief; good faith;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">datā<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note0">Cabillōnō<span><br><br></span></a>
+<a class="note1">ēdūcunt:<span>educo educere, eduxi, eductus V (3rd)  <br>:lead out; draw up; bring up; rear;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">idem<span></span></a>
+<a class="note0">facere<span></span></a>
+<a class="note1">cōgunt<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">eōs,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">negōtiandī<span>negotior negotiari, negotiatus sum V (1st) DEP  <br>:do business, trade;<br>(未来 分詞 受動態&nbsp;n 単数 属格)<br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note1">cōnstiterant.<span>consisto consistere, constiti, constitus V (3rd)  <br>:|||come about, exist; fall due (tax); be established; remain valid/applicable;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>educunt Marcum Aristium ex oppido Calillono. 「M. AristiusをCalillonusの町から放逐した」</p>
+<p>facientem item ad legionem. facientemは現在分詞、分詞構文でAristiumを修飾。itemはfacientemの目的語。</p>
+<p>fide data : 独立奪格「安全を保証して」</p>
+<p>cogunt facere idem eos qui~ . qui以下のものにも同じようにした。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>軍護民官である、Marcus Aristius、彼は軍団への旅の途中だったのだが、を安全を保証すると言ってCabilonusの町から放逐した。商用で滞在中の（ローマ市民）ものにも同じように強制した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hōs<span><br><br></span></a>
+<a class="note1">continuō<span>continuo ADV <br>:immediately, forthwith, at once, without delay/intermission; continuously;<br><br></span></a>
+<a class="note0">(in)<span></span></a>
+<a class="note0">itinere<span></span></a>
+<a class="note1">adortī<span>adorior adoriri, adortus sum V (4th) DEP  <br>:assail/assault/attack, rise against (military/political/plague); accost/address;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">impedīmentīs<span>impedimentum impedimenti N (2nd) N  <br>:hindrance, impediment; heavy baggage (of an army) (pl.);<br>(X 複数  奪格)<br></span></a>
+<a class="note1">exuunt;<span>exuo exuere, exui, exutus V (3rd)  <br>:pull off; undress, take off; strip, deprive of; lay aside, cast off;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note1">rēpugnantēs<span>repugno repugnare, repugnavi, repugnatus V (1st)  <br>:fight back, oppose; be incompatible with; disagree with;<br>(現在 分詞 能動態 c 複数  主格)<br></span></a>
+<a class="note0">diem<span></span></a>
+<a class="note0">noctemque<span></span></a>
+<a class="note1">obsident;<span>obsido obsidere, -, - V (3rd)  <br>:besiege; occupy;<br>(３人称 複数  未来 能動態 直説法 )<br></span></a>
+<a class="note0">multīs<span><br><br></span></a>
+<a class="note1">utrimque<span>utrimque ADV <br>:on/from both sides/parts; at both ends; on one side and on the other;<br><br></span></a>
+<a class="note0">interfectīs<span><br><br></span></a>
+<a class="note0">māiōrem<span><br><br></span></a>
+<a class="note0">multitūdinem<span><br><br></span></a>
+<a class="note0">armātōrum<span></span></a>
+<a class="note1">concitant.<span>concito concitare, concitavi, concitatus V (1st) TRANS  <br>:|rush; urge/rouse/agitate; enrage/<strong>inflame</strong>; spur/impel; summon/assemble; cause;<br>(３人称 複数  現在 能動態 直説法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>adorti hos continuo (in) itinere: adortiは完了分詞で、分詞構文。明示的にはない「彼ら」を修飾。</p>
+<p>exuunt omnibus impedimentis. 彼らが主語で、全ての持ち物から（Aristiusらを）引き離した、が逐語訳。</p>
+<p>obsident diem noctemque repugnates. repugnates分詞構文。「敵対しながら（彼らは）昼夜をわけず、包囲した。」</p>
+<p>multis interfectis : 独立奪格「多くが殺され」</p>
+<p>concitant armatorum maiorem multitudinem. ここでarmatorumの代わりにad armaのテキストも多い。意味は大して変わらず、武器を互いにエスカレートしたこと。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>彼らはその旅の途中で攻撃し、全ての持ち物を奪い去った。昼夜を分かたず敵対し包囲した。両方に多くの死者がでて、ますます多くの武器を使うようになった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

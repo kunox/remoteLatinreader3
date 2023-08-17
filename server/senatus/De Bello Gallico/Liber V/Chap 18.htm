@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 18</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[18]<span></span></a>
+
+<a class="note0">Caesar<span></span></a>
+<a class="note0">cognitō<span><br><br></span></a>
+<a class="note0">cōnsiliō<span><br><br></span></a>
+<a class="note0">eōrum<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note0">Tamesim<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Cassivellauni<span></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note0">dūxit;<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note1">ūnō<span>unus -a -um, primus -a -um, singuli -ae -a, semel NUM  1<br>:one;<br>&nbsp;(n 単数 奪格)<br><br></span></a>
+<a class="note1">omnīnō<span>omnino ADV <br>:entirely, altogether;<br><br></span></a>
+<a class="note1">locō<span>locum loci N (2nd) N  <br>:|region, places (pl.); places connected with each other;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">pedibus,<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note1">aegrē,<span>aegre aegrius, aegerrime ADV <br>:scarcely, with difficulty, painfully, hardly; reluctantly, uncomfortably;<br><br></span></a>
+<a class="note1">trānsīrī<span>transeo transire, transivi(ii), transitus V  <br>:go over, cross;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">potest.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>cognito eorum consilio : 独立奪格「彼らの計画を理解して」</p>
+<p>Caesar duxit excercitum ad flumen Tamesim, quod ~. quodは関係代名詞</p>
+<p>atque hoc (loc) aegre : (可能だが）ようやく<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>Caesarは敵の計略を知り、軍団をTamesim河に向かってCassivelauniの領地に率いた。その河は全体で一箇所だけ、それもやっとのことで徒歩で渡ることが可能であった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">vēnisset,<span><br><br></span></a>
+<a class="note0">animum<span></span></a>
+<a class="note1">advertit<span>=animadvertit<br>animadverto animadvertere, animadverti, animadversus V&nbsp; <br>:pay attention to, attend to; <strong>notice, observe</strong>; judge, estimate; punish (in+ACC);<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">alteram<span></span></a>
+<a class="note0">flūminis<span><br><br></span></a>
+<a class="note0">rīpam<span><br><br></span></a>
+<a class="note0">magnās<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">cōpiās<span></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note1">instrūctās.<span>instructus instructa -um, instructior -or -us, instructissimus -a -um ADJ  <br>:equipped, fitted out, prepared; learned, trained, skilled; drawn up/arranged;<br>(f 複数  対格)<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>animum advertit ⇒ animadverit(=notice) のテキスト多し</p>
+<p>animadvertit magnas hostium copias esse instructas.<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>そこに来た時に、対岸の土手に非常に多くの敵が待ち構えている事を発見した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Rīpa<span><br><br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">acūtīs<span>acutus acuta -um, acutior -or -us, acutissimus -a -um ADJ  <br>:sharp, sharpened, pointed/tapering; severe; glaring; acute, wise; high-pitched;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">sudibus<span>sudis sudis N (3rd) F  <br>:stake, log;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">praefīxīs<span>praefigo praefigere, praefixi, praefixus V (3rd)  <br>:set in front;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">mūnīta,<span><br><br></span></a>
+<a class="note1">eiusdemque<span>idem eadem, idem PRON  <br>:(w/-dem ONLY, idem, eadem, idem) same, the same, the very same, also;<br>(X 単数 属格)<br></span></a>
+<a class="note0">generis<span></span></a>
+<a class="note0">sub<span></span></a>
+<a class="note0">aquā<span><br><br></span></a>
+<a class="note1">dēfīxae<span>defigo defigere, defixi, defixus V (3rd) TRANS  <br>:<strong>sink</strong>/bury/stick/thrust (weapon); fasten, fix, plant, embed; attach/affix;<br>(完了 分詞 受動態 f 単数 属格)<br></span></a>
+<a class="note1">sudēs<span>sudis sudis N (3rd) F  <br>:stake, log;<br>f&nbsp;複数  主格<br></span></a>
+<a class="note1">flūmine<span>flumen fluminis N (3rd) N  <br>:river, stream; any flowing fluid; flood; onrush;<br>(n 単数 奪格<br></span></a>
+<a class="note1">tegēbantur.<span>tego tegere, texi, tectus V (3rd)  <br>:cover, protect; defend; hide;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>Ripa erat munita prefixis actis subdibus. 前に立てられた鋭い材木によって要塞化されていた。</p>
+<p>defixae sudes sub acqua tegebantur flumine. 水の下に沈められた材木が河の流れによってカバーされていた。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>土手は先の尖った木材を前面に立てて要塞化しており、同じような木材は水面下にあり流れによって見えない状態であった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">cognitīs<span><br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note1">captīvīs<span>captivus captivi N (2nd) C  <br>:prisoner of war (likely male, but maybe female), captive;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">perfugīsque<span>perfuga perfugae N (1st) M  <br>:deserter;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">praemissō<span><br><br></span></a>
+<a class="note0">equitātū<span><br><br></span></a>
+<a class="note1">cōnfestim<span>confestim ADV <br>:immediately, suddenly; at once, without delay, forthwith; rapidly, speedily;<br><br></span></a>
+<a class="note0">legiōnēs<span><br><br></span></a>
+<a class="note0">subsequī<span><br><br></span></a>
+<a class="note0">iussit.<span></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>rebus cognitis : 独立奪格</p>
+<p>praemisso equitatu : 独立奪格<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>これらの状況を捕虜や亡命者から知り、騎兵を送っていたCaesarは直ちに軍団兵に後を追うよう命じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sed<span></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note1">celeritāte<span>celeritas celeritatis N (3rd) F  <br>:speed, quickness, rapidity; speed of action, dispatch; haste; early date;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">impetū<span>impetus impetus N (4th) M  <br>:attack, assault, charge; attempt; impetus, vigor; violent mental urge, fury;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note1">iērunt,<span>eo ire, ivi(ii), itus V  <br>:go, walk; march, advance; pass; flow; pass (time); ride; sail;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">capite<span>caput capitis N (3rd) N  <br>:head; person; life; leader; top; source/mouth (river); capital (punishment);<br>(n 単数 奪格)<br></span></a>
+<a class="note1">sōlō<span>solus sola, solum (gen -ius) ADJ  <br>:only, single; lonely; alone, having no companion/friend/protector; unique;<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">aquā<span><br><br></span></a>
+<a class="note1">exstārent,<span>exsto exstare, -, - V (1st)  <br>:stand forth/out; exist; be extant/visible; be on record;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note0">impetum<span></span></a>
+<a class="note0">legiōnum<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">equitum<span></span></a>
+<a class="note0">sustinēre<span><br><br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">possent<span></span></a>
+<a class="note1">rīpāsque<span>ripa ripae N (1st) F  <br>:bank;<br>(c 複数  対格)<br></span></a>
+<a class="note1">dīmitterent<span>dimitto dimittere, dimisi, dimissus V (3rd) TRANS  <br>:|||discontinue, renounce, abandon/forsake, forgo, give up (activity); dispatch;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">fugae<span></span></a>
+<a class="note1">mandārent.<span>mando mandare, mandavi, mandatus V (1st)  <br>:entrust, commit to one's charge, deliver over; commission; order, command;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>celeritate atque impetu : 手段の奪格「素早く果敢に」進軍した。</p>
+<p><font color="#ff0000">sedがうまく繋がらない？</font>兵士は素早く行軍した<strong>が</strong>、頭だけ出ている状態であった？どこがBUTのニュアンスかよく解らない？</p>
+<p>cum exstarent capite solo ex aqua. capite は手段の奪格。頭だけが水から出ている状態で</p>
+<p>ut : 結果の名詞節<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>兵士は素早く果敢に、頭だけが水から出る状態で進軍した。敵は軍団兵、騎兵の攻撃を支えきれず、土手を放棄し、敗走を始めた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 40</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[40]<span></span></a>
+
+<a class="note0">Mittuntur<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">cōnfestim<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Cicerōne<span><br><br></span></a>
+<a class="note1">litterae<span>littera litterae N (1st) F  <br>:letter (alphabet); (pl.) letter, epistle; literature, books, records, account;<br>(c 複数  主格)<br></span></a>
+<a class="note0">magnīs<span></span></a>
+<a class="note1">prōpositīs<span>propono proponere, proposui, propositus V (3rd)  <br>:display; propose; relate; put or place forward;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">praemiīs,<span>praemium praemi(i) N (2nd) N  <br>:prize, reward; gift; recompense;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">pertulissent:<span>perfero perferre, pertuli, perlatus V  <br>:carry through; bear, endure to the end, suffer; announce;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">obsessīs<span>obsideo obsidere, obsedi, obsessus V (2nd)  <br>:blockade, besiege, invest, beset; take possession of;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">viīs<span>via viae N (1st) F  <br>:way, road, street; journey;<br>(c 複数  奪格)<br></span></a>
+<a class="note1">missī<span>missus missi N (2nd) M  <br>:messenger; legate;<br>(c 複数  主格)<br></span></a>
+<a class="note0">intercipiuntur.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>litterae mittuntur</strong> ad Caesarem ab Cicerone. が骨子。litteraeが複数なのは複数の使者で届ける事を示唆している。</p>
+<p>magnis propositis praemiis. 独立奪格　「莫大な褒賞をつけて」</p>
+<p>si pertulissent. pertulissentは過去完了、接続法でありこれは直接話法では、未来完了である。(NewLatin319.1)</p>
+<p>obsessis omnibus viis : 独立奪格<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>CiceroからCaesarに伝令が送られた。もし到着すれば莫大な褒賞が約束されたが、全ての道は封鎖されており、伝令は捕捉された。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Noctū<span>noctu ADV <br>:by night, at night;<br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">māteriā,<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">mūnītiōnis<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">comportāverant,<span>comporto comportare, comportavi, comportatus V (1st) TRANS  <br>:carry, transport, bring in, convey (to market); bring together; amass, collect;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">turrēs<span><br><br></span></a>
+<a class="note1">admodum<span>admodum ADV <br>:very, exceedingly, greatly, quite; excessively; just so; certainly, completely;<br><br></span></a>
+<a class="note1">CXX<span>centum et viginti 120<br><br></span></a>
+<a class="note1">excitantur<span>excito excitare, excitavi, excitatus V (1st)  <br>:wake up, stir up; cause; raise, <strong>erect</strong>; incite; excite, arouse;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note0">incrēdibilī<span><br><br></span></a>
+<a class="note0">celeritāte;<span><br><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">deesse<span></span></a>
+<a class="note0">operī<span><br><br></span></a>
+<a class="note0">vidēbantur,<span><br><br></span></a>
+<a class="note1">perficiuntur.<span>perficio perficere, perfeci, perfectus V (3rd)  <br>:complete, finish; execute; bring about, accomplish; do thoroughly;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>admdum CXX : 120はたっぷり、と言うニュアンス。fully 120.</p>
+<p><strong>incredibili celeritate</strong> : 態度の奪格（Abl of manner)通常はcumと共にだが、奪格が形容詞に修飾される場合はcum無しで良い。（NewLatin220.1)</p>
+<p><strong>quae videbantur deesse operi</strong> : desumは足りない、必要なと言う単語。<strong>deesse operiで作業が必要な事</strong>（足りてない事）operiはdesumの間接目的語（自動詞の間接目的語NewLatin 187.2)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>夜の間に、要塞化のために運んでおいた木材を使い、ゆうに１２０の塔を、異常に早い速度で立てた。不足していると思われる作業も完了した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hostēs<span><br><br></span></a>
+<a class="note0">posterō<span><br><br></span></a>
+<a class="note0">diē<span><br><br></span></a>
+<a class="note0">multō<span><br><br></span></a>
+<a class="note1">māiōribus<span>magnus magna -um, major -or -us, maximus -a -um ADJ  比較級<br>:large/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">coāctīs<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">cōpiīs<span>copia copiae N (1st) F  <br>:plenty, abundance, supply; troops (pl.), supplies; forces; resources; wealth;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note0">oppugnant,<span></span></a>
+<a class="note1">fossam<span>fossa fossae N (1st) F  <br>:ditch, trench, canal; moat; dike, fosse;<br>(c 単数 対格)<br></span></a>
+<a class="note1">complent.<span>compleo complere, complevi, completus V (2nd) TRANS  <br>:fill (up/in); be big enough to fill; occupy space, crowd; furnish/supply/man;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>Hostes oppugnant castra、complent fossam. が骨子</p>
+<p>postero dies : 時の奪格、翌日</p>
+<p>multo maioribus coactis copiis : 手段の奪格、差異の度合の奪格？　「非常に多くの軍勢で」前日よりも多かった、というニュアンス。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>敵は、翌日、更に大変な数の軍勢で砦を攻撃し、堀を埋めた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eādem<span><br><br></span></a>
+<a class="note0">ratiōne,<span><br><br></span></a>
+<a class="note0">quā<span><br><br></span></a>
+<a class="note0">prīdiē,<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">nostrīs<span><br><br></span></a>
+<a class="note1">resistitur.<span>resisto resistere, restiti, - V (3rd)  <br>:pause; continue; resist, oppose; reply; withstand, stand (DAT); make a stand;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>resistitur ab nostris. 「我軍によって持ちこたえられた」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>前日と同様のやり方で、持ちこたえた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hōc<span><br><br></span></a>
+<a class="note0">idem<span></span></a>
+<a class="note1">reliquīs<span>reliquus reliqua, reliquum ADJ  <br>:rest of/remaining/available/left; surviving; future/further; yet to be/owed;<br>(X 複数  奪格)<br><br></span></a>
+<a class="note1">deinceps<span>deinceps ADV <br>:|hereafter; thereafter;<br><br></span></a>
+<a class="note1">fit<span>fio feri, factus sum V SEMIDEP  <br>:happen, come about; result (from); take place, be held, occur, arise (event);<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">diēbus.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>hoc idem fit deinceps reliquis fiebus. <br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>同じことがそれ以降の日にも起こった。（その日以降も同じであった）<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Nūlla<span>nullus nulla, nullum (gen -ius) ADJ  <br>:no; none, not any; (PRONominal ADJ)<br>(f 単数 主格)<br></span></a>
+<a class="note0">pars<span></span></a>
+<a class="note0">nocturnī<span><br><br></span></a>
+<a class="note0">temporis<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">labōrem<span><br><br></span></a>
+<a class="note0">intermittitur;<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">aegrīs,<span>aeger aegri N (2nd) M  <br>:sick person, invalid, patient;<br>&nbsp;(X 複数  与格)<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">vulnerātīs<span>vulnero vulnerare, vulneravi, vulneratus V (1st) TRANS  <br>:wound/injure/harm, pain/distress; inflict wound on; damage (things/interest of);<br>(完了 分詞 受動態  複数  与格)<br></span></a>
+<a class="note1">facultās<span>facultas facultatis N (3rd) F  <br>:means; ability, skill; opportunity, chance; resources (pl.), supplies;<br>(X 単数 主格)<br><br></span></a>
+<a class="note1">quiētis<span>quies quietis N (3rd) F  <br>:quiet, calm, rest, peace; sleep;<br>(X 単数 属格)<br></span></a>
+<a class="note0">datur.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>nulla pars ad laborem intermittitur</strong>. 「作業の如何なる部分も中断されなかった」</p>
+<p><strong>non facultas quietis datur.</strong> 休みの機会は与えられなかった。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>夜の時間の作業は如何なる瞬間も中断されず、休憩の機会は、病人、負傷者にも与えられなかった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quaecumque<span>不定代名詞、不定形容詞<br>whatever, who ever<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">proximī<span><br><br></span></a>
+<a class="note0">diēī<span><br><br></span></a>
+<a class="note0">oppugnātiōnem<span><br><br></span></a>
+<a class="note1">opus<span>opus operis N (3rd) N  <br>:<strong>need</strong>; work; fortifications (pl.), works;<br>&nbsp;(X 単数 主格)<br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">noctū<span><br><br></span></a>
+<a class="note1">comparantur;<span>comparo comparare, comparavi, comparatus V (1st) TRANS  <br>:prepare; provide; compose; collect, get together/hold of; raise (force); unite;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note0">multae<span></span></a>
+<a class="note1">praeūstae<span>praeustus praeusta, praeustum ADJ  <br>:burnt at the end; hardened by burning;<br>&nbsp;(f 複数  主格)<br></span></a>
+<a class="note1">sudēs,<span>sudis sudis N (3rd) F  <br>:stake, log;<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note0">magnus<span></span></a>
+<a class="note1">mūrālium<span>muralis muralis, murale ADJ  <br>:of walls; of a (city) wall; turreted; mural;<br>(X 複数  属格)<br></span></a>
+<a class="note1">pilōrum<span>pilum pili N (2nd) N  <br>:javelin, heavy iron-tipped throwing spear; pike;<br>(X 複数  属格)<br></span></a>
+<a class="note1">numerus<span>numerus numeri N (2nd) M  <br>:number/sum/total/rank; (superior) numerical strength/plurality; category; tally;<br>(X 単数 主格)<br></span></a>
+<a class="note1">īnstituitur;<span>instituo instituere, institui, institutus V (3rd)  <br>:set up, establish, found, make, institute; build; prepare; decide;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">turrēs<span><br><br></span></a>
+<a class="note1">contabulantur,<span>contabulo contabulare, contabulavi, contabulatus V (1st) TRANS  <br>:board over, cover with boards; furnish with roof/floor/bridge; build; bridge;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note1">pinnae<span>pinna pinnae N (1st) F  <br>:feather; wing; fin; <strong>battlement</strong>/parapet, spire/steeple; flap; water wheel paddle;<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note1">lōrīcaeque<span>lorica loricae N (1st) F  <br>:coat of mail; breastwork, parapet, fortification;<br>(c 複数  主格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">crātibus<span>cratis cratis N (3rd) F  <br>:wickerwork; bundle of brush, fascine; framework, network, lattice; bush-harrow;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">attexuntur.<span>attexo attexere, attexui, attextus V (3rd) TRANS  <br>:add, join on, link to; weave/plait on, attach by weaving;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>quaecumque sunt opus</strong>, comparantur noctu. quaecumqueが主語、opusは述語。「必要な物はなんであれ、夜に用意された」</p>
+<p><strong>ad oppungnationem proximi diei</strong> : 翌日の攻撃のための</p>
+<p><strong>praeustae sudes</strong> : 先を焼いた杭</p>
+<p>magnus numerus muralium pilorum : muralisは土の壁でpilumは槍。壁に取りつけられた槍先？</p>
+<p><strong>contabulantur</strong> : 塔は段階的に高くなど、強化される。</p>
+<p><strong>pinnae que loricae</strong> : pinnaeは銃眼、loricaeは胸壁、欄干<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>翌日の攻撃に対し、必要なものはなんであれ夜の間に用意された。たくさんの先に焼きを入れた杭、多くの壁の戦いに使われる槍が用意され、塔は更に強化され、防壁の障害物には銃眼と胸壁が付け加えられた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipse<span></span></a>
+<a class="note0">Cicerō,<span><br><br><br></span></a>
+<a class="note1">cum<span>cum ADV <br>:when, at the time/on each occasion/in the situation that; after; since/<strong>although</strong>;<br><br></span></a>
+<a class="note1">tenuissimā<span>tenuis tenue, tenuior -or -us, tenuissimus -a -um ADJ  最上級<br>:thin, fine; <strong>delicate</strong>; slight, <strong>slender</strong>; little, unimportant; weak, feeble;<br>(f 単数 主格)<br></span></a>
+<a class="note1">valētūdine<span>valetudo valetudinis N (3rd) F  <br>:good health, soundness; condition of body/health; illness, indisposition;<br>((c 単数 奪格)<br></span></a>
+<a class="note0">esset,<span></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">nocturnum<span></span></a>
+<a class="note1">quidem<span>quidem ADV <br>:indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;<br><br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">tempus<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">quiētem<span>quies quietis N (3rd) F  <br>:quiet, calm, <strong>rest</strong>, peace; sleep;<br>(c 単数 対格)<br></span></a>
+<a class="note1">relinquēbat,<span>relinquo relinquere, reliqui, relictus V (3rd)  <br>:leave behind, abandon; (pass.) be left, remain; bequeath;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">ultrō<span>ultro ADV <br>:besides, beyond; to/on the further/other side; <strong>voluntarily</strong>, <strong>unaided</strong>; wantonly;<br><br><br></span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note1">concursū<span>concursus concursus N (4th) M  <br>:running to and fro/together, collision, charge/attack; assembly/crowd; tumult;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">vōcibus<span>vox vocis N (3rd) F  <br>:voice, tone, expression;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">parcere<span>parco parcere, parcui, parsus V (3rd)  <br>:forbear, refrain from; spare; show consideration; be economical/thrifty with;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">cōgerētur.<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/<strong>compel</strong>; convene; congeal;<br>(３人称 単数 未完了 受動態 接続法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>cum Cicero esset tenuissima valetudine</strong>. valetudineは<strong>指定の奪格</strong>で「健康に関しては」cumはここはAlthoughの意。「Ciceroは健康については脆弱であったにも拘わらず」</p>
+<p><strong>relinquebat ne quidem nocturnum tempus sibi ad quietem</strong>　「夜間の時間といえども、自身を休息の向こう側に置いた」が逐語訳。休憩しなかったと言う事。</p>
+<p><u>ultroはここではCiceroの意志を越えて</u>、と言うニュアンス。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>Ciceroは自身は健康に関しては脆弱であったにも拘わらず、夜間にも自分を休息しなかった。そこで兵士たちが駆け寄り、声を励まし休息を取ることを強制した。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

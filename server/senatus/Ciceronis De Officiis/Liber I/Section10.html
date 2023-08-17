@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 10 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[10]<span></span></a>
+<a class="note0">Hac<span></span></a>
+<a class="note1">divisione,<span>divisio divisionis N (3rd) F  <br>:division; distribution;<br>C 単数 奪格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">praeterīre<span>praetereo praeterire, praeterivi(ii), praeteritus V  <br>:pass/go by; disregard/ neglect/ omit/ miss; surpass/ excel; go overdue; pass over;<br>(  現在 能動態 不定詞 )<br><br></span></a>
+<a class="note1">aliquid<span>aliquis aliquis, aliquid PRON  <br>:anyone, anybody, anything; someone, something; one or another;<br>(N 単数 対格)<br></span></a>
+<a class="note0">maximum<span></span></a>
+<a class="note1">vitium<span>vitium viti(i) N (2nd) N  <br>:fault, vice, crime, sin; defect;<br>(N 単数 主格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">dividendo<span></span></a>
+<a class="note0">sit,<span></span></a>
+<a class="note0">duo<span></span></a>
+<a class="note1">praetermissa<span>praetermitto praetermittere, praetermisi, praetermissus V (3rd)  <br>:let pass; pass over; omit; overlook;<br>(完了 分詞 受動態 N 複数 主格) <br></span></a>
+<a class="note0">sunt.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>cum praeterire aliquid sit maximum vitium in diviendo, : cumは反意節を導き、接続法。（NewLatin 309.3)「何かを抜かすことが、分類になかでは最悪のことであるが、」</p>
+<p>praetermissa sunt (a Panaetio) : Panaetiusによって見過ごされた点が２つある。Stoic派は善悪に程度があるとは認めず、絶対善と絶対悪しか考慮しないから。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらの分類に関して、何かを「抜かす」ことが分類のなかで最悪のことではあるが、２つの点が見過ごされている。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nec<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">solum,<span></span></a>
+<a class="note1">utrum<span>uter utra, utrum ADJ  <br>:<strong>which (of two),</strong> whichever, no matter which; one, either, one or other;<br>(N 単数 主格)<br></span></a>
+<a class="note0">honestum<span></span></a>
+<a class="note0">an<span></span></a>
+<a class="note0">turpe<span></span></a>
+<a class="note0">sit,<span></span></a>
+<a class="note1">deliberari<span>delibero deliberare, deliberavi, deliberatus V (1st)  <br>:weigh/ consider/　deliberate/ consult (oracle); ponder/think over; resolve/decide on<br>(  現在 受動態 不定詞 )<br><br></span></a>
+<a class="note1">solet,<span>soleo solere, solitus sum V (2nd) SEMIDEP  <br>:be in the habit of; become accustomed to;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">duobus<span>duo -ae o, secundus -a -um, bini -ae -a, bis NUM  2<br>:two (pl.);<br>(N 複数 奪格)<br></span></a>
+<a class="note1">propositis<span>propono proponere, proposui, propositus V (3rd)  <br>:display; propose; relate; put or place forward;<br>&nbsp;(完了 分詞 受動態  複数 奪格)<br></span></a>
+<a class="note1">honestis<span>honestus honesta -um, honestior -or -us, honestissimus -a -um ADJ  <br>:distinguished, reputable, respected, honorable, upright, honest; worthy;<br>(X 複数 奪格)<br></span></a>
+<a class="note0">utrum<span></span></a>
+<a class="note0">honestius,<span></span></a>
+<a class="note0">itemque<span></span></a>
+<a class="note0">duobus<span></span></a>
+<a class="note0">propositis<span></span></a>
+<a class="note0">utilibus<span></span></a>
+<a class="note0">utrum<span></span></a>
+<a class="note1">ūtilius.<span>副詞<br>utiliterの比較級<br><span>utiliter utilius, utilissime ADV  :usefully/profitably/to advantage; interestedly; validly/effectively/practically; </span><br><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>nec enim solum ~ , sed etiam&nbsp;- : ~だけではなく-も</p>
+<p>duobus honestis propositis : 独立奪格「２つの名誉あることが提示された時」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>我々は通常考えることであるが、どちらが名誉あることで恥ずべきことではないかだけではなく、２つの名誉あることが提示された時、どちらがより名誉あることか考える。同様に２つの有用なものが提示され、どちらがより有用か考える。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ita<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">ille<span></span></a>
+<a class="note1">triplicem<span>triplex (gen.), triplicis ADJ  <br>:threefold, triple; three;<br>(C 単数 対格)<br></span></a>
+<a class="note0">putavit<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">rationem<span>ratio rationis N (3rd) F  <br>:account, reckoning, invoice; plan; prudence; method; reasoning; rule; regard;<br>(C 単数 対格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">quinque<span>quinque quintus -a -um, quini -ae -a, quinquie(n)s NUM <br>:five;<br><br></span></a>
+<a class="note0">partes<span></span></a>
+<a class="note1">distribui<span>distribuo distribuere, distribui, distributus V (3rd)  <br>:divide, distribute, assign;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">debere<span>debeo debere, debui, debitus V (2nd)  <br>:owe; be indebted/responsible for/obliged/bound/destined; ought, must, should;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">reperitur.<span>reperio reperire, repperi, repertus V (4th) TRANS  <br>:discover, learn; light on; find/obtain/get; find out/to be, get to know; invent;<br>(3 単数 現在 受動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>illeはPanaetiusを指す。</p>
+<p>ita rationem distribui in qunque partes debere : rationemが主語で不定詞distribui とともに不定詞句「命題は５つに分けられる事」を作る。更にその不定詞句を主語にした新たな不定詞句　debereが加わり、最終的にはその不定詞句が主語でreperitur「発見された」となる。quamは関係代名詞でrationem が先行詞。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>このように、彼（Panaetius）が３つあると考えた命題は実は５つに分けられるべきであることが解った。<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Primum<span></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">honesto,<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">dupliciter,<span>dupliciter duplicius, duplicissime ADV <br>:doubly, twice over, in two ways/a twofold manner, into two parts/categories;<br><br></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0">pari<span></span></a>
+<a class="note0">ratione<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note1">utili,<span>utilis utilis, utile ADJ  <br>:useful, profitable, practical, helpful, advantageous;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">post<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note1">comparatione<span>comparatio comparationis N (3rd) F  <br>:|comparison, weighing of merits; plea from greater good; comparative degree;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note0">eorum<span></span></a>
+<a class="note1">disserendum.<span>dissero disserere, disserui, dissertus V (3rd)  <br>:arrange, dispose, set in order; discuss; <strong>examine</strong>; explain, set out in words;<br>(未来 分詞 受動態 N 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>primumest de honesto, tum de utili, post de comparatione.</p>
+<p>dupleciter : ２重の方法で、２つのサブカテゴリで、（程度がある）</p>
+<p>pari ratione : 同様なやり方で（つまり２つのカテゴリで）</p>
+<p>est disserendum de ~ が構文<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>故にまず、最初に、名誉あることについて、（２重にある場合で）、次に同じように有用性について、最後にそれらの部分の比重のかけ方について話をしよう。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

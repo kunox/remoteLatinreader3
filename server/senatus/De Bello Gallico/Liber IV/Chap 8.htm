@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 8</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[8]<span></span></a>
+
+<a class="note0">Ad<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">vīsum<span><br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">respondit;<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">exitus<span>exitus exitus N (4th) M  <br>:exit, departure; end, solution; death; outlet, mouth (of river);<br>(c 単数 主格),<br></span></a>
+<a class="note0">fuit<span></span></a>
+<a class="note1">ōrātiōnis:<span>oratio orationis N (3rd) F  <br>:speech, oration; eloquence; prayer;<br>(X 単数 属格)<br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">nūllam<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">amīcitiam<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">posse,<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliā<span></span></a>
+<a class="note1">remanērent;<span>remaneo remanere, remansi, remansus V (2nd)  <br>:stay behind; continue, remain;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">vērum<span>verum veri N (2nd) N  <br>:truth, reality, fact;<br>&nbsp;(n 単数 対格)<br></span></a>
+<a class="note0">esse,<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note1">tuērī<span>tueor tueri, tuitus sum V (2nd) DEP  <br>:see, look at; protect, watch; uphold;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">potuerint<span>possum 3複　完了　接続法<br><br></span></a>
+<a class="note1">aliēnōs<span>alienus alieni N (2nd) M  <br>:foreigner; outsider; stranger to the family; person/slave of another house;<br>(c 複数  対格)<br></span></a>
+<a class="note1">occupāre;<span>occupo occupare, occupavi, occupatus V (1st)  <br>:seize; gain; overtake; capture, occupy; attack;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">ūllōs<span>ullus ulla, ullum (gen -ius) ADJ  <br>:any;<br>(m 複数  対格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliā<span></span></a>
+<a class="note1">vacāre<span>vaco vacare, vacavi, vacatus V (1st)  <br>:be empty; be vacant; be idle; be free from, be unoccupied;<br>(２人称 単数 現在 受動態 命令法 ), (  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">agrōs<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">darī<span>do 受動　不定詞<br><br><br></span></a>
+<a class="note1">tantae<span>ｆ単　与格<br><br></span></a>
+<a class="note1">praesertim<span>praesertim副詞　;=especially, particularly<br><br></span></a>
+<a class="note1">multitūdinī<span>multitudo multitudinis N (3rd) F  <br>:multitude, great number; crowd; rabble, mob;<br>&nbsp;(X 単数 与格)<br></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note0">iniūriā<span><br><br></span></a>
+<a class="note1">possint;<span>3複　接続法<br><br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">licēre,<span>licet licere, licuit, licitus est V (2nd) IMPERS  <br>:it is permitted, one may; it is all right, lawful, allowed, permitted;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">velint,<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Ubiōrum<span><br><br></span></a>
+<a class="note0">fīnibus<span><br><br></span></a>
+<a class="note0">cōnsīdere,<span><br><br></span></a>
+<a class="note0">quōrum<span><br><br></span></a>
+<a class="note0">sint<span></span></a>
+<a class="note0">lēgātī<span><br><br></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">Suēbōrum<span><br><br></span></a>
+<a class="note1">iniūriīs<span>injuria injuriae F 複　奪格　;= injustice, wrong<br><br><br></span></a>
+<a class="note1">querantur<span>queror queri, questus sum V (3rd) DEP  <br>:complain; protest, grumble, gripe; make formal complaint in court of law;<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">auxilium<span></span></a>
+<a class="note0">petant:<span></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">Ubiīs<span><br><br></span></a>
+<a class="note1">imperātūrum.<span>impero imperare, imperavi, imperatus V (1st)  <br>:order, command, levy; rule (over) (w/DAT);<br>(未来 分詞 能動態 m 単数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>ad haec Caesar respondit quae est visum : quae est visumが難しい。英語風に言えば　what is seenだがquaeは単数だと女性である、Visumには関連の語句を含めても単数、女性はないのでquaeはestの主語ではない。visumをvideoの完了分詞だと考えると、<strong>ｎ単　受動</strong>であるので、何かｎの単数の主語が省略されていると考える。<strike>その場合、その主語はquaeを目的語に持てるようなもの、（<strong>quaeはn複対格で、haecと同様、使者たちと</strong>考える。省略されている主語は、従って彼に対する<strong>答え</strong>、のようなものであろう。<strong>videoはseem good</strong>という意味もあるようなので、「良さそうに見える答えを答えた」という感じか？ </strike>eaが省略されて、<font color="#0000ff">quae ea est visum.と考える。間接疑問文で、「それは良いと見えるものを」</font></p>
+<p>orationis exitus fuit : exitus＝conclusionで、「答え(演説）の結論は次のようであった」</p>
+<p>nullam amicitiam cum iis posse esse sibi : 彼らとの友好は私には可能ではない。</p>
+<p>neque verum esse : また～は正しいとはいえない。</p>
+<p>qui non potuerint tueri suos fines occupare alienos. qui occupare alienos 「自身の領地を守れなかったものが他人の領地を奪うことは正しいとはいえない」</p>
+<p>neque ullos agros, qui possint dari&nbsp;sine injuria 「どんな土地も、不正義なこともなく譲渡するわけには行かない」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼らに対しカエサルは適当と考える答えをした。その結論は次のようである。彼らがガリアの中に留まる限り、カエサルは彼らと友好的であることは出来ない。自分を土地を守れなかったものが他人の土地を簒奪するのは正しくない。またガリアのどんな空き地も、特に多大な規模の場合には何の不正義などがない場合に（かってに）譲渡することは出来ない。然しながら、Ubii族の領地の中については考慮できる。Ubii族はその使者が我らのところに来ており、Suebi族の仕打ちに対し苦情を述べており、私の助力を頼みに来ている。私はいまそれをUbii族に命ずるところである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

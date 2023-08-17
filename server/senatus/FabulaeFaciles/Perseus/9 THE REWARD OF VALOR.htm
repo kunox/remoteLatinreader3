@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 9 THE REWARD OF VALOR.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Perseus<span></span></a>
+<a class="note0">postquam<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">lītus<span></span></a>
+<a class="note1">dēscendit,<span>dēscendo descendere, descendi, descensus V (3rd) INTRANS  <br>:descend, climb/march/come/go/flow/run/hang down; dismount; penetrate/sink;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">prīmum<span></span></a>
+<a class="note0">tālāria<span></span></a>
+<a class="note0">exuit;<span></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">rūpem<span>rūpes rupis N (3rd) F <br>:cliff; rock;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vēnit<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Andromeda<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">vīncta<span>vincĭo vincire, vinxi, vinctus V (4th)  X<br>:bind, fetter; restrain;<br>【完了分詞 ( 受動態 ) (F 単数 主格)&nbsp; 】<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">erat.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Ea<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">omnem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">spem<span>spes spei N (5th) F <br>:hope/anticipation/expectation; prospect/hope/promise; (inheriting/succeeding);<br>(単数 対格) <br></span></a>
+<a class="note1">salūtis<span>sălūs salutis N (3rd) F <br>:health; prosperity; good wish; greeting; salvation, safety;<br>(単数 属格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dēposuerat,<span>dēpōno deponere, deposivi, depositus V (3rd) TRANS  <br>:put/lay down/aside/away; let drop/fall; give up; resign; deposit/entrust/commit;<br>(3 単数 過去完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Perseus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">adiit,<span>ădĕo adire, adivi(ii), aditus V  X<br>:approach; attack; visit, address; undertake; take possession (inheritance);<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">terrōre<span>terror terroris N (3rd) M <br>:terror, panic, alarm, fear;<br>(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">paene<span>paene ADV <br>&gt;:nearly, almost; mostly;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">exanimāta<span>exănĭmo exanimare, exanimavi, exanimatus V (1st)  X<br>:kill, deprive of life; scare, alarm greatly; tire, exhaust; be out of breath;<br>【完了分詞 ( 受動態 ) (F 単数 主格)&nbsp; 】<br></span></a>
+<a class="note0">erat.<span></span></a>
+<a class="note0">Ille<span></span></a>
+<a class="note0">vincula<span></span></a>
+<a class="note1">statim<span>statim ADV <br>&gt;:at once, immediately;<br><br></span></a>
+<a class="note1">solvit,<span>solvo solvere, solvi, solutus V (3rd)  X<br>:loosen, release, unbind, untie, free; open; set sail; scatter; pay off/back;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">puellam<span>pŭella puellae N (1st) F <br>:girl, (female) child/daughter; maiden; young woman/wife; sweetheart; slavegirl;<br>(単数 対格) <br></span></a>
+<a class="note1">patrī<span>păter patris N (3rd) M <br>:father;<br>(単数 与格) <br></span></a>
+<a class="note1">reddidit.<span>reddo reddere, reddidi, redditus V (3rd)  X<br>:return; restore; deliver; hand over, pay back, render, give back; translate;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Cēpheus<span></span></a>
+<a class="note1">ob<span>ob PREP ACC <br>&gt;:on account of, for the sake of, for; instead of; right before;<br><br></span></a>
+<a class="note0">hanc<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note0">maximō<span></span></a>
+<a class="note1">gaudiō<span>gaudĭum gaudi(i) N (2nd) N <br>:joy, delight, gladness; source/cause of joy; physical/sensual delight;<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note1">affectus<span>affectus affecta, affectum ADJ  <br>:endowed with, possessed of; minded; affected; impaired, weakened; emotional;<br>(M 単数 主格) <br></span></a>
+<a class="note0">est.<span></span></a>
+<a class="note1">Meritam<span>mĕrĭtus merita, meritum ADJ  <br>:deserved, due;<br>(F 単数 対格) <br></span></a>
+<a class="note1">grātiam<span>grātĭa gratiae N (1st) F <br>:|favor/goodwill/kindness/friendship; influence; gratitude; thanks (pl.); Graces;<br>(単数 対格) <br></span></a>
+<a class="note1">prō<span>pro PREP ABL <br>&gt;:on behalf of; before; in front/instead of; for; about; according to; as, like;<br><br></span></a>
+<a class="note0">tantō<span></span></a>
+<a class="note1">beneficiō<span>bĕnĕfĭcĭum benefici(i) N (2nd) N <br>:kindness, favor, benefit, service, help; privilege, right;<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Perseō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">rettulit;<span>rĕfĕro referre, rettuli, relatus V  X<br>:||give/pay back, render, tender; restore; redirect; revive, repeat; recall;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">praetereā<span>praeterea ADV <br>&gt;:besides, thereafter; in addition;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Andromedam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ipsam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">eī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">mātrimōnium<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dedit.<span>do dare, dedi, datus V (1st) TRANS  <br>:give; dedicate; sell; pay; grant/bestow/impart/offer/lend; devote; allow; make;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Ille<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">libenter<span>libenter libentius, libentissime ADV <br>&gt;:willingly; gladly, with pleasure;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">dōnum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">accēpit<span>accĭpĭo accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">puellam<span></span></a>
+<a class="note1">dūxit.<span>dūco ducere, additional, forms V  X<br>:lead, command; think, consider, regard; prolong;<br>(3 単数 完了 能動態 直接法) <br>ducoには （妻として）take というものがあり、結婚するの意<br><br></span></a>
+<a class="note1">Paucōs<span>paucus pauca -um, paucior -or -us, paucissimus -a -um ADJ  <br>:little, small in quantity/extent; few (usu. pl.); just a few; small number of;<br>(M 複数 対格) <br></span></a>
+<a class="note1">annōs<span>annus anni N (2nd) M <br>:year (astronomical/civil); age, time of life; year's produce; circuit, course;<br>(複数 対格) <br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">uxōre<span>uxor uxoris N (3rd) F <br>:wife;<br>(単数 奪格) <br></span></a>
+<a class="note0">suā<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eā<span></span></a>
+<a class="note1">regiōne<span>rĕgĭo regionis N (3rd) F <br>:area, region; neighborhood; district, country; direction;<br>(単数 奪格) <br></span></a>
+<a class="note1">habitābat,<span>hăbĭto habitare, habitavi, habitatus V (1st)  X<br>:inhabit, dwell; live, <strong>stay</strong>;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">magnō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">honōre<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">apud<span>apud PREP ACC <br>&gt;:at, by, near, among; at the house of; before, in the presence/writings/view of;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">omnēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Aethiopēs.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">Magnopere<span>magnopere ADV <br>&gt;:greatly, exceedingly; with great effort; very much; particularly, especially;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">mātrem<span></span></a>
+<a class="note0">suam<span></span></a>
+<a class="note0">rūrsus<span></span></a>
+<a class="note0">vidēre<span></span></a>
+<a class="note1">cupiēbat.<span>cŭpĭo cupere, cupivi, cupitus V (3rd) TRANS  <br>:wish/long/be eager for; desire/want, covet; desire as a lover; favor, wish well;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note1">Tandem<span>tandem ADV <br>&gt;:finally; at last, in the end; after some time, eventually; at length;<br><br></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">uxōre<span></span></a>
+<a class="note0">suā<span></span></a>
+<a class="note0">ē<span></span></a>
+<a class="note0">rēgnō<span></span></a>
+<a class="note0">Cēpheī<span></span></a>
+<a class="note1">discessit.<span>discēdo discedere, discessi, discessus V (3rd)  X<br>:go/march off, depart, withdraw; scatter, dissipate; abandon; lay down (arms);<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" style="font-size: 2.4rem;" spellcheck="false"><p>Ea autem : ea= she はAndromedaのこと、</p>
+<p>Ille vincula solvit : IlleはPerseus</p>
+<p>ducoには結婚するという意味もある。<em><font color="#202122" face="Arial" size="2">Propter dīvitiās meās, licuit uxōrem dōtātam genere summō&nbsp;<b style="font-weight: bold;">dūcere</b>. （Plautus)</font></em><br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 2.4rem;" spellcheck="false"><p>Perseusは海岸に降りたち最初に羽つきの靴を脱ぎ、Andromedaが鎖で繋がれている崖に向いました。彼女は助かる希望をすっかりなくしており、Perseusが近づくと恐怖でほとんど気を失っていました。彼は直ちに鎖を解き娘を父親に返しました。</p>
+<p>Cepheusはこの一連の出来事にすっかり喜んでおり、Perseusに、その非常に大きな助けに値する感謝を与えました。それに加えAndromeda 彼女自身を彼に結婚という形で与えることにしました。彼はそれを喜んで受け、娘を妻として娶りました。しばしの間妻とその国で暮らしました。それはすべてのAethiopia人から尊敬された暮らしでした。しかしながら、自身の母親ともう一度会いたいと思始めます。そこで妻と一緒にCepheusの王国から出発しました。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

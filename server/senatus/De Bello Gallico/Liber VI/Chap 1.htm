@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 1</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[1]<span></span></a>
+
+<a class="note0">Multīs<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">causīs<span><br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">māiōrem<span><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">mōtum<span><br><br></span></a>
+<a class="note1">exspectāns<span>exspecto exspectare, exspectavi, exspectatus V (1st)  <br>:lookout for, await; expect, anticipate, hope for;<br>(現在 分詞 能動態  単数 主格)<br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">Marcum<span></span></a>
+<a class="note0">Sīlānum,<span><br><br></span></a>
+<a class="note0">Gaium<span></span></a>
+<a class="note0">Antistium<span></span></a>
+<a class="note0">Rēgīnum,<span><br><br></span></a>
+<a class="note0">Titum<span></span></a>
+<a class="note0">Sextium<span></span></a>
+<a class="note0">lēgātōs<span><br><br></span></a>
+<a class="note1">dīlēctum<span>dilectus dilectus N (4th) M  <br>:levy/draft/conscription; enlistment, recruiting, mustering; levy/men enrolled;<br>(c 単数 対格)<br></span></a>
+<a class="note0">habēre<span><br><br></span></a>
+<a class="note1">īnstituit;<span>instituo instituere, institui, institutus V (3rd)  <br>:set up, establish, found, make, institute; build; prepare; <strong>decide</strong>;<br>(３人称 単数 現在 能動態 直説法 )<br><br></span></a>
+<a class="note1">simul<span>simul ADV <br>:at same time; likewise; also; simultaneously; at once;<br><br></span></a>
+<a class="note1">ab<span>ab PREP ABL <br>:<strong>by (agent),</strong> from (departure, cause, remote origin/time); after (reference);<br><br></span></a>
+<a class="note0">Gnaeo<span></span></a>
+<a class="note0">Pompēiō<span><br><br></span></a>
+<a class="note1">prōcōnsule<span>proconsul proconsulis N (3rd) M  <br>:proconsul, governor of a province;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">petit,<span>peto petere, petivi, petitus V (3rd)  <br>:attack; aim at; desire; beg, entreat, ask (for); reach towards, make for;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">quoniam<span>quoniam CONJ <br>:because, since, seeing that;<br><br></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">urbem<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">imperiō<span><br><br></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note0">pūblicae<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">remanēret,<span>remaneo remanere, remansi, remansus V (2nd)  <br>:stay behind; continue, remain;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Cisalpīnā<span><br><br></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note1">cōnsulis<span>consul consulis N (3rd) M  <br>:consul (highest elected Roman official - 2/year); supreme magistrate elsewhere;<br>(X 単数 属格)<br></span></a>
+<a class="note1">sacrāmentō<span>sacramentum sacramenti N (2nd) N  <br>:sum deposited in a civil process, guaranty; <strong>oath of allegiance</strong>; sacrament;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">rogāvisset,<span>rogo rogare, rogavi, rogatus V (1st)  <br>:ask, ask for; invite; introduce;<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sīgna<span><br><br></span></a>
+<a class="note1">convenīre<span>convenio convenire, conveni, conventus V (4th)  <br>:|meet/assemble; go to meet; come together; (have sex); converge; visit/approach;<br>(  現在 能動態 不定詞 )<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">proficīscī<span><br><br></span></a>
+<a class="note1">iubēret,<span>jubeo jubere, jussi, jussus V (2nd) TRANS  <br>:order/tell/command/direct; enjoin/command; decree/enact; request/ask/bid; pray;<br>(３人称 単数 未完了 能動態 <strong>接続法 )</strong><br></span></a>
+<a class="note1">magnī<span>属格、<br>interesseと共に使われる場合の「関係の度合」は属格で表される<br><br><br></span></a>
+<a class="note1">interesse<span>interest interesse, interfuit, interfutus est V<strong> IMPERS</strong>  <br>:it concerns, it interests;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">reliquum<span></span></a>
+<a class="note0">tempus<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">opīniōnem<span><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note1">exīstimāns<span>existimo existimare, existimavi, existimatus V (1st) TRANS  <br>:value/esteem; form/hold opinion/view; think/suppose; estimate; judge/consider;<br>(現在 分詞 能動態  単数 主格)<br></span></a>
+<a class="note1">tantās<span>tantus tanta, tantum ADJ  <br>:of such size; so great, so much;<br>(f 複数  対格)<br></span></a>
+<a class="note1">vidērī<span>video videre, vidi, visus V (2nd)  <br>:see, look at; consider; (PASS) seem, seem good, appear, be seen;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">Ītaliae<span><br><br></span></a>
+<a class="note1">facultātēs<span>facultas facultatis N (3rd) F  <br>:means; ability, skill; opportunity, chance; resources (pl.), supplies;<br>(c 複数  対格)<br></span></a>
+<a class="note0">ut,<span></span></a>
+<a class="note0">sī<span></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">esset<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">bellō<span><br><br></span></a>
+<a class="note1">dētrīmentī<span>detrimentum detrimenti N (2nd) N  <br>:diminishment, material reduction; detriment; harm/loss/damage; reverse/defeat;<br>(n 単数 属格)<br></span></a>
+<a class="note0">acceptum,<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">modo<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">brevī<span><br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note1">sarcīrī,<span>sarcio sarcire, sarsi, sartus V (4th)  <br>:make good; redeem; restore;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">māiōribus<span><br><br></span></a>
+<a class="note1">augērī<span>augeo augere, auxi, auctus V (2nd) TRANS  <br>:increase, enlarge, augment; spread; honor, promote, raise; exalt; make a lot of;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">cōpiīs<span>copia copiae N (1st) F  <br>:plenty, abundance, supply; troops (pl.), supplies; forces; resources; wealth;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note0">posset.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="display: block; " >
+<div class="innerdiv" spellcheck="false"><p><strong>Caesar instituit habere dilectum</strong>. dilectumは徴兵すること。（税、兵などを徴収する事）</p>
+<p>per Silanum etc はその3人の軍団長を通して、の意。</p>
+<p><strong>petit ab Pompeio (ut) juberet (eos), quos ~, ad signa covenire et ad se proficisci.&nbsp; </strong>quosの中を抜かすとこれが骨子。</p>
+<p>jeberetは接続法であり、従属節であることがわかる。<u>utに導かれる名詞節ではutは省略されることがある</u>。(NewLatin 295.1,295.8)</p>
+<p><strong>ab Pompeio</strong> というのがちょっと引っかかる。Pompeiusに頼むのではなく、Pompeiusの方から（命じる）ことを頼む、ということか？</p>
+<p><strong>quos rogavisset consulis sacramento ex Cisalpina Gallia</strong>. rogareと言う動詞は忠誠の誓い（sacramento)を受ける、ということらしく、rogare sacramentoと言うのは忠誠の誓いをして登録する、入隊するという慣用句。consulis sacramentoはコンスルに対する忠誠という意味。即ち「Cisalina Galliaで徴兵した人間」と言う事。</p>
+<p>existimans interesse magni Italiae facultates videri tantas. </p>
+<p>&nbsp;existimansは主格で、この現在分詞が形容詞ている名詞を一致。その主語はpetitの主語と同じでCaesar</p>
+<p>&nbsp;interesseは非人称で、主語はこれに続く不定詞句</p>
+<p>&nbsp;不定詞句の動詞はvideri、受動不定詞であり、主語はItaliae facultates、対格である。videoはSUMと同様copula動詞である。（NewLatin 168.2) tantasは述語になっており対格で主語と一致。「イタリアの能力は豊富であるとみられる事は、大変重要であると考えた（Caesarは）」</p>
+<p>ut posset augeri maijoribus copiis. 結果の節</p>
+<p>quid detrimenti : detrimentiは部分の属格「何らかの損害」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>幾つもの理由からガリアで大きな動きがあるだろうと考えたCaesarはSilanum、G. A. Regunus、T. Sextiusといった軍団長を通して、徴兵をすることにした。同時に、Gnaeo Pompeiusに依頼して、内がリアで徴兵したものに命じて、集合させ、自分の元に送るよう命令することを依頼した。Pompeiusは自分はローマの近くで、軍の指揮権を保持したまま公務に携わっていたからである。これは、イタリアでのリソースが大層豊富であると、今後のガリアの中で見られることが非常に重要であると考えたためである。（豊富なので）もし戦いで損害を出しても、短期間で修復されるだけではなく、もっと大きな兵力を増員する事ができる、と言う事である。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quod<span>qui quae, quod PRON  <br>:which?, what?; what kind of?;<br>&nbsp;(n 単数 対格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Pompēius<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">reī<span>res rei N (5th) F  <br>:thing; event/affair/business; fact; cause; property;&nbsp;(c 単数 与格)<br></span></a>
+<a class="note0">pūblicae<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">amīcitiae<span>amicitia amicitiae N (1st) F  <br>:friendship, bond between friends; alliance, association; friendly relations;<br>(c 単数 与格)<br></span></a>
+<a class="note1">tribuisset,<span>tribuo tribuere, tribui, tributus V (3rd)  <br>:divide, assign; present; <strong>grant</strong>, allot, bestow, attribute;<br>(３人称 単数 過去完了 能動態 接続法 )<br><br></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note1">cōnfectō<span>conficio conficere, additional, forms V TRANS  <br>:make, construct; prepare, complete, accomplish; cause; perform; do thoroughly;<br>(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note1">dīlēctū<span>dilectus dilectus N (4th) M  <br>:levy/draft/conscription; enlistment, recruiting, mustering; levy/men enrolled;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">tribus<span>tres -es -ia, tertius -a -um, terni -ae -a, ter NUM  3<br>:three;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note1">exāctam<span>exigo exigere, exegi, exactus V (3rd)  <br>:drive out, expel; finish; examine, weigh;<br>(完了 分詞 受動態 f 単数 対格)<br></span></a>
+<a class="note0">hiemem<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cōnstitūtīs<span>constituo constituere, constitui, constitutus V (3rd)  <br>:||establish/create/institute; draw up, <strong>arrange</strong>/set in order; <strong>make up</strong>, form; fix;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">adductīs<span>adduco adducere, adduxi, adductus V (3rd) TRANS  <br>:lead up/to/away; bring up/to; persuade, induce; lead, bring; contract, tighten;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note1">duplicātōque<span>duplico duplicare, duplicavi, duplicatus V (1st)  <br>:double, bend double; duplicate; enlarge;<br>(完了 分詞 受動態 m 単数 奪格)<br><br></span></a>
+<a class="note0">eārum<span><br><br></span></a>
+<a class="note0">cohortium<span></span></a>
+<a class="note1">numerō,<span>numerus numeri N (2nd) M  <br>:number/sum/total/rank; (superior) numerical strength/plurality; category; tally;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">quās<span>qui quae, quod PRON  <br>:which?, what?; what kind of?;<br>(f 複数  対格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Quīntō<span></span></a>
+<a class="note0">Titūriō<span><br><br></span></a>
+<a class="note1">āmīserat,<span>amitto amittere, amisi, amissus V (3rd) TRANS  <br>:lose; lose by death; send away, dismiss; part with; let go/slip/fall, drop;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">celeritāte<span>celeritas celeritatis N (3rd) F  <br>:speed, quickness, rapidity; speed of action, dispatch; haste; early date;<br>((c 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cōpiīs<span>copia copiae N (1st) F  <br>:|number/amount/quantity; sum/whole amount; means, opportunity; access/admission;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note1">docuit,<span>doceo docere, docui, doctus V (2nd)  <br>:teach, show, point out;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">disciplīna<span>disciplina disciplinae N (1st) F  <br>:teaching, instruction, education; training; discipline; method, science, study;<br>(c 単数 主格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">opēs<span>ops opis N (3rd) F  <br>:power, might; help; influence; resources/wealth (pl.);<br>(c 複数  主格)<br></span></a>
+<a class="note0">possent.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>最初のquod： 対格で、内容は前に述べた依頼。tribuissetの直接目的語</p>
+<p>Pompeius tribuisset rei publicae et amicitiae. tribuissetは許可する、承認するという意で与格に対して。与格は間接目的語。逐語的には「公的にも私的好意に対しても承認した」</p>
+<p><strong>confecto dilectu per suos celeriter</strong>. 部下を通して徴兵を速やかに終え。独立奪格。</p>
+<p><strong>tribus legionibus ante exactam hiemem, constitutis et adductis, duplicato numero earum cohortium : </strong>このあたりの奪格の連続の相互の関係がよく解らない。体言止め、のようなニュアンスか？これらは多分手段の奪格で、これらをもって、後に出てくる、<strong>ducuit</strong>という唯一の動詞を行なった、と言う事か。「冬の終わる前に3軍団、それらは集められ、彼のところに率いられてきて、その大隊の数は（Q.Titurio Sabinusと共に失ったものに）倍するものであり、」</p>
+<p><strong>caleritate et copiis</strong> : <strong>指定の奪格</strong>「～に関しては」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>この依頼をPompeiusは公的にも私的好意に対して許可をした時、部下を通した徴兵を速やかに終えた。こうして冬が終わる前に、集めたり、（他所から）引き連れてきたりして3軍団を得、それは大隊の数で言えば、Sabinusとともに失った数の2倍であった。これらをもって、その速さ、またその量という点に関して、ローマ人民の訓練と資源がなにが出来るかということを（ガリアに）見せつけた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

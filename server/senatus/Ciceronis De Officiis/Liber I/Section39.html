@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 39 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[39]<span></span></a>
+<a class="note1">Regalis<span>regalis regalis, regale ADJ  <br>:royal, regal;<br>(C 単数 主格), <br></span></a>
+<a class="note1">sane<span>sane ADV <br>:reasonably, sensibly; certainly, truly; however; yes, of course;<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">digna<span>dignus digna -um, dignior -or -us, dignissimus -a -um ADJ  <br>:appropriate/suitable; worthy, deserving, meriting; worth (w/ABL/GEN);<br>(F 単数 主格),<br></span></a>
+<a class="note0">Aeacidarum<span></span></a>
+<a class="note1">genere<span>genus generis N (3rd) N  <br>:birth/<strong>descent</strong>/origin; race/family/house/stock/ancestry; offspring/descent;<br>(N 単数 奪格),<br></span></a>
+<a class="note0">sententia.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>regalis et digna Aeacidarum genere&nbsp;sententia. 「王家のAeacidaeの子孫に値する感傷である。」dignaは奪格を取る<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それは王家に相応しい、またAeacidaeの子孫に値する感傷である。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Atque<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">singuli<span></span></a>
+<a class="note1">temporibus<span>tempus temporis N (3rd) N  <br>:time, <strong>condition</strong>, right time; season, occasion; necessity;<br>(X 複数 奪格)<br></span></a>
+<a class="note1">adducti<span>adductus adducta -um, adductior -or -us, adductissimus -a -um ADJ  <br>:contracted, drawn together; frowning, grave; <strong>compressed,</strong> terse; strict, severe;<br>&nbsp;(N 単数 属格<br></span></a>
+<a class="note1">hosti<span>hostis hostis N (3rd) C  <br>:enemy (of the state); stranger, foreigner; the enemy (pl.);<br>&nbsp;(X 単数 与格)<br></span></a>
+<a class="note1">promiserunt,<span>promitto promittere, promisi, promissus V (3rd)  <br>:promise;<br>(3 複数 完了 能動態 直接法 )<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">eo<span>is ea, id PRON  <br>:he/she/it/they (by GENDER/NUMBER); DEMONST: that, he/she/it, they/them;<br>(M 単数 奪格)<br></span></a>
+<a class="note0">ipso<span></span></a>
+<a class="note0">fides<span></span></a>
+<a class="note0">conservanda,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">primo<span></span></a>
+<a class="note0">Punico<span></span></a>
+<a class="note0">bello<span></span></a>
+<a class="note0">Regulus<span></span></a>
+<a class="note0">captus<span></span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">Poenis,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">captivis<span></span></a>
+<a class="note0">commutandis<span></span></a>
+<a class="note0">Romam<span></span></a>
+<a class="note0">missus<span></span></a>
+<a class="note0">esset<span></span></a>
+<a class="note1">iurassetque<span>juro jurare, juravi, juratus V (1st)  <br>:swear; call to witness; vow obedience to;<br>= juravisset<br>(3 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">se<span></span></a>
+<a class="note1">rediturum,<span>redeo redire, redivi(ii), reditus V  <br>:return, go back, give back; fall back on, revert to; respond, pay back;<br>(未来 分詞 能動態 M 単数 対格)<br>esse 省略の未来不定詞<br></span></a>
+<a class="note1">primum,<span>primum ADV <br>:at first; in the first place;<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">venit,<span></span></a>
+<a class="note0">captivos<span></span></a>
+<a class="note1">reddendos<span>reddo reddere, reddidi, redditus V (3rd)  <br>:return; restore; deliver; hand over, pay back, render, give back; translate;<br>(未来 分詞 受動態 M 複数 対格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">senatu<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">censuit,<span>censeo censere, censui, census V (2nd) TRANS  <br>:think/suppose, judge; <strong>recommend</strong>; decree, vote, determine; count/reckon; assess;<br>(3 単数 完了 能動態 直接法 )<br><br></span></a>
+<a class="note0">deinde,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">retineretur<span>retineo retinere, retinui, retentus V (2nd)  <br>:<strong>hold back</strong>, restrain; uphold; delay; hold fast; retain,preserve;<br>(3 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">propinquis<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">amicis,<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">supplicium<span>supplicium supplici(i) N (2nd) N  <br>:punishment, suffering; supplication; torture;<br>&nbsp;(X 単数 対格)<br></span></a>
+<a class="note1">redire<span>redeo redire, redivi(ii), reditus V  <br>:return, go back, give back; fall back on, revert to; respond, pay back;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">maluit<span>malo malle, malui, - V  <br>:prefer; incline toward, wish rather;<br>(3 単数 完了 能動態 直接法 )<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">fidem<span></span></a>
+<a class="note0">hosti<span></span></a>
+<a class="note0">datam<span></span></a>
+<a class="note1">fallere.<span>fallo fallere, fefelli, falsus V (3rd)  <br>:deceive; slip by; disappoint; be mistaken, beguile, drive away; fail; cheat;<br>&nbsp;(  現在 能動態 不定詞 ),<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>si quid～の場合quidは不定代名詞　（NewLatin 252)</p>
+<p>singuliは「個人」の意。国に対する対比。</p>
+<p><strong>temporibus adducti :</strong> compressed circumstance 「逼迫した状況で」</p>
+<p><strong>fides est conservanda in eo ipso</strong>. eoを強調するipso, eoは多分約束を指すか？「信義はその約束そのものの中に保たれるべきである。」（逐語訳）</p>
+<p>ut Regulus, captus a Poenis ~ : ut以下は結果の節か特徴の節（NewLatin 283, 284)　前に述べたこと、約束は守るということの例を上げての説明である。</p>
+<p>Puenico bello ：「いつ」の奪格。</p>
+<p>Regulus, cum~, iurasset se rediturum (esse) 「Regulusは戻ってくるであろうことを誓った」</p>
+<p>censuit in senatu non reddendos cativos. nonは動形容詞reddendosにかかる。逐語的には「元老院で捕虜は返すべきではないと勧めた」</p>
+<p>述語対格。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>そしてもし誰か個人が緊迫した状況のもとで敵に約束した場合には信義は守らなければならない。かくしてRegulusは最初のPoeni戦争で敵により捕獲されて捕虜であったが、ローマに捕虜の交換に関して派遣された時、自身は戻ってくると約束した。そして、（ローマを）訪ねた時、元老院では捕虜は返すべきではないと意見を述べ、その後、親類や友人たちに引き止められたが、敵に与えられた信義を破ることよりは懲罰に戻ることを選んだのである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

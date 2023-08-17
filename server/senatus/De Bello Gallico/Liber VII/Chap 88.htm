@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 88</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[88]<span></span></a>
+
+<a class="note0">Eius<span></span></a>
+<a class="note0">adventū<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">colōre<span>color coloris N (3rd) M  <br>:color; pigment; shade/tinge; complexion; outward appearance/show; excuse/pretext<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">vestītūs<span>vestitus vestitus N (4th) M  <br>:clothing;<br>(c 単数 属格)<br></span></a>
+<a class="note0">cognitō,<span><br><br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note1">īnsignī<span>insigne insignis N (3rd) N  <br>:mark, emblem, badge; ensign, honor, badge of honor;<br>(n 単数 奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">proeliīs<span><br><br></span></a>
+<a class="note0">ūtī<span><br><br></span></a>
+<a class="note1">cōnsuērat,<span>consuesco consuescere, consuevi, consuetus V (3rd)  <br>:accustom oneself; become/be accustomed/used; inure, habituate; familiarize;<br>(３人称 単数 過去完了 能動態 直説法 )<br><br></span></a>
+<a class="note1">turmīsque<span>turma turmae N (1st) F  <br>:troop (of 30 horsemen), squadron;<br>(c 複数  処格), (c 複数  与格), (c 複数  奪格)<br></span></a>
+<a class="note1">equitum<span>eques equitis N (3rd) M  <br>:horseman/cavalryman/rider; horsemen (pl.), cavalry; equestrian order;<br>(c 複数  属格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">cohortibus<span></span></a>
+<a class="note1">vīsīs<span>video videre, vidi, visus V (2nd)  <br>:see, look at; consider; (PASS) seem, seem good, appear, be seen;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">quās<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">sequī<span><br><br></span></a>
+<a class="note0">iusserat,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">locīs<span></span></a>
+<a class="note0">superiōribus<span><br><br></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note1">dēclīvia<span>declive declivis N (3rd) N  <br>:slope, declivity; surface sloping downwards;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">dēvexa<span>devexum devexi N (2nd) N  <br>:slope; inclined surface (L+S); downhill, easy;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note1">cernēbantur,<span>cerno cernere, crevi, cretus V (3rd) TRANS  <br>:sift, separate, distinguish, discern, resolve, determine; <strong>see</strong>; <strong>examine</strong>; decide;<br>(３人称 複数  未完了 受動態 直説法 )<br><br></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note0">proelium<span></span></a>
+<a class="note0">committunt.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>congnito adventus : 独立奪格</p>
+<p>ex colore vestus, quo insignia consueverat uti in proelio. 「そのをいつも戦いで印のために使うところの色」quo の先行詞はcolore?　quoはutiの目的語で、insigniaは与格、間接目的語？</p>
+<p>turmis equitum visis ：独立奪格「騎兵大隊が見え」</p>
+<p>ut cernebantur haec declivia de locis superioribus:　主語は敵。「上にある場所からはそれらの下りはよく見えた」declivia et devexaはcernebanturの目的語。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>彼の到着をいつも戦いで付けている外套の色から知り、騎兵大隊と歩兵大隊が見え、それは追いかけるように命じてあったものであるが、上の位置からはその下り坂はよく見えたので、敵は戦いを始めた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Utrimque<span></span></a>
+<a class="note1">clāmōre<span>clamor clamoris N (3rd) M  <br>:|war-cry, battle-cry; roar (thunder/surf); cry of fear/pain/mourning; wailing;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">sublātō<span>tollo tollere, sustuli, sublatus V (3rd) TRANS  <br>:lift, raise; destroy; remove, steal; take/lift up/away;<br>(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note1">excipit<span>excipio excipere, excepi, exceptus V (3rd)  <br>:take out; remove; follow; receive; ward off, relieve;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">rūrsus<span>rursus ADV <br>:turned back, backward; on the contrary/other hand, in return, in turn, again;<br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">vāllō<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">mūnītiōnibus<span><br><br></span></a>
+<a class="note1">clāmor.<span>clamor clamoris N (3rd) M  <br>:shout, outcry/protest; loud shouting (approval/joy), applause; clamor/noise/din;<br>(X 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>両軍で戦いの叫び声をあげ、更に壁や全ての防衛施設からの叫び声が再度起きた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nostrī<span><br><br></span></a>
+<a class="note0">omissīs<span><br><br></span></a>
+<a class="note0">pīlīs<span><br><br></span></a>
+<a class="note0">gladiīs<span><br><br></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note0">gerunt.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>味方は槍を投げ、剣を使った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Repente<span>repente ADV <br>:suddenly, unexpectedly;<br><br></span></a>
+<a class="note0">post<span></span></a>
+<a class="note0">tergum<span></span></a>
+<a class="note0">equitātus<span><br><br></span></a>
+<a class="note1">cernitur;<span>cerno cernere, crevi, cretus V (3rd) TRANS  <br>:sift, separate, distinguish, discern, resolve, determine; <strong>see</strong>; examine; decide;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">cohortēs<span><br><br></span></a>
+<a class="note0">aliae<span></span></a>
+<a class="note0">appropinquant.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>突然、背後に騎馬隊が見られた。他の歩兵大隊も近づいてきた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hostēs<span><br><br></span></a>
+<a class="note0">terga<span></span></a>
+<a class="note1">vertunt;<span>verto vertere, verti, versus V (3rd)  <br>:turn, turn around; change, alter; overthrow, destroy;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">fugientibus<span></span></a>
+<a class="note0">equitēs<span><br><br></span></a>
+<a class="note1">occurrunt.<span>occurro occurrere, occucurri, occursus V (3rd)  <br>:run to meet; oppose, resist; come to mind, occur (with DAT);<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>敵は背中を返し逃走、騎兵は逃げるものに追いついた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Fit<span></span></a>
+<a class="note0">magna<span></span></a>
+<a class="note0">caedēs.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>大変な虐殺が成された。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sedulius,<span></span></a>
+<a class="note0">dux<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">prīnceps<span><br><br></span></a>
+<a class="note0">Lemovicum,<span></span></a>
+<a class="note0">occīditur;<span><br><br></span></a>
+<a class="note0">Vercassivellaunus<span></span></a>
+<a class="note0">Arvernus<span></span></a>
+<a class="note0">vīvus<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fuga<span></span></a>
+<a class="note0">comprehenditur;<span></span></a>
+<a class="note0">signa<span></span></a>
+<a class="note0">mīlitāria<span><br><br></span></a>
+<a class="note1">septuaginta<span>septuaginta septuagesimus -a -um, septuageni -ae -a, septuagie(n)s NUM <br>:seventy;<br><br></span></a>
+<a class="note0">quattuor<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">referuntur:<span>refero referre, rettuli, relatus V  <br>:bring/carry back/again/home; move/draw/force back, withdraw; go back, return;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note0">paucī<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">tantō<span><br><br></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">incolumēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">recipiunt.<span>recipio recipere, recepi, receptus V (3rd)  <br>:keep back; recover; undertake; guarantee; accept, take in; take back;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Sedulius、Lemovicusの主だった者であり指導者でもあったが、は殺され、ArveniのVercassivellaunusは生きて逃走中を捕まえられた。Caesarの元に運ばれた戦闘の旗印は７４個もあり、沢山の中で砦に戻れたのはほんの僅かであった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Cōnspicātī<span>conspicor conspicari, conspicatus sum V (1st) DEP  <br>:catch sight of, see; observe, notice; perceive; be conspicuous; be regarded;<br>&nbsp;(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note1">caedem<span>caedes caedis N (3rd) F  <br>:murder/slaughter/massacre; assassination; feuding; slain/victims; blood/gore;<br>(c 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">fugam<span></span></a>
+<a class="note0">suōrum<span><br><br></span></a>
+<a class="note0">dēspērātā<span><br><br></span></a>
+<a class="note0">salūte<span><br><br></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">mūnītiōnibus<span></span></a>
+<a class="note0">redūcunt.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>conspicati : 分詞構文。「それを見た敵は」</p>
+<p>desperata salute : 独立奪格<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>城塞から出ていた敵は、味方が殺され逃走するのを見て、勝利に絶望して軍を防衛施設から引き上げた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 9</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Fit<span></span></a>
+<a class="note1">prōtinus<span>protinus ADV <br>:straight on, forward; immediately; without pause; at once;<br><br></span></a>
+<a class="note0">hāc<span><br><br></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note1">audītā<span>audio audire, audivi, auditus V (4th)  <br>:hear, listen, accept, agree with; obey; harken, pay attention; be able to hear;<br>(完了 分詞 受動態 f 単数 主格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">Gallōrum<span><br><br></span></a>
+<a class="note0">fuga.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>hac re audita, fit fuga ex catris. 「それを聞いて（聞いた人は）すぐさま砦から逃走した。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="spacer">Line 10</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quod<span>quod ADV <br>:with respect to which;<br><br></span></a>
+<a class="note1">nisi<span>nisi CONJ <br>:if not; except, unless;<br><br></span></a>
+<a class="note1">crēbrīs<span>creber crebra -um, crebrior -or -us, creberrimus -a -um ADJ  <br>:thick/crowded/packed/close set; <strong>frequent</strong>/<strong>repeated</strong>, constant; numerous/abundant;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">subsidiīs<span>subsidium subsidi(i) N (2nd) N  <br>:help, relief; reinforcement;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">tōtīus<span>totus tota, totum (gen -ius) ADJ  <br>:whole, all, entire, total, complete; every part; all together/at once;<br>(X 単数 属格)<br></span></a>
+<a class="note0">diēī<span><br><br></span></a>
+<a class="note0">labōre<span><br><br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note1">essent<span>sum esse, fui, futurus V  <br>:be;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">dēfessī,<span>defetiscor defetisci, defessus sum V (3rd) DEP  <br>:become exhausted/suffer exhaustion, grow weary/faint/tired/weak; lose heart;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">cōpiae<span><br><br></span></a>
+<a class="note1">dēlērī<span>deleo delere, delevi, deletus V (2nd) TRANS  <br>:erase, wipe/scratch/remove (letters/marks), wipe/blot out, expunge, delete;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">potuissent.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p><font color="#ff0000">quodが解らない？</font> KelseyによるとCaesarはquodを関係代名詞quiの中性対格単として、また対格の副詞的用法として使っているそうである。特にsi, nisi, utbiの前につけて。訳は「今や、更に、しかし、そして」などである。</p>
+<p>Vol 1, Chap14 quod si vallet, Chap 20 quod si quid(今やもし）などがある。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>もし味方が度重なる援軍や一日中の労働により疲労困憊でなければ、敵を全滅させることも可能であったであろう。<br></p>
+</div>
+</div>
+<div class="spacer">Line 11</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dē<span><br><br></span></a>
+<a class="note0">mediā<span><br><br></span></a>
+<a class="note0">nocte<span></span></a>
+<a class="note0">missus<span></span></a>
+<a class="note0">equitātus<span><br><br></span></a>
+<a class="note0">novissimum<span></span></a>
+<a class="note0">agmen<span></span></a>
+<a class="note1">cōnsequitur:<span>consequor consequi, consecutus sum V (3rd) DEP  <br>:follow, go/come after; attend on; pursue; catch up with, overtake; follow up;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">magnus<span></span></a>
+<a class="note0">numerus<span></span></a>
+<a class="note1">capitur<span>capio capere, cepi, captus V (3rd) TRANS  <br>:take hold, seize; grasp; take bribe; arrest/capture; put on; occupy; captivate;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">interficitur;<span></span></a>
+<a class="note0">reliquī<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">fugā<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">cīvitātēs<span><br><br></span></a>
+<a class="note1">discēdunt.<span>discedo discedere, discessi, discessus V (3rd)  <br>:go/march off, depart, withdraw; scatter, dissipate; abandon; lay down (arms);<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>真夜中頃、送り出された騎兵隊は敵の最後尾に追いつき、大量に捕らえ、また殺した。残りは部族の元へ逃げ去った。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

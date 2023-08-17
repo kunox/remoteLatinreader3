@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 7 A HUMAN SACRIFICE.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Tum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">rēx<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">diem<span>dĭes diei N (5th) C <br>:|specific day; day in question; date of letter; festival; lifetime, age; time;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">certam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dīxit<span>dīco dicere, dixi, dictus V (3rd)  X<br>:||name/call; appoint, fix/set (date); designate, declare intention of giving;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">parāvit.<span>păro parare, paravi, paratus V (1st) TRANS  <br>:prepare; furnish/supply/provide; produce; obtain/get; buy; raise; put up; plan;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Ubi<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">diēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vēnit,<span></span></a>
+<a class="note0">Andromeda<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">lītus<span>lītus litoris N (3rd) N <br>:shore, seashore, coast, strand; river bank; beach, landing place;<br>(単数 対格) <br></span></a>
+<a class="note1">dēducta<span>dēdūco deducere, deduxi, deductus V (3rd) TRANS  <br>:lead/draw//pull/bring/stretch down/away/out/off; escort; eject/evict (claimant);<br>【完了分詞 ( 受動態 ) (F 単数 主格)&nbsp; 】<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">cōnspectū<span></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">rūpem<span>rūpes rupis N (3rd) F <br>:cliff; rock;<br>(単数 対格) <br></span></a>
+<a class="note1">alligāta<span>allĭgo alligare, alligavi, alligatus V (1st) TRANS  <br>:bind/fetter (to); bandage; hinder, impede, detain; accuse; implicate/involve in;<br>【完了分詞 ( 受動態 ) (F 単数 主格) 】<br></span></a>
+<a class="note0">est.<span></span></a>
+<a class="note0">Omnēs<span></span></a>
+<a class="note1">fātum<span>fātum fati N (2nd) N <br>:utterance, oracle; fate, destiny; natural term of life; doom, death, calamity;<br>&nbsp;(単数 対格)<br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">dēplōrābant,<span>dēplōro deplorare, deploravi, deploratus V (1st)  X<br>:weep/lament/mourn for/cry over; deplore, complain of; lose; despair/give up on;<br>(3 複数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note1">lacrimās<span>lācrĭma lacrimae N (1st) F <br>:tear; exuded gum/sap; bit of lead; quicksilver from ore; weeping (pl.); dirge;<br>(複数 対格) <br></span></a>
+<a class="note1">tenēbant.<span>tĕnĕo tenere, tenui, tentus V (2nd)  X<br>:hold, keep; comprehend; possess; master; preserve;<br>(3 複数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">At<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">subitō,<span>subito ADV <br>&gt;:suddenly, unexpectedly; at once, at short notice, quickly; in no time at all;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">dum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">mōnstrum<span>monstrum monstri N (2nd) N <br>:monster; portent, unnatural thing/event regarded as omen/sign/portent;<br>&nbsp;(単数 対格)<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">exspectant,<span>exspecto exspectare, exspectavi, exspectatus V (1st)  X<br>:lookout for,<strong> await</strong>; expect, anticipate, hope for;<br>(3 複数 現在 能動態 直接法) <br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Perseus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">accurrit;<span>accurro accurrere, accucurri, accursus V (3rd)  X<br>:run/hasten to (help); come/rush up (inanim subj.); charge, rush to attack;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">ubi<span>ubi ADV <br>&gt;:where; in what place; (time) when, whenever; as soon as; in which; with whom;<br><br></span></a>
+<a class="note0">lacrimās<span></span></a>
+<a class="note0">vīdit,<span></span></a>
+<a class="note0">causam<span></span></a>
+<a class="note0">dolōris<span></span></a>
+<a class="note1">quaerit.<span>quaero quaerere, quaesivi, quaesitus V (3rd)  X<br>:search for, seek, strive for; obtain; ask, inquire, demand;<br>(3 単数 現在 能動態 直接法) <br></span></a>
+<a class="note0">Illī<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note1">tōtam<span>tōtus tota, totum (gen -ius) ADJ  <br>:whole, all, entire, total, complete; every part; all together/at once;<br>(F 単数 対格) <br></span></a>
+<a class="note1">expōnunt<span>expōno exponere, exposui, expositus V (3rd)  X<br>:set/put forth/out; abandon, expose; publish; <strong>explain,</strong> relate; disembark;<br>(3 複数 現在 能動態 直接法) <br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">puellam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dēmōnstrant.<span>dēmonstro demonstrare, demonstravi, demonstratus V (1st) TRANS  <br>:|reveal, mention, refer to; allege; prove, demonstrate; represent; recommend;<br>(3 複数 現在 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Dum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">geruntur,<span>gĕro gerere, gessi, gestus V (3rd)  X<br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>(3 複数 現在 受動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">fremitus<span>frĕmĭtus fremitus N (4th) M <br>:roar, loud noise; shouting; resounding; rushing, murmuring, humming; growl;<br>(単数 主格)<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">terribilis<span>terrĭbĭlis terribilis, terribile ADJ  <br>:frightful, terrible;<br>(M 単数 主格) <br></span></a>
+<a class="note1">audītur;<span>audĭo audire, audivi, auditus V (4th)  X<br>:hear, listen, accept, agree with; obey; harken, pay attention; be able to hear;<br>(3 単数 現在 受動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">simul<span>simul ADV <br>&gt;:at same time; likewise; also; simultaneously; at once;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">mōnstrum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">horribilī<span>horrĭbĭlis horribile, horribilior -or -us, horribilissimus -a -um ADJ  <br>:awful, horrible, terrible; monstrous; rough;<br>&nbsp;(F 単数 奪格)&nbsp; <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">speciē<span>spĕcĭes speciei N (5th) F <br>:sight, appearance, show; splendor, beauty; kind, type;<br>(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">procul<span>procul ADV <br>&gt;:away; at distance, far off;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">cōnspicitur.<span>conspĭcĭo conspicere, conspexi, conspectus V (3rd) TRANS  <br>:observe/see/witness; notice; watch; gaze/stare on; catch/be in sight of; face;<br>(3 単数 現在 受動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Eius<span></span></a>
+<a class="note1">cōnspectus<span>conspectus conspectus N (4th) M <br>:view, (range of) sight; aspect/appearance/look; perception/contemplation/survey;<br>(単数 主格) <br></span></a>
+<a class="note1">timōrem<span>tĭmor timoris N (3rd) M <br>:fear; dread;<br>(単数 対格) <br></span></a>
+<a class="note0">maximum<span></span></a>
+<a class="note1">omnibus<span>omnĭs omnis N (3rd) C <br>:all men (pl.), all persons;<br>(複数 与格) <br></span></a>
+<a class="note1">iniēcit.<span>īnĭcĭo inicere, injeci, injectus V (3rd) TRANS  <br>:hurl/throw/strike in/into; inject; put on; inspire, instill (feeling, etc);<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Mōnstrum<span></span></a>
+<a class="note0">magnā<span></span></a>
+<a class="note1">celeritāte<span>cĕlĕrĭtas celeritatis N (3rd) F <br>:speed, quickness, rapidity; speed of action, dispatch; haste; early date;<br>(単数 奪格) <br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">lītus<span></span></a>
+<a class="note0">contendit,<span></span></a>
+<a class="note1">iamque<span>jam ADV <br>&gt;:now, already, by/even now; besides;<br><br><br>iam iamque : once and again<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">appropinquābat<span>apprŏpinquo appropinquare, appropinquavi, appropinquatus V (1st) INTRANS  <br>:approach (w/DAT or ad+ACC); come near to, draw near/nigh (space/time); be close;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0">puella<span></span></a>
+<a class="note1">stābat.<span>sto stare, steti, status V (1st)  X<br>:stand, stand still, stand firm; remain, rest;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>causam doloris quaerit : 歴史的現在<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>そのように王は日程を決め、すべての準備を整えました。当日になり、Andromedaは海岸に導かれ、衆人見守る中、崖に結び付けられました。彼女の運命を皆悲しみ、涙を抑えることも出来ませんでした。しかしながら怪物を待っている間に、突然、Perseusが駆け込んできました。涙をみて、その訳を尋ねます。彼らは事の次第をすべて説明し、娘を指し示します。これらが進行している間に、恐ろしい咆吼がきかれ同時に怪物の恐ろしい姿が遠くに見えました。その見かけはすべての人に最大限の恐怖を引き起こしました。怪物はすごい速さで海岸に突進し、今にも娘の立っている場所に接近しました。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

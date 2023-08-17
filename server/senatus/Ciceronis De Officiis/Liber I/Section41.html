@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 41 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[41]<span></span></a>
+<a class="note0">Ac<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note1">bellicis<span>bellicus bellica, bellicum ADJ  <br>:of war, military; warlike;<br>(X 複数 奪格)<br></span></a>
+<a class="note0">quidem<span></span></a>
+<a class="note1">officiis<span>officium offici(i) N (2nd) N  <br>:duty, obligation; kindness; service, office;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note0">satis<span></span></a>
+<a class="note0">dictum<span></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>de bellicis officiis : 戦争のOfficium</p>
+<p>dictum est : 自動詞の受け身で非人称「それは語られる」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>戦争におけるofficiumについて語った。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Meminerimus<span>memini meminisse, - V PERFDEF  <br>:remember (PERF form, PRES force); keep in mind, pay heed to; be sure; recall;<br>(１ 複数 未来完了 能動態 直接法 ), <br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">adversus<span>adversus PREP ACC <br>:facing, opposite, against, towards; contrary to; face to face, in presence of;<br><br></span></a>
+<a class="note1">infimos<span>infimus infima, infimum ADJ  最上級<br>:lowest, deepest, furtherest down/from the surface; humblest; vilest, meanest;<br>(M 複数 対格)<br></span></a>
+<a class="note1">iustitiam<span>justitia justitiae N (1st) F  <br>:justice; equality; righteousness (Plater);<br>(C 単数 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">servandam.<span>servo servare, servavi, servatus V (1st)  <br>:watch over; protect, store, keep, guard, preserve, save;<br>(未来 分詞 受動態 F 単数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>adversus = toward</p>
+<p>isutitiam esse sevandam etiam adversus infimos. : 正義は最下層民に対しても守られなければならない。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>しかし我々は、正義は最下等民に対しても守られなければならないことを覚えている。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Est<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">infima<span>infimus infima, infimum ADJ  最上級<br>:lowest, deepest, furtherest down/from the surface; humblest; vilest, meanest;<br>(F 単数 主格), <br></span></a>
+<a class="note1">condicio<span>condicio condicionis N (3rd) F  <br>:agreement/contract; terms, proposal/option/alternative; situation; stipulation;<br>(X 単数 主格),<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">fortuna<span>fortuna fortunae N (1st) F  <br>:chance, luck, <strong>fate</strong>; prosperity; condition, wealth, property;<br>(C 単数 主格),<br></span></a>
+<a class="note0">servorum,<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">male<span>male pejus, pessime ADV <br>:badly, ill, wrongly, wickedly, unfortunately; extremely;<br><br></span></a>
+<a class="note1">praecipiunt,<span>praecipio praecipere, praecepi, praeceptus V (3rd)  <br>:take or receive in advance; anticipate; warn; order; teach, instruct;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note1">iubent<span>jubeo jubere, jussi, jussus V (2nd) TRANS  <br>:order/tell/command/direct; enjoin/command; decree/enact; request/ ask/bid; pray;<br>(3 複数 現在 能動態 直接法 )<br><br></span></a>
+<a class="note0">uti,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">mercennariis,<span>mercennarius mercennarii N (2nd) M  <br>:hired worker; mercenary;<br>&nbsp;(X 複数 与格),<br><br></span></a>
+<a class="note1">operam<span>opera operae N (1st) F  <br>:work, care; aid; service, effort/trouble;<br>(C 単数 対格)<br></span></a>
+<a class="note1">exigendam,<span>exigo exigere, exegi, exactus V (3rd)  <br>:drive out, expel; finish; examine, weigh;<br>(未来 分詞 受動態 F 単数 対格)<br></span></a>
+<a class="note1">iusta<span>justum justi N (2nd) N  <br>:justice; what is fair/equitable/right/due/proper; funeral rites/offerings;<br>&nbsp;(N 複数 対格)<br><br></span></a>
+<a class="note1">praebenda.<span>praebeo praebere, praebui, praebitus V (2nd) TRANS  <br>:present/show/put forward; offer; expose physically oneself; expose/submit/allow;<br>&nbsp;(未来 分詞 受動態 N 複数 対格), <br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>condicio et fortuna servorum est infirma. 「奴隷の状況、運命は最も下等である。」</p>
+<p>quibus non male praecipiunt : quibusはservusを先行詞とする関係代名詞、与格？「彼らに対しひどく命令などしない」？（<font color="#ff0000">要検討</font>）</p>
+<p><font style="background-color: rgb(255, 250, 205);"></font>qui iubent uti ita ut mercennariis. 「彼らは雇人のように使われることを要求する」ut = as で与格なのは従業員に対するように、の意。</p>
+<p>operam exigendam 動形容詞で「終わるべき仕事」</p>
+<p>iusta praebenta 「与えられるべき支払い（着物、住居、食料などを指す）」これらは対格であり、動詞がない。<font color="#ff0000"><strike>どういう構文？</strike></font></p>
+<p><font color="#ff0000"></font><strike>どうも「～に対する～」というニュアンスのように思われるが対格なのはなぜ？</strike></p>
+<p><strike></strike>uti operam, justa で終わるべき作業、与えられるべき対価を使用することを要求する。（逐語訳）<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>奴隷の状況、運命は最も下等なものである。彼らに対し酷くあたらないようにする。彼らはちょうど雇い人に対するようにと同様に使われることを要求する。終わるべき作業に対し与えられるべき支払い、である。<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Cum<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">duobus<span></span></a>
+<a class="note1">modis,<span>mŏdus modi N (2nd) M  <br>:manner, mode, way, method; rule, rhythm, beat, measure, size; bound, limit;<br>(複数 奪格)<br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">vi<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">fraude,<span></span></a>
+<a class="note1">fiat<span>fio feri, factus sum V SEMIDEP  <br>:|be made/ created/ instituted/ elected/ appointed/ given; be prepared/ done; develop;<br>(3 単数 現在 能動態 接続法 )<br><br></span></a>
+<a class="note1">iniuria,<span>injurius injuria, injurium ADJ  <br>:unjust, harsh;<br>(F 単数 主格),<br></span></a>
+<a class="note1">fraus<span>fraus fraudis N (3rd) F  <br>:fraud; trickery, deceit; imposition, offense, crime; delusion;<br>(単数 主格),<br></span></a>
+<a class="note1">quasi<span>quasi ADV <br>:as if, just as if, as though; as it were; about;<br><br></span></a>
+<a class="note1">vulpēcūlae,<span>vulpēcŭla vulpeculae N (1st) F  <br>:fox (little);<br>(単数 属格)<br></span></a>
+<a class="note0">vis<span></span></a>
+<a class="note0">leonis<span></span></a>
+<a class="note0">videtur;<span></span></a>
+<a class="note1">utrumque<span>uter utra, utrum ADJ  <br>:|(w/que) each/either (of two); both (separately); each side (pl.), each set;<br>(N 単数 主格), <br></span></a>
+<a class="note0">homine<span></span></a>
+<a class="note1">alienissimum,<span>alienus aliena -um, alienior -or -us, alienissimus -a -um ADJ  最上級<br>:foreign; unconnected; another's; contrary; <strong>unworthy</strong>; averse, hostile; mad;<br>&nbsp;(N 単数 主格),<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">fraus<span></span></a>
+<a class="note1">odio<span>ŏdĭum odi(i) N (2nd) N  <br>:hate/hatred/dislike/antipathy; odium, unpopularity; boredom/impatience;<br>(単数 奪格)<br></span></a>
+<a class="note1">digna<span>dignus digna -um, dignior -or -us, dignissimus -a -um ADJ  <br>:appropriate/suitable; worthy, deserving, meriting; worth (w/ABL/GEN);<br>(F 単数 主格<br></span></a>
+<a class="note1">maiore.<span>magnus magna -um, major -or -us, maximus -a -um ADJ  比較級<br>:large/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;<br>(X 単数 奪格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>cum iniuria fiat</strong>. : 「不正義が行われるとき」</p>
+<p><strong>id est autem duobus modis, aut vi, auto fraude</strong>. 「それは暴力かまたは詐欺によってである。」</p>
+<p><strong>frause (est) quasi vulpeculae, vi (est quasi) leonis.</strong> 「詐欺はあたかも狐の（性質）のようであり、暴力はライオンのようである。」</p>
+<p>属格は一種の所有の属格。力はライオンの持つもの、というニュアンス。</p>
+<p><strong>utrumque est alienissimum homine</strong>. homineは奪格で、性質の奪格。（NewLatin 224)</p>
+<p>fraus (est) digna maiore odio. dignaは「値する、deserving」のニュアンス。「詐欺のほうがより憎悪されるにふさわしい」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>不正義がなされる場合それらは2つの事がある。暴力によるものかまたは詐欺、欺瞞によるものかである。詐欺は狐の如しであり、暴力はライオンの如くであるように思われる。どちらも最も人として価値のないのもであるが、詐欺の方がより憎まれやすい。<br></p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Totius<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">iniustitiae<span>injustĭtĭa injustitiae N (1st) F  <br>:injustice; severity;<br>&nbsp;(単数 属格),<br></span></a>
+<a class="note1">nulla<span>nullus nulla, nullum (gen -ius) ADJ  <br>:no; none, not any; (PRONominal ADJ)<br>(F 単数 主格),<br></span></a>
+<a class="note1">capitalior<span>căpĭtālis capitale, capitalior -or -us, capitalissimus -a -um ADJ  比較級<br>:of/belonging to head/life; deadly, mortal; dangerous; excellent, first-rate;<br>(M 単数 主格), <br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">eorum,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">tum,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">maxime<span></span></a>
+<a class="note1">fallunt,<span>fallo fallere, fefelli, falsus V (3rd)  <br>:deceive; slip by; disappoint; be mistaken, beguile, drive away; fail; cheat;<br>( 3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">agunt,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">viri<span></span></a>
+<a class="note0">boni<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">videantur.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>nulla capitalior quam eorum (iniustiae) : それらより（悪い）不正義はない。</p>
+<p>totius iniustitiae nulla : iniustiaeは属格でnullaにかかる。部分の属格。「すべての不正義の中で何も」</p>
+<p>cum maxime fallunt, qui agunt id ut ~. 「あたかも～のように振る舞う」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>すべての不正義の中で最も悪いのは、欺瞞をなしながらそれがあたかも善良な人間に見えるよう振る舞うことである。<br></p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">De<span></span></a>
+<a class="note0">iustitia<span></span></a>
+<a class="note0">satis<span></span></a>
+<a class="note0">dictum.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>不正義については十分話した。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

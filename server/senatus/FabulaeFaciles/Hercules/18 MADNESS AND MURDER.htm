@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 18 MADNESS AND MURDER.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Post<span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0">proelium<span></span></a>
+<a class="note0">Herculēs<span></span></a>
+<a class="note0">cōpiās<span></span></a>
+<a class="note0">suās<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">urbem<span></span></a>
+<a class="note1">redūxit.<span>rĕdūco reducere, reduxi, reductus V (3rd)  X<br>:lead back, bring back; restore; reduce;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Omnēs<span></span></a>
+<a class="note0">Thēbānī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">propter<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">victōriam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">maximē<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">gaudēbant;<span>gaudĕo gaudere, gavisus sum V (2nd) SEMIDEP  <br>:be glad, rejoice;<br>(3 複数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Creōn<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">magnīs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">honōribus<span>hŏnor honoris N (3rd) M <br>:honor; respect/regard; mark of esteem, reward; dignity/grace; public office;<br>&nbsp;(複数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Herculem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">decorāvit,<span>dĕcŏro decorare, decoravi, decoratus V (1st)  X<br>:adorn/grace, embellish/add beauty to; glorify, honor/add honor to; do credit to;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">fīliam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">suam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">eī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">mātrimōnium<span>mātrĭmōnĭum matrimoni(i) N (2nd) N <br>:marriage; matrimony;<br>&nbsp;(単数 対格) <br></span></a>
+<a class="note1">dedit.<span>do dare, dedi, datus V (1st) TRANS  <br>:give; dedicate; sell; pay; grant/bestow/impart/offer/lend; devote; allow; make;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Herculēs<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">uxōre<span></span></a>
+<a class="note0">suā<span></span></a>
+<a class="note1">beātam<span>bĕātus beata -um, beatior -or -us, beatissimus -a -um ADJ  <br>:happy, fortunate, bringing happiness; rich, wealthy, copious, sumptuous;<br>(F 単数 対格) <br></span></a>
+<a class="note0">vītam<span></span></a>
+<a class="note1">agēbat;<span>ăgo agere, egi, actus V (3rd)  X<br>:drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); deliver (speech);<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">post<span></span></a>
+<a class="note0">paucōs<span></span></a>
+<a class="note0">annōs<span></span></a>
+<a class="note0">subitō<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">furōrem<span>fūror furoris N (3rd) M <br>:madness, rage, fury, frenzy; passionate love;<br>(単数 対格) <br></span></a>
+<a class="note1">incidit,<span>incĭdo incidere, incidi, incasus V (3rd)  X<br>:happen; fall into, fall in with, meet; fall upon, assail;<br>(3 単数 現在 能動態 直接法) <br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">līberōs<span>līber liberi N (2nd) M <br>:children (pl.); (sg. VOC) child;<br>(複数 対格) <br></span></a>
+<a class="note0">suōs<span></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note0">suā<span></span></a>
+<a class="note1">manū<span>mănus manus N (4th) F <br>:hand, fist; team; gang, band of soldiers; handwriting; (elephant's) trunk;<br>(単数 奪格) <br></span></a>
+<a class="note0">occīdit.<span></span></a>
+<a class="note0">Post<span></span></a>
+<a class="note0">breve<span></span></a>
+<a class="note0">tempus<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">sānitātem<span>sānĭtas sanitatis N (3rd) F <br>:sanity, reason; health;<br>(単数 対格) <br></span></a>
+<a class="note0">reductus<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">propter<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">facinus<span>făcĭnus facinoris N (3rd) N <br>:deed; crime; outrage;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dolōre<span>dŏlor doloris N (3rd) M <br>:pain, anguish, grief, sorrow, suffering; resentment, indignation;<br>(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">affectus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">est;<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">mox<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">urbe<span></span></a>
+<a class="note0">effūgit<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">silvās<span>silva silvae N (1st) F <br>:wood, forest (sylvan);<br>(複数 対格) <br></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note1">recēpit.<span>rĕcĭpĭo recipere, recepi, receptus V (3rd)  X<br>:keep back; recover; undertake; guarantee; accept, take in; take back;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Nolēbant<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note1">cīvēs<span>cīvis civis N (3rd) C <br>:fellow citizen; countryman/woman; citizen, free person; a Roman citizen;<br>(複数 主格) <br></span></a>
+<a class="note1">sermōnem<span>sermo sermonis N (3rd) M <br>:conversation, discussion; rumor; diction; speech; talk; the word;<br>(単数 対格) <br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">eō<span></span></a>
+<a class="note0">habēre.<span></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>Ceren magnis honoribus Herculem decoravit.&nbsp; honoribusは手段の奪格。Herculemは目的語 「Herculesを名誉で飾り立てた」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>その戦いのあとHerculesは自身の軍を町に戻した。すべてのテーベ人は、戦勝のため大変喜んでいた。更にCeronはHeculesを最大限の名誉で飾り立て、更には自身の娘を彼に嫁がせたのである。Herculesは妻と一緒に幸せな生活を送っていたが数年後突然極度の怒りに陥り、彼自身が子どもたちを自分の手で殺してしまった。暫く後に正気に戻ったのであるが、その行為がゆえに非常な悲しみにくれることとなった。しばらくして町から出て、森の中に隠遁してしまった。市民は彼と会話をすることを拒んだのである。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

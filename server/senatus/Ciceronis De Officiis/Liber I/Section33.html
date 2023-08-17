@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='remote latinreader' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function (event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+            if($("#saveoption").length){
+                $("#saveoption").hide();
+                $("#downloadsave").hide();
+            }
+            insertButtons2();
+            $("#outer").css("width","96%");
+        }
+        function insertButtons2(){
+            if(!$(".lbtn1").length){
+                $(".spacer").each(function(index, elem) {
+                    var target = $(elem);
+                    var tx1 = target.html();
+                    var color = "style='color:#5f9ea0;'";
+                    if (target.next().next().attr("class") != "spnote")
+                        color = "style='color:black;'";
+                    target.html(tx1 + "<button class='lbtn2'>Translation</button><button class='lbtn1'>Notes</button>");
+                });
+            }
+            $(".lbtn1").on("click", function() {
+                var target = $(this).parent().next().next();
+                if (target.attr("class") != "spnote") {
+                    target = target.next();
+                    if (target.attr("class") != "spnote") // 編集中の場合
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+            $(".lbtn2").on("click", function() {
+                var target = $(this).parent().next().next().next();
+                if (target.attr("class") != "translation") {
+                    target = target.next();
+                    if (target.attr("class") != "translation")
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+        }
+
+        function btoggle(obj, btn) {
+            obj.toggle(function() {
+                if ($(this).is(":visible"))
+                    btn.css("color", "black");
+                else
+                    btn.css("color", "#5f9ea0");
+            });
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 2.8rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+
+        /* 追加のボタン*/
+        .lbtn1,
+        .lbtn2,
+        .lbtn3,
+        .lbtn4 {
+            float: right;
+            margin-top: 2px;
+            margin-right: 6px;
+            height: 16px;
+            font-size: 10px;
+            padding: 1px;
+            font-weight: bold;
+            /* vertical-align: bottom; */
+            border: none;
+        }
+
+
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 2.8rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+
+        }
+
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+
+        a.note1:hover span {
+            display: block;
+        }
+
+        .latin span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 3.5rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        .latin span::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.8rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.5rem;
+            left: 2.0rem;
+        }
+    </style>
+</head>
+
+
+<body id="bodyportion">
+        <div id="outer">
+    
+		<a name="begin"></a>
+<div id="header">
+<h1> Liber I: Section 33 </h1>
+
+<div class="boxright">
+<input id="saveoption" class="rbtn1" type="button" value="保存する" style="font-size: 12px; font-family: meiryo; ">
+<input id="downloadsave" class="rbtn1" type="button" value="ダウンロード" style="font-size: 12px; font-family: meiryo; display: none;">
+</div></div>
+
+
+<div class="spacer">Line0<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+</a><a class="note0">[33]<span></span></a>
+<a class="note1">Existunt<span>existo existere, existiti, existitus V (3rd)  <br>:step forth, appear; arise; become; prove to be; be (Bee);<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">saepe<span></span></a>
+<a class="note1">iniuriae<span>injurius injuria, injurium ADJ  <br>:unjust, harsh;<br>&nbsp;(F 複数 主格)<br><br></span></a>
+<a class="note1">calumnia<span>calumnia calumniae N (1st) F  <br>:sophistry, sham; false accusation/ claim/ statement/ pretenses/ objection; quibble;<br>&nbsp;(C 単数 奪格)<br><br></span></a>
+<a class="note1">quadam<span>quidam quaedam, quoddam   <br>:(w/-dam) certain; as INDEF a certain thing; somebody, one, something;<br>(F 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">nimis<span>nimis ADV <br>:very much; too much; exceedingly;<br><br></span></a>
+<a class="note1">callida<span>callidus callida -um, callidior -or -us, callidissimus -a -um ADJ  <br>:crafty, sly, cunning; wise, expert, <strong>skillfu</strong>l, clever, experienced, ingenious;<br>&nbsp;(F 単数 奪格)<br><br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">malitiosa<span>malitiosus malitiosa, malitiosum ADJ  <br>:wicked; crafty, roguish, knavish;<br>&nbsp;(F 単数 奪格),<br></span></a>
+<a class="note1">iuris<span>jus juris N (3rd) N  <br>:law; legal system; code; right; duty; justice; court; binding decision; oath;<br>(X 単数 属格)<br></span></a>
+<a class="note1">interpretatione.<span>interpretatio interpretationis N (3rd) F  <br>:interpretation; meaning;<br>(C 単数 奪格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>injuriae existunt quadam calumnia. 「不正義はある種の言い逃れによるものだと解っている」calumniaはcalvorから発しており誤魔化すというニュアンスである由。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>不正義とはある種の誤魔化しであり、また多くは法のずる賢い解釈であることが解っている。<br></p>
+</div>
+</div>
+<div class="spacer">Line1<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ex<span></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note0">illud<span></span></a>
+<a class="note0">"summum<span></span></a>
+<a class="note0">ius<span></span></a>
+<a class="note0">summa<span></span></a>
+<a class="note1">iniuria"<span>injuria injuriae N (1st) F  <br>:injury; injustice, wrong, offense; insult, abuse; sexual assault;<br>(C 単数 主格<br></span></a>
+<a class="note0">factum<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note1">tritum<span>tritus trita, tritum ADJ  <br>:well-trodden, well-worn, worn; common; familiar;<br>(N 単数 主格)<br></span></a>
+<a class="note1">sermone<span>sermo sermonis N (3rd) M  <br>:conversation, discussion; rumor; diction; speech; talk; the word;<br>(C 単数 奪格)<br></span></a>
+<a class="note1">proverbium.<span>proverbium proverbi(i) N (2nd) N  <br>:proverb, saying;<br>(N 単数 主格), <br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>factum est はfioの完了分詞で、能動、完了形である。fioはSemiDepでCopula動詞でもあり～になるの意。</p>
+<p>summum ius (est) summa iniuria. 諺ではestが良く省略される。</p>
+<p>quoはqui奪格で、前の文全体を受ける一種の関係代名詞。（quo factum est = これによってそれは起きた）（NewLatin251.6)<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>これらのことより、「最高の法律は最大の不正義」ということが言われ諺になった。<br></p>
+</div>
+</div>
+<div class="spacer">Line2<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quo<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">genere<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">re<span></span></a>
+<a class="note0">publica<span></span></a>
+<a class="note0">multa<span></span></a>
+<a class="note1">peccantur,<span>pecco peccare, peccavi, peccatus V (1st) INTRANS  <br>:|make mistake; make slip in speaking; act incorrectly; go wrong, be faulty;<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ille,<span></span></a>
+<a class="note0">qui,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">triginta<span>triginta tricesimus -a -um, triceni -ae -a, tricie(n)s NUM <br>:thirty;<br><br></span></a>
+<a class="note1">dierum<span>dies diei N (5th) C  <br>:day; daylight; (sunlit hours); (24 hours from midnight); open sky; weather;<br>(C 複数 属格)<br></span></a>
+<a class="note0">essent<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">hoste<span>hostis hostis N (3rd) C  <br>:enemy (of the state); stranger, foreigner; the enemy (pl.);<br>(C 単数 奪格)<br></span></a>
+<a class="note1">indutiae<span>indutia indutiae N (1st) F  <br>:truce (pl.), armistice, cessation of hostilities; respite, period of grace;<br>&nbsp;(C 複数 主格)<br></span></a>
+<a class="note0">factae,<span></span></a>
+<a class="note1">noctu<span>noctu ADV <br>:by night, at night;<br><br></span></a>
+<a class="note1">populabatur<span>populor populari, populatus sum V (1st) DEP  <br>:ravage, devastate, lay waste; plunder; despoil, strip;<br>(3 単数 未完了 受動態 直接法 )<br></span></a>
+<a class="note0">agros,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">dierum<span></span></a>
+<a class="note0">essent<span></span></a>
+<a class="note1">pactae,<span>pactus pacta, pactum ADJ  <br>:agreed upon, appointed;<br>(F 複数 主格), <br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">noctium<span></span></a>
+<a class="note0">indutiae.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>quo in genere etiam in re publica : 「そういう種類のものは公共の場合でも」</p>
+<p>ut ille, qui, : illeとquiが同じ人間であり先行詞と関係代名詞であることは明らか。多分　ille peccavit, qui　という感じ。</p>
+<p>cum triginta dierum indutiae essent factae cum hoste. : 最初のcum＝when, 二つ目cum= with. indutiaが主語。「３０日の停戦協約が敵と結ばれた時、」</p>
+<p>このエピソードはClemenesというスパルタの王のものらしい。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>このような種類のことは国と国の関係でもたくさん起きている。例えば、ある男は３０日間の停戦協約が敵と結ばれた時、夜の間に敵地を荒らし回った。それは日ということが合意され、夜ではないからという理由であった。<br></p>
+</div>
+</div>
+<div class="spacer">Line3<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ne<span></span></a>
+<a class="note0">noster<span></span></a>
+<a class="note0">quidem<span></span></a>
+<a class="note1">probandus,<span><b>prŏbo</b>,probare, probavi, probatus V (1st) TRANS  <br><b>:approve (of), esteem/ commend/ recommend/ certify; give assent/approval/sanction;</b><br>【動形容詞 (M 単数 主格) 】</span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">verum<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">Q.<span></span></a>
+<a class="note0">Fabium<span></span></a>
+<a class="note0">Labeonem<span></span></a>
+<a class="note1">seu<span>seu CONJ <br>:or if; or;<br><br></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">alium<span></span></a>
+<a class="note0">–<span></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">habeo<span></span></a>
+<a class="note1">praeter<span>praeter PREP ACC <br>:besides, except, contrary to; beyond (rank), in front of, before; more than;<br><br></span></a>
+<a class="note1">auditum<span>audio audire, audivi, auditus V (4th)  <br>:hear, listen, accept, agree with; obey; harken, pay attention; be able to hear;<br>&nbsp;(完了 分詞 受動態 N 単数 対格), <br></span></a>
+<a class="note0">–<span></span></a>
+<a class="note1">arbitrum<span>arbiter arbitri N (2nd) M  <br>:eye-witness, on-looker; umpire, judge, arbiter; overseer, lord; executor;<br>(C 単数 対格)<br></span></a>
+<a class="note0">Nolanis<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Neapolitanis<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">finibus<span></span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">senatu<span></span></a>
+<a class="note0">datum,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">venisset,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">utrisque<span></span></a>
+<a class="note1">separatim<span>separatim ADV <br>:apart, separately;<br><br></span></a>
+<a class="note1">locutum,<span>loquor loqui, locutus sum V (3rd) DEP  <br>:speak, tell; talk; mention; say, utter; phrase;<br>(完了 分詞 受動態 M 単数 対格)<br></span></a>
+<a class="note0">ne<span></span></a>
+<a class="note1">cupide<span>cupide cupidius, cupidissime ADV <br>:eagerly/zealously/passionately; w/alacrity; hastily/rashly; partially/unfairly;<br><br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note1">agerent,<span>ago agere, egi, actus V (3rd)  <br>:drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); deliver (speech);<br>(3 複数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">ne<span></span></a>
+<a class="note1">appetenter,<span>appetenter ADV <br>:greedily, avidly;<br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">regredi<span>regredior regredi, regressus sum V (3rd) DEP  <br>:go back, return, retreat;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">progredi<span>progredior progredi, progressus sum V (3rd) DEP  <br>:go, come forth, go forward, march forward; advance. proceed. make progress;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">mallent.<span>malo malle, malui, - V  <br>:prefer; incline toward, wish rather;<br>(3 複数 未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>非常に判りにくい文。</p>
+<p>Ne noster quidem (est) probandus. probandusは動形容詞でestが省略されていると考え、「我々も同様に称賛されるべきない」</p>
+<p><strong>si Q. Labeonem (esse) datum arbitrum est verum</strong>: Labeonemが対格主語の不定詞で不定詞動詞はdatum、不定詞目的語がarbitrum. 「Labeoが判定者に任命されたこと、が本当であれば」実際には、この不定詞句は従属節を伴っており、cum ad locum以下の文章を含めて、「～ということが本当なら、我々も称賛されるべきではない」という構造のようである。こういう従属節を伴うような不定詞句は文法的に許されるのであろうか？</p>
+<p><strong>nihil enim habeo praeter auditum</strong> : habeo + 完了分詞。praeterは～以上にの意。「聞いた事以上は何も（分からない）」これは明らかに、seu quem alium 「またはその他の誰か」と言っているように不確かで有ることを言っている。</p>
+<p><strong>locum (esse)</strong>で対格主語はLabeonem、つまり (esse)datum, (esse)locutum : 「与えられ、話をした」という不定詞句。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>もし次の話は本当なら我々も褒められたものではない。つまり、Q. Fabius Labenoかまたはその他の人間ー私は話を聞いただけなのでそれ以上はわからないがーが元老院からNolanisとNeapolitanisの間の領地の境界に関しての調停者を任命されて、そこに赴いた時、各々と別々に、彼らが積極的に行動しないよう、欲張らないよう、また進むよりむしろ譲歩するのが望ましいことなどを、話した。<br></p>
+</div>
+</div>
+<div class="spacer">Line4<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Id<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">utrique<span></span></a>
+<a class="note0">fecissent,<span></span></a>
+<a class="note1">aliquantum<span>aliquantum ADV <br>:to some extent, in some degree, somewhat, slightly, a little;<br><br></span></a>
+<a class="note0">agri<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">medio<span><b>mĕdĭus</b>,medii N (2nd) M <br><b>:mediator; one who stands in the middle, one who comes between;</b><br>&nbsp;(単数 奪格) </span></a>
+<a class="note1">relictum<span>relinquo relinquere, reliqui, relictus V (3rd)  <br>:leave behind, abandon; (pass.) be left, remain; bequeath;<br>(完了 分詞 受動態 N 単数 主格)<br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>双方がそれに合意をした時、あいだの場所に一定の場所が残された。<br></p>
+</div>
+</div>
+<div class="spacer">Line5<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Itaque<span></span></a>
+<a class="note0">illorum<span></span></a>
+<a class="note1">finis<span>finis finis N (3rd) C  <br>:boundary, end, limit, goal; (pl.) country, territory, land;<br>(X 単数 主格),<br></span></a>
+<a class="note0">sic,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ipsi<span></span></a>
+<a class="note1">dixerant,<span>dico dicere, dixi, dictus V (3rd)  <br>:|talk/speak; make speech; play (instrument); <strong>pronounce,</strong> articulate; utter; mean;<br>(3 複数 過去完了 能動態 直接法 )<br></span></a>
+<a class="note1">terminavit;<span>termino terminare, terminavi, terminatus V (1st)  <br>:mark the boundaries of, form the boundaries of; restrict; conclude;<br>(3 単数 完了 能動態 直接法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">medio<span></span></a>
+<a class="note0">relictum<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">erat,<span></span></a>
+<a class="note0">populo<span></span></a>
+<a class="note0">Romano<span></span></a>
+<a class="note1">adiudicavit.<span>adjudico adjudicare, adjudicavi, adjudicatus V (1st) TRANS  <br>:adjudge, impute, attribute, ascribe (to); award (as a judge), assign (to);<br>(3 単数 完了 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false"><p>ut ipsi dixerant : 主語は双方であり、dicoは単に言うではなく、宣言する、ぐらいのニュアンス。<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>かくして双方の領界は、お互いに確認したように取り決められた。間に残った場所については、ローマに対して与えられた。<br></p>
+</div>
+</div>
+<div class="spacer">Line6<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Decipere<span>decipio decipere, decepi, deceptus V (3rd) TRANS  <br>:cheat/deceive/mislead/dupe/trap; elude/escape notice; disappoint/frustrate/foil;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0">quidem<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">iudicare.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>これは欺瞞であり正義ではない。<br></p>
+</div>
+</div>
+<div class="spacer">Line7<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quocirca<span>quocirca CONJ <br>:on account of which; wherefore;<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omni<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">re<span></span></a>
+<a class="note1">fugienda<span>fugio fugere, fugi, fugitus V (3rd)  <br>:flee, fly, run away; avoid, shun; go into exile;<br>(未来 分詞 受動態 F 単数 奪格)<br></span></a>
+<a class="note1">talis<span>talis talis, tale ADJ  <br>:such; so great; so excellent; of such kind;<br>(C 単数 主格)<br></span></a>
+<a class="note1">sollertia.<span>sollertia sollertiae N (1st) F  <br>:skill, cleverness; resourcefulness;<br>(C 単数 主格),<br></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false"><p><strong>talis sollertia est fugienda in omni re.</strong> <br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>そのような欺瞞はすべての事柄において避けるべきである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+    </body>
+    <html>
+    

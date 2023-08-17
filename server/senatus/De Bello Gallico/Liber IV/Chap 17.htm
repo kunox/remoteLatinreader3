@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 17</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[17]<span></span></a>
+
+<a class="note0">Caesar<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">causīs<span><br><br></span></a>
+<a class="note0">quās<span><br><br></span></a>
+<a class="note1">commemorāvī<span>commemoro commemorare, commemoravi, commemoratus V (1st) TRANS  <br>:recall (to self/other); keep in mind, remember; mention/relate; place on record;<br>(１人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note0">trānsīre<span><br><br></span></a>
+<a class="note1">dēcrēvat;<span>=decreverat<br>decerno decernere, decrevi, decretus V (3rd)  <br>:decide/settle/determine/resolve; decree/declare/ordain; judge; vote for/contend;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">nāvibus<span><br><br></span></a>
+<a class="note0">trānsīre<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">satis<span></span></a>
+<a class="note1">tūtum<span>tutus tuta -um, tutior -or -us, tutissimus -a -um ADJ  <br>:safe, prudent; secure; protected;<br>(n 単数 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">arbitrābātur<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">suae<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">dignitātis<span>dignitas dignitatis N (3rd) F  <br>:|rank/status; merit; dignity; position/authority/office; dignitaries (pl.);<br>(X 単数 属格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">statuēbat.<span>statuo statuere, statui, statutus V (3rd)  <br>:set up, establish, set, place, build; decide, think;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>esse dignitatis : 述語属格と呼ばれ所有の属格の一種。(NewLatin198.2, AG 343 b)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>カエサルは以前に言ったような理由からライン河を渡ることを決めたが、船による渡河は十分安全ではないと考え、また自分やローマ人民の尊厳にはふさわしくないと考えた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Itaque,<span></span></a>
+<a class="note1">etsī<span>接続詞　;= although, though, even if,<br><br><br></span></a>
+<a class="note0">summa<span></span></a>
+<a class="note0">difficultās<span><br><br></span></a>
+<a class="note0">faciendī<span><br><br></span></a>
+<a class="note1">pontis<span>pons pontis N (3rd) M  <br>:bridge;<br>(X 単数 属格)<br></span></a>
+<a class="note1">prōpōnēbātur<span>propono proponere, proposui, propositus V (3rd)  <br>:display; propose; relate; put or place forward;<br>(３人称 単数 未完了 受動態 直説法 )<br></span></a>
+<a class="note1">propter<span>前置詞　;= near, on account of, by means of, becuase of<br><br></span></a>
+<a class="note0">lātitūdinem,<span><br><br></span></a>
+<a class="note1">rapiditātem<span>rapiditas rapiditatis N (3rd) F  <br>:swiftness, rapidity (of movement);<br>(c 単数 対格)<br></span></a>
+<a class="note0">altitūdinemque<span><br><br></span></a>
+<a class="note1">flūminis,<span>flumen N単　属格<br><br><br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">contendendum<span>contendo 未来分詞　受動　ｎ単　対格　動形容詞　;= compete, contend, make effort, strive<br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">aliter<span>副詞　;= otherwise, in any other way<br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">trādūcendum<span><br><br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note0">exīstimābat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>difficultas faciendi pontis : 動形容詞構文。「橋を作ることの困難さ」</p>
+<p>id (esse) contendendum sibi : 補語としての動形容詞で、行為者は与格。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それ故、橋を作ることの困難さは、その幅、流れの速さ、深さなどから解ってはいたが、しかしそれは試みられるべきであり、さもなくば軍団が渡るべきではないと考えた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Ratiōnem<span>ratio rationis F 単　対格　;= account, rekoning, invoice, plan, method, reasoning<br><br><br></span></a>
+<a class="note0">pontis<span></span></a>
+<a class="note0">hanc<span></span></a>
+<a class="note1">īnstituit.<span>instituo ３単　完了　;= setup, establish, prepare, decide<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>カエサルは橋の計画を確立した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Tigna<span>tignum tigni N (2nd) N  <br>:tree trunk, log, stick, post, beam; piece of timber; building materials;<br>(n 複数  主格), (n 複数  呼格), (n 複数  対格)<br></span></a>
+<a class="note1">bīna<span>binus bina, binum ADJ  <br>:two by two; 2 each; in pairs; 2 at time; on 2 occasions; double, twofold;<br>&nbsp;(n 複数  主格)<br></span></a>
+<a class="note1">sēsquipedālia<span>sesquipedalis sesquipedalis, sesquipedale ADJ  <br>:<strong>of a foot and a half</strong>; (of words) foot and half long;<br>(n 複数  対格)<br></span></a>
+<a class="note1">paulum<span>副詞　;= little bit, to a small extent, somewhat<br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">īmō<span>imus ima, imum ADJ  最上級<br>:inmost, deepest, bottommost, last; (inferus);<br>&nbsp;(n 単数 奪格)<br><br></span></a>
+<a class="note1">praeacūta<span>praeacutus praeacuta, praeacutum ADJ  <br>:sharpened, pointed;<br>(n 複数  対格)<br></span></a>
+<a class="note1">dīmēnsa<span>dimetior dimetiri, dimensus sum V (4th) DEP  <br>:measure out/off; (space/time/words); weigh out, measure by weight; lay out;<br>&nbsp;(完了 分詞 受動態 n 複数  対格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">altitūdinem<span><br><br></span></a>
+<a class="note0">flūminis<span><br><br></span></a>
+<a class="note1">intervāllō<span>intervallum intervalli N (2nd) N  <br>:interval, space, distance; respite;<br>&nbsp;(X 単数 奪格)<br><br></span></a>
+<a class="note1">pedum<span>pes pedis N (3rd) M  <br>:foot;<br>(c 複数  属格)<br></span></a>
+<a class="note1">duōrum<span>duo 数詞　２　m複　属格　<br><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">iungēbat.<span>jungo jungere, junxi, junctus V (3rd)  <br>:join, unite; bring together, clasp (hands); connect, yoke, harness;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>jungebat tigna inter se : inter seは互いにで、「互いに材木を結んだ」が文の骨子。</p>
+<p>bina sesquipedalia tigna : 2つの1.5フィートの太さの材木を、（jungebatの目的語）</p>
+<p>paulum praeacuta ab imo : 下の方から少し尖っている　tignaを修飾</p>
+<p>dimensa ad altitudinem fluminis : （長さを）河の深さに調節して　</p>
+<p>duorum pedum intervallo : 2フィートの間隔で　（差異の度合の奪格 NewLatin223)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼は、1.5フィートの太さの材木を、それは下から少し尖っており、長さを河の深さに合わせて調節してあったが、2フィートの間隔で結びつけた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Haec<span>n複　対格<br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">māchinātiōnibus<span>machinatio machinationis N (3rd) F  <br>:machine; engine (of war), mechanism, contrivance, artifice; trick, device;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">immissa<span>immitto 完了分詞　受動　n 複　対格　;= send in, send to, insert<br><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note1">dēfixerat<span>defigo defigere, defixi, defixus V (3rd) TRANS  <br>:sink/bury/stick/thrust (weapon); fasten, fix, plant, embed; attach/affix;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note1">fistūcisque<span>fistuca fistucae N (1st) F  <br>:rammer, mallet;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note1">adēgerat,<span>adigo adigere, adegi, adactus V (3rd) TRANS  <br>:drive in/to (cattle), force, impel; cast, hurl; consign (curse); bind (oath);<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">sublicae<span>sublica sublicae N (1st) F  <br>:wooden stake or pile; (normally used as support for bridge/heavy structure);<br>(c 単数 属格<br></span></a>
+<a class="note1">modō<span>modus modi N (2nd) M  <br>:manner, mode, way, method; rule, rhythm, beat, measure, size; bound, limit;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">dērēctē<span>副詞　;= in straight line, in straight forward<br><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">perpendiculum,<span>perpendiculum perpendiculi N (2nd) N  <br>:plummet; plumbline;<br>(n 単数 対格)<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">prōnē<span>pronus 形容詞の副詞化（m単　属格の語尾 iをeにしたもの）<br>;= leaning<br><br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">fastīgātē,<span>fastigatus の副詞化　;= pointed, sharp, sloping, decending<br><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">secundum<span>前置詞　対格支配　;= agter, according, alongn to <br><br></span></a>
+<a class="note1">nātūram<span>natura naturae N (1st) F  <br>:nature; birth; character;<br>(c 単数 対格)<br></span></a>
+<a class="note0">flūminis<span><br><br></span></a>
+<a class="note1">prōcumberent,<span>procumbo procumbere, procubui, procubitus V (3rd)  <br>:sink down, lie down, lean forward;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">item<span></span></a>
+<a class="note1">contrāria<span>contrarius contraria, contrarium ADJ  <br>:opposite, contrary, in contradiction; antithetical; opposed/hostile/adverse;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note0">duo<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">eundem<span>idem eadem, idem PRON  <br>:(w/-dem ONLY, idem, eadem, idem) same, the same, the very same, also;<br>(m 単数 対格)<br></span></a>
+<a class="note1">modum<span>modus modi N (2nd) M  <br>:manner, mode, way, method; rule, rhythm, beat, measure, size; bound, limit;<br>(c 単数 対格)<br></span></a>
+<a class="note1">iūncta<span>jungo jungere, junxi, junctus V (3rd)  <br>:join, unite; bring together, clasp (hands); connect, yoke, harness;<br>(完了 分詞 受動態 n 複数  対格)<br></span></a>
+<a class="note0">intervāllō<span><br><br></span></a>
+<a class="note1">pedum<span>pes pedis M 複　属格　;= foot<br><br></span></a>
+<a class="note1">quadrāgēnum<span>quadragenum 配分数　40　複　属格<br><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">īnferiōre<span>inferus infera -um, inferior -or -us, infimus -a -um ADJ  比較級<br>:below, beneath, underneath; of hell; vile; lower, further down; lowest, last;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">parte<span>F　単　奪格<br><br></span></a>
+<a class="note1">contrā<span>前置詞　対格支配　;= against<br><br><br></span></a>
+<a class="note0">vim<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">impetū<span></span></a>
+<a class="note0">flūminis<span><br><br></span></a>
+<a class="note1">conversa<span>converto 完了分詞　受動　n複　対格　;= convert, change, turn<br><br><br></span></a>
+<a class="note1">statuēbat.<span>statuo statuere, statui, statutus V (3rd)  <br>:set up, establish, set, place, build; decide, think;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>cum defixerat atque adegerat haec, statuebat iis contraria duo</strong>. が全体の骨子 「それらを沈め打ち付けて、反対側に2本組を配置した」</p>
+<p>haec immissa machinationibus : 道具を使って運び込まれたそれらを　（道具は多分、筏）</p>
+<p>non derecte ad perpendiculum sublicae mod : 「橋桁の方法のように真っ直ぐではなく」<font color="#ff0000">modoは付帯状況の奪格？</font></p>
+<p>fastigate fastigia=破風　からの派生。屋根のラインのように傾斜している様。</p>
+<p><strong>ut ~ procumberent</strong> : 結果の名詞節で接続法</p>
+<p>statuebat contraria duo (tigna) iis : <font color="#ff0000">iisは与格で間接目的語か？</font>　「それに対し反対側の2本組を配置した」</p>
+<p>ad eundem modum iuncta : 同じように結合された　(duo tigna)を修飾</p>
+<p><strong>intervallo pedum quadragenum</strong> : pedumもquadragenum も属格でintervalloに掛かる。４０フィートの間隔で</p>
+<p>ab inferiore parte inferioreと言うのは流れが弱くなる下流、と言う意味。</p>
+<p>contra vim atque impetu fluminis conversa : 河の力と攻撃に逆らって　が逐語訳。conversaは前に２本組がsecundum naturamとは逆に、という意味。conversaの文法的な意味が難しい。<u>完了分詞、受動、ｎ複、対格で、duo tignaとともに分詞構文として、「（反対に）変更された２本組」と解釈か？</u><br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>道具によって運び込まれたこれらを河に沈め、固定した。但し橋桁のやり方のようにまっすぐ測鉛線に沿ってではなく、斜めに傾斜を付けて河の流れに従うように沈められた。これに対し反対側の、同様に結合された２本組を４０フィートの間隔で、今度は河の流れに逆らうように配置した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Haec<span></span></a>
+<a class="note1">utraque<span>uter utra utrum 形容詞　ｆ単　主格　;= each, both<br><br><br></span></a>
+<a class="note1">īnsuper<span>insuper ADV <br>:above, on top; in addition (to); over;<br><br></span></a>
+<a class="note1">bipedālibus<span>bipedalis bipedalis, bipedale ADJ  <br>:two feet long, wide or thick, measuring two feet;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">trabibus<span>trabs trabis N (3rd) F  <br>:tree trunk; log, club, spear; beam, timber, rafter; ship, vessel; roof, house;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">immissīs,<span>immitto immittere, immisi, immissus V (3rd)  <br>:send in/to/into/against; cause to go; insert; hurl/throw in; let go/in; allow;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">quantum<span>副詞　so much as, how much, how far<br><br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">tignōrum<span>tignum tigni N (2nd) N  <br>:tree trunk, log, stick, post, beam; piece of timber; building materials;<br>(X 複数  属格)<br></span></a>
+<a class="note1">iūnctūra<span>junctura juncturae N (1st) F  <br>:joint; association;<br>(c 単数 主格)<br></span></a>
+<a class="note1">distābat,<span>disto distare, -, - V (1st)  <br>:stand apart, be distant; be different;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note1">bīnīs<span>binus bina, binum ADJ  <br>:two by two; 2 each; in pairs; 2 at time; on 2 occasions; double, twofold;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">utrimque<span>副詞　on both sides, at both ends<br><br></span></a>
+<a class="note1">fībulis<span>fibula fibulae N (1st) F  <br>:clasp, buckle, brooch;<br>(c 複数  奪格)<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">extrēma<span>exterの最上級　extremus のｆ単　奪格　;= outer, external,<br><br><br></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note1">distinēbantur;<span>distineo distinere, distinui, distentus V (2nd)  <br>:keep apart, separate; prevent, hold up; distract;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">quibus<span><br><br><br></span></a>
+<a class="note1">disclūsīs<span>discludo discludere, disclusi, disclusus V (3rd)  <br>:divide, separate, keep apart; shut off;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">contrāriam<span>contrarius contraria, contrarium ADJ  <br>:opposite, contrary, in contradiction; antithetical; opposed/hostile/adverse;<br>(f 単数 対格)<br></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note1">revinctīs,<span>revincio revincire, revinxi, revinctus V (4th)  <br>:bind fast, fasten;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">tanta<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">operis<span>opus operis N (3rd) N  <br>:need; work; fortifications (pl.), works;<br>(X 単数 属格)<br></span></a>
+<a class="note1">fīrmitūdo<span>firmitudo firmitudinis N (3rd) F  <br>:stability; strength;<br>(X 単数 主格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">rērum<span><br><br></span></a>
+<a class="note0">nātūra<span><br><br></span></a>
+<a class="note0">ut,<span></span></a>
+<a class="note1">quō<span>qui ｎ単　奪格　（差異の度合の奪格）<br><br><br></span></a>
+<a class="note0">maior<span></span></a>
+<a class="note0">vīs<span><br><br></span></a>
+<a class="note0">aquae<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">incitāvisset,<span>incito incitare, incitavi, incitatus V (1st)  <br>:enrage; urge on; inspire; arouse;<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">hōc<span>奪格　（差異の度合いの奪格）<br><br><br></span></a>
+<a class="note1">artius<span>artus arta -um, artior -or -us, artissimus -a -um 形容詞　比較級　n 単　主格　;= close, firm, tight<br><br></span></a>
+<a class="note1">inligāta<span>=illigata<br>illigo illigare, illigavi, illigatus V (1st)  <br>:bind, fasten, tie up;<br>(完了 分詞 受動態 n 複数  主格) <br><br></span></a>
+<a class="note1">tenērentur.<span>teneo tenere, tenui, tentus V (2nd)  <br>:hold, keep; comprehend; possess; master; preserve;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>utraque haec distinebantur. が　骨子　「各々の２本組は離されていた」</p>
+<p>trabibus immissis : 差し込まれた材木によって　（独立奪格）</p>
+<p>quantum eorum tignum iunctura distabat : iuncturaが主語で、eorum tignumは２本組の事。その２本組の結合がquantum離れていた。つまり２本組の木材の間隔が２フィートであった（bipedalibusで２フィートの太さの材木）ということ。quantumは副詞。</p>
+<p>binis utrumque fibulis : 両側の２つずつの留め具によって、この、奪格と前のtabibus immissisとの関係は？utraqueのqueで繋がっている？即ち「上部に差し込まれた２フィートの太さの材木と両側についた２つづつの留具によって離されていた」</p>
+<p>quibus disclusis:独立奪格　quibusは２本組の事で、ここは前に繰り返しか。</p>
+<p>quibus disclusis atque revinctis ：これは離され（反対側で）結合されていた。</p>
+<p>tanta erat operis firmitudo et ea rerum natura ut~ ：ut以下はnaturaを説明。　「偉大なのはその作業の強度とそのものの性質である」</p>
+<p>&nbsp;quo ~, hoc ~ : もっと～するともっと～になる。差異の度合の奪格(NewLatin 223)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらの２本組の脚は上部に太さ２フィートの材木、それは丁度脚の２本が結合されている間隔と同じであったが、それと両側にある２つづつの留具によって離されていた。それらの２本組の脚は離され、逆側で結合されていた。偉大なのはその作業の強度とそれが持つ性質である。より水の力が強く働くと、更に強く結合されるようになっていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Haec<span></span></a>
+<a class="note1">dērēctā<span>derectus ｆ単　奪格　;= straight<br><br><br></span></a>
+<a class="note1">māteriā<span>materia materiae N (1st) F  <br>:wood (building material), lumber, timber; woody branch/growth/part of tree;<br>(c 単数 主格)<br></span></a>
+<a class="note1">iniectā<span>inicio inicere, injeci, injectus V (3rd) TRANS  <br>:hurl/throw/strike in/into; inject; put on; inspire, instill (feeling, etc);<br>(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note1">contexēbantur<span>contexo contexere, contexui, contextus V (3rd) TRANS  <br>:weave/entwine/braid/twist together; compose/connect/link/combine; make/join/form<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">longuriīs<span>longurius longuri(i) N (2nd) M  <br>:long pole;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">crātibusque<span>cratis cratis N (3rd) F  <br>:wickerwork; bundle of brush, fascine; framework, network, lattice; bush-harrow;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">cōnsternēbantur;<span>consterno consternere, constravi, constratus V (3rd) TRANS  <br>:strew/cover/<strong>spread</strong> (rugs); cover/lay/pave/line; bring down, lay low; calm (sea);<br>(３人称 複数  未完了 受動態 直説法 )<br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">nihilō<span><br><br></span></a>
+<a class="note1">sētius<span>副詞　;= less, worse<br><br><br></span></a>
+<a class="note1">sublicae<span>sublica sublicae N (1st) F  <br>:wooden stake or pile; (normally used as support for bridge/heavy structure);<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">īnferiōrem<span><br><br></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note0">flūminis<span><br><br></span></a>
+<a class="note1">oblīque<span>obliquus obliqua, obliquum 形容詞 ｍ単　属性　obliquiのiをeにして副詞化<br><br><br></span></a>
+<a class="note1">agēbantur,<span>ago agere, egi, actus V (3rd)  <br>:drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); deliver (speech);<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note1">ariete<span>aries arietis N (3rd) M  <br>:ram (sheep); battering ram; the Ram (zodiac); large unidentified marine animal;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">subiectae<span>subicio subicere, subjeci, subjectus V (3rd) TRANS  <br>:throw under, place under; make subject; expose;<br>(完了 分詞 受動態 f 複数  主格), <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">omnī<span></span></a>
+<a class="note0">opere<span></span></a>
+<a class="note1">coniūnctae<span>conjungo conjungere, conjunxi, conjunctus V (3rd) TRANS  <br>:connect, join/yoke together; marry; connect/compound (words) (w/conjunctions);<br>(完了 分詞 受動態 f 複数  主格)<br></span></a>
+<a class="note0">vim<span></span></a>
+<a class="note0">flūminis<span><br><br></span></a>
+<a class="note1">exciperent,<span>excipio excipere, excepi, exceptus V (3rd)  <br>:take out; remove; follow; <strong>receive</strong>; <strong>ward off</strong>, relieve;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">aliae<span>alius f複　主格　;= the other, other, another<br><br></span></a>
+<a class="note1">item<span>副詞　;= likewise<br><br></span></a>
+<a class="note1">suprā<span>副詞　前置詞（対格）;= on top, above, beyond, over, more<br><br><br></span></a>
+<a class="note0">pontem<span></span></a>
+<a class="note1">mediocrī<span>mediocris mediocris mediocre 形容詞　単　奪格　;= medium, average, middle<br><br><br></span></a>
+<a class="note1">spatiō,<span>単　奪格　N<br><br><br></span></a>
+<a class="note0">ut,<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">arborum<span>arbor arboris N (3rd) F  <br>:tree; tree trunk; mast; oar; ship; gallows; spearshaft; beam; squid?;<br>(c 複数  属格)<br></span></a>
+<a class="note1">truncī<span>truncus trunci N (2nd) M  <br>:trunk (of a tree);<br>(c 複数  主格)<br></span></a>
+<a class="note0">sīve<span><br><br></span></a>
+<a class="note1">nāvēs<span>F 複　主格　;= ship<br><br><br></span></a>
+<a class="note1">dēiciendī<span>deicio deicere, dejeci, dejectus TRANS 未来分詞　受動ｍ　単　属格　;= throw, pour, jump, overthow,<strong>destroy</strong>, kill, strike down<br><br><br><br></span></a>
+<a class="note1">operis<span>opus N 単　属格　;= work<br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">essent<span>3複　未完了　接続法<br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">barbarīs<span><br><br></span></a>
+<a class="note1">missae,<span>mitto 完了分詞　受動　ｆ複　主格　;= send<br><br></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note1">dēfēnsōribus<span>defensor defensoris N (3rd) M  <br>:defender/protector; supporter/champion/apologist; defendant; defense advocate;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">eārum<span><br><br></span></a>
+<a class="note0">rērum<span><br><br></span></a>
+<a class="note0">vīs<span></span></a>
+<a class="note1">minuerētur<span>minuo minuere, minui, minutus V (3rd)  <br>:lessen, reduce, diminish, impair, abate;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note1">neu<span>接続詞　;= or not, and not<br></span></a>
+<a class="note0">pontī<span><br><br></span></a>
+<a class="note1">nocērent.<span>noceo nocere, nocui, nocitus V (2nd)  <br>:harm, hurt; injure (with DAT);<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>haec contexebantur derecta materia iniecta</strong> : 「これらはderecta materia inienctaによって撚り合わされていた」haecは２つの２本組の間に通したbipedales trabesで、その横棒が水平に置かれた材木に（これは橋の長さ方向に置かれた木）と撚り合わされていた。</p>
+<p><strong>niholo setius = nevertheless</strong> (慣用句）</p>
+<p><strong>et sublicae agebantur oblique ad inferiorem partem fluminis</strong> 「そして橋桁が斜めに河の下流の方で打ち込まれていた」</p>
+<p>quae subiectae pro ariete et coniunctae cum omni opere: <strong>quaeは関係代名詞でexciperentの主語</strong>、長い修飾句が付いている。「支えとして下の方に配置され、全てのものと結合されているそれは」[それ]は斜めに打ち込まれたsublicaeの事。</p>
+<p>et aliae item (sublicae agebantur)が省略で、「逆側にも同様に打ち込まれた」</p>
+<p>supra pontem mediocri spatio : mediocri spatioは「差異の度合の奪格」　「橋に向こう側の適当な距離のところに」</p>
+<p>ut~ : 目的を表す節。</p>
+<p>si naves essent missae a barbaris deiciendi operis causa 「もし船が野蛮人から破壊の目的で送られたら」deiciendi operis causaは動形容詞文で、deiciendi cauum（動名詞＋目的語）から派生。しばしば目的を表す。（NewLatin339.6)</p>
+<p>earum rerum vis minueretur his defensoribus : 「それらのもの（船）のちからはこれらの防御によって弱められる」この反対側のsublicaeは船などが橋に近づきにくくしている柵のようなものと考えられる。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらの２フィートの太さの木材は水平に置かれた木材によって撚り合わされるように結合され、上には棒と網代のようなものが敷かれた。更に加えて、橋桁材が河の下流側に斜めに打ち込まれ、支えとして下の方に配置され全てのものと結び付けられ河の力を受け止めた。反対側にも同様に橋桁材が、橋の向こう側に適当な距離で置かれ、もし敵が丸太や船を破壊目的で送り出しても、これらの防御材によりその力が弱められ、橋が傷つくことがないようにされた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='remote latinreader' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function (event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+            if($("#saveoption").length){
+                $("#saveoption").hide();
+                $("#downloadsave").hide();
+            }
+            insertButtons2();
+            $("#outer").css("width","96%");
+        }
+        function insertButtons2(){
+            if(!$(".lbtn1").length){
+                $(".spacer").each(function(index, elem) {
+                    var target = $(elem);
+                    var tx1 = target.html();
+                    var color = "style='color:#5f9ea0;'";
+                    if (target.next().next().attr("class") != "spnote")
+                        color = "style='color:black;'";
+                    target.html(tx1 + "<button class='lbtn2'>Translation</button><button class='lbtn1'>Notes</button>");
+                });
+            }
+            $(".lbtn1").on("click", function() {
+                var target = $(this).parent().next().next();
+                if (target.attr("class") != "spnote") {
+                    target = target.next();
+                    if (target.attr("class") != "spnote") // 編集中の場合
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+            $(".lbtn2").on("click", function() {
+                var target = $(this).parent().next().next().next();
+                if (target.attr("class") != "translation") {
+                    target = target.next();
+                    if (target.attr("class") != "translation")
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+        }
+
+        function btoggle(obj, btn) {
+            obj.toggle(function() {
+                if ($(this).is(":visible"))
+                    btn.css("color", "black");
+                else
+                    btn.css("color", "#5f9ea0");
+            });
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 2.8rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+
+        /* 追加のボタン*/
+        .lbtn1,
+        .lbtn2,
+        .lbtn3,
+        .lbtn4 {
+            float: right;
+            margin-top: 2px;
+            margin-right: 6px;
+            height: 16px;
+            font-size: 10px;
+            padding: 1px;
+            font-weight: bold;
+            /* vertical-align: bottom; */
+            border: none;
+        }
+
+
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 2.8rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+
+        }
+
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+
+        a.note1:hover span {
+            display: block;
+        }
+
+        .latin span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 3.5rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        .latin span::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.8rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.5rem;
+            left: 2.0rem;
+        }
+    </style>
+</head>
+
+
+<body id="bodyportion">
+        <div id="outer">
+    
+		<a name="begin"></a>
+<div id="header">
+<h1> Liber I: Section 32 </h1>
+
+<div class="boxright">
+<input id="saveoption" class="rbtn1" type="button" value="保存する" style="font-size: 12px; font-family: meiryo; ">
+<input id="downloadsave" class="rbtn1" type="button" value="ダウンロード" style="font-size: 12px; font-family: meiryo; display: none;">
+</div></div>
+
+
+
+
+
+
+<div class="spacer">Line0<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+</a><a class="note0">[32]<span></span></a>
+<a class="note1">Potest<span>possum posse, potui, - V  <br>:be able, can;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">accidere<span></span></a>
+<a class="note0">promissum<span></span></a>
+<a class="note1">aliquod<span>aliquod undeclined ADJ <br>:some, several; a few; not many; a number (of); more than one;<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">conventum,<span>conventus conventus N (4th) M  <br>:<strong>agreement,</strong> covenant; coming together; conjunction (astrology); Roman district;<br>(C 単数 対格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note1">effici<span>efficio efficere, effeci, effectus V (3rd)  <br>:bring about; effect, execute, cause; accomplish; make, produce; prove;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note1">inutile<span>inutilis inutilis, inutile ADJ  <br>:useless, unprofitable, inexpedient, disadvantageous; harmful, helpless;<br>(N 単数 主格),<br></span></a>
+<a class="note0">vel<span></span></a>
+<a class="note0">ei,<span></span></a>
+<a class="note0">cui<span></span></a>
+<a class="note1">promissum<span>promitto promittere, promisi, promissus V (3rd)  <br>:promise;<br>(完了 分詞 受動態 N 単数 主格), <br></span></a>
+<a class="note0">sit,<span></span></a>
+<a class="note0">vel<span></span></a>
+<a class="note0">ei,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">promiserit.<span>promitto promittere, promisi, promissus V (3rd)  <br>:promise;<br>(3 単数 未来完了 能動態 直接法 ), (3 単数 完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+
+    <div class="spnote" contenteditable="false" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p><strong>promissum aliquod et conventum accidere potest</strong>. : promissum accidereが主語。「約束や合意で（次のようなものが）起きることがあり得る。」次のこととはut以下で説明される。こういうutの使われ方は、ut= eo modo quoとCharlton Lewisにあるように、恰も関係代名詞,quodの代わりのような使われ方である。BG1.22.3にもLabienus, ut era ~ とある。<br></p><p>（NewLatin 282.1.(f)) 先行する名詞と同格に使われる目的の節</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>実際のところ、約束や合意で次のようなものが起こりうる。それはその効果が約束された側にとって、あるいは約束した側にとって不利に働くような場合である。<br></p>
+</div>
+</div>
+<div class="spacer">Line1<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note0">si,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">fabulis<span>fabula fabulae N (1st) F  <br>:story, tale, fable; play, drama;<br>&nbsp;(C 複数 奪格)<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">Neptunus,<span>Neptunus Neptuni N (2nd) M  <br>:Neptune; sea;<br>(X 単数 主格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">Theseo<span>Theseus　Phaedraの夫&nbsp; 多分与格<br><br></span></a>
+<a class="note1">promiserat,<span>promitto promittere, promisi, promissus V (3rd)  <br>:promise;<br>(3 単数 過去完了 能動態 直接法 )<br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">fecisset,<span></span></a>
+<a class="note0">Theseus<span></span></a>
+<a class="note0">Hippolyto<span></span></a>
+<a class="note0">filio<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">esset<span></span></a>
+<a class="note1">orbatus.<span>orbo orbare, orbavi, orbatus V (1st)  <br>:bereave (of parents, children, etc), deprive (of);<br>(完了 分詞 受動態 M 単数 主格)<br></span></a>
+</p>
+</div>
+
+    <div class="spnote" contenteditable="false" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>ut est in fabulis : 話の中にあるように、実際はギリシャ神話。Theseusの妻、Phaedraは義理の息子、Hippolyusを誘惑して拒絶される。それを恨んだPhaedraはTheseusを焚き付け事故でHippolytusが殺されるよう仕向ける。</p>
+<p>Theseus non esset orbatus Hippolyto filio. : ちょっと奇異に感じるが逐語的には「Theseusは息子Hippolytusから奪われなかった」filio奪格なのは？-&gt; Hippolytoと同格<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>例えば、もし、神話にあるように、NeptunusがTheseusとの約束を守らなかったら、Theseus は息子のHippolytoを奪われることはなかったであろう。<br></p>
+</div>
+</div>
+<div class="spacer">Line2<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ex<span></span></a>
+<a class="note0">tribus<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note1">optatis,<span>optatus optata -um, optatior -or -us, optatissimus -a -um ADJ  <br>:<strong>desired, wished</strong> for, welcome; chosen;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">scribitur,<span>scribo scribere, scripsi, scriptus V (3rd)  <br>:write; compose;<br>(3 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">tertium,<span>tertius <br>序数 3<br>&nbsp;(N 単数 主格),<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">Hippolyti<span></span></a>
+<a class="note1">interitu<span>interitus interitus N (4th) M  <br>:ruin; violent/untimely death, extinction; destruction, dissolution;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">īrātus<span>iratus irata -um, iratior -or -us, iratissimus -a -um ADJ  <br>:angry; enraged; furious; violent (L+S); raging; angered;<br>(M 単数 主格)<br><br></span></a>
+<a class="note1">optavit;<span>opto optare, optavi, optatus V (1st)  <br>:choose, select; wish, wish for, desire;<br>(3 単数 完了 能動態 直接法 )<br></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note1">impetrato<span>impetro impetrare, impetravi, impetratus V (1st)  <br>:obtain/procure (by asking/request/entreaty); succeed/achieve/be granted; obtain;<br>&nbsp;(完了 分詞 受動態 N 単数 奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">maximos<span>maximus maxima, maximum ADJ  最上級<br>:greatest/biggest/largest; longest; oldest; highest, utmost; leading, chief;<br>(M 複数 対格)<br></span></a>
+<a class="note1">luctus<span>luctus luctus N (4th) M  <br>:grief, sorrow, lamentation, mourning; cause of grief;<br>(C 複数 対格)<br></span></a>
+<a class="note1">incidit.<span>incido incidere, incidi, incasus V (3rd)  <br>:happen; fall into, fall in with, meet; fall upon, assail;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false"><p>ut scribitur : 「話に書かれているように」</p>
+<p>hoc era terium, quod ~ ; quo impetrato ~ : quodは関係代名詞で対格、quoは関係代名詞奪格で、<font color="#ff0000">独立奪格を構成している？</font></p>
+<p>注：３つの願いとは　１）Hadesからの無事の帰還　２）Labyrinthからの脱出　３）Hippolytusの死<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>話によると、３つの願いのうち、それは３つ目のもので、Hippolytusの死に関して、怒っていた彼がそれを選択し、そしてそれが実現されることで彼は深い悲しみにくれた。<br></p>
+</div>
+</div>
+<div class="spacer">Line3<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nec<span></span></a>
+<a class="note1">promissa<span>promissum promissi N (2nd) N  <br>:promise;<br>(N 複数 主格)<br></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note1">servanda<span>servo servare, servavi, servatus V (1st)  <br>:watch over; protect, store, keep, guard, preserve, save;<br>&nbsp;(未来 分詞 受動態 N 複数 主格)<br>動形容詞<br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">ea,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">sint<span></span></a>
+<a class="note0">is,<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">promiseris<span></span></a>
+<a class="note1">inutilia,<span>inutilis inutilis, inutile ADJ  <br>:useless, unprofitable, inexpedient, disadvantageous; harmful, helpless;<br>(N 複数 対格)<br></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">plus<span></span></a>
+<a class="note1">tibi<span>tu tui PRON PERS  <br>:you, thee;<br>(C 単数 与格)<br></span></a>
+<a class="note1">ea<span>is ea, id PRON  <br>:he/she/it/they (by GENDER/NUMBER); DEMONST: that, he/she/it, they/them;<br>&nbsp;(N 複数 主格)<br></span></a>
+<a class="note1">noceant,<span>noceo nocere, nocui, nocitus V (2nd)  <br>:harm, hurt; injure (with DAT);<br>(3 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">illi<span></span></a>
+<a class="note1">prosint,<span>prosum prodesse, profui, profuturus V  <br>:be useful, be advantageous, benefit, profit (with DAT);<br>(3 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">cui<span></span></a>
+<a class="note0">promiseris,<span></span></a>
+<a class="note0">contra<span></span></a>
+<a class="note0">officium<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">maius<span>magnus magna -um, major -or -us, maximus -a -um ADJ  比較級<br>:large/great/big/vast/huge; much; powerful; tall/ long/ broad; extensive/ spacious;<br>&nbsp;(N 単数 対格)<br><br></span></a>
+<a class="note1">anteponi<span>antepono anteponere, anteposui, antepositus V (3rd) TRANS  <br>:set before (w/DAT), place/station before, serve (food); prefer, value above;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">minori,<span>parvus parva -um, minor -or -us, minimus -a -um ADJ  比較級<br>:small, little, cheap; unimportant; (SUPER) smallest, least;<br>(X 単数 与格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note1">constitueris,<span>constituo constituere, constitui, constitutus V (3rd)  <br>:|decide/resolve; decree/ordain; <strong>appoint</strong>, post/station (troops); settle (colony);<br>(2 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note1">cuipiam<span>quispiam quaepiam, quidpiam INDEF <br>:(w/-piam) any/somebody, any, some, any/something;<br>(X 単数 与格)<br></span></a>
+<a class="note0">te<span></span></a>
+<a class="note1">advocatum<span>advocatus advocati N (2nd) M  <br>:counselor, advocate, professional pleader; witness, supporter, mediator;<br>(C 単数 対格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note1">praesentem<span>praesens (gen.), praesentis ADJ  <br>:present; at hand; existing; prompt, in person; propitious;<br>(C 単数 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">venturum<span>venio venire, veni, ventus V (4th)  <br>:come;<br>esseとともに未来不定詞<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">interim<span>interim ADV <br>:meanwhile, in the meantime; at the same time; however, nevertheless;<br><br></span></a>
+<a class="note0">graviter<span></span></a>
+<a class="note1">aegrotare<span>aegroto aegrotare, aegrotavi, aegrotatus V (1st) INTRANS  <br>:be sick; be distressed/mentally/morally ill, be afflicted, languish, grieve;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">filius<span>filius fili N (2nd) M  <br>:son;<br>(M 単数 主格)<br></span></a>
+<a class="note1">coeperit,<span>coepi coepisse, -, coeptus V (3rd)  <br>:begin, commence, initiate; (shows only PERFDEF);<br>(3 単数 未来完了 能動態 直接法 ), <br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note0">contra<span></span></a>
+<a class="note0">officium<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">facere,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">dixeris,<span></span></a>
+<a class="note1">magisque<span>magis ADV <br>:to greater extent, more nearly; rather, instead; more; (forms COMP w/DJ);<br><br></span></a>
+<a class="note1">ille,<span>ille illa, illud PRON  <br>:that; those (pl.); also DEMONST; that person/thing; the well known; the former;<br>(M 単数 主格)<br></span></a>
+<a class="note0">cui<span></span></a>
+<a class="note1">promissum<span>promitto promittere, promisi, promissus V (3rd)  <br>:promise;<br>(完了 分詞 受動態 M 単数 対格), <br></span></a>
+<a class="note0">sit,<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">officio<span></span></a>
+<a class="note1">discedat,<span>discedo discedere, discessi, discessus V (3rd)  <br>:go/march off, depart, withdraw; scatter, dissipate; abandon; lay down (arms);<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">se<span></span></a>
+<a class="note1">destitutum<span>destituo destituere, destitui, destitutus V (3rd) TRANS  <br>:|desert/ &nbsp;leave/ <strong>abandon</strong>/ forsake/ leave in lurch; disappoint/ let down; fail/ give up;<br>(完了 分詞 受動態 M 単数 対格),<br></span></a>
+<a class="note1">queratur.<span>queror queri, questus sum V (3rd) DEP  <br>:complain; protest, grumble, gripe; make formal complaint in court of law;<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false"><p>quae sint is =&gt; quae sint<font color="#ff0000"> iis </font>のテキスト多し</p>
+<p><strong>ea promissa nec sunt servanda</strong> : 「そういう約束は守るべきではない」</p>
+<p><strong>quae sint inutilia iis quibus promiseris</strong>. quaeの先行詞はea promissaで、quibusの先行詞はiis(与格）quibusも与格だが、これはpromiserisの間接目的語の与格。「それが彼らに対して、有害であるような、彼らとは、あなたが約束をした相手」</p>
+<p><strong>nec si sa noceant tibi plus quam</strong> ~ : ここのeaは前に出てきたような約束。主格。「もしそれらがあなたに対してより有害であれば」</p>
+<p><strong>quam (ea) prosint illi cui promiseris</strong> : cuiは関係代名詞で先行詞illi 「あなたが約束したその人に対して有益であることよりも」</p>
+<p><strong>maius anteponi minori est (nec) contra officium</strong>. necはsiの前のもの。maiusを対格主語とする不定詞anteponiの不定詞句がestの主語。「大きなものが小さなものより優先されることはOfficiumに反しない」</p>
+<p>ut si ~ : utはここでもfor exampleの意。</p>
+<p><strong>si constitueris cuipiam te esse venturum advocatum in rem</strong>. : te esse venturum advocatumは二重対格の目的語を持つ不定詞句でconstituerisの目的語になっている。「もしあなたが誰かと弁護する者としてそこに行くであろうことを約束していたとして」（逐語訳）</p>
+<p><u>in rem praesentem venireは法律用語で、出廷することの意。</u></p>
+<p>non facere (id) quod dixeris 「あなたが言っていたことを成就しない事」</p>
+<p>ille, cui promissum sit, 「約束されていたその人」</p>
+<p>se (esse) destitutum queratur. 「もし見捨てられたことに不満を唱えたら」<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>だから、それがあなたが約束した相手にとって有害であるような約束は守るべきではない。もしその約束があなたに対して害するほうが、あなたが約束した相手に対して益するよりも大きければ、大きなものを小さなものより優先することはOfficiumに違反することではない。例えば、あなたが誰かを弁護するものとしてそこへ出かける約束をしたとして、他方、息子が重篤な状態になった場合など、約束したことを成就しないことはOfficiumに反しない。しないどころか、その約束をされた人はもし、約束を破られたと不満を漏らそうものならそれがOfficiumから逸脱したことになる。<br></p>
+</div>
+</div>
+<div class="spacer">Line4<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Iam<span>jam ADV <br>:now, already, by/even now; besides;<br><br></span></a>
+<a class="note1">illis<span>ille illa, illud PRON  <br>:that; those (pl.); also DEMONST; that person/thing; the well known; the former;<br>(X 複数 奪格),<br></span></a>
+<a class="note0">promissis<span></span></a>
+<a class="note1">standum<span>sto stare, steti, status V (1st)  <br>:stand, stand still, stand firm; remain, rest;<br>&nbsp;(未来 分詞 受動態 N 単数 主格)<br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">quis<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">videt,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">coactus<span>coactus coacta, coactum ADJ  <br>:coercive;<br>(M 単数 主格)<br></span></a>
+<a class="note0">quis<span></span></a>
+<a class="note1">metu,<span>metus metus N (4th) M  <br>:fear, anxiety; dread, awe; object of awe/dread;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">deceptus<span>deceptus deceptus N (4th) M  <br>:deception;<br>&nbsp;(C 単数 属格),&nbsp;<br></span></a>
+<a class="note1">dolo<span>dolus doli N (2nd) M  <br>:trick, device, deceit, treachery, trickery, cunning, fraud;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">promiserit?<span>promitto promittere, promisi, promissus V (3rd)  <br>:promise;<br>(3 単数 未来完了 能動態 直接法 ), (3 単数 完了 能動態 接続法 )<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">quidem<span>quidem ADV <br>:indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;<br><br></span></a>
+<a class="note1">pleraque<span>plerus plera, plerum ADJ  <br>:(w/que) the majority, most, very great part; about all; very many, a good many;<br>(F 単数 奪格)<br></span></a>
+<a class="note0">iure<span></span></a>
+<a class="note1">praetorio<span>praetorius praetoria, praetorium ADJ  <br>:praetorian;<br>&nbsp;(M 単数 奪格)<br></span></a>
+<a class="note1">liberantur,<span>libero liberare, liberavi, liberatus V (1st)  <br>:free; acquit, absolve; manumit; liberate, release;<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note1">nonnulla<span>nonnullus nonnulla, nonnullum (gen -ius) ADJ  <br>:some, several, a few; one and another; considerable;<br>(F 単数 奪格),<br></span></a>
+<a class="note1">legibus.<span>lex legis N (3rd) F  <br>:law; motion, bill, statute; principle; condition;<br>(X 複数 奪格)<br></span></a>
+</p>
+</div>
+
+    <div class="spnote" style="background-color: rgb(255, 255, 248);" contenteditable="false">
+<div class="innerdiv" spellcheck="false"><p><strong>illis promissis</strong> : <s>奪格だが多分処格で、その約束のところ、というニュアンス</s>。与格。</p><p>動形容詞の叙述用法で自動詞は非人称で使われる。<span style="font-size: 1.8rem;">（NewLatin337.8.(b)) 属格、与格、奪格とともに使用され普通の構文と同じである。この場合、非人称なので直訳的には「それは、それらの約束に対して立たれるべきではない」となり「それらの約束を立てるべきではない」と訳すと目的語のようなニュアンスになる。（例文）numquam proditori credendum est. (裏切り者を信じてはいけない）</span></p>
+<p><strong>quis non videt non esse standum illis promissis</strong>. 「誰が、これらの約束のそばに立つべきではないことを見ないだろうか？」判りにくいが、これは反語的な疑問文であろう。わかるはずである、という意味。そばに立つ、というのは一緒にいるということで、そうでないということは守らなくても良い、拘束力がない、という意味。「<u>誰が、こういう約束には拘束力がないことが分からないのであろうか？」</u></p>
+<p><u></u><b>quae (est) coactus, quae aliquis promiserit metu, deceptus dolo.&nbsp;</b>&nbsp;aliquis<font color="#0000ff">は疑問文の中では往々にしてquisとなる。またはquisは疑問代名詞だけではなく、最も弱い不定代名詞でもある、（NewLatin252) quaeは中性複数対格で、promissisを先行詞とする関係代名詞。<s>coactus metuというのが判りにくいが、metuが分離の奪格で（手段ではなく）形容詞とともに（奪格からの形容詞）という意味で使われることがある。（NewLatin214.1.(d))</s></font></p>
+<p><font color="#0000ff">２つのquaeが関係代名詞でpromissisにかかっている。metu, doloは手段の奪格で「恐怖、欺瞞などにより」</font></p>
+<p><strong>pleraque jure praetorio</strong> : 「多くの法務官の布告から」<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>今や、誰がこれらの誰かが恐怖からの強制により、または誤魔化しの誘惑からの約束ごとが拘束力がないということが理解できないのであろうか？実にこれらのことは多くの法務官の布告から、またいくつかの法に縛られない。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+    </body>
+    <html>
+    

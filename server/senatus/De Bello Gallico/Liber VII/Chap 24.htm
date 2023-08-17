@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 24</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[24]<span></span></a>
+
+<a class="note0">Hīs<span></span></a>
+<a class="note1">tot<span>tot NUM <br>:so many, such a number of; as many, so many; such a great number of;<br><br></span></a>
+<a class="note1">rēbus<span>res rei N (5th) F  <br>:thing; event/affair/business; fact; cause; property;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note1">impedītā<span>impedio impedire, impedivi, impeditus V (4th)  <br>:hinder, impede, hamper, obstruct, prevent from (w/ne, quin, or quominus);<br>(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note1">oppugnātiōne<span>oppugnatio oppugnationis N (3rd) F  <br>:assault, siege, attack; storming;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">mīlitēs,<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">tōtō<span><br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note1">frīgore<span>frigor frigoris N (3rd) M  <br>:cold; chill (esp. of feverish person) (Souter);<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">assiduīs<span>assiduus assidua -um, assiduior -or -us, assiduissimus -a -um ADJ  <br>:constant, regular; unremitting, incessant; ordinary; landowning, first-class;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">imbribus<span>imber imbris N (3rd) M  <br>:rain, shower, storm; shower of liquid/snow/hail/missiles; water (in general);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">tardārentur,<span>tardo tardare, tardavi, tardatus V (1st)  <br>:check, retard; hinder;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">continentī<span><br><br></span></a>
+<a class="note0">labōre<span><br><br></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note1">superāvērunt<span>supero superare, superavi, superatus V (1st)  <br>:overcome, conquer; survive; outdo; surpass, be above, have the upper hand;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">diēbus<span><br><br></span></a>
+<a class="note1">XXV<span>viginti quinque 25<br><br></span></a>
+<a class="note0">aggerem<span></span></a>
+<a class="note1">lātum<span>latus lata -um, latior -or -us, latissimus -a -um ADJ  <br>:wide, broad; spacious, extensive;<br>(m 単数 対格)<br><br></span></a>
+<a class="note0">pedēs<span><br><br></span></a>
+<a class="note1">CCCXXX,<span>trecentos et triginta 330<br><br></span></a>
+<a class="note0">altum<span></span></a>
+<a class="note0">pedēs<span><br><br></span></a>
+<a class="note1">LXXX<span>octaginta 80<br><br></span></a>
+<a class="note1">exstrūxērunt.<span>exstruo exstruere, exstruxi, exstructus V (3rd)  <br>:pile/build up, raise, build, construct;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>impedita oppugnatione : 独立奪格「攻撃が邪魔をされて」</p>
+<p>cum milites tardarentur toto tempore frigore et assiduis imbribus. cum＝ although 「兵士たちは全期間を通して寒さと負続く雨に遅らされたにも拘らず」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これら全部の事によって攻撃は妨げられたが、兵士たちは、全期間を通じて寒さと降り続く雨にも拘らず、絶え間ない労働によってこれらを克服し、25日間で、幅330フィート、高さ80フィートの攻撃土塁を完成した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Cum<span></span></a>
+<a class="note0">is<span></span></a>
+<a class="note0">mūrum<span><br><br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note1">paene<span>paene ADV <br>:nearly, almost; mostly;<br><br></span></a>
+<a class="note0">contingeret,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">opus<span></span></a>
+<a class="note1">cōnsuētūdine<span>consuetudo consuetudinis N (3rd) F  <br>:habit/custom/usage/way; normal/general/customary practice, tradition/convention;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">excubāret<span>excubo excubare, excubui, excubitus V (1st)  <br>:sleep/lie in the open/out of doors; <strong>keep watch</strong>; be attentive;<br>(３人称 単数 未完了 能動態 接続法 )<br><br></span></a>
+<a class="note0">mīlitēsque<span><br><br></span></a>
+<a class="note1">hortārētur,<span>hortor hortari, hortatus sum V (1st) DEP  <br>:encourage; cheer; incite; urge; exhort;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">omnīnō<span><br><br></span></a>
+<a class="note0">tempus<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">opere<span></span></a>
+<a class="note1">intermitterētur,<span>intermitto intermittere, intermisi, intermissus V (3rd)  <br>:interrupt; omit; stop; leave off (temporarily); leave a gap;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">paulō<span><br><br></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note0">tertiam<span></span></a>
+<a class="note0">vigiliam<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">animadversum<span>animadverto animadvertere, animadverti, animadversus V (3rd)  <br>:pay attention to, attend to; <strong>notice</strong>, <strong>observe</strong>; judge, estimate; punish (in+ACC);<br>&nbsp;(完了 分詞 受動態 n 単数 主格), <br></span></a>
+<a class="note1">fūmāre<span>fumo fumare, fumavi, - V (1st)  <br>:smoke, steam, fume, reek;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">aggerem,<span></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">cunīculō<span><br><br></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note1">succenderant,<span>succendo succendere, succendi, succensus V (3rd)  <br>:set on fire;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">eōdemque<span><br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0">tōtō<span><br><br></span></a>
+<a class="note1">mūrō<span>murus muri N (2nd) M  <br>:wall, city wall;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">clāmōre<span>clamor clamoris N (3rd) M  <br>:shout, outcry/protest; loud shouting (approval/joy), applause; clamor/noise/din;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">sublātō<span>tollo tollere, sustuli, sublatus V (3rd) TRANS  <br>:lift, raise; destroy; remove, steal; take/lift up/away;<br>&nbsp;(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note0">duābus<span><br><br></span></a>
+<a class="note0">portīs<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">utrōque<span>utroque ADV <br>:to both places; in both directions; to both sides (in conflict);<br><br></span></a>
+<a class="note1">latere<span>latus lateris N (3rd) N  <br>:side; flank;<br>(n 単数 奪格)<br></span></a>
+<a class="note0">turrium<span></span></a>
+<a class="note1">ēruptiō<span>eruptio eruptionis N (3rd) F  <br>:sortie, rush, sally, sudden rush of troops from a position;<br>(X 単数 主格)<br></span></a>
+<a class="note0">fiēbat,<span><br><br></span></a>
+<a class="note0">aliī<span><br><br></span></a>
+<a class="note1">facēs<span>fax facis N (3rd) F  <br>:torch, firebrand, fire; flame of love; torment;<br>(c 複数  対格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">āridam<span>aridus arida -um, aridior -or -us, aridissimus -a -um ADJ  <br>:dry, arid, parched; water/rain-less; used dry, dried; thirsty; poor; shriveled;<br>(f 単数 対格)<br></span></a>
+<a class="note1">māteriem<span>materies materiei N (5th) F  <br>:wood (building material), lumber, timber; woody branch/growth/part of tree;<br>(c 単数 対格)<br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">mūrō<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">aggerem<span></span></a>
+<a class="note1">ēminus<span>eminus ADV <br>:at/<strong>from a distance</strong>/long range/afar; beyond sword reach, a spear's throw off;<br><br><br></span></a>
+<a class="note1">iaciēbant,<span>jacio jacere, jeci, jactus V (3rd)  <br>:throw, hurl, cast; throw away; utter;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note1">picem<span>pix picis N (3rd) F  <br>:pitch, tar;<br>(c 単数 対格)<br></span></a>
+<a class="note0">reliquāsque<span><br><br></span></a>
+<a class="note0">rēs,<span><br><br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">īgnis<span>ignis ignis N (3rd) M  <br>:fire, brightness; passion, glow of passion;<br>(X 単数 主格)<br></span></a>
+<a class="note1">excitārī<span>excito excitare, excitavi, excitatus V (1st)  <br>:wake up, stir up; cause; raise, erect; incite; excite, arouse;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">potest,<span></span></a>
+<a class="note1">fundēbant,<span>fundo fundere, fudi, fusus V (3rd)  <br>:pour, cast (metals); scatter, shed, rout;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">prīmum<span><br><br></span></a>
+<a class="note1">currerētur<span>curro currere, cucurri, cursus V (3rd) INTRANS  <br>:run/trot/gallop, hurry/hasten/speed, move/travel/proceed/flow swiftly/quickly;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">cui<span><br><br></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note1">ferrētur<span>fero ferre, tuli, latus V  <br>:bring, bear; tell/speak of; consider; carry off, win, receive, produce; get;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note1">auxilium<span>auxilium auxili(i) N (2nd) N  <br>:help, assistance; remedy/antidote; supporting resource/force; auxiliaries (pl.);<br>&nbsp;(X 単数 対格)<br></span></a>
+<a class="note1">vix<span>vix ADV <br>:hardly, scarcely, barely, only just; with difficulty, not easily; reluctantly;<br><br></span></a>
+<a class="note1">ratiō<span>ratio rationis N (3rd) F  <br>:account, reckoning, invoice; <strong>plan</strong>; prudence; <strong>method</strong>; reasoning; rule; regard;<br>(X 単数 主格)<br></span></a>
+<a class="note1">inīrī<span>ineo inire, inivi(ii), initus V  <br>:enter; undertake; begin; go in; enter upon;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">posset.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Caesar excubaret ad opus consuetudine. consuetudineは手段、原因の奪格で、「いつもの習慣により」</p>
+<p>aggerem fumare est animadversum. 土塁が煙を上げることが観察された、逐語訳。</p>
+<p>clamore sublato : 独立奪格「叫び声があがり」</p>
+<p>eruptio fiebat ab utroque latere turrium. 「塔の両側から突撃が始まった」</p>
+<p>alli eminus iaciebant faces ~, (alli) fundebant picem. 「ある者は遠くから松明をなげ、ある者は松脂などを熱して溶かしたものを掛けた」</p>
+<p>ut ratio iniri vix quo primum curreretur aut cui rei ferretur auxilium. 結果のut節。ratioは行動案ぐらいの意。「辛うじて、最初に何処に行き、どういうことに対し援助を成すかなど行動案が始められた。」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>それが敵の城壁に触れようとする時、そしてCaesarがいつもの様に作業をよく観察し、兵士たちを、その全期間ろくな休憩もなしに作業していたので、励ましていた時、第3警時の少し前、土塁から煙が上がっているのが観察された。それはトンネルを掘ってきた敵が火を放ったもので、同時に城壁全体から叫び声があがり、2つの門から塔の両側に突撃が敢行された。ある者は遠くの壁から松明と乾燥した木くずなどを投げ、ある者は松脂を溶かしたものやその他のもの、それは火を起こし易いものであるが、を掛けてきた。そこでは辛うじて、最初に何処に行き防衛するか、またどういうことに対し援軍を送るかなど行動案が始められた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Tamen,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">īnstitūtō<span>institutum instituti N (2nd) N  <br>:<strong>custom</strong>, principle; decree; intention; arrangement; institution; habit, plan;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note0">semper<span></span></a>
+<a class="note0">duae<span></span></a>
+<a class="note0">legiōnēs<span><br><br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">excubābant<span>excubo excubare, excubui, excubitus V (1st)  <br>:sleep/lie in the open/out of doors; keep watch; be attentive;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note1">plūrēsque<span>plus (gen.), pluris ADJ  <br>:more; several. many; (COMP of multus)<br>(c 複数  主格)<br></span></a>
+<a class="note0">partītīs<span><br><br></span></a>
+<a class="note0">temporibus<span></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">opere,<span></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note0">factum<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">aliī<span>alii CONJ <br>:some ... others (alii ... alii);<br><br></span></a>
+<a class="note1">ēruptiōnibus<span>eruptio eruptionis N (3rd) F  <br>:sortie, rush, sally, sudden rush of troops from a position;<br>&nbsp;(X 複数  与格<br></span></a>
+<a class="note0">resisterent,<span></span></a>
+<a class="note0">aliī<span><br><br></span></a>
+<a class="note0">turrēs<span><br><br></span></a>
+<a class="note0">redūcerent<span><br><br></span></a>
+<a class="note0">aggeremque<span></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note1">scinderent,<span>scindo scindere, scicidi, scisus V (3rd) TRANS  <br>:tear, rend, cut to pieces; tear (clothes/hair) in rage/grief/despair;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">omnis<span></span></a>
+<a class="note0">vērō<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">multitūdō<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">restinguendum<span>restinguo restinguere, restinxi, restinctus V (3rd)  <br>:extinguish, quench, put out; exterminate, destroy; assuage, allay, mitigate;<br>(未来 分詞 受動態 m 単数 対格), <br>動名詞<br></span></a>
+<a class="note1">concurreret.<span>concurro concurrere, concucurri, concursus V (3rd) INTRANS  <br>:run/assemble/knock/snap together; agree, fit, concur; coincide; make same claim;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>partitis temporibus : 分割した期間→　決められたシフトで順番に<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>しかしながらCaesarにより設定されていた様に野営地の前ではいつものように2軍団が警備にあたっており、また交代制の作業に多くの兵士が働いており、直ぐに対応が成された。ある者は突撃に抵抗し、ある者は塔を引き下げ、土塁の(火の付いた部分を）切り離した。実に全部隊が野営地からでて消火にあたった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

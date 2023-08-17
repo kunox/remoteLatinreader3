@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 18</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[18]<span></span></a>
+
+<a class="note0">Cum<span></span></a>
+<a class="note1">iam<span>jam ADV <br>:now, already, by/even now; besides;<br><br></span></a>
+<a class="note1">mūrō<span>murus muri N (2nd) M  <br>:wall, city wall;<br>(X 単数 与格)<br></span></a>
+<a class="note1">turrēs<span>turris turris N (3rd) F  <br>:tower; high building, palace, citadel; dove tower, dove cot;<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note1">appropinquāssent,<span>appropinquo appropinquare, appropinquavi, appropinquatus V (1st) INTRANS  <br>:approach (w/DAT or ad+ACC); come near to, draw near/nigh (space/time); be close;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">captīvīs<span><br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">cōgnōvit<span><br><br></span></a>
+<a class="note0">Vercingetorīgem<span><br><br></span></a>
+<a class="note1">cōnsūmptō<span>consumo consumere, consumpsi, consumptus V (3rd) TRANS  <br>:|devour/swallow up/consume/eat/use up/exhaust/expend; spend; squander/waste;<br>&nbsp;(完了 分詞 受動態&nbsp;n 単数 奪格)<br><br></span></a>
+<a class="note1">pābulō<span>pabulum pabuli N (2nd) N  <br>:fodder, forage, food for cattle; food/sustenance; fuel (for fire);<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">mōvisse<span>moveo movere, movi, motus V (2nd)  <br>:move, stir, agitate, affect, provoke, disturb;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note1">propius<span>propior propior, propius ADJ  比較級<br>:nearer, closer; more recent;<br>(n 単数 対格)<br></span></a>
+<a class="note0">Avaricum<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ipsum<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">equitātū<span><br><br></span></a>
+<a class="note1">expedītīsque,<span>expeditus expediti N (2nd) M  <br>:light armed soldier;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">equitēs<span><br><br></span></a>
+<a class="note1">proeliārī<span>proelior proeliari, proeliatus sum V (1st) DEP  <br>:fight;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">cōnsuēssent,<span>consuesco consuescere, consuevi, consuetus V (3rd)  <br>:accustom oneself; become/be accustomed/used; inure, habituate; familiarize;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">īnsidiarum<span>insidia insidiae N (1st) F  <br>:ambush/ambuscade (pl.); plot; treachery, treacherous attack/device; trap/snare;<br>(c 複数  属格)<br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">profectum,<span>proficiscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>(完了 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note1">quō<span>quo ADV <br>:where, to what place; to what purpose; for which reason, therefore;<br><br></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note1">posterō<span>posterus postera -um, posterior -or -us, postremus -a -um ADJ  <br>:coming after, following, next; COMP next in order, latter; SUPER last/hindmost;<br>&nbsp;(m 単数 奪格)<br></span></a>
+<a class="note1">diē<span>dies diei N (5th) C  <br>:day; daylight; (sunlit hours); (24 hours from midnight); open sky; weather;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">pābulātum<span>目的分詞<br>forage<br><br><br></span></a>
+<a class="note0">ventūrōs<span><br><br></span></a>
+<a class="note0">arbitrārētur.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Caesar cognivit Vercingetorigem movisse propius Avaricum. が骨子。</p>
+<p>expeditusは軽装兵の事を言うが、ここではゲルマン騎兵の様に、騎兵と共に伴走する兵士の事と思われる。</p>
+<p>pabulatum : pabulorの目的分詞、対格。</p>
+</div></div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>攻撃櫓が壁に向かって接近した時に、Caesarは捕虜から、Vercingetorixが、飼料を使い切って、野営地をAvaricumの近くに移動させた事を知った。彼自身は騎兵と軽装兵、彼らは騎兵の中で戦う事に慣れているのであるが、と共に、攻撃の目的で、ある位置まで出撃した。その位置は、我軍が翌日、到着するであろうと、彼が思っている場所であった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quibus<span></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">cognitīs<span><br><br></span></a>
+<a class="note0">mediā<span><br><br></span></a>
+<a class="note0">nocte<span></span></a>
+<a class="note1">silentiō<span>silentium silenti(i) N (2nd) N  <br>:silence;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">profectus<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">māne<span>mane ADV <br>:in the morning; early in the morning;<br><br></span></a>
+<a class="note1">pervēnit.<span>pervenio pervenire, perveni, perventus V (4th)  <br>:come to; reach; arrive;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>quibus rebus cognitis, nocte silentio : 独立奪格<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらの事を知り、真夜中に静かに敵の野営地に向かって出発し、翌朝、到着した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Illī<span>ille illa, illud PRON  <br>:that; <strong>those</strong> (pl.); also DEMONST; that person/thing; the well known; the former;<br>&nbsp;(m 複数  主格)<br></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">explōrātōrēs<span><br><br></span></a>
+<a class="note0">adventū<span><br><br></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note0">cognitō<span><br><br></span></a>
+<a class="note1">carrōs<span>carrus carri N (2nd) M  <br>:wagon; (Gallic type);<br>(c 複数  対格)<br></span></a>
+<a class="note0">impedīmentaque<span><br><br></span></a>
+<a class="note0">sua<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">artiōrēs<span>artus arta -um, artior -or -us, artissimus -a -um ADJ  比較級<br>:close, firm, tight; thrifty; dense, narrow; strict; scarce, critical; brief;<br>(c 複数  対格)<br></span></a>
+<a class="note0">silvās<span><br><br></span></a>
+<a class="note1">abdidērunt,<span>abdo abdere, abdidi, abditus V (3rd) TRANS  <br>:remove, put away, set aside; depart, go away; hide, keep secret, conceal;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">locō<span>locus loci N (2nd) M  <br>:place, territory/locality/neighborhood/region; position/point; aim point; site;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">ēdītō<span>editus edita -um, editior -or -us, editissimus -a -um ADJ  <br>:high, elevated; rising;<br>&nbsp;(m 単数 奪格<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">apertō<span>apertus aperta -um, apertior -or -us, apertissimus -a -um ADJ  <br>:open/public/free; uncovered/exposed/opened; frank/clear/manifest; cloudless;<br>&nbsp;(m 単数 奪格)<br></span></a>
+<a class="note1">īnstrūxērunt.<span>instruo instruere, instruxi, instructus V (3rd)  <br>:construct, build; prepare, draw up; fit out; instruct, teach;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Illi abdiederunt sua carros impedimentaque in silvas.<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>彼らは、偵察隊により素早くCaesarの到着を知り、自分たちの場所、装備を深い森に隠し、全軍に高く開けた場所に展開するよう命じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quā<span><br><br></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note0">nūntiātā<span><br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note1">sarcinās<span>sarcina sarcinae N (1st) F  <br>:pack, bundle, soldier's kit; baggage (pl.), belongings, chattels; load, burden;<br>(c 複数  対格)<br></span></a>
+<a class="note1">cōnferrī,<span>confero conferre, contuli, collatus V TRANS  <br>:bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">arma<span></span></a>
+<a class="note1">expedīrī<span>expedio expedire, expedivi, expeditus V (4th)  <br>:disengage, loose, set free; be expedient; procure, obtain, make ready;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">iussit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらが伝えられると、Caesarは素早く、装備を付け、武器を装備するよう命じた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

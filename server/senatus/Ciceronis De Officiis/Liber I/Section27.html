@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 27 </h1>
+</div>
+<div class="spacer">Line0</div>
+</a><div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[27]<span></span></a>
+<a class="note0">Sed<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omni<span></span></a>
+<a class="note1">iniustitia<span>injustitia injustitiae N (1st) F  <br>:injustice; severity;<br>(C 単数 奪格)<br></span></a>
+<a class="note1">permultum<span>permultus permulta, permultum ADJ  <br>:very much; very many (pl.);<br>(N 単数 主格)<br><br></span></a>
+<a class="note1">interest,<span>intersum interesse, interfui, interfuturus V  <br>:be/lie between, be in the midst; be present; take part in; be different;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">utrum<span>utrum ADV <br>:whether; (introducing an indirect question);<br><br></span></a>
+<a class="note1">perturbatione<span>perturbatio perturbationis N (3rd) F  <br>:disturbance; commotion;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note0">aliqua<span></span></a>
+<a class="note1">animi,<span>animus animi N (2nd) M  <br>:mind; intellect; soul; feelings; heart; spirit, courage, character, pride; air;<br>(X 単数 属格<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">plerumque<span>plerumque ADV <br>:generally, commonly; mostly, for the most part; often, frequently;<br><br></span></a>
+<a class="note0">brevis<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">tempus,<span></span></a>
+<a class="note1">an<span>an CONJ <br>:|whether; (utrum ... an = whether ... or); or; either;<br><br></span></a>
+<a class="note1">consulto<span>consulto ADV <br>:purposely, deliberately, on purpose, by design; of set purpose;<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cogitata<span>cogitatus cogitata, cogitatum ADJ  <br>:deliberate;<br>&nbsp;(F 単数 奪格),<br><br></span></a>
+<a class="note0">fiat<span></span></a>
+<a class="note1">iniuria.<span>injuria injuriae N (1st) F  <br>:injury; injustice, wrong, offense; insult, abuse; sexual assault;<br>(C 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>in omnia iniustitia : 「すべての不正義の中には」</p>
+<p><strong>permultum interest</strong> : permultumは形容詞名詞化で主語「非常にたくさんの種類がある」</p>
+<p><strong>utrum iniuria fiat animi perturbatione, an&nbsp; congitata</strong>.&nbsp; 「不正義は精神の動揺によってまたは熟慮によって行われる。」</p>
+<p>ad tempus : 一時的</p>
+<p>consulto et cogitata : 副詞と形容詞の組み合わせ、後代の作家に多い由。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>不正義には大変な種類がありそれは、一般には短く一時的な精神の騒乱によるものから、慎重に狙いすました熟慮によるものまでいろいろである。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Leviora<span>levis leve, levior -or -us, levissimus -a -um ADJ  比較級<br>:light, thin, trivial, trifling, slight; gentle; fickle, capricious; nimble;<br>(N 複数 主格)<br></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">ea,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">repentino<span>repentinus repentina, repentinum ADJ  <br>:sudden, hasty; unexpected;<br>(N 単数 奪格)<br></span></a>
+<a class="note0">aliquo<span><br><br></span></a>
+<a class="note1">motu<span>motus motus N (4th) M  <br>:movement, motion; riot, commotion, disturbance; gesture; emotion;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">accidunt,<span></span></a>
+<a class="note1">quam<span>quam ADV <br>:how, how much; as, than;<br><br></span></a>
+<a class="note0">ea,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">meditata<span>meditor meditari, meditatus sum V (1st) DEP  <br>:consider/contemplate/ponder; meditate, think about; reflect on; devise/plan;<br>(完了 分詞 受動態 F 単数 奪格), <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">praeparata<span>praeparo praeparare, praeparavi, praeparatus V (1st)  <br>:prepare;<br>&nbsp;(完了 分詞 受動態 F 単数 奪格)<br></span></a>
+<a class="note1">inferuntur.<span>infero inferre, intuli, illatus V TRANS  <br>:bring/carry in, import; advance, bring/march/step/move foward; impel, urge;<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>ea sunt leviora quam ea ~. 最初のeaはあとのeaより軽い。eaは各々関係詞節で説明される。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>突然の興奮により生じたものは、深慮と準備によって引き起こされたものより、軽微である。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ac<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note1">inferenda<span>infero inferre, intuli, illatus V TRANS  <br>:|inflict/ cause/　inflict/ impose/ inspire (w/DAT);<br>(未来 分詞 受動態 F 単数 主格)<br><br></span></a>
+<a class="note1">quidem<span>quidem ADV <br>:indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;<br><br></span></a>
+<a class="note0">iniuria<span></span></a>
+<a class="note0">satis<span></span></a>
+<a class="note0">dictum<span></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>iniuria dictum est satis.<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>何れにせよ、引き起こされるべき不正義については十分に述べられた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

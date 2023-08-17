@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='remote latinreader' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function (event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+            if($("#saveoption").length){
+                $("#saveoption").hide();
+                $("#downloadsave").hide();
+            }
+            insertButtons2();
+            $("#outer").css("width","96%");
+        }
+        function insertButtons2(){
+            if(!$(".lbtn1").length){
+                $(".spacer").each(function(index, elem) {
+                    var target = $(elem);
+                    var tx1 = target.html();
+                    var color = "style='color:#5f9ea0;'";
+                    if (target.next().next().attr("class") != "spnote")
+                        color = "style='color:black;'";
+                    target.html(tx1 + "<button class='lbtn2'>Translation</button><button class='lbtn1'>Notes</button>");
+                });
+            }
+            $(".lbtn1").on("click", function() {
+                var target = $(this).parent().next().next();
+                if (target.attr("class") != "spnote") {
+                    target = target.next();
+                    if (target.attr("class") != "spnote") // 編集中の場合
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+            $(".lbtn2").on("click", function() {
+                var target = $(this).parent().next().next().next();
+                if (target.attr("class") != "translation") {
+                    target = target.next();
+                    if (target.attr("class") != "translation")
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+        }
+
+        function btoggle(obj, btn) {
+            obj.toggle(function() {
+                if ($(this).is(":visible"))
+                    btn.css("color", "black");
+                else
+                    btn.css("color", "#5f9ea0");
+            });
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 2.8rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+
+        /* 追加のボタン*/
+        .lbtn1,
+        .lbtn2,
+        .lbtn3,
+        .lbtn4 {
+            float: right;
+            margin-top: 2px;
+            margin-right: 6px;
+            height: 16px;
+            font-size: 10px;
+            padding: 1px;
+            font-weight: bold;
+            /* vertical-align: bottom; */
+            border: none;
+        }
+
+
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 2.8rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+
+        }
+
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+
+        a.note1:hover span {
+            display: block;
+        }
+
+        .latin span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 3.5rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        .latin span::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.8rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.5rem;
+            left: 2.0rem;
+        }
+    </style>
+</head>
+
+
+<body id="bodyportion">
+        <div id="outer">
+    
+		<a name="begin"></a>
+<div id="header">
+<h1> Liber I: Section 9 </h1>
+
+<div class="boxright">
+<input id="saveoption" class="rbtn1" type="button" value="保存する" style="font-size: 12px; font-family: meiryo; ">
+<input id="downloadsave" class="rbtn1" type="button" value="ダウンロード" style="font-size: 12px; font-family: meiryo; display: none;">
+</div></div>
+
+
+<div class="spacer">Line0<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+</a><a class="note0">[9]<span></span></a>
+<a class="note1">Triplex<span>triplex (gen.), triplicis ADJ  <br>:threefold, triple; three;<br>(X 単数 主格)<br></span></a>
+<a class="note1">igitur<span>igitur CONJ <br>:therefore (postpositive), so/then; consequently; accordingly; well/in that case;<br><br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">Panaetio<span></span></a>
+<a class="note0">vidētur,<span><br><br></span></a>
+<a class="note1">consilii<span>consilium consili(i) N (2nd) N  <br>:|decision/resolution; intention/ purpose/ policy/ plan/ action; diplomacy/strategy;<br>(X 単数 属格)<br></span></a>
+<a class="note1">capiendi<span>capio capere, cepi, captus V (3rd) TRANS  <br>:take hold, seize; grasp; take bribe; arrest/capture; put on; occupy; captivate;<br>&nbsp;(未来 分詞 受動態 N 単数 属格)<br></span></a>
+<a class="note1">deliberatio.<span>deliberatio deliberationis N (3rd) F  <br>:deliberation/consultation (w/others), <strong>consideration</strong>; deliberative style speech;<br>(X 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>deliberatio est triplex. : 考慮は3重である。（逐語訳）</p>
+<p>consilii cappiendi : consiliiは処格であるが、ここでは属格(consili)と解釈。取る計画、取る戦略の、でdeliberationを修飾。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>したがって、Panaetiusの言うように、取るべき計画の考えるべき点は3つある。<br></p>
+</div>
+</div>
+<div class="spacer">Line1<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">honestumne<span>honestus honesta -um, honestior -or -us, honestissimus -a -um ADJ  <br>:distinguished, reputable, respected, honorable, upright, honest; worthy;<br>(N 単数 主格),<br></span></a>
+<a class="note1">factu<span>facio 奪格、目的分詞<br><br></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note0">an<span></span></a>
+<a class="note1">turpe<span>turpe turpis N (3rd) N  <br>:disgrace; shame, reproach; base/shameful thing;<br>(X 単数 主格)<br></span></a>
+<a class="note1">dubitant<span>dubito dubitare, dubitavi, dubitatus V (1st)  <br>:doubt; deliberate; hesitate (over); be uncertain/irresolute;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">id,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">deliberationem<span>deliberatio deliberationis N (3rd) F  <br>:deliberation/consultation (w/others), consideration; deliberative style speech;<br>(C 単数 対格)<br></span></a>
+<a class="note1">cadit;<span>cado cadere, cecidi, casus V (3rd) INTRANS  <br>:fall, sink, drop, plummet, topple; be slain, die; end, cease, abate; decay;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">quo<span><br><br><br></span></a>
+<a class="note1">considerando<span>considero considerare, consideravi, consideratus V (1st) TRANS  <br>:examine/look at/inspect; consider closely, reflect on/contemplate; investigate;<br>&nbsp;(未来 分詞 受動態 N 単数 奪格)<br></span></a>
+<a class="note0">saepe<span></span></a>
+<a class="note1">animi<span>animus animi N (2nd) M  <br>:mind; intellect; soul; feelings; heart; spirit, courage, character, pride; air;<br>(C<strong> 複数 主格</strong>)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">contrarias<span>contrarius contraria, contrarium ADJ  <br>:opposite, contrary, in contradiction; antithetical; opposed/hostile/adverse;<br>(F 複数 対格)<br></span></a>
+<a class="note1">sententias<span>sententia sententiae N (1st) F  <br>:opinion, feeling, way of thinking; thought, meaning, sentence/period; purpose;<br>(C 複数 対格)<br></span></a>
+<a class="note1">distrahuntur.<span>distraho distrahere, distraxi, distractus V (3rd)  <br>:draw/pull/tear apart, wrench, separate, (sub)divide; sell in parcels; distract;<br>(3 複数 現在 受動態 直接法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>ne ~ an - : ～ですか-ですか？</p>
+<p>factuはhonestum, turpisなどと一緒に使われ「～に関して」という一種の観点を示すために用いられる目的分詞奪格。</p>
+<p><strong>dubitant aut id sit factu honestumne an turpe</strong>:「それは成すのが正しいのか恥ずべきなのかを疑う（べきである）」間接疑問文。接続法（NewLatin 300 1 (b))</p>
+<p><strong>quod cadit in deliberationem</strong>. quodの先行詞はid　「考慮するに至ったそのもの」</p>
+<p>animi saepe distrahuntur in contrias sententias. : 精神はしばしば相反する意見に分断される。</p>
+<p>in quo considerando : locus in quo = the place in whichで現在の場所　: その調査において　considerandoは動名詞か<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>（最初は）我々はまずそれが正しいことなのか恥ずべきことなのか問うべきである。それはその過程においてしばしば、相反する意見に気持ちが分断されることである。<br></p>
+</div>
+</div>
+<div class="spacer">Line2<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Tum<span>tum ADV <br>:then, <strong>next;</strong> besides; at that time;<br><br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">anquirunt<span>anquiro anquirere, anquisivi, anquisitus V (3rd)  <br>:seek, search diligently after, inquire into, examine judicially; indict;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">consultant<span>consulto consultare, consultavi, consultatus V (1st)  <br>:consult, take counsel; form plans, provide; consult oracle/astrologer;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">vitae<span></span></a>
+<a class="note1">commoditatem<span>commoditas commoditatis N (3rd) F  <br>:timeliness; fitness, aptness; convenience; advantage, utility; <strong>complaisance</strong>;<br>(C 単数 対格)<br><br></span></a>
+<a class="note1">iucunditatemque,<span>jucunditas jucunditatis N (3rd) F  <br>:charm, agreeableness, pleasing quality; pleasantness/amiability; favors (pl.);<br>(C 単数 対格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">facultates<span>facultas facultatis N (3rd) F  <br>:means; ability, skill; opportunity, chance; resources (pl.), supplies;<br>(C 複数 対格),<br></span></a>
+<a class="note0">rerum<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">copias,<span>copia copiae N (1st) F  <br>:plenty, abundance, supply; troops (pl.), supplies; forces; resources; <strong>wealth</strong>;<br>(C 複数 対格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">opes,<span>ops opis N (3rd) F  <br>:power, might; help; influence; resources/wealth (pl.);<br>(C 複数 対格),<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">potentiam,<span>potentia potentiae N (1st) F  <br>:force, power, political power;<br>(C 単数 対格)<br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">se<span></span></a>
+<a class="note0">possint<span></span></a>
+<a class="note1">iuvare<span>juvo juvare, juvi, jutus V (1st)  <br>:help, assist, aid, support, serve, further; please, delight, gratify;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">suos,<span></span></a>
+<a class="note1">conducat<span>conduco conducere, conduxi, conductus V (3rd) INTRANS  <br>:be of advantage/profitable/expedient; be proper/fitting/concerned with; tend to<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note1">necne,<span>necne CONJ <br>:or not;<br><br></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note1">deliberant;<span>delibero deliberare, deliberavi, deliberatus V (1st)  <br>:weigh/consider/deliberate/consult (oracle); ponder/think over; resolve/decide on<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">quae<span>qui quae, quod PRON  <br>:who, which; (relative pronoun);<br>(F 単数 主格), <br></span></a>
+<a class="note0">deliberatio<span></span></a>
+<a class="note1">omnis<span>omnis omnis, omne ADJ  <br>:each, every, every one (of a number); all (pl.); <strong>all/the whole of;</strong><br>(C 単数 主格), <br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">rationem<span>ratio rationis N (3rd) F  <br>:account, reckoning, invoice; plan; prudence; method; reasoning; rule; regard;<br>(C 単数 対格)<br></span></a>
+<a class="note1">utilitatis<span>utilitas utilitatis N (3rd) F  <br>:usefulness, advantage;<br>(X 単数 属格)<br></span></a>
+<a class="note1">cadit.<span>cado cadere, cecidi, casus V (3rd) INTRANS  <br>:fall, sink, drop, plummet, topple; be slain, die; end, cease, abate; decay;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+</p>
+</div>
+
+    
+    <div class="spnote" contenteditable="false" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>tum : next,</p>
+<p>anquirunt : （自分で）考える　consultant (他の人にも）相談する。</p>
+<p>構文的には、</p>
+<p><strong>tum anquirunt id conducat necne</strong>. 「それが正しいかどうか、それが（前のポイント）に資するものであるかどうか、考慮する」間接疑問文。</p>
+<p>ad vitae commoditatem jucunditatemque : 人生の快適、楽しみに向かって（逐語訳）</p>
+<p>ad facultates rerum atque copias : 諸事の方法と富</p>
+<p><strong>omnis cadit in rationem utilitatis. </strong>: 「全てはその有用性に帰する」</p>
+<p><font color="#ff0000">de quo deliberant, quae deliberatio : 構文は？&nbsp;&nbsp;</font></p>
+<p><font color="#ff0000">de quo delibernt: これは繰り返しで、「それらについて考慮する」</font></p>
+<p><font color="#ff0000">quae deliberatio omnis : 先行詞がdeliberatioで、同格（前に述べた事と）の場合の先行詞に埋め込み（NewLatin251.4.(b))</font><br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>次によく確認し、人にも相談すべきは、それが、人生の快適さ、楽しみに資するものか、また物事の手段や富をについて役立つか、はたまた、資産、影響力などそれを使って自身や友人たちの助けになるものかどうかなどである。つまり、すべては、その有用性に帰するものである。<br></p>
+</div>
+</div>
+<div class="spacer">Line3<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Tertium<span>Tertius <br>序数 3<br>&nbsp;(N 単数 主格)<br></span></a>
+<a class="note1">dubitandi<span><b>dŭbĭto</b>,dubitare, dubitavi, dubitatus V (1st)  X<br><b>:doubt; deliberate; hesitate (over); be uncertain/irresolute;</b><br>【動形容詞 (M 複数 主格)</span></a>
+<a class="note0">genus<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">pugnare<span>pugno pugnare, pugnavi, pugnatus V (1st)  <br>:fight; dispute;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">videtur<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">honesto<span>honestus honesta -um, honestior -or -us, honestissimus -a -um ADJ  <br>:distinguished, reputable, respected, honorable, upright, honest; worthy;<br>&nbsp;(N 単数 奪格)<br></span></a>
+<a class="note0">id,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">videtur<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">utile.<span>utilis utilis, utile ADJ  <br>:useful, profitable, practical, helpful, advantageous;<br>(N 単数 主格),<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>cum id, quod videtur esse utile, videtur pugnare cum honesto. : 最初のcum = when、２番めcum= with 「有用のように見えるそれが名誉あるものとの相反がある時」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>３つ目の問は、有用に見えることが、名誉あるものとの間で相反があるようなときである。<br></p>
+</div>
+</div>
+<div class="spacer">Line4<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Cum<span></span></a>
+<a class="note1">enim<span>enim CONJ <br>:namely (postpos.); indeed; in fact; for; I mean, for instance, that is to say;<br><br></span></a>
+<a class="note0">utilitas<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">se<span></span></a>
+<a class="note1">rapere,<span>rapio rapere, rapui, raptus V (3rd)  <br>:drag off; snatch; destroy; seize, carry off; pillage; hurry;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">honestas<span></span></a>
+<a class="note0">contra<span></span></a>
+<a class="note0">revocare<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">se<span></span></a>
+<a class="note0">videtur,<span></span></a>
+<a class="note1">fit<span>fio feri, factus sum V SEMIDEP  <br>:happen, come about; result (from); take place, be held, occur, arise (event);<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">distrahatur<span>distraho distrahere, distraxi, distractus V (3rd)  <br>:draw/pull/tear apart, wrench, separate, (sub)divide; sell in parcels; distract;<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">deliberando<span>delibero deliberare, deliberavi, deliberatus V (1st)  <br>:weigh/ <strong>consider</strong>/ deliberate/ consult (oracle); ponder/ think over; resolve/ decide on<br>(未来 分詞 受動態 N 単数 奪格)<br></span></a>
+<a class="note0">animus<span></span></a>
+<a class="note1">afferatque<span>affero afferre, attuli, allatus V TRANS  <br>:bring to (word/food), carry, convey; report, allege, announce; produce, cause;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">ancipitem<span>anceps (gen.), ancipitis ADJ  <br>:|on two sides/fronts (war/attack); undecided/drawn/hanging in balance (battle);<br>(C 単数 対格)<br></span></a>
+<a class="note1">curam<span>cura curae N (1st) F  <br>:concern, worry, anxiety, trouble; attention, care, pains, zeal; cure, treatment;<br>(C 単数 対格)<br></span></a>
+<a class="note1">cogitandi.<span><b>cōgĭto</b>,cogitare, cogitavi, cogitatus V (1st)  X<br><b>:think; consider, reflect on, ponder; imagine, picture; intend, look forward to;</b><br>【動名詞 (属格)】</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>fit : 主語はあとに続くut節。ut~が起きる。</p>
+<p>ut animus distrahatur in deliberando, afferatque curam. 「精神は熟考の中で分断され、混乱心配を生ずる」</p>
+<p>deliberandoは動名詞で名詞的に使われ、cogitandiは動名詞属格で前の名詞を修飾。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>有用性が自身のほうへ引張り、他方名誉が自身の反対方向に呼び戻す時、精神は熟考の中で分断され、考慮すべき宙ぶらりんの状態を生ずる。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+    </body>
+    <html>
+    

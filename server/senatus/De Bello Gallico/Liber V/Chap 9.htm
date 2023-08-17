@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 9</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[9]<span></span></a>
+
+<a class="note0">Caesar<span></span></a>
+<a class="note1">expositō<span>expono 完了分詞　受動　ｍ単　奪格　;= set out, expose, disembark<br><br></span></a>
+<a class="note1">exercitū<span>単　奪格<br><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">locō<span></span></a>
+<a class="note1">castrīs<span>castra F複　与格　;= camp<br><br><br></span></a>
+<a class="note1">idōneō<span>idoneus 形容詞　ｍ単　与格<br>　;= suitable<br><br><br></span></a>
+<a class="note1">captō,<span>capio 完了分詞　受動　m単　奪格　;= take hold<br><br><br></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">captīvīs<span><br><br></span></a>
+<a class="note0">cōgnōvit<span><br><br></span></a>
+<a class="note0">quō<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">locō<span></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">cōpiae<span><br><br></span></a>
+<a class="note1">cōnsēdissent,<span>consido 3複　過去完了　接続法　;= sit down, encamp<br><br><br></span></a>
+<a class="note0">cohortibus<span></span></a>
+<a class="note0">decem<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">mare<span></span></a>
+<a class="note0">relīctīs<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">equitibus<span></span></a>
+<a class="note0">trecentis,<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">praesidiō<span>praesidium N 単　与格　;= protection, guard<br><br><br></span></a>
+<a class="note1">nāvibus<span>複　与格<br><br><br></span></a>
+<a class="note0">essent,<span></span></a>
+<a class="note0">dē<span></span></a>
+<a class="note0">tertiā<span><br><br></span></a>
+<a class="note0">vigiliā<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note0">contendit,<span></span></a>
+<a class="note1">eō<span>副詞　;= there, in that direction<br><br></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note1">veritus<span>vereor vereri, veritus sum DEP 完了分詞　受動　ｍ単　主格　;= revere, fesr, dread<br><br></span></a>
+<a class="note1">nāvibus,<span>参照の与格<br><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">lītore<span><br><br></span></a>
+<a class="note1">mollī<span>mollis molle, mollum 形容詞　X単　奪格　;= soft, flexible<br><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">apertō<span>apero apera, aperum 形容詞　ｍ単　奪格　;= open, free, uncoverred, exposed<br><br><br></span></a>
+<a class="note1">dēligātās<span>deligo 完了分詞　受動　ｆ複　対格　;= bind fast, tie up, fasten<br><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">ancorām<span>ancoram ancorae F 単　対格　;= anchor<br><br></span></a>
+<a class="note0">relinquēbat,<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">praesidiō<span></span></a>
+<a class="note0">nāvibus<span><br><br></span></a>
+<a class="note0">Q.<span></span></a>
+<a class="note0">Ātrium<span></span></a>
+<a class="note1">praefēcit.<span>praeficio 3単　完了　;= put in charge, place in command (w/ACC and DAT)<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>骨子は</p>
+<p>Caesar contendit ad hostes, eo veritus minus. veritusはvereorの完了分詞、受動で、文法的にはCaesarが主語の分詞構文。</p>
+<p>exposito exercitu : 独立奪格</p>
+<p>loco capto&nbsp; : 独立奪格</p>
+<p>loco castris idoneo : <strong>castris idoneo</strong> は「<strong>fitnessの与格</strong>」とも呼ばれる形容詞＋与格の用法。（NewLatin 192.1, <strong>AG384</strong>)</p>
+<p>relictis cohortibus et equitibus : 独立奪格<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>カエサルは、騎兵隊を下船させ、駐屯地として適切な場所を確保し、そこは捕虜から聞いて解ったが敵の軍勢が布陣していたところであったが、10個大隊と３００の騎兵を船の護衛として海辺に残し、第３刻時に敵に向かって進軍した。その時点では船の事を全く心配していなかった。と言うのは柔らかく開けた岸辺に錨をしっかり付けて残してきたし、Q.Atriumを船の護衛として任命していたからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipse<span></span></a>
+<a class="note1">noctū<span>副詞　;= at night<br><br></span></a>
+<a class="note0">prōgressus<span><br><br></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">XII<span></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note1">cōnspicātus<span>conspicor 完了分詞　受動　ｍ単　主格　;= catch sight of, observe, notice<br><br><br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>Ipse est conspicatus hostium copias. が骨子。「自身は敵の軍勢を発見した。」<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>自身は夜の間に約１２マイル進んで、敵軍を発見した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Illī<span></span></a>
+<a class="note0">equitātū<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">essedīs<span>essendum essendi&nbsp; N 複　奪格　;= war chariot, light traveling carriage<br><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note0">prōgressī<span><br><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">locō<span></span></a>
+<a class="note0">superiōre<span><br><br></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note0">prohibēre<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">proelium<span></span></a>
+<a class="note1">committere<span>committo 不定詞　;= engage, set against<br><br></span></a>
+<a class="note0">coepērunt.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>equitatu atque essedis は「<strong>随伴の奪格</strong>」、「二輪馬車と騎兵によって」（<u>NewLatin222.1 軍事の場合はcumがなくても良い</u>）</p>
+<p>Illi coeperunt prohibere nostros et commitere proelium. 「彼らは我軍を防ぎはじめ、戦いを開始した。」厳密にはprohibereをし始め、戦端を開くことを始めた、となるか。<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>彼らは、騎兵と二輪戦闘馬車を伴って、河ののところまで進んで来て、高い場所より味方を防ぎ始め、戦端を開いた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Repulsī<span>repello TRANS 完了分詞　受動　ｍ　複　主格　;= drive, push, repel<br><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">equitātū<span><br><br></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">silvās<span><br><br></span></a>
+<a class="note1">abdidērunt,<span>abdo TRANS ３複　完了 ;= remove, put away, set aside<br><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">nactī<span>nanciscor nancisci, cactus sum DEP 完了分詞　受動　m複主格　;= obtain, get, find, meet with<br><br></span></a>
+<a class="note1">ēgregiē<span>egregie 副詞　;= excellently, admirably well, <br><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">nātūrā<span>natura naturae F 単　奪格　;= nature<br><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">opere<span>opus operis N 単　奪格　;= work, need, fortification work<br><br></span></a>
+<a class="note1">mūnītum,<span>munio munire, munivi, munitius 完了分詞　受動　ｍ　単　対格　;= fortify, strengthen<br><br><br></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note1">domesticī<span>domesticus 形容詞　ｍ　単　属格　;= domestic<br><br><br><br></span></a>
+<a class="note0">bellī,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">vidēbantur,<span><br><br></span></a>
+<a class="note0">causā<span></span></a>
+<a class="note1">iam<span>;= now, already,<br><br></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note1">praeparāverant:<span>praeparo ３複　過去完了　;= prepare<br><br></span></a>
+<a class="note1">nam<span>;= for, on the other hand, for instance<br><br></span></a>
+<a class="note1">crēbrīs<span>creber creba, crebum 形容詞　X複　奪格　;= thick, crowded, packed<br><br><br></span></a>
+<a class="note1">arboribus<span>arbor arboris F 複　奪格　;= tree, tree trunk, mast, oar<br><br></span></a>
+<a class="note1">succīsīs<span>succido succidere, succidi succisus 完了分詞　受動　奪格　複　;= cut down, cut from below, undercut<br><br><br></span></a>
+<a class="note0">omnēs<span></span></a>
+<a class="note1">introitūs<span>introitus introitus M 単　主格　;= entrance, going in<br><br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">praeclūsī.<span>praecludo praecludere, praeclusi, praeclusus 完了分詞　受動　ｍ　複　主格 ;= close, block<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>骨子は</p>
+<p>(Illi) abdiderunt se in silvasである。</p>
+<p>repulsi ab quitatu : 分詞構文で、「騎兵隊から攻撃を受けた」（敵は）</p>
+<p>nacti locum munitum egregie et natura et opere . nactiは完了分詞　複　受動で　文法的には（敵）を主語とする分詞構文。</p>
+<p>quem以下はlocumを説明している。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>騎兵の攻撃を受けて敵は森に逃げ込み、自然と作業により大変うまく要塞化された場所を得た。そこは古い時代にその地域での戦いのために用意されたように見られた。そして今や、その場所は多くの切り倒された木の幹で全ての入口が塞がれていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipsī<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">silvīs<span><br><br></span></a>
+<a class="note1">rārī<span>rarus rara rarum 形容詞　m複　主格　;= thin, scattered, few<br><br><br></span></a>
+<a class="note0">prōpugnābant<span><br><br></span></a>
+<a class="note0">nostrōsque<span><br><br></span></a>
+<a class="note1">intrā<span>intra 前置詞　対格支配　;= within, inside<br><br><br></span></a>
+<a class="note0">mūnītiōnēs<span><br><br></span></a>
+<a class="note1">ingredī<span>ingredior DEP 樹洞不定詞　;= advance, walk, enter, go into<br><br><br></span></a>
+<a class="note0">prohibēbant.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>rariは複　主格で、名詞化した主語。</p>
+<p>rari propugnabant nostros. 少人数で、味方と戦う。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>彼ら自身といえば、森から少人数で出てきて味方と戦って、要塞の中に突入する事を阻止した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">At<span></span></a>
+<a class="note0">mīlitēs<span><br><br><br><br></span></a>
+<a class="note0">legiōnis<span><br><br></span></a>
+<a class="note1">septimae,<span>septimae ｆ単　属格　序数　７<br><br></span></a>
+<a class="note1">testūdine<span>testudo testudnis F 単　奪格　;= tortoise, armored movable shed<br><br><br></span></a>
+<a class="note0">factā<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">aggere<span>agger M 単　奪格　;= rampart, causeway, pier, mud wall<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">mūnītiōnēs<span><br><br></span></a>
+<a class="note1">adiectō,<span>adicio adicere, adjeci, adjectus TRANS 完了分詞　m 単　奪格　;= add, increase, add to(DAT + ad ACC)<br><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">cēpērunt<span>capio TRANS３複　完了　;= take hold, seize<br><br><br></span></a>
+<a class="note0">eōsque<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">silvīs<span><br><br></span></a>
+<a class="note1">expulērunt<span>expello ３複　完了　;= drive out, expel<br><br><br></span></a>
+<a class="note0">paucīs<span><br><br></span></a>
+<a class="note0">vulneribus<span></span></a>
+<a class="note0">acceptīs.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>milites legionis septimae :７番目の軍団の兵士たちが　＝第７軍団の兵士たちが</p>
+<p>testudine facta : 亀の子戦隊を作って（盾を上、横に並べ攻撃を防ぐ陣形）</p>
+<p>caperunt locum que expulerunt eos ex silivis<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>しかし第７軍団の兵士たちは、Testudo陣形を取って、要塞のに向かって土塁を築き、その場所を確保した。そして彼らを森から追い出した。当方の被害は軽微であった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sed<span></span></a>
+<a class="note0">eōs<span></span></a>
+<a class="note1">fugientēs<span>fugio 現在分詞　複　主格　;= flee, fly, run away<br><br><br></span></a>
+<a class="note1">longius<span>longe longius longissime 副詞　比較級　;= far off, distance<br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">prōsequi<span>prosequor prosequi, prosecutus sum DEP 受動　不定詞　;= pursue, escort<br><br><br></span></a>
+<a class="note1">vetuit,<span>veto vetare, vetavi, vetatus TRANS ３単　完了　;= forbit, prohibit, reject<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">locī<span>locum N 単　属格　;= place<br><br></span></a>
+<a class="note0">nātūram<span><br><br></span></a>
+<a class="note1">ignōrābat,<span>ignoro ignorare, ignoravi, ignoraus ３単　未完了　;= not know, be unfamiliar with<br><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">magnā<span></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note0">diēī<span><br><br></span></a>
+<a class="note1">cōnsūmptā<span>comsumo 完了分詞　f単　主格　;= comsume, eat up, use up, spend<br><br><br></span></a>
+<a class="note0">mūnītiōni<span><br><br></span></a>
+<a class="note0">castrōrum<span></span></a>
+<a class="note0">tempus<span></span></a>
+<a class="note1">relinquī<span>relinquo 受動　不定詞　;= leave, be left<br><br></span></a>
+<a class="note1">volēbat.<span>3単　未完了　;= wish<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>Caesar vetuit prosequi longius eos fugientes.</p>
+<p>quod magna parte diei consumpta, volebat reliqui tempus munitioni castrum.<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>しかし、カエサルは遠くまで逃亡した敵を追うことを禁じた。その場所の自然をよく知らないがためでもあり、また一日の多くをすでに使ったので、駐屯地の要塞化のための時間を残して置きたかったからでもある。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

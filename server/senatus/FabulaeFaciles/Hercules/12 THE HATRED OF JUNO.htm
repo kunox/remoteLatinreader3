@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 12 THE HATRED OF JUNO.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Herculēs,<span>Hercŭles Herculis N (3rd) M <br>:Hercules (Greek hero of great strength);<br>(単数 主格)<br></span></a>
+<a class="note1">Alcmēnae<span>Alcmena f : アルクメーネ Herculesの母親<br><br><br>Alcmenae : 属格<br><br></span></a>
+<a class="note0">fīlius,<span></span></a>
+<a class="note1">ōlim<span>olim ADV <br>&gt;:formerly; once, once upon a time; in the future;<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Graeciā<span></span></a>
+<a class="note0">habitābat.<span></span></a>
+<a class="note0">Hic<span></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">validissimus<span>vălĭdus valida -um,validior -or -us, validissimus -a -um ADJ  最上級<br>:strong, powerful; valid;<br>(M 単数 主格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">fuisse<span>sum esse, fui, futurus V  TO_BE<br>:be;<br>完了不定詞<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dīcitur.<span>dīco dicere, dixi, dictus V (3rd)  X<br>:say, declare, state; allege, declare positively; assert; plead (case);<br>(3 単数 現在 受動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">At<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">Iūnō,<span>Jūno Junonis N (3rd) F <br>:Juno; (Roman goddess, wife of Jupiter);<br>(単数 主格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">rēgīna<span>rēgīna reginae N (1st) F <br>:queen;<br>(単数 主格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">deōrum,<span></span></a>
+<a class="note0">Alcmēnam<span></span></a>
+<a class="note1">ōderat<span>ōdi odisse, osus V PERFDEF   Perfect Defective<br>:hate (PERF form, PRES force), dislike; be disinclined/reluctant/adverse to;<br>(3 単数 過去完了 能動態 直接法) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Herculem<span></span></a>
+<a class="note1">adhūc<span>adhuc ADV <br>&gt;:thus far, till now, to this point; hitherto; yet, as yet; still; besides;<br><br></span></a>
+<a class="note0">īnfantem<span></span></a>
+<a class="note1">necāre<span>nĕco necare, necavi, necatus V (1st) TRANS  <br>:kill/murder; put to death; suppress, destroy; kill (plant); quench/drown (fire);<br>&nbsp;不定詞<br></span></a>
+<a class="note0">voluit.<span></span></a>
+<a class="note0">Mīsit<span></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">duās<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">serpentēs<span>serpens serpentis N (3rd) C <br>:serpent, snake;<br>&nbsp;(複数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">saevissimās;<span>saevus saeva -um, saevior -or -us, saevissimus -a -um ADJ  最上級<br>:savage; fierce/ferocious; violent/wild/raging; cruel, harsh, severe; vehement;<br>(F 複数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">hae<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">mediā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">nocte<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">cubiculum<span>cŭbĭcŭlum cubiculi N (2nd) N <br>:bedroom; sleeping chamber/apartment/suite; (as scene of marital/other sex);<br>(単数 対格) <br></span></a>
+<a class="note0">Alcmēnae<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vēnērunt,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Herculēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">frātre<span>frāter fratris N (3rd) M <br>:brother; cousin;<br>(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">suō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dormiēbat.<span>dormĭo dormire, dormivi, dormitus V (4th) INTRANS  <br>:sleep, rest; be/fall asleep; behave as if asleep; be idle, do nothing;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Nec<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">cūnīs,<span>cūna cunae N (1st) F <br>:cradle (usu. pl.); nest for young birds; one's earliest years;<br>&nbsp;(複数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">scūtō<span>scūtum scuti N (2nd) N <br>:shield; (heavy shield of Roman legion infantry);<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">cubābant.<span>cŭbo cubare, cubui, cubitus V (1st) INTRANS  <br><strong>:lie (down/asleep);</strong> recline, incline; lie/be in bed, rest/sleep; be sick/dead;<br>(3 複数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Serpentēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note1">appropinquāverant<span>apprŏpinquo appropinquare, appropinquavi, appropinquatus V (1st) INTRANS  <br>:approach (w/DAT or ad+ACC); come near to, draw near/nigh (space/time); be close;<br>(3 複数 過去完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">scūtum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">movēbant;<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">itaque<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">puerī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ē<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">somnō<span>somnus somni N (2nd) M <br>:sleep;<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note1">excitātī<span>excĭto excitare, excitavi, excitatus V (1st)  X<br>:wake up, stir up; cause; raise, erect; incite; excite, arouse;<br>【完了分詞 ( 受動態 ) (M 複数 主格)&nbsp; 】<br></span></a>
+<a class="note0">sunt.<span></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>omnium hominum : 全体の属格（B.201.1) 全人類の中で (magna pars hominum : 人類の大部分 など）</p>
+<p>media nocte : 時の奪格 （B.230) 「真夜中に」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>HerculesはAlcmenaeの息子で、かってはギリシャに住んでいた。彼は全人類で一番強いと言われていた。ところがJuno、神の世界の女王、はAlcmeneを憎んでおり、当時まだ幼児であったHerculesを殺そうと望んだ。そこで２匹の最も獰猛な蛇を送り込んだ。それは真夜中にAlcmeneの寝室に侵入した。そこはHerculesとその兄弟と一緒に寝ていた場所であったが、揺りかごの中ではなく盾の中に横たわっていた。蛇は接近して盾を動かした。それでその男子は眠りから目を覚ました。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

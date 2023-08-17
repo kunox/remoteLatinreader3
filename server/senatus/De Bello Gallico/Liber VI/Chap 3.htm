@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 3</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[3]<span></span></a>
+
+<a class="note0">Itaque<span></span></a>
+<a class="note0">nōndum<span><br><br></span></a>
+<a class="note0">hieme<span></span></a>
+<a class="note0">cōnfectā<span><br><br></span></a>
+<a class="note1">proximīs<span>proximus proxima, proximum ADJ  最上級<br>:nearest/closest/next; most recent, immediately preceding, last; most/very like;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">quattuor<span></span></a>
+<a class="note1">coāctīs<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">imprōvīsō<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Nerviōrum<span><br><br></span></a>
+<a class="note0">contendit<span></span></a>
+<a class="note0">et,<span></span></a>
+<a class="note0">priusquam<span></span></a>
+<a class="note0">illī<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">convenīre<span>convenio convenire, conveni, conventus V (4th)  <br>:|meet/assemble; go to meet; come together; (have sex); converge; visit/approach;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">profugere<span>profugio profugere, profugi, - V (3rd)  <br>:escape, escape from; run away from;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">possent,<span></span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note1">pecoris<span>pecus pecoris N (3rd) N  <br>:cattle, herd, flock;<br>(X 単数 属格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note1">numerō<span>numerus numeri N (2nd) M  <br>:number/sum/total/rank; (superior) numerical strength/plurality; category; tally;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">captō<span>capio capere, cepi, captus V (3rd) TRANS  <br>:take hold, seize; grasp; take bribe; arrest/capture; put on; occupy; captivate;<br>&nbsp;(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note1">praedā<span>praeda praedae N (1st) F  <br>:booty, loot, spoils, plunder, prey;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">mīlitibus<span><br><br></span></a>
+<a class="note1">concessā<span>concedo concedere, concessi, concessus V (3rd)  <br>:relinquish/give up/concede; depart; pardon; submit, allow/grant/permit/condone;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br><br></span></a>
+<a class="note1">vāstātīsque<span>vasto vastare, vastavi, vastatus V (1st)  <br>:lay waste, ravage, devastate;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">agrīs<span>ager agri N (2nd) M  <br>:field, ground; farm, land, estate, park; territory, country; terrain; soil;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">dēditiōnem<span>deditio deditionis N (3rd) F  <br>:surrender (of combatants/town/possessions); cession of right/title;<br>(c 単数 対格)<br></span></a>
+<a class="note0">venīre<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">obsidēs<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">dare<span></span></a>
+<a class="note1">coēgit.<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>proximis quattuor legionibus coactis : 独立奪格　「最も近い4つの軍団をまとめて」</p>
+<p><strong>de improviso : </strong>一種の慣用句のようである。IIのChap3にも出ている<strong>。</strong>口語風の表現のようで、英語の of a sudden と同じとのこと。</p>
+<p>magno numero pecoris atque hominum capto : 独立奪格、属格は部分の属格。</p>
+<p>ea praeda militibus concessa : よく解らない。praeda concessaで独立奪格だと思える。millitibusは与格で、「兵に対して許された略奪」？（concessaの奪格はｆしかないのでpraedaを修飾していると考える。）</p>
+<p><strong>coegit venire in deditionem dare obsides sibi.</strong> 「降伏すること、人質を差し出すことを強要した」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>こうして、冬が終わる前に、最も近いところから4軍団をあつめ突然にNervi族の境界に進出した。彼らが集まる乃至は逃げ去るその前にたくさんの人、家畜を捕らえ、それらを略奪することを兵士に許可し、畑を荒らした。そういう具合で、降伏して人質を出すことを強要する。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span><br><br></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note0">cōnfectō<span><br><br></span></a>
+<a class="note1">negōtiō<span>negotium negoti(i) N (2nd) N  <br>:pain, trouble, annoyance, distress; work, business, activity, job;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">rūrsus<span>rursus ADV <br>:turned back, backward; on the contrary/other hand, in return, in turn, again;<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hīberna<span><br><br></span></a>
+<a class="note0">legiōnēs<span><br><br></span></a>
+<a class="note0">redūxit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Eo negotio confecto celeriter, ：独立奪格「その仕事を早く片付け」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>その仕事を早く終え、再び軍団を冬営に戻した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Conciliō<span>concilium concili(i) N (2nd) N  <br>:public gathering/meeting; popular assembly, council; hearing; debate/discussion;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">prīmō<span><br><br></span></a>
+<a class="note1">vēre,<span>ver veris N (3rd) N  <br>:spring; spring-time of life, youth;<br>(n 単数 奪格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">īnstituerat,<span>instituo instituere, institui, institutus V (3rd)  <br>:set up, establish, found, make, institute; build; prepare; decide;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note1">indictō,<span>indico indicere, indixi, indictus V (3rd)  <br>:declare publicly; proclaim, announce; appoint; summon;<br>(完了 分詞 受動態 n 単数 奪格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">reliquī<span><br><br></span></a>
+<a class="note1">praeter<span>praeter PREP ACC <br>:besides, except, contrary to; beyond (rank), in front of, before; more than;<br><br></span></a>
+<a class="note0">Senonēs,<span><br><br></span></a>
+<a class="note0">Carnutēs<span><br><br></span></a>
+<a class="note0">Trēverōsque<span><br><br></span></a>
+<a class="note0">vēnissent,<span><br><br></span></a>
+<a class="note0">initium<span></span></a>
+<a class="note0">bellī<span><br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">dēfectiōnis<span>defectio defectionis N (3rd) F  <br>:desertion/ <strong>revolt</strong>/ defection; failure/ deficiency; ellipsis (grammar); eclipse;<br>(X 単数 属格)<br><br></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">arbitrātus,<span>arbitror arbitrari, arbitratus sum V (1st) DEP  <br>:observe, witness; testify; decide, judge, sentence; believe, think, imagine;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">omnia<span>omnis omnis, omne ADJ  <br>:each, every, every one (of a number); all (pl.); all/the whole of;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note1">postpōnere<span>postpono postponere, postposui, postpositus V (3rd)  <br>:neglect; disregard; put after, consider secondary; set aside, postpone;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">vidērētur,<span>video videre, vidi, visus V (2nd)  <br>:see, look at; consider; (PASS) <strong>seem</strong>, seem good, appear, be seen;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">concilium<span></span></a>
+<a class="note0">Lutetiam<span></span></a>
+<a class="note0">Parīsiōrum<span><br><br></span></a>
+<a class="note1">trānsfert.<span>transfero transferre, transtuli, translatus V TRANS  <br>:transport/convey/transfer/shift; transpose; carry/bring across/over; transplant;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>concilio galliae indicto primo vere, ut instituerat</strong>. 独立奪格　「ガリアの集会は決められていたように、春先に催された。」</p>
+<p><strong>arbitratus hoc esse initium belli</strong>. : aribitratusはDEPなので完了受動態であるが能動の意味があり、思った、考えた、となる。それは完了分詞、主格なので主語を修飾、この場合Caesarということになる。Chap 1の1行目のexistimansと同じ用法。</p>
+<p>ut videretur omnia postponere. ut + 接続法で結果の節。彼はすべてを延期する事と見られた、が逐語訳。</p>
+<p>Lutetiam Parisiorum : Parisii地方のLutetiaと言う町<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>ガリアの全部族の集会は、決められたように春先に行われた。Senones、Carnutes、Treveri以外は出席したとき、（Caesarは）それは戦いの開始であり、反乱であると考え、他のものすべてを延期し会議をParisiiのLutetiaに移した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Cōnfīnēs<span>confinis confinis, confine ADJ  <br>:adjoining, contiguous/　having a common boundary; closely connected, allied, akin;<br>(c 複数  主格), <br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note0">hī<span><br><br></span></a>
+<a class="note1">Senonibus<span>Senones Senonis N (3rd) M  <br>:Senones; tribe of central Gaul (Seine valley);<br>&nbsp;(X 複数  与格)<br></span></a>
+<a class="note0">cīvitātemque<span><br><br></span></a>
+<a class="note0">patrum<span></span></a>
+<a class="note0">memoriā<span><br><br></span></a>
+<a class="note1">coniūnxerant,<span>conjungo conjungere, conjunxi, conjunctus V (3rd) TRANS  <br>:connect, join/yoke together; marry; connect/compound (words) (w/conjunctions);<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note0">cōnsiliō<span><br><br></span></a>
+<a class="note1">āfuisse<span>absum abesse, afui, afuturus V  <br>:be away/absent/distant/missing; be free/removed from; be lacking; be distinct;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">exīstimābantur.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>hi erant confines Senonibus. 「それはSenonesに隣接していた」Senonibusは与格と思われるが「何の与格？」（間接目的語か？）</p>
+<p>patrum memoria : 時の奪格</p>
+<p>sed existimabantur abfuisse ab hoc consilio. abfuisseは完了、existimabanturは未完了。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>それはSenonesに隣接しており、父の時代には（Senonesと）結合されていたのだが、この会議からは外されていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hāc<span><br><br></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note1">suggestū<span>suggestus suggestus N (4th) M  <br>:raised surface; platform, dais;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">prōnūntiātā<span>pronuntio pronuntiare, pronuntiavi, pronuntiatus V (1st)  <br>:announce; proclaim; relate; divulge; recite; utter;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note0">eōdem<span><br><br></span></a>
+<a class="note0">diē<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Senonēs<span><br><br></span></a>
+<a class="note0">proficīscitur<span><br><br></span></a>
+<a class="note0">magnīsque<span><br><br></span></a>
+<a class="note0">itineribus<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">pervenit.<span>pervenio pervenire, perveni, perventus V (4th)  <br>:come to; reach; arrive;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>pro suggestu</strong> : 演台の前で、即ち「公開で」という慣用的言い回し。</p>
+<p>hac re pronuntiata: </p>
+<p>proficiscitur eodem die cum legionibus in Senones, pervenit magnis itineibus. magnis itineribusは強行行軍。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>それは公開で発表されていたので、同日、軍団とともにSenonesに出発し、急行行軍で到着した。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

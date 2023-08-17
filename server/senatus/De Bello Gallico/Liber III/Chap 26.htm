@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 26</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[26]<span></span></a>
+
+<a class="note0">Crassus<span></span></a>
+<a class="note1">equitum<span>eques equitis N (3rd) M  <br>:horseman/cavalryman/rider; horsemen (pl.), cavalry; equestrian order;<br>(c 複数  属格)<br></span></a>
+<a class="note0">praefectos<span><br><br></span></a>
+<a class="note1">cohortātus,<span>cohorto 完了分詞　受動　m単　主格　;= encourage, exhort<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">magnīs<span><br><br></span></a>
+<a class="note1">praemiīs<span>praemium praemi(i) N 複　奪格　;= prize, reward, gift<br></span></a>
+<a class="note1">pollicitātiōnibusque<span>polliciatio polliciationis N 複　奪格　;= promise<br></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note1">excitārent,<span>excito excitare, excitavi, excitatus ３複　未完了　接続法　;= wake up, stir up, cause, erect, excite<br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note1">fierī<span>fio 不定詞　SEMIDEP ；= be made<br></span></a>
+<a class="note1">vellet<span>volo velle volui - ３単　未完了　接続法　;= wish, want</span></a>
+<a class="note1">ostendit.<span>ostendo ３単　完了　;= show, reveal, make clear, point out</span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p>Crassus cohortatus equitum praefectos : 分詞構文、Crassusは騎兵のリーダー達を勇気つけながら、</p>
+<p>ut ：　意志法から派生した名詞節（NewLatin294)</p>
+<p>quid fieri vellet ostendit. ostenditがこの文の動詞。はっきりさせた。velletの主語もCrassusで「何がなされることを望むかを」 quid~velletは間接疑問文</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Crassusは、部下たちを莫大な褒賞や約束で活気づけるよう、騎兵隊のリーダー達を勇気づけながら、何をして欲しいのかをはっきりさせた。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Illī,<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">imperātum,<span>impero imperare, imperavi, imperatus 完了分詞　受動　ｎ単　主格　;= order, command<br></span></a>
+<a class="note1">ēductīs<span>educo educere, eduxi, eductus 完了分詞　受動　複　奪格　;= lead out, draw up<br></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">cohortibus<span></span></a>
+<a class="note1">quae<span>f 複　主格</span></a>
+<a class="note1">praesidiō<span>praesidium praesidi(i) N 単　与格　;= protection, help, guard<br></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">relīctae<span>relictus relicta -um ｆ単　与格　;= forsaken, left untouched<br></span></a>
+<a class="note1">intrītae<span>intritus intrita intritum 形容詞　f 単　与格　;= not worn away, unexhausted<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">labōre<span><br><br></span></a>
+<a class="note0">erant,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">longiōre<span><br><br></span></a>
+<a class="note1">itinere<span>n単　奪格　</span></a>
+<a class="note1">circumductīs,<span>circumduco TRANS 完了分詞　複　奪格　;= lead out of the way, round about, cheat, trick out of<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note1">castrīs<span>複　奪格<br></span></a>
+<a class="note1">cōnspicī<span>conspicio conspicere, conspexi, conspectus TRANS 不定詞　受動　;= have appearance, attract attentiosn<br></span></a>
+<a class="note0">possent,<span></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note1">oculīs<span>oculus coculi M&nbsp; 複　奪格　;= eye<br></span></a>
+<a class="note1">mentibusque<span>mens mentis F 複　奪格　;= mind, reason, intellect, intention</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">pugnam<span></span></a>
+<a class="note1">intentīs<span>intendo intendere, intendi, intentus 完了分詞　受動　奪格　;= hold out, stretch, exert<br></span></a>
+<a class="note1">celeriter<span>副詞　;= quicklly</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eās<span><br><br></span></a>
+<a class="note0">quās<span></span></a>
+<a class="note0">dīximus<span><br><br></span></a>
+<a class="note0">mūnītiōnēs<span><br><br></span></a>
+<a class="note1">pervēnērunt<span>pervenio ３複　完了　;= come to<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note1">prōrutīs<span>proruo proruere, prorui, prorutus 完了分詞　受動　複　奪格　;= rush foraward, tumble down, hurl foraward<br></span></a>
+<a class="note0">prius<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">cōnstitērunt<span>consisto consistere, consistiti, constitus ３複　完了　;= make a stand, remain,<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">plānē<span>副詞　;= clearly, plainly, completely<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note1">vidērī<span>video 受動　不定詞<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note1">reī<span>単　属格　（与格ではなく）　what of thing<br></span></a>
+<a class="note1">gererētur<span>gero 3単　未完了　受動　接続法　;= carry, carry on, manage<br></span></a>
+<a class="note1">cognōscī<span>cognsco 不定詞<br></span></a>
+<a class="note0">posset.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>ut imperatum erat : as it was ordered</p>
+<p>eductis cohortibus : 独立奪格　「大隊を率いて」</p>
+<p>quae : iisが先行詞 praesido は与格で、行為の先の目的の与格（NewLatin191.1)</p>
+<p>itinere circumductis : 独立奪格　「回り道を通って」</p>
+<p>ocukis mentibusque intentis : 変形独立奪格　「皆の目と気が戦いに釘付けになっている時に」</p>
+<p>prius ..... quam ー: priusquamと書かれることもある。　時の節で、直説法の場合は事実、接続法の場合は予測を表す。（NewLatin291)</p>
+<p>videi (possent) : possent は後のpossetから。videri possent と cognosci possetで対のようになっている。</p>
+<p>全体の構文としては　Illi pervenerunt, constiterunt : 到着して、場所を確保した</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼らは、命じられたように、野営地に守備のために残されていて、手付かずで疲労していない大隊を率いて、敵の砦から悟られないように大回りした。そして皆の目と気持ちが戦いに向いている間に、素早く、先ほど言った砦の場所に到着し、敵に見られる事なく、なにが起きているか知らないうちに、敵の砦の中で位置を確保した。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Tum<span></span></a>
+<a class="note0">vērō<span><br><br></span></a>
+<a class="note1">clāmōre<span>clamor clamoris M 単　奪格　;= shout, outcry<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note1">audītō<span>audio audire, audivi, auditus 完了分詞　受動　m単　奪格　;= hear, listen<br></span></a>
+<a class="note0">nostrī<span><br><br></span></a>
+<a class="note1">redintegrātīs<span>relimtegro relintegrare, relintegravi, relintegratus 完了分詞　受動　複　奪格　;= renew, revive<br></span></a>
+<a class="note1">vīribus,<span>vis viris F 複　奪格　;= &nbsp;strength, force, power, violence, large body <br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">plērumque<span>plerumque 副詞　;= generally, commonly, mostly<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">spē<span><br><br></span></a>
+<a class="note0">victōriae<span><br><br></span></a>
+<a class="note1">accidere<span>accido accidere, accidi, - 不定詞　;= fall upon, happen, occur</span></a>
+<a class="note1">cōnsuēvit,<span>consueo consuere, consuevi, consetus TRANS 3単　完了　;= accustom, become accustomed,<br></span></a>
+<a class="note1">ācrius<span>acriter acrius acrrime 副詞 比較級　;= sharply, vigilantly, fiercely<br></span></a>
+<a class="note1">impugnāre<span>impugno impugnare, impugnavi, impugnatus 不定詞　;= fight against, attack<br></span></a>
+<a class="note0">coepērunt.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>ab ea parte : その区域から</p>
+<p>clamore audito : 独立奪格　「叫び声が聞かれ」</p>
+<p>nostri viribus relintegratis : 独立奪格　「味方の強さが戻り」</p>
+<p>consuevit = is wont 「～を常とした」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その区域から叫び声が聞かれ、味方の強さが戻ってきた、それは一般に勝利への希望が起きた事を常としたものであり、鋭く、残忍な戦いが始まった。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hostēs<span><br><br></span></a>
+<a class="note0">undique<span></span></a>
+<a class="note1">circumventī<span>circumvenio 完了分詞　受動　ｍ複　主格<br></span></a>
+<a class="note0">dēspērātīs<span><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">mūnītiōnēs<span>munitio 複　対格　;= fortfication<br></span></a>
+<a class="note1">dēicere<span>deicio deicere, dejeci, dejectus TRANS 不定詞　;= overthrow, bring down, dispose, kill<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">fugā<span>fuga 単　奪格　<br></span></a>
+<a class="note0">salūtem<span><br><br></span></a>
+<a class="note1">petere<span>peto 不定詞 ;= desire, beg, entreat, ask</span></a>
+<a class="note1">contendērunt.<span>contendo 3複　完了　;= make effor, strive for, rush to<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>se per munitiones deicere : 「自身を塀を越えて投げる（事）」「飛び越えて」</p>
+<p>salutem petere fuga 「逃走によって安全を求める（事）」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>敵は至る所で包囲され、全ての事態に絶望して、自身で塀を乗り越え、逃走することで安全を図ろうと努力した。</p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quōs<span><br><br></span></a>
+<a class="note0">equitātus<span><br><br></span></a>
+<a class="note1">apertissimīs<span>apertus aperta -um, aperrtior, apertissimus 形容詞　最上級　複　奪格　;= open, uncovered,<br></span></a>
+<a class="note1">campīs<span>campus campi M 複　奪格　;= plain, level field, open space for battle<br></span></a>
+<a class="note1">cōnsectātus<span>consector consectari consectatus sum DEP 完了分詞　受動　m　単　主格　;= seek, pursue<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">mīlium<span><br><br></span></a>
+<a class="note0">L<span></span></a>
+<a class="note0">numerō,<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Aquītāniā<span><br><br></span></a>
+<a class="note0">Cantabrīsque<span><br><br></span></a>
+<a class="note1">convēnisse<span>convenio 完了　不定詞　;= meet, assembly, come together<br></span></a>
+<a class="note1">cōnstābat,<span>constat constare, constiti, constatus est IMPERS ３単　未完了　;= it is agreed, understood, correct, well known<br></span></a>
+<a class="note1">vix<span>副詞　hardly, scarely, only</span></a>
+<a class="note1">quārtā<span>序数　４　f単　奪格 quarta parteで　１/4<br></span></a>
+<a class="note1">parte<span>pars 単　奪格　</span></a>
+<a class="note1">relīctā,<span>reliquo 完了分詞　受動　ｆ　単　奪格　;= leave, abandon, be left<br></span></a>
+<a class="note0">multā<span><br><br></span></a>
+<a class="note0">nocte<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">recēpit.<span>recipio ３単　完了　;= keep back, recover, take back<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>quos : 前文の「敵」</p>
+<p>equitatus : ここでは単数、consectatus, recepitが単</p>
+<p>apertissimis campis : 場所の奪格　「完全に開けた場所で」</p>
+<p>quae ... convenisse : quaeの先行詞はmiliumでconvenisseの主語になっている。quaeで始まる節はconstabatの主語（非人称の主語）になっている</p>
+<p>quarta parte relicta : quarta parte (quarta pars)で1/4 quartaは主格も奪格もあり。</p>
+<p>multa nocte : late at night</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その敵を、騎兵が完全に開けた場所で追いかけ、50,000人、その数はAquitaniaとCantabrisを合わせたもので、確認された数字であるが、そこから、辛うじて1/4が残され、騎兵は夜遅くなって野営地に帰還した。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

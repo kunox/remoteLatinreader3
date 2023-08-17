@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 5 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[5]<span></span></a>
+<a class="note0">Atque<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">quidem<span></span></a>
+<a class="note1">quaestio<span>quaestio quaestionis N (3rd) F  <br>:questioning, inquiry; investigation;<br>(X 単数 主格)<br></span></a>
+<a class="note1">communis<span>communis communis, commune ADJ  <br>:common/joint/public; general/universal;<br>&nbsp;(X 単数 属格)<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">omnium<span>omnis omnis, omne ADJ  <br>:each, every, every one (of a number); all (pl.); all/the whole of;<br>(X 複数 属格)<br></span></a>
+<a class="note1">philosophorum.<span>philosophus philosophi N (2nd) M  <br>:philosopher;<br>(X 複数 属格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>haec quaestio est communis omnium philosophorum. 所有の属格＋esseで～のものである。「その質問はすべての哲学者の共通のものである。」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>実のところ、すべての哲学者は共通してこの問題を扱っている。（持っている）<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quis<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">enim,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">nullis<span>nullus nulla, nullum (gen -ius) ADJ  <br>:no; none, not any; (PRONominal ADJ)<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note1">officii<span>officiī　属格<br><br><br></span></a>
+<a class="note1">praeceptis<span>praeceptum praecepti N (2nd) N  <br>:teaching, lesson, precept; order, command;<br>(X 複数 奪格)<br></span></a>
+<a class="note1">tradendis<span>trado tradere, tradidi, traditus V (3rd)  <br>:hand over, surrender; deliver; bequeath; relate;<br>&nbsp;(未来 分詞 受動態  複数 奪格)<br><br></span></a>
+<a class="note0">philosophum<span></span></a>
+<a class="note0">se<span></span></a>
+<a class="note1">audeat<span>audeo audere, ausus sum V (2nd) SEMIDEP  <br>:intend, be prepared; dare/have courage (to go/do), act boldly, venture, risk;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">dicere?<span></span></a>
+<a class="note0">Sed<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">nullae<span></span></a>
+<a class="note1">disciplinae,<span>disciplina disciplinae N (1st) F  <br>:teaching, instruction, <strong>education;</strong> <strong>training;</strong> discipline; method, science, study;<br>(C 複数 主格),<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">propositis<span>propositum propositi N (2nd) N  <br>:|mode/manner/way of life/conduct, practice; <strong>proposition</strong>; decree; issued summons;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note0">bonorum<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">malorum<span></span></a>
+<a class="note1">finibus<span>finis finis N (3rd) C  <br>:boundary, end, <strong>limit</strong>, <strong>goal</strong>; (pl.) country, territory, land;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note0">officium<span></span></a>
+<a class="note0">omne<span></span></a>
+<a class="note1">pervertant.<span>perverto pervertere, perverti, perversus V (3rd)  <br>:overthrow; subvert; destroy, ruin, corrupt;<br>(3 複数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>quis est is qui~</strong> という構文。「それは誰ですか？」</p>
+<p><strong>qui audeat dicere se philosophum</strong>. 「自身を哲学者と呼ぶところの」</p>
+<p><strong>officii nullis praeceptis tradentis : 独立奪格句</strong>「Ofiiciumの学科を教えないけれども」</p>
+<p>disciplinae : この場合学校とか教育機関をさす。</p>
+<p>propositis bonorum et malorum finibus: Ciceroは[ De finibus bonorum et malorum]という論文もあり、「究極の善と悪」について論じている。ここの「究極の善と悪の命題」というのはそれと同じであろう。エピクロス派の考えを単純に快楽を追求するものとして、悪であると論じるものらしい。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>実際、このOfficiumについて教えないで、自身の事を哲学者であると呼ぶような人がいるであろうか？しかしながら、少なからぬ学園で、究極の善と悪の命題によってOfficiumを歪めていることもある。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">summum<span></span></a>
+<a class="note0">bonum<span></span></a>
+<a class="note1">sic<span>sic ADV <br>:thus, so; as follows; in another way; in such a way;<br><br></span></a>
+<a class="note1">instituit,<span>instituo instituere, institui, institutus V (3rd)  <br>:set up, establish, found, make, institute; build; prepare; decide;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">habeat<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">virtute<span>virtus virtutis N (3rd) F  <br>:strength/power; courage/bravery; worth/ manliness/ virtue/ character/ excellence;<br>(C 単数 奪格)<br></span></a>
+<a class="note1">coniunctum,<span>conjunctum conjuncti N (2nd) N  <br>:connected word/proposition; compound proposition; <strong>connection </strong>(L+S);<br>(N 単数 対格)<br></span></a>
+<a class="note0">idque<span></span></a>
+<a class="note0">suis<span></span></a>
+<a class="note1">commodis,<span>commodum commodi N (2nd) N  <br>:convenience, advantage, benefit; interest, profit, yield; wages, reward; gift;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">honestate<span>honestas honestatis N (3rd) F  <br>:honor, integrity, honesty; wealth (Plater);<br>(C 単数 奪格)<br></span></a>
+<a class="note1">metitur,<span>metior metiri, mensus sum V (4th) DEP  <br>:measure, estimate; distribute, mete; traverse, sail/walk through;<br>(3 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note1">hic,<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(M 単数 主格)<br></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note1">consentiat<span>consentio consentire, consensi, consensus V (4th)  <br>:||agree, consent; fit/be consistent/in sympathy/unison with; favor; assent to;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">interdum<span>interdum ADV <br>:sometimes, now and then;<br><br></span></a>
+<a class="note1">naturae<span>natura naturae N (1st) F  <br>:nature; birth; character;<br>(C 単数 属格), <br></span></a>
+<a class="note1">bonitate<span>bonitas bonitatis N (3rd) F  <br>:goodness, integrity, moral excellence; kindness, benevolence, tenderness;<br>(C 単数 奪格)<br></span></a>
+<a class="note1">vincatur,<span>vinco vincere, vici, victus V (3rd)  <br>:conquer, defeat, excel; outlast; succeed;<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">amicitiam<span></span></a>
+<a class="note1">colērē<span>colo colere, colui, cultus V (3rd)  <br>:|honor, cherish, worship; tend, take care of; adorn, dress, decorate, embellish;<br>(  現在 能動態 不定詞 )<br><br></span></a>
+<a class="note1">possit<span>possum posse, potui, - V  <br>:be able, can;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note1">iustitiam<span>justitia justitiae N (1st) F  <br>:justice; equality; righteousness (Plater);<br>(C 単数 対格)<br></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note1">liberalitatem;<span>liberalitas liberalitatis N (3rd) F  <br>:courtesy, kindness, nobleness; generosity; frankness; gift;<br>(C 単数 対格)<br></span></a>
+<a class="note1">fortis<span>fortis forte, fortior -or -us, fortissimus -a -um ADJ  <br>:strong, powerful, mighty, vigorous, firm, steadfast, courageous, brave, bold;<br>(C 単数 主格)<br></span></a>
+<a class="note0">vero<span></span></a>
+<a class="note1">dolorem<span>dolor doloris N (3rd) M  <br>:pain, anguish, grief, sorrow, suffering; resentment, indignation;<br>(C 単数 対格)<br></span></a>
+<a class="note0">summum<span></span></a>
+<a class="note0">malum<span></span></a>
+<a class="note1">iudicans<span>judico judicare, judicavi, judicatus V (1st)  <br>:judge, give judgment; sentence; conclude, decide; declare, appraise;<br>(現在 分詞 能動態  単数 主格),<br><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">temperans<span>tempero temperare, temperavi, temperatus V (1st)  <br>:combine, blend, temper; make mild; refrain from; control oneself;<br>(現在 分詞 能動態  単数 主格),<br><br><br><br></span></a>
+<a class="note1">voluptatem<span>voluptas voluptatis N (3rd) F  <br>:pleasure, delight, enjoyment;<br>(C 単数 対格)<br></span></a>
+<a class="note0">summum<span></span></a>
+<a class="note0">bonum<span></span></a>
+<a class="note1">statuens<span>statuo statuere, statui, statutus V (3rd)  <br>:set up, establish, set, place, build; decide, think;<br>(現在 分詞 能動態  単数 主格),&nbsp;<br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">certe<span>certe ADV <br>:surely, certainly, without doubt, really; at least/any rate, in all events;<br><br></span></a>
+<a class="note0">nullo<span></span></a>
+<a class="note0">modo<span></span></a>
+<a class="note0">potest.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><font color="#000000"><strong>qui instituit summumm bonum sic, ut~.</strong> 「ut以下のように究極善を捉えるひとは」先行詞isが省略されているが、それはあとで　hicとしてコメントされる。</font></p>
+<p><strong>que metitur id suis commodis, non honestate</strong> : 「原因の奪格」「そしてそれを自身の興味、利益によって測定し、尊厳とか名誉によって判断しない」</p>
+<p>si ipse consentiat sibi et non vincatur natuae bonitate : 「もし自分が自身と一致してときには自然な善により打ち負かされることがない」ｰ&gt;　自分の主張に忠実で、時には自然な善により曲げられることもしないならば、</p>
+<p>hic, possit colere neque amicitiam, nec iustiam nec liberalitatem. : 「そういう人は、決して友情とか正義とか寛大など言うことを嘉することは出来ないであろう。」</p>
+<p><font color="#ff0000">nullo modo : = no way</font>! どうもよく解らないが、慣用句のようである。多分「性質の奪格」（NewLatin224)で奪格になっている感じがするが…？</p>
+<p><strong>indicans summum malum dolorem potest esse fortis</strong>. : 究極の悪は痛みであると判断する人は決して強い人ではあり得ない。</p>
+<p><strong>statuens summum bonum voluptatem potest esse temperans</strong>. : 究極の善は喜びであると考える人は節度あるひとではあり得ない。</p>
+<p>iudicans, statuensは現在分詞、主格で名詞化した主語。2つの対格目的語は述語対格<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>究極善を、徳性とは何ら関係を持たないものと考え、それを自身の尊厳、名誉ではなく興味、利益で判断するような人は、もし彼自身が自分に忠実で、時には自然な善により打ち負かされるということもないとすれば、そういう人は決して友情、正義、あるいは寛大というようなことを嘉することはできないであろう。究極の悪は痛みであると判断する人は、強い人とは言えないし、究極の善は喜びであると考える人は節度ある人では決して無い。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

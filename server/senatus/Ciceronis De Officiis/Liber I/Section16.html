@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 16 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[16]<span></span></a>
+<a class="note0">Ut<span></span></a>
+<a class="note1">enim<span>enim CONJ <br>:namely (postpos.); indeed; in fact; for; I mean, for instance, that is to say;<br><br></span></a>
+<a class="note0">quisque<span></span></a>
+<a class="note0">maxime<span></span></a>
+<a class="note1">perspicit,<span>perspicio perspicere, perspexi, perspectus V (3rd)  <br>:see through; examine; observe;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">re<span></span></a>
+<a class="note0">quaque<span></span></a>
+<a class="note1">verissimum<span>verus vera -um, verior -or -us, verissimus -a -um ADJ  最上級<br>:<strong>true</strong>, real, genuine, actual; properly named; well founded; right, fair, proper;<br>&nbsp;(N 単数 主格)<br></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note1">quique<span>quisque quaeque,quidque INDEF <br>:(w/-que) each, each one; every, everybody, everything (more than 2); whatever;<br>(M 複数 主格)<br></span></a>
+<a class="note1">acutissime<span>acutus acuta -um, acutior -or -us, acutissimus -a -um ADJ  最上級<br>:sharp, sharpened, pointed/tapering; severe; glaring; acute, wise; high-pitched;<br>副詞<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">celerrime<span>celer celeris -e, celerior -or -us, celerrimus -a -um ADJ  最上級<br>:swift, quick, agile, rapid, speedy, fast; rash, hasty, hurried; lively; early;ふ副詞<br></span></a>
+<a class="note1">potest<span>possum posse, potui, - V  <br>:be able, can;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">videre<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">explicare<span></span></a>
+<a class="note0">rationem,<span></span></a>
+<a class="note0">is<span></span></a>
+<a class="note1">prudentissimus<span>prudens prudentis (gen.), prudentior -or -us, prudentissimus -a -um ADJ  最上級<br>:aware, skilled; sensible, prudent; farseeing; experienced;<br>(M 単数 主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">sapientissimus<span>sapiens sapientis (gen.), sapientior -or -us, sapientissimus -a -um ADJ  最上級<br>:rational; sane, of sound mind; wise, judicious, understanding; discreet;<br>(M 単数 主格)<br></span></a>
+<a class="note1">rite<span>rite ADV <br>:duly, according to religious usage, with due observance; solemnly; well;<br><br></span></a>
+<a class="note1">haberi<span>habeo habere, habui, habitus V (2nd)  <br>:have, hold, consider, think, reason; manage, keep; spend/pass (time);<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">solet.<span>soleo solere, solitus sum V (2nd) SEMIDEP  <br>:be in the habit of; become accustomed to; <strong>tend to</strong><br>(3 単数 現在 能動態 直接法 )<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>ut quisque + 最上級　～　</strong>ita : は比例の文をつくり「<font color="#0000ff">～であればあるほど</font>」の意味になる。（ゼロからの、11.7.4)</p>
+<p><strong>ut quisque perspicit maxime quid sit verissimum in quaeque re</strong>. quid sit verissimumは間接疑問文、in quaeque re : 如何なるものの中にある、「誰でも、最も真実なものは何かを強く観察するものは」</p>
+<p>(ut) <strong>que qui potest acutissime et celerrime videre et explicare rationem</strong>.&nbsp; quiqueという語はなさそうなので、qui + que、「そして最もすばやく最も正確に理由（rationem)を発見し説明できる人」</p>
+<p>&nbsp;is solet haberi prudentissimus et sapientissimus. : 「彼はより最高に経験のある、最高に賢明であると言うことになる」</p>
+<p>solet haberi = tend to be considered<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>誰でも、最も一生懸命に何が真実であるかを観察する人、または最もすばやく最も正確に物事の理由を発見し説明できる人であればあるほど、彼は最も経験があり賢明であるということになる。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quocirca<span>quocirca CONJ <br>:on account of which; wherefore;<br><br></span></a>
+<a class="note0">huic<span></span></a>
+<a class="note1">quasi<span>quasi CONJ <br>:as if, just as if, as though; as it were; about;<br><br></span></a>
+<a class="note1">materia,<span>materia materiae N (1st) F  <br>:|material, matter, substance; food/fuel; breeding stock; topic, subject matter;<br>(C 単数 主格),<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">tractet<span>tracto tractare, tractavi, tractatus V (1st)  <br>:draw, haul, pull, drag about; handle, manage, treat, discuss;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">qua<span></span></a>
+<a class="note1">versetur,<span>versor versari, versatus sum V (1st) DEP  <br>:move about; live, dwell; be;<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note1">subiecta<span>subjectus subjecta -um, subjectior -or -us, subjectissimus -a -um ADJ  <br>:lying near, adjacent;<br>(F 単数 主格), (F 単数 奪格), (F 単数 呼格), (N 複数 主格), (N 複数 対格), (N 複数 呼格)<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">veritas.<span>veritas veritatis N (3rd) F  <br>:truth, fact, accuracy; honesty, truthfulness, frankness; sincerity, uprightness;<br>(X 単数 主格<br></span></a>
+</p>
+</div><div class="construction" id="sheet1" style="display: none;">
+<div class="constline" id="10" spellcheck="false">
+<p><br></p>
+</div>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>huic = sapientia</p>
+<p>veritas est materia subjecta huic.&nbsp;：これが文の骨子。「真実は賢明さに対してのそばにある物質である」</p>
+<p>quam tractet et in qua vesetur. quam, quaは関係代名詞でmateriaが先行詞。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>その意味では、真実は、ずっとそうであったように、賢明さにたいして、それを扱い、それの中で動き回るような材料である。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

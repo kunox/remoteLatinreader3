@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 12</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[12]<span></span></a>
+
+<a class="note0">Britanniae<span></span></a>
+<a class="note0">pars<span></span></a>
+<a class="note1">interior<span>interior interior, interius 形容詞　X単　主格　;= interior, inner, middle<br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eīs<span><br><br></span></a>
+<a class="note1">incolitur<span>incolo ３複　受動　;= live, dwell, inhabit<br><br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note1">nātōs<span>nascor nasci, natus sum 完了分詞　受動　ｍ　複　対格　;= be born, be formed, originate, arise<br><br><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">insulā<span><br><br></span></a>
+<a class="note0">ipsī<span></span></a>
+<a class="note1">memoriā<span>memoria memoriae F単　奪格　;= memory, hitory, time within memory<br><br><br></span></a>
+<a class="note1">prōditum<span>prodo prodere, prodidi, proditus TRANS 完了分詞　受動　ｍ単　対格　;= institute, prolong, hand down, <strong>lore</strong><br><br><br></span></a>
+<a class="note0">dīcunt,<span><br><br></span></a>
+<a class="note0">maritima<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eīs,<span><br><br></span></a>
+<a class="note1">quī<span>m複　主格<br><br></span></a>
+<a class="note1">praedae<span>praeda praedae F 単　属格　;= booty, loot, spoil, plunder<br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">bellī<span></span></a>
+<a class="note1">inferendī<span>infero TRANS 動名詞　ｍ単　属格　;= bring, carry in<br><br><br></span></a>
+<a class="note0">causā<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Belgiō<span><br><br></span></a>
+<a class="note1">trānsiērunt<span>transeo ３複　完了　;= go over, cross<br><br><br></span></a>
+<a class="note0">(quī<span><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">ferē<span>副詞　;= almost, about, nearly, generally<br><br><br></span></a>
+<a class="note0">eīs<span><br><br></span></a>
+<a class="note1">nōminibus<span>nomen N 複　奪格　；＝name<br><br><br></span></a>
+<a class="note1">cīvitātum<span>civitas F　複　属格<br><br><br></span></a>
+<a class="note0">appellantur,<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">ortī<span>orior ori oritus sum DEP 完了分詞　受動　m複　主格　;= be born, rise<br><br><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">cīvitātibus<span><br><br></span></a>
+<a class="note1">eō<span>副詞　;= there<br><br><br></span></a>
+<a class="note1">pervēnērunt)<span>pervenio ３複　完了　;= come to, reach, arrive<br><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">bellō<span>bellum N 単　奪格<br><br></span></a>
+<a class="note1">illātō<span>infero 完了分詞　受動　ｍ単　奪格　;= bring, carry in<br><br><br></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note1">permānsērunt<span>permaneo ３複　完了　;= last, continue, remain, endure<br><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">agrōs<span></span></a>
+<a class="note1">colere<span>colo colere, colui, coltus 不定詞　;= live in, inhabit, cultivate<br><br></span></a>
+<a class="note0">coepērunt.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p><strong>Interior pars Britanniae incolitur ab eis</strong> 「Britanniaの内陸地方は彼らにより住まわれている」が逐語訳。eisはquos以下で説明。</p>
+<p><strong>quos (esse) natos in insula ipsi</strong> 「彼らはその島で発生した」事。この不定詞句はproditum (esse)の主語。</p>
+<p>proditum (esse) memoria : memoriaは奪格で、「手段の奪格」記憶により伝承されている。</p>
+<p>「Britanniaの内陸地方は、その島を起源とすると記憶により伝承されていると言われる人が住んでいる」（日本語でも微妙）</p>
+<p><strong>maritima (pars incolitur) ab eis</strong> ：内陸部に対応して海辺の地方の話。</p>
+<p><strong>qui transierunt ex Belgio causa praedae ac belli inderendi</strong> : Belgaeから略奪と戦争を持ち込むのが目的で渡ってきた。</p>
+<p><strong>quibus ex civitatibus orti pervenerunt eo</strong> : quibusの先行詞はcivitatum. 彼らが発生しその州からそこに到達した。主語は漠然と彼らであり、ortiは彼らを修飾している。その彼らがそこから到達した、その州。</p>
+<p>bello illato : 独立奪格<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>Britaniaの内陸地方には、彼らの伝承によるとそこから生まれたと言われている人が住んでいる。一方、海岸地方では、略奪と戦争を目的にBelgaeから渡ってきて（彼らは殆ど全て、彼らが発生しそこから到達した州の名前によって呼ばれているが）戦いを持込み、留まり、畑を耕し始めた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hominum<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">īnfīnīta<span>infinitus infinita, inifinitum 形容詞　f単　主格　;= boundless, unlimited, endless, infinite<br><br><br><br></span></a>
+<a class="note1">multitūdō<span>multitudo F 単　主格　;= multitude, great number, crowd<br><br><br></span></a>
+<a class="note1">crēberrimaque<span>creber crebra -um, crebior, creberimus 形容詞　最上級　ｆ単　主格　;= thick, crowded, packed<br><br><br></span></a>
+<a class="note1">aedificia<span>aedificium aedifici N　複　主格　;= building, edifice, structure<br><br></span></a>
+<a class="note0">ferē<span><br><br></span></a>
+<a class="note1">Gallicīs<span>Gallicus Gallica, Gallicum 形容詞　X複　与格　;= Gallic, of Gaul<br><br><br></span></a>
+<a class="note1">cōnsimilia,<span>consimilis consimilis, consimile 形容詞　ｎ複　主格　;= like, very si,ilar<br><br><br></span></a>
+<a class="note1">pecorum<span>pecus pecoris N 複　属格　;= cattle, herd, flock<br><br></span></a>
+<a class="note0">magnus<span></span></a>
+<a class="note0">numerus.<span></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>multitudo hominum est infinita : 人の規模は無限で</p>
+<p>aedificia (sunt) creberima fere consimilia Gallicis : 建物の数は多く、殆どガリアのものと同じであり、<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>人数は大変多く、建物も殆どガリアと同様で多数あり、家畜も非常な数であった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Ūtuntur<span>utor uti, usus sum DEP ３複　受動　;= use, make use<br><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">aere<span>aes aeris N 単　奪格　;= money, copper, brass,<br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">nummō<span>nummus nummi M 単　奪格　;= coin, cash, money<br><br><br></span></a>
+<a class="note1">aureō<span>aureus aurea, aureum 形容詞　ｍ単　奪格　;= of gold, golden<br><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">tāleīs<span>talea taleae F 複　奪格　;= block, bar<br><br><br></span></a>
+<a class="note1">ferreīs<span>ferreus ferrea, ferreum X複　奪格　;= iron, made of iron<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">certum<span></span></a>
+<a class="note1">pondus<span>pondus ponderis N 単　対格　;= weight, burden<br><br></span></a>
+<a class="note1">exāminātis<span>examino 完了分詞　受動　複　奪格　;= weigh, examine, consider<br><br><br></span></a>
+<a class="note0">prō<span></span></a>
+<a class="note0">nummō.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>utorは特別な変種の「手段の奪格」がある。divitiis utitur.で「彼は財を作る」奪格をあたかも目的語のように使う。（NewLatin218.1)</p>
+<p><br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>彼らはブロンズまたは金のコイン、またはある重さにした鉄の棒をコインとして使った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Nāscitur<span>nascor nasci, natus sum DEP ３単　受動　;= be produced spontaneously<br><br><br></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note1">plumbum<span>plumbum plumbi N 単　主格　;= lead, <strong>tin</strong><br><br><br></span></a>
+<a class="note1">album<span>albus alba, -um ｎ単　主格　;= white, pale, fair<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">mediterrāneis<span>mediterraneus mediterranea, mediterraneum 形容詞　ｘ複　奪格　;= inland, remote from coast<br><br><br></span></a>
+<a class="note1">regiōnibus,<span>regio F 複　奪格　;= area, region<br><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">maritimīs<span></span></a>
+<a class="note1">ferrum,<span>ferrum ferri N 単　主格　;= iron<br><br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note1">exigua<span>exiguus exgua, exguum 形容詞　ｆ単　主格　;= small, meager<br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">cōpia;<span>copia copiae F 単　主格　;= number, amount, quantity<br><br><br></span></a>
+<a class="note1">aere<span>aes aeris N 単　奪格　;= money, copper, brass<br><br></span></a>
+<a class="note0">ūtuntur<span><br><br></span></a>
+<a class="note0">importātō.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>nascitur = be produced, existenceで「産出した」<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>また白錫をある島の地方では産出し、海岸部では鉄を産出したが、その量は少なく、使用された銅は輸入されたものであった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Māteria<span>materia F 単　主格　;= wood, lumber, timber<br><br><br></span></a>
+<a class="note1">cuiusque<span>quisque 代名詞　x単　属格　;= each, every, whatever<br><br><br><br></span></a>
+<a class="note1">generis<span>genus generis N 単　属格　;= kind, sort, class, rank<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">praeter<span>praeter 前置詞　対格支配　;= besides, except<br><br></span></a>
+<a class="note1">fāgum<span>fagus fagi F 単　対格　;= beech tree [ブナ]<br><br><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">abietem.<span>abies abietis F 単　対格　;= fir tree, white fir, spruce, 「もみの木」<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>fagus : ブナ、　abies : もみ、　学名はそのままのラテン語が使われている！</p>
+<p>cujusque generis materia est ut in Gallia : このutは英語の as と同じ。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>木材はガリアのものと同じ全ての種類があったが、ブナの木と、もみの木は例外である。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Leporem<span>lepus leporis M単　対格　;= hare<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">gallīnam<span>gallina gallinae F 単　対格　;= hen<br><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">ānserem<span>anser anseris C 単　対格　;= goose<br><br><br></span></a>
+<a class="note1">gustāre<span>gusto gustare, gustavi, gustatus 不定詞　;= taste, sip, enjoy<br><br><br></span></a>
+<a class="note1">fās<span>fas N （不変化）　;= divine, heaven's law, right, lawful, moral, allowed<br><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">putant;<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">alunt<span>alo alere, alui, altus TRANS 3複　現在　;= feed, nourish, nurse<br><br></span></a>
+<a class="note1">animī<span>animus M 単　属格　;= mind, intellect, soul<br><br></span></a>
+<a class="note1">voluptātisque<span>volptas volptatis F 単　属格　;= pleasure, delight, enjoyment<br><br><br></span></a>
+<a class="note0">causā.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>fasは道徳的に正しい事を指す様である。</p>
+<p>putant non fas gustare leporem et gallinam et anserem. うさぎ、鶏、鵞鳥を食することは正しくないと考えた。</p>
+<p>animi voluptatis causa : 精神の楽しみの目的で、ペットとして飼うということ。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>兎、鶏、鵞鳥などを食する事は道徳的に許されておらず、しかしそれらを観賞用に飼っていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Loca<span>locum ｎ複　主格<br><br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">temperātiōra<span>temperatus temperata, -m, temperatior -or -us, temperatissimus -a -um 形容詞　n 複　主格　;= temperate, mild<br><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliā,<span><br><br></span></a>
+<a class="note1">remissiōribus<span>remissus 形容詞　比較級　複　奪格　;= relaxed, mild, gentle<br><br><br></span></a>
+<a class="note1">frīgoribus.<span>frigor frigris M 複　奪格　;= cold, chill<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>remissioribus frigoribus : 形容詞＋名詞の独立奪格？　「マイルドな寒さであった」<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>そこはガリアよりは穏やかな気候であり、寒さもそれほど厳しくはない。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

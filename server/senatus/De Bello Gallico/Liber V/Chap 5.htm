@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 5</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[5]<span></span></a>
+
+<a class="note0">Hīs<span></span></a>
+<a class="note0">rēbus<span></span></a>
+<a class="note1">cōnstitūtīs<span>constituo 完了分詞　複　奪格　;= <strong>resolve</strong>, settle<br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">portum<span></span></a>
+<a class="note0">Itium<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">legiōnibus<span></span></a>
+<a class="note1">pervenit.<span>pervenio ３単　完了　;= reach, arrive, come to<br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p><br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>これらの事を片付けて、カエサルは軍団とともにItiumの港に到着した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ibi<span></span></a>
+<a class="note0">cognōscit<span><br><br></span></a>
+<a class="note1">LX<span>quadroginta = 40<br><br></span></a>
+<a class="note1">nāvēs,<span>F 複対格<br><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Meldīs<span></span></a>
+<a class="note0">factae<span></span></a>
+<a class="note0">erant,<span></span></a>
+<a class="note0">tempestāte<span><br><br></span></a>
+<a class="note1">rēiectas<span>recio recire, rejeci, rejectus 完了分詞　受動　複　ｆ　対格　;= throw back, drive back<br><br><br></span></a>
+<a class="note0">cursum<span></span></a>
+<a class="note0">tenēre<span><br><br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">potuisse<span>完了不定詞<br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">eōdem<span></span></a>
+<a class="note0">unde<span></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">profectae<span>proficiscor proficisci, profevtus sum DEP 完了分詞　受動　ｆ複　主格　;= depart, set out, proceed<br><br></span></a>
+<a class="note1">revertisse;<span>reverto 完了　不定詞　;= turn back, go back<br><br></span></a>
+<a class="note0">reliquās<span><br><br></span></a>
+<a class="note0">parātās<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">nāvigandum<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">rēbus<span></span></a>
+<a class="note1">instrūctās<span>instruo instruere, instruxi, instructus 完了分詞　受動　ｆ複　対格　;= construct, build, draw up<br><br></span></a>
+<a class="note1">invenit.<span>invenio ３単　完了　;= come upon, discover, find, invent<br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>前半がよく解らない。骨子は</p>
+<p><strong>cognoscit LX naves tempestate rejectas non potuisse, revertisse</strong>.　navesは複　対格で、cognoscitの目的語であり、potuisse, revertisseの主語である。「船が出来なかったこと、押し戻された事、を知った」rejectas tempestateが解りにくい。「嵐によって戻された」と完了分詞でnavesを修飾する、と考えるのが自然だが、そうすると「嵐によって戻された船が押し戻された事を知った」となり、重複する感じであるが…<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>そこで、４０隻の船、それはMeldisで作られたものであったが、が嵐により流され、進路を保つ事ができず、出発した同じ所に押し戻された事を知った。残りは出港準備が整っており、全ての艤装もできている事が分かった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Eōdem<span>副詞　;= to the same place<br><br></span></a>
+<a class="note0">equitātus<span><br><br></span></a>
+<a class="note0">tōtīus<span><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">convenit,<span></span></a>
+<a class="note1">numerō<span>numerus M 単　奪格　（指定の奪格）;= number<br><br></span></a>
+<a class="note1">mīlium<span>milium N 単　主格　;= thousand<br><br></span></a>
+<a class="note1">quattuor,<span>four<br><br></span></a>
+<a class="note0">prīncipēsque<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">cīvitātibus;<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">perpaucōs,<span>perpaucus perpauca, perpaucum 形容詞　ｍ複　対格　;= very&nbsp; few, select<br><br><br></span></a>
+<a class="note0">quōrum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">fidem<span></span></a>
+<a class="note1">perspexerat,<span>perspicio ３単　過去完了　;= see through, examine, observe<br><br></span></a>
+<a class="note1">relinquere<span>relinquo relinquere, relinqui, relictus 不定詞　;= leave behind, abandan, be left<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliā,<span></span></a>
+<a class="note0">reliquōs<span></span></a>
+<a class="note1">obsidum<span>obses obsidis C 複　属格　;= hostage<br><br></span></a>
+<a class="note1">locō<span>N単　奪格<br><br></span></a>
+<a class="note0">sēcum<span><br><br></span></a>
+<a class="note0">dūcere<span><br><br></span></a>
+<a class="note1">dēcrēverat,<span>decerno decernere, decerevi, deceretus ３単　過去完了　;= decide, settle, resolve, declare<br><br><br></span></a>
+<a class="note0">quod,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note1">abesset,<span>absum ３単　未完了　接続法　;= be away, absent<br><br></span></a>
+<a class="note1">mōtum<span>motus motus M 単　対格　;= movement, motion, <strong>riot</strong>, disturbance<br><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note1">verēbātur.<span>vereor vereri, veritus sum DEP ４単　未完了　受動　;= reverse, respect, fear, dread<br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p><strong>numero milium quattuor</strong> : 「その数、４０００」numeroは「<strong>指定の奪格</strong>」と呼ばれ、「～に関しては」の意。つまり「数に関して言えば４０００」というのが逐語訳。miliumは二通りのテキストがある。milia(複）になっているもの（A&amp;G、Hodges)milium（単）のもの (Harkness)単のものは、equitatusに依存して単数になっているという。</p>
+<p>ex quibus perpaucos relinquere in Galliae 「そのなかから極めて少数だけをガリアに残す事」</p>
+<p>reliquos obsidum loco secum ducere. obsidum locoは人質の場所で,という意味で「人質として」locoは場所の奪格(NewLatin 228.1.b)</p>
+<p>cum ipse abesset 「自分が留守の間に」cumが過去を指す時には、接続法は過去の「状況」を表す。（NewLatin288.1.b)<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>同じ場所に全ガリアから騎兵を集めた、その数４０００。全ての州の主要なものたちを、その中で我々に忠実であることがはっきりしている極めて少数だけをガリアに残し、後は全て人質として連れて行く事に決めた。と言うのは、自分がいない間にガリアで反乱が起きることを恐れたからである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

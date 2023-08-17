@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber II : Chap 18</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[18]<span></span></a>
+
+<a class="note0">Locī<span><br><br></span></a>
+<a class="note0">nātūra<span><br><br></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">haec,<span></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">nostrī<span><br><br></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">dēlēgerant.<span>deligo deligare, delegi, delectus TRANS ３複　過去完了　;= pick, select, choose  <br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Loci natura erat haec : haec＝this で以下のようである、次のようであると言う意。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>我軍が野営地として場所の自然状況は次のようであった。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Collis<span>collis collis M 単　主格　;= hill, hillock, hill-top, high ground  </span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">summō<span><br><br></span></a>
+<a class="note1">aequāliter<span>副詞　;= evently, alike, uniformaly, equally  <br></span></a>
+<a class="note1">dēclīvis<span>declivis declivis, declive ADJ  <br>:sloping, descending, sloping downwards; shelving; tending down; falling (stars);<br>(c 単数 主格),<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note0">Sabim,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">suprā<span>副詞　;= on top, above, bfore, formerly  <br></span></a>
+<a class="note1">nomināvimus,<span>nomino nominare, nominavi, nominatus V (1st)  <br>:name, call;<br>(１人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note1">vergēbat.<span>vergo vergere, -, - V (3rd)  <br>:incline, lie, slope;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>collis ab summo declivis : 頂上から下っている丘の上</p>
+<p>quod supra nominavimus : 以前に我々が言った、</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>それはゆるやかに平均して下っていく丘であり、先ほども言った、Sabim河に下っている。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ab<span></span></a>
+<a class="note0">eō<span></span></a>
+<a class="note0">flūmine<span><br><br></span></a>
+<a class="note1">parī<span>par paris (gen.), -, parissimus -a -um ADJ  <br>:equal (to); a match for; of equal size / rank/ age; fit/ suitable /right/ proper;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">acclīvitāte<span>acclivitas acclivitatis N (3rd) F  <br>:slope, ascent, upward inclination, steepness;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">collis<span></span></a>
+<a class="note1">nāscēbātur<span>nascor nasci, natus sum V (3rd) DEP  <br>:be produced spontaneously, come into existence/being; spring forth, grow; live;<br>(３人称 単数 未完了 受動態 直説法 )<br></span></a>
+<a class="note1">adversus<span>adversus adversa -um 形容詞　単　主格　;= opposite, directly, facing  </span></a>
+<a class="note1">huic<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(X 単数 与格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">contrārius,<span>contrarius contraria, contrarium ADJ  <br>:opposite, contrary, in contradiction; antithetical; opposed/ hostile/a dverse;<br>(m 単数 主格)<br></span></a>
+<a class="note0">passūs<span><br><br></span></a>
+<a class="note1">circiter<span>副詞　;= nearly, almost, approximately  </span></a>
+<a class="note0">CC<span></span></a>
+<a class="note1">īnfimus<span>infimus infima, infimum ADJ  最上級<br>:lowest, deepest, furtherest down/from the surface; humblest; vilest, meanest;<br>(m 単数 主格)<br></span></a>
+<a class="note1">apertus,<span>aperio aperire, aperui, apertus V (4th) TRANS  <br>:uncover, open, disclose; explain, recount; reveal; found; excavate; spread out;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">superiōre<span>superus supera -um, superior -or -us, supremus -a -um ADJ  比較級<br>:above, high; higher, upper, of this world; greatest, last, highest;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">parte<span>pars　奪格  </span></a>
+<a class="note1">silvestris,<span>silvestris silvestris silvestre 形容詞　単　主格　属格  </span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">facile<span></span></a>
+<a class="note1">intrōrsus<span>introrsus ADV <br>:within, inside, to within, inwards, inwardly, internally;<br><br></span></a>
+<a class="note1">perspicī<span>perspicio perspicere, perspexi, perspectus V (3rd)  <br>:see through; examine; observe;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">posset.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>paris acclivitate : ablative of quality = 性質の奪格　形容詞に修飾されて性質を表す。（NewLatin224) 叙述的にも使われる。また属格が使われることもありその場合Genitive of qualityと呼ばれる（AG415) Genitive of quality (AG345)</p>
+<p>passus circiter CC infinimus apertus : 下の方２００passusは開けている、collisを修飾する形容詞句</p>
+<p>ab superiore parte silvistris ：上の部分は木が茂っている　同様にcollisを修飾</p>
+<p>ab superiore parte : 場所の奪格　場所の奪格はよく　ab(まれにex)がつく、視点を表している　（AG429)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その河から、ここに対面して対岸には、同様な傾斜で登っていく丘があった。その丘は下のほうは２００歩程度は開けているが、上の部分は木が茂っており、容易には中を見ることができなかった。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Intrā<span><br><br></span></a>
+<a class="note0">eās<span><br><br></span></a>
+<a class="note0">silvās<span><br><br></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">occultō<span>occultum occulti N (2nd) N  <br>:secrecy; hiding;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note1">continēbant;<span>contineo continere, continui, contentus V (2nd) TRANS  <br>:secure, maintain, sustain; fasten/hold in position; retain, keep safe, preserve;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">apertō<span><br><br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note1">secundum<span>ここでは前置詞　体格支配　;= after, next to, close behind  </span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note1">paucae<span>paucus pauca -um 形容詞　単　属格　;= little, small in quantity, a few  </span></a>
+<a class="note1">statiōnes<span>statio stationis N (3rd) F  <br>:outpost, picket; station; watch;<br>(c 複数  対格), <br></span></a>
+<a class="note0">equitum<span></span></a>
+<a class="note0">vidēbantur.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>secundum : 対格支配前置詞、すぐそば、すぐ向こう</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その森の中に敵は自身を隠しており、河のすぐそばの開けた場所には、少数の騎兵の見張りが見られた。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Flūminis<span>flumenの属格  <br></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">altitūdō<span><br><br></span></a>
+<a class="note1">pedum<span>pes pedis M 複　属格　;= foot  </span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note1">trium.<span>tres = 3 の属格  </span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>pedum trium :&nbsp;&nbsp;性質の属格　(quality of Gentive)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>河の深さは約３フィート。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

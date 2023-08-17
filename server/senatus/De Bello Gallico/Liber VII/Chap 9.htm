@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 9</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[9]<span></span></a>
+
+<a class="note1">At<span>at CONJ <br>:but, but on the other hand; on the contrary; while, whereas; but yet; at least;<br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">bīduum<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">locīs<span></span></a>
+<a class="note0">morātus,<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">Vercingetorīge<span><br><br></span></a>
+<a class="note0">ūsū<span><br><br></span></a>
+<a class="note1">ventūra<span>venio venire, veni, ventus V (4th)  <br>:come; esse 省略の未来不定詞<br><br></span></a>
+<a class="note1">opīniōne<span>opinio opinionis N (3rd) F  <br>:belief, idea, opinion; <strong>rumor</strong> (Plater);<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">praecēperat,<span>praecipio praecipere, praecepi, praeceptus V (3rd)  <br>:take or receive in advance; anticipate; warn; order; teach, instruct;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">causam<span></span></a>
+<a class="note1">supplēmentī<span>supplementum supplementi N (2nd) N  <br>:reinforcements; supplies; that which fills out;<br>(n 単数 属格)<br></span></a>
+<a class="note0">equitātūsque<span><br><br></span></a>
+<a class="note0">cōgendi<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">exercitū<span><br><br></span></a>
+<a class="note1">discēdit;<span>discedo discedere, discessi, discessus V (3rd)  <br>:go/march off, depart, withdraw; scatter, dissipate; abandon; lay down (arms);<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">Brūtum<span><br><br></span></a>
+<a class="note0">adulēscentem<span><br><br></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">cōpiīs<span><br><br></span></a>
+<a class="note0">praeficit;<span></span></a>
+<a class="note0">hunc<span></span></a>
+<a class="note1">monet,<span>moneo monere, monui, monitus V (2nd)  <br>:remind, advise, warn; teach; admonish; foretell, presage;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">partēs<span><br><br></span></a>
+<a class="note0">equitēs<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">lātissimē<span><br><br></span></a>
+<a class="note1">pervagentur:<span>pervagor pervagari, pervagatus sum V (1st) DEP  <br>:wander or range through, rove about; pervade, spread widely; extend;<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+<a class="note1">datūrum<span>do dare, dedi, datus V (1st) TRANS  <br>:give; dedicate; sell; pay; grant/bestow/impart/offer/lend; devote; allow; make;<br>esse省略の未来不定詞<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">operam,<span>opera operae N (1st) F  <br>:work, care; aid; service, effort/trouble;<br>(c 単数 対格)<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">longius<span></span></a>
+<a class="note1">trīduō<span>triduum tridui N (2nd) N  <br>:three days;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">absit.<span>absum abesse, abfui, abfuturus V  <br>:be away/absent/distant/missing; be free/removed from; be lacking; be distinct;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>        <div class="construction" id="sheet1" style="display: none; background-color: rgb(255, 255, 248);">
+<div class="constline" id="10" style="border: currentColor; border-image: none;"  spellcheck="false">
+<p>quod haec <strong>praeceperat </strong>ventura (esse) usus. それが起きる事を想定していた<br></p>
+</div>
+<div class="constline" id="11" style="border: currentColor; border-image: none;"  spellcheck="false"><p><strong>discedit</strong> ab exercitu<br></p>
+</div><div class="constline" id="12" style="border: currentColor; border-image: none;"  spellcheck="false"><p><strong>Praeficit</strong> Brutum his copiis<br></p>
+</div><div class="constline" id="13" style="border: currentColor; border-image: none;"  spellcheck="false"><p><strong>Mones</strong> ut ~ pervagentur<br></p>
+</div></div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p><strong>haec de Vercingetorige</strong> : haecは前の章の、VercingetorixがArveriの方へ軍陣を移動するという動き。deはof, on the part ofで「Vercingetorix側の動き」</p>
+<p><strong>usu ventura (esse)</strong> : come in experienceで「起きるであろう（事）」<font color="#ff0000">usuは指定の奪格？</font>付帯状況の奪格？</p>
+<p><strong>cogendi</strong> : 動形容詞「集めるべき補充兵と騎兵」が逐語訳</p>
+<p><font color="#ff0000"></font><strong>per causam</strong> : (以下を）口実として</p>
+<p>daturum 以下は間接話法。</p>
+<p>se daturum (esse) operam, ne ~ . ~しない様な作業を与えるべきであろう。（逐語訳）</p>
+</div></div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Vercingetorixに関して、その動きがあるであろうという予測を噂から想定していたCaesarは、２日間、その場所に留まってから、補充の兵、騎兵などを募る事を口実にして自身は軍から離れた。若い方のBrutusを指揮を任せ、彼に出来る限り広い範囲に騎兵を展開することを命じた。「但し３日を越えるような距離には離れないようにすべきであろう、」と言った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note1">cōnstitūtīs<span>constituo constituere, constitui, constitutus V (3rd)  <br>:||establish/create/institute; draw up, <strong>arrange</strong>/set in order; make up, form; fix;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">suīs<span>suus sua, suum ADJ  <br>:his/one's (own), her (own), hers, its (own); (pl.) their (own), theirs;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">inopīnantibus<span>inopinans (gen.), inopinantis ADJ  <br>:unaware, off guard; unexpected, not expecting;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">maximīs<span><br><br></span></a>
+<a class="note0">potest<span></span></a>
+<a class="note0">itineribus<span></span></a>
+<a class="note0">Viennam<span></span></a>
+<a class="note1">pervenit.<span>pervenio pervenire, perveni, perventus V (4th)  <br>:come to; reach; arrive;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>his rebus constitutis : 独立奪格「これらの手配を行なって」</p>
+<p>suis inopinantibus : 独立奪格 suisは自分の部下たちのこと「部下たちが思っても見なかった時に」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらの手配を行なって、出来る限りの強行軍で、部下たちが思いもしなかった時に、Viennaに到着した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ibi<span></span></a>
+<a class="note1">nactus<span>nanciscor nancisci, nanctus sum V (3rd) DEP  <br>:obtain, get; find, meet with, receive, stumble on, light on;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note1">recentem<span>recens (gen.), recentis ADJ  <br>:fresh, recent; rested;<br>(c 単数 対格)<br></span></a>
+<a class="note1">equitātum,<span>equitatus equitatus N (4th) M  <br>:cavalry, horse-soldiers; equestrian order; bodies of cavalry (pl.);<br>(c 単数 対格)<br></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">multīs<span><br><br></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note0">diēbus<span><br><br></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">praemīserat,<span>praemitto praemittere, praemisi, praemissus V (3rd)  <br>:send ahead or forward;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">diurnō<span>diurnus diurna, diurnum ADJ  <br>:by day, of the day; daily;<br>(n 単数 奪格)<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">nocturnō<span>nocturnus nocturna, nocturnum ADJ  <br>:nocturnal, of night, at night, by night;<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note1">itinere<span>itiner itineris N (3rd) N  <br>:journey; road; passage, path; march<br>(n 単数 奪格),<br></span></a>
+<a class="note1">intermissō<span>intermitto intermittere, intermisi, intermissus V (3rd)  <br>:interrupt; omit; stop; leave off (temporarily); leave a gap;<br>(完了 分詞 受動態 n 単数 奪格)<br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Aeduōrum<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Lingonēs<span><br><br></span></a>
+<a class="note0">contendit,<span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0">duae<span></span></a>
+<a class="note0">legiōnēs<span><br><br></span></a>
+<a class="note0">hiemābant,<span><br><br></span></a>
+<a class="note0">ut,<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">suā<span><br><br></span></a>
+<a class="note0">salūte<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Aeduīs<span><br><br></span></a>
+<a class="note1">inirētur<span>ineo inire, inivi(ii), initus V  <br>:enter; undertake; begin; go in; enter upon;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">cōnsilī,<span><br><br></span></a>
+<a class="note1">celeritāte<span>celeritas celeritatis N (3rd) F  <br>:speed, quickness, rapidity; speed of action, dispatch; haste; early date;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">praecurreret.<span>praecurro praecurrere, praecurri, praecursus V (3rd)  <br>:run before, hasten on before; precede; anticipate;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>nactus recentem equitatum : 分詞構文</p>
+<p>itinere neque diurno intermisso, (itinere) neque nocturno (intermisso) : 独立奪格２つ。「昼も夜も休まずに」</p>
+<p>ut si quid consili iniretur, 「もし何か計画が着手されたとしても」　<font color="#ff0000">consili 属格はなぜ？ </font>多分部分の属格、ここのquidはaliquidで何かの意。沢山の計画の中の何か、が逐語訳。</p>
+<p>praecurreret celeritate : 手段の奪格で「素早さによって機先を制した」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>そこには何日も前から送り込んでいた騎兵が手付かずでおり、昼夜を問わず、Aeduiの領地を通ってLinginesに向かった。そこには２軍団が冬営している場所である。そして、もし何かAeduuiによる、Caesarの安全に関わる計画が着手されていたとしても、素早さでその機先を制した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">pervēnisset,<span>pervenio pervenire, perveni, perventus V (4th)  <br>:come to; reach; arrive;<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">reliquās<span><br><br></span></a>
+<a class="note0">legiōnēs<span><br><br></span></a>
+<a class="note0">mittit<span></span></a>
+<a class="note1">priusque<span>priusquamのテキストあり<br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">ūnum<span><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">cōgit<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">quam<span>quam CONJ <br>:how, <strong>than</strong>;<br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">eius<span>Caesarの事<br><br></span></a>
+<a class="note1">adventū<span>adventus adventus N (4th) M  <br>:arrival, approach; visit, appearance, advent; ripening; invasion, incursion;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">Arvernīs<span><br><br></span></a>
+<a class="note1">nūntiārī<span>nuntio nuntiare, nuntiavi, nuntiatus V (1st) TRANS  <br>:announce/report/bring word/give warning; convey/deliver/relate message/greeting;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">posset.<span>possum posse, potui, - V  <br>:be able, can;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>cum pervenisset, mittit,</p>
+<p><strong>cogit prius quam nuntiari posset</strong>.&nbsp; nuntiariは自動詞、受動で、非人称的に使われている。eius adventuについて、Arverniに知られる事。possetの主語はnuntiari. priusquam + 接続法は、期待を表すのものと考えられる。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>そこに到着して、残りの軍団のほうに送り出して、彼の到着がArveriに知られる前にと、一箇所に集めた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hāc<span><br><br></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note0">cognitā<span><br><br></span></a>
+<a class="note0">Vercingetorīx<span><br><br></span></a>
+<a class="note0">rūrsus<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Biturīgēs<span><br><br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note0">redūcit<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">inde<span></span></a>
+<a class="note0">profectus<span></span></a>
+<a class="note0">Gorgobinam,<span></span></a>
+<a class="note0">Bōiōrum<span><br><br></span></a>
+<a class="note0">oppidum,<span></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note0">Helvēticō<span><br><br></span></a>
+<a class="note1">proeliō<span>proelium proeli(i) N (2nd) N  <br>:battle/fight/bout/conflict/dispute; armed/hostile encounter; bout of strength;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">victōs<span>vinco vincere, vici, victus V (3rd)  <br>:conquer, defeat, excel; outlast; succeed;<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">collocāverat<span>colloco collocare, collocavi, collocatus V (1st) TRANS  <br>:|put together, assemble; settle/establish in a place/marriage; billet; lie down;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">Aeduīsque<span><br><br></span></a>
+<a class="note1">attribuerat,<span>attribuo attribuere, attribui, attributus V (3rd) TRANS  <br>:assign/allot/attribute/impute to; grant, pay; appoint, put under jurisdiction;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note1">oppugnāre<span>oppugno oppugnare, oppugnavi, oppugnatus V (1st)  <br>:attack, assault, storm, besiege;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">īnstituit.<span>instituo instituere, institui, institutus V (3rd)  <br>:set up, establish, found, make, institute; build; prepare; decide;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>hac re cognia : 独立奪格</p>
+<p>Gorgobinam, Boiorum oppidum, quos proelio Hervetico victos Caesar collocaverat ibi&nbsp;. quosはBoiiを指す。「Hervettiとの戦いで勝利したCaesarがそこに定住させた」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これを知ったVercingetorixはBiturigesに再び軍勢を率いて、そこからGorgoninaに向かった。そこはBoii族の都市で、かってHervettiとの戦いで勝利したCaesarが彼らをそこに定住させ、Aeduiに治めさせた部族である。そこに対して、（Vercingetorixは）攻撃を決めた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

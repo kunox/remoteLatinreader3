@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber II : Chap 28</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[28]<span></span></a>
+<a class="note0">Hōc<span><br><br></span></a>
+<a class="note0">proeliō<span><br><br></span></a>
+<a class="note0">factō<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">prope<span>副詞　前置詞　near, nearly</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">interneciōnem<span>internecio internecionis N (3rd) F  <br>:slaughter, massacre; extermination, total destruction of life; cause of such;<br>(c 単数 対格)<br></span></a>
+<a class="note1">gente<span>gens gentis N (3rd) F  <br>:<strong>tribe</strong>, clan; nation, people; Gentiles;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">nōmine<span>nomen nominis N 単　奪格　;= name, family name, noun</span></a>
+<a class="note1">Nerviōrum<span>Nervius Nervii N (2nd) M  <br>:Nervii (pl.); Belgic (north Gallic) tribe;<br>(X 複数  属格)<br></span></a>
+<a class="note1">redāctō,<span>redigo redigere, redegi, redactus V (3rd)  <br>:drive back; reduce; render;<br>(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note1">maiōrēs<span>major majoris N (3rd) M  <br>:ancestors (pl.);<br>(c 複数  主格)<br></span></a>
+<a class="note1">nātū,<span>natus natus M 奪格　;= birth, age, years　major natu, minor natuで長老、若者<br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note1">ūnā<span>副詞　;= together, together with<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">puerīs<span>puer pueri N (2nd) M  <br>:boy, lad, young man; servant; (male) child;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">mulieribusque<span>mulier mulieris F 複　奪格　;= woman, wife, mistress</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">aestuāria<span>aestuarium aestuari(i) N (2nd) N  <br>:tidal marsh/inlet/opening, marsh; (river) estuary; air shaft, vent;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">palūdēs<span>palus paludis N (3rd) F  <br>:swamp, marsh;<br>(c 複数  対格)<br></span></a>
+<a class="note1">coniectōs<span>conicio conicere, conjeci, conjectus V (3rd) TRANS  <br>:|throw/cast/fling (into area); devote/pour (money); thrust, involve; insert;<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note1">dīxerāmus,<span>dico １複　過去完了<br></span></a>
+<a class="note0">hāc<span><br><br></span></a>
+<a class="note1">pugnā<span>pugna pugnae N (1st) F  <br>:battle, fight;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">nūntiātā,<span>nuntio nuntiare, nuntiavi, nuntiatus V (1st) TRANS  <br>:announce/ report/bring word/give warning; convey/ deliver /relate message/greeting;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">victōribus<span><br><br></span></a>
+<a class="note0">nihil<span><br><br></span></a>
+<a class="note1">impeditum,<span>impeditus impedita -um, impeditior -or -us, impeditissimus -a -um ADJ  <br>:hindered/obstructed/encumbered/hampered; difficult/impeded; inaccessible;<br>(n 単数 主格）<br></span></a>
+<a class="note1">victīs<span>vinco vincere, vici, victus V (3rd)  <br>:conquer, defeat, excel; outlast; succeed;<br>(完了 分詞 受動態  複数  与格<br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note1">tūtum<span>tutus tuta -um, tutior -or -us, tutissimus -a -um ADJ  <br>:safe, prudent; secure; protected;<br>(n 単数 主格)<br></span></a>
+<a class="note1">arbitrarentur,<span>arbitror arbitrari, arbitratus sum V (1st) DEP  <br>:observe, witness; testify; decide, judge, sentence; believe, think, imagine;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">supererant<span>supersum superesse, superfui, superfuturus V  <br>:be left over; survive; be in excess/superfluous (to); remain to be performed;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note1">cōnsēnsū<span>consensus consensus N (4th) M  <br>:agreement (opinion), consent, harmony; unanimity; conclusion, plot, conspiracy;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">lēgātōs<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">mīsērunt<span><br><br></span></a>
+<a class="note0">sēque<span><br><br></span></a>
+<a class="note0">eī<span><br><br></span></a>
+<a class="note1">dēdidērunt;<span>dedo dedere, dedidi, deditus V (3rd) TRANS  <br>:give up/in, surrender; abandon/consign/devote (to); yield, hand/deliver over;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>prelio facto</strong> : 独立奪格　「戦争が終わって」</p>
+<p><strong>gente ac nomine redacto</strong> : 独立奪格　「氏と家系が失われて」</p>
+<p><strong>maijores natu</strong> : 長老たち（AG131）が主語で、動詞はarbitrarentur, miserunt,<font color="#ff0000"> dediderunt</font>である。</p>
+<p>Chap１６にpueris mulieribusqueの避難の様子が出ている。</p>
+<p><strong>cum arbitrarentur nihil impeditum victoribus, nihil tutum victis</strong>, 「勝者には障害はなく、敗者には安全はないと考えた時（考えたので？）」nihil impeditumはnothing hindered というニュアンス。victoribus, victisは与格で、nothing safe for(to) looserとなるのであろう。<font color="#ff0000">これは文法的にはどう説明するんだろうか？　</font>estが入った文と考えるべきなのか？nihil impeditum&nbsp;esse vicoribus. とするとなんか所有の与格のようになり、勝者は障害を持たない、で意味は合う...　</p>
+<p>omnium qui supererant consensus : 手段、原因の奪格で「全員で合意して」</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>これらの戦いが終わって、ネルイ族の氏、家は殆ど絶滅するまでに減少した。そこで前に述べたが、長老たち、子供や婦人らと共に水辺や沼地に避難していたのだが、は戦いの報告を受け、勝者には障害物は今はなく、敗者に安全なものは何もないと考えたので、生き残ったもの全員の同意をもってカエサルのところに使者をおくり、自身たちを降伏した。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">commemorandā<span>commemoro commemorare, commemoravi, commemoratus V (1st) TRANS  <br>:recall (to self/other); keep in mind, remember; mention/　relate; place on record;<br>(未来 分詞 受動態 f 単数 奪格)<br>動形容詞<br></span></a>
+<a class="note0">cīvitātis<span><br><br></span></a>
+<a class="note1">calamitāte<span>calamitas calamitatis N (3rd) F  <br>:loss, damage, harm; misfortune/disaster; military defeat; blight, crop failure;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">DC<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">trēs<span><br><br></span></a>
+<a class="note0">senātōrēs,<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note0">mīlibus<span><br><br></span></a>
+<a class="note0">LX<span></span></a>
+<a class="note1">vix<span>副詞　;= hardly, scarcely, barely, only just</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">D,<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">arma<span></span></a>
+<a class="note0">ferre<span></span></a>
+<a class="note1">possent,<span>３複未完了　接続法</span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note0">redāctōs<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">dīxērunt.<span>dico dicere, dixi, dictus V (3rd)  <br>:say, declare, state; allege, declare positively; assert; plead (case);<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>DC : sexcentis (600)</p>
+<p>LX : sexaginta (60)</p>
+<p>D : quingentos (500)</p>
+<p>全体の構文　dixeruntが動詞で間接話法、言われた内容は sese redactos esseの不定詞句。「自身は減少した、と言った」</p>
+<p>in commenmoranda civitatis calamitate : inが奪格支配なのでcommemmorandaはF単奪格、calamitateはF単奪格、civitatisは所有の属格で「記憶すべき部族の損害」</p>
+<p>qui arma ferre possent：possentは間接話法の従属文の動詞であるから。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>記録すべき部族の損害は、長老たちは６００名から３名に、武器を持てる戦闘員は60000人から恐ろしいことに５００人に減ってしまったと言った。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quōs<span><br><br></span></a>
+<a class="note0">Caesar,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">miserōs<span>miser miseri N (2nd) M  <br>:wretched people (pl.);<br>(c 複数  対格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">supplicēs<span>supplex (gen.), supplicis ADJ  <br>:suppliant, kneeling, begging;<br>&nbsp;(c 複数  対格)<br></span></a>
+<a class="note1">ūsus<span>utor uti usus sum DEP 完了分詞　受動　ｍ単主格　;= use, make use, enjoy the friendship of (w/ABL)</span></a>
+<a class="note1">misericordiā<span>misericordia misericordiae N (1st) F  <br>:pity, sympathy; compassion, <strong>mercy</strong>; pathos;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">vidērētur,<span>video videre, vidi, visus V (2nd)  <br>:see, look at; consider; (PASS) seem, seem good, appear, <strong>be seen;</strong><br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note1">dīligentissimē<span>diligentissime 副詞　最上級 ;= diligent accurately</span></a>
+<a class="note1">cōnservāvit<span>conservo conservare, conserravi, conservatus ３単　完了　;= keep safe, intact, preserve, maintain spare, keep, save from danger</span></a>
+<a class="note0">suīsque<span></span></a>
+<a class="note0">fīnibus<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">oppidīs<span></span></a>
+<a class="note1">uti<span>utor uti, usus sum DEP 受動不定詞　;= use, make use</span></a>
+<a class="note1">iussit<span>jubeo jubere, jussi, jussus TRANS ３単　完了　;= order, command, request</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">fīnitimīs<span>finitimus finitimi M 複　与格　;= neighors</span></a>
+<a class="note0">imperāvit<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">iniūriā<span>injuria injuriae F 単　奪格　;= injury, injustice, wrong</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">maleficiō<span>maleficium malefici N 単　奪格　;= crime, offense, fraud</span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">suōsque<span></span></a>
+<a class="note0">prohibērent.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>難解な文章。全体的には、Caesar主語で、viderentur, conservavit, jussit imperavitという動詞が続く。utは名詞節または副詞節を導いている接続詞である。</p>
+<p>１） <strong>ut viderentur usus misericordia in miseros ac supplices</strong> : miseros ac supplicesは生き残った人たちのこと。usus misericordia vedereturの使い方は特殊で、完了分詞(usus)と動詞(videretur)をキリシア語の様に使っているそうである。（E.S. Shuckburgh, Gallic war bookII)意味は = might be seen to have used. 特殊なVidereturの使い方。なお、この文はutに導かれる目的を表す節である。<strong>videretur usus esse misericodia</strong>:とすれば、慈悲を使うことを見られた、という意味。（misericodiaを使うことを見せる）</p>
+<p>2) <strong>diligentissime conservat</strong> : 入念に整備して、というニュアンス（文法的には、回復した領地、城砦）</p>
+<p>３）suisは　finibus, oppidisに掛かり「自身の領土と城塞都市」<strike>多分動作の方向を表す「与格」である</strike>。utorは奪格支配で、utorの目的語。utiはutor(=use)の不定詞で、「自分たちで使うことを命じた」</p>
+<p>4)<strong>imperavit finitimis :</strong> 近隣の者達に命令した</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>この者共に対し、カエサルは、これらの悲惨な打ちひしがれた人たちに慈悲を示そうと、入念に回復したあと、その領地、城塞都市などを自分たちで使う事を命じた。そして、近隣のものたちに、彼らと彼らの持ち物に対し攻撃、犯罪などを禁止するよう命令した。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

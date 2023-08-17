@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 15</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[15]<span></span></a>
+
+<a class="note1">Dēiectīs,<span>decido decere, decjeci, dejectus TRANS 完了分詞　受動　複　奪格　;= overthrow, bring down, kill, destroy<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">dīximus,<span><br><br></span></a>
+<a class="note1">antemnīs,<span>;= yard 複　奪格<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">singulās<span>singulus singula, singlum 形容詞　ｆ複　対格　;= every, on each , a pieace<br></span></a>
+<a class="note1">bīnae<span>binus bina, binum 形容詞　ｆ複　主格　;= two by two each, in pair<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">ternae<span>ternus terna, ternum 形容詞　複　主格　ｆ;= three each, three ata time</span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note1">circumsteterant,<span>circumsto 3複　過去完了　;= surround, crowd around</span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note1">summā<span>summus 最上級　ｆ単　奪格<br></span></a>
+<a class="note1">vī<span>vis viris F 単　奪格　;= strength, force, violence<br></span></a>
+<a class="note1">trānscendere<span>transcendo transcedere, transcendi, transcensus 不定詞　;= climb, go across, board<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note1">contendēbant.<span>contendo 3複　未完了　;= make a effort, strive<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>deiectis antemnis : 独立奪格　</p>
+<p>singulas (navis hostium)</p>
+<p>cum .... circumsteterant : circumsteterantは直説法で、「時点」を表す。</p>
+<p>binae　:　形容詞で「2つの」</p>
+<p>summa vi : 手段の奪格</p>
+<p>contendebant : 未完了で「過去に進行中であった」というニュアンス（NewLatin260)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>先に言ったように、帆桁を降ろさせておいて、敵の一隻に対し２，３隻の船て取り囲み、その時点で兵士は最大限の力で敵の船によじ登ろうとした。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quod<span></span></a>
+<a class="note0">postquam<span></span></a>
+<a class="note0">barbarī<span><br><br></span></a>
+<a class="note1">fierī<span>fio 不定詞 ;= happen, result, come about, take place<br></span></a>
+<a class="note1">animadvertērunt,<span>amimaderto animadvertere, animadeverti, animadevertus 3複　完了　;= pay attention to, attend to, notice, observe<br></span></a>
+<a class="note1">expugnātīs<span>expugno 完了分詞　受動　複　奪格　;= assault, storm, conquer, plunder<br></span></a>
+<a class="note0">complūribus<span><br><br></span></a>
+<a class="note0">nāvibus,<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">eī<span><br><br></span></a>
+<a class="note1">reī<span>与格　単<br></span></a>
+<a class="note0">nūllum<span><br><br></span></a>
+<a class="note1">reperirētur<span>reperio reperire, repperi, repertus TRANS 3単　未完了　受動　接続法　;= discover, learn<br></span></a>
+<a class="note0">auxilium,<span></span></a>
+<a class="note1">fugā<span>単　奪格？<br></span></a>
+<a class="note1">salūtem<span>salus salutis F 単　対格　;= health, safety<br></span></a>
+<a class="note1">petere<span>peto 不定詞　;= aim at, desire, beg, ask for, reach toward</span></a>
+<a class="note1">contendērunt.<span>contendo 3複　完了　;= make a effort<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>quod = that fieriの主語的な働き、「その起きていること」</p>
+<p><strong>barbari animadverterunt fieri</strong> : 野蛮人達が起きていることに気がついた、fieriの内容は次の独立奪格で説明されている</p>
+<p>expugnatis compluribus navius : 多くの船が制圧されている状況で、</p>
+<p><strong>cum reperiretur nullum auxilium ei rei</strong> : 「それに対して何の助けも見つけられない状況で」(reperireturは接続法）</p>
+<p>fuga : 手段の奪格</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そして野蛮人達が起きていることに気がついた後、即ち多くの船が制圧されているのを見て、それに対抗するものはなにもないことを知り、逃走によって身の安全を図ろうと努力した。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ac<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note1">conversīs<span>convertor converti, conversus sum DEP 完了分詞　複　奪格　;= turn, change, convert, refresh<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note0">nāvibus<span><br><br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">ventus<span></span></a>
+<a class="note1">ferēbat,<span>fero 3単　未完了 ；＝bring, bear, carry off<br></span></a>
+<a class="note0">tanta<span></span></a>
+<a class="note0">subitō<span><br><br></span></a>
+<a class="note1">malacia<span>malacia malaciae F 単　主格　;= calm, dead calm</span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">tranquillitās<span>tranquillitas tranquillitastis F 単　主格　;= stillness, tranquilty<br></span></a>
+<a class="note1">exstitit<span>exsisto exsistere, exsisti ,- ３単　完了 ;= step out, come forth, appear, arise</span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note1">movēre<span>moveo movere, movi, motus 不定詞　;= move, affect<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">possent.<span>３複　未完了　接続法</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>iam <strong>conversis navibus</strong> in eam partem quo ventus ferebat : quo以下でin eam partemを説明　conversis naviusは独立奪格　「船を、風は順風の方向へ変更したとき」</p>
+<p>ut : 結果を表すut</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そして船を風が吹いている方向に変更したとき、突然、凪が発生し、そのため彼らはその場所から動くことができなくなった。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quae<span></span></a>
+<a class="note1">quidem<span>副詞　;= indeed, certainly</span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">negōtium<span>negotium negoti N 単　対格　;= pain, trouble, business, activity, work<br></span></a>
+<a class="note1">cōnficiendum<span>concio conficere, confeci, confectus TRANS 未来分詞　受動ｎ単　主格　;= finish off, defeat finally<br></span></a>
+<a class="note0">maximae<span><br><br></span></a>
+<a class="note0">fuit<span></span></a>
+<a class="note1">opportūnitātī:<span>opportunitas opportunitastis F 単　与格　;= convenience, advantageous, oppotunity<br></span></a>
+<a class="note1">nam<span>= for</span></a>
+<a class="note1">singulās<span>singulus singla, singlum 形容詞　f複　対格　;= apieace, one at at time<br></span></a>
+<a class="note0">nostrī<span><br><br></span></a>
+<a class="note1">consectati<span>consector consectari, consectus sum&nbsp; DEP 完了分詞　受動　ｍ複　主格　;= hunt down, overtake<br></span></a>
+<a class="note1">expugnāvērunt,<span>expugno ３複　完了　;= storm, conquer<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">perpaucae<span>perpaucus perpauca, perpaucum 形容詞　ｆ複　主格　;= very few, select</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note1">noctis<span>nox 単　属格</span></a>
+<a class="note1">interventū<span>interventus interventus M 単　奪格　;= intervention, occurence of an event<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">terram<span></span></a>
+<a class="note1">pervenīrent,<span>pervenio ３複　未完了　接続法　;= come to, reach, arrive<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">hōrā<span><br><br></span></a>
+<a class="note1">ferē<span>副詞　;= almost, nearly<br></span></a>
+<a class="note0">IIII<span></span></a>
+<a class="note1">ūsque<span>副詞　;= all the way , right on, up to<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sōlis<span><br><br></span></a>
+<a class="note0">occāsum<span><br><br></span></a>
+<a class="note1">pugnārētur.<span>pugno ３単　未完了　受動　接続法<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>conficiendum fuit opportunitati</strong> : 行為者の与格、動形容詞とSUMで繋がって、～（動形容詞主格）は（与格）によってなされるべきである。(与格）は（動形容詞）すべきである。（この用法は自動詞の動形容詞でも、主語なしでsumの補語として中性、単数を使える、ex. Laudanda est.(賞賛されるべきだ）</p>
+<p><strong>nostri consectari</strong> : 分詞構文　「味方が追いかけては」</p>
+<p><strong>noctis interventu</strong> : interventuは奪格、時の奪格か、原因の奪格か？　「夜になって」「夜の闇によって（助けられて）」</p>
+<p>pervenirentは未完了であるが、pervenerint(完了）のテキスト多し。完了はある時点で起きた事実に力点があるのに対し、未完了はその前に起きたことからの関連に力点を置く。どちらでも正しい（Allen &amp; Judson)</p>
+<p><u>Bennettは時制の一致からここは第二時制の完了であると述べている</u>。</p>
+<p>接続法なのは譲歩節の接続法。</p>
+<p><strong>cum ab hora fere quarta</strong> : 第４刻は９時～１０時。日暮れまで戦いは続いた、ということである。因みに戦いのあったのは夏で、緯度としては高いところなので夜の９時ごろまでは明るかったのでないかと言われている。</p>
+<p>cumのニュアンスが良く解らない。Chap5にもほぼ同様の文がある。</p>
+<p>cum = since noctis interventuの背景説明？</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そのように、仕事にたいする状況は完全に制圧するためには非常に好都合な状況であった。味方は一隻毎に追いかけて、制圧した。その結果あれほどたくさんの船団で夜の闇に紛れて岸に到達したのは非常に少ない数であった。というのも、戦いは第４刻ぐらいに始まり、日が沈みまで行われたからである。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

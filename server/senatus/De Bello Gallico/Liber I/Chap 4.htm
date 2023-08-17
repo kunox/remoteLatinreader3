@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 4</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[4]<span></span></a>
+
+<a class="note0">Ea<span><br><br></span></a>
+<a class="note0">rēs<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">Helvētiīs<span>与格</span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">indicium<span>indicium, indici(i) 名詞 (2nd) N   :evidence (before a court); charge, information, proof; indication; <br>対格（Perに支配されて）</span></a>
+<a class="note1">ēnūntiāta.<span>enuntio, enuntiare, enuntiavi, enuntiatus 動詞 (1st)   :reveal; say; disclose; report; speak out, express, declare;  <br>完了分詞</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Ea rēs est　ēnūntiāta.　これらの陰謀は明るみに出た。</p>
+<p>per indicium = by informatio ==&gt; per indices = by informer</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>これらの陰謀は告発によって明らかになった。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Mōribus<span>mos, moris 名詞 (3rd) M   :custom, habit; mood, manner, fashion; character (pl.), behavior, morals; 奪格　観点の</span></a>
+<a class="note0">suīs<span></span></a>
+<a class="note1">Orgetorīgem<span>対格（意味上の主語）</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">vinculīs<span>vinculum, vinculi 名詞 (2nd) N   :chain, bond, fetter; imprisonment (pl.); 奪格</span></a>
+<a class="note1">causam<span>causa, causae 名詞 (1st) F   :cause/reason/motive; origin, source, derivation; responsibility/blame; <br>対格</span></a>
+<a class="note1">dīcere<span>dico 不定詞</span></a>
+<a class="note1">coēgērunt.<span>cogo, cogere, coegi, coactus 動詞 (3rd) TRANS   : force/compel; convene; congeal(3 複 完了</span></a>
+<a class="note1">Damnātum<span>damno, damnare, damnavi, damnatus 完了分詞　受動　ｍ単　対格　TRANS&nbsp;&nbsp; ;= pass, pronounce judgment, find guilty;<br>有罪が宣告された彼</span></a>
+<a class="note1">poenam<span>poena, poenae 名詞 (1st) F   :penalty, punishment; revenge/retribution対格</span></a>
+<a class="note1">sequī<span>sequor, sequi, secutus sum DEP 受動　不定詞&nbsp; ;= follow, escort, make, seek</span></a>
+<a class="note1">oportēbat<span>oportet oportere, oportuit, - IMPERS　３単　未完了　;= it it right, ought</span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">īgnī<span>ignis の奪格　（与格ではない！）<br>This form is often used by Caesar and earlier writers.</span></a>
+<a class="note1">cremārētur.<span>cremo, cremare, cremavi, crematus 動詞 (1st) TRANS   :burn (to ash)/cremate; consume/destroy (fire); burn alive; make burnt offering;</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Mōribus suīs　</strong>：　[観点の奪格]　According to their custom (AG418.a, NewLatin220.3)</p>
+<p>Orgetorīgem (ex vinculīs) causam dīcere 不定詞、意味上の主語はOrgentorix</p>
+<p><strong>dictio causae</strong>は熟語で「被告人弁明」</p>
+<p><strong>Damnatum :</strong> 一種の分詞構文 eum省略（Orgetorixの事） damnoの完了分詞、受動態で if being found guilty。</p>
+<p><strong>oportēbat : 非人称動詞</strong>　～は当然である。主語はsequi (伴うこと）poenamは不定詞sequiの意味上の主語で対格。即ち「罰が伴うこと」</p>
+<p>poenamと　ut ingi cremareturは同格　poenamを説明</p>
+<p><strong>igniはigne</strong>で奪格　（手段の奪格）(カエサルは通常、igniという奪格を用いるそうである。（Bennett))</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>彼らの習慣に従って、彼らはオルゲトリックスに鎖につながった状態で彼の理由を説明する事を強要した。もし有罪ならば火炙りの刑罰が伴う事は当然とされた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Diē<span>day 奪格　C <br>時の奪格 ここではF</span></a>
+<a class="note1">cōnstitūtā<span>constituo, constituere, constitui, constitutus&nbsp;完了分詞　ｆ単　奪格 ;= set up/in position<br></span></a>
+<a class="note1">causae<span>causa 属格</span></a>
+<a class="note1">dictiōnis<span>dictio, dictionis 名詞 (3rd) F   :|public speaking　属格</span></a>
+<a class="note0">Orgetorīx<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">iūdicium<span>judicium, judici(i) 名詞 (2nd) N   :trial, legal action/process <br>対格</span></a>
+<a class="note0">omnem<span></span></a>
+<a class="note0">suam<span></span></a>
+<a class="note1">familiam<span>familia, familiae F 単　対格&nbsp;;= household; household of slaves; family; clan</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">hominum<span>homo 属格</span></a>
+<a class="note1">mīlia<span>mille millis N 複　対格　;= thousand, thousands 1000</span></a>
+<a class="note0">decem<span></span></a>
+<a class="note1">undique<span>undique, 副詞   :from every side</span></a>
+<a class="note1">coēgit,<span>cogo, cogere, coegi, coactus TRANS ３単　完了;=&nbsp;collect/gather, round up, restrict/confine; force/compel; convene; congeal;</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">omnēs<span>対格　all</span></a>
+<a class="note1">clientēs<span>cliens, clientis 名詞 (3rd) C   :client, dependent (of a patron <br>対格</span></a>
+<a class="note1">obaerātōsque<span>obaeratus, obaerati M　複 対格　;= debtor</span></a>
+<a class="note0">suōs,<span></span></a>
+<a class="note1">quōrum<span>of whom</span></a>
+<a class="note0">magnum<span></span></a>
+<a class="note0">numerum<span></span></a>
+<a class="note0">habēbat,<span></span></a>
+<a class="note1">eōdem<span>eodem, 副詞   :to the same place/purpose;</span></a>
+<a class="note1">condūxit:<span>conduco, conducere, conduxi, conductus 動詞 (3rd) TRANS   :draw/bring together, collect, assemble <br>３単完了</span></a>
+<a class="note1">per<span>by、by mean of</span></a>
+<a class="note1">eōs<span>人を集める事</span></a>
+<a class="note0">nē<span></span></a>
+<a class="note0">causam<span></span></a>
+<a class="note1">dīceret<span>ut + 接続詞　と同様の否定形</span></a>
+<a class="note0">sē<span></span></a>
+<a class="note1">ēripuit.<span>eripio, eripere, eripui, ereptus 動詞 (3rd)   :snatch away, take by force; rescue;  <br>3 単 完了</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Die constituta causae dictionis</strong> : dieは[時の奪格]でF。「弁明のための日」</p>
+<p><strong>ad hominum mīlia decem</strong> ：「１万に達するような人々」ad はこの場合副詞で「約」hominumは属格で[全体の属格]と呼ばれる用法。（NewLatin201)　（人全体のうちの）１万人の意。millaは ad の後で対格。</p>
+<p><strong>全体の構文</strong>はOrgetorixが主語で、動詞はcoegit, conduxit, eripuit. 「集めて」「動員して」「（自身を）逃がした」</p>
+<p><strong>ne causam diceret</strong> : 目的の従属節（NewLatin282）でdirecretと接続法。「罪を弁明しないために」が逐語訳。</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>設定された弁明の当日、オルゲトリックスは裁判に向けて自身の一族郎党を１万人近くあらゆるところから動員した。また彼のクリエンテスや負債者、それをかれは沢山持っていたのであるが、をも同じ場所に集めて、それによって彼自身を弁明から逃れさせた。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Cum<span>cum, 副詞   : while, as (well as); whereas, in that, seeing that; on/during which;</span></a>
+<a class="note1">cīvitās<span>civitas civitatis F 単　主格　;= community, city, town, citizens, state</span></a>
+<a class="note1">ob<span>ob, 前置詞 (対格)  :on account of, for the sake of, for; instead of; right before; by the reason of</span></a>
+<a class="note0">eam<span></span></a>
+<a class="note1">rem<span>対格</span></a>
+<a class="note1">incitāta<span>incito incitare, incitavi, incitatus 完了分詞　ｆ　単　主格　;= enrage, urge on, inspire, arouse</span></a>
+<a class="note1">armīs<span>] armum, armi 名詞 (2nd) N   :arms (pl.), weapons, armor, shield; close fighting weapons; equipment; force;奪格</span></a>
+<a class="note1">iūs<span>jus, juris 名詞 (3rd) N   :law; legal system; code; right; duty; justice; court; binding decision; oath; 対格</span></a>
+<a class="note0">suum<span></span></a>
+<a class="note1">exsequī<span>exsequor, exsequi, exsecutus sum 動詞 (3rd) DEP&nbsp; ;= persist in; <strong>execute</strong>, carry out; rehearse; attain, arrive at, accomplish; 不定詞</span></a>
+<a class="note1">cōnārētur,<span>conor, conari, conatus sum 動詞 (1st) DEP   :attempt/try/endeavor, make an effort; exert oneself; try to go/rise/speak; ３単未完了　接続法 <br>cum + 接続法　時のcum</span></a>
+<a class="note1">multitūdinemque<span>multitudo, multitudinis 名詞 (3rd) F   :multitude, great number; crowd; rabble,対格</span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">agrīs<span>ager : field country 奪格</span></a>
+<a class="note1">magistrātūs<span>magistratus, magistratus&nbsp; M 単　主格　;= magistracy, civil office; office; magistrate, functionary;</span></a>
+<a class="note1">cōgerent,<span>cogo collect <br>3複　未完了　接続法</span></a>
+<a class="note0">Orgetorīx<span></span></a>
+<a class="note1">mortuus<span>mortuus, mortua, mortuum 形容詞   :dead, deceased; limp;</span></a>
+<a class="note0">est;<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">abest<span>ab + sum <br>= be away, absent, missing, be lacking</span></a>
+<a class="note1">suspīciō,<span>suspicio, suspicionis 名詞 (3rd) F   :suspicion; mistrust; 主格</span></a>
+<a class="note1">ut<span>ut, 接続詞   : how, as, when, while; even if;</span></a>
+<a class="note0">Helvētiī<span></span></a>
+<a class="note1">arbitrantur,<span>arbitror, arbitrari, arbitratus sum 動詞 (1st) DEP   :observe, witness; testify; decide, judge, sentence; believe, think, imagine</span></a>
+<a class="note1">quīn<span>quin, 接続詞   :so that not, without; that not; but that; that;</span></a>
+<a class="note1">ipse<span>Orgetorixの事</span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">mortem<span>mors, mortis 名詞 (3rd) F   :death; corpse; annihilation</span></a>
+<a class="note1">cōnscīverit.<span>conscisco, consciscere, conscivi, conscitus 動詞 (3rd) TRANS    <br> bring on oneself (w/sibi);  <br>3 単 完了 能動態 接続法</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>Cum cīvitās　～ cōnārētur,... magistratus cogerent</strong> &nbsp;: 部族が～のための努力をしていて、判事達が....を集めようとしている時。cumは二つの文に掛かる。そのため、[cumに導かれる時の節]で、conarentur, cogerent と接続法なので、その時の状況を表している。（NewLatin288 1.B)</p>
+<p><strong>armīs iūs suum exsequī 　</strong>：武器で持って彼ら自身の法を成し遂げようとすること armisは手段の奪格。</p>
+<p><strong>ob eam rem</strong> : これらの事態が理由で</p>
+<p><strong>incitāta</strong> ：主格　civitasを修飾　発奮した、</p>
+<p><strong>magistrātūs cōgerent　</strong>：公職人、判事、官僚が集めていた</p>
+<p><strong>neque abest suspīciō</strong> : suspicioが足りない事は（absum)無かった　＝強い疑いがあった。</p>
+<p><strong>ut Helvetii arbitrantur</strong> : ut + 直説法は通常の意味でas と訳せば良い。</p>
+<p>cōnscīverit. sibiと伴に[bring on oneself]</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの事柄が理由で騒ぎたった部族が、彼ら自身の法を武器によって成し遂げようと努力していた時、また、公職人たちは沢山の人いろんな国から集めていた時、Orgetorixは死んだ。彼自身が死をもたらしたと言う疑いは、ヘルウェイティが思ったように、そう外れてもいなかった。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

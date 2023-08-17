@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 8</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[8]<span></span></a>
+<a class="note1">Huius<span>hic属格</span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">cīvitātis<span>civitas 属格　単<br></span></a>
+<a class="note0">longē<span><br><br></span></a>
+<a class="note1">amplissima<span>amplus ampla -um, amplior -or -us, amplissimus -a -um ADJ  最上級<br>:great, large, spacious, wide, ample; distinguished, important, honorable;<br>(f 単数 主格)<br></span></a>
+<a class="note1">auctōritās<span>auctoritas auctoritatis N (3rd) F  <br>:|authority, influence; responsibility; prestige, reputation; opinion, judgment;<br>(X 単数 主格)<br></span></a>
+<a class="note0">omnis<span></span></a>
+<a class="note1">orae<span>ora orae N (1st) F  <br>:shore, coast;<br>(c 単数 属格), <br></span></a>
+<a class="note1">maritimae<span>maritimus maritima, maritimum 形容詞　ｆ　単　属格　;=maritime, of the sea, naval</span></a>
+<a class="note1">regiōnum<span>regio regionis F 複　属格　;=region<br></span></a>
+<a class="note0">eārum,<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">nāvēs<span>navis navis F 複　対格　;= ship<br></span></a>
+<a class="note1">habent<span>3複　現在</span></a>
+<a class="note1">Veneti<span>今のVannes ブルターニュにあった海洋部族</span></a>
+<a class="note0">plūrimās,<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Britanniam<span></span></a>
+<a class="note1">nāvigāre<span>navigo navigare, navigavi, navigatus 不定詞　;= sail, navigation<br></span></a>
+<a class="note1">cōnsuērunt,<span>consuesco 3複　完了　;= accustom oneself, become used, familiarize<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">scientiā<span>scientia scientiae N (1st) F  <br>:knowledge, science; skill;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">ūsū<span>usus usus N (4th) M  <br>:use, enjoyment; <strong>experience</strong>, skill, advantage; custom;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">rērum<span><br><br></span></a>
+<a class="note1">nauticārum<span>nauticus nautica, nauticum ADJ  <br>:nautical, naval;<br>(f 複数  属格)<br></span></a>
+<a class="note1">cēterōs<span>ceterus cetera, ceterum ADJ  <br>:the_other; the_others (pl.). the_remaining/rest, all the_rest;<br>(m 複数  対格)<br></span></a>
+<a class="note1">antecēdunt<span>antecedo antecedere, antecessi, antecessus V (3rd)  <br>:precede, go before/ahead/in front of, attain before; excel, surpass, outstrip;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note1">impetū<span>impetus impetus N (4th) M  <br>:attack, assault, charge; attempt; impetus, vigor; violent mental urge, fury;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">maris<span>mare maris N 単　属格　;= sea, sea water</span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">apertō<span>apertus aperta -um, apertior -or -us, apertissimus -a -um ADJ  <br>:open/public/free; uncovered/exposed/opened; frank/clear/manifest; cloudless;<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note0">paucīs<span></span></a>
+<a class="note1">portibus<span>portus portus N (4th) M  <br>:port, harbor; refuge, haven, place of refuge;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">interiectīs,<span>intericio intericere, interjeci, interjectus V (3rd) TRANS  <br>:put/throw between; interpose; insert; introduce;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note1">tenent<span>teneo tenere, tenui, tentus V (2nd)  <br>:hold, keep; comprehend; possess; master; preserve;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note1">ipsī,<span>ipse ipsa, ipsum PRON  <br>:himself/herself/itself; the very/real/actual one; in person; themselves (pl.);<br>(M 複数 主格)<br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">ferē<span>副詞　;= almost, about<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">mari<span>mare maris N ｎ単　奪格　;= sea (utorは奪格支配）<br></span></a>
+<a class="note1">ūtī<span>utor uti, usus sum V (3rd) DEP  <br>:use, make use of, enjoy; enjoy the friendship of (with ABL);<br>(  現在 受動態 不定詞 )<br><br></span></a>
+<a class="note0">cōnsuērunt<span><br><br></span></a>
+<a class="note0">habent<span></span></a>
+<a class="note1">vectīgālēs.<span>vectigalis vectigalis, vectigale ADJ  <br>:yielding taxes, subject to taxation;<br>(c 複数  対格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false">
+<p>huius civitatis auctoritas est longe amplissima&nbsp;: 　「この国の影響力は群を抜いて大きい」</p>
+<p>omnis orae maritimae = omnium civitatum orae maritimae 「海の近くの全ての国」</p>
+<p>regionum erarum : oraeを修飾　「その地方の海辺」</p>
+<p>consuerunt = consueverunt consuescoで完了形で現在の意味を持つ単語の一つ(現在完了形的）（NewLatin262)</p>
+<p>scientia atque usu : <font color="blue">指定の奪格</font>と呼ばれ「～に関して」(newLatin 226)</p>
+<p>in magno impetu maris atque apero : aperoは文法的にはimpetu と同じ奪格であるが、意味的にはmarisに掛かる。</p>
+<p>= in maris inpetu atque apero 「海の荒々しさと広さのなかで」</p>
+<p>paucis portibus interiectis : 独立奪格　「少ない港が点在している」</p>
+<p>（Venti) habent omnes vectigales. 二重対格、vectigalesは述語対格で～として。</p>
+<p>eo qui consueverunt　mari uti : utorは奪格支配で、海を使うことに慣れているところの</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>この国は、この地域の海辺の国の殆どに対して群を抜いた大きな影響力を持っている。一つはVenetiがたくさんの船を持っていて、それらを使ってBritaniaとの航海に知悉しているがゆえであり、他には航海術についての知識、経験が他を凌駕していたこと、この辺りの荒くて広い海にはたくさんの港が無かったので、それを彼らは保持しており、殆ど全ての日常的に海を使用する者たちを、納税者として抱えていたからである。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ab<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note1">fit<span>fio 3単　現在</span></a>
+<a class="note1">initium<span>initium initi N 単　主格　対格　;= beginning, commencement</span></a>
+<a class="note1">retinendi<span>retineo retinere, retinui, retentus V (2nd)  <br>:hold back, restrain; uphold; delay; hold fast; retain,preserve;<br>動形容詞　ｎ単数　属格<br><br><br></span></a>
+<a class="note1">Sīliī<span>Titus Siliusの事　属格<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">Vēlāniī,<span>Quitus Velanius の事　属格<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">obsidēs,<span><br><br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note1">Crassō<span>与格<br></span></a>
+<a class="note1">dedissent,<span>do dare, dedi, datus V (1st) TRANS  <br>:give; dedicate; sell; pay; grant/bestow/impart/offer/lend; devote; allow; make;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">recuperātūrōs<span>recupero recuperare, recuperavi, recuperatus V (1st)  <br>:regain, restore, restore to health; refresh, recuperate;<br>(未来 分詞 能動態 m 複数  対格)<br></span></a>
+<a class="note0">exīstimābant.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Ab his fit initium retinendi Sili atque Velani : <font color="#ff00ff">よく解らない文章</font>。fitはfioの３単、だから多分主語はinitium。「最初が成された」＝始まった？retinendi Siliは多分動形容詞文　Slium retinendi ⇒ Sili retinendiでSiliusを拘束すること</p>
+<p>そのままだとおかしいので、「拘束することで始まった」とする解説が多い。Bennettも[logically inexact]と言っている。</p>
+<p><font style="background-color: rgb(255, 255, 0);">動名詞属格は名詞（initium)を修飾して、「拘束の始まりは」となる。</font></p>
+<p><font style="background-color: rgb(255, 255, 0);">「拘束の始まりはそこから成った」で「拘束の最初はそこで起きた。」</font></p>
+<p><font color="blue"><strike>もしかすると　Ab　＋　retinendi で「拘束する事から」となるのかも。でもAbは奪格支配だから、ダメか？</strike></font></p>
+<p>因みに彼らはTitus Silius, Quintus Velaniusで、前章の最後に出てきたようにVenetiに派遣された人間</p>
+<p>per eos : eosは捕虜になったSilius達で、彼らを通して＝「彼らと交換で」</p>
+<p>suos obsides : 自分たちの人質を、recuperaturos (esse)で取り返す事、の目的語 seは不定詞の主語。</p>
+<p>suos seという風に語源の同じ語は並べられる事が多い。（NewLatin350.10)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>SliusとVelaniusが拘束されるということから始まった。と言うのは彼らはCrassusに対して出していた自分たちの人質を彼らと交換で取り戻そうと考えたからである。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hōrum<span><br><br></span></a>
+<a class="note1">auctōritāte<span>auctoritas auctoritatis N (3rd) F  <br>:|authority, influence; responsibility; prestige, reputation; opinion, judgment;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">fīnitimī<span>finitimus finitima, finitimum ADJ  <br>:neighboring, bordering, adjoining;<br>&nbsp;(m 複数  主格<br></span></a>
+<a class="note1">adductī,<span>adduco adducere, adduxi, adductus V (3rd) TRANS  <br>:lead up/to/away; bring up/to; persuade, induce; lead, bring; contract, tighten;<br>&nbsp;(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">Gallōrum<span></span></a>
+<a class="note0">subita<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">repentīna<span>repentinus repentina, repentinum ADJ  <br>:sudden, hasty; unexpected;<br>(f 単数 主格)<br></span></a>
+<a class="note1">cōnsilia,<span>consilium consili(i) N (2nd) N  <br>:|decision/resolution; intention/purpose/policy/plan/action; diplomacy/strategy;<br>(n 複数  主格)<br></span></a>
+<a class="note1">eādem<span>idem eadem, idem PRON  <br>:(w/-dem ONLY, idem, eadem, idem) same, the same, the very same, also;<br>(F 単数 奪格)<br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">Trebium<span></span></a>
+<a class="note0">Terrasidiumque<span></span></a>
+<a class="note1">retinent<span>retineo retinere, retinui, retentus V (2nd)  <br>:hold back, restrain; uphold; delay; hold fast; retain,preserve;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note1">missīs<span>mitto mittere, misi, missus V (3rd)  <br>:send, throw, hurl, cast; let out, release, dismiss; disregard;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">lēgātīs<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">suōs<span></span></a>
+<a class="note0">prīncipēs<span></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note1">coniurant<span>conjuro conjurare, conjuravi, conjuratus INTRANS ３複　現在　;= swear, join in oath<br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">nisi<span></span></a>
+<a class="note1">commūnī<span>commune communis N ｎ単　奪格　;= joint, public, common<br></span></a>
+<a class="note0">cōnsiliō<span><br><br><br></span></a>
+<a class="note1">acturos<span>ago agere, egi, actus 未来分詞　能動　ｍ複　対格　;= drive, urge, act, spend<br></span></a>
+<a class="note1">eundemque<span>idem eadem idem 代名詞　ｍ単　対格　;= same, also</span></a>
+<a class="note1">omnēs<span>omnis omnis N (3rd) C  <br>:all men (pl.), all persons;<br>(c 複数  対格),<br></span></a>
+<a class="note1">fortūnae<span>fortuna F　C 単　属格<br></span></a>
+<a class="note1">exitum<span>exitus exitus N (4th) M  <br>:exit, departure; end, solution; death; outlet, mouth (of river);<br>(c 単数 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">lātūrōs,<span>fero ferre, tuli, latus 未来分詞　能動　m複　対格　;= bring, bear, consider, carry off, win, receive, get, produce<br></span></a>
+<a class="note1">reliquāsque<span>reliquus reliqua, reliquum 形容詞　ｆ複　対格　;= rest, remaining<br></span></a>
+<a class="note0">cīvitātēs<span><br><br></span></a>
+<a class="note1">sollicitant,<span>sollicito sollicitare, sollicitavi, sollicitatus ３複　現在　;= disturb, arouse, agitate, incite</span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note0">lībertāte<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">māiōribus<span><br><br></span></a>
+<a class="note1">accēperint<span>accipio accipere, accepi, acceptus TRANS ３複　完了、接続法　;= take, grasp, accept<br></span></a>
+<a class="note1">permanēre<span>permaneo permanere, permansi, permansus V (2nd)  <br>:last, continue; remain; endure;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">Rōmānōrum<span><br><br></span></a>
+<a class="note1">servitūtem<span>servitus servitutis N (3rd) F  <br>:slavery; slaves; servitude;<br>(c 単数 対格)<br></span></a>
+<a class="note1">perferre<span>perfero perferre, pertuli, perlatus 不定詞　;= carry through, bear, endure</span></a>
+<a class="note1">mālint.<span>malo malle, malui, - V  <br>:prefer; incline toward, wish rather;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false">
+<p>auctoritate : 奪格で、「これらの影響によって」</p>
+<p><strong>ut sunt Gallorum consilia subita et repentina</strong>&nbsp;: ut=asで「いつもの突然の予測不能のガリアの決定のように」</p>
+<p>eadem de causa = de eadem causa</p>
+<p>inter se conjurant : 互いに誓約し合った。</p>
+<p>nihil (se) acturos (esse): （各々）何もしない事、(se) esse laturos :受け取るであろうこと、という未来不定詞になっているが、<strike>その前の文章とのつながりが（文法的に）ないように見える</strike>。誓約の内容を不定詞で羅列。</p>
+<p><strong>omnes esse laturos eundem exitum fortunae</strong> : 皆で同じ運命の出口を担う＝運命共同体であること</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの影響で近隣諸国も動かされた。いつものようなガリア流の突然、予測不能な決定があり、同じ理由でTrebium Terrasidiumを拘束し、素早く幹部たちにを通して使者が送られ、互いに誓約が結ばれた。その内容は、共通の合意なくしては何も行わないこと、またみんなで同じ運命を担うことなどである。そして残りの部族に対して、先祖によって獲得され続いてきてる自由が良いのかそれともローマの奴隷として甘んじるのかと、扇動した。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Omnī<span>omnis 単　奪格<br></span></a>
+<a class="note1">ōra<span>ora orae f 単　奪格<br></span></a>
+<a class="note1">maritima<span>maritime 形容詞　ｆ単　奪格</span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">suam<span></span></a>
+<a class="note1">sententiam<span>sententia sententiae F 単　対格　;= opinion, feeling</span></a>
+<a class="note1">perducta<span>perduco 完了分詞　受動　f単　奪格　;= lead, guide<br></span></a>
+<a class="note1">commūnem<span>communis communis, commune ADJ  <br>:common/joint/public; general/universal;<br>(c 単数 対格)<br></span></a>
+<a class="note0">lēgātiōnem<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">P.<span></span></a>
+<a class="note0">Crassum<span></span></a>
+<a class="note1">mittunt,<span>３複　現在</span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">velit<span>volo ３単　現在</span></a>
+<a class="note0">suōs<span></span></a>
+<a class="note1">recuperāre,<span>recupero 不定詞　；＝regain<br></span></a>
+<a class="note0">obsidēs<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">remittat.<span>remitto ３単　現在　接続法　;= send back</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>omni ora maritima perduca : 独立奪格　「海辺の国は全部、（彼らの意見の方向に）導かれ」</p>
+<p>communem legationem : 共同の使者</p>
+<p>remittat : 命令の接続法（NewLatin275)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>短時間のうちに海辺の国の全体が彼らの意見に傾いて、Crassusの下に共同の使者を送った。もし（自分達の人質）を取り返したいならば、彼らの人質を返せ、と。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

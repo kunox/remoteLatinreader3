@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 10</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[10]<span></span></a>
+<a class="note0">Erant<span></span></a>
+<a class="note0">hae<span></span></a>
+<a class="note1">difficultātēs<span>difficultas difficultatis F 複　主格　;= difficulty, trouble<br></span></a>
+<a class="note1">bellī<span>bellum belli N　ｎ単　属格</span></a>
+<a class="note1">gerendī<span>gero 未来分詞　受動　ｎ　単　属格 動名詞としてbelliを修飾<br></span></a>
+<a class="note0">quās<span><br><br></span></a>
+<a class="note1">suprā<span>副詞　on top, above, formaerly<br></span></a>
+<a class="note1">ostendimus,<span>ostendo ostendere, ostendi, ostensus V (3rd)  <br>:show; reveal; make clear, point out, display, exhibit;<br>(１人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">multa<span>multum multi N 複　主格</span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">incitābant:<span>incito incitare, incitavi, incitatus V (1st)  <br>:enrage; urge on; inspire; arouse;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note1">iniūria<span>injuria injuriae F 単　主格　;= injury, injustice, wrong<br></span></a>
+<a class="note1">retentōrum<span>retendo retendere, retendi, retensus TRANS 完了分詞　受動複　属格 ；= slacken, relax, unbend, free from tension, <strong>hold back</strong><br></span></a>
+<a class="note1">equitum<span>eques equitis M 複　属格　;= knight, Wealthy enough to own his own horse</span></a>
+<a class="note0">Rōmānōrum,<span><br><br></span></a>
+<a class="note1">rebelliō<span>rebellio rebellionis N (3rd) F  <br>:rebellion;<br>(X 単数 主格)<br></span></a>
+<a class="note0">facta<span></span></a>
+<a class="note0">post<span></span></a>
+<a class="note1">dēditiōnem,<span>deditio deditionis N (3rd) F  <br>:surrender (of combatants/town/possessions); cession of right/title;<br>(c 単数 対格)<br></span></a>
+<a class="note1">dēfectiō<span>defectio defectionis N (3rd) F  <br>:desertion/ revolt/ defection; failure/ deficiency; ellipsis (grammar); eclipse;<br>(X 単数 主格), <br></span></a>
+<a class="note1">datīs<span>do 完了分詞　受動　複　奪格　<br></span></a>
+<a class="note1">obsidibus,<span>obses obsidis C 複　奪格　;= hostage</span></a>
+<a class="note1">tot<span>tot NUM ;= so many, incredible,</span></a>
+<a class="note1">cīvitātum<span>civitas　複　属格<br></span></a>
+<a class="note1">coniūrātiō,<span>conjuratio conjurationis F 単　主格　;= conspiracy, plot, alliance<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">prīmīs<span>primus 複　奪格<br></span></a>
+<a class="note1">nē<span>接続詞　= lest</span></a>
+<a class="note0">hāc<span><br><br></span></a>
+<a class="note1">parte<span>F 単奪格</span></a>
+<a class="note0">neglēctā<span><br><br></span></a>
+<a class="note0">reliquae<span></span></a>
+<a class="note0">nātiōnēs<span><br><br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">idem<span></span></a>
+<a class="note1">licēre<span>licet licere, licitus est IMPERS 不定詞　;= it is permitted, it is lawful<br></span></a>
+<a class="note1">arbitrarentur.<span>arbitror arbitrari, arbitratus sum V (1st) DEP  <br>:observe, witness; testify; decide, judge, sentence; believe, think, imagine;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false">
+<p>gerendi belli difficultates : gerendiは（多分）動形容詞でbelliに合わせて属格　：遂行されるべき戦いの困難さ</p>
+<p>multa incitabant Caesarem : multaは名詞　多くの事がカエサルを(戦いに）引き込んだ。以下そのことの列挙</p>
+<p>１）<strong>injuria retentiorum equitum Romanorum</strong> : retentiorum Romanorum 受動完了分詞　＋　名詞（属格）は抽象名詞＋それに従属する属格に等価であることがある。（NewLatin３３７．６）　またequitum とRomanorumは同格の属格であろう。「騎士であるローマ人を拘束するという不正義」</p>
+<p>２）rebellio facta post deditionem : 降伏した後での反乱</p>
+<p>3) defection datis obsidius ：独立奪格　「人質を出した後の暴挙」</p>
+<p>４）tot civitatum coniuratio : 「多くの諸国の陰謀」</p>
+<p>５）im primo = imprimoと一語で「その中でも特に」</p>
+<p><strong>&nbsp;hac parte neglecta</strong>：parte neglecta 独立奪格「その地域が手つかず（何もしない）」</p>
+<p><strong>ne arbitrarentur</strong> : ~と考えるのが怖い　neだと～するのが怖い（utだとしないのが怖い）NewLatin 296)願望法から派生した名詞節 (ne ~だと～しないように願っている立場で、それを危惧する動詞が来ると～するのではないかと危惧する、となる）</p>
+<p>licere ←　licetの不定詞　許される事</p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false">
+<p>行うべき戦いの困難さは上に述べたようであるが、しかしながら多くの事がカエサルを交戦に引き込んだ。ローマの騎士を拘束するという不正義、降伏の後の反乱、人質を差し出したあとの暴挙、多くの国の反抗連合、就中、もしその地に対し何もしなければ他の国々も同じようにしても大丈夫であると考える事を危惧した。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Itaque<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">intellegeret<span></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">ferē<span>副詞　;= almost, about<br></span></a>
+<a class="note0">Gallōs<span><br><br></span></a>
+<a class="note0">novīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">studēre<span>studeo studere, studui, - V (2nd)  <br>:desire, be eager for; busy oneself with; strive;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">mōbiliter<span>mobiliter mobilius, mobilissime ADV <br>:quickly, rapidly, actively; changeably, inconstantly, in a fickle manner;<br><br></span></a>
+<a class="note0">celeriterque<span></span></a>
+<a class="note1">excitārī,<span>excito excitare, excitavi, excitatus V (1st)  <br>:wake up, stir up; cause; raise, erect; incite; excite, arouse;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">autem<span>接続詞　;= but, on the other hand</span></a>
+<a class="note1">hominēs<span>複　対格<br></span></a>
+<a class="note1">nātūrā<span>natura 単　奪格　（原因の奪格）<br></span></a>
+<a class="note1">lībertātī<span>lebertas lebertatis F 単　与格　;= freedom, liberty<br></span></a>
+<a class="note0">studēre<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">condiciōnem<span>condicio condicionis F 単　対格　;= agreement, contract, terms, situation<br></span></a>
+<a class="note1">servitūtis<span>servitus servitutis F 単　属格　;= salvery, slaves<br></span></a>
+<a class="note1">ōdisse,<span>odi odisse, osus PERFDEF (形は完了形、意味は現在）不定詞　;= hate, dislike<br></span></a>
+<a class="note0">prius<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">plūrēs<span><br><br><br></span></a>
+<a class="note0">cīvitātēs<span><br><br></span></a>
+<a class="note1">cōnspīrārent,<span>conspiro conspirare, conspiravi, conspiratus V (1st) INTRANS  <br>:plot/conspire/unite; sound/act in unison/harmony/accord; blow together (horns);<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">partiendum<span>partior partiri, partius&nbsp; sum DEP 未来分詞　受動　ｎ　単　主格、対格 ;= share, divide up, distribute</span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">lātius<span>latus lata latum latior, latissimus 形容詞比較級　ｎ対格で副詞;= wide, broad, sapcious<br></span></a>
+<a class="note1">distribuendum<span>distribuo 未来分詞　受動　n単　主格、対格　;=divide, assign, distribute</span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note1">putāvit.<span>puto ３単　完了<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>novis rebus studere : =eager for revolution　studereは与格支配？（次の行にstudere libertatiとある）</p>
+<p>Gallosが主語で、動詞はsudere et excitari</p>
+<p>natura 原因の奪格</p>
+<p>prius quam = priusquam = before</p>
+<p>priusquam + 接続法：予測を表す(NewLatin292.1.c)</p>
+<p><strong>partiendum (esse)</strong> 動形容詞をsumと共に使って「～されなければならない」の意　動形容詞はDEP動詞でも受動でなければならない</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>かくして、（カエサルは）殆ど全てのガリアが新しい事を熱望しており、急速に戦いに向かって興奮している事を知った。彼はまた、人は自然に自由を望み、隷属状態を憎むものである事を知っていた。（それ故）多くの部族が共謀を図る前に、自身をもっと分割し、もっと多くの地域に軍隊は分散されなければならないと考えた。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

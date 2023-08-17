@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 21</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[21]<span></span></a>
+
+<a class="note0">Ad<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note1">cognōscenda,<span>cognosco cognoscere, cognovi, cognitus V (3rd) TRANS  <br>:become acquainted with/aware of; recognize; learn, find to be; inquire/examine;<br>(未来 分詞 受動態 n 複数  対格)<br></span></a>
+<a class="note0">prius<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">perīculum<span>periculum periculi N (2nd) N  <br>:danger, peril; trial, attempt; risk; responsibility for damage, liability;<br>(n 単数 対格)<br></span></a>
+<a class="note0">faceret,<span></span></a>
+<a class="note1">idōneum<span>idoneus idonea, idoneum ADJ  <br>:suitable, appropriate, adequate, having right qualities; qualified, able; apt;<br>(n 単数 主格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">arbitrātus<span>arbitro arbitrare, arbitravi, arbitratus V (1st)  <br>:think, judge; consider; be settled/decided on (PASS);<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">C.<span></span></a>
+<a class="note0">Volusēnum<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">nāvī<span><br><br></span></a>
+<a class="note0">longā<span><br><br></span></a>
+<a class="note1">praemittit.<span>praemitto praemittere, praemisi, praemissus V (3rd)  <br>:send ahead or forward;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>文の骨子は単純で　praemittit C. Volusenu. のみ</p>
+<p>ad haec congnoscenda : congnoscendaは動形容詞でhaecを修飾。ad + 動名詞で目的を表すが、動名詞に目的語(Haec)はあるので動形容詞構文になっている。(NewLatin 339.2)</p>
+<p>naves longaeは軍船で、多段の櫂で操作されていたようである。</p>
+<p><strong>prius quam</strong> = priusquam = ～の前に　接続法で書かれた場合は予測を表す。（NewLatin292)</p>
+<p><strong>arbitratus (id) esse idoneum</strong>. : aribitratusは完了分詞　主格で分詞構文、カエサルを記述<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これら知るべきことに対して、実際試みる前に、それが適切であると考え、C. Volusenusを長い船（軍船）とともに派遣した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Huic<span>与格　<br><br></span></a>
+<a class="note1">mandat<span>mando mandare, mandavi, mandatus 3単　；＝ entrust, order, deliver over<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">explōrātīs<span>exploro explorare, exploravi, exploratus V (1st)  <br>:search out, explore; test, try out; reconnoiter, investigate;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">prīmum<span><br><br></span></a>
+<a class="note1">revertātur.<span>revertor reverti, reversus sum V (3rd) DEP  <br>:turn back, go back, return; recur;<br>(３人称 単数 現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>huicは与格で　Volusenumを指す。</p>
+<p>exploratis ominibus rebus : 独立奪格</p>
+<p>quam primum = quamprimum&nbsp;= as soon as possible (NewLatin240) ←　priusquamと比較<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼に対して、全てのものを調べて、速やかに彼のところに戻ってくるよう命じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipse<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">cōpiīs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Morinōs<span><br><br></span></a>
+<a class="note1">proficīscitur,<span>proficiscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">inde<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">brevissimus<span>brevis breve, brevior -or -us, brevissimus -a -um 形容詞　最上級　m単　主格　;= short, little, quick<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Britanniam<span></span></a>
+<a class="note1">trāiectus.<span>trajectus trajecta, trajectum ADJ  <br>:crossing, passage;<br>(m 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>trajectus inde erat brevissimus in Britaniam : trajectusは形容詞の名詞化で、旅程<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>自身は全軍を連れてMorinoに出発した。と言うのはそこからがブリタニアへ最短距離であったからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hūc<span><br><br></span></a>
+<a class="note1">nāvēs<span>F 複　対格<br><br><br></span></a>
+<a class="note1">undique<span>副詞　;= from every side,, from everywhere<br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">fīnitimīs<span><br><br></span></a>
+<a class="note0">regiōnibus<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">quam<span>qui quae, quod PRON  <br>:who, which; (relative pronoun);<br>(f 単数 対格)<br></span></a>
+<a class="note1">superiōre<span>superus supera -um, superior -or -us, supremus -a -um ADJ  比較級<br>:above, high; higher, upper, of this world; greatest, <strong>last</strong>, highest;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">aestāte<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Veneticum<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note0">fēcerat<span><br><br></span></a>
+<a class="note1">classem<span>classis classis N (3rd) F  <br>:class/division of Romans; grade (pupils); levy/draft; <strong>fleet</strong>/<strong>navy</strong>; group/band;<br>(c 単数 対格)<br></span></a>
+<a class="note0">iubet<span></span></a>
+<a class="note0">convenīre.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>jubet navis et classem convenire. が骨子。</p>
+<p>classem quam fecerat ad Veneticum bellum superiore aestate. superiore aestate = last summer 時の奪格。先行詞classemが関係詞節に埋め込まれている。（NewLatin 251.4.1)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>（カエサルは）その地域の国々の船と昨年の夏にVeneticiの海戦に参加した乗組員たちに集まるよう命令した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Interim,<span></span></a>
+<a class="note1">cōnsiliō<span>n 単　奪格<br><br><br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">cognitō<span>cognosco cognoscere, cognovi, cognitus V (3rd) TRANS  <br>:become acquainted with/aware of; recognize; learn, find to be; inquire/examine;<br>(完了 分詞 受動態 n 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">mercātōrēs<span><br><br></span></a>
+<a class="note1">perlātō<span>perfero perferre, pertuli, perlatus V  <br>:carry through; bear, endure to the end, suffer; announce;<br>(完了 分詞 受動態 n 単数 奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Britannōs,<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">complūribus<span><br><br></span></a>
+<a class="note0">īnsulae<span><br><br></span></a>
+<a class="note0">cīvitātibus<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">lēgātī<span><br><br></span></a>
+<a class="note1">veniunt,<span>venio venire, veni, ventus V (4th)  <br>:come;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">polliceantur<span></span></a>
+<a class="note0">obsidēs<span><br><br></span></a>
+<a class="note0">dare<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">imperiō<span><br><br></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">obtemperāre.<span>obtempero obtemperare, obtemperavi, obtemperatus V (1st) INTRANS  <br>:obey; comply with the demands of; be submissive to; (w/DAT);<br>(  現在 能動態 不定詞 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>consilio eius cognito et perlato : 独立奪格　「その計画が知られて、運ばれた」</p>
+<p>qui polliceantur : quiは関係代名詞でcivitatisbusを指す。</p>
+<p>dare obsides : obsidesは対格であるが主語ではなく目的語。「人質を差し出すこと」本来的には　[se daturos esse]と未来分詞にすべきであるが、pollicaeorの時はこれで普通らしい。</p>
+<p>obtemperare imperio populi Romani : Romaniは与格で「ローマに従うこと」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>その間に、その計画は知られるようになり、商人を通してブリタニアに運ばれた。その島の多くの部族から使者が彼の元に来て、人質を差し出しローマ帝国に従うことなどを約束した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quibus<span></span></a>
+<a class="note1">audītīs,<span>audio audire, audivi, auditus V (4th)  <br>:hear, listen, accept, agree with; obey; harken, pay attention; be able to hear;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">līberāliter<span>liberaliter ADV <br>:graciously, courteously; liberally;<br><br></span></a>
+<a class="note1">pollicitus<span>polliceor polliceri, pollicitus sum V (2nd) DEP  <br>:promise;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note1">hortātusque<span>hortor hortari, hortatus sum V (1st) DEP  <br>:encourage; cheer; incite; urge; exhort;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note1">sententiā<span>sententia sententiae N (1st) F  <br>:<strong>opinion</strong>, feeling, <strong>way of thinking</strong>; thought, meaning, sentence/period; purpose;<br>(c 単数 奪格)<br><br></span></a>
+<a class="note1">permanērent,<span>permaneo permanere, permansi, permansus V (2nd)  <br>:last, <strong>continue</strong>; remain; endure;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">domum<span></span></a>
+<a class="note0">remittit<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note1">ūnā<span>una ADV <br>:together, together with; at the same time; along with;<br><br></span></a>
+<a class="note0">Commium,<span></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note0">Atrebātibus<span><br><br></span></a>
+<a class="note1">superātis<span>supero superare, superavi, superatus V (1st)  <br>:overcome, conquer; survive; outdo; surpass, be above, have the upper hand;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">rēgem<span>rex regis N (3rd) M  <br>:king;<br>(c 単数 対格)<br></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note1">cōnstituerat,<span>constituo constituere, constitui, constitutus V (3rd)  <br>:set up/in position, erect; place/dispose/locate; (call a) halt; plant (trees);<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">cuius<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">virtūtem<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cōnsilium<span>consilium consilii N 単　対格　;= intelligence, capacity for judgement, mental aility<br><br><br></span></a>
+<a class="note1">probābat<span>probo probare, probavi, probatus V (1st) TRANS  <br>:approve (of), esteem/commend/recommend/certify; give assent/approval/sanction;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">fidēlem<span>fidelis fidele, fidelior -or -us, fidelissimus -a -um ADJ  <br>:faithful/loyal/devoted; true/ trustworthy /dependable/ reliable; constant/ lasting;<br>(c 単数 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">arbitrābātur<span><br><br></span></a>
+<a class="note0">cuiusque<span></span></a>
+<a class="note0">auctōritās<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">regiōnibus<span><br><br></span></a>
+<a class="note1">magnī<span>magnus　形容詞　単　属格　<br><br><br></span></a>
+<a class="note0">habēbātur,<span><br><br></span></a>
+<a class="note0">mittit.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>quibus auditis&nbsp;：独立奪格　「これらを聞いて」</p>
+<p>pollicitus liberaliter : 寛大な約束をして　分詞構文</p>
+<p>hortatus ut ~ : ut以下を奨励して</p>
+<p>ut permanerent in ea sententia : sententiaは意見、目的とあるがここでは意見をとって「その方針を（恭順）でいるように」</p>
+<p>remittit eos domum : 国に彼らを返した。</p>
+<p>後半の骨子は　mittit Commium una cum iis で「彼らと一緒にCommiumを送った」</p>
+<p>Commiumの説明　constituerat regem quem ipse constitueratはカエサルが主語（次のprobabatと同様に）対格２つで一つは述語対格で、「（カエサルは）彼を（quem)王にした」<em><font color="#ff6600">ipseは誰を指す？　→<font color="#333">多分カエサル</font></font></em></p>
+<p><em><font color="#030303">（Commius, Comiusは第7巻にも出てくる。）</font></em></p>
+<p><em><font color="#ff6600"></font></em>et probabat cuius virtutem et consilium : 「彼の強さと知性に価値を認めた」</p>
+<p>et arbittrabatur quem esse fidelem sibi : quemは対格で主語、sibi はカエサル</p>
+<p>que cuius auctoritas habebatur magni in his regionibus. magniは「性質の属格」（NewLatin203）<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらを聞き、寛大な約束をして、その方針でいるよう勇気づけて、彼らを国に返した。彼らと一緒にCommiumを送った。彼はAtrebatesが征服された時、そこで王になった人間で、その勇気と知性をカエサルはかっており、またカエサルに忠実であると考えてもいたが、彼の権威はその地域では大層なものであった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Huic<span></span></a>
+<a class="note0">imperat<span></span></a>
+<a class="note1">quās<span>qui ｆ複　対格　;= what<br><br><br></span></a>
+<a class="note1">possit<span>3単　接続法<br><br></span></a>
+<a class="note1">adeat<span>adeo ３単　接続法　;= approach, attck, visit<br><br></span></a>
+<a class="note0">cīvitātēs<span><br><br></span></a>
+<a class="note1">hortēturque<span>hortor hortari, hortatus sum V (1st) DEP  <br>:encourage; cheer; incite; urge; exhort;<br>(３人称 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note0">fidem<span></span></a>
+<a class="note1">sequantur<span>sequor sequi, secutus sum V (3rd) DEP  <br>:follow; escort/attend/accompany; aim at/reach after/strive for/make for/seek;<br>(３人称 複数  現在 受動態 接続法 )<br><br><br></span></a>
+<a class="note0">sēque<span><br><br></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">ventūrum<span>venio 未来分詞　能動　ｎ単　主格<br>esse省略の不定詞　<br><br><br></span></a>
+<a class="note1">nūntiet.<span>nuntio nuntiare, nuntiavi, nuntiatus V (1st) TRANS  <br>:announce/report/bring word/give warning; convey/deliver/relate message/greeting;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>骨子は次のことを命じた。</p>
+<p>１）adeat quas civitates possit (adire) 「行ける限りの国に行くこと」</p>
+<p>２）hortetur ut ~ ：～をすすめること</p>
+<p>３）nuntiet se venturum esse celerter 「彼（カエサル）がすぐ来るであろうことを言うこと」</p>
+<p>１）～３）の動詞が接続法なのはimperoという命令の動詞と一緒の名詞節であるから。ut無しで使われることも多い。（NewLatin295. 1, 8)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼に対しできる限りの国を訪問して、ローマの庇護を受けるよう勧めてまた彼自身（カエサル）がすぐに来ることも伝えるよう命じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Volusēnus<span><br><br></span></a>
+<a class="note1">perspectīs<span>perspicio perspicere, perspexi, perspectus V (3rd)  <br>:see through; examine; observe;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">regiōnibus<span><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">quantum<span>副詞　;= so much as, how far<br><br></span></a>
+<a class="note0">eī<span><br><br></span></a>
+<a class="note1">facultātis<span>facultas facultatis N (3rd) F  <br>:means; ability, skill; opportunity, chance; resources (pl.), supplies;<br>(X 単数 属格)<br></span></a>
+<a class="note0">darī<span><br><br></span></a>
+<a class="note0">potuit,<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">nāvī<span><br><br></span></a>
+<a class="note1">ēgredī<span>egredior egredi, egressus sum V (3rd) DEP  <br>:go/march/come out; set sail; land, disembark; surpass, go beyond;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">barbarīs<span><br><br></span></a>
+<a class="note1">committere<span>committo committere, commisi, commissus V (3rd)  <br>:bring together, unite/join, <strong>connect</strong>/attach; put together, construct; entrust;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">audēret,<span>audeo audere, ausus sum V (2nd) SEMIDEP  <br>:intend, be prepared; dare/have courage (to go/do), act boldly, venture, risk;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note1">V.<span>quinto<br><br></span></a>
+<a class="note0">diē<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">revertitur<span>revertor DEP ３単　受動　;= tuen back, return<br><br></span></a>
+<a class="note0">quaeque<span></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note0">perspexisset<span></span></a>
+<a class="note1">renūntiat.<span>renuntio renuntiare, renuntiavi, renuntiatus V (1st)  <br>:report, announce; reject;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>quantum facilitatis potuit dari ei : 「彼に与えられている資源ができるかぎり」</p>
+<p>egredi navi : <strike>naviは与格</strike>。<font color="#ff6600">なぜ？<font color="#333">naviはnaveと共に奪格でもある。ここでは分離の奪格</font></font><br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>Volusenusは、与えられた手段で可能な限りその地域を調べ、彼は敢えて船から降りて野蛮人と接触することはしなかったのだが、５日の後にカエサルのところに帰ってきて見たことを報告した。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a>
+</div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

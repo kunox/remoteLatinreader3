@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 8 THE RESCUE.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">At<span></span></a>
+<a class="note0">Perseus<span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">vīdit,<span></span></a>
+<a class="note0">gladium<span></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note1">ēdūxit,<span>ēdŭco educere, eduxi, eductus V (3rd)  X<br>:lead out; draw up; bring up; rear;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">postquam<span></span></a>
+<a class="note1">tālāria<span>talare talaris N (3rd) N <br>&gt;:winged sandals (pl.) of Mercury; skirts/robes reaching to ankles;<br>&nbsp;(複数 対格)<br></span></a>
+<a class="note1">induit,<span>indŭo induere, indui, indutus V (3rd)  X<br>:put on, clothe, cover; dress oneself in;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">āera<span>āēr aeris N C <br>:air (one of 4 elements); atmosphere, sky; cloud, mist, weather; breeze; odor;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">sublātus<span>tollo tollere, sustuli, sublatus V (3rd) TRANS  <br>:lift, raise; destroy; remove, steal; take/lift up/away;<br>【完了分詞 ( 受動態 ) (M 単数 主格) 】<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">est.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Tum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dēsuper<span>desuper ADV <br>&gt;:from above, from overhead; up above;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">mōnstrum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">impetum<span>impĕtus impetus N (4th) M <br>:attack, assault, charge; attempt; impetus, vigor; violent mental urge, fury;<br>(単数 対格) <br></span></a>
+<a class="note0">subitō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">fēcit,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">gladiō<span>glădĭus gladi(i) N (2nd) M <br>:sword;<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">suō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">collum<span>collum colli N (2nd) N <br>:neck; throat; head and neck; severed head; upper stem (flower); mountain ridge;<br>(単数 主格) (単数 対格) (単数 呼格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">graviter<span>graviter ADV <br>&gt;:violently; deeply; severely; reluctantly;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">vulnerāvit.<span>vulnĕro vulnerare, vulneravi, vulneratus V (1st) TRANS  <br>:wound/injure/harm, pain/distress; inflict wound on; damage (things/interest of);<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Mōnstrum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">sēnsit<span>sentĭo sentire, sensi, sensus V (4th)  X<br>:perceive, feel, experience; think, realize, see, understand;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">vulnus,<span>vulnus vulneris N (3rd) N <br>:wound; mental/emotional hurt; injury to one's interests; wound of love;<br>&nbsp;(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">fremitum<span>frĕmĭtus fremitus N (4th) M <br>:roar, loud noise; shouting; resounding; rushing, murmuring, humming; growl;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">horribilem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">ēdidit,<span>ēdo edare, edidi, editus V (1st) TRANS  <br>:|utter solemnly; pronounce/decree (oracle); deliver (message); issue (command);<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">sine<span>sine PREP ABL <br>&gt;:without; (sometimes after object); lack;<br><br></span></a>
+<a class="note1">morā<span>mŏra morae N (1st) F <br>:delay, hindrance, obstacle; pause;<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tōtum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">corpus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">aquam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">mersit.<span>mergo mergere, mersi, mersus V (3rd)  X<br>:dip, plunge, immerse; sink, drown, bury; overwhelm;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Perseus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">dum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">circum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">lītus<span></span></a>
+<a class="note1">volat,<span>vŏlo volare, volavi, volatus V (1st)  X<br>:fly;<br>(3 単数 現在 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">reditum<span>rĕdĭtus reditus N (4th) M <br>:return, returning; revenue, income, proceeds; produce (Plater);<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">exspectābat.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Mare<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">intereā<span>interea ADV <br>&gt;:meanwhile;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">undique<span>undique ADV <br>&gt;:|everywhere; completely; allover; from every point of view, in all respects;<br><br></span></a>
+<a class="note1">sanguine<span>sanguis sanguinis N (3rd) M <br>:blood; family;<br>(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">īnficitur.<span>infĭcĭo inficere, infeci, infectus V (3rd)  X<br>:corrupt, infect, imbue; poison; dye, stain, color, spoil;<br>(3 単数 現在 受動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Post<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">breve<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tempus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">belua<span>bēlŭa beluae N (1st) F <br>:beast, wild animal (incl. sea creature); monster, brute (great size/ferocity);<br>(単数 主格)<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">rūrsus<span>rursus ADV <br>&gt;:turned back, backward; on the contrary/other hand, in return, in turn, again;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">caput<span>căpŭt capitis N (3rd) N <br>:head; person; life; leader; top; source/mouth (river); capital (punishment);<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">sustulit;<span>tollo tollere, sustuli, sublatus V (3rd) TRANS  <br>:lift, raise; destroy; remove, steal; take/lift up/away;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note1">mox<span>mox ADV <br>&gt;:soon, next (time/position);<br><br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">Perseō<span></span></a>
+<a class="note0">ictū<span></span></a>
+<a class="note0">graviōre<span></span></a>
+<a class="note1">vulnerāta<span>vulnĕro vulnerare, vulneravi, vulneratus V (1st) TRANS  <br>:wound/injure/harm, pain/distress; inflict wound on; damage (things/interest of);<br>【完了分詞 ( 受動態 ) (N 複数 主格)&nbsp; 】<br></span></a>
+<a class="note0">est.<span></span></a>
+<a class="note0">Tum<span></span></a>
+<a class="note1">iterum<span>iterum ADV <br>&gt;:again; a second time; for the second time;<br><br></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">undās<span>unda undae N (1st) F <br>:wave;<br>(複数 対格) <br></span></a>
+<a class="note0">mersit,<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">posteā<span></span></a>
+<a class="note0">vīsa<span></span></a>
+<a class="note0">est.<span></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" style="font-size: 2.4rem;" spellcheck="false"><p>gladio suo : 自分の（Perseusの）剣で、手段の奪格</p>
+<p>collum eius : その首を（怪物の）<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 2.4rem;" spellcheck="false"><p>しかしながらPerseusはそれらを見ると直ちに剣を抜きました。そして羽つきの靴を着け空中に舞い上がりました。そして怪物に対し素早い攻撃を上から行いました。自身の剣でその首を激しく切りつけました。怪物は自身の傷を感じると恐ろしい咆吼をあげ、直ちに体を海の中に沈めました。Perseusは暫く海岸の周りを飛びながら、それが戻ってくるかと待っていました。しかし、海はそのうちに血で染まりました。短い時間のあとその獣は再び頭をもたげて来ましたが、Perseusによりより強力な一撃により、傷つきました。そして再度自身を波間に沈め、二度と見ることはありませんでした。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

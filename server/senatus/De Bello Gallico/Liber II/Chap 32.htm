@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber II : Chap 32</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[32]<span></span></a>
+<a class="note0">Ad<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">respondit:<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">magis<span>副詞　;= to greater extent, rather, more</span></a>
+<a class="note1">cōnsuētūdine<span>consuetudo consuetudinis N (3rd) F  <br>:habit/custom/usage/way; normal/general/customary practice, tradition/convention;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">suā<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">meritō<span>meritum meriti N (2nd) N  <br>:merit, service; value, due reward;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note0">cīvitātem<span><br><br></span></a>
+<a class="note1">cōnservātūrum,<span>conservo conservare, conservavi, conservatus V (1st)  <br>:keep safe/intact, save (from danger); preserve, maintain; spare; keep/observe;<br>(未来 分詞 能動態 m 単数 対格)<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">prius<span>副詞　;= earlier, before, previously</span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">mūrum<span><br><br></span></a>
+<a class="note1">ariēs<span>aries arietis N (3rd) M  <br>:ram (sheep); battering ram; the Ram (zodiac); large unidentified marine animal;<br>(X 単数 主格)<br></span></a>
+<a class="note1">attigisset<span>attigo attigere, attigi, attactus TRANS ３単　過去完了 接続法 ;= touch, reach, arrive, achieve</span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">dēdidissent;<span>dedo dedere, dedidi, deditus V (3rd) TRANS  <br>:give up/in, surrender; abandon/consign/devote (to); yield, hand/deliver over;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">dēditiōnis<span>deditio deditionis N (3rd) F  <br>:surrender (of combatants/town/possessions); cession of right/title;<br>(X 単数 属格)<br></span></a>
+<a class="note1">nūllam<span>nullus nulla, nullum (gen -ius) ADJ  <br>:no; none, not any; (PRONominal ADJ)<br>(f 単数 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">condiciōnem<span>condicio condicionis N (3rd) F  <br>:agreement/contract; terms, proposal/option/alternative; situation; stipulation;<br>(c 単数 対格)<br></span></a>
+<a class="note1">nisi<span>if not, unless</span></a>
+<a class="note1">armīs<span>armum 複　奪格<br></span></a>
+<a class="note1">trāditīs.<span>trado tradere, tradidi, traditus V (3rd)  <br>:hand over, surrender; deliver; bequeath; relate;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>se magnis ~ conservaturum : 間接話法、最初のseはカエサルで不定詞文の主語。最後conservaturum esseで未来不定詞。</p>
+<p>consuetudine sua : 自分の習慣によって（原因の奪格）</p>
+<p>quam = than merito eorum 彼らの寄与（おかげ）</p>
+<p>aries : 破砕機　おもりをぶら下げて振り子のように振って壁に打ち付け壊す道具　<a class="imageshow">ariesの図<span style="display: none;">battling ram.jpg</span></a></p>
+<p>nullam condicionem deditionis esse : nullum condicionem対格でesseの主語</p>
+<p>armis traditis : 独立奪格 完全に書けば　nisi codicio esset armis traditis.</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>それに対しカエサルは次のように返答した。自分は相手が何かその資格があるからと言うよりは殆ど習慣によって、部族を助命するであろう、もし破砕機が壁に当たる前に降伏した場合には。しかし、武器の供出がない場合には降伏の条件というものはない。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sē<span><br><br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Nerviīs<span><br><br></span></a>
+<a class="note1">fēcisset<span>facio 3単　過去完了　接続法　<br></span></a>
+<a class="note0">factūrum<span><br><br></span></a>
+<a class="note0">fīnitimīsque<span><br><br></span></a>
+<a class="note0">imperātūrum<span><br><br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">dēditīciīs<span><br><br></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note0">iniūriam<span><br><br></span></a>
+<a class="note0">īnferrent.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p>qoud in Nerviis fecisset : quodは先行詞idに掛かる関係代名詞　「ネルウィ族の場合に行ったこと」</p>
+<p>facturum imperaturum 未来分詞で　esse省略の未来不定詞　seが主語　間接話法の一部である。</p>
+<p>Se facturum esse id quod in Nerviis fecisset : 私はNervii族の場合に行なった事をやるであろう。が直訳</p>
+<p><strong>ne quam</strong> : quam qui、F単対格でありこの場合のqui(quis)は不定代名詞である<strong>。(AG310.a　NewLatin252</strong>.1 ゼロから6.5.3)いずれにしてもsi, num, ne, nisiなどと共に使われ不定代名詞となる。ゼロからによると元々aliquis, aliquiという不定代名詞がsi, ne,などと共に使われ、ali-の部分が省略された由。ne quam iniuriam で not any damagae の意。injuriamがF単対格</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>私はネルウィ族に対して行ったこと同様に、近隣の種族に対し、ローマに降伏した如何なるもの対しても害を成さないように布告するであろう。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Rē<span><br><br></span></a>
+<a class="note0">renūntiātā<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note0">illī<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">imperārentur<span><br><br></span></a>
+<a class="note0">facere<span></span></a>
+<a class="note1">dīxērunt.<span>dico dicere, dixi, dictus V (3rd)  <br>:say, declare, state; allege, declare positively; assert; plead (case);<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>re renuntitata : 独立奪格 事柄は報告され</p>
+<p>ad suos : Aduatucusのこと</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>このことは彼らに報告され、彼らは命ぜられるように従うであろうと言った。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Armōrum<span>armum 複　属格<br></span></a>
+<a class="note0">magnā<span><br><br></span></a>
+<a class="note1">multitūdine<span>multitudo F 単　奪格<br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">mūrō<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">fossam,<span>fossa fossae N (1st) F  <br>:ditch, trench, canal; moat; dike, fosse;<br>(c 単数 対格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note0">oppidum,<span></span></a>
+<a class="note1">iactā,<span>jacio jacere, jeci, jactus V (3rd)  <br>:throw, hurl, cast; throw away; utter;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note1">sīc<span>sic ADV <br>:thus, so; as follows; in another way; in such a way;<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">prope<span>副詞　;= near, nearly, almost</span></a>
+<a class="note1">summam<span>f 単　対格</span></a>
+<a class="note0">mūrī<span><br><br></span></a>
+<a class="note1">aggerisque<span>agger aggeris M 単　属格　;= rampart, causeway, pier, heap</span></a>
+<a class="note0">altitūdinem<span><br><br></span></a>
+<a class="note1">acervi<span>acervus acervi N (2nd) M  <br>:mass/heap/pile/stack; treasure, stock; large quantity; cluster; funeral pile;<br>(X 単数 属格)<br></span></a>
+<a class="note0">armōrum<span><br><br></span></a>
+<a class="note1">adaequārent,<span>adaequo adaequare, adaequavi, adaequatus V (1st)  <br>:equalize, make equal in height, come up to level; compare (to); be equal; raze;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">circiter<span>副詞　nearly, almost, around, about</span></a>
+<a class="note1">parte<span>f 単　奪格</span></a>
+<a class="note0">tertiā,<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">posteā<span><br><br></span></a>
+<a class="note1">perspectum<span>perspicio perspicere, perspexi, perspectus 完了分詞　受動　　;= see through, examine, observe</span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">cēlātā<span>celo celare, celavi, celatus V (1st) TRANS  <br>:<strong>conceal</strong>, <strong>hide</strong>, keep secret; disguise; keep in dark/in ignorance; shield;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">oppidō<span></span></a>
+<a class="note1">retentā,<span>retineo retinere, retinui, retentus V (2nd)  <br>:hold back, restrain; uphold; delay; hold fast; retain,preserve;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格<br></span></a>
+<a class="note1">portīs<span>porta portae N (1st) F  <br>:gate, entrance; city gates; door; avenue; goal (soccer);<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note1">patefactīs<span>patefacio patefacere, patefeci, patefactus V (3rd) TRANS  <br>:|open (up); (gates); clear, make available; deploy (troops); expose (to attack);<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">diē<span>dies 単　奪格　;＝day<br></span></a>
+<a class="note0">pāce<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">ūsī.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>独立奪格多し！</p>
+<p>armorum multitudine jacta : 大量の武器が投げ出され</p>
+<p>sic ut：そのために結果として、</p>
+<p>adaequarent summam muri aggeris et altitutinem aceri arorum : aggerはローマ軍の土塁、muriは城壁、それらと積まれた武器の高さを同じにした、が逐語訳。</p>
+<p>parte teritia celata atque retena : 第三の部分（城塞の）は隠され取って置かれた。</p>
+<p>portis patedacis : 独立奪格　門は開かれ、</p>
+<p>pace sunt usi : utorにはenjoyの訳あり。「平和が楽しまれた」という訳と「その夜は平穏であった」という二つの系統があるようである。（同じことか？）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>膨大な量の武器が、城塞の前にある溝に城壁から投げ出された。そのために積まれた武器の高さと、ローマの土塁や城壁の頂上とが同じ高さになるぐらいであった。しかし、城塞の第三の部分、それは後になって見つかったのだが、隠され取って置かれた。そして、門は開かれ、その日は平和を楽しんだ。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

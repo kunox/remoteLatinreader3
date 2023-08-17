@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 48 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[48]<span></span></a>
+<a class="note1">Quodsi<span>quodsi CONJ <br>&gt;:but if; and if; (introduces conditional); (quodsi = quod si)<br><br></span></a>
+<a class="note0">ea,<span></span></a>
+<a class="note1">quae<span>quī quae, quod PRON  REL<br>:who, which; (relative pronoun);<br>(F 単数 主格)<br></span></a>
+<a class="note1">utenda<span>ūtor uti, usus sum V (3rd) DEP  <br>:use, make use of, enjoy; enjoy the friendship of (with ABL);<br>未来分詞 受動態 (N 複数 対格)<br></span></a>
+<a class="note1">acceperis,<span>accĭpĭo accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>( 2 単数 完了 能動態 接続法 )<br></span></a>
+<a class="note1">maiore<span>magnus magna -um, major -or -us, maximus -a -um ADJ  比較級<br>:large/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;<br>&nbsp;(F 単数 奪格)<br><br></span></a>
+<a class="note1">mensura,<span>mensūra mensurae N (1st) F  <br>:measure; length, area, capacity;<br>&nbsp;(単数 奪格)<br></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">modo<span></span></a>
+<a class="note0">possis,<span></span></a>
+<a class="note1">iubet<span>jŭbĕo jubere, jussi, jussus V (2nd) TRANS  <br>:order/tell/command/direct; enjoin/command; decree/enact; request/ask/bid; pray;<br>( 3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">reddere<span>reddo reddere, reddidi, redditus V (3rd)  <br>:return; restore; deliver; hand over, pay back, render, give back; translate;<br>&nbsp;不定詞<br></span></a>
+<a class="note1">Hesiodus,<span>ヘシオドス、労働と日々など<br><br></span></a>
+<a class="note1">quidnam<span>quidnam ADV <br>&gt;:what? how?;<br><br></span></a>
+<a class="note1">beneficio<span>bĕnĕfĭcĭum benefici(i) N (2nd) N  <br>:kindness, favor, benefit, service, help; privilege, right;<br>(単数 与格)<br></span></a>
+<a class="note1">provocati<span>prōvŏco provocare, provocavi, provocatus V (1st)  <br>:call forth; challenge; provoke;<br>完了分詞 ( 受動態 ) (N 単数 属格), <br></span></a>
+<a class="note0">facere<span></span></a>
+<a class="note1">dēbemus?<span>dēbĕo debere, debui, debitus V (2nd)  <br>:owe; be indebted/responsible for/obliged/bound/destined; ought, must, should;<br>( 1 複数 現在 能動態 直接法 )<br><br></span></a>
+<a class="note1">An<span>an CONJ <br>&gt;:can it be that (introduces question expecting negative answer/further question);<br><br></span></a>
+<a class="note1">imitari<span>ĭmĭtor imitari, imitatus sum V (1st) DEP  <br>:imitate/copy/mimic; follow; make an imitation/reproduction; resemble; simulate;<br>受動態 不定詞<br></span></a>
+<a class="note0">agros<span></span></a>
+<a class="note1">fertiles,<span>fertĭlis fertile, fertilior -or -us, fertilissimus -a -um ADJ  <br>:fertile, fruitful; abundant;<br>&nbsp;(M 複数 対格),<br></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">multo<span></span></a>
+<a class="note0">plus<span></span></a>
+<a class="note1">efferunt,<span>effĕro efferre, extuli, elatus V  <br>:carry out; bring out; carry out for burial; raise;<br>( 3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">acceperunt?<span>accĭpĭo accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>( 3 複数 完了 能動態 直接法 )<br></span></a>
+<a class="note1">Etenim<span>etenim CONJ <br>&gt;:and indeed, because, since, as a matter of fact (independent reason, emphasis);<br><br></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eos,<span></span></a>
+<a class="note0">quos<span></span></a>
+<a class="note1">speramus<span>spēro sperare, speravi, speratus V (1st)  <br>:hope for; trust; look forward to; hope;<br>( 1 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">nobis<span>nōs nostrum/nostri PRON PERS   PERS<br>:we (pl.), us;<br>(F 単数 与格), <br></span></a>
+<a class="note1">profuturos,<span>prōsum prodesse, profui, profuturus V  <br>:be useful, be advantageous, benefit, profit (with DAT);<br>未来分詞 能動態(M 複数 対格)<br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">dubitamus,<span>dŭbĭto dubitare, dubitavi, dubitatus V (1st)  <br>:doubt; deliberate; <strong>hesitate </strong>(over); be uncertain/irresolute;<br>( 1 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">officia<span>offĭcĭum offici(i) N (2nd) N  <br>:duty, obligation; kindness; service, office;<br>&nbsp;(複数 対格)<br></span></a>
+<a class="note0">conferre,<span></span></a>
+<a class="note1">quales<span>quālis qualis, quale ADJ  <br>:what kind/sort/condition (of); what is (he/it) like; what/how excellent a ...;<br>(M 複数 主格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eos<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">debemus,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note1">profuerunt?<span>prōsum prodesse, profui, profuturus V  <br>:be useful, be advantageous, benefit, profit (with DAT);<br>( 3 複数 完了 能動態 直接法 )<br></span></a>
+<a class="note1">Nam<span>nam CONJ <br>&gt;:for, on the other hand; for instance;<br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">duo<span></span></a>
+<a class="note1">genera<span>gĕnus generis N (3rd) N  <br>:|noble birth; kind/sort/variety; class/rank; mode/method/style/fashion/way;<br>(複数 主格), <br></span></a>
+<a class="note0">liberalitatis<span></span></a>
+<a class="note0">sint,<span></span></a>
+<a class="note0">unum<span></span></a>
+<a class="note0">dandi<span></span></a>
+<a class="note0">beneficii,<span></span></a>
+<a class="note0">alterum<span></span></a>
+<a class="note0">reddendi,<span></span></a>
+<a class="note1">demus<span>do dare, dedi, datus V (1st) TRANS  <br>:give; dedicate; sell; pay; grant/bestow/impart/offer/lend; devote; allow; make;<br>( 1 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">necne<span>necne CONJ <br>&gt;:or not;<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">nostra<span></span></a>
+<a class="note1">potestate<span>pŏtestas potestatis N (3rd) F  <br>:power, rule, force; strength, ability; chance, <strong>opportunity</strong>;<br>(単数 奪格)<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">reddere<span>reddo reddere, reddidi, redditus V (3rd)  <br>:return; restore; deliver; hand over, pay back, render, give back; translate;<br>&nbsp;不定詞<br></span></a>
+<a class="note0">viro<span></span></a>
+<a class="note0">bono<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">licet,<span></span></a>
+<a class="note1">modo<span>modo ADV <br>&gt;:only, merely; just now/recently, lately; presently;<br><br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">facere<span></span></a>
+<a class="note0">possit<span></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note0">iniuria.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>Hesiodus jubet ea reddere maiore mensura. 「ヘシオドスは彼に余分な量で返すよう命じた。」</p>
+<p>ea, quae utenda acceperis <strike>acceperisは2人称なので少し変。quaeはacceperisに数を合わせ単数とする</strike>。utendaは動形容詞だがこの場合、対格で目的語。「誰か好意を受け取るもの」</p>
+<p><font color="#0000ff"><em>不定の人を指すのに2人称単数が使われる。特に可能性の接続法などで使われる</em></font>。（NewLatin 356.3 280.3)</p>
+<p>quidnam debemus facere beneficio provocati. 「引き起こされた好意に対して如何にになすべきであろうか」</p>
+<p>an imitari agros fertiles? Anは単純な疑問文の先頭で使われる。imitariは歴史的不定詞。「肥沃な畑を再生するか」</p>
+<p>si non dubitamus conferre officia in eos, 　「もし、躊躇なく彼らに好意を授けるとならば」</p>
+<p>eos, quos speramus nobis profuturos. 「我々が、我々に対して役立ってほしいと願っている人たち」</p>
+<p>quales debemus esse in eos, qui iam profuerunt? 「すでに役立っている人たちに対して如何にすべきであろうか？」</p>
+<p>demus necne in nostra potestate est. necne demus = whther gove or not 「与えるか与えないかは我々の選択の中である」</p>
+<p>modo = dum modo　で povided that の意。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>ヘシオドスは、もし誰かが好意を受けたら、可能であればそれよりもっと多くを返しなさい、と言ったが引き起こされた好意については如何にすべきであろうか？受け取ったときより遥かに肥沃にした畑と同じことをするのであろうか？我々が自身のために役立ってほしいと思っている人たちに躊躇なく好意を授けるならば、すでに役立った人に対してはどうすればよいのであろう？好意には2種類ある。一つは与える好意、もう一つは返す好意である。与えるか否かは我々の選択であるが、善き人にとっては返さないことは行うべきではない。不正なことをしないで返礼できる限りに於いてはあるが。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

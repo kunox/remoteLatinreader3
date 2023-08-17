@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 20</h1>
+<!--<input name="save" onclick="test()" type="button" value="　test　" style="font-size:12px; font-family: meiryo;" />-->
+<!--<input type="file" id="fileselect" name="fslct"/>-->
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[20]<span></span></a>
+
+<a class="note0">Dīviciācus<span><br><br></span></a>
+<a class="note1">multīs<span>multus 奪格 <br>multis lacrimis<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">lacrimīs<span>lacrima, lacrimae 名詞 (1st) F   :tear; exuded gum/sap; bit of lead; quicksilver from ore; weeping (pl.); dirge; 奪格<br></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">complexus<span>complecto, complectere, complecti, complexus 動詞 (3rd) TRANS   :embrace, hug; welcome; encircle, encompass; attain; include, bring in, involve; 完了 分詞 受動態</span></a>
+<a class="note1">obsecrāre<span>obsecro obsecrare, obsecravi, obsecratus V (1st) TRANS  <br>:entreat/beseech/implore/pray; (w/deity as object);<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">coepit<span>coepi coepisse, -, coeptus V (3rd)  <br>:begin, commence, initiate; (shows only PERFDEF);<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note1">quid<span>quis 中性単数主格</span></a>
+<a class="note1">gravius<span>gravis, grave, gravior -or -us, gravissimus -a -um 形容詞   :heavy; painful; important; serious; pregnant; grave, oppressive, burdensome; 比較級 <br>ne quid gravis = no severe measure(慣用句）</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">frātrem<span><br><br></span></a>
+<a class="note1">statueret:<span>statuo, statuere, statui, statutus 動詞 (3rd)   :set up, establish, set, place, build; decide, think;3 単 未完了 能動態 接続法</span></a>
+<a class="note1">scīre<span>scio, scire, scivi, scitus 動詞 (4th) TRANS   :know, understand;不定詞<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">illa<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">vēra,<span><br><br></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note1">quemquam<span>quisquam, quaequam, quidquam ADJECT   :(w/-quam) any; anyone/anybody (no pl.) (INDEF) anything; any man, any person; 対格</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">plūs<span>multus比較級<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">dolōris<span>dolor, doloris 名詞 (3rd) M   :pain, anguish, grief, sorrow, suffering; resentment, indignation;属格<br></span></a>
+<a class="note0">capere,<span></span></a>
+<a class="note0">proptereā<span><br><br></span></a>
+<a class="note0">quod,<span></span></a>
+<a class="note1">cum<span>cum, 副詞   :|as soon; while, as (well as); whereas, in that, seeing that; on/during which;</span></a>
+<a class="note1">ipse<span>＝Divitiacus</span></a>
+<a class="note1">grātiā<span>gratia, gratiae 名詞 (1st) F   :|favor/goodwill/kindness/friendship; <strong>influence</strong>; gratitude; thanks (pl.); Graces; 奪格<br></span></a>
+<a class="note1">plūrimum<span>plurimum posset : minimus possetと対<br></span></a>
+<a class="note1">domī<span>処格？独立した副詞として <br>家で<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">reliquā<span><br><br></span></a>
+<a class="note0">Galliā,<span><br><br></span></a>
+<a class="note1">ille<span>Dumnoris</span></a>
+<a class="note0">minimum<span></span></a>
+<a class="note1">propter<span>propter, 前置詞 (対格)  :near; on account of; by means of; because of; 対格</span></a>
+<a class="note1">adulēscentiam<span>adulescentia, adulescentiae 名詞 (1st) F   :youth, young manhood; characteristic of being young, youthfulness; the young; 対格<br></span></a>
+<a class="note1">posset,<span>minimum posset = by no means influential</span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">sē<span>＝Divitiacus<br></span></a>
+<a class="note1">crēvisset;<span>cresco, crescere, crevi, cretus 動詞 (3rd) INTRANS   :come forth/to be; arise/spring (from); be born; become visible/great; grow (up);3 単 過去完了 能動態 接続法<br></span></a>
+<a class="note1">quibus<span>奪格</span></a>
+<a class="note1">opibus<span>ops, opis 名詞 (3rd) F   :power, might; help; influence; resources/wealth (pl.);奪格</span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">nervīs<span>nervus, nervi 名詞 (2nd) M   :|strength; vigor, nerve, force, power; sexual power, virility; penis (rude);奪格<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">sōlum<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">minuendam<span>minuo, minuere, minui, minutus 動詞 (3rd)   :lessen, reduce, diminish, impair, abate; <br>未来 分詞 受動態 f 単 対格 <strong>ad + 動名詞、対格</strong><br></span></a>
+<a class="note1">grātiam,<span>gratia 対格<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">paene<span>paene, 副詞   :nearly, almost; mostly;「パエヌルティマのパエ）</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">perniciem<span>pernicies, perniciei 名詞 (5th) F   :ruin; disaster; pest, bane; curse; destruction, calamity; mischief;対格</span></a>
+<a class="note1">suam<span>Divitiacus</span></a>
+<a class="note1">ūterētur.<span>utor, uti, usus sum 動詞 (3rd) DEP   :use, make use of, enjoy; enjoy the friendship of (with ABL);<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Diviciacus obsecrare coepit ne ~ : ~しないように懇願を始めた。　<strong>懇願の内容は間接文</strong>（Scire以下）</p>
+<p>Caesarem complexus　：　分詞構文　カエサルを抱きながら</p>
+<p>scire se illa esse vera　：se(Diviciacus)が意味上の主語</p>
+<p><strong>nec quemquam ex eo plus quam se doloris capere</strong>：quamはthan seはDiviciacusのことで彼よりも</p>
+<p><strong>nec quemquamはnoone</strong>のことで、capereの主語。plus doloris の属格は[<strong>全体の属格</strong>](NewLatin201.1)で、「全ての痛手の中で少なく取った」が逐語訳。即ち「<font style="background-color: rgb(204, 255, 255);">誰も、彼（Diviciacus)よりも少ない痛手を被った人はいない</font>」という意味。</p>
+<p>ille,~, crevisset, ~uteretur. Domnorisは～育った、～使っている。</p>
+<p><strong>quibus opibus ac nervis</strong> ：utior(uteretur)の目的語で、utiorは奪格支配（NewLatin218.1)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>ディウィキアクスは涙を沢山うかべてカエサルを抱きながら兄弟をあまりひどく罰しないように懇願を始めた。彼はそのことが真実であると理解した、そして彼自身が誰よりも深く傷ついている。なぜなら、ディウィキアクスが自分の部族でもまたガリアの残りの部族においても影響力があった時、彼（ドゥムノリックス）はまだ幼くて影響力はなかったので私を（ディウィキアクス）を通して育った。そして得た力と影響力を単に私の影響力を減らすように使っているだけでなく、殆ど私を破滅させるように使っている。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Sēsē<span>対格　主語Divitiacus<br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">amōre<span>amor, amoris 名詞 (3rd) M   :love; affection; the beloved; Cupid; affair; sexual/illicit/homosexual passion;奪格<br></span></a>
+<a class="note1">frāternō<span>fraternus, fraterna, fraternum 形容詞   :brotherly/brother's; of/belonging to a brother; fraternal; friendly; of cousin; 　奪格 m 単<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">exīstimātiōne<span>existimatio, existimationis 名詞 (3rd) F   :opinion (good); reputation/name; esteem; judgment/view/estimation; credit; 奪格<br></span></a>
+<a class="note1">vulgī<span>vulgus, vulgi 名詞 (2nd) N   :common people/general public/multitude/common herd/rabble/crowd/mob; flock; 属格<br></span></a>
+<a class="note1">commovērī.<span>commoveo, commovere, commovi, commotus 動詞 (2nd) TRANS   :|waken; provoke; move (money/camp); produce; cause, start (war); raise (point); 不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>amore fraterno : fraternoは形容詞fraternusの奪格で、amoreを修飾。「兄弟への愛」ということを表現しているが前置詞は使わないので、代わりに形容詞を使っている。（NewLatin353.5.b)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>しかしディウィキアクスは兄弟愛と一般のひとたちの意見に従って動いた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quod<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note1">eī<span>Domnorix 与格</span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Caesare<span></span></a>
+<a class="note0">gravius<span></span></a>
+<a class="note1">accidisset,<span>accido, accidere, accidi, - 動詞 (3rd)   :fall upon/down/to/at or near, descend, alight; happen, occur; happen to (DAT);3 単 過去完了 能動態 接続法</span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">ipse<span>Divitiacus？</span></a>
+<a class="note1">eum<span>？talem = Talis = such a greatの表記もある？</span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">amīcitiae<span>amicitia, amicitiae 名詞 (1st) F   :friendship, bond between friends; alliance, association; friendly relations;<br></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note1">eum<span>カエサルを指す</span></a>
+<a class="note1">tenēret,<span>teneo, tenere, tenui, tentus 動詞 (2nd)   :hold, keep; comprehend; possess; master; preserve;3 単 未完了 能動態 接続法)<br></span></a>
+<a class="note1">nēminem<span>nemo, neminis 名詞 (3rd) C   :no one, nobody;対格<br></span></a>
+<a class="note1">exīstimātūrum<span>existimo, existimare, existimavi, existimatus 動詞 (1st) TRANS   :value/esteem; form/hold opinion/view; think/suppose; estimate; judge/consider;未来 分詞 能動態<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">suā<span>Divitiacus<br></span></a>
+<a class="note1">voluntāte<span>voluntas, voluntatis 名詞 (3rd) F   :will, desire; purpose; good will; wish, favor, consent;奪格<br></span></a>
+<a class="note0">factum;<span></span></a>
+<a class="note0">quā<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">rē<span>res 奪格 <br>consequence of which <br>この事柄から<br></span></a>
+<a class="note1">futūrum<span>sum 未来分詞　（esseが省略されていて）未来不定詞<br></span></a>
+<a class="note1">utī<span>uti, 接続詞   :in order that; that, so that; as, when;<br></span></a>
+<a class="note0">tōtīus<span><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">animī<span><br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">āverterentur.<span>averto, avertere, averti, aversus 動詞 (3rd)   :turn away from/aside, divert, rout; disturb; withdraw; steal, misappropriate;<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p> si quid～accidisset: accidissetは過去完了接続法で英語の仮定法過去のようなニュアンスか？　万が一～した時には</p>
+<p>neminem existimaturum non sua voluntate factum;：　Noone think it was done without his consent.</p>
+<p>qua ex re : その事により</p>
+<p>futurum　（esse)で未来不定詞</p>
+<p>uti ~ averterentur ：名詞節でfuturum esseの主語。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>と言うのは、もしドムトリックがカエサルから重い処罰を受けたとすると、それは、彼の（ディウィキアクス）のカエサルに対するポジションから考えると誰も彼自身の同意なくて行われたとは考えないであろう。そうすると結果的にはガリア全体の気持ちはディウィキアクスから離れていくことになる。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Haec<span>here, in this place</span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">plūribus<span>plus 奪格<br></span></a>
+<a class="note1">verbīs<span>verbum, verbi 名詞 (2nd) N   :word; proverb;奪格<br></span></a>
+<a class="note1">flēns<span>fleo, flere, flevi, fletus 動詞 (2nd)   :cry for; cry, weep;(現在 分詞<br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Caesare<span></span></a>
+<a class="note1">peteret,<span>peto, petere, petivi, petitus 動詞 (3rd)   :attack; aim at; desire; beg, entreat, ask (for); reach towards, make for;3 単 未完了 能動態 接続法) <br>主語はDivitiacus</span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note1">dextram<span>dextra, dextrae 名詞 (1st) F   :right hand; weapon/greeting/shaking hand; right side; soldier;対格</span></a>
+<a class="note1">prēndit;<span>prendo, prendere, prendi, prensus 動詞 (3rd) TRANS   :catch/capture; take hold of/possession of/in hand, arrest; occupy; seize/grasp; 3 単 完了 能動態 直説法)<br></span></a>
+<a class="note1">cōnsōlātus<span>consolo, consolare, consolavi, consolatus 動詞 (1st) TRANS   :console, cheer, comfort; (PASS) console oneself, take comfort; 完了 分詞 受動態 m 単 主格)   <br>分詞構文<br></span></a>
+<a class="note1">rogat<span>rogo, rogare, rogavi, rogatus 動詞 (1st)   :ask, ask for; invite; introduce;3 単 現在 能動態 直説法)</span></a>
+<a class="note1">fīnem<span>finis, finis 名詞 (3rd) C   :boundary, end, limit, goal; (pl.) country, territory, land;対格<br></span></a>
+<a class="note1">ōrandī<span>oro, orare, oravi, oratus 動詞 (1st)   :beg, ask for, pray; beseech, plead, entreat; worship, adore;未来 分詞 受動態 属格<br></span></a>
+<a class="note1">faciat;<span>facio 未来 分詞 受動態 接続法 <br>この前にutが省略されている？</span></a>
+<a class="note1">tantī<span>tantus, tanta, tantum 形容詞   :of such size; so great, so much;属格 <br> <br>形容詞で量を表すものは不定の価値を示すため属格で用いられる　magni, parvi, tanti, quanti, pluris, minoris<br></span></a>
+<a class="note1">eius<span>Divitiacus<br></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note1">sē<span>Caesar<br></span></a>
+<a class="note1">grātiam<span>gratia, gratiae 名詞 (1st) F  favor/goodwill/kindness/friendship; influence; gratitude; thanks (pl.); Graces対格<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">ostendit<span>ostendo, ostendere, ostendi, ostensus 動詞 (3rd)   :show; reveal; make clear, point out, display, exhibit;3 単 完了 能動態 直説法</span></a>
+<a class="note1">uti<span>結果を表すut?</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note1">pūblicae<span>publicus, publica, publicum 形容詞   :public; common, of the people/state; official;属格<br></span></a>
+<a class="note1">iniūriam<span>injuria, injuriae 名詞 (1st) F   :injury; injustice, wrong, offense; insult, abuse; sexual assault;対格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note1">dolōrem<span>dolor, doloris 名詞 (3rd) M   :pain, anguish, grief, sorrow, suffering; resentment, indignation;対格<br></span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note1">voluntatī<span>voluntas, voluntatis 名詞 (3rd) F   :will, desire; purpose; good will; wish, favor, consent;与格<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">precibus<span>prex, precis 名詞 (3rd) F   :prayer, request;与格</span></a>
+<a class="note1">condōnet.<span>condono, condonare, condonavi, condonatus 動詞 (1st) TRANS   :give (away/up); present; make present of; forgive/pardon/absolve; sacrifice to; 3 単 現在 能動態 接続法<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Caesar</p>
+<p><font color="#ff6600">prendit</font>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 握り</p>
+<p><font color="#ff6600">roga</font>t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;頼み</p>
+<p><font color="#ff6600">ostendit</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宣言し</p>
+<p><font color="#ff6600">condonet</font>.譲歩した。</p>
+<p>Haec cum pluribus verbis flens a Caesare peteret：主語はDivitiacus　多言を用してカエサルに泣きながら懇願し</p>
+<p>　　　pluribus verbis : [<strong>付帯状況の奪格</strong>] (NewLatin221)</p>
+<p>flensは現在分詞で泣きながら,　文法的には「泣きながらのDiviciacusが」ということ。</p>
+<p><strong>rogat finem faciat</strong>. ＝　rogat ut finem faciat : 止めるよう頼む　orandiは未来分詞、属格でfinemを修飾(動形容詞）</p>
+<p>(注）<u>Bennettはut が省略されているのは間違い</u>、としている。このut無しの方が古い表現であるという説（NewLatin295.8)</p>
+<p><strong>tanti eius apud se gratiam esse ostendit　</strong>：動詞はostenditで宣言した。内容はそれ以前の不定詞</p>
+<p>Divitiacus's "gratiam" esse "tanti" = 彼のカエサルに対する誠実さが何よりの価値あるものである</p>
+<p>　<font style="background-color: rgb(255, 255, 0);">(tanti, quanti, magniなどの属格は[性質の属格]の一種で、叙述的に使用し不定の価値を表す。）AG417,NewLatin203.3</font></p>
+<p>uti et rei publicae iniuriam et suum dolorem eius voluntati ac precibus condonet.：結果を表すut節</p>
+<p>condonoは対格と与格を取り対格を与格にあげる、許してあげる、waive(撤回）する</p>
+<p>ここでは「Divitiacusの希望と懇願に対して、公的な間違い、個人的な怒りをあげる（譲る）」という意</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そこでディウィキアクスは涙ながらに多くの言葉で懇願した。カエサルは彼の右手を取り、彼を慰めながら、懇願を止めるよう促した。そして彼のカエサルに対する誠実さこそ何より価値のあるものだと宣言し、結果的に彼の望みと祈りに対して、公的な損害、個人的な怒りなどを棚上げすることにした。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dumnorīgem<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">vocat,<span>voco, vocare, vocavi, vocatus 動詞 (1st)   :call, summon; name; call upon;3 単 現在 能動態</span></a>
+<a class="note0">frātrem<span><br><br></span></a>
+<a class="note1">adhibet;<span>adhibeo, adhibere, adhibui, adhibitus 動詞 (2nd) TRANS   :summon, invite, bring in; consult; put, add; use, employ, apply; hold out to;3 単 現在 能動態</span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">reprehendat<span>reprehendo, reprehendere, reprehendi, reprehensus 動詞 (3rd)   :hold back, seize, catch; blame;3 単 現在 能動態</span></a>
+<a class="note1">ostendit;<span>ostendo, ostendere, ostendi, ostensus 動詞 (3rd)   :show; reveal; make clear, point out, display, exhibit;3 単 現在 能動態</span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note1">intellegat,<span>intellego 3 単 現在 能動態 接続法</span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">cīvitās<span><br><br></span></a>
+<a class="note1">querātur<span>queror, queri, questus sum 動詞 (3rd) DEP   :complain; protest, grumble, gripe; make formal complaint in court of law;3 単 現在 受動態 接続法<br></span></a>
+<a class="note1">prōpōnit;<span>propono, proponere, proposui, propositus 動詞 (3rd)   :display; propose; relate; put or place forward;3 単 現在 能動態<br></span></a>
+<a class="note1">monet<span>moneo, monere, monui, monitus 動詞 (2nd)   :remind, advise, warn; teach; admonish; foretell, presage; 3 単 現在 能動態</span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">reliquum<span></span></a>
+<a class="note1">tempus<span>tempus, temporis 名詞 (3rd) N   :time, condition, right time; season, occasion; necessity;対格</span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">suspīciōnēs<span>suspicio 対格<br></span></a>
+<a class="note1">vītet;<span>vito, vitare, vitavi, vitatus 動詞 (1st)   :avoid, shun; evade;3 単 現在 能動態<br></span></a>
+<a class="note1">praeterita<span>praeteritum, praeteriti 名詞 (2nd) N   :past (pl.); past times; bygone events;</span></a>
+<a class="note1">sē<span>対格　カエサルのことで、condonareの主語<br></span></a>
+<a class="note1">Dīviciāco<span>与格<br><br></span></a>
+<a class="note0">frātrī<span><br><br></span></a>
+<a class="note1">condōnāre<span>condono condonare, condonavi, condonatus V (1st) TRANS  <br>:give (away/up); present; make present of; forgive/pardon/absolve; sacrifice to;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">dīcit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>fratrem adhibet　：　adhibeo = bring inで兄弟を呼んで（同席して）</p>
+<p>quae in eo reprehendat ostendit;　ostendit quae reprehendat : 分かっている事を示した。</p>
+<p>praeterita se Diviciaco fratri condonare dicit.：condonoは対格、与格を伴って　（免じて）（譲歩、放棄する）この場合、昔のことはDivicitacusに免じて目をつぶる　seはカエサルで、condonareの主語</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルはドゥムノリックスを召喚し、兄弟も同席させ、彼についての罪状を示し、カエサルが知っている事、部族での法廷の問題を並べて見せた。そして、今後、いかなる点でも疑われうようなことを避けるよう忠告し、今までのことは兄弟のDivitiacusに免じて許すと言った。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dumnorīgī<span><br><br></span></a>
+<a class="note1">cūstōdēs<span>custos, custodis 名詞 (3rd) C   :guard; sentry/watch; guardian/protector/keeper; doorkeeper/watchman/janitor;対格 <br>＝custody<br></span></a>
+<a class="note1">pōnit,<span>pono, ponere, posivi, postus 動詞 (3rd) TRANS   :put, place, set; station; (archaic form of perf. of pono);<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">agat,<span>ago, agere, egi, actus 動詞 (3rd)   do :drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); deliver (speech);3 単 現在 能動態</span></a>
+<a class="note1">quibuscum<span>quicum,    :(w/-cum) only ABL with whom?, with which?;</span></a>
+<a class="note1">loquātur<span>loquor, loqui, locutus sum 動詞 (3rd) DEP   :speak, tell; talk; mention; say, utter; phrase;3 単 現在 受動態 接続法)<br></span></a>
+<a class="note1">scīre<span>scioの不定詞<br></span></a>
+<a class="note0">possit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルはドゥムノリックスを監視下において、何をしたか誰と話したかなどを知ることができるようにした。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

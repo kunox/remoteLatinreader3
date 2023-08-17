@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 8</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[8]<span></span></a>
+
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">gestīs,<span>gero 完了分詞　受動　複　奪格　;= bear, carry, wear, manage, govern<br><br><br></span></a>
+<a class="note0">Labiēnō<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">continente<span>continens F単　奪格　;= mainland, continent <strong>continenti</strong>の綴もあり<br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">tribus<span></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">equitum<span></span></a>
+<a class="note0">mīlibus<span><br><br></span></a>
+<a class="note0">duōbus<span><br><br></span></a>
+<a class="note1">relictō<span>relinquo 完了分詞　受動形　ｍ単　奪格　;= leave behind, be left<br><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">portūs<span><br><br></span></a>
+<a class="note1">tuērētur<span>tueor tueri, tuitus sum DEP　3単　未完了　受動　接続法　;= see, look at, protect<br><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note0">frūmentāriam<span><br><br></span></a>
+<a class="note1">prōvidēret<span>provideo ３単　未完了　接続法　;= forsee, provide for, make provision<br><br><br></span></a>
+<a class="note0">quaeque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliā<span></span></a>
+<a class="note1">gererentur<span>gero ３複　未完了　受動　接続法　;= bear, carry<br><br></span></a>
+<a class="note0">cōgnōsceret<span><br><br><br></span></a>
+<a class="note0">cōnsiliumque<span><br><br></span></a>
+<a class="note0">prō<span></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">prō<span></span></a>
+<a class="note0">rē<span></span></a>
+<a class="note0">caperet,<span></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">quīnque<span></span></a>
+<a class="note0">legiōnibus<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">parī<span>pari paris 形容詞　X単　奪格　;= equal to, match for<br><br></span></a>
+<a class="note0">numerō<span></span></a>
+<a class="note0">equitum,<span></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">continentī<span></span></a>
+<a class="note1">relīquerat,<span>３単　過去完了<br><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">sōlis<span>sol solis M　単　属格　;= sun<br><br><br></span></a>
+<a class="note1">occāsum<span>occasus occasus M 単　対格　;= setting<br><br><br><br></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note1">solvit<span>solvo solvere, solvi, solutus ３単　完了　;= loosen, release, unbind<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">lēnī<span>lenis lene, lenior, lenissimus 形容詞　単　奪格　;= gentile, kind<br><br><br></span></a>
+<a class="note1">Āfricō<span>afiricus africi M 単　奪格　;= southwest wind<br><br><br></span></a>
+<a class="note1">prōvectus<span>proveho provehere, provexi, provectus 完了分詞　受動　ｍ単　主格　;= carry, pass, be carried, ride, <strong>sail</strong><br><br><br></span></a>
+<a class="note1">mediā<span>medium 形容詞　ｆ単　奪格<br><br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note1">nocte<span>nox F 単　奪格<br><br></span></a>
+<a class="note1">ventō<span>vectus m単　奪格　;= wind<br><br></span></a>
+<a class="note1">intermissō<span>intermitto 完了分詞　受動　ｍ単　奪格　;= interrupt, stop<br><br></span></a>
+<a class="note0">cursum<span></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">tenuit,<span>teneo ３単　完了<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">longius<span></span></a>
+<a class="note1">dēlātus<span>defero 完了分詞　受動　ｍ単　主格　;= flow, carry, run down<br><br><br></span></a>
+<a class="note1">aestu<span>aestus aestus M 単　奪格　;= agitation, fire, heat,<strong> sea tide</strong><br><br></span></a>
+<a class="note1">ortā<span>orior ori, oritus sum DEP 完了分詞　受動　ｆ単　奪格　;= rise(sun)<br><br></span></a>
+<a class="note1">lūce<span>lux lucis F 単　奪格　;= light, daylight<br><br><br></span></a>
+<a class="note0">sub<span></span></a>
+<a class="note1">sinistrā<span>sinistra sinistrae F 単　奪格　;= left hand<br><br></span></a>
+<a class="note0">Britanniam<span></span></a>
+<a class="note1">relictam<span>relictus 形容詞　f単　対格　;= abondoned, left untouched<br><br></span></a>
+<a class="note1">cōnspexit.<span>conspicio ３単　完了　;= observe, watch, catch in sight<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>前半は</p>
+<p>Labieno relicto という独立奪格に色々付いている文</p>
+<p>cum tribus legionibus et ~ : 「２個軍団と２０００の馬と共に」</p>
+<p>ut portus teretur ~ : ut 以下を行うため</p>
+<p>１） tueretur portus 2) provideret frumentariam&nbsp; 3)&nbsp;cognosceret quae gererentur in Gallia 4) caperet consilium pro tempore et pro re </p>
+<p><strong>consilium capere</strong> または　inireは慣用句で、計画をたてる、の意味 <strong>pro tempore, pro re</strong> のproはaccordingの意で、「時に、または状況に応じた計画をたてる」が逐語訳</p>
+<p>後半はカエサルの状況で</p>
+<p>ipse solvit naves, non tenuit cursum, conspexit Britanniam sub sinistra. が骨子。</p>
+<p>(cum) pari numero equitum, quem : quem以下と同じ数の馬</p>
+<p>ad solis occasum = 日没のころ</p>
+<p>media nocte : 時の奪格で「真夜中ころ」</p>
+<p>proventus leni Africo : 分詞構文でカエサルを修飾「南西の微風によって運ばれていた」（カエサル）</p>
+<p>orta lice : 独立奪格　<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>これらの事を処理して、Labienusに２個軍団と２０００の馬を与え、港を捜したり食料を調達したり、何がガリアで起きているを探り、時と状況に応じた処理を行う事を命じ、大陸に残した。自身は、5個軍団と、大陸に残したのと同じ数の馬を引き連れ、日没のころ出港して、南西の微風により航海をしていたが、真夜中ごろ風がやみ、航路を維持できなくなり、長い間潮により流され、夜明けに左側にBritanniaを発見した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Tum<span>副詞　;= then, next, besides, at that time<br><br></span></a>
+<a class="note1">rūrsus<span>副詞　;= turned back, backward, on the contrary,<strong>again</strong><br><br><br><br><br></span></a>
+<a class="note1">aestūs<span>aestus M 単　属格　;= sea tide<br><br><br></span></a>
+<a class="note1">commūtātiōnem<span>commutatio commutationis F 単　対格　;= change, reversal, upheaval, alternation<br><br><br></span></a>
+<a class="note1">secūtus<span>sequor 完了分詞　受動　ｍ単　主格　;= follow,aim at<br><br><br></span></a>
+<a class="note1">rēmīs<span>remus ｍ　複　奪格　;= oar<br><br><br></span></a>
+<a class="note1">contendit<span>ここの場合　;= strive, make effort<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note0">īnsulae<span></span></a>
+<a class="note0">caperet,<span></span></a>
+<a class="note0">quā<span></span></a>
+<a class="note0">optimum<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">ēgressum<span>egressus M 単　対格　;= landing place, egress<br><br><br></span></a>
+<a class="note0">superiōre<span><br><br></span></a>
+<a class="note1">aestāte<span>aestas F 単　奪格　;= summer<br><br><br></span></a>
+<a class="note0">cognōverat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p><strong>secutus rursus aestus commutationem</strong> が良くわからない。aestusは属格でcommutationemを修飾。潮の変化ということであろう。rursusはbackwardと言う意味があるが、これは潮の変化が逆になった、ということを表しているのか、rursusには再び、という意味もあるのでそちらで解釈するのか、解りにくい。ここではその後に、contendit remisとあり、contenditには何となく争う、逆らう、というニュアンスがあるので潮目が逆である、と解釈。</p>
+<p><strong>cognoverat qua esse optimum egressum</strong>. ; それが最も良い上陸場所であると知っていた<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>そして変わった潮の流れを追って、櫂を使って島のその場所に到着しようとした。その場所が最も良い上陸地点であることを昨年の夏にわかっていたいたからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quā<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">rē<span></span></a>
+<a class="note1">admodum<span>副詞　;= very much, exceedingly, certainly, completely<br><br></span></a>
+<a class="note0">fuit<span></span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note0">virtūs<span><br><br></span></a>
+<a class="note1">laudanda,<span>laudo laudare, laudavi, laudatus 動形容詞　ｆ単　主格　;= recommend, praise, approve<br><br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">vectōriis<span>vectorius 形容詞　複　奪格　;= for carrying, transport<br><br><br><br><br><br></span></a>
+<a class="note0">gravibusque<span></span></a>
+<a class="note1">nāvigiīs<span>x　複　奪格<br><br><br><br><br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">intermissō<span></span></a>
+<a class="note1">rēmigandī<span>remigo remigere, remigavi, remigatus INTRANS 動形容詞　ｍ単　属格　;= row, use oars<br><br><br></span></a>
+<a class="note1">labōre<span>labor laboris M 単　奪格　;= labor, toil, struggle<br><br><br></span></a>
+<a class="note1">longārum<span>longus longa longum 形容詞　ｆ複　属格　;= long, tall<br><br><br></span></a>
+<a class="note1">nāvium<span>C複　属格<br><br><br></span></a>
+<a class="note0">cursum<span></span></a>
+<a class="note1">adaequārunt.<span>= adaequverunt <br>adaequo ３複　完了 ;= equalize, make equal in height, come up to level<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>In qua re, militum virtus fuit landanda. その中で、兵士たちの強さ（根性）は最も賞賛されるべきであろう。</p>
+<p><strong>qui adaequarunt longarum navium cursum vectoriis gravibusque navigiis.</strong> quiは関係代名詞で兵士を指す。longarum navium は対格で目的語、<strong>nabigiisは手段の奪格</strong>。逐語的には「彼らは絶え間なく漕ぐことで、重い貨物船を使って、長い軍船の航路に合わせた」ちょっと感覚的にピンと来ない表現。</p>
+<p><strong>non intermisso remigandi labore</strong> : 独立奪格、途切れない櫂を漕ぐという労働で<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>この中で特筆すべきは兵士たちの強靭さである。重い貨物用の船を、絶え間なく漕ぐことで、軍船と同じ水準に合わせた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Accessum<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Britanniam<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">nāvibus<span><br><br></span></a>
+<a class="note1">merīdiānō<span>merianus meridiana, meridianum 形容詞　ｎ　単　奪格　;= of midday, noon<br><br><br></span></a>
+<a class="note1">ferē<span>副詞　;= almost, about, nearly<br><br></span></a>
+<a class="note0">tempore,<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eō<span></span></a>
+<a class="note0">locō<span></span></a>
+<a class="note0">hostis<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">vīsus;<span>video 完了分詞　受動　ｍ　単　主格<br><br><br></span></a>
+<a class="note0">sed,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">posteā<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">captīvīs<span>captiva captivae F 複　奪格　;= prosoner, captive<br><br></span></a>
+<a class="note0">cōgnōvit,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">magnae<span></span></a>
+<a class="note1">manūs<span>manus 単　主格　;= hand, team, gang, <strong>band of soldiers</strong><br><br><br></span></a>
+<a class="note0">eō<span></span></a>
+<a class="note1">convēnissent,<span>convenio 3複　過去完了　接続法　;= assemble, come together<br><br><br></span></a>
+<a class="note0">multitūdine<span><br><br></span></a>
+<a class="note0">nāvium<span></span></a>
+<a class="note1">perterritae,<span>perterrreo 完了分詞　受動　ｆ複　主格　;= frighten greately, terrify<br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">annōtinīs<span>annostius annostina, annostium 形容詞　複　奪格　;= of last year, of preceding year<br><br><br></span></a>
+<a class="note1">privātīsque<span>privatus 形容詞　複　奪格　;= private, personal<br><br><br></span></a>
+<a class="note0">quās<span></span></a>
+<a class="note0">suī<span></span></a>
+<a class="note1">quisque<span>quisque 代名詞　m複　主格　;= each, any<br><br></span></a>
+<a class="note0">commodī<span></span></a>
+<a class="note1">fēcerat<span>facio ３単　過去完了　;= make<br><br><br></span></a>
+<a class="note0">amplius<span></span></a>
+<a class="note0">octingentae<span></span></a>
+<a class="note1">ūnō<span>unus ｎ単　奪格<br><br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">vīsae<span>video 完了分詞　受動　ｆ複　主格　;= seem, appear, be seen<br><br><br></span></a>
+<a class="note1">tempore,<span>n単　奪格<br><br></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note1">lītore<span>litus litoris N 単　奪格　;= shore, seashore, coast<br><br><br></span></a>
+<a class="note1">discesserant<span>discedo ３複　過去完了　;= go. march off, deaprt, scatter, withdraw<br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">superiōra<span><br><br></span></a>
+<a class="note0">loca<span></span></a>
+<a class="note1">abdiderant.<span>abdo abdere, abdidi, abditus ３複　過去完了　;= remove, put away, set aseide, conceal, keep secret<br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>accessum est meridiano tempore.&nbsp; accedo自動詞の受動で、非人称的に使われる。（NewLatin 138)</p>
+<p>(pugunatum estなどと同様）</p>
+<p>neque hostis est visus. 敵は見られなかった。敵を見なかった。</p>
+<p>amplius octagentae erant uno tempore : 一時に800を超えるものが現れた。</p>
+<p>cum annotinis privatisque quas quisque fiecerat sui commodi : それぞれの都合に合わせて作られた昨年の個人的なものを合わせると、<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>すべての船のBritanniaへの到着はほぼ正午ごろであった。そこには敵を一人も見ることはなかった。後で捕虜から知ったことだが、大量の船が集まっている時、その程度に恐れをなして、それは、それぞれの都合に合わせて作られた昨年のものを合わせると800を超える船が一時に見られたのであるが、岸から離れて自身らをより高い場所に隠したのである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

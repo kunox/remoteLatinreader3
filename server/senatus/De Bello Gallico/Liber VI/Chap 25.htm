@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 25</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[25]<span></span></a>
+
+<a class="note0">Huius<span></span></a>
+<a class="note0">Hercyniae<span></span></a>
+<a class="note1">silvae,<span>silva silvae N (1st) F  <br>:wood, forest (sylvan);<br>(c 単数 属格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">suprā<span><br><br></span></a>
+<a class="note0">dēmōnstrātā<span><br><br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">lātitūdō<span>latitudo latitudinis N (3rd) F  <br>:<strong>width</strong>, breadth, extent;<br>(X 単数 主格)<br></span></a>
+<a class="note1">novem<span>novem nonus -a -um, noveni -ae -a, novie(n)s NUM <br>:nine;<br><br></span></a>
+<a class="note0">diērum<span><br><br></span></a>
+<a class="note1">iter<span>iter itineris N (3rd) N  <br>:<strong>journey</strong>; road; passage, path; march<br>(n 単数 対格)<br></span></a>
+<a class="note1">expedītō<span>expeditus expediti N (2nd) M  <br>:light armed soldier;<br>(X 単数 与格)<br></span></a>
+<a class="note1">patet:<span>pateo patere, patui, - V (2nd)  <br>:stand open, be open; extend; be well known; lie open, be accessible;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">enim<span>enim CONJ <br>:namely (postpos.); indeed; in fact; for; I mean, for instance, that is to say;<br><br></span></a>
+<a class="note1">aliter<span>aliter ADV <br>:otherwise, differently; in any other way<br><br></span></a>
+<a class="note1">fīnīrī<span>finio finire, finivi, finitus V (4th)  <br>:limit, end; finish; determine, define; mark out the boundaries;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">potest,<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">mēnsūrās<span>mensura mensurae N (1st) F  <br>:measure; length, area, capacity;<br>(c 複数  対格)<br></span></a>
+<a class="note0">itinerum<span></span></a>
+<a class="note1">nōvērunt.<span>nosco noscere, novi, notus V (3rd) TRANS  <br>:get to know; learn, find out; become cognizant of/acquainted/familiar with;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>latitudo huius Hercyniae silvae patet ~. latitudoが主語、patet動詞。「そのHerciniaeの森の幅は」</p>
+<p>expedito : 与格で「軽装歩兵で、にとって」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>前述のHercyniaの森の幅は、軽装の兵にとって9日間の道のりである。実に、他の方法では決める事ができず、その旅程を(距離で）測定したのもは知られていない。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Oritur<span>orior ori, oritus sum V (3rd) DEP  <br>:|be born/created; be born of, descend/spring from; proceed/be derived (from);<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Helvētiōrum<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Nemetum<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Rauracōrum<span><br><br></span></a>
+<a class="note0">fīnibus<span><br><br></span></a>
+<a class="note1">rēctāque<span>recta ADV <br>:directly, straight;<br><br></span></a>
+<a class="note1">flūminis<span>flumen fluminis N (3rd) N  <br>:river, stream; any flowing fluid; flood; onrush;<br>(X 単数 属格)<br></span></a>
+<a class="note1">Dānubiī<span>属格<br><br><br><br><br></span></a>
+<a class="note1">regiōne<span>regio regionis N (3rd) F  <br>:area, region; neighborhood; district, country; <strong>direction</strong>;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">pertinet<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Dācōrum<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Anartium;<span></span></a>
+<a class="note1">hinc<span>hinc ADV <br>:from here, from this source/cause; hence, henceforth;<br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">flectit<span>flecto flectere, flexi, flexus V (3rd)  <br>:bend, curve, bow; turn, curl; persuade, prevail on, soften;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">sinistrōrsus<span>sinistrorsus ADV <br>:to the left;<br><br></span></a>
+<a class="note1">dīversīs<span>diverto divertere, diverti, diversus V (3rd)  <br>:separate; divert, turn away/in; digress; oppose; divorce/leave marriage;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">flūmine<span><br><br></span></a>
+<a class="note1">regiōnibus<span>regio regionis N (3rd) F  <br>:area, region; neighborhood; district, country; direction;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">multārumque<span><br><br></span></a>
+<a class="note1">gentium<span>gens gentis N (3rd) F  <br>:tribe, clan; nation, people; Gentiles;<br>(c 複数  属格)<br></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">propter<span></span></a>
+<a class="note0">magnitūdinem<span><br><br></span></a>
+<a class="note1">adtingit;<span>adtingo adtingere, adtigi, adtactus V (3rd) TRANS  <br>:touch, touch/border on; reach, arrive at, achieve; mention briefly; belong to;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">quisquam<span>quisquam quaequam, quidquam ADJECT  <br>:(w/-quam) any; anyone/anybody (no pl.) (INDEF) anything; any man, any person;<br>(m 単数 主格)<br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">huius<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(X 単数 属格)<br></span></a>
+<a class="note1">Germāniae,<span>Germania Germaniae N (1st) F  <br>:Germany;<br>&nbsp;(c 複数  主格), <br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">adīsse<span>adeo adire, adivi(ii), aditus V  <br>:approach; attack; visit, address; undertake; take possession (inheritance);<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">initium<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">silvae<span></span></a>
+<a class="note0">dīcat,<span><br><br></span></a>
+<a class="note1">cum<span>cum ADV <br>:when, at the time/on each occasion/in the situation that; after; since/<strong>although</strong>;<br><br></span></a>
+<a class="note0">diērum<span><br><br></span></a>
+<a class="note0">iter<span></span></a>
+<a class="note0">LX<span></span></a>
+<a class="note1">prōcesserit,<span>procedo procedere, processi, processus V (3rd)  <br>:proceed; advance; appear;<br>(３人称 単数 完了 能動態 接続法 )<br></span></a>
+<a class="note0">aut,<span></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note0">oriātur,<span><br><br></span></a>
+<a class="note1">accēperit:<span>accipio accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, <strong>hear</strong>, <strong>learn</strong>; obey;<br>(３人称 単数 完了 能動態 接続法 )<br><br></span></a>
+<a class="note0">multaque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note1">genera<span>genus generis N (3rd) N  <br>:birth/descent/origin; race/family/house/stock/ancestry; offspring/descent;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note1">ferārum<span>fera ferae N (1st) F  <br>:wild beast/animal;<br>(c 複数  属格)<br></span></a>
+<a class="note1">nāscī<span>nascor nasci, natus sum V (3rd) DEP  <br>:|<strong>be born</strong>/ begotten/ formed/ destined; rise (stars), dawn; start, originate; arise;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">cōnstat,<span>constat constare, constitit, constatus est V (1st) IMPERS  <br>:it is agreed/　evident /understood/ correct/ well known (everyone knows/ agrees);<br>(３人称 単数 現在 能動態 直説法 )<br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">reliquīs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note0">vīsa<span><br><br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">sint;<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">maximē<span><br><br></span></a>
+<a class="note1">differant<span>differo differre, distuli, dilatus V  <br>:postpone/delay/<strong>differ</strong>; put off, keep waiting; give respite to; differ, disagree;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">cēterīs<span>ceterus cetera, ceterum ADJ  <br>:the_other; the_others (pl.). the_remaining/rest, all the_rest;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">memoriae<span>memoria memoriae N (1st) F  <br>:memory, recollection; history; time within memory<br>&nbsp;(c 単数 与格)<br></span></a>
+<a class="note1">prōdenda<span>prodo prodere, prodidi, proditus V (3rd) TRANS  <br>:|institute; extend, prolong; hand down (lore); publish/record, reveal, uncover;<br>&nbsp;(未来 分詞 受動態 n 複数  主格), <br></span></a>
+<a class="note0">videantur<span></span></a>
+<a class="note0">haec<span><br><br></span></a>
+<a class="note0">sunt.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>oritur, pertinet , flectit, adtingit : 森の地域的な記述</p>
+<p><strong>recta regione</strong> : regioneは「態度の奪格」で、「（Danubius河の）方向に沿ってまっすぐに」の意</p>
+<p><strong>oritur ab Helvetiorum et Nemetum et Rauracos finibus</strong> : 「HelvetiiとNemetesとRauraciの領地から始まり」</p>
+<p><strong>pertinet recta regione fluminis Danibii ad fines Dacorum et Anartium</strong>. 「Danubius河に沿ってまっすぐに、DaciとAnartesの領地の方に延び」</p>
+<p><strong>hinc flectit se sinistrosus diversis regionibus ab flumine</strong>. diversis regionibusは独立奪格。「そこから、左の方に曲がり河から離れる方向に転じる」</p>
+<p><strong>adtingit multarum fines propter magnitudinem</strong>. 「その規模なので、幾多の国の領地を通る。」</p>
+<p>quisquam neque est huius Germaniae. : 「その地方のゲルマン人の中には一人としていない」quisquamは、qui以下で説明される。</p>
+<p><strong>qui dicat auto se adivisse ad initium eius silvae, cum processerit iter sexginta dierum</strong>.　initiumは森の（東端の）始まったところ、の意。「60日間進んだにも拘わらず、その端に着いたという（人）」</p>
+<p><strong>aut acceperit quo ex loco oriatur　</strong>「またはそこから始まるという確認する（ひと）」</p>
+<p><strong>constat multa genera ferarum nasci in ea</strong>. その中には多くの動物が生まれていると思われている」genera対格でnasciの主語</p>
+<p>quae sint non visa in reliquis locis. 「その他の場所では見られない」</p>
+<p><strong>ex quibus, haec sunt qua ~.</strong> : haec (Hic), illeという指示代名詞は時に「後に続くもの」を指す。（NewLatin 246.2)</p>
+<p><strong>quae differant ab ceteris, videantur memoriae prodenda</strong>. videanturは～と考えられる、でsumと同じ。prodendaは動形容詞、主格で述語、memoriaeは与格で「記録に」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>（Hercynianは）HelvetiiとNemetesとRauraciの領地から始まり、Danubius河に沿ってまっすぐに、DaciとAnartesの領地の方に延び、そこから、左の方に曲がり河から離れる方向に転じる。規模がたいそう大きので、幾多の国に接している。その地域のゲルマン人の中で、60日間進んでその端に近づいた、またはそこから（森が）始まるという場所を見つけた人は、一人もいない。その中で他の地域では見ることが出来ないたくさんの種類の動物が居ることは確かである。その中でも、特に変わっていて、特に記録すべきであろうものは以下のようである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

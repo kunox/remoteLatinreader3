@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 34</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[34]<span></span></a>
+
+<a class="note1">Quam<span>qui, 代名詞  :which?, what?; what kind of?;対格 <br>quamobremでwherefore</span></a>
+<a class="note1">ob<span>ob, 前置詞 (対格)  :on account of, for the sake of, for; instead of; right before</span></a>
+<a class="note0">rem<span></span></a>
+<a class="note1">placuit<span>placeo, placere, placui, placitus 動詞 (2nd) DAT   :please, satisfy, give pleasure to (with dat.);3 単 完了&nbsp; <br><br><br></span></a>
+<a class="note1">eī<span>与格　カエサルの事</span></a>
+<a class="note1">ut<span>placeoの主語</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Ariovistum<span></span></a>
+<a class="note0">lēgātōs<span><br><br></span></a>
+<a class="note0">mitteret,<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">eō<span>Ariovistusの事</span></a>
+<a class="note1">postulārent<span>postulo, postulare, postulavi, postulatus 3 複 未完了 能動態動詞 (1st)   :demand, claim; require; ask/pray for;<br></span></a>
+<a class="note0">utī<span></span></a>
+<a class="note1">aliquem<span>aliquis, 代名詞  :anyone, anybody, anything; someone, something; one or another;対格</span></a>
+<a class="note1">locum<span>locus 対格</span></a>
+<a class="note1">medium<span>medius, media, medium 形容詞   :middle, middle of, mid; common, neutral, ordinary, moderate; ambiguous;対格</span></a>
+<a class="note1">utrīsque<span>uter, utra, utrum 形容詞   :|(w/que) each/either (of two); both (separately); each side (pl.), each set; 与格<br><br><br></span></a>
+<a class="note1">conloquiō<span>conloquium, conloquii 名詞 (2nd) N   :talk, conversation; colloquy/discussion; interview; meeting/conference; parley;  <br>目的の与格</span></a>
+<a class="note1">dēligeret:<span>deligo, deligere, delegi, delectus 動詞 (3rd) TRANS   :pick/pluck off, cull; choose, select, levy (soldiers), enroll; conduct a levy; <br>3 単 未完了<br></span></a>
+<a class="note1">velle<span>volo, velle, volui, - 動詞   :wish, want, prefer; be willing, will; <br>不定詞</span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note1">dē<span>奪格支配</span></a>
+<a class="note0">rē<span></span></a>
+<a class="note1">pūblicā<span>res publicus<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">summīs<span>summa, summae 名詞 (1st) F   :sum; summary; chief point, essence, principal matter, substance; total; 奪格</span></a>
+<a class="note1">utrīusque<span>uter, utra, utrum 形容詞   :|(w/que) each/either (of two); both (separately); each side (pl.), each set;属格<br></span></a>
+<a class="note0">rēbus<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">eō<span></span></a>
+<a class="note1">agere.<span>ago, agere, egi, actus 動詞 (3rd)   :drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); <strong>deliver</strong> (speech);不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Quam ob rem = quamobrem : for what reason, wherefore, for this reason</strong></p>
+<p>placuit ei, ut ~ 逐語的には「ut~をすることは彼を満足させた」ｰ&gt;そうする事が良いと考えた。</p>
+<p>ei = Caesar 与格　It&nbsp;pleased Caesar to~</p>
+<p>uti delegere conloquio locum : 会見のために、場所を選ぶ　conloquioは<strong>目的の与格</strong>(NewLatin191)</p>
+<p><strong>medium utrisque</strong> : Perseusのテキストはutrisqueでuterの与格、奪格であるが、他のテキスト（J.H. Hawley, Gerge Long, Analytical Series (1877, London)などではutriusqueで属格となる。属格の場合「双方の真中」となるが、与格奪格だとmeiumが対格なので、mediumに掛からない事になり、無理やりconloquio「与格」にかけることしかなくおかしい！<strong>属格のテキストが多い。</strong></p>
+<p><strong><br></strong></p>
+<p>re publica　：　‘Res publica‘ is simply that which relates to all, to a com immunity; as ‘res private.‘ is that which concerns an individual.</p>
+<p><strong>sese velle agere cum eo de re publica</strong> : seseはカエサルの事、eoはAriovistus。「余自身が彼と共に公共の大事と～についてagereしたい」agereはactという意味もあり、discuss, deliver speechと言う意味もある</p>
+<p><strong><br></strong></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>この時点で、カエサルにとって、アリオウィストゥスに使者を出すことは正しいことのように思われたので、直接公共の事柄双方にとって重要な事柄を話したいので、中間地点を何処か選ぶように伝えた。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ei<span></span></a>
+<a class="note0">legationi<span></span></a>
+<a class="note0">Ariovistus<span></span></a>
+<a class="note0">respondit:<span></span></a>
+<a class="note0">sī<span></span></a>
+<a class="note1">quid<span>quis 中性　主格</span></a>
+<a class="note0">ipsī<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">Caesare<span></span></a>
+<a class="note1">opus<span>opus, operis 名詞 (3rd) N   :need; work; fortifications (pl.), works;主格<br></span></a>
+<a class="note0">esset,<span></span></a>
+<a class="note1">sēsē<span>sui 対格 <br>fuisseの主語</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note1">ventūrum<span>venio 未来分詞　能動　ｍ単　対格 <br>seseに対応している<br></span></a>
+<a class="note1">fuisse;<span>SUM　完了不定詞</span></a>
+<a class="note0">sī<span></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">ille<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">velit,<span></span></a>
+<a class="note0">illum<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">venīre<span><br><br></span></a>
+<a class="note1">oportēre.<span>oporteo, oportere, oportui, oportuitus 動詞 (2nd) INTRANS   :require (to be done), order;不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>si quid esset opus ipsi = if anything were necessary(need) to himself</p>
+<p>opus estで「必要がある」ここではquidの述語。（NewLatin218. 2手段の奪格）中性名詞はしばしばopusの主語になる。</p>
+<p>si quid ~ esset, ~ fuisse : <strong>これは間接話法の条件文、という形式。</strong>条件文が第３型（事実に反する）の場合、条件節は直接話法と同じだが、帰結節の方は直接話法の接続法過去完了は能動態ならば未来分詞＋fuisseの不定詞にする。(NewLatin 321.1.b)</p>
+<p><u>(注)未来分詞+fuisseは完了不定詞である。（NewLatin115, 7.11.1)</u></p>
+<p>si quid ~, illum ~ oportere : 第一型の場合は帰結節は通常の不定詞になる。</p>
+<u>
+</u></div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>使節に対しアリオウィストゥスは答えた。もし彼自身がカエサルから何か必要ならば彼がカエサルの方へ行くであろう。もし彼が自身に何かを望むなら彼が自身の方に来るべきである。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Praetereā<span>praeterea, 副詞   :besides, thereafter; in addition;</span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note1">exercitū<span>exercitus, exercitus 名詞 (4th) M   :army, infantry; swarm, flock;奪格 <br>sineは奪格支配</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eās<span></span></a>
+<a class="note0">partēs<span></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">venīre<span><br><br></span></a>
+<a class="note1">audēre<span>audeo, audere, ausus sum 動詞 (2nd) SEMIDEP   :intend, be prepared; dare/have courage (to go/do), act boldly, venture, risk; <br>不定詞<br></span></a>
+<a class="note0">quās<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">possidēret,<span>possideo, possidere, possedi, possessus 動詞 (2nd)   :seize, hold, be master of; possess, take/hold possession of, occupy; inherit;<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note0">magnō<span></span></a>
+<a class="note1">commeātū<span>commeatus, commeatus 名詞 (4th) M   :supplies/provisions; goods; voyage; passage; convoy/caravan; furlough/leave;奪格<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">mōlīmento<span>molimentum, molimenti 名詞 (2nd) N   :exertion, labor; 奪格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">ūnum<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">contrahere<span>contraho, contrahere, contraxi, contractus 動詞 (3rd) TRANS   :|bring/draw together/in, assemble, collect/gather; unite in friendship/alliance;不定詞</span></a>
+<a class="note0">posse.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>se neque venire audere sine exercitu : 軍隊なしで行くという冒険はしない</p>
+<p>neque exercitum　contrahere posse　：　軍隊を連れて行くことはできない　（～なしには）</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>更に彼は、自身は軍隊なしにカエサルの押さえているガリアの地域にいくという危険は冒さないし、多くの補給と人出なしでは軍隊を一つのところに連れて行くことはできない、とも言った。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sibi<span></span></a>
+<a class="note1">autem<span>autem, 接続詞   <br>moreover</span></a>
+<a class="note1">mīrum<span>mirus, mira, mirum 形容詞   :wonderful, strange, remarkable, amazing, surprising, extraordinary;対格<br></span></a>
+<a class="note1">vidērī<span>video 受動　不定詞<br></span></a>
+<a class="note1">quid<span>quis, 代名詞&nbsp; n単　対格　 :who?, which one?, what man?,<strong> what thing</strong>? (type/nature); what kind of; what?;<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">suā<span></span></a>
+<a class="note0">Galliā,<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">bellō<span></span></a>
+<a class="note1">vīcisset,<span>vinco, vincere, vici, victus 動詞 (3rd)   :conquer, defeat, excel; outlast; succeed;3 単 過去完了 能動態 接続法<br></span></a>
+<a class="note1">aut<span>aut …aut = either … or</span></a>
+<a class="note1">Caesarī<span>所有の与格</span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">omnīnō<span></span></a>
+<a class="note0">populō<span></span></a>
+<a class="note1">Rōmānō<span>与格</span></a>
+<a class="note1">negōtiī<span>negotium, negoti(i) 名詞 (2nd) N   :pain, trouble, annoyance, distress; work, business, activity, job; negoti(i)属格<br></span></a>
+<a class="note0">esset.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>videri autem mirum sibi : 一方では、彼には、奇妙、不思議に見える。</p>
+<p>videriは不定詞で、間接話法の主たる動詞であり、<strong>その主語はquid以下の名詞節</strong>。「どういう用があるのかということが（不思議に）見える」が逐語訳</p>
+<p><strong>quid negoti eseet</strong> : what kind of business there was</p>
+<p>negotiは全体の属格でquidとともに用いられている。（全体の中の何の用事）</p>
+<p>Caesari esset quid negoti でCaesari、とRomanoは所有の与格</p>
+<p>quid negoti esse Caesari?は間接話法のなかの疑問文であるが、実際に聞いている訳ではない、「<strong>修辞疑問文</strong>」である。そのため不定詞になっている。（NewLatin315.2) （通常間接話法の中の疑問文は接続法になる）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>一方で、彼はこの自分のガリア、そこは彼が戦いによって勝ち取ったものだが、そこでカエサルなりローマ帝国がどういう用があるのか不思議に思えた。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

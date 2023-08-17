@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 6 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[6]<span></span></a>
+<a class="note0">Quae<span></span></a>
+<a class="note1">quamquam<span>quamquam CONJ <br>:though, although; yet; nevertheless;<br><br></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note0">sint<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">promptu,<span>promptus promptus N (4th) M  <br>:readiness; ease; exposing to view;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">res<span></span></a>
+<a class="note1">disputatione<span>disputatio disputationis N (3rd) F  <br>:discussion, debate, dispute, argument;<br>(C 単数 奪格)<br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">egeat,<span>egeo egere, egui, - V (2nd)  <br>:need (<strong>w/GEN/ABL</strong>), lack, want; require, be without;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">nobis<span></span></a>
+<a class="note0">alio<span></span></a>
+<a class="note0">loco<span></span></a>
+<a class="note1">disputata.<span>disputo disputare, disputavi, disputatus V (1st)  <br>:discuss, debate, argue;<br>(完了 分詞 受動態 N 複数 主格),<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>quae quamquam ita sintは似たような表現でquae cum it sintがある。先行詞の埋め込みの例でよく出てくる。（NewLatin251.6)</p>
+<p>in promptu = orvious</p>
+<p>同じような解釈で、「それはそういう具合で明らかのであるが」</p>
+<p>tamen sunt disputata a nobis alio loco. locoは場所の奪格。「しかしながら、それは我々（私）によって別の場所で論じられた」</p>
+<p>（多分 De Finisbus Bonorum et Malorum, BC.45のことか？）<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それらの事は明らかであり、議論の必要はないのであるが、私は別のところで論じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hae<span></span></a>
+<a class="note1">disciplinae<span>disciplina disciplinae N (1st) F  <br>:teaching, instruction, education; training; discipline; method, science, study;<br>(C 複数 主格)<br></span></a>
+<a class="note1">igitur<span>igitur CONJ <br>:therefore (postpositive), so/then; consequently; accordingly; well/in that case;<br><br></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">consentaneae<span>consentaneus consentanea, consentaneum ADJ  <br>:agreeable; consistent/appropriate/fitting; in harmony with (L+S);<br>(F 複数 主格)<br></span></a>
+<a class="note1">velint<span>volo velle, volui, - V  <br>:wish, want, prefer; be willing, will;<br>(3 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">esse,<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">officio<span></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note1">queant<span>queo quire, quivi(ii), quitus V  <br>:be able;<br>(3 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">dicere,<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">ulla<span></span></a>
+<a class="note1">officii<span>officium offici(i) N (2nd) N  <br>:duty, obligation; kindness; service, office;<br>(X 単数 処格)<br></span></a>
+<a class="note1">praecepta<span>praeceptum praecepti N (2nd) N  <br>:teaching, lesson, precept; order, command;<br>(N 複数 主格),<br><br><br></span></a>
+<a class="note1">firma,<span>firmus firma -um, firmior -or -us, firmissimus -a -um ADJ  <br>:firm/steady; substantial/solid/secure/safe; strong/robust/sturdy/stout/durable;<br>&nbsp;(N 複数 主格), <br></span></a>
+<a class="note1">stabilia,<span>stabilis stabilis, stabile ADJ  <br>:stable; steadfast;<br>(N 複数 主格),<br></span></a>
+<a class="note1">coniuncta<span>conjunctus conjuncta, conjunctum ADJ  <br>:adjoining/contiguous/linked; connected/contemporary (time), continuous; complex;<br>&nbsp;(N 複数 主格)<br></span></a>
+<a class="note1">naturae<span>natura naturae N (1st) F  <br>:nature; birth; character;<br>&nbsp;(C 単数 与格)<br></span></a>
+<a class="note1">tradi<span>trado tradere, tradidi, traditus V (3rd)  <br>:hand over, surrender; deliver; bequeath; relate;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">possunt,<span></span></a>
+<a class="note0">nisi<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">iis,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">solam,<span>solus sola, solum (gen -ius) ADJ  <br>:only, single; lonely; alone, having no companion/friend/protector; unique;<br>(F 単数 対格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">iis,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">maxime<span></span></a>
+<a class="note1">honestatem<span>honestas honestatis N (3rd) F  <br>:honor, integrity, honesty; wealth (Plater);<br>(C 単数 対格)<br></span></a>
+<a class="note1">propter<span>propter PREP ACC <br>:near; on account of; by means of; because of;<br><br></span></a>
+<a class="note0">se<span></span></a>
+<a class="note1">dicant<span>dico dicere, dixi, dictus V (3rd)  <br>:say, declare, state; allege, declare positively; assert; plead (case);<br>(3 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">expetendam.<span>expeto expetere, expetivi, expetitus V (3rd)  <br>:ask for; desire; aspire to; demand; happen; fall on (person);<br>(未来 分詞 受動態 F 単数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>hae disciplinae nihil queant dicere de officio.&nbsp; : disciplinaeはここでは教育機関の意。学校、訓練所、学派など。「その学派はOfficioについて語ることはできない」</p>
+<p><strong>neque ulla officii praecepta possunt tradi, nisi ~</strong> : ～しない限りはただ一つとしてOfficioの教えは与えられない。officiiは処格であるが多分offci属格と同じと解釈。praeceptaは教え、原理、原則のようなニュアンス。forma, stabilia conjunctaはpraeceptaを修飾する形容詞。<strong>conjuncta naturaeのnaturaeは与格</strong>。「自然と調和した」</p>
+<p>nisi 以下の文、難解。</p>
+<p><strong>qui dicant solam/ maxime&nbsp;honestatem&nbsp;(esse) expetendam propter se か</strong>？「その唯一の、または最大限の栄誉はそれ自身のために求められるべきである、と主張する人たち」honestatemはoffici praeceptaの事で、officioの真髄というようなニュアンスであろうか？solam, maximeは多分 propter seにかかり、<u>solamは「それだけ」でStoicsの場合でmaxmeは「主として」でAcademicsとPeripateticsのため</u>。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>これらの学閥はもし首尾一貫でありたいとするなら、Officiumについて何も語ることではできないであろう。この確立し安定し、自然と調和しているOfficiumの教えというものは唯一、もしくは最大の栄誉は、それ自身のために純粋に求められるべきであると主張する人によってのみ、与えられるものである。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ita<span></span></a>
+<a class="note1">propria<span>proprius propria, proprium ADJ  <br>:own, very own; individual; special, particular, <strong>characteristic</strong>;<br>(F 単数 主格), <br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note1">praeceptio<span>praeceptio praeceptionis N (3rd) F  <br>:instruction; practical rule; preconception; preception, receiving legacy early;<br>(X 単数 主格)<br></span></a>
+<a class="note1">Stoicorum,<span>Stoicus Stoica, Stoicum ADJ  <br>:Stoic;<br>(M 複数 属格), (N 複数 属格)<br></span></a>
+<a class="note1">Academicorum,<span>academicus academica, academicum ADJ  <br>:academic; of the Academy/Academic philosophy/Cicero's Academics (views);<br>(M 複数 属格), (N 複数 属格)<br></span></a>
+<a class="note1">Peripateticorum,<span>Peripateticus Peripatetici N (2nd) M  <br>:philosopher of the Peripatetic (Aristotelian) school;<br>(X 複数 属格)<br></span></a>
+<a class="note1">quoniam<span>quoniam CONJ <br>:because, since, seeing that;<br><br></span></a>
+<a class="note0">Aristonis,<span></span></a>
+<a class="note0">Pyrrhonis,<span></span></a>
+<a class="note0">Erilli<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note1">pridem<span>pridem ADV <br>:some time ago, previously;<br><br></span></a>
+<a class="note1">explosa<span>explodo explodere, explosi, explosus V (3rd) TRANS  <br>:drive (actor) off stage by clapping; scare off; <strong>reject </strong>(claim); eject/cast out;<br>(完了 分詞 受動態 F 単数 主格),<br></span></a>
+<a class="note1">sententia<span>sententia sententiae N (1st) F  <br>:opinion, feeling, way of thinking; thought, meaning, sentence/period; purpose;<br>(C 単数 主格)<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">haberent<span>habeo habere, habui, habitus V (2nd)  <br>:have, hold, consider, think, reason; manage, keep; spend/pass (time);<br>(3 複数 未完了 能動態 接続法 )<br></span></a>
+<a class="note1">ius<span>jus juris N (3rd) N  <br>:law; legal system; code; right; duty; justice; court; binding decision; oath;<br>(N 単数 対格)<br></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note1">disputandi<span>disputo disputare, disputavi, disputatus V (1st)  <br>:discuss, debate, argue;<br>(未来 分詞 受動態 M 単数 属格),<br></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">officio,<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">rerum<span></span></a>
+<a class="note1">aliquem<span>aliqui aliqua, aliquod PRON  <br>:any; some;<br>(M 単数 対格)<br></span></a>
+<a class="note1">dilectum<span>dilectus dilectus N (4th) M  <br>:|selection/choosing; choice (between possibilities), discrimination/distinction;<br>(C 単数 対格)<br></span></a>
+<a class="note1">reliquissent,<span>relinquo relinquere, reliqui, relictus V (3rd)  <br>:leave behind, abandon; (pass.) be left, remain; bequeath;<br>(3 複数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">officii<span></span></a>
+<a class="note1">inventionem<span>inventio inventionis N (3rd) F  <br>:invention/discovery (action/thing); action of devising/planning; plan/stratagem;<br>(C 単数 対格)<br></span></a>
+<a class="note1">aditus<span>adeo adire, adivi(ii), aditus V  <br>:approach; attack; visit, address; undertake; take possession (inheritance);<br>(完了 分詞 受動態 M 単数 主格)<br></span></a>
+<a class="note0">esset.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>多分以上までの議論はエピクロス派の教えに関するものである。エピクロス派は、自然の欲求（快楽）を目指すことを至上として、キケロなどから、非難されていた。特に自己充足からくる没社会性についてストア派から厳しく批判された。</p>
+<p><strong>praeceptio est Stoicorum propria</strong>. : praeceptioはStoic派特有である。<u>属格とpropriusはときにセットで「適用範囲」を表す</u>。NewLatin 204.2</p>
+<p>ここでpraeceptioはpraecipioからの名詞であると思われる。似たような名詞praeceptumも同様であろうがioで終わる言葉は動詞の動作、状態を表す。（Bullion 524)ここでは道徳的教え、教訓。</p>
+<p>qui tamen haberent suum jus : quiはAristonis,　Pyrrohonis、Erilliを指す。「彼らにも彼らの権利がある」</p>
+<p>si reliquissent rerum alique dilectum. rerum dilectumは「物事の選択」rerumは部分の属格。「物事の中の選択肢」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>このように、Stoic派、Academic派、逍遥派の教えは独特である。というのはAristo,　Pyrrho,　Erillusらの説は前から受け入れられていないからである。そういう彼にもしかしながら、もし彼らが物事のなかの選択肢というものを、Officiumの発見に近づけるよう、残しておいてくれるなら、Officiumにかんして論ずる権利があるというものであるが。<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Sequemur<span>sequor sequi, secutus sum V (3rd) DEP  <br>:follow; escort/attend/accompany; aim at/reach after/strive for/make for/seek;<br>(１ 複数 未来 受動態 直接法 )<br></span></a>
+<a class="note1">igitur<span>igitur CONJ <br>:therefore (postpositive), so/then; consequently; accordingly; well/in that case;<br><br></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note1">quidem<span>quidem ADV <br>:indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;<br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">hac<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">quaestione<span>quaestio quaestionis N (3rd) F  <br>:questioning, inquiry; <strong>investigation;</strong><br>(C 単数 奪格)<br><br></span></a>
+<a class="note1">potissimum<span>potissimum ADV <br>:chiefly, principally, especially; eminently; above/before all; in best way;<br><br></span></a>
+<a class="note0">Stoicos,<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">interpretes,<span>interpres interpretis N (3rd) C  <br>:interpreter, translator;<br>(C 複数 主格)<br></span></a>
+<a class="note0">sed,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">solemus,<span>soleo solere, solitus sum V (2nd) SEMIDEP  <br>:be in the habit of; become accustomed to;<br>(１ 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">e<span>e PREP ABL <br>:out of, from; by reason of; according to; because of, as a result of;<br><br></span></a>
+<a class="note1">fontibus<span>fons fontis N (3rd) M  <br>:spring, fountain, well; source/fount; principal cause; font; baptistry;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note0">eorum<span></span></a>
+<a class="note1">iudicio<span>judicium judici(i) N (2nd) N  <br>:|judgment/sentence/verdict; judging; jurisdiction/authority; opinion/belief;<br>&nbsp;(X 単数 奪格)<br><br></span></a>
+<a class="note1">arbitrioque<span>arbitrium arbitri(i) N (2nd) N  <br>:arbitration; choice, judgment, decision; sentence; will, mastery, authority;<br>(X 単数 奪格)<br><br></span></a>
+<a class="note0">nostro<span></span></a>
+<a class="note1">quantum<span>quantum ADV <br>:so much as; how much; how far;<br><br></span></a>
+<a class="note0">quoque<span></span></a>
+<a class="note1">modo<span>modus modi N (2nd) M  <br>:manner, mode, way, method; rule, rhythm, beat, measure, size; bound, limit;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">videbitur,<span>video videre, vidi, visus V (2nd)  <br>:see, look at; consider; (PASS) seem, seem good, appear, be seen;<br>(3 単数 未来 受動態 直接法 )<br></span></a>
+<a class="note1">hauriemus.<span>haurio haurire, hausi, haustus V (4th)  <br>:draw up/out; drink, swallow, drain, exhaust,absorb<br>(１ 複数 未来 能動態 直接法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>sequenmur Stoicos. ストア派を追って見よう。</p>
+<p>hoc tempore : この度は　at this time</p>
+<p>in hac questione : in this investigation</p>
+<p>ut solemus, = as 私が慣れているように、いつもするように</p>
+<p>iudicio arbitrioque nostro : 手段の奪格、「自分の意見と判断によって」</p>
+<p>hauriemus e fontibus eorum : 「彼らの(知識の）源泉から引き出そう」</p>
+<p>quantum quoque modo videbitur . quoqueは que quo modoで多分付帯状況の奪格。「そのような方法で」（<font color="#ff0000">要検討</font>）</p>
+<p>quantum videbitur : どの程度見られるか？間接疑問のようにも見えるが直接法である？→　quantumを関係副詞と考え関係詞節と考える。（NewLatin311) 「見られるであろう限りの量」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>そこで、今度のこの考察に於いては、ストア派を追ってみよう。単なる解説者ではなく、いつも私がやるように、自分の意見と判断により彼らの源泉から見られるであろうのような方法で、ある限りを引き出そう。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

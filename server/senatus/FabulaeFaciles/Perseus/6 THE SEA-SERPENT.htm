@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 6 THE SEA-SERPENT.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Post<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">Perseus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">fīnēs<span>fīnis finis N (3rd) C <br>:boundary, end, limit, goal; (pl.) country, territory, land;<br>&nbsp;(複数 対格) <br></span></a>
+<a class="note1">Aethiopum<span>Aethĭŏps Aethiopis N (3rd) M <br>:Ethiopian, inhabitant of "Ethiopia"/Sudan; negro/black man; black slave;<br>(複数 属格) <br></span></a>
+<a class="note0">vēnit.<span></span></a>
+<a class="note0">Ibi<span></span></a>
+<a class="note1">Cēpheus<span>ケフェウス<br>エチオピア王、カシオペアの夫でアンドロメダの父<br><br></span></a>
+<a class="note0">quīdam<span></span></a>
+<a class="note1">illō<span>ille illa, illud PRON  <br>:that; those (pl.); also DEMONST; that person/thing; the well known; the former;<br>(M 単数 奪格) (N 単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">tempore<span>tempus temporis N (3rd) N <br>:time, condition, right time; season, occasion; necessity;<br>(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">regnābat.<span>regno regnare, regnavi, regnatus V (1st)  X<br>:reign, rule; be king; play the lord, be master;<br>(3 単数 <strong>未完了</strong> 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Hīc<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Neptūnum,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">maris<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">deum,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">ōlim<span>olim ADV <br>&gt;:formerly; once, once upon a time; in the future;<br><br></span></a>
+<a class="note1">offenderat;<span>offendo offendere, offendi, offensus V (3rd)  X<br>:offend, give offense (to); displease/annoy/vex; trouble/upset, hurt (feelings);<br>(3 単数 過去完了 能動態 直接法) <br></span></a>
+<a class="note0">Neptūnus<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">mōnstrum<span>monstrum monstri N (2nd) N <br>:monster; portent, unnatural thing/event regarded as omen/sign/portent;<br>(単数 対格) <br></span></a>
+<a class="note1">saevissimum<span>saevus saeva -um, saevior -or -us, saevissimus -a -um ADJ  最上級<br>:savage; fierce/ferocious; violent/wild/raging; cruel, harsh, severe; vehement;<br>&nbsp;(N 単数 対格) <br></span></a>
+<a class="note1">mīserat.<span>mitto mittere, misi, missus V (3rd)  X<br>:send, throw, hurl, cast; let out, release, dismiss; disregard;<br>(3 単数 過去完了 能動態 直接法) <br></span></a>
+<a class="note0">Hoc<span></span></a>
+<a class="note1">cotīdiē<span>cotidie ADV <br>&gt;:daily, every day; day by day; usually, ordinarily, commonly;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ē<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">marī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">veniēbat<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">hominēs<span>hŏmo hominis N (3rd) M <br>:man, human being, person, fellow;<br>&nbsp;(複数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dēvorābat.<span>dēvŏro devorare, devoravi, devoratus V (1st) TRANS  <br>:devour, consume; swallow, gulp down; engulf/ingulf, absorb, drink in;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Ob<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">hanc<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">causam<span></span></a>
+<a class="note1">pavor<span>păvor pavoris N (3rd) M <br>:fear, panic;<br>(単数 主格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">animōs<span>ănĭmus animi N (2nd) M <br>:mind; intellect; soul; feelings; heart; spirit, courage, character, pride; air;<br>(複数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">occupāverat.<span>occŭpo occupare, occupavi, occupatus V (1st)  X<br>:seize; gain; overtake; capture, occupy; attack;<br>(3 単数 過去完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Cēpheus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ōrāculum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">deī<span></span></a>
+<a class="note1">Hammōnis<span>God Hammon : カルタゴの神で、豊穣と植生の神。またカルタゴの神々のチーフ。<br><br></span></a>
+<a class="note1">cōnsuluit,<span>consŭlo consulere, consului, consultus V (3rd)  X<br>:ask information/advice of; consult, take counsel; deliberate/consider; advise;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">deō<span></span></a>
+<a class="note1">iussus<span>jussus jussus N (4th) M <br>:order, command, decree, ordinance;<br>(単数 主格) <br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">fīliam<span></span></a>
+<a class="note1">mōnstrō<span>monstrum monstri N (2nd) N <br>:monster; portent, unnatural thing/event regarded as omen/sign/portent;<br>(単数 与格) <br></span></a>
+<a class="note1">trādere.<span>trādo tradere, tradidi, traditus V (3rd)  X<br>:hand over, surrender; deliver; bequeath; relate;<br>&nbsp;不定詞<br></span></a>
+<a class="note0">Eius<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">fīlia,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">nōmine<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Andromeda,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">virgō<span>virgo virginis N (3rd) F <br>:maiden, young woman, girl of marriageable age; virgin, woman sexually intact;<br>(単数 主格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">fōrmōsissima<span>formōsus formosa -um, formosior -or -us, formosissimus -a -um ADJ  最上級<br>:beautiful, finely formed, handsome, fair; having fine appearance/form;<br>(F 単数 主格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">erat.<span></span></a>
+<a class="note0">Cēpheus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">audīvit,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dolōrem<span>dŏlor doloris N (3rd) M <br>:pain, anguish, grief, sorrow, suffering; resentment, indignation;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">percēpit.<span>percĭpĭo percipere, percepi, perceptus V (3rd)  X<br>:secure, gain; perceive, learn, feel;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Volēbat<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">cīvēs<span>cīvis civis N (3rd) C <br>:fellow citizen; countryman/woman; citizen, free person; a Roman citizen;<br>&nbsp;(複数 対格) <br></span></a>
+<a class="note0">suōs<span></span></a>
+<a class="note0">ē<span></span></a>
+<a class="note0">tantō<span></span></a>
+<a class="note1">perīculō<span>pĕrīcŭlum periculi N (2nd) N <br>:danger, peril; trial, attempt; risk; responsibility for damage, liability;<br>(単数 奪格) <br></span></a>
+<a class="note1">extrahere,<span>extrăho extrahere, extraxi, extractus V (3rd)  X<br>:drag out; prolong; rescue, extract; remove;<br>&nbsp;不定詞<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ob<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note0">causam<span></span></a>
+<a class="note0">imperāta<span></span></a>
+<a class="note0">Hammōnis<span></span></a>
+<a class="note0">facere<span></span></a>
+<a class="note1">cōnstituit.<span>constĭtŭo constituere, constitui, constitutus V (3rd)  X<br>:set up/in position, erect; place/dispose/locate; (call a) halt; plant (trees);<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" style="font-size: 2.4rem;" spellcheck="false"><p>illo tempore : 時の奪格、「その当時」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" style="font-size: 2.4rem;" spellcheck="false"><p>その前にPerseusはエチオピアの国を訪れていました。そこは、当時はCepheusが王さまでした。彼は海の神であるNeptunusを当時は攻撃をしていました。しかしながらNeptunusは最も残酷な怪物を送り出してきました。それは毎日海から現れ人々を食べるのでした。なので恐怖心が皆の中に生じました。CepheusはそこでHammon神の神託を願いましたが、それは自分の娘を怪物に差し出せというものでした。その娘、名前をAndromedaと言いましたが、は最も美しい処女でした。なのでCepheusはそれを聞いたときには深い痛みを覚えましたが、人民を大変な危険から抜け出させたいと考えました。そこでHammon神のお告げを実行するよう決めました。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

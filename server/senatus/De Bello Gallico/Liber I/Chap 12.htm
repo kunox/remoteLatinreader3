@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 12</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[12]<span></span></a>
+
+<a class="note1">Flūmen<span>中性<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">Arar,<span></span></a>
+<a class="note1">quod<span>Flumenを受けて中性、主格 <br>もしArarを受ければqui</span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Haeduōrum<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Sēquanōrum<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Rhodanum<span></span></a>
+<a class="note1">īnfluit,<span>influo, influere, influxi, influxus 動詞 (3rd)   :flow into; flow; <br>3 単 現在<br></span></a>
+<a class="note1">incrēdibilī<span>incredibilis, incredibilis, incredibile 形容詞   :incredible; extraordinary; 奪格<br></span></a>
+<a class="note1">lēnitāte,<span>lenitas, lenitatis 名詞 (3rd) F   :smoothness; gentleness, mildness; lenience;奪格<br></span></a>
+<a class="note1">ita<span>ita, 副詞   :thus, so; therefore; <br>ita ut = in such a way that</span></a>
+<a class="note1">ut<span>ut, 接続詞   :to (+ subjunctive), in order that/to; how, as, when, while; even if;</span></a>
+<a class="note1">oculīs<span>oculus, oculi 名詞 (2nd) M   :eye;複奪格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">utram<span>uter, utra, utrum 形容詞   :which (of two), 対格</span></a>
+<a class="note0">partem<span></span></a>
+<a class="note1">fluat<span>fluo, fluere, fluxi, fluxus 動詞 (3rd)   :flow, stream; <br>３単現在</span></a>
+<a class="note1">iūdicārī<span>judico, judicare, judicavi, judicatus 動詞 (1st)   :judge, give judgment; <br>不定詞<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">possit.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Flumen est Arar　：(There) is a river Arar.</p>
+<p><strong>incredibili lenitate　</strong>：lenitateは奪格で、諸説あり。性質の奪格（Bennett) 態度の奪格（Kelsey)　「非常に緩やかな流れで」</p>
+<p><strong>oculis </strong>：手段の奪格で　judicariに掛かる。</p>
+<p>ita ut = in sucha way that</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>アラルという川がある。それはハエドゥ族とセクアナ族の領地を通り、ロダヌム河に流れ込んでいる。大変緩やかな流れで、肉眼ではどちらの方向に流れているか判断できないほどである。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Id<span>対格 <br>河のこと</span></a>
+<a class="note0">Helvētiī<span><br><br></span></a>
+<a class="note1">ratibus<span>ratis, ratis 名詞 (3rd) F   :raft; ship, boat;奪格</span></a>
+<a class="note1">ac<span>ac, 接続詞   :and, and also, and besides;</span></a>
+<a class="note1">lintribus<span>linter, lintris 名詞 (3rd) C   :boat, skiff, small light boat;  <br>奪格</span></a>
+<a class="note1">iūnctīs<span>jungo, jungere, junxi, junctus 動詞 (3rd)   :join, unite; bring together完了分詞、受動　奪格<br></span></a>
+<a class="note1">trānsībant.<span>3 複 未完了<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Helvetii transibant id.　: 文の骨子</p>
+<p>junctisは、ratibus, lintribusの両方にかかる。すなわち、結合されたボートや結合された筏transibant.　手段の奪格</p>
+<p><strong>transibant.</strong> 未完了 は過去のある時点でその動作が行われていた事を表すので「<u>渡っているところだった</u>」</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>ヘルウェティは、筏やボートを互いに結びつけてその河を渡っているところだった。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Ubi<span>ubi, 副詞   :where; in what place; (time) when,</span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">explōrātōrēs<span>explorator, exploratoris 名詞 (3rd) M   :investigator, one who searches out; scout, spy;対格<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">certior<span>certus, certa -um, certior -or -us, certissimus -a -um 形容詞   :fixed, settled, firm;主格</span></a>
+<a class="note0">factus<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">trēs<span><br><br></span></a>
+<a class="note1">iam<span>jam, 副詞   :now, already, by/even now; besides;</span></a>
+<a class="note1">partēs<span>pars, partis 名詞 (3rd) F   :part, region; share;対格 <br>意味上の主語<br></span></a>
+<a class="note1">cōpiārum<span>copia, copiae 名詞 (1st) F   :plenty, abundance, supply; troops (pl.),複属格<br></span></a>
+<a class="note1">Helvētiōs<span>複対格 <br>tres partes copiarumと同格 <br>意味上の主語<br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note1">trādūxisse,<span>traduco, traducere, traduxi, traductus 動詞 (3rd) TRANS   :bring across/over, move/transfer;完了、不定詞<br></span></a>
+<a class="note1">quārtam<span>４ｆ単対格<br></span></a>
+<a class="note1">vērō<span>vero, 副詞   :yes; in truth; certainly; truly, to be sure; however;</span></a>
+<a class="note0">partem<span></span></a>
+<a class="note1">citrā<span>citra, 対格支配　前置詞   :on this/near side of, towards;<br></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note1">Ararim<span>対格</span></a>
+<a class="note1">reliquam<span>reliquus, reliqua, reliquum 形容詞   :rest of/remaining/available/left; surviving; future/further; yet to be/owed;ｆ単対格</span></a>
+<a class="note0">esse,<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">tertiā<span>teritia vigiliaで第三Watch <br>Watchは３時間 <br>（１２を四等分したものの三番目） <br>真夜中〇時から<br></span></a>
+<a class="note1">vigiliā<span>vigilia, vigiliae 名詞 (1st) F   :watch (fourth part of the night), vigil, wakefulness;奪格？<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">legiōnibus<span>legio, legionis 名詞 (3rd) F   :legion; army;奪格<br></span></a>
+<a class="note1">tribus<span>tres, -es -ia, tertius -a -um, terni -ae -a, ter 数詞   :three;奪格</span></a>
+<a class="note0">ē<span><br><br></span></a>
+<a class="note1">castrīs<span>castra, castrae 名詞 (1st) F   :camp, military camp/field; army;複　奪格<br></span></a>
+<a class="note1">profectus<span>proficiscor, proficisci, profectus sum 動詞 (3rd) DEP   :depart, set out; proceed;主格　完了分詞 <br>受動</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note1">pervēnit<span>pervenio, pervenire, perveni, perventus 動詞 (4th)   :come to; reach; arrive;<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">nōndum<span>nondum, 副詞   :not yet;<br></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note1">trānsierat.<span>transeo ３過去完了<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Caesar certior factus est：受動態、完了　カエサルが知らされた　<strong>facio certus = make fixed, make informed</strong></p>
+<p>tres iam partes copiarum = three parts of their forces　対格で、意味上の主語 Helvetiosも同格で主語</p>
+<p><strong>tres partes = 3/4</strong> </p>
+<p>[<strong>分数の表し方</strong>]</p>
+<p>①分子がⅠの場合：分母を表す序数詞（ｆ）＋pars (teria pars = 1/3)</p>
+<p>②分子が2以上で分子が（分母－１）の場合、分子を表す基数詞＋partes (tres partes = 3/4)</p>
+<p><br></p>
+<p>quartam partem reliquam esse: 主語（対格）＋補語（対格）を持つ不定詞＝４番目の部隊が残っている事</p>
+<p><strong>de teritia vigilia</strong> : 第三ウォッチ　第三当直時</p>
+<p>ad eam partem = quae nondum flumen transierat.</p>
+<p>(Caesar) pervenit</p>
+<p><strong>de tertia vigilia</strong> : the night, from sunset to sunrise, was divided into four equal watches, the third beginning at midnight. This movement took place directly after (de) the watch began.</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>ヘルウェティの3/4の部隊が既に渡河を完了しており、４つ目は未だで河のこちらがわに残っているという情報が、斥候によりカエサルに伝えられ、カエサルは第三当直時に３つの軍団と共に野営地をたち、河を渡っていない部隊のところに到着した。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eōs<span><br><br></span></a>
+<a class="note1">impedītōs<span>impeditus, impedita -um, impeditior -or -us, impeditissimus -a -um 形容詞   :hindered/obstructed/ encumbered/hampered; difficult/impeded; inaccessible; <br>対格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">inopīnantēs<span>inopinans, (gen.), inopinantis 形容詞   :unaware, off guard; unexpected, not expecting; <br>対格 複<br></span></a>
+<a class="note1">adgressus<span>adgredior : 　(V31 Deponent) (完了 分詞 受動態 m 単 主格)  <br>approach, advance; attack, assail;</span></a>
+<a class="note0">magnam<span></span></a>
+<a class="note1">partem<span>対格</span></a>
+<a class="note1">eōrum<span>属格<br></span></a>
+<a class="note1">concidit;<span>concido, concidere, concidi, concisus 動詞 (3rd) TRANS   :cut/chop up/down/to pieces; crop; ruin, kill, destroy; divide minutely; beat; <br>3 単 完了<br></span></a>
+<a class="note1">reliquī<span>reliquus, reliqua, reliquum 形容詞   :rest of/remaining/available/left; <br>複主格　名詞化<br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note1">fugae<span>fuga <br>与格？</span></a>
+<a class="note1">mandārunt<span>=mandaverunt <br>mando, mandare, mandavi, mandatus 動詞 (1st)   :entrust, commit to one's charge,  <br>3複完了<br></span></a>
+<a class="note1">atque<span>atque, 接続詞   :and, as well/soon as; together with; and moreover/even; and too/also/now; yet;</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">proximās<span><br><br></span></a>
+<a class="note1">silvās<span>silva, silvae 名詞 (1st) F   :wood, forest (sylvan);対格<br></span></a>
+<a class="note1">abdidērunt.<span>abdo, abdere, abdidi, abditus 動詞 (3rd) TRANS   :remove, put away, set aside; depart, go away; 3複完了<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Eos impeditos et inopinantes adgressus　＝分詞構文　攻撃して</p>
+<p><strong>sese fugae mandarunt</strong> : mandoは manus（手）から来ていて誰か、、何かの手の中に入る、委ねるというニュアンス。ここでは自身をfuga(敗走）に委ねる、という感じか。fugaは間接目的語</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>それらの動きの遅い、無防備なものを攻撃して、大部分を破壊した。残りは敗走したり、近くの森に逃げ込んだ。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Is<span></span></a>
+<a class="note1">pāgus<span>pagus, pagi 名詞 (2nd) M   :country district/community, canton;単 主格<br></span></a>
+<a class="note1">appellābātur<span>appello, appellare, appellavi, appellatus 動詞 (1st) TRANS   :call (upon); address; dun; solicit; appeal (to); bring to court; accuse; name;3 単 未完了 受動態<br></span></a>
+<a class="note1">Tigurīnus;<span>Zurich近くのヘルウェティの4番目の支族ウルビゲニ、アンブロネス、テューゲニ、そしてティグリーニ<br></span></a>
+<a class="note1">nam<span>nam, 接続詞   :for, on the other hand; for instance;</span></a>
+<a class="note0">omnis<span></span></a>
+<a class="note1">cīvitās<span>civitas, civitatis 名詞 (3rd) F   :community/city/town/state; citizens;単主格<br></span></a>
+<a class="note1">Helvētia<span>Helvetia, Helvetiae N (1st) F   :Switzerland;主格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">quattuor<span>quattuor, quartus -a -um, quaterni -ae -a, - 数詞   :four;</span></a>
+<a class="note1">pāgōs<span>対格<br></span></a>
+<a class="note0">dīvīsa<span><br><br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>pagusはcountryとかdistrict, cantonで、地域の名前である。</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>この地域はティグリヌスと呼ばれた。つまりヘルウェティ全体は4つの州にわかれていることになる。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīc<span><br><br></span></a>
+<a class="note0">pāgus<span><br><br></span></a>
+<a class="note1">ūnus,<span>unus, una, unum (gen -ius) 形容詞   :alone, a single/sole; some, some one; only (pl.); <br>単主格<br></span></a>
+<a class="note1">cum<span>cum, 副詞   :|as soon; while, as (well as); whereas, <br>when, at the time/on each occasion/in the situation that; after; since/although;</span></a>
+<a class="note1">domō<span>domus <br>奪格　単<br></span></a>
+<a class="note1">exīsset,<span>=exivisset&nbsp; exeo exire, exivi(i), exitus INTRANS <br>3単　過去完了　接続法 ;= come, go, out , away<br><br></span></a>
+<a class="note1">patrum<span>Pater　属格　単</span></a>
+<a class="note1">nostrōrum<span>noster, nostra, nostrum 形容詞   :our;複属格<br></span></a>
+<a class="note1">memoriā<span>memoria, memoriae 名詞 (1st) F   :memory, recollection; history; <strong>time within memory</strong> <br>単　奪格　時の奪格<br><br></span></a>
+<a class="note1">L.<span>Lucium</span></a>
+<a class="note0">Cassium<span></span></a>
+<a class="note1">cōnsulem<span>対格　Cassiumと同格<br></span></a>
+<a class="note1">interfēcerat<span>interficio, interficere, interfeci, interfectus 動詞 (3rd)   :kill; destroy;3 単 過去完了<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note1">exercitum<span>exercitus, exercitus 名詞 (4th) M   :army, infantry; swarm, flock; 対格</span></a>
+<a class="note0">sub<span></span></a>
+<a class="note0">iugum<span></span></a>
+<a class="note1">mīserat.<span>mitto, mittere, additional, forms 動詞   :send, throw, hurl, cast;３単過去完了</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>domo</strong> : 場所の奪格で「どこから」を表す。ex, ab などの前置詞と一緒のことが一般的で、domoは例外の一つ。（NewLatin229.1.(b))</p>
+<p><strong>patrum nostroum memoria</strong> : memoriaは時の奪格。[（記憶にある）時代]の意。この場合、父のとあるので、「一世代前頃」というのが意訳か？</p>
+<p>L. Cassium　＝ Lucius Cassius</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>これらの支族の一つが、彼らの故郷を出立したあと、我々の父の時代に、総督であるカシウムを殺し彼の軍隊を槍門の下をくぐらせた。</p>
+</div>
+</div>
+<div class="spacer">Line7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Ita<span>ita, 副詞   :thus, so; therefore;</span></a>
+<a class="note1">sīve<span>sive, 接続詞   :or if; or;<br></span></a>
+<a class="note1">cāsū<span>casus, casus 名詞 (4th) M   :fall, overthrow; chance/fortune; accident, emergency, calamity, plight; fate;　奪格<br><br></span></a>
+<a class="note0">sīve<span></span></a>
+<a class="note1">cōnsiliō<span>consilium, consili(i) 名詞 (2nd) N   :|decision/resolution; <strong>intention </strong>奪格<br></span></a>
+<a class="note1">deōrum<span>deus 属格<br></span></a>
+<a class="note1">immortālium<span>immortalis, immortalis 名詞 (3rd) M   :immortal, god; <br>属格</span></a>
+<a class="note1">quae<span>単数　主格　f</span></a>
+<a class="note1">pars<span>主格</span></a>
+<a class="note1">cīvitātis<span>単　属格<br></span></a>
+<a class="note1">Helvētiae<span>単　属格<br></span></a>
+<a class="note1">īnsignem<span>insignis, insignis, insigne 形容詞   :conspicuous, manifest, eminent, notable, famous, distinguished, outstanding; <br>単対格<br></span></a>
+<a class="note1">calamitātem<span>calamitas, calamitatis 名詞 (3rd) F   :loss, damage, harm; misfortune/disaster; military defeat; blight, crop failure; 単対格<br></span></a>
+<a class="note1">populō<span>奪格<br></span></a>
+<a class="note0">Rōmānō<span><br><br></span></a>
+<a class="note1">intulerat,<span>infero, inferre, intuli, illatus 動詞 TRANS   :bring/carry in, import; advance,３単過去完了</span></a>
+<a class="note0">ea<span></span></a>
+<a class="note1">prīnceps<span>princeps, (gen.), principis 形容詞   :first, foremost, leading,　単　対格<br></span></a>
+<a class="note1">poenam<span>poena, poenae 名詞 (1st) F   :penalty, punishment; revenge/retribution;単対格<br></span></a>
+<a class="note1">persolvit.<span>persolvo, persolvere, persolvi, persolutus 動詞 (3rd)   :pay; <br>３単完了</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>sive casu sive consilio　：対になっている、sive + 奪格　名詞　casuはcasus （←cadoから）奪格である.</p>
+<p><strong>ea persolvit poenam princeps</strong> : 最初のペナルティを支払った。eaはquaeの先行詞（後にあるけど）</p>
+<p>quae pars = that part which ～　：ラテン語特有の関係代名詞が最初に来る構造　eaを指す。</p>
+<p><strong>quae pars civitatis Helvetiae</strong> = that parts of Helvetic state which~</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>かくして、偶然かもしくは不死の神のご意思か、ローマ人民に対して目立った災厄を運んだヘルウェティのその部族が最初にその罰を支払う事になった。</p>
+</div>
+</div>
+<div class="spacer">Line8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quā<span>qua, 副詞   :where; by which route;<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">rē<span>res 単　奪格<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">sōlum<span>solum, 副詞   :only/just/merely/barely/alone;<br></span></a>
+<a class="note1">pūblicās,<span>publicus, publica, publicum 形容詞   :public; common, of the people/state; official; f 複対格<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">prīvātās<span>privatus, privata, privatum 形容詞   :private; personal; ordinary;複対格</span></a>
+<a class="note1">iniūriās<span>injuria, injuriae 名詞 (1st) F   :injury; injustice, wrong, offense; insult, abuse; sexual assault; 複対格<br></span></a>
+<a class="note1">ultus<span>ulciscor, ulcisci, ultus sum 動詞 (3rd) DEP   :avenge; punish; <br>(完了 分詞 受動態 m 単 主格)  <br>＋sumで受動態　完了</span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">quod<span>quod, 接続詞   :because, as far as, insofar as;</span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note1">socerī<span>socer, soceri 名詞 (2nd) M   :father in law;属格<br></span></a>
+<a class="note0">L.<span></span></a>
+<a class="note1">Pīsonis<span>Piso属格<br></span></a>
+<a class="note1">avum,<span>avus, avi 名詞 (2nd) M   :grandfather; forefather, ancestor;</span></a>
+<a class="note0">L.<span></span></a>
+<a class="note0">Pīsōnem<span><br><br></span></a>
+<a class="note1">lēgātum,<span>legatus, legati 名詞 (2nd) M   :envoy, ambassador, legate; commander of a legion; officer; deputy;単対格<br></span></a>
+<a class="note1">Tigurīnī<span>属格<br></span></a>
+<a class="note1">eōdem<span>eodem, 副詞   :to the same place/purpose;<br></span></a>
+<a class="note1">proeliō<span>proelium, proeli(i) 名詞 (2nd) N   :battle/fight/bout/conflict/dispute; armed/hostile encounter; bout of strength; 単　奪格（場所）<br></span></a>
+<a class="note1">quō<span>proelioを指す <br>qui の奪格<br></span></a>
+<a class="note0">Cassium<span></span></a>
+<a class="note1">interfēcerant.<span>interficio, interficere, interfeci, interfectus 動詞 (3rd)   :kill; destroy;3 複 過去完了<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Caesar ultus est</strong> : ulciscorの完了分詞がultus 受動態完了　ulciscorがDEPなので意味は能動　復讐を果たした（不正義を罰した）</p>
+<p>eius soceri L. Pisonis avum, L. Pisonem legatum　Lucius Pisoの祖父のLucius Piso,高級将校であった、</p>
+<p>Tigurini　interfecerant.</p>
+<p>Tigurini eodem proelio, quo Cassium, interfecerant,</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>この出来事で、カエサルは公的のみならず私的な不正義にも復讐した。と言うのは彼の義父L.Pisoの祖父L.Piso、彼は（カシウスの）高級将校（first officer?)であったが、ティグリーニはカシウスと同じ戦いで殺したからである。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

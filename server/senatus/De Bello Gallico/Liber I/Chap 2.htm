@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 2</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[2]<span></span></a>
+
+<a class="note1">Apud<span>apud, 前置詞 (対格) :at, by, near, among; at the house of; before, in the presence/writings/view of;</span></a>
+<a class="note0">Helvētiōs<span></span></a>
+<a class="note1">longē<span>longe longius longissime 副詞　;= far, distant, by far</span></a>
+<a class="note1">nōbilissimus<span>nobilis : 　(ADJ32 最上級) (m 単 主格)</span></a>
+<a class="note0">fuit<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">dītissimus<span>dis, ditis (gen.), ditior -or -us, ditissimus -a -um 形容詞 :rich/wealthy; richly adorned; fertile/productive (land); profitable; sumptuous;</span></a>
+<a class="note0">Orgetorīx.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>longe : 副詞で「大変に」の意。副詞、副詞節な通常、修飾する語の前に来る。（NewLatin350.6)</p>
+<p>Orgetorixの名前はガリアのコインに刻まれていた由。</p>
+<p>Bennettによれば　Or-jet-o-rix と発音するそうである。(geがジェ）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>ヘルウェイ族の中でも、最も高貴で力（金）があったのはOrgetrixであった。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Is,<span></span></a>
+<a class="note0">M.<span></span></a>
+<a class="note0">Messālā<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">M.<span></span></a>
+<a class="note0">Pupio<span></span></a>
+<a class="note1">Pīsōne<span>Piso, Pisonis N (3rd) M  <br> :Piso; (Roman cognomen);</span></a>
+<a class="note1">cōnsulibus,<span>consul consulis M 複　奪格　;= consul</span></a>
+<a class="note1">rēgnī<span>regnum, regni&nbsp; N 単　属格&nbsp;;= <br> royal power; power; control; kingdom;</span></a>
+<a class="note1">cupiditāte<span>cupiditas, cupiditatis&nbsp;&nbsp; F 単　奪格　 ;= enthusiasm, eagerness, passion; (carnal) desire; lust; greed/usury/fraud; ambition 原因の奪格</span></a>
+<a class="note1">inductus<span>induco, inducere, induxi, inductus 動詞 (3rd) 完了分詞 m 受動　単　主格　;=<br>&nbsp; lead in, bring in (performers); induce, influence; introduce;</span></a>
+<a class="note1">coniūrātiōnem<span>conjuratio, conjurationis 名詞 (3rd) F 単　対格　;= <br> :conspiracy, plot, intrigue; alliance; band of conspirators;  <br>taking joint oath; <br>fecitの目的語</span></a>
+<a class="note1">nōbilitātis<span>nobilitas nobilitastis F 単　属格　;= nobility, noble class</span></a>
+<a class="note1">fēcit,<span>facio facere, feci, factus TRANS 3　単　完了　;= do, make, create</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cīvitātī<span>civitas civitatis F 単　与格　;= community, city, state, citizens</span></a>
+<a class="note1">persuāsit<span>persuadeo, persuadere, persuasi, persuasus ３単　完了;=　persuade, <strong>convince (with dat.);</strong></span></a>
+<a class="note1">ut<span>ut, 接続詞  <br> :to (+ subjunctive), in order that/to; how, as, when, while; even if;</span></a>
+<a class="note0">dē<span></span></a>
+<a class="note1">fīnibus<span>finis, finis 名詞 (3rd) C  <br> :boundary, end, limit, goal; (pl.) country, territory, land; <br>複 奪格</span></a>
+<a class="note1">suīs<span>suus sua suum 形容詞　複 奪格　;= 　one's own </span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">cōpiīs<span>複 奪格 <br> copia, copiae 名詞 (1st) F  <br>:plenty, abundance, supply; troops (pl.), supplies; forces; resources; wealth;</span></a>
+<a class="note1">exīrent:<span>exeo, exire, exivi(ii), exitus 動詞 INTRANS  : come/go/sail/march/move out/forth/away, leave; pass (away), expire/perish/die; <br>3 複 未完了 能動態 接続法)</span></a>
+<a class="note1">perfacile<span>perfacilis perfacilis perfacile 形容詞　n 単　主格　;= very easy</span></a>
+<a class="note0">esse,<span></span></a>
+<a class="note1">cum<span>cum + 接続法　cum = because</span></a>
+<a class="note1">virtūte<span>virtus, virtutis 名詞 (3rd) F 単　奪格　;= strength ,power; courage ,bravery; worth ,manliness ,virtue</span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">praestārent,<span>praesto, praestare, praestavi, praestatus 動詞 (1st) :excel, surpass, be  outstanding /superior/ best/ greater/ preferable (to); prevail;3 複 未完了 能動態 接続法</span></a>
+<a class="note1">tōtīus<span>totus, tota, totum (gen -ius) 形容詞 :whole, all, entire, total, complete; every part; all together/at once属格</span></a>
+<a class="note1">Galliae<span>属格</span></a>
+<a class="note1">imperiō<span>imperium, imperi(i)&nbsp; N 単　奪格 ;= command; authority; rule, supreme power; the state, the empire;</span></a>
+<a class="note1">potīrī.<span>potior, poti, potitus sum 動詞 (3rd) DEP  <br> :|seize, capture; control; have/possess; reign over; win sexually;現在 受動態 不定詞)</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Is</p>
+<p><strong>M. Messala, [et P.] M. Pisone consulibus</strong> : 独立奪格　「Messala and Pisoがコンスルの時代」(newLatin227）</p>
+<p>多くのテキストは単に[ M. Messala, M. Pisone consulibus]となっている。</p>
+<p><strong>regni cupiditate inductus</strong> : cupiditateは原因の奪格で（NewLatin219)でそれによってinductus これは分詞構文になっていて、（Orgetrix） inductus のこと。「導かれて、駆られて」</p>
+<p><strong>civitati persuasit</strong> : <u>civitatiは与格で</u>、Persuasitの間接目的語。persuadeoは自動詞なので、間接目的語の与格が持てる。この辺りは最初は理解し難いかもしれないが、読み進むと、段々しっくり来るようになります。（NewLatin187. 2 (a))</p>
+<p><u>persuasitの目的語は ut 以下の名詞節</u>。utに導かれる目的の節は接続法となる。（NewLatin282）</p>
+<p><strong>de finibus suis cum omnibus copiis</strong> : deは奪格支配の前置詞で from. suisは自分のの意でここではfinibusを修飾している。finibusがdeで支配されて奪格なので、それを修飾する形容詞suisも複、奪格である。</p>
+<p><strong>cum omnibus copiis</strong> : cumも奪格支配。ここではwithの意。copiisは軍隊という意味と、富、財産と言う意味がある。ここでは多分両方のニュアンスがあると思われる。他国を征服する、というような事も言われているし、歴史的には彼らが移住しようとしていた事も明らかであるので。</p>
+<p><strong>perfacile esse</strong> : これは間接話法の平叙文である。間接話法なので、[誰々が言った]という部分がなくてはならないが、ここでは省略されている。本来は「Orgetrixが.....と言った」と言う語があるべきであるが、persuasitから推測せよ、ということ。よくある省略で、NewLatin314.2に解説がある。perfacileは形容詞で、叙述的に使われており、<font style="background-color: rgb(255, 255, 0);">その主語は、後に来る、potiriである</font>。<u>不定詞は単、中性扱い</u>なのでperfacileは単、中性になっている。</p>
+<p><strong>cum virtute omnibus praestarent</strong> : praestarentは接続法。cumに導かれる結果の節は接続法。（NewLatin286.2 AG580.a)&nbsp; omnibusは与格で、praestarentの間接目的語。（prae-という複合語は間接目的の与格を持てるようになる（NewLatin187.3) 「（我らの）強さを考えれば、他の全てに対し圧倒する事になる」virtuteが奪格なのは「性質の奪格」(NewLatin224)</p>
+<p><strong>imperio potiri</strong> : imperioは奪格、ここではportiorの目的語になっている。(NewLatin 218.1に詳しく説明あり AG410）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼は、マルコ・メッサーラとマルコ・ピソがコンスルの時、領土に対する野心に駆られて、貴族の(あいだで）連合を作った。そして、国に対して、全ての持ち物を伴って国を出立することを説得した。彼らの勇敢さが際立っている事を考えれば、全ガリアの覇権を握ることは容易であるといいながら。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Id<span>is n 対格　persuasitの目的語</span></a>
+<a class="note1">hōc<span>hic, 代名詞<br> n 単 奪格 ;= this, these<br></span></a>
+<a class="note1">facilius<span>facile, facilius, facillime 副詞  <br> :easily, readily, without difficulty; generally, often; willingly; heedlessly;</span></a>
+<a class="note1">iīs<span>複 与格</span></a>
+<a class="note1">persuāsit,<span>persuadeo, persuadere, persuasi, persuasus 動詞 (2nd)  <br> :persuade, convince (with dat.);(3 単 完了</span></a>
+<a class="note1">quod<span>quod, 接続詞  <br> :because, as far as, insofar as;</span></a>
+<a class="note1">undique<span>undique, 副詞  <br> :from every side/direction/place/part/source; on all/both sides/surfaces;</span></a>
+<a class="note1">locī<span>locum loci N 単　属格　;= place, position</span></a>
+<a class="note1">nātūrā<span>natura naturae F 単　奪格　;= nature, character</span></a>
+<a class="note0">Helvētiī<span></span></a>
+<a class="note1">continentur:<span>contineo, continere, continui, contentus 動詞 (2nd) TRANS  <br> :secure, maintain, sustain; fasten/hold in position; retain, keep safe, preserve; <br>3 複 現在 受動態</span></a>
+<a class="note1">ūnā<span>unus, una, unum (gen -ius) 形容詞 f単　奪格　;= alone, a single ,sole; some, some one; only (pl.); one set of (denoting entity);</span></a>
+<a class="note1">ex<span>ex, 前置詞 (奪格) <br> :out of, from; by reason of; according to; because of, as a result of;</span></a>
+<a class="note1">parte<span>奪格</span></a>
+<a class="note0">flūmine<span></span></a>
+<a class="note1">Rhēnō<span>Rhenus, Rheni N (2nd) M  <br> :Rhine; (river dividing Gaul and Germany - in Caesar's Gallic War); 奪格</span></a>
+<a class="note1">lātissimō<span>latus, lata -um, latior -or -us, latissimus -a -um 形容詞 m単　奪格　&nbsp;;= wide, broad; spacious, extensive;</span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">altissimō,<span>altus, alta -um, altior -or -us, altissimus -a -um 形容詞 m単　奪格　;= high deep, profound; shrill; lofty/noble; deep rooted; far-fetched; grown great;</span></a>
+<a class="note1">quī<span>主格 M <br>RhenusがM</span></a>
+<a class="note1">agrum<span>ager ageri M 単　対格　;= field, ground, farm</span></a>
+<a class="note0">Helvētium<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">Germānīs<span></span></a>
+<a class="note1">dīvidit;<span>3 単 現在 能動態</span></a>
+<a class="note1">alterā<span>alter, altera, alterum 形容詞 f 単　奪格　;= one of two, second, another</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note0">monte<span></span></a>
+<a class="note0">Iūrā<span></span></a>
+<a class="note0">altissimō,<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">inter<span>inter, 前置詞 (対格) <br> :between, among; during;</span></a>
+<a class="note0">Sēquanōs<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Helvētiōs;<span></span></a>
+<a class="note0">tertiā<span></span></a>
+<a class="note1">lacū<span>lacus, lacus 名詞 (4th) M  <br> :basin/tank/tub; lake/pond; reservoir/cistern/basin, trough; lime-hole; bin; pit;</span></a>
+<a class="note0">Lemannō<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">flūmine<span></span></a>
+<a class="note0">Rhodanō,<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">prōvinciam<span></span></a>
+<a class="note0">nostram<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Helvētiīs<span></span></a>
+<a class="note0">dīvidit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>Id hoc facilius iis persuasi</strong>t : こういう短い文で、代名詞が多いのが意外と難しい。Idは前にでた、国を出る事で、persuasitの目的語になっていて対格。iisは与格で前の文のcivitatiと同様、与格。hocは原因の奪格で、次に続くquod以下の関係代名詞の先行詞になっている。「（quod以下で述べられる事）の理由から」</p>
+<p><strong>continentur</strong> : 直説法、 従属節でquodで始まる節は、原因が自分のものであれば直説法、他人のものである場合は接続法となる。（AG540、NewLatin286）</p>
+<p><strong>una ex parte</strong> : ex una parteが普通の並び方。ラテン語は前置詞の前に形容詞が来る事が多い。exは奪格支配の前置詞　逐語的には「一方の側から」</p>
+<p><strong>flumine Rheno</strong> : 手段の奪格　Rheno河によって</p>
+<p><strong>qui</strong> : Rhenoと性を合わせているのでM、flumineはNであるが、近い方。latissimo, altissimoはRhenoを修飾、従ってm単　奪格になっている。quiは dividitの主語。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼はこのことを彼らに対し非常に簡単に説得できた、なぜなら国の自然により、ヘルウェイは四方を囲われていたからである。一方は、（それがヘルウェティの領土をゲルマンから分けている）非常に広くて深いレヌス河によって、他方ではセクアニとヘルウェイティの間にあるジュラ山によって、そして３番目には、我々の属州をヘルウェイティから分断するレマヌス湖とロダヌス川によって。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span></span></a>
+<a class="note1">rēbus<span>res, rei 名詞 (5th) F  <br> :thing; event/affair/business; fact; cause; property;複 奪格</span></a>
+<a class="note1">fiēbat<span>fio :  3 単 未完了 能動態  <br>be made, result,happen</span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">minus<span>minus, 副詞  <br> :less; not so well; not quite</span></a>
+<a class="note1">lātē<span>late, 副詞  <br> :widely, far and wide;</span></a>
+<a class="note1">vagārentur<span>vagor, vagari, vagatus sum 動詞 (1st) DEP  <br> :wander, roam; <br>3 複 未完了 受動態 接続法)</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note1">facile<span>facile, facilius, facillime 副詞  <br> :easily, readily, without difficulty; generally, often; willingly; heedlessly;</span></a>
+<a class="note1">fīnitimīs<span>finitimus, finitimi 名詞 (2nd) M  <br>:neighbors (pl.);与格</span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">īnferre<span>infero, inferre, intuli, illatus 動詞 TRANS  <br> :bring/carry in, import; advance, bring/march/step/move foward; impel, urge;不定詞</span></a>
+<a class="note1">possent:<span>3 複 未完了 能動態 接続法) <br>possum</span></a>
+<a class="note0">quā<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">parte<span>qua ex parte = qua de cause</span></a>
+<a class="note1">hominēs<span>homo homonis M 複　主格　;= man, human</span></a>
+<a class="note1">bellandī<span>bello bellare, bellavi, bellatus INTRANS 未来分詞　受動　ｍ　属格　;= fight, wage war, struggle (動形容詞）</span></a>
+<a class="note1">cupidī<span>cupidus 形容詞　複数主格 <br>eager passionate</span></a>
+<a class="note1">magnō<span>magnus : great 与格、奪格</span></a>
+<a class="note1">dolōre<span>dolor doloris M 単　奪格　;= pain, anguish, sorrow</span></a>
+<a class="note1">adficiēbantur.<span>adficio adficere, adfeci, adfectus TRANS 3複　未完了　受動　;= affect , make impression</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>His rebus　：こうした事柄によって 原因の奪格</p>
+<p><strong>fiebat</strong>　: 「(それが）起こった、そういう結果になった。」主語は以下のutに導かれる結果の節。接続法である。（NewLatin284)　</p>
+<p><strong>ut et minus late vagarentur</strong> : vagarenturが接続法なのは結果節だから。<u>未完了はその時点で継続している事象というニュアンスあり。（AG470, NewLatin260)</u></p>
+<p><strong>et minus facile finitimis bellum inferre possent　</strong>：　et .... et で　both ... and</p>
+<p><strong>qua ex parte</strong> : 逐語的には「その部分から」quaは前の文の内容。「そういう事情であるから」ラテン語は前置詞と同様、関係代名詞も最初に来ることが多い。</p>
+<p><strong>homines （bellandi cupidi</strong>）：「熱心に戦争をするところの人」bellandiは動名詞、属格で、目的語の属格として使われ、名詞を修飾する。（NewLatin338)この場合、hominesを修飾。cupudiは動名詞を修飾する形容詞。</p>
+<p>magno dolore adficiebantur.逐語的には「大きな苦痛によって影響された。」doloreは原因の奪格</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの事情により、彼らが活動できる範囲はそう広くなく、また近隣諸国に戦争を仕掛けるのもそう容易ではないこととなった。それが故に（そうした事情から）戦争が大好きである人として大変つらい影響を受けた。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Prō<span>in proportion to</span></a>
+<a class="note1">multitūdine<span>multitudo, multitudinis 名詞 (3rd) F  <br> :multitude, great number; crowd; rabble, mob;奪格</span></a>
+<a class="note1">autem<span>but, on the other hand</span></a>
+<a class="note1">hominum<span>homo 複数属格</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">prō<span></span></a>
+<a class="note1">glōriā<span>gloria gloriae F 単　奪格　;= glory, fame, ambition</span></a>
+<a class="note1">bellī<span>bellum 属格</span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">fortitūdinis<span>fortitudo, fortitudinis 名詞 (3rd) F  :strength, courage, valor; firmness;単数属格</span></a>
+<a class="note1">angustōs<span>angustus angusta -um 形容詞　ｍ　複　対格　;= narrow, steep, confine<br></span></a>
+<a class="note1">sē<span>対格 <br>意味上の主語 <br>（主語の対格を伴う不定詞）</span></a>
+<a class="note1">fīnēs<span>finis, finis 名詞 (3rd) C  <br> :boundary, end, limit, goal; (pl.) country, territory, land <br>対格　habereの目的語</span></a>
+<a class="note0">habēre<span></span></a>
+<a class="note1">arbitrābantur,<span>arbitro, arbitrare, arbitravi, arbitratus 動詞 (1st)  <br> :think, judge; consider; be settled/decided on (PASS); <br>3 複 未完了 受動態</span></a>
+<a class="note1">quī<span>finesのこと</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">longitūdinem<span>longitudo Length <br>対格</span></a>
+<a class="note1">mīlia<span>mile 1000 対格</span></a>
+<a class="note1">passuum<span>passus, passus 名詞 (4th) M :step, pace; <br>属格</span></a>
+<a class="note1">CCXL,<span>decenta(200) quadrainta</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">lātitūdinem<span>latitudo : <br>width 対格</span></a>
+<a class="note1">CLXXX<span>centa octoginta(180)</span></a>
+<a class="note1">patēbant.<span>pateo, patere, patui, - 動詞 (2nd) :stand open, be open; extend; be well known; lie open, be accessible;</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>X(10) XX(20) XXX(30) XL(40) L(50) LX(60)...XC(90)</p>
+<p>C(100) CC(200) CCC CD D(500)..</p>
+<p><strong>Pro multitudine autem hominum</strong> : proは奪格支配。autem = butで、文の先頭には置かない語の一つ。他にquoqueなど</p>
+<p>pro gloria belli atque (gloria) fortitudinis</p>
+<p><strong>(angustos) se(対格) fines(対格) habere arbitrabantur</strong>,: seは不定詞の意味上の主語の対格。</p>
+<p>milia passuum : 1000歩で１ローママイル。mille = 1000は単数と複数あり。単数はmilleは基数詞であるが複数形のmiliaは中性、複数の名詞である。またここのpassuumは全体の属格と言われるもので、（全部の）歩数のうちの１０００、という意味。数の表し方でよく出てくる。(NewLatin 201)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>一方、人数の多さと、戦争、勇気の栄光などと比較して、狭い領地を持っていると考えられた。その領地は長さ２４０ローママイル、幅１８０ローママイルであった。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

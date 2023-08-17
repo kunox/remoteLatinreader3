@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 2</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[2]<span></span></a>
+
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">agitātīs<span>agito agitare, agitavi, agitatus V (1st)  <br>:stir/drive/shake/move about; revolve; live; control, ride; consider, pursue;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">profitentur<span>profiteor profiteri, professus sum V (2nd) DEP  <br>:declare; profess;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note1">Carnutēs<span>Carnutes Carnutis N (3rd) M  <br>:Carnutes, tribe of central Gaul, around Loire - Caesar;<br>(X 単数 主格)<br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">nūllum<span><br><br></span></a>
+<a class="note0">perīculum<span><br><br></span></a>
+<a class="note1">commūnis<span>communis communis, commune ADJ  <br>:common/joint/public; general/universal;<br>&nbsp;(X 単数 属格), <br></span></a>
+<a class="note1">salūtis<span>salus salutis N (3rd) F  <br>:health; prosperity; good wish; greeting; salvation, safety;<br>(X 単数 属格)<br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">recūsāre<span>recuso recusare, recusavi, recusatus V (1st)  <br>:reject, refuse, refuse to; object; decline;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">prīncipēsque<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">factūrōs<span>facio facere, feci, factus V (3rd) TRANS  <br>:make/build/construct/create/cause/do; have built/made; fashion; work (metal);<br>(未来 分詞 能動態 m 複数  対格)<br></span></a>
+<a class="note0">pollicentur<span></span></a>
+<a class="note0">et,<span></span></a>
+<a class="note1">quoniam<span>quoniam CONJ <br>:because, since, seeing that;<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">praesentiā<span>praesentia praesentiae N (1st) F  <br>:present time; presence;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">obsidibus<span></span></a>
+<a class="note1">cavēre<span>caveo cavere, cavi, cautus V (2nd)  <br>:beware, avoid, take precautions/defensive action; give/get surety; stipulate;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">possint<span>possum posse, potui, - V  <br>:be able, can;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note1">efferātur,<span>effero efferre, extuli, elatus V  <br>:carry out; bring out; carry out for burial; raise;<br>(３人称 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">iūreiūrandō<span><br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">fidē<span>fides fidei N (5th) F  <br>:faith, loyalty; honesty; credit; confidence, trust, belief; good faith;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">sanciātur,<span>sancio sancire, sanxi, sanctus V (4th) TRANS  <br>:confirm, ratify; sanction; fulfill (prophesy); enact (law); ordain; dedicate;<br>(３人称 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">petunt,<span></span></a>
+<a class="note1">collātis<span>confero conferre, contuli, collatus V TRANS  <br>:bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">mīlitāribus<span><br><br></span></a>
+<a class="note1">signīs,<span>signum signi N (2nd) N  <br>:battle standard; indication; seal; sign, proof; signal; image, statue;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note1">mōre<span>mos moris N (3rd) M  <br>:<strong>custom</strong>, habit; mood, manner, fashion; character (pl.), behavior, morals;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note0">gravissima<span></span></a>
+<a class="note1">caerimōnia<span>caerimonia caerimoniae N (1st) F  <br>:ceremony; sacred rite/ritual/usage; holy dread, reverence, worship; sanctity;<br>(c 単数 主格)<br></span></a>
+<a class="note1">continētur,<span>contineo continere, continui, contentus V (2nd) TRANS  <br>:secure, maintain, sustain; fasten/hold in position; retain, keep safe, preserve;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">factō<span><br><br></span></a>
+<a class="note0">initiō<span><br><br></span></a>
+<a class="note0">bellī<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">reliquīs<span>reliquus reliqua, reliquum ADJ  <br>:rest of/<strong>remaining</strong>/available/left; surviving; future/further; yet to be/owed;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">dēserantur.<span>desero deserere, deserui, desertus V (3rd) TRANS  <br>:leave/depart/quit/desert; forsake/abandon/give up; withdraw support, let down;<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>・his rebus agitatis : 独立奪格「これらの事が行われている時に」</p>
+<p>・Canutes profitentur se recusare nullam periculum : Canutesが宣言した、如何なる危険も厭わないと。</p>
+<p>・communis salutis causa : 公共の安全のために</p>
+<p>・pollicentur (se) facturos (esse) principes ex omnibus bellum : 「彼らは約束した、すべての戦いに於いて彼らが第一にそれを行うであろう事を」</p>
+<p>・quoniam in praesentia, possint cavere obsidibus inter se ne res efferatur. : ne res efferaturはneに導かれる目的の節。接続法。quoaniam で導かれる原因の節は、原因が他人の物の場合は接続法。「現時点で、事が漏れないようにするために、人質によって互いの安全を図ることは出来ないので」</p>
+<p>・petunt ut sanciatur jurejurando ac fide: 誓約と信義で~が確認されること。sanciaturは３単で、今までのような「彼ら」という意味ではなさそうである。ne deserantur 「投げ出さない事」がsanciaturの主語。</p>
+<p>mora eorum : 態度の奪格で～に則って（NewLatin220.3)</p>
+<p>collatis militibus signis : 独立奪格「共に軍の徴を運び」</p>
+<p>facto initio belli : 独立奪格「一度戦いを始めたら」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらの事柄が行われている時、Canutesが宣言した。彼らは公共の安全のためには如何なる危険を冒すことを厭わないであろうと。またすべての戦いにおいて彼らがそれを第一に始めるであろうことを約束した。そして、現時点では人質によって互いの安全を図ることが出来ないので、誓約と信義で次のことを確認したと望んだ。即ち、軍の徴を共に運び、それを行うことが彼らの慣習に則っとれば最も厳しい儀式であるのだが、一度戦いを始めたら、その残りを決して諦めないことをである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Tum<span></span></a>
+<a class="note1">collaudātis<span>collaudo collaudare, collaudavi, collaudatus V (1st) TRANS  <br>:praise/extol highly; commend; eulogize;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">Carnutibus,<span></span></a>
+<a class="note0">datō<span><br><br><br></span></a>
+<a class="note0">iūreiūrandō<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">quī<span><br><br><br></span></a>
+<a class="note1">aderant,<span>adsum adesse, adfui, adfuturus V  <br>:be near, be present, be in attendance, arrive, appear; aid (w/DAT);<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note1">tempore<span>tempus temporis N (3rd) N  <br>:time, condition, right time; season, occasion; necessity;<br>(n 単数 奪格)<br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note1">cōnstitūtō<span>constituo constituere, constitui, constitutus V (3rd)  <br>:set up/in position, erect; place/dispose/locate; (call a) halt; plant (trees);<br>(完了 分詞 受動態 n 単数 奪格)<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">conciliō<span><br><br></span></a>
+<a class="note1">discēditur.<span>discedo discedere, discessi, discessus V (3rd)  <br>:go/march off, depart, withdraw; scatter, dissipate; abandon; lay down (arms);<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>独立奪格だらけ。</p>
+<p>collaudatis Carnutibus : Carnutesは賞賛され、</p>
+<p>dato jurejurando : 誓約が与えられ、</p>
+<p>tempore eius rei constituto : それらの条件が決められ、<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>そして、Carnutesは賞賛され、近くに居るものすべてから誓約が与えられ、これらの事柄の条件が決められ、（皆）会議から出立した。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

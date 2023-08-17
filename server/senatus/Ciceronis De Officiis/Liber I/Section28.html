@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='remote latinreader' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function (event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+            if($("#saveoption").length){
+                $("#saveoption").hide();
+                $("#downloadsave").hide();
+            }
+            insertButtons2();
+            $("#outer").css("width","96%");
+        }
+        function insertButtons2(){
+            if(!$(".lbtn1").length){
+                $(".spacer").each(function(index, elem) {
+                    var target = $(elem);
+                    var tx1 = target.html();
+                    var color = "style='color:#5f9ea0;'";
+                    if (target.next().next().attr("class") != "spnote")
+                        color = "style='color:black;'";
+                    target.html(tx1 + "<button class='lbtn2'>Translation</button><button class='lbtn1'>Notes</button>");
+                });
+            }
+            $(".lbtn1").on("click", function() {
+                var target = $(this).parent().next().next();
+                if (target.attr("class") != "spnote") {
+                    target = target.next();
+                    if (target.attr("class") != "spnote") // 編集中の場合
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+            $(".lbtn2").on("click", function() {
+                var target = $(this).parent().next().next().next();
+                if (target.attr("class") != "translation") {
+                    target = target.next();
+                    if (target.attr("class") != "translation")
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+        }
+
+        function btoggle(obj, btn) {
+            obj.toggle(function() {
+                if ($(this).is(":visible"))
+                    btn.css("color", "black");
+                else
+                    btn.css("color", "#5f9ea0");
+            });
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 2.8rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+
+        /* 追加のボタン*/
+        .lbtn1,
+        .lbtn2,
+        .lbtn3,
+        .lbtn4 {
+            float: right;
+            margin-top: 2px;
+            margin-right: 6px;
+            height: 16px;
+            font-size: 10px;
+            padding: 1px;
+            font-weight: bold;
+            /* vertical-align: bottom; */
+            border: none;
+        }
+
+
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 2.8rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+
+        }
+
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+
+        a.note1:hover span {
+            display: block;
+        }
+
+        .latin span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 3.5rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        .latin span::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.8rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.5rem;
+            left: 2.0rem;
+        }
+    </style>
+</head>
+
+
+<body id="bodyportion">
+        <div id="outer">
+    
+		<a name="begin"></a>
+<div id="header">
+<h1> Liber I: Section 28 </h1>
+
+<div class="boxright">
+<input id="saveoption" class="rbtn1" type="button" value="保存する" style="font-size: 12px; font-family: meiryo; ">
+<input id="downloadsave" class="rbtn1" type="button" value="ダウンロード" style="font-size: 12px; font-family: meiryo; display: none;">
+</div></div>
+
+
+<div class="spacer">Line0<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+</a><a class="note0">[28]<span></span></a>
+<a class="note1">Praetermittendae<span><b>praetermitto</b>,praetermittere, praetermisi, praetermissus V (3rd)  X<br><b>:let pass; pass over; omit; overlook;</b><br>【動形容詞 (F 単数 属格)&nbsp; 】</span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">defensionis<span>defensio defensionis N (3rd) F  <br>:defense/protection; act of defending; argument/justification in defense, excuse;<br>(X 単数 属格)<br></span></a>
+<a class="note1">deserendique<span><b>dēsĕro</b>,deserere, deserui, desertus V (3rd) TRANS  <br><b>:|cease to be concerned with; fail/fall short; (PASS w/ABL) be without/deprived;</b><br>【動形容詞&nbsp; (N 単数 属格)&nbsp; 】</span></a>
+<a class="note1">officii<span><b>offĭcĭum</b>,offici(i) N (2nd) N <br><b>:duty, obligation; kindness; service, office;</b><br>(単数 属格)</span></a>
+<a class="note0">plures<span></span></a>
+<a class="note1">solent<span>soleo solere, solitus sum V (2nd) SEMIDEP  <br>:be in the habit of; become accustomed to;<strong>tend to</strong><br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">causae.<span>causa causae N (1st) F  <br>:cause/reason/motive; origin, source, derivation; responsibility/blame; symptom;<br>(C 複数 主格)<br></span></a>
+</p>
+</div>
+
+    <div class="spnote" contenteditable="false" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>causae solent esse plures. 「原因は沢山である傾向がある」solent = tend to</p>
+<p>praetermittendae defensionis : praetermittendae はcausaeを修飾。「防衛を無視する（原因）」</p><p>deserendi officii : deserendiもcausaを修飾。両方とも多分「動形容詞構文」になっている。「義務を無視する（原因）」</p><p>praetermittendi defensionis: defensionisは目的の属格でpraetermittendiは動名詞、属格で、causaを修飾 ー＞praetermittendae defensionis (動形容詞属格＋目的語属格）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>不正義に対する防御の欠如、また義務に対する無関心、これらの原因にはいろいろなものがあり得る。<br></p>
+</div>
+</div>
+<div class="spacer">Line1<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">inimicitias<span>inimicitia inimicitiae N (1st) F  <br>:unfriendliness, enmity, hostility;<br>(C 複数 対格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">laborem<span>labor laboris N (3rd) M  <br>:|preoccupation/concern; struggle/ suffering/ distress/ hardship/ stress; wear+tear;<br>(C 単数 対格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">sumptus<span>sumptus sumptus N (4th) M  <br>:cost, charge, expense;<br>&nbsp;(C 複数 対格)<br></span></a>
+<a class="note1">suscipere<span>suscipio suscipere, suscepi, susceptus V (3rd)  <br>:undertake; support; accept, receive, take up;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">nolunt<span>nolo nolle, nolui, - V  <br>:be unwilling; wish not to; refuse to;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">neglegentia,<span>neglegentia neglegentiae N (1st) F  <br>:heedlessness, neglect; <strong>carelessness</strong>, negligence; coldness; disrespect;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note1">pigritia,<span>pigritia pigritiae N (1st) F  <br>:<strong>sloth</strong>, sluggishness, laziness, indolence;<br>(C 単数 奪格)<br></span></a>
+<a class="note1">inertia<span>inertia inertiae N (1st) F  <br>:ignorance; <strong>inactivity</strong>; laziness, idleness, sloth;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">suis<span></span></a>
+<a class="note1">studiis<span>studium studi(i) N (2nd) N  <br>:<strong>eagerness</strong>, enthusiasm, zeal, spirit; devotion, pursuit, study;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note1">quibusdam<span>quidam quaedam, quoddam   <br>:(w/-dam) certain; as INDEF a certain thing; somebody, one, <strong>something</strong>;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note1">occupationibusve<span>occupatio occupationis N (3rd) F  <br>:occupation, employment;<br>(X 複数 奪格)<br><br><br>-veはあるいは、または<br><br></span></a>
+<a class="note1">sic<span>sic ADV <br>:thus, so; as follows; in another way; in such a way;<br><br></span></a>
+<a class="note1">impediuntur,<span>impedio impedire, impedivi, impeditus V (4th)  <br>:hinder, impede, hamper, obstruct, prevent from (w/ne, quin, or quominus);<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">eos,<span></span></a>
+<a class="note0">quos<span></span></a>
+<a class="note1">tutari<span>tuto tutare, tutavi, tutatus V (1st)  <br>:guard, protect, defend; guard against, avert;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">debeant,<span>debeo debere, debui, debitus V (2nd)  <br>:owe; be indebted/responsible for/obliged/bound/destined; ought, must,<strong> should</strong>;<br>(3 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">desertos<span>desero deserere, deserui, desertus V (3rd) TRANS  <br>:leave/depart/quit/desert; forsake/abandon/give up; withdraw support, let down;<br>(完了 分詞 受動態 M 複数 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">patiantur.<span>patior pati, passus sum V (3rd) DEP  <br>:suffer; allow; undergo, endure; permit;<br>(3 複数 現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>全体に主語は一般的なhomines</p>
+<p>nolunt ~ , impediuntur, ut patiantur. という構造。～を嫌がり、～に邪魔され、～被る。</p>
+<p>patiuntur eos esse desertos. eos esse desertosは不定詞句。それが捨てられることに甘んじる。</p>
+<p>quos debeant tutari&nbsp; : 関係代名詞でeosを修飾<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それらはつまり、人は敵対すること苦しむこと、浪費することを嫌がり、さらには無関心、怠惰、不活発などにより、または自身の熱意、あるいは職業的ななにかによって妨害され、結果として、守るべきものが捨てられることに甘んじるのである。<br></p>
+</div>
+</div>
+<div class="spacer">Line2<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Itaque<span></span></a>
+<a class="note1">videndum<span>video videre, vidi, visus V (2nd)  <br>:see, look at; consider; (PASS) seem, seem good, appear, be seen;<br>&nbsp;(未来 分詞 受動態 N 単数 主格), <br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">ne<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">satis<span></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note0">id,<span></span></a>
+<a class="note1">quod<span>qui quae, quod PRON  <br>:which?, what?; what kind of?;<br>(N 単数 主格)<br></span></a>
+<a class="note1">apud<span>apud PREP ACC <br>:at, by, near, among; at the house of; before, in the presence/writings/view of;<br><br></span></a>
+<a class="note0">Platonem<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">philosophos<span>philosophus philosophi N (2nd) M  <br>:philosopher;<br>(C 複数 対格)<br></span></a>
+<a class="note0">dictum,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">veri<span></span></a>
+<a class="note0">investigatione<span></span></a>
+<a class="note1">versentur<span>versor versari, versatus sum V (1st) DEP  <br>:move about; live, dwell; be;<br>(3 複数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">quodque<span></span></a>
+<a class="note0">ea,<span></span></a>
+<a class="note1">quae<span>qui quae, quod PRON  <br>:which?, what?; what kind of?;<br>&nbsp;(N 複数 対格), <br></span></a>
+<a class="note1">plerique<span>plerus plera, plerum ADJ  <br>:(w/que) <strong>the majority</strong>, most, very great part; about all; very many, a good many;<br>&nbsp;(M 複数 主格)<br></span></a>
+<a class="note1">vehementer<span>vehementer vehementius, vehementissime ADV <br>:vehemently, vigorously; exceedingly, very much;<br><br></span></a>
+<a class="note1">expetant,<span>expeto expetere, expeti, expetitus V (3rd)  <br>:ask for; desire; aspire to; demand; happen; fall on (person);<br>(3 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">se<span></span></a>
+<a class="note1">digladiari<span>digladior digladiari, digladiatus sum V (1st) DEP  <br>:fight (gladiatorial); fight/struggle fiercely; contend; flourish sword (Cas);<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">soleant,<span>soleo solere, solitus sum V (2nd) SEMIDEP  <br>:be in the habit of; become accustomed to;<br>(3 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">contemnant<span>contemno contemnere, contempsi, contemptus V (3rd) TRANS  <br>:think little of; look down on, take poor view of; pay no heed/disregard/slight;<br>(3 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">pro<span></span></a>
+<a class="note1">nihilo<span>nihilum nihili N (2nd) N  <br>:nothing; nothingness, which does not exist; something valueless; no respect;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">putent,<span></span></a>
+<a class="note1">propterea<span>propterea ADV <br>:therefore, for this reason;<br><br></span></a>
+<a class="note1">iustos<span>justus justa -um, justior -or -us, justissimus -a -um ADJ  <br>:just, fair, equitable; right, lawful, justified; regular, proper;<br>(M 複数 対格)<br></span></a>
+<a class="note0">esse.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false"><p><strong>videndum est</strong> : 「見られるべきである。」「見ることが必要だ」「考えるべきだ」</p>
+<p>videndum est ne id sit non satis. : videoはutまたはneで受ける。neは～ではないかと心配する、というニュアンス。「それは十分では無いかもしれないと考えるべきである」</p>
+<p><strong>id, quod est dictum apud Platonem in philosophos</strong>. : idを説明する関係詞節。inはここではaboutの意。「プラトンによって、哲学者について語られた事」その内容は続くquod節によって述べられる。（内容的にはde Repub.の中で述べている、哲学者のみが正しく国を治められる、なぜなら彼らは世俗の野心、欲望から自由であるからである」と言うこと）</p>
+<p><strong>quod versentur in veri investigatione</strong>. : veriは目的語の属格。「（彼らは）真実の探求に生きており」</p>
+<p>(que) <strong>quod contemnant et putent pro nihilo ea</strong> ~ : eaは続く関係詞節で説明されるが、それらを「見下し何でもないように考える」</p>
+<p>propterea iustos esse. 「高潔であるがゆえに」</p>
+<p><strong>ea, quae plerique expetant vehementer</strong>, : 「大多数のものがそれを激しく渇望する」ようなもの。</p>
+<p><strong>(ea), de quibus inter se diglandiari soleant</strong>: 「それに関し、彼らの間で剣で争う傾向がある」（逐語訳）<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>それ故、プラトンが哲学者について言ったことは十分で無いかもしれないと考えるべきである。つまり、（哲学者は）真実の探求の中に生きており、高潔であるがゆえに、多くの人は激しく求め、剣を抜いて争うような事柄を見下し、何でもないように考える、と言うことである。<br></p>
+</div>
+</div>
+<div class="spacer">Line3<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note0">alterum<span></span></a>
+<a class="note1">[iustitiae<span>justitia justitiae N (1st) F  <br>:justice; equality; righteousness (Plater);<br>(C 単数 属格), <br></span></a>
+<a class="note0">genus]<span></span></a>
+<a class="note1">assequuntur,<span>assequor assequi, assecutus sum V (3rd) DEP  <br>:follow on, pursue, go after; overtake; <strong>gain</strong>, <strong>achieve</strong>; equal, rival; understand;<br>(3 複数 現在 受動態 直接法 )<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">inferenda<span><b>infĕro</b>,inferre, intuli, illatus V TRANS  <br><b>:|inflict/cause&nbsp;</b><b>/inflict/impose</b><b>/inspire (w/DAT);</b><br>【動形容詞 (F 単数 奪格)&nbsp; 】</span></a>
+<a class="note0">ne<span></span></a>
+<a class="note0">cui<span></span></a>
+<a class="note1">noceant<span>noceo nocere, nocui, nocitus V (2nd)  <br>:harm, hurt; injure (with DAT);<br>(3 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">iniuria,<span>injurius injuria, injurium ADJ  <br>:unjust, harsh;<br>&nbsp;(F 単数 奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">alterum<span></span></a>
+<a class="note1">incidunt;<span>incido incidere, incidi, incasus V (3rd)  <br>:happen; fall into, fall in with, meet; fall upon, assail;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">discendi<span><b>disco</b>,discere, didici, discitus V (3rd) TRANS  <br><b>:learn; hear, get to know, become acquainted with; acquire knowledge/skill of/in;</b><br>【動名詞 (属格)】</span></a>
+<a class="note0">enim<span></span></a>
+<a class="note1">studio<span>studium studi(i) N (2nd) N  <br>:eagerness, enthusiasm, zeal, spirit; devotion, pursuit, study;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">impediti,<span>impedio impedire, impedivi, impeditus V (4th)  <br>:hinder, impede, hamper, obstruct, prevent from (w/ne, quin, or quominus);<br>(完了 分詞 受動態 M 複数 主格)<br></span></a>
+<a class="note0">quos<span></span></a>
+<a class="note1">tueri<span>tueor tueri, tuitus sum V (2nd) DEP  <br>:see, look at; protect, watch; uphold;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">debent,<span></span></a>
+<a class="note1">deserunt.<span>desero deserere, deserui, desertus V (3rd) TRANS  <br>:leave/depart/quit/desert; forsake/abandon/give up; withdraw support, let down;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+</p>
+</div>
+
+    
+    <div class="spnote" style="background-color: rgb(255, 255, 248);" contenteditable="false">
+<div class="innerdiv" spellcheck="false"><p>辻褄の合いにくい文章。Ungerはこの文全体を削除。その他にも色々な説のある、「いわく」付きの文</p>
+<p>assequuntur alterum ut ne noceant cui inferenda iniuria. ut以下は結果の節でut non の変形か？cuiは不定代名詞quisの与格。（最も弱い不定代名詞、NewLatin252) 「<s>持ち込んだ不正義で誰かを苦しめないよう一つを得る</s>」ある種の正しいものを得て、</p><p>それにより生じた不正義で誰かを害することがないように</p>
+<p>incidunt in alterum. : 「他方で失敗する」</p>
+<p>i<s>mpediti deserunt (ea) quos debent tueri. 「阻まれた（者）は保持すべきものから離れる」（逐語訳&nbsp;</s></p>
+<p>impeditiは分詞構文で、「学ぶための熱意に囚われれて」</p><p>discendi studio : discendi causaと同様。「学ぶための熱意」<br></p>
+</div>
+</div>
+
+    
+    <div class="translation" style="background-color: rgb(255, 255, 248);" contenteditable="false">
+<div class="innerdiv" spellcheck="false"><p>一方で（ある種の正義）を得て、それにより生じた<s>持ち込んだ</s>不正義で誰かを害しないようにしようとして、他方で失敗する。つまり学ぶための熱意により<s>阻まれたものは</s>&nbsp;囚われて本当に守るべきものを手放してしまう。（意味が通らない？）（熱心過ぎて本質を誤り大事なものをなくしてしまう？）（哲学者が如何に真実の追求に熱心であろうとそれは正しいとは限らない、と言いたい？）<br></p>
+</div>
+</div>
+<div class="spacer">Line4<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Itaque<span>itaque ADV <br>:and so, accordingly; thus, therefore, consequently;<br><br></span></a>
+<a class="note0">eos<span></span></a>
+<a class="note0">ne<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note0">publicam<span></span></a>
+<a class="note1">quidem<span>quidem ADV <br>:indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;<br><br></span></a>
+<a class="note1">accessuros<span>accedo accedere, accessi, accessus V (3rd)  <br>:come near, approach; agree with; be added to (w/ad or in + ACC); constitute;<br>(未来 分詞 能動態 M 複数 対格)<br></span></a>
+<a class="note1">putat<span>puto putare, putavi, putatus V (1st) TRANS  <br>:think, believe, suppose, hold; reckon, estimate, value; clear up, settle;<br>(3 単数 現在 能動態 直接法 )<br>主語はPlato<br></span></a>
+<a class="note0">nisi<span></span></a>
+<a class="note1">coactos.<span>coactus coacta, coactum ADJ  <br>:coercive;<br>(M 複数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false"><p><font color="#ff0000">putantはputatの間違い</font>。（ほとんど他のTextはputatとし、主語はPlato)</p>
+<p><font color="#000000">putat eos ne accessuros (esse) ad rem publicam. eos, accessuros(esse)は二重対格で「彼らが接近するであろう事」</font></p>
+<p><br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>このように（プラトンは）人は強制されない限り公共に奉仕しないとは考えた。<br></p>
+</div>
+</div>
+<div class="spacer">Line5<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Aequius<span>aequus aequa -um, aequior -or -us, aequissimus -a -um ADJ  比較級<br>:level, even, equal, like; <strong>just</strong>, kind, impartial, <strong>fair</strong>; patient, contented;<br>(N 単数 主格)<br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note1">voluntate<span>voluntas voluntatis N (3rd) F  <br>:will, desire; purpose; good will; wish, favor, consent;<br>(C 単数 奪格)<br></span></a>
+<a class="note0">fieri;<span></span></a>
+<a class="note0">nam<span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0">ipsum<span></span></a>
+<a class="note1">ita<span>ita ADV <br>:thus, so; therefore;<br><br></span></a>
+<a class="note1">iustum<span>justus justa -um, justior -or -us, justissimus -a -um ADJ  <br>:just, fair, equitable; right, lawful, justified; regular, proper;<br>(N 単数 主格), <br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">recte<span>recte ADV <br>:vertically; rightly, correctly, properly, well;<br><br></span></a>
+<a class="note0">fit,<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">voluntarium.<span>voluntarius voluntaria, voluntarium ADJ  <br>:willing, voluntary;<br>(N 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false"><p><strong>id fieri voluntate</strong> : 不定詞句で「それが自発的に成される事」eratの主語。</p>
+<p>erat aequius : = is better.</p>
+<p>ita ~ si は　si以下の場合に限って　の意味。「もしそれが自発的な場合にのみ正しい」</p>
+<p>hoc ipsum est ita iustum, quod recte fit : quodは関係代名詞。それが正しくなされた、hocを指す。「正しくなされた行為はそれが自発的に行われた場合にのみ正しい」<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>しかしそれが自発的に成されることの方が良い。つまり正しくなされたことはそれが自発的な場合にのみ正しいのである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+    </body>
+    <html>
+    

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 2 JUPITER SAVES HIS SON.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.5rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Iuppiter<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note0">vīdit,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">fīlium<span></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note0">servāre<span></span></a>
+<a class="note1">cōnstituit.<span>constĭtŭo constituere, constitui, constitutus V (3rd)  X<br>:|decide/resolve; decree/ordain; appoint, post/station (troops); settle (colony);<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note1">Tranquillum<span>tranquillus tranquilla, tranquillum ADJ  <br>:quiet, calm;<br>&nbsp;(N 単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">fēcit<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">mare,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">arcam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">īnsulam<span>insŭla insulae N (1st) F <br>:island; apartment house;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Serīphum<span></span></a>
+<a class="note1">perdūxit.<span>perdūco perducere, perduxi, perductus V (3rd)  X<br>:lead, guide; prolong; induce, conduct, bring through;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Huius<span></span></a>
+<a class="note0">īnsulae<span></span></a>
+<a class="note0">Polydectēs<span></span></a>
+<a class="note1">tum<span>tum ADV <br>&gt;:then, next; besides; <strong>at that time;</strong><br><br></span></a>
+<a class="note1">rēx<span>rex regis N (3rd) M <br>:king;<br>(単数 主格)<br></span></a>
+<a class="note0">erat.<span></span></a>
+<a class="note1">Postquam<span>postquam CONJ <br>&gt;:after;<br><br></span></a>
+<a class="note0">arca<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">lītus<span>lītus litoris N (3rd) N <br>:shore, seashore, coast, strand; river bank; beach, landing place;<br>&nbsp;(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">appulsa<span>appello appellere, appuli, appulsus V (3rd)  X<br>:drive to, move up, bring along, force towards; put ashore at, land (ship);<br>【完了分詞 ( 受動態 ) (F 単数 主格) 】<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Danaē<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">harēnā<span>hărēna harenae N (1st) F <br>:sand, grains of sand; sandy land or desert; seashore; arena, place of contest;<br>(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">quiētem<span>quĭes quietis N (3rd) F <br>:quiet, calm, rest, peace; sleep;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">capiēbat.<span>căpĭo capere, cepi, captus V (3rd) TRANS  <br>:take hold, seize; grasp; take bribe; arrest/capture; put on; occupy; captivate;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Post<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">breve<span>brĕvis breve, brevior -or -us, brevissimus -a -um ADJ  <br>:short, little, small, stunted; brief, concise, quick; narrow, shallow; humble;<br>&nbsp;(N 単数 対格)<br></span></a>
+<a class="note0">tempus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">piscātōre<span>piscātor piscatoris N (3rd) M <br>:fisherman;<br>(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">quōdam<span>quīdam quaedam, quoddam  PRON ADECT<br>:(w/-dam) certain;  a certain thing; somebody, one, something;<br>(M 単数 奪格)&nbsp; <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">reperta<span>rĕpĕrĭo reperire, repperi, repertus V (4th) TRANS  <br>:discover, learn; light on; find/obtain/get; find out/to be, get to know; invent;<br>【完了分詞 ( 受動態 ) (F 単数 主格) (N 複数 主格) 】<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">domum<span>dŏmus domi N (2nd) F <br>:house, building; home, household; (N 4 1, older N 2 1);<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">rēgis<span></span></a>
+<a class="note0">Polydectis<span></span></a>
+<a class="note1">adducta<span>addūco adducere, adduxi, adductus V (3rd) TRANS  <br>:lead up/to/away; bring up/to; persuade, induce; lead, bring; contract, tighten;<br>【完了分詞 ( 受動態 ) (F 単数 主格)&nbsp; 】<br></span></a>
+<a class="note0">est.<span></span></a>
+<a class="note0">Ille<span></span></a>
+<a class="note0">mātrem<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">puerum<span></span></a>
+<a class="note1">benignē<span>benigne benignius, benignissime ADV <br>&gt;:kindly, benevolently, obligingly; courteously, cheerfully; freely, generously;<br><br></span></a>
+<a class="note1">excēpit,<span>excĭpĭo excipere, excepi, exceptus V (3rd)  X<br>:take out; remove; follow; receive; ward off, relieve;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">eīs<span>is ea, id PRON  <br>:he/she/it/they (by GENDER/NUMBER); DEMONST: that, he/she/it, they/them;<br>(M 複数 与格) (F 複数 与格) (N 複数 与格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">sēdem<span>sēdes sedis N (3rd) F <br>:seat; home, residence; settlement, habitation; chair;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">tūtam<span>tūtus tuta -um, tutior -or -us, tutissimus -a -um ADJ  <br>:safe, prudent; secure; protected;<br>(F 単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">fīnibus<span>fīnis finis N (3rd) C <br>:boundary, end, limit, goal; (pl.) country, territory, land;<br>&nbsp;(複数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">suīs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">dedit.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Danaë<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">dōnum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">libenter<span>libenter libentius, libentissime ADV <br>&gt;:willingly; gladly, with pleasure;<br><br></span></a>
+<a class="note0">accēpit,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">prō<span>pro PREP ABL <br>&gt;:on behalf of; before; in front/instead of; for; about; according to; as, like;<br><br></span></a>
+<a class="note0">tantō<span></span></a>
+<a class="note1">beneficiō<span>bĕnĕfĭcĭum benefici(i) N (2nd) N <br>:kindness, favor, benefit, service, help; privilege, right;<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note0">rēgī<span></span></a>
+<a class="note1">grātiās<span>grātĭa gratiae N (1st) F <br>:|favor/goodwill/kindness/friendship; influence; gratitude; thanks (pl.); Graces;<br>(複数 対格) <br></span></a>
+<a class="note1">ēgit.<span>ăgo agere, egi, actus V (3rd)  X<br>:drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); deliver (speech);<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" style="font-size: 2.4rem;" spellcheck="false">
+<p>fecit mare tranquillum : tranquillumは形容詞、叙述用法（B 233)</p>
+<p>insulam Seriphum : Seriphus島 Island Serifos</p>
+<p>Polydectes : Serifos島の王</p>
+<p>eis sedem dedit. 彼らに住まいを与えた、eisは母と子を指<font color="#ff0000">すがこの場合性は何？</font>近い方だと子でMか？<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" style="font-size: 2.4rem;" spellcheck="false"><p>しかしながら、Iuppiterはそれらをすべて見ていて、自身の息子を救おうと決めたのでした。まずは海を静かにさせておいてから方舟をSeriphus島の方に引いて行きました。その島は当時はPolydectesが王でした。そして方舟は岸辺の方に寄せられました。Danaeは岸で安心をしっかり得られました。そしてすぐにとある漁師により発見され、王の館に案内されました。かの王は母と子を親切に受け入れ、自分の国の中で安全な住まいを与えました。Danaeはその住まいをありがたく受け取り、それらの好意に対し王に大変感謝を致しました。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

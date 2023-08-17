@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 18</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[18]<span></span></a>
+
+<a class="note0">Diēbus<span><br><br></span></a>
+<a class="note1">X,<span>decem<br><br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">māteria<span><br><br></span></a>
+<a class="note1">coepta<span>coepi <br>:begin, commence, initiate<br>欠如動詞<br>完了分詞　ｆ受動　端　主格<br><br><br></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">comportāri,<span>comporto comportare, comportavi, comportatus V (1st) TRANS  <br>:carry, transport, bring in, convey (to market); bring together; amass, collect;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note1">opere<span>opus 単　奪格<br><br></span></a>
+<a class="note1">effectō<span>efficio efficere, effeci, effectus V (3rd)  <br>:bring about; effect, execute, cause; accomplish; make, produce; prove;<br>(完了 分詞 受動態 n 単数 奪格)<br></span></a>
+<a class="note0">exercitus<span></span></a>
+<a class="note1">trādūcitur.<span>歴史的現在<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>diebus decem : within which [どのくらいの時間の奪格](NewLatin231)</p>
+<p>quibusは関係代名詞でdiebus X「木材が集まり始めて１０日たち」</p>
+<p><strong>coepta erat comportari</strong> : coepiが受動不定詞を支配するときはcoeptus estが使われる。（<strong>NewLatin133.1</strong>)</p>
+<p>omni opere effecto : 独立奪格</p>
+<p>traducitur : traduco は他動詞で、連れて行く、の意。従ってexercitusが主語の場合は受動態で「連れて行かれた、渡された」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>木材が集まり始めて１０日、全ての作業が終了し軍団が渡った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Caesar<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">utramque<span>uter utra utrum 形容詞　f単　対格　;= (w/que) each, either, both<br><br></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note0">pontis<span></span></a>
+<a class="note1">fīrmō<span>firmus firma -um, firmior -or -us, firmissimus -a -um ADJ  <br>:firm/steady; substantial/solid/secure/safe; strong/robust/sturdy/stout/durable;<br>(n 単数 奪格)<br></span></a>
+<a class="note1">praesidiō<span>praesidium praesidi(i) N (2nd) N  <br>:protection; help; guard; garrison, detachment;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">relictō<span>relinquo relinquere, reliqui, relictus V (3rd)  <br>:leave behind, abandon; (pass.) be left, remain; bequeath;<br>(完了 分詞 受動態 n 単数 奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Sugambrōrum<span><br><br></span></a>
+<a class="note1">contendit.<span>contendo ３単　現在　完了　;= rush to<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>ad utramque partem pontis : 橋の両側に　adという前置詞は[to]というニュアンスが強い印象であるが、前章でも盛んに[at],[on]というニュアンスで用いられている。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>カエサルは橋の両側に強力な守備兵を残し、Sugambriの領土に急行した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Interim<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">complūribus<span><br><br></span></a>
+<a class="note0">cīvitātibus<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">lēgātī<span><br><br></span></a>
+<a class="note0">veniunt;<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">pācem<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">amīcitiam<span><br><br></span></a>
+<a class="note1">petentibus<span>peto 現在分詞　能動　複　与格<br><br><br></span></a>
+<a class="note1">līberāliter<span>liberaliter 副詞　;= graciously,couteously<br><br><br></span></a>
+<a class="note0">respondet<span></span></a>
+<a class="note0">obsidēsque<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">addūcī<span>adduco adducere, adduxi, adductus V (3rd) TRANS  <br>:lead up/to/away; bring up/to; persuade, induce; lead, bring; contract, tighten;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">iubet.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>interim legati veniunt a compluribus civitatibus ad eum. その間にたくさんの国から彼の元に使者が訪れた。</p>
+<p>respondet quibus petentibus pacem :　quibus petentibusは間接目的の与格。「平和を請い願う彼らにたいし」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>その間に多くの国から使者が彼の元を訪れた。平和と友好を講う彼らに対し丁寧に応対し、また人質を差し出すよう命じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">At<span></span></a>
+<a class="note0">Sugambrī,<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">pōns<span><br><br></span></a>
+<a class="note1">īnstituī<span>instituo instituere, institui, institutus V (3rd)  <br>:set up, establish, found, make, institute; build; prepare; decide;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">coeptus<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">fugā<span>fuga fugae N (1st) F  <br>:flight, fleeing, escape; avoidance; exile;<br>(c 単数 主格)<br></span></a>
+<a class="note1">comparātā,<span>comparo comparare, comparavi, comparatus V (1st) TRANS  <br>:prepare; provide; compose; collect, get together/hold of; raise (force); unite;<br>(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note1">hortantibus<span>hortor hortari hortatus sum DEP 現在分詞　複　奪格　;= encourage, cheer, incite, exhort<br><br></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Tencterīs<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">Usipetibus<span></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">habēbant,<span><br><br></span></a>
+<a class="note0">fīnibus<span><br><br></span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note1">excesserant<span>excedo excedere, excessi, excessus V (3rd)  <br>:pass, withdraw, exceed; go away/out/beyond; die;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">suaque<span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note1">exportāverant<span>exporto exportare, exportavi, exportatus V (1st)  <br>:export, carry out;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">sēque<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">sōlitūdinem<span>solitudo solitudinis N (3rd) F  <br>:solitude, loneliness; deprivation; wilderness;<br>(c 単数 対格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">silvās<span>silva silvae N (1st) F  <br>:wood, forest (sylvan);<br>(c 複数  対格)<br></span></a>
+<a class="note1">abdiderant.<span>abdo abdere, abdidi, abditus V (3rd) TRANS  <br>:remove, put away, set aside; depart, go away; hide, keep secret, conceal;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>pos coeptus est institui : １行目と同じで、coeptus estが用いられている。「橋が建築され始めた時」</p>
+<p>hartantibus iis ex Tencteris atque Usipetibus quos habebant apud se : TencterisとUsipetibusから熱心に進められた彼らは、TもUもかって彼らの中に一緒にいたのだけども、</p>
+<p>excesserant suis finibus, que exportaverant omnia sua, que abdiderant se in solitudinem ac silvas.<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>しかしSugambriは橋が建築が始まったときから、逃げる準備をしており、それはかって自身とともに居た、TencteriやUsipeti族から熱心に進められらのだが、自身の領土を放棄し、全てのものを運び出して、荒地や森のなかに逃げ込んだ。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

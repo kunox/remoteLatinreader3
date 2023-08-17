@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 25</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[25]<span></span></a>
+
+<a class="note1">Erat<span>sum esse, fui, futurus V  <br>:be;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Carnutibus<span></span></a>
+<a class="note0">summō<span><br><br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note1">nātus<span>nascor nasci, natus sum V (3rd) DEP&nbsp; :|be born/ begotten/ formed/ destined; rise (stars), dawn; start, originate; arise;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">Tasgetius,<span></span></a>
+<a class="note0">cuius<span></span></a>
+<a class="note1">maiōrēs<span>major majoris N (3rd) M  <br>:<strong>ancestors </strong>(pl.);<br>(c 複数  対格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">suā<span><br><br></span></a>
+<a class="note0">cīvitāte<span><br><br><br></span></a>
+<a class="note0">rēgnum<span><br><br></span></a>
+<a class="note1">obtinuerant.<span>obtineo obtinere, obtinui, obtentus V (2nd)  <br>:get hold of; maintain; obtain; hold fast, occupy; prevail;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>somo loco natus : sumo locoは「出所の奪格」と言われ、natus(分詞）とともに使われる。(NewLatin 215)<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>Tasgetius erat summo loco natus in Carnutibus. : TasgetiusはCarnutibusで高貴な身分の生まれであった。その祖先はその部族の王権を保持していた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Huic<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(X 単数 与格)<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">virtūte<span>virtus virtutis N (3rd) F  <br>:strength/power; courage/bravery;&nbsp; worth/ manliness/ virtue/ character/ excellence;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">benevolentiā,<span>benevolentia benevolentiae N (1st) F  <br>:benevolence, kindness, <strong>goodwill</strong>; favor; endearments;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">bellīs<span><br><br></span></a>
+<a class="note1">singulārī<span>singularis singularis, singulare ADJ  <br>:alone, unique; single, one by one; singular, <strong>remarkable</strong>, <strong>unusual</strong>;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">operā<span>opera operae N (1st) F  <br>:work, care; aid; service, effort/trouble;<br>(c 単数 奪格)<br><br></span></a>
+<a class="note1">fuerat<span>sum esse, fui, futurus V  <br>:be;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note1">ūsus,<span>utor uti, usus sum V (3rd) DEP  <br>:use, make use of, enjoy; enjoy the friendship of (with ABL);<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">maiōrum<span><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">restituerat.<span>restituo restituere, restitui, restitutus V (3rd)  <br>:restore; revive; bring back; make good;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>Caesar restinuerat maiorum locum huic</strong>. : huicは与格でTasgentiusの事。「カエサルは彼に元の地位を取り戻した。」</p>
+<p>pro eius virtute atque benevolentia in se. : <strong>proは~に鑑みての意</strong>。彼の強さと自分に対する忠誠心に鑑みて</p>
+<p><strong>quod (is)&nbsp;fuerat usus singulari&nbsp;eius opera&nbsp;in omnibus bellis</strong>. fuerat usus はSUM + Utor完了分詞で「使った」</p>
+<p>utorは「手段の奪格」の一種で奪格を目的語のように使う単語である。(NewLatin218.1)逐語的には「彼は際立った援助によって（自分を）助ける　→　彼の援助は際立って有用であった。」<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>カエサルは彼の勇猛さと自分に対する忠誠心に鑑み、彼をその先祖の地位に戻してやった。というのは彼の援助は全ての戦いにおいて際立って有益であったからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Tertium<span>Tertius <br>序数 3<br>(m 単数 対格),<br></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note0">hunc<span></span></a>
+<a class="note1">annum<span>annus anni N (2nd) M  <br>:year (astronomical/civil); age, time of life; year's produce; circuit, course;<br>(c 単数 対格)<br></span></a>
+<a class="note0">rēgnantem<span><br><br></span></a>
+<a class="note1">inimīcī,<span>inimicus inimici N (2nd) M  <br>:enemy (personal), foe;<br>(c 複数  主格),<br></span></a>
+<a class="note1">multīs<span>multus multa -um, -, plurimus -a -um ADJ  <br>:much, many, great, many a; large, intense, assiduous; tedious;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">palam<span>palam ADV <br>:openly, publicly; plainly;<br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">cīvitāte<span><br><br><br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">auctōribus,<span>auctor auctoris N (3rd) C  <br>:seller, vendor; originator; historian; <strong>authority</strong>; proposer, supporter; founder;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">interfēcērunt.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>hunc tertium regnantem annum</strong> : 時空の対格で「彼の３年目の治世の時」</p>
+<p>inimici interfecerunt eum. が骨子。「政敵が彼を殺害した」inimicusは個人的な敵、hostisは敵国</p>
+<p>multis palam ex civitate eius auctoribus　が難しい。palamは副詞で「公開で」なのでinterfeceruntに掛けるとして、</p>
+<p>multis auctoribus ex eius civitate か？「自身の国からの多くの権威によって」</p>
+<p>multis ex eius civitate auctoribus 「国の権威による大勢によって」か？<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼の三年目の治世の時、彼の政敵は国での大勢の合意により、彼を公開処刑にした。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Dēfertur<span>defero deferre, detuli, delatus V  <br>:||bring/lodge information (about), <strong>report</strong>; indict, accuse, denounce; defer (to);<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>ea res defertur ad Caesarem.<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>そのことはカエサルに知らされた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ille<span></span></a>
+<a class="note1">veritus,<span>vereor vereri, veritus sum V (2nd) DEP  <br>:revere, respect; fear; dread;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">plūrēs<span><br><br></span></a>
+<a class="note1">pertinēbat,<span>pertineo pertinere, pertinui, pertentus V (2nd)  <br>:reach; extend; relate to; concerns, pertain to;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">nē<span></span></a>
+<a class="note0">cīvitās<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">impulsū<span>impulsus impulsus N (4th) M  <br>:shock, impact; incitement;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">dēficeret,<span>deficio deficere, defeci, defectus V (3rd) INTRANS  <br>:fail/falter; run short/out; grow weak/faint; come to end; <strong>revolt</strong>/<strong>rebel</strong>, defect;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">Lucium<span></span></a>
+<a class="note0">Plancum<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">legiōne<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Belgiō<span><br><br></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Carnutēs<span><br><br></span></a>
+<a class="note0">proficīscī<span><br><br></span></a>
+<a class="note0">iubet<span></span></a>
+<a class="note0">ibique<span></span></a>
+<a class="note0">hiemāre<span><br><br></span></a>
+<a class="note0">quōrumque<span><br><br></span></a>
+<a class="note0">operā<span><br><br></span></a>
+<a class="note1">cognōverat<span>cognosco cognoscere, cognovi, cognitus V (3rd) TRANS  <br>:become acquainted with/aware of; recognize; learn, find to be; inquire/examine;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">Tasgetium<span></span></a>
+<a class="note0">interfectum,<span></span></a>
+<a class="note0">hōs<span><br><br></span></a>
+<a class="note1">comprehēnsōs<span>comprehendo comprehendere, comprehendi, comprehensus V (3rd) TRANS  <br>:catch/seize/grasp firmly; arrest; take hold/root/fire, ignite; conceive (baby);<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">mittere.<span></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>ille veritus : 分詞構文「恐れたかれは」</p>
+<p>quod (ea) pertinebat ad plures. 「何故ならそれは多くの事に向かっているので」が逐語訳。「それは多くの事と関連するので」</p>
+<p>全体の構文は</p>
+<p><strong>Ille jubet proficisci, himare, mittere</strong>. 「出発して、冬営し、送ることを命じた」がその骨子。</p>
+<p>ne civitas deficeert eorum impulsu. 「その影響によって部族が反乱を起こさないかと」（心配したカエサルは）</p>
+<p>proficisci in Carnutes cum legione ex Belgio : 「Belgioから軍団とともにCarnutesに出発する事」</p>
+<p>hiemare ibi 「そこで冬営する事」</p>
+<p>mittere hos comprehensos ad se : 逐語的には「逮捕した彼を自身（カエサル）の元に送ること」</p>
+<p>que <strong>cognoverat quorum opera Tasgentium interfectum</strong>: 逐語的には「誰かの行為によって殺されたTasgentiumを知って」quorumの先行詞はhosで、その人間を逮捕し連行する、という事。</p>
+</div></div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>そのことは多くの事に関連するので、部族が反乱を起こさないかと心配したカエサルは、Lucium Plancumに命じ、すぐさまBelgioから軍団を連れてCaenutesに出立し、そこで冬営するよう、また誰がTasgetiumを殺したかを調べそのものを逮捕し自分の元に送るようにした。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Interim<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">lēgātīs<span><br><br></span></a>
+<a class="note0">quaestōreque,<span><br><br></span></a>
+<a class="note1">quibus<span>与格<br><br></span></a>
+<a class="note0">legiōnēs<span><br><br><br></span></a>
+<a class="note1">trādiderat,<span>trado tradere, tradidi, traditus V (3rd)  <br>:hand over, surrender; deliver; bequeath; relate;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">certior<span></span></a>
+<a class="note0">factus<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hīberna<span><br><br></span></a>
+<a class="note1">perventum<span>pervenio pervenire, perveni, perventus V (4th)  <br>:come to; reach; arrive;<br>(完了 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">locumque<span></span></a>
+<a class="note1">hībernīs<span>与格<br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">mūnītum.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>est factus certior (esse) perventum que locum esse munitum. 彼は到着した事、かつその場所が要塞化されたことの報告を受けた。</p>
+<p>locum hibernis　＝ location for winter<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>そうしている間に、軍団を預けた全ての軍団長、財務官から報告があり、冬営地に到着し、その場所を要塞化したことを知った。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 27</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[27]<span></span></a>
+
+<a class="note0">Sunt<span></span></a>
+<a class="note1">item,<span>item ADV <br>:likewise; besides, also, similarly;<br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">appellantur<span></span></a>
+<a class="note1">alcēs.<span>alces alcis N (3rd) F  <br>:moose, elk;<br>(X 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>sunt (ei) item quae ~.<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>同じようなもので、alecesと呼ばれるものが居る。</p>
+</div></div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hārum<span><br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">cōnsimilis<span>consimilis consimilis, consimile ADJ  <br>:like, very similar; similar in all respects (L+S);<br>(c 単数 主格)<br></span></a>
+<a class="note1">caprīs<span>capra caprae N (1st) F  <br>:she-goat, nanny-goat;<br>&nbsp;(c 複数  与格)<br></span></a>
+<a class="note1">figūra<span>figura figurae N (1st) F  <br>:shape, form, figure, image; beauty; style; figure of speech;<br>(c 単数 主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">varietās<span>varietas varietatis N (3rd) F  <br>:<strong>variety</strong>, difference; mottled appearance;<br>(X 単数 主格)<br><br></span></a>
+<a class="note1">pellium,<span>pellis pellis N (3rd) F  <br>:skin, hide; pelt;<br>(c 複数  属格)<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">magnitūdine<span><br><br></span></a>
+<a class="note1">paulō<span>paulo ADV <br>:by a little; by only a small amount; a little; somewhat;<br><br></span></a>
+<a class="note1">antecēdunt<span>antecedo antecedere, antecessi, antecessus V (3rd)  <br>:precede, go before/ahead/in front of, attain before; excel, surpass, outstrip;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note1">mutilaeque<span>mutilus mutila, mutilum ADJ  <br>:maimed, broken, mutilated; hornless, having lost/ <strong>stunted horns;</strong><br>&nbsp;(f 単数 主格), <br><br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">cornibus<span>cornu cornus N (4th) N  <br>:horn; hoof; beak/tusk/claw; bow; horn/trumpet; end, wing of army; mountain top;<br>(X 複数&nbsp; 奪格)<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">crūra<span>crus cruris N (3rd) N  <br>:leg; shank; shin; main stem of shrub, stock; upright support of a bridge;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note1">nōdīs<span>nodus nodi N (2nd) M  <br>:knot; node;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">articulīsque<span>articulus articuli N (2nd) M  <br>:<strong>joint</strong>; portion of limb/finger between joints; part; (critical) moment; crisis;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">habent<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">quiētis<span>quies quietis N (3rd) F  <br>:quiet, calm, <strong>rest</strong>, peace; sleep;<br>(X 単数 属格)<br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">prōcumbunt<span>procumbo procumbere, procubui, procubitus V (3rd)  <br>:sink down,<strong> lie down</strong>, lean forward;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">neque,<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">quō<span>aliqui aliqua, aliquod PRON  <br>:any; some;<br>(m 単数 奪格), (n 単数 奪格)<br></span></a>
+<a class="note1">adflīctae<span>adfligo adfligere, adflixi, adflictus V (3rd) TRANS  <br>:<strong>overthrow</strong>/throw down; <strong>afflict</strong>, damage, crush, break, ruin; humble, weaken, vex;<br>(完了 分詞 受動態 f 複数  主格),<br></span></a>
+<a class="note1">cāsū<span>casus casus N (4th) M  <br>:fall, overthrow; chance/fortune; <strong>accident</strong>, emergency, calamity, plight; fate;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">concidērunt,<span>concido concidere, concidi, - V (3rd) INTRANS  <br>:fall down/faint/dead/victim/to earth/short, collapse; drop, subside; decline;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note1">ērigere<span>erigo erigere, erexi, erectus V (3rd)  <br>:raise, erect, build; rouse, excite, stimulate;<br>( (  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">sublevāre<span>sublevo sublevare, sublevavi, sublevatus V (1st)  <br>:lift up, raise; support; assist; lighten;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">possunt.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>harum figura et varietas pellium est consimilis capris.</strong> 「その外見やまだらの皮膚などは羊に大変似ている。」</p>
+<p>paulo antecedunt magnitudine, sunt multilae cornibus. : magnitudine, cornibusは「指定の奪格」で～に関しては、の意。「大きさはやや大きく、角に付いて言えば、小さい」</p>
+<p>habent crura sine nodis articulisque. 膝や関節がない脚を持ち</p>
+<p>neque procumbunt quietis causa : 休息のために横たわることはなく</p>
+<p>adfictae は分詞構文「投げ出された（それは）」</p>
+<p>quo casuは両方共奪格。<strong>siのあとのquoはaliquoである。</strong><br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>その外見やまだらの皮膚などは山羊とよく似ているが、形はやや大きく、角は詰められている。膝や関節がない脚をもっており、休むために横たわったりはしない。もし何らかの事故で投げ出されて倒れたときには、立ち上がったり自分を持ち上げることはできなかった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">arborēs<span>arbor arboris N (3rd) F  <br>:tree; tree trunk; mast; oar; ship; gallows; spearshaft; beam; squid?;<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note1">cubīlibus:<span>cubile cubilis N (3rd) N  <br>:bed, couch, seat; marriage bed; lair, den, nest, pen, hive of bees; base, bed;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eās<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">applicant<span>applico applicare, applicavi, applicatus V (1st) TRANS  <br>:connect, place near, bring into contact; land (ship); adapt; apply/devote to;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note1">paulum<span>paulum ADV <br>:little/bit; to a small extent, somewhat; only a small amount/short while;<br><br></span></a>
+<a class="note1">modo<span>modo ADV <br>:only, merely; just now/recently, lately; presently;<br><br></span></a>
+<a class="note1">reclīnātae<span>reclino reclinare, reclinavi, reclinatus V (1st)  <br>:bend back;<br>&nbsp;(完了 分詞 受動態 f 複数  主格)<br></span></a>
+<a class="note1">quiētem<span>quies quietis N (3rd) F  <br>:quiet, calm, rest, peace; sleep;<br>(c 単数 対格)<br></span></a>
+<a class="note0">capiunt.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>paulumはF、対格がなく、quietemを修飾するものではない。ここでは副詞と解釈。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>寝床のための木があり、そこに自分を立てかけ斜めになった状態でしばしの休息を取るだけである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quārum<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">vēstīgiīs<span>vestigium vestigi(i) N (2nd) N  <br>:step, track; trace; footstep;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">animadversum<span>animadverto animadvertere, animadverti, animadversus V (3rd)  <br>:pay attention to, attend to; <strong>notice</strong>, <strong>observe</strong>; judge, estimate; punish (in+ACC);<br>(完了 分詞 受動態 n 単数 主格),<br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note1">vēnātōribus,<span>venator venatoris N (3rd) M  <br>:<strong>hunter</strong>;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">recipere<span>recipio recipere, recepi, receptus V (3rd)  <br>:keep back; recover; undertake; guarantee; accept, take in; take back;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">cōnsuērint,<span><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">rādīcibus<span>radix radicis N (3rd) F  <br>:root; base; square-root (math);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">subruunt<span>subruo subruere, subrui, subrutus V (3rd)  <br>:undermine;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">accīdunt<span>accido accidere, accidi, accisus V (3rd) TRANS  <br>:cut, <strong>cut into</strong>/down/up, hack, hew, fell; overthrow, destroy; cut short; weaken;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note1">arborēs,<span>arbor arboris N (3rd) F  <br>:tree; tree trunk; mast; oar; ship; gallows; spearshaft; beam; squid?;<br>(c 複数  対格)<br></span></a>
+<a class="note1">tantum<span>tantum ADV <br>:so much, so far; hardly, only;<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">summa<span></span></a>
+<a class="note1">speciēs<span>species speciei N (5th) F  <br>:sight, appearance, show; splendor, beauty; kind, type;<br>(c 単数 主格)<br></span></a>
+<a class="note0">eārum<span><br><br></span></a>
+<a class="note1">stantium<span>sto stare, steti, status V (1st)  <br>:stand, stand still, stand firm; remain, rest;<br>(現在 分詞 能動態  複数  属格)<br></span></a>
+<a class="note0">relinquātur.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>ex quarum vestiglis : それらの足跡から</p>
+<p><strong>cum animadversum est</strong> : 非人称 主語は<strong>quo consuerint recipere se</strong>（これは間接疑問文で体言である）</p>
+<p>subruunt omnes eo loco (arbores) ab radicubus 「そこにあるすべての木を根元から掘り返す」</p>
+<p>accidunt abores tantum ut summa earum species relinquatur stantium. 「木を刈り込み、上部の形が立っている様に残した」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>それらの足跡から猟師によって彼らが繰り返し戻っていく場所が見つかることがある。その場所のすべての木を根から掘り起こすか、または木を刈り込み上部に形が残るようにする。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hūc<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">cōnsuētūdine<span>consuetudo consuetudinis N (3rd) F  <br>:habit/custom/usage/way; normal/general/customary practice, tradition/convention;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">reclināvērunt,<span><br><br></span></a>
+<a class="note1">īnfīrmās<span>infirmus infirma -um, infirmior -or -us, infirmissimus -a -um ADJ  <br>:fragile/frail/feeble; unwell/sick/infirm;<br>(f 複数  対格)<br></span></a>
+<a class="note0">arborēs<span><br><br></span></a>
+<a class="note1">pondere<span>pondus ponderis N (3rd) N  <br>:weight, burden, impediment;<br>(n 単数 奪格)<br></span></a>
+<a class="note1">adflīgunt<span>adfligo adfligere, adflixi, adflictus V (3rd) TRANS  <br>:overthrow/throw down; afflict, damage, crush, break, ruin; humble, weaken, vex;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">ūnā<span>una ADV <br>:together, together with; at the same time; along with;<br><br></span></a>
+<a class="note0">ipsae<span></span></a>
+<a class="note1">concidunt.<span>concido concidere, concidi, - V (3rd) INTRANS  <br>:fall down/faint/dead/victim/to earth/short, collapse; drop, subside; decline;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>consuetudine : 態度の奪格　習慣に則って</p>
+</div></div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>そこに習慣で寄りかかると、重みで弱くなっている木を倒し自身を一緒に倒れる。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

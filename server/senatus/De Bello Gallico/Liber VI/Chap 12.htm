@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 12</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[12]<span></span></a>
+
+<a class="note0">Cum<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliam<span></span></a>
+<a class="note1">vēnit,<span>venio venire, veni, ventus V (4th)  <br>:come;<br>(３人称 単数 完了 能動態 直説法 )<br><br></span></a>
+<a class="note1">alterius<span>alterius ADV <br>:of one another;<br><br></span></a>
+<a class="note0">factiōnis<span><br><br></span></a>
+<a class="note0">prīncipēs<span><br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note0">Aeduī,<span><br><br></span></a>
+<a class="note0">alterius<span></span></a>
+<a class="note0">Sēquanī.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>venit : 直説法　cumの時の節は、直接法なら「過去のその時点」を表し、接続法なら「起きた状況」を表す。（NewLatin 288)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>Caesarはガリアに来たときには、一方の領袖はAeduiであり、他方はSeqaniであった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hī<span>この場合　latterでSequani<br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note1">valērent,<span>valeo valere, valui, valitus V (2nd)  <br>:be strong　/powerful/　influential/　healthy; prevail;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">summa<span></span></a>
+<a class="note0">auctōritās<span><br><br></span></a>
+<a class="note1">antīquitus<span>antiquitus ADV <br>:formerly, in former/ancient/olden times, from antiquity; long ago/before;<br><br><br></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Aeduīs<span><br><br></span></a>
+<a class="note1">magnaeque<span>magnus magna -um, major -or -us, maximus -a -um ADJ  <br>:large/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;<br>(f 複数  主格),<br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">clientēlae,<span>clientela clientelae N (1st) F  <br>:clientship; vassalage; patronage; protection; clients; vassals; allies (pl.);<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note0">Germānōs<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">Ariovistum<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">adiūnxerant<span>adjungo adjungere, adjunxi, adjunctus V (3rd) TRANS  <br>:add, attach, join to, add to, support; apply to; harness, yoke; direct; confer;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">eōsque<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">magnīs<span><br><br></span></a>
+<a class="note1">iactūrīs<span>jactura jacturae N (1st) F  <br>:loss; sacrifice; expense, cost; throwing away/overboard;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note1">pollicitātiōnibusque<span>pollicitatio pollicitationis N (3rd) F  <br>:promise;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">perdūxerant.<span>perduco perducere, perduxi, perductus V (3rd)  <br>:lead, guide; prolong; induce, conduct, bring through;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Hi : 近い方を指す。＝latter = Sequani</p>
+<p><strong>cum hi minus valerent per se</strong>. : 後者が未だ自身だけでは他を凌駕してなかった時、</p>
+<p>magnae clientelae erant eorum / <strong>eorum clientelae erant magane</strong> : いずれしてもAuduisのクリエンテスが多かったと言う事。</p>
+<p><strong>adjunxerant Germanos atque Ariovistum sibi</strong> : (Sequaniは）自身とゲルマン、Ariovistusと連合を組む。</p>
+<p><strong>perduxerant eos ad se magnis iacturis pollicitationibusque</strong>. 彼らを自分の方に、多大な犠牲と約束でもって引き寄せる。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>Sequaniが未だ自身だけでは支配的ではなかった時、と言うのは古くは最大の権威はAeduisにあり、その被護国も多かったのだが、彼らは自分たちにゲルマンとAriovistusを加え、多大な犠牲と約束で味方に引き入れた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Proeliīs<span><br><br></span></a>
+<a class="note0">vērō<span><br><br></span></a>
+<a class="note0">complūribus<span><br><br></span></a>
+<a class="note0">factīs<span><br><br></span></a>
+<a class="note1">secundīs<span>secundus secunda -um, secundior -or -us, secundissimus -a -um ADJ  <br>:|<strong>favorable</strong>, fair (wind/current); fortunate, propitious; smooth, w/the grain;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note1">nōbilitāte<span>nobilitas nobilitatis N (3rd) F  <br>:nobility/<strong>noble class</strong>; (noble) birth/descent; fame/excellence; the nobles; rank;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">Aeduōrum<span><br><br></span></a>
+<a class="note0">interfectā<span><br><br></span></a>
+<a class="note1">tantum<span>tantum ADV <br>:so much, so far; hardly, only;<br><br></span></a>
+<a class="note1">potentiā<span>potentia potentiae N (1st) F  <br>:force, power, political power;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">antecesserant,<span>antecedo antecedere, antecessi, antecessus V (3rd)  <br>:precede,<strong> go before/ahead</strong>/in front of, attain before; excel, <strong>surpass</strong>, outstrip;<br>(３人称 複数  過去完了 能動態 直説法 )<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">magnam<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note0">clientium<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Aeduīs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">trādūcerent<span>traduco traducere, traduxi, traductus V (3rd) TRANS  <br>:bring across/over, move/transfer; convert; cause to cross/to extend across area;<br>(３人称 複数 <strong> 未完了</strong> 能動態 接続法 )<br></span></a>
+<a class="note0">obsidēsque<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eīs<span><br><br></span></a>
+<a class="note0">prīncipum<span><br><br></span></a>
+<a class="note1">fīliōs<span>filius fili N (2nd) M  <br>:son;<br>(c 複数  対格)<br></span></a>
+<a class="note1">acciperent<span>accipio accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">pūblicē<span>publice ADV <br>:publicly; at public expense;<br><br></span></a>
+<a class="note1">iūrāre<span>juro jurare, juravi, juratus V (1st)  <br>:swear; call to witness; vow obedience to;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">cōgerent<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; <strong>force</strong>/<strong>compel</strong>; convene; congeal;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">contrā<span><br><br></span></a>
+<a class="note0">Sēquanōs<span><br><br></span></a>
+<a class="note1">cōnsilī<span>consilium consili(i) N (2nd) N  <br>:|decision/ resolution; intention / purpose/ policy/ <strong>plan</strong>/ <strong>action</strong>; diplomacy/strategy;<br>(X 単数 属格)<br></span></a>
+<a class="note1">initūrōs<span>ineo inire, inivi(ii), initus V  <br>:enter; undertake; begin; go in; enter upon;<br>(未来 分詞 能動態 m 複数  対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">partem<span>pars partis N (3rd) F  <br>:part, region; share; direction; portion, piece; party, faction, side;<br>(c 単数 対格)<br></span></a>
+<a class="note1">fīnitimī<span>finitimus finitimi N (2nd) M  <br>:neighbors (pl.);<br>(X 単数 属格), <br></span></a>
+<a class="note1">agrī<span>ager agri N (2nd) M  <br>:field, ground; farm, land, estate, park; territory, country; terrain; soil;<br>(X 単数 属格), <br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">vim<span></span></a>
+<a class="note1">occupātam<span>occupo occupare, occupavi, occupatus V (1st)  <br>:seize; gain; overtake; capture, occupy; attack;<br>(完了 分詞 受動態 f 単数 対格)<br></span></a>
+<a class="note1">possidērent<span>possideo possidere, possedi, possessus V (2nd)  <br>:<strong>seize</strong>, hold, be master of; possess, take/hold possession of, occupy; inherit;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">Galliaeque<span></span></a>
+<a class="note0">tōtīus<span><br><br></span></a>
+<a class="note0">prīncipātum<span><br><br></span></a>
+<a class="note1">obtinērent.<span>obtineo obtinere, obtinui, obtentus V (2nd)  <br>:get hold of; maintain; obtain; hold fast, occupy; prevail;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>vero compluribus secundis proeliis factis : 独立奪格「幾多の成功裏の戦いが行われ」</p>
+<p><strong>antecesserant tantum potentia</strong> tantumは副詞、potentiaは指定の奪格で「力という点に関しては」</p>
+<p>ut ~ ：結果の節。</p>
+<p><strong>tranducerent magnam partem clientium ad se ab Auduis</strong> : 「多くの被護国をAeduisから取り上げ」</p>
+<p><strong>acciperent filios obsidesque ab eis principum</strong> : filios obsidesは二重対格　「指導者たちの子息を人質としてとり」</p>
+<p><strong>coegerent jurare&nbsp; publice se inituros (esse) nihil consili contra Sequanos</strong>. : 「Sequaniに対抗する行動を取らない事を公的に誓わせ」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>幾多の成功裏の戦いが行われ、多くのAuduisの貴族たちが殺されて、彼らは力という点で他を凌駕することになった。そして、多くの被護国をAeduisから取り上げ、彼らの貴族の子弟を人質としてとり、彼らに公的に、決してSequaniに対抗しないことを誓わせ、力で近隣の領土を奪い取り、全ガリアの主導権を獲得するに至った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quā<span><br><br></span></a>
+<a class="note1">necessitāte<span>necessitas necessitatis N (3rd) F  <br>:need/necessity; inevitability; difficult straits; poverty; obligation; bond;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">adductus<span>adduco adducere, adduxi, adductus V (3rd) TRANS  <br>:lead up/to/away; bring up/to; persuade, induce; lead, bring; contract, tighten;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">Dīviciācus<span><br><br></span></a>
+<a class="note0">auxilī<span><br><br></span></a>
+<a class="note0">petendī<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">Rōmam<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">senātum<span><br><br></span></a>
+<a class="note1">profectus<span>proficiscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note1">īnfectā<span>infectus infecta, infectum ADJ  <br>:unfinished, undone, incomplete; infecta re = without having accomplished it;<br>&nbsp;(f 単数 奪格)<br></span></a>
+<a class="note0">rē<span></span></a>
+<a class="note1">redierat.<span>redeo redire, redivi(ii), reditus V  <br>:return, go back, give back; fall back on, revert to; respond, pay back;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>adductus, profectus Diviciacus　と２つの分詞構文。</p>
+<p>infecta re は付帯状況の奪格か、不成功裏の状況で<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらの必要性に駆られ、ローマに助けを求めて元老院を訪ねたDiviciacusが、うまくいかずに戻った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Adventū<span><br><br></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note0">factā<span><br><br></span></a>
+<a class="note1">commūtātiōne<span>commutatio commutationis N (3rd) F  <br>:change, reversal; upheaval; alteration; exchange, substitution; interchange;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">rērum,<span><br><br></span></a>
+<a class="note0">obsidibus<span></span></a>
+<a class="note0">Aeduīs<span><br><br></span></a>
+<a class="note0">redditīs,<span><br><br></span></a>
+<a class="note1">veteribus<span>vetus veteris (gen.), veterior -or -us, veterrimus -a -um ADJ  <br>:old, aged, ancient; former; veteran, experienced; long standing, chronic;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">clientēlīs<span>clientela clientelae N (1st) F  <br>:clientship; vassalage; patronage; protection; clients; vassals; allies (pl.);<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note1">restitūtīs,<span>restituo restituere, restitui, restitutus V (3rd)  <br>:<strong>restore</strong>; revive; bring back; make good;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">novīs<span><br><br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">comparātīs,<span>comparo comparare, comparavi, comparatus V (1st) TRANS  <br>:||set up/establish/institute; <strong>arrange</strong>, dispose, settle; buy, <strong>acquire</strong>, secure;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">hī,<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(m 複数  主格)<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note0">amīcitiam<span><br><br></span></a>
+<a class="note1">adgregāverant,<span>adgrego adgregare, adgregavi, adgregatus V (1st) TRANS  <br>:collect, include, group, implicate; (cause to) flock<strong>/join together, attach</strong>;<br>(３人称 複数  過去完了 能動態 直説法 )<br><br></span></a>
+<a class="note0">meliōre<span><br><br></span></a>
+<a class="note0">condiciōne<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">aequiōre<span>aequus aequa -um, aequior -or -us, aequissimus -a -um ADJ  比較級<br>:level, even, equal, like; just, kind, impartial, fair; patient, contented;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">imperiō<span>imperium imperi(i) N (2nd) N  <br>:command; authority; rule, supreme power; the state, the empire;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">ūtī<span>utor uti, usus sum V (3rd) DEP  <br>:use, make use of, enjoy; enjoy the friendship of (with ABL);<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">vidēbant,<span><br><br></span></a>
+<a class="note0">reliquīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">grātiā<span>gratia gratiae N (1st) F  <br>:<strong>popularity</strong>/esteem/credit (w/bona); partiality/favoritism; unpopularity (w/mala);<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">dignitāteque<span>dignitas dignitatis N (3rd) F  <br>:worth, excellence; fitness/suitability (for task),; <strong>honor</strong>, esteem, standing;<br>(c 単数 奪格)<br><br></span></a>
+<a class="note1">amplificātā<span>amplifico amplificare, amplificavi, amplificatus V (1st) TRANS  <br>:enlarge, extend, increase; develop; magnify, amplify; praise loudly, exalt;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note0">Sēquanī<span><br><br></span></a>
+<a class="note0">prīncipātum<span><br><br></span></a>
+<a class="note1">dīmīserant.<span>dimitto dimittere, dimisi, dimissus V (3rd) TRANS  <br>:send away/off; allow to go, let go/off; disband, discharge, dismiss (soldiers);<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>Caesaris adventu</strong> : 原因の奪格。　<strong>rerum commutatione facta</strong> : 独立奪格。</p>
+<p>quod hi, qui adgregaverant se ad eorum amicitiam, : <strong>hiはqui以下で説明されている、新しくClientelaになった人たちを指す。</strong></p>
+<p>hi vedebant se uti meliore condicione atque aequiore imperio. : uti(utor)は奪格を目的語に取る。</p>
+<p><strong>reliquis rebus</strong> : 指定の奪格「残りのことに関して言えば」</p>
+<p>eorum gratia diginitateque amplificata : 独立奪格<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>Caesarの到着によって物事は変わった。人質は返され、昔の被護国は元にもどり、新しい被護国がCaesarを通じて得られた。とう言うのは、彼らと親密になったものたちは、より良い条件、より対等な統治であると判断したからである。残りのものについて言えば、彼らの人気、名誉は高まり、Sequaniの主導権は失われた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">In<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">Rēmi<span><br><br></span></a>
+<a class="note1">successerant:<span>succedo succedere, successi, successus V (3rd)  <br>:climb; advance; follow; succeed in;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">adaequāre<span>adaequo adaequare, adaequavi, adaequatus V (1st)  <br>:equalize, make equal in height, come up to level; compare (to); be equal; raze;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">grātiā<span><br><br></span></a>
+<a class="note0">intellegēbātur,<span><br><br></span></a>
+<a class="note0">eī,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">propter<span>propter PREP ACC <br>:near; on account of; by means of; because of;<br><br></span></a>
+<a class="note1">veterēs<span>vetus veteris (gen.), veterior -or -us, veterrimus -a -um ADJ  <br>:old, aged, ancient; former; veteran, experienced; long standing, chronic;<br>&nbsp;(c 複数  対格)<br></span></a>
+<a class="note1">inimīcitiās<span>inimicitia inimicitiae N (1st) F  <br>:unfriendliness, enmity, <strong>hostility</strong>;<br>(c 複数  対格)<br></span></a>
+<a class="note0">nūllō<span><br><br><br></span></a>
+<a class="note0">modō<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Aeduīs<span><br><br></span></a>
+<a class="note1">coniungī<span>conjungo conjungere, conjunxi, conjunctus V (3rd) TRANS  <br>:|unite (sexually); place/bring side-by-side; juxtapose; share; add; associate;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">poterant,<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">Rēmīs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">clientēlam<span><br><br></span></a>
+<a class="note1">dicābant.<span>dico dicare, dicavi, dicatus V (1st) TRANS  <br>:dedicate/consecrate; deify; devote; attach to another state; assign; show;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>Remi successerant in eorum locum</strong>. : locumとはSequaniの位置。</p>
+<p><strong>quod, quos adaequare intellegebatur gratia apud Caesarem</strong>. : quodは「何故なら」quosはRemiの事で、adaequareの主語。「彼ら同程度である事」<u>garatiaは指定の奪格で</u>「お気に入り度に関して言えば」<u>intellegebaturは非人称的</u>に使われており主語はquos aedaequare. 「何故なら、Remi族もCaesarから（Aeuduiと）同じぐらい信頼されているということが知られたので」</p>
+<p><strong>ei, qui ~, dicabant se in Remis clientelam</strong>. （qui以下で説明されるような人々）は自身をRemiの被護国に指名した」</p>
+<p>qui propter veteres inimicitias null modo poterant conjungi cum Aeduis. 「昔の敵対関係のために、Aeduisと同盟することが出来ない者たち」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>その位置はRemi族が引き継いだ。と言うのは、Remi族もCaesarの信頼という点では（Aeduisと）同等であるということが知られたので、昔からの敵対関係のために、Auduisと同盟出来ないという国はRemi族被護国となることを選んだからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hōs<span><br><br></span></a>
+<a class="note0">illī<span><br><br></span></a>
+<a class="note1">dīligenter<span>diligenter diligentius, diligentissime ADV <br>:carefully; attentively; diligently; scrupulously; thoroughly/completely/well;<br><br></span></a>
+<a class="note1">tuēbantur:<span>tueor tueri, tuitus sum V (2nd) DEP  <br>:see, look at; <strong>protect</strong>, watch; uphold;<br>(３人称 複数  未完了 受動態 直説法 )<br><br></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">novam<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">repente<span>repente ADV <br>:suddenly, unexpectedly;<br><br></span></a>
+<a class="note1">collēctam<span>colligo colligere, collexi, collectus V (3rd) TRANS  <br>:|obtain/acquire, amass; rally; recover; sum up; deduce, infer; compute, add up;<br>(完了 分詞 受動態 f 単数 対格)<br></span></a>
+<a class="note0">auctōritātem<span><br><br></span></a>
+<a class="note1">tenēbant.<span>teneo tenere, tenui, tentus V (2nd)  <br>:hold, keep; comprehend; possess; master; preserve;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>Illi tuebantur hos diligenter. 「彼らは彼らを注意深く保護した」</p>
+<p>ita tenebant novam et repente collectam auctoritatem. 「このように、彼らは新しく突然集めた権威を保持したのである。」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>彼らは彼らを注意深く保護した。かくして新しく、突然得た権威、影響力を保持したのである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span><br><br></span></a>
+<a class="note1">tum<span>tum ADV <br>:then, next; besides; <strong>at that time;</strong><br><br></span></a>
+<a class="note1">statū<span>status status N (4th) M  <br>:position, situation, condition; rank; standing, status;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">rēs<span>res rei N (5th) F  <br>:thing; event/affair/business; fact; cause; property;<br>(c 単数 主格)<br></span></a>
+<a class="note0">erat,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">longē<span><br><br></span></a>
+<a class="note0">prīncipēs<span><br><br></span></a>
+<a class="note0">habērentur<span><br><br></span></a>
+<a class="note0">Aeduī,<span><br><br></span></a>
+<a class="note0">secundum<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">dignitātis<span><br><br></span></a>
+<a class="note0">Rēmi<span><br><br></span></a>
+<a class="note0">obtinērent.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>res erat tum eo statu, ut ~. 「その時の状況は、ut以下のようであった。」（この状況説明を始めたChap 11時点での状況）<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>これがこの時点での情勢であった。即ち、Aeduiが群を抜いて主力部族であり、Remiが第二の位置にあった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 1</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[1]<span></span></a>
+
+<a class="note0">L.<span></span></a>
+<a class="note0">Domitio<span></span></a>
+<a class="note0">Ap.<span></span></a>
+<a class="note0">Claudiō<span></span></a>
+<a class="note0">cōnsulibus,<span></span></a>
+<a class="note1">discēdēns<span>discedo 現在分詞　単　主格　;= go, march, depart<br><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">hībernīs<span><br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Italiam,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">quotannīs<span>副詞　;= every year, yearly<br><br></span></a>
+<a class="note0">facere<span></span></a>
+<a class="note1">cōnsuērat,<span>= conseverat３単　過去完了<br><br><br><br></span></a>
+<a class="note1">lēgātīs<span>複　与格<br><br></span></a>
+<a class="note0">imperat<span></span></a>
+<a class="note0">quōs<span></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note1">praefēcerat<span>praeficio ３単　過去完了　;= put in charge, place in command (with ACC and DAT)<br><br><br></span></a>
+<a class="note0">uti<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">plūrimās<span><br><br></span></a>
+<a class="note0">possent<span></span></a>
+<a class="note1">hieme<span>単　奪格　;= winter<br><br></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note1">aedificandās<span>aedificio 動形容詞　受動　f複　対格　;= build, erect<br>See <strong>NewLatin 337 8 (b) ii</strong><br><br><br></span></a>
+<a class="note1">veterēsque<span>vetus veteris N 複　対格　;= old, ancient<br><br><br></span></a>
+<a class="note1">reficiendās<span>reficio 未来分詞　受動　ｆ複　対格　;= rebuild, repair<br><br></span></a>
+<a class="note1">cūrārent.<span>curo ３複　未完了　接続法　;= arrange, take care of, provide for<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>discedens (Caesar) <strong>imperat legatis ut curarent naves aedificandas ~.</strong> 「出発に先立ちカエサルは軍団長たちに建造すべき船の面倒を見るように命令した」が逐語訳。curarentは命令の名詞節で接続法。（NewLatin295)</p>
+<p><strong>quam plurimas</strong> (AG291 c, Harkness 444.3) = as many as possible<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>L. DomitiusとAp. Claudiusがコンスルのとき、カエサルは毎年行っているように冬営から内ガリア（イタリア）に向かって出発しながら、軍団の指揮を任せた軍団長らに、冬の間に出来るだけ多くの船を作り、また古い船を修理するよう、命令した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eārum<span></span></a>
+<a class="note1">modum<span>modus M　単　対格　;= manner, mode, way, method, <strong>size</strong>, bound, limit<br><br><br></span></a>
+<a class="note1">fōrmamque<span>forma formae F 単　対格　;= form, figure, appearance, beauty, pattern<br><br><br></span></a>
+<a class="note1">dēmōnstrat.<span>demonstro ３単　現在　;= point out, explain, describe<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>modum formamaque : modusは英語のmodeであるが、サイズという訳もある。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それらの形と大きさを示した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ad<span></span></a>
+<a class="note0">celeritātem<span><br><br></span></a>
+<a class="note1">onerandī<span>onero 未来分詞　受動　m 単　属格 ;= load, burden<br><br></span></a>
+<a class="note1">subductiōnēsque<span>subductio subductionis F 複　対格　;= hauling up of a ship onto beach<br><br><br></span></a>
+<a class="note0">paulō<span></span></a>
+<a class="note1">facit<span>３単　現在<br><br></span></a>
+<a class="note1">humiliōrēs<span>humilis humilie humilior humilimus 比較級　形容詞 複　対格　;= low, lowly, samll<br><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">nostrō<span></span></a>
+<a class="note0">marī<span></span></a>
+<a class="note0">ūtī<span></span></a>
+<a class="note1">cōnsuēvimus,<span>consuesco １複　完了　;= acustom onself, used<br><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note1">eō<span>副詞　;= therefore, for that reason, so much the more<br><br></span></a>
+<a class="note1">magis,<span>副詞　;= to greater extent, more nearly<br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">propter<span>前置詞　;= near, on accoutn of<br><br></span></a>
+<a class="note1">crēbrās<span>creber creba, -um ｆ複　対格　;= thick, crowded, frequent, constant<br><br><br><br></span></a>
+<a class="note1">commūtātiōnēs<span>commutatio commutationis F　複　対格　;= change, reversal, upheaval<br><br><br></span></a>
+<a class="note1">aestuum<span>aestus aestus M 複　属格　;= sea tide<br><br></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note0">magnōs<span></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note1">fluctūs<span>fluctus fluctus M 複　対格　;= wave, disorder, flood<br><br><br></span></a>
+<a class="note1">fierī<span>fio 不定詞　;= happen<br><br></span></a>
+<a class="note1">cognōverat;<span>cognosco ３単　過去完了　;= learn<br><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">onera,<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">multitūdinem<span>multitudo F 単　対格　<br><br></span></a>
+<a class="note1">iūmentōrum<span>jumentum jumenti N 複　属格　;= mule, beast of burden<br><br></span></a>
+<a class="note1">trānsportandam<span>transporto 未来分詞　受動　ｆ単　対格　;= carry across<br><br></span></a>
+<a class="note0">paulō<span></span></a>
+<a class="note1">lātiōrēs<span>latus lata -um, latior, latissimus 比較級　形容詞　ｃ複　対格　;= wide, broad<br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">reliquīs<span></span></a>
+<a class="note0">ūtimur<span></span></a>
+<a class="note0">maribus.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>quam quibus = quam ea sunt, quibus　quamはthan でquibusよりも、の意味。</p>
+<p>facit humiliores quam ea sunt, quibus consuevimus uti in nostro mari. utiはutorの不定詞。utorは奪格を目的語にとる。（NewLatin218.1) 「私が自分たちの海で使うのに慣れているものよりも低く作る」<font color="#ff0000">consuevimusと１人称は珍しいが何か特別な意味でもあるのか？</font></p>
+<p>id eo magis : よくわからない。idは以下に述べられる輸送船のことを指しているように思える。動詞がないがfacit id paulo latioresとfacitが省略されていると考える。eoもmagisも同じような意味で、「もっとそうだ」というニュアンス。</p>
+<p><strong>ad celeritatem onerandi et subductiones</strong> : 貨物操作の素早さと砂浜に係留するために、（facit <strong>humiliore</strong>)</p>
+<p><strong>ad onera, ad multitudine jumentorum transportandam</strong> : 貨物と大量の馬を運ぶための船のために　（facit <strong>latiores</strong>)</p>
+<p>　と一応、対句のような形にはなっている。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>貨物の乗下船の素早さと砂浜での係留のために、通常慣れている我々の海で使うものより少し低く作る。また、もっとそうなのは、貨物、大量の馬の運搬用の船は、我々が他の海で使うものより少し広くする。と言うのは、そこでは潮の満ち干きの頻度に関していえば、作られる波は大したものではないことが解っているからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hās<span></span></a>
+<a class="note0">omnēs<span></span></a>
+<a class="note1">āctuāriās<span>acutuarius 形容詞　ｆ　複　対格　;= swift, light<br><br><br></span></a>
+<a class="note0">imperat<span></span></a>
+<a class="note1">fierī,<span>fio 不定詞<br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note0">multum<span></span></a>
+<a class="note1">humilitās<span>F単　主格<br><br></span></a>
+<a class="note1">adiuvat.<span>adjuvo adjuvare, adjuvavi, adjuvatus ３単　現在　;= help, aid, encourage, favor, cherish, be use of<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>imperat omnes has fieri actuarias : actuaria（名詞）は櫂と帆が使える快速艇のこと。<u>fieriが不定詞で、受動ではないため、文法的には 「快速の全部を作る事」になってしまう。受動であればomnesを対格主語の不定詞句、actuariasは述語対格としてわかりやすいのだけれど</u>…→　<strong><font color="#ff0000">fieriはfacioの受動、不定詞である！！！</font></strong></p>
+<p><strong>ad quam rem, humilitas adjuvat multum</strong>.<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>すべてを軽い快速艇にするよう命じた。それには、低さが大いに役立った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ea<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">ūsuī<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">armandās<span>armo 未来分詞　受動　ｆ　複　対格　;= equip, fit with armoor, arm<br><br><br></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Hispāniā<span><br><br></span></a>
+<a class="note1">apportārī<span>apporto 受動　不定詞　;= carry, convey, import<br><br><br></span></a>
+<a class="note0">iubet.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>jubet ea apprortari ex Hispania quae sunt usui ad armandas naves.<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>船を艤装するのに必要な物をHispaniaから運ぶよう命じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipse<span></span></a>
+<a class="note1">conventibus<span>conventus conventus M 複　奪格　;= gathering, <strong>provincial court, assize</strong><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">citeriōris<span><br><br></span></a>
+<a class="note1">perāctis<span>perago peragere, peregi, peractus 完了分詞　複　奪格　;= disturb, finish, complete<br><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Īllyricum<span></span></a>
+<a class="note0">proficīscitur,<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">Pīrustis<span><br><br></span></a>
+<a class="note0">fīnitimam<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note0">prōvinciae<span></span></a>
+<a class="note1">incursiōnibus<span>incursio incrusionis F 複　奪格　;= attack, raid, incursion<br><br><br></span></a>
+<a class="note1">vastārī<span>vasto 現在　受動態　不定詞　;= lay waste, ravage<br><br><br></span></a>
+<a class="note1">audiēbat.<span>audio ３単　未完了　;= hear<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>peractis conventibus : 「巡回裁判を終えて」conventibusというのは第一巻の最後にも出てくる。地方の裁判所？</p>
+<p>quod audiebat finitiam partem provinciae vastari incursionibus a Pirustis. <br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>内ガリアでの巡回裁判を終えて、自身はIllyricusへ出発した。というのは、属州の領地の部分がPirustisによって侵犯され荒らされていると聞いたからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">vēnisset,<span><br><br></span></a>
+<a class="note1">cīvitātibus<span>F 複　与格<br><br><br><br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note0">imperat<span></span></a>
+<a class="note1">certumque<span>certus ｎ単　対格　;= fixed, certain<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">convenīre<span><br><br></span></a>
+<a class="note0">iubet.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>imperat milites civitatibus, jubet convenire in certum locum.<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>そこに到着して、Illyricum州の軍隊を命じ、またある場所に集めるよう命令した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quā<span></span></a>
+<a class="note0">rē<span></span></a>
+<a class="note0">nūntiātā<span></span></a>
+<a class="note0">Pīrustae<span></span></a>
+<a class="note0">lēgātōs<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">mittunt<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">doceant<span>doceo ３複　現在　接続法 ;= teach, show, point out<br><br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">eārum<span><br><br></span></a>
+<a class="note0">rērum<span></span></a>
+<a class="note1">pūblicō<span>publicus ｎ単　奪格　;= public, official<br><br><br></span></a>
+<a class="note0">factum<span></span></a>
+<a class="note1">cōnsiliō,<span>consilium N単　奪格<br><br><br></span></a>
+<a class="note0">sēsēque<span><br><br></span></a>
+<a class="note1">parātōs<span>paro 完了分詞　受動　ｍ　複　対格　;= prepare, produce<br><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">dēmōnstrant<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">ratiōnibus<span>ratio F 複　奪格　;= reasoning<br><br></span></a>
+<a class="note0">dē<span></span></a>
+<a class="note0">iniūriīs<span><br><br><br></span></a>
+<a class="note1">satisfacere.<span>satisfacio 不定詞　;= satisfy, apologize, conpensate<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>re nuntiata : 独立奪格</p>
+<p>Pirustae mittunt legatos ad eum. 「Pirustisは使者を彼に送った」</p>
+<p><strong>qui doceant nihil factum earum rerum publico consilio</strong>. 「これらのことは公式筋で行われたものではないと述べ」</p>
+<p><strong>demonstrant sese esse paratos satisfacere de injuriis omnibus rationibus.</strong> 「我々は損害に対してあらゆる方法をもって、弁償する用意があると説明した。」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらのことは報告され、Pirustisは彼の元に使者を送り、それらは公式に行われたことではなく、またその損害に対してあらゆる方法で補填する用意があると説明した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 9</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Acceptā<span></span></a>
+<a class="note0">ōrātiōne<span></span></a>
+<a class="note0">eōrum<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">obsidēs<span></span></a>
+<a class="note0">imperat<span></span></a>
+<a class="note0">eōsque<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">certam<span></span></a>
+<a class="note0">diem<span></span></a>
+<a class="note0">addūcī<span></span></a>
+<a class="note0">iubet;<span></span></a>
+<a class="note0">nisi<span></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note1">fēcerint,<span>３複　完了　接続法<br><br></span></a>
+<a class="note0">sēsē<span></span></a>
+<a class="note0">bellō<span></span></a>
+<a class="note0">cīvitātem<span></span></a>
+<a class="note1">persecūtūrum<span>persequor 未来分詞　能動　ｍ　単　対格　;= follow up, pursue, overtake<br><br><br></span></a>
+<a class="note0">dēmōnstrat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>nisi ita fecerint, demonstrat sese persecuturum (esse) civitatem bello. <u>間接話法での条件文であることに注意。この場合、条件節は接続法で、完了は未来完了の意味になる。（NewLatin 319.1)</u><br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>その説明は受け入れられ、カエサルは人質を命じ、ある日までに差し出すよう命令した。もしそれがなされない場合は、戦いによって国を追いかけるであろうと説明した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 10</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eīs<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">diem<span></span></a>
+<a class="note0">adductis,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">imperāverat,<span></span></a>
+<a class="note1">arbitrōs<span>arbiter arbitri M 複　対格　;= eye-witness, on-looker, umpire<br><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">cīvitātēs<span></span></a>
+<a class="note1">dat<span>3単　カエサル<br><br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">lītem<span>lis nlitis F 単　対格　;= lawsuit, quarrel<br><br></span></a>
+<a class="note1">aestiment<span>aestimo aestimare, aestimavi, aestimatus ３複　接続法　;= value, assess, judge<br><br></span></a>
+<a class="note1">poenamque<span>poena poenae F 単　対格　;= penalty, punishment<br><br></span></a>
+<a class="note1">cōnstituant.<span>constituo constiture, constitui, constitutus ３複　接続法　;= set up, decide, establish<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Eis adductis : 独立奪格　</p>
+<p>dat arbitros inter civitates : arbiterと言うのはこの場合、被害などを算定する裁定者のこと。litemはその罪で,poenaはその代償という感じか<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それが指定の日に差し出され、被害を算出し、その補償を決める裁定者を部族間に与えた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

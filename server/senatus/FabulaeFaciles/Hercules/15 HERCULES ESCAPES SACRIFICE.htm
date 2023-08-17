@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 15 HERCULES ESCAPES SACRIFICE.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dē<span></span></a>
+<a class="note0">Hercule<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note1">alia<span>ălĭus alia, aliud ADJ  <br>:other, another; different, changed;<br>(F 単数 主格) <br><br></span></a>
+<a class="note1">nārrantur.<span>narro narrare, narravi, narratus V (1st)  X<br>:tell, tell about, relate, narrate, recount, describe;<br>(3 複数 現在 受動態 直接法) <br></span></a>
+<a class="note0">Ōlim<span></span></a>
+<a class="note0">dum<span></span></a>
+<a class="note1">iter<span>ĭter itineris N (3rd) N <br>:journey; road; passage, path; march<br>(単数 主格) <br></span></a>
+<a class="note1">facit,<span>făcĭo facere, feci, factus V (3rd) TRANS  <br>:make/build/construct/create/cause/do; have built/made; fashion; work (metal);<br>(3 単数 現在 能動態 直接法) <br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">fīnēs<span>fīnis finis N (3rd) C <br>:boundary, end, limit, goal; (pl.) country, territory, land;<br>&nbsp;(複数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">Aegyptiōrum<span>Aegyptĭus Aegyptia, Aegyptium ADJ  <br>:Egyptian; of/connected with Egypt;<br>(M 複数 属格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vēnit.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Ibi<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">rēx<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">quīdam,<span>quīdam quaedam, quiddam  PRON INDEF<br>:(w/-dam) <strong>certain</strong>; as INDEF a certain thing; somebody, one, something;<br>(M 単数 主格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">nōmine<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Būsīris,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">illō<span></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0">rēgnābat;<span></span></a>
+<a class="note0">hic<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">vir<span></span></a>
+<a class="note1">crūdēlissimus<span>crūdēlis crudele, crudelior -or -us, crudelissimus -a -um ADJ  最上級<br>:cruel/hardhearted/unmerciful/severe, bloodthirsty/savage/inhuman; harsh/bitter;<br>(M 単数 主格) <br></span></a>
+<a class="note1">hominēs<span>hŏmo hominis N (3rd) M <br>:man, human being, person, fellow;<br>&nbsp;(複数 対格)&nbsp; <br></span></a>
+<a class="note1">immolāre<span>immŏlo immolare, immolavi, immolatus V (1st)  X<br>:sacrifice, offer (victim) in sacrifice; sprinkle with sacred meal; immolate;<br>不定詞<br></span></a>
+<a class="note1">cōnsuēverat.<span>consŭesco consuescere, consuevi, consuetus V (3rd)  X<br>:accustom oneself; become/be accustomed/used; inure, habituate; familiarize;<br>(3 単数 過去完了 能動態 直接法) <br></span></a>
+<a class="note0">Herculem<span></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note1">corripuit<span>corrĭpĭo corripere, corripui, correptus V (3rd) TRANS  <br>:seize/grasp/snatch up, lay hold of; sweep off; carry away; appropriate/arrogate;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">vincula<span></span></a>
+<a class="note0">coniēcit.<span></span></a>
+<a class="note0">Tum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">nūntiōs<span></span></a>
+<a class="note0">dīmīsit<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">diem<span></span></a>
+<a class="note1">sacrificiō<span>săcrĭfĭcĭum sacrifici(i) N (2nd) N <br>:sacrifice, offering to a deity;<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note1">ēdīxit.<span>ēdīco edicere, edixi, edictus V (3rd)  X<br>:proclaim, declare; appoint;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Mox<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">diēs<span></span></a>
+<a class="note1">appetēbat,<span>appĕto appetere, appetivi, appetitus V (3rd) TRANS  <br>:seek/grasp after, desire; assail; strive eagerly/long for; approach, near;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note1">rīte<span>rite ADV <br>&gt;:duly, according to religious usage, with due observance; solemnly; well;<br><br></span></a>
+<a class="note0">parāta<span></span></a>
+<a class="note0">sunt.<span></span></a>
+<a class="note1">Manūs<span>mănus manus N (4th) F <br>:hand, fist; team; gang, band of soldiers; handwriting; (elephant's) trunk;<br>&nbsp;(複数 主格) <br></span></a>
+<a class="note0">Herculis<span></span></a>
+<a class="note1">catēnīs<span>cătēna catenae N (1st) F <br>:chain; series; fetter, bond, restraint; imprisonment, captivity; (chain mail);<br>&nbsp;(複数 奪格) <br></span></a>
+<a class="note1">ferreīs<span>ferrĕus ferrea, ferreum ADJ  <br>:iron, made of iron; cruel, unyielding; (blue);<br>&nbsp;(N 複数 奪格) <br></span></a>
+<a class="note0">vīnctae<span></span></a>
+<a class="note0">sunt,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">mola<span>mŏla molae N (1st) F <br>:millstone; ground meal; mill (pl.)<br>(単数 主格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">salsa<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">caput<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">īnspersa<span>inspergo inspergere, inspersi, inspersus V (3rd)  X<br>:sprinkle upon;<br>【完了分詞 ( 受動態 ) (F 単数 主格) <br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">est.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Mōs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">apud<span>apud PREP ACC <br>&gt;:at, by, near, among; at the house of; before, in the presence/writings/view of;<br><br></span></a>
+<a class="note1">antīquōs<span>antīquus antiqua -um, antiquior -or -us, antiquissimus -a -um ADJ  <br>:old/ancient/aged; time-honored; simple/classic; venerable; archaic/outdated;<br>(M 複数 対格) <br></span></a>
+<a class="note1">salem<span>sal salis N (3rd) M <br>:salt; wit;<br>(単数 対格) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">far<span>far farris N (3rd) N <br>:husked wheat; grain, spelt; coarse meal, grits; sacrificial meal; dog's bread;<br>(単数 対格) <br></span></a>
+<a class="note0">capitibus<span></span></a>
+<a class="note1">victimārum<span>victĭma victimae N (1st) F <br>:victim; animal for sacrifice;<br>(複数 属格) <br></span></a>
+<a class="note1">impōnere.<span>impōno imponere, imposui, impositus V (3rd)  X<br>:impose, put upon; establish; inflict; assign/place in command; set;<br>不定詞<br></span></a>
+<a class="note1">Iam<span>jam ADV <br>&gt;:now, already, by/even now; besides;<br><br></span></a>
+<a class="note0">victima<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">āram<span>āra arae N (1st) F <br>:altar, structure for sacrifice, pyre; sanctuary; home; refuge, shelter;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">stābat;<span>sto stare, steti, status V (1st)  X<br>:stand, stand still, stand firm; remain, rest;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">sacerdōs<span>săcerdos sacerdotis N (3rd) C <br>:priest, priestess;<br>(単数 主格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">cultrum<span>culter cultri N (2nd) M <br>:knife; (weapon/sacrificial/hunt); pruner edge; spear point; plowshare (L+S);<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">sūmpserat.<span>sūmo sumere, sumpsi, sumptus V (3rd)  X<br>:take up; begin; suppose, assume; select; purchase; exact (punishment); obtain;<br>(3 単数 過去完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Subitō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">Herculēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">cōnātū<span>cōnātus conatus N (4th) M <br>:attempt, effort; exertion, struggle; impulse, tendency; endeavor, design;<br>(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vincula<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">perrūpit;<span>perrumpo perrumpere, perrupi, perruptus V (3rd)  X<br>:break through;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ictū<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">sacerdōtem<span></span></a>
+<a class="note1">prōstrāvit;<span>prōsterno prosternere, prostravi, prostratus V (3rd) TRANS  <br>:knock over, lay low; strike down, overthrow; exhaust; debase/demean; prostrate;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note1">alterō<span>alter altera, alterum ADJ  <br>:|second/further/next/other/latter/some person/thing (PRONominal ADJ); either;<br>(M 単数 奪格) <br></span></a>
+<a class="note0">rēgem<span></span></a>
+<a class="note0">ipsum<span></span></a>
+<a class="note0">occīdit.<span></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>olim dum iter facit : かって、旅をするとき facitがなぜ現在形か？意味としては「かって色々旅をしているとき」であろうが…</p>
+<p>diem sacrificio : <strike>時の奪格？</strike> 間接目的語の与格？ 「犠牲のための日取り」</p>
+<p>altero : another [ictu]<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>Herculesについては、他の色々なことの中で、言われている事がある。かって旅をしているとき、エジプトの国境を訪れた事がある。当時はとある王、名前をBusirsという、がそこをたまたま、統治していた。しかしその最も残忍な男は人間を犠牲として捧げることを習慣にしていたのである。そのためHerculesも捕らえられ、鎖に繋がれた。そして伝令が送られ犠牲のための日取りを宣言した。その日が近づき、すべての準備が整った。Herculesの両手は鉄の鎖で繋がれ、その頭に「塩漬けの食事」が振りかけられた。塩と粗挽きの小麦を犠牲となるものの頭に振りかけるのは古代人の間での習慣であった。今や犠牲者を祭壇にたて、僧侶がナイフを取り上げた。その時、Herculesはすごい努力で鎖を破壊し、一撃で僧侶を気絶させ、更なる一撃でその王をも殺してしまった。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

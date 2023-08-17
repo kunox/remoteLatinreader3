@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 23</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[23]<span></span></a>
+
+<a class="note0">Obsidibus<span></span></a>
+<a class="note0">acceptīs<span><br><br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note1">redūcit<span>reduco reducere, reduxi, reductus V (3rd)  <br>:lead back, bring back; restore; reduce;<br>(３人称 単数 現在 能動態 直説法 )<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">mare,<span></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note1">invenit<span>invenio invenire, inveni, inventus V (4th)  <br>:come upon; discover, find; invent, contrive; reach, manage to get;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">refectās.<span>reficio reficere, refeci, refectus V (3rd)  <br>:rebuild, repair, restore;<br>(完了 分詞 受動態 f 複数  対格)<br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>obsidibus accepttis : 独立奪格</p>
+<p>reducit exercitum ad mare : 軍団を海の方に連れ戻し、</p>
+<p>incenit naves refectas. 述語対格、船が修理されているのを見つける。<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>人質を受け取り、軍団を海の方に連れ戻し、船が修理されているのを発見した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note1">dēductīs,<span>deduco deducere, deduxi, deductus V (3rd) TRANS  <br>:<strong>lead</strong>/draw//<strong>pull</strong>/<strong>bring</strong>/stretch down/away/out/off; escort; eject/evict (claimant);<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">captīvōrum<span><br><br></span></a>
+<a class="note0">magnum<span></span></a>
+<a class="note0">numerum<span></span></a>
+<a class="note0">habēbat,<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">nōnnūllae<span>nonnullus nonnulla, nonnullum ADJ  <br>:number of (pl.), some; several;<br>&nbsp;(f 複数  主格)<br></span></a>
+<a class="note1">tempestāte<span>tempestas tempestatis N (3rd) F  <br>:season, time, weather; <strong>storm</strong>;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">dēperierant<span>depereo deperire, deperivi(ii), deperitus V  <br>:perish/die; be lost/totally destroyed; be much in love with/love to distraction;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note1">nāvēs,<span>navis navis N (3rd) F  <br>:ship;<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note1">duōbus<span>duo -ae o, secundus -a -um, bini -ae -a, bis NUM  2<br>:two (pl.);<br>&nbsp;(m 複数  奪格)<br><br></span></a>
+<a class="note1">commeātibus<span>commeatus commeatus N (4th) M  <br>:supplies/provisions; goods; voyage; <strong>passage</strong>; convoy/caravan; furlough/leave;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note1">reportāre<span>reporto reportare, reportavi, reportatus V (1st)  <br>:carry back; report;<br>&nbsp;(  現在 能動態 不定詞 )<br><br></span></a>
+<a class="note0">īnstituit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>his deductis : 独立奪格「これらを引き出して」</p>
+<p>instituit reportare exercitum duobus commeatisbus. 「２回の航海で軍団を搬送するよう命じた」</p>
+<p>quod habebat magnum numerum capitivorum, 「大量の人質があり」</p>
+<p>et nonnullae naves deperierant tempestate. 「幾つかの船が嵐によって破壊されているので」</p>
+<p>nonnullaeは複、主格なのでnavesを修飾している。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらの船を引き出し、軍団を２回の航海で搬送するよう命じた。というのも、大量の人質があり、少なくない船が嵐によって壊れたからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ac<span></span></a>
+<a class="note1">sīc<span>sic ADV <br>:thus, so; as follows; in another way; in such a way;<br><br></span></a>
+<a class="note0">accidit,<span></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">tantō<span><br><br></span></a>
+<a class="note0">nāvium<span><br><br></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note1">tot<span>tot NUM <br>:so many, such a number of; as many, so many; such a great number of;<br><br></span></a>
+<a class="note0">nāvigātiōnibus<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">superiōre<span><br><br></span></a>
+<a class="note0">annō<span><br><br></span></a>
+<a class="note1">ūlla<span>ullus ulla, ullum (gen -ius) ADJ  <br>:any;<br>(f 単数 主格)<br></span></a>
+<a class="note1">omnīnō<span>omnino ADV <br>:entirely, altogether;<br><br></span></a>
+<a class="note1">nāvis,<span>navis navis N (3rd) F  <br>:ship;<br>(X 単数 主格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note0">portāret,<span><br><br></span></a>
+<a class="note1">dēsīderārētur;<span>desidero desiderare, desideravi, desideratus V (1st) TRANS  <br>:desire/want, long/wish for, request, require/need; <strong>miss</strong>, lack; <strong>lose</strong>;<br>(３人称 単数 未完了 受動態 接続法 )<br><br></span></a>
+<a class="note0">at<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">eīs,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">inānēs<span>inanis inanis, inane ADJ  <br>:void, <strong>empty</strong>, hollow; vain; inane, foolish;<br>(c 複数  主格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">continentī<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">remitterentur<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">priōris<span>prior prior, prius ADJ  比較級<br>:ahead, in front, leading; previous, earlier, preceding, prior; former; basic;<br>(c 単数 属格),<br></span></a>
+<a class="note1">commeātūs<span>commeatus commeatus N (4th) M  <br>:supplies/provisions; goods; voyage; passage; convoy/caravan; furlough/leave;<br>&nbsp;(c 単数 属格)<br></span></a>
+<a class="note1">expositīs<span>expono exponere, exposui, expositus V (3rd)  <br>:set/put forth/out; abandon, expose; publish; explain, relate; <strong>disembark</strong>;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">mīlitibus<span>miles militis N (3rd) M  <br>:soldier; foot soldier; soldiery; knight (Latham); knight's fee/service;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quās<span><br><br></span></a>
+<a class="note1">posteā<span>postea ADV <br>:afterwards;<br><br></span></a>
+<a class="note0">Labiēnus<span><br><br></span></a>
+<a class="note1">faciendās<span>faciendusの複　ｆ　対格<br><br><br></span></a>
+<a class="note1">cūrāverat<span>curo curare, curavi, curatus V (1st)  <br>:|undertake; procure; regard w/anxiety/interest; take trouble/interest; desire;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">numerō<span></span></a>
+<a class="note0">LX,<span></span></a>
+<a class="note1">perpaucae<span>perpaucus perpauca, perpaucum ADJ  <br>:very few (pl.); select;<br>&nbsp;(f 複数  主格)<br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">caperent,<span>capio capere, cepi, captus V (3rd) TRANS  <br>:take hold, seize; grasp; take bribe; arrest/capture; put on; occupy; captivate;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">reliquae<span></span></a>
+<a class="note0">ferē<span><br><br></span></a>
+<a class="note0">omnēs<span></span></a>
+<a class="note1">rēicerentur.<span>reicio reicere, rejeci, rejectus V (3rd) TRANS  <br>:throw back; <strong>drive back</strong>; repulse, repel; refuse, reject, scorn;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p><strong>accidit uti ~</strong> : uti以下の事が起きた。</p>
+<p>ex tanto numero navium tot navigationibus : naviumは部分の属格で、「船全体の中のあれほどの数の船で」</p>
+<p><strong>tot navigationibus</strong> : 独立奪格　「そんなに多くの航海にも拘わらず」</p>
+<p><strong>neque hoc (anno) neque superior anno</strong> : 時の奪格で、今年も去年も(なかった）</p>
+<p>ullla omnino navis desideraretur. ：どんな船も失われなかった（nequeは前にある）</p>
+<p>後半は　<strong>ex eis, perpaucae caperent locum, reliquare fere reicerentur</strong>. が骨子。「その中で大変少ししか目的地に到着せず、残りは押し戻された」ex eisの中身はそれ以下で説明されている。</p>
+<p><strong>quae remimitterentur ad eum ex continenti inanes</strong>:「彼（Caesar)に大陸から送り返されたもの」inanes(形容詞）の位置がよく解らない。文法的にはquae（主語）を修飾か？即ち「空のそれらは送り返された」</p>
+<p>et <strong>prioris commenatus militibus expositis</strong> : militibus expositisは独立奪格で「兵士たちを下ろしたあと」prioris commenatusは所有の属格でmilitibusに掛かる。priorisはpriorの比較級で「一回目の」の意。（１行前で書いているように2回に分けて搬送する1回めということ）etがよく解らない？</p>
+<p><strong>quas postea Libienus faciendas curaverat</strong> : 「後でLibienusが作るために面倒みたもの」<strong>facuendas は動形容詞でcuroと一緒にその目的を表すために使用される</strong>。一種の叙述用法。（NewLatin337.8.(b).ii)　<u>最初のquasはex eisの関係代名詞で前出のquaeと対応している。</u></p>
+<p><u></u>locum = Britannia つまり戻ってきなかったということ<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>そして、以下のことが起こった。その年も前の年にも、兵士を運ぶための船は、あんなに多くの船で、何度も航海をしたにも拘わらず、失われることはなかったが、大陸から彼に向けて送り返される船、その一つは最初に兵士を「連れて行って）下船させたあとのもので、もう一つはLibienusが約60隻作ったもの、それらの船から、（Britannia)に到着したのはほんの僅かで、残りは全て押し戻されてしまった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quās<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">aliquamdiū<span>aliquamdiu ADV <br>:for some time, for a considerable time/distance (travel), for a while;<br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">frūstrā<span>frustra ADV <br>:in vain; for nothing, to no purpose;<br><br></span></a>
+<a class="note1">exspectāsset,<span>exspecto exspectare, exspectavi, exspectatus V (1st)  <br>:lookout for, await; expect, anticipate, hope for;<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">annī<span><br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">nāvigātiōne<span><br><br></span></a>
+<a class="note1">exclūderētur,<span>excludo excludere, exclusi, exclusus V (3rd)  <br>:shut out, shut off; remove; exclude; hinder, prevent;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">aequinoctium<span>aequinoctium 中性名詞　単　主格　;= equinox (ここでは秋分）<br><br></span></a>
+<a class="note0">suberat,<span></span></a>
+<a class="note1">necessāriō<span>necessario ADV <br>:unavoidably, without option; necessarily, of necessity; inevitably/unavoidably;<br><br></span></a>
+<a class="note1">angustius<span>anguste angustius, angustissime ADV <br>:closely, in close quarters/narrow limits, cramped, crowded; sparingly, scantily;<br>これの比較級がangustius<br><br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note1">collocāvit<span>colloco collocare, collocavi, collocatus V (1st) TRANS  <br>:|put together, assemble; settle/establish in a place/marriage; billet; lie down;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">summā<span></span></a>
+<a class="note1">tranquillitāte<span>tranquillitas tranquillitatis N (3rd) F  <br>:stillness; tranquility;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">cōnsecūtā,<span>consequor consequi, consecutus sum V (3rd) DEP  <br>:||seek after, aim at; achieve, reach; obtain; acquire, gain; grasp/comprehend;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note0">secundā<span><br><br></span></a>
+<a class="note1">initā<span>ineo inire, inivi(ii), initus V  <br>:enter; undertake; begin; go in; enter upon;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格),<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">solvisset<span>solvo solvere, solvi, solutus V (3rd)  <br>:loosen, release, unbind, untie, free; open;<strong> set sail</strong>; scatter; pay off/back;<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">vigiliā,<span>vigilia vigiliae N (1st) F  <br>:watch (fourth part of the night), vigil, wakefulness;<br>(c 単数 主格),<br></span></a>
+<a class="note0">prīma<span><br><br></span></a>
+<a class="note0">lūce<span><br><br></span></a>
+<a class="note0">terram<span></span></a>
+<a class="note1">attigit<span>attigo attigere, attigi, attactus V (3rd) TRANS  <br>:touch, touch/border on; reach, arrive at, achieve; mention briefly; belong to;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">omnēsque<span><br><br></span></a>
+<a class="note1">incolumēs<span>incolumis incolumis, incolume ADJ  <br>:unharmed, uninjured; alive, safe; unimpaired;<br>(c 複数  対格),<br><br></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note1">perdūxit.<span>perduco perducere, perduxi, perductus V (3rd)  <br>:lead, guide; prolong; induce, conduct, bring through;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>ne excluderetur a navigatione anni tempore. anni temporeは手段の奪格、excludereturの主語はCaesar: 「（Caesarは）季節のために航海から閉めだされないように」</p>
+<p>angustius anguste（副詞）の比較級</p>
+<p>tranquillitate consecuta : 独立奪格　「大変静かな天気、海を得て」</p>
+<p>secunda vigilia inita cum solvisset : solvissetは出港の意。出港した時は第二計時が始まった。</p>
+<p>prima luce : 独立奪格　「夜明けに」</p>
+<p>perduxit omnes naves incolumes. 述語対格、「全ての船を無事に導いた」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>しばらくの間Caesarは為す術もなく待っていたが、季節によって航海ができなくならないよう、と言うのは秋分が近かったので、不本意ながら兵士をより窮屈に詰め込んだ。そして大変静かな時を選んで出港した時は第二計時が始まる頃であった。夜明けに、陸に到着し、全ての船は無事であった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

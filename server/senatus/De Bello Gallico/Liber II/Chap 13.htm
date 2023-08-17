@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber II : Chap 13</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[13]<span></span></a>
+
+<a class="note0">Caesar,<span></span></a>
+<a class="note1">obsidibus<span>与格　人質として<br></span></a>
+<a class="note1">acceptīs<span>accipio accipere, accepi, acceptus 完了分詞　受動　複　奪格　;= take, grasp, receive, accept<br></span></a>
+<a class="note1">prīmīs<span>複　奪格<br></span></a>
+<a class="note0">cīvitātis<span><br><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">ipsīus<span>属格<br></span></a>
+<a class="note1">Galbae<span>Galba王　属格</span></a>
+<a class="note0">rēgis<span><br><br></span></a>
+<a class="note0">duōbus<span><br><br></span></a>
+<a class="note1">fīliīs<span>filius filli M　複　奪格　;=son<br></span></a>
+<a class="note1">armīsque<span>armus armi N 複　奪格　；= arms, weapon, armor<br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note1">trāditīs,<span>trado tradere, tradidi, traditus V (3rd)  <br>:hand over, surrender; deliver; bequeath; relate;<br>(完了 分詞 受動態  複数  与格), (完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">dēditiōnem<span><br><br></span></a>
+<a class="note0">Suessiōnēs<span><br><br></span></a>
+<a class="note1">accipit<span>３単　現在　Caesarが主語</span></a>
+<a class="note0">exercitumque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Bellovacōs<span><br><br></span></a>
+<a class="note1">dūcit.<span>duco = lead command ３単現在<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p><strong>obsidibus :</strong> 与格　「人質として」(目的の与格）（NewLatin 191.2.b)</p>
+<p>accptis primis atque filiis ：独立奪格　「主だった人と息子が受け取られ」</p>
+<p>&nbsp;ipsius Galbae regis duobus filiis : ipsius, Galbae, regisは属格「Galbamの王その人の」</p>
+<p>amisque traditis : 独立奪格　「武器が渡され」</p>
+<p>Bellovacos : ここではBellovaci族の領地という意味合い。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>部族の主だったものとGalba王の二人の息子が人質として受け取られ、城塞から武器が渡され、CaesarはSuessiones族の降伏を認め、兵たちをBellovaciに連れて行った。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quī<span>qui = which　この場合　Bellovaciのこと<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">suaque<span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note0">Brātuspantium<span><br><br></span></a>
+<a class="note1">contulissent<span>confero conferre, contuli, collatus V TRANS  <br>:bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">exercitū<span><br><br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note1">V<span>quinque<br><br></span></a>
+<a class="note1">abesset,<span>３単　未完了　接続法</span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">maiōrēs<span>magnus magna -um, major -or -us, maximus -a -um ADJ  比較級<br>:large/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;<br>(c 複数  主格)<br></span></a>
+<a class="note1">nātū<span>natus natus N (4th) M  <br>:birth; age, years<br>(X 単数 奪格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note1">ēgressī<span>egredior egredi, egressus sum V (3rd) DEP  <br>:go/march/come out; set sail; land, disembark; surpass, go beyond;<br>&nbsp;(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note1">manūs<span>対格<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">tendere<span>tendo tendere, tetendi, tentus 不定詞　;= strach, spread, extend</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">vōce<span>vox vocis N (3rd) F  <br>:voice, tone, expression;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">significāre<span>singnifico signicare, signicavi, signicatus 不定詞　;= signify, indicate, show<br></span></a>
+<a class="note1">coepērunt<span>coepi coepisse coeptus Perfect Defective ３複　完了　直説法　;= begin, commence<br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">fidem<span><br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">potestātem<span>potestas potestatis F 対格単 ;= power, rule, strength<br></span></a>
+<a class="note0">venīre<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">contrā<span>contra ADV <br>:|against, opposite, opposed/hostile/contrary/in reply to; directly over/level;<br><br></span></a>
+<a class="note0">populum<span></span></a>
+<a class="note0">Rōmānum<span><br><br></span></a>
+<a class="note0">armīs<span><br><br></span></a>
+<a class="note0">contendere.<span><br><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p><strong>suaque</strong> = sua + que = their belongings</p>
+<p>se suaque omnia (Vol1 chap11にも出てきた）彼ら自身とその財産（持ち物）対格</p>
+<p><strong>oppidum Bratuspantium</strong> : 同格で属格ではない　Brastuspantiumという都市（urbs Roma, insula Cyprus)</p>
+<p><strong>mainores natu</strong> : mainorはmagnusの比較級で、「大きい」の意。natuは「年齢」の意があり、<u>指定の奪格</u>。つまり「年齢に関して大きい」が逐語訳だが、ほぼ慣用句。時としてnatuは省略される。「長老（たち）」minor natu = 「若者」（NewLatin 226.1)</p>
+<p>構文としては</p>
+<p><strong>qui&nbsp;contulissent se suaque</strong>&nbsp;&nbsp; 「彼らは（Bellovaci）自分たちと財産を運び入れており」quiは関係代名詞で前のBellovacosを指している。ラテン語では文頭に関係代名詞を持ってきて、<u>接続詞＋指示代名詞</u>のようによく使う。（NewLatin 251.6)</p>
+<p><strong>cum Caesar cum exercitu absset　　</strong>「Caesarとその軍勢が近づいた時」</p>
+<p><strong>omnes miores natu coeperunt significare　</strong>「長老たちがアピールを始めた」</p>
+<p>sese ~　：ここから間接話法でBellovaciの言っている事になる。</p>
+<p>sese = Bellovaci</p>
+<p>eius = Caesar</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p> 彼らは自分たちとその財産をBrastuspantiumという城塞に運び入れた。そして、カエサルが軍を率いて５マイルの近さに来たときに、全ての長老達が町から出てきて、カエサルに腕を差し伸べ、大きな声で示し始めた、彼らは彼らをCaesarの保護と権力に預けに来た、武器を持ってローマ軍と争うようなことはしない、と。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Item,<span>副詞　;= likewise, besides, similarly</span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note1">accessisset<span>accedo ３単過去完了　接続法</span></a>
+<a class="note0">castraque<span></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note1">pōneret,<span>pono ponere, posivi, postus V (3rd) TRANS  <br>:put, place, set; station; (archaic form of perf. of pono);<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">puerī<span><br><br></span></a>
+<a class="note1">mulierēsque<span>mulier mulieris N (3rd) F  <br>:woman; wife; mistress;<br>(c 複数  主格),<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">mūrō<span>murus 奪格<br></span></a>
+<a class="note1">passīs<span>passus passa, passum ADJ  <br>:spread out; outstretched; dried;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">manibus<span></span></a>
+<a class="note0">suō<span><br><br></span></a>
+<a class="note1">mōre<span>mos moris M 単数　奪格　;= custom, habit, manner<br></span></a>
+<a class="note0">pācem<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Rōmānīs<span><br><br></span></a>
+<a class="note1">petiērunt<span>peto petere, petivi, petitus V (3rd)  <br>:attack; aim at; desire; beg, entreat, ask (for); reach towards, make for;<br>(３人称 複数  完了 能動態 直説法 )<br>=<strong>petiverunt</strong><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>passis manibus : 独立奪格　手を広げて</p>
+<p><strong>suo more</strong> : 彼らのやり方で、彼らの慣習に従って　（手段の奪格）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>同じように、城塞に近づき、野営地を設営した時、婦人と子供達が壁から手を広げて彼らの伝統に則り、ローマ軍からの平和を嘆願した。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

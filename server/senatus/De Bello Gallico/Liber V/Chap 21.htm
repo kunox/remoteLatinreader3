@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 21</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[21]<span></span></a>
+
+<a class="note0">Trinobantibus<span></span></a>
+<a class="note1">dēfēnsīs<span>defendo defendere, defendi, defensus V (3rd) TRANS  <br>:defend/guard/protect, look after; act/speak/plead/write for defense; prosecute;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note0">inūriā<span><br><br></span></a>
+<a class="note1">prohibitīs<span>prohibeo prohibere, prohibui, prohibitus V (2nd)  <br>:hinder, restrain; forbid, prevent;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br><br></span></a>
+<a class="note0">Cēnimagni,<span><br><br></span></a>
+<a class="note0">Segontiāci,<span><br><br></span></a>
+<a class="note0">Ancalitēs,<span><br><br></span></a>
+<a class="note0">Bibrocī,<span><br><br></span></a>
+<a class="note0">Cassī<span><br><br></span></a>
+<a class="note0">lēgātiōnibus<span></span></a>
+<a class="note0">missīs<span></span></a>
+<a class="note0">sēsē<span></span></a>
+<a class="note0">Caesarī<span></span></a>
+<a class="note1">dēdunt.<span>dedo dedere, dedidi, deditus V (3rd) TRANS  <br>:give up/in, surrender; abandon/consign/devote (to); yield, hand/deliver over;<br>(３人称 複数  現在 能動態 直説法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>Trinobantibus defensis atque prohibitis : 独立奪格　「Trinobantisは保護され~は禁止された」</p>
+</div></div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>Trinobantesは保護され、あらゆる軍事的な不正義は禁止された。Centimagni、Segoniaci、Ancalites、Bibroci、Cassiなどから使者が送られ、Caesarに降伏した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ab<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">cognōscit<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">longē<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">eō<span></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note0">Cassivellauni<span><br><br></span></a>
+<a class="note1">abesse<span>absum abesse, abfui, abfuturus V  <br>:be away/absent/distant/missing; be free/removed from; be lacking; be distinct;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">silvīs<span><br><br></span></a>
+<a class="note1">palūdibusque<span>palus paludis N (3rd) F  <br>:swamp, marsh;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">mūnītum,<span>munio munire, munivi, munitus V (4th)  <br>:fortify; strengthen; protect, defend, safeguard; build (road);<br>&nbsp;(完了 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">satis<span></span></a>
+<a class="note0">magnus<span></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note1">pecorisque<span>pecus pecoris N (3rd) N  <br>:cattle, herd, flock;<br>(X 単数 属格)<br></span></a>
+<a class="note0">numerus<span></span></a>
+<a class="note1">invēnerit.<span>invenio invenire, inveni, inventus V (4th)  <br>:come upon; discover, find; invent, contrive; reach, manage to get;<br>(３人称 単数 完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>cognoscit Cassivellauni oppidum abesse non longe ex eo loco. 「Cassivellauniの城塞がその場所からあまり離れていない事を知った」</p>
+<p>munitum silvis paludibusque. 「森と沼地で守られた」munitumは完了分詞でoppidumを修飾。</p>
+<p><strong>invenerit</strong>はfind, discoverなどの意味であるが、他のテキストでは<strong>convenerit</strong>というのが多い。conveneritはassemble,meetと言う意味である。意味としてはそのOppidumの中にはたくさんの人と数多くの家畜がいた、という事。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>彼らから（Caesarは）その場所からあまり離れていないところにCassivellauniの城塞がある事をしった。それは森と沼地によって守られており、その中には十分な数の人間と家畜がいた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Oppidum<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">Britannī<span><br><br></span></a>
+<a class="note1">vocant,<span>voco vocare, vocavi, vocatus V (1st)  <br>:call, summon; name; call upon;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">silvās<span><br><br></span></a>
+<a class="note1">impedītās<span>impeditus impedita -um, impeditior -or -us, impeditissimus -a -um ADJ  <br>:hindered/ obstructed/ encumbered/ hampered; difficult/impeded; <strong>inaccessible</strong>;<br>(f 複数  対格)<br></span></a>
+<a class="note0">vāllō<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">fossā<span><br><br></span></a>
+<a class="note1">mūniērunt,<span>=muniverunt<br>munio munire, munivi, munitus V (4th)  <br>:fortify; strengthen; protect, defend, safeguard; build (road);<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">quō<span></span></a>
+<a class="note1">incursiōnis<span>incursio incursionis N (3rd) F  <br>:onrush, attack, raid; incursion;<br>(X 単数 属格)<br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">vītandae<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">convenīre<span><br><br></span></a>
+<a class="note1">cōnsuērunt.<span>=consueverunt<br>consueo consuere, consuevi, consuetus V (2nd) TRANS  <br>:accustom; become accustomed; be accustomed, inure, habituate. familiarize;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>autem Britanni vocant oppidum : oppidumは述語対格で、「Britanniは（それを）城塞と呼び」</p>
+<p>cum muniverunt impeditas sivas vallo atque fossa, ：impeditas silvasがmuniveruntの目的語、vallo, fossaは手段の奪格。「通行不能な森を防壁と堀で要塞化した時」</p>
+<p>incursionis, vitandae causa : 属格　＋causa　で～のために<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>ところで、Britaniaは、通行不能な森を柵と堀で要塞化して、それを城塞と呼び、敵が進入することを防ぐために集まる事に慣れていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span><br><br></span></a>
+<a class="note1">proficīscitur<span>proficiscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">legiōnibus:<span><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">reperit<span>reperio reperire, repperi, repertus V (4th) TRANS  <br>:discover, learn; light on; find/obtain/get; find out/to be, get to know; invent;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">ēgregiē<span>egregie ADV <br>:excellently, admirably well; signally/remarkably, to outstanding degree;<br><br></span></a>
+<a class="note0">nātūrā<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">opere<span>opus operis N (3rd) N  <br>:need; work; fortifications (pl.), works;<br>(n 単数 奪格)<br></span></a>
+<a class="note0">mūnītum;<span><br><br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">hunc<span></span></a>
+<a class="note1">duābus<span>duo -ae o, secundus -a -um, bini -ae -a, bis NUM  2<br>:two (pl.);<br>&nbsp;(f 複数  奪格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">partibus<span></span></a>
+<a class="note1">oppugnāre<span>oppugno oppugnare, oppugnavi, oppugnatus V (1st)  <br>:attack, assault, storm, besiege;<br>(  現在 能動態 不定詞 )<br><br></span></a>
+<a class="note0">contendit.<span></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>proficiscitur eo cum legionibus. 軍団を引き連れそこに向かった。</p>
+<p>reperit locum munitum egregie natura atque opere. 述語対格。「その場所が自然と作業によりうまく要塞化されていることが解った」<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>軍団を引き連れその場所にむかい、そこが自然と作業により、うまく要塞化されている事を知った。然しながら、二方向からそこを攻撃した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hostēs<span><br><br></span></a>
+<a class="note1">paulisper<span>paulisper ADV <br>:for (only) a short time/brief while;<br><br></span></a>
+<a class="note1">morātī<span>moror morari, moratus sum V (1st) DEP  <br>:delay; stay, stay behind; devote attention to;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note0">nostrōrum<span><br><br></span></a>
+<a class="note0">impetum<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">tulērunt<span>fero ferre, tuli, latus V  <br>:bring, bear; tell/speak of; consider; carry off, win, receive, produce; get;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">sēsēque<span><br><br></span></a>
+<a class="note1">aliā<span>alius alia, aliud ADJ  <br>:other, another; different, changed;<br>&nbsp;(f 単数 奪格<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note0">oppidī<span><br><br></span></a>
+<a class="note1">ēiēcērunt.<span>eicio eicere, ejeci, ejectus V (3rd) TRANS  <br>:cast/throw/fling/drive out/up, extract, expel, discharge, vomit; out (tongue);<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>Hostes, morati paulisper, non tulerunt~.分詞構文、敵は暫時持ちこたえたが、～</p>
+<p>eiecerunt seseque ex alia parte oppidi. 「自身を別の城塞の部分から押し出した」<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>敵は、少しの間抵抗したが、味方の攻撃に耐えることが出来ず、城塞の別の方向から自身を投げ出した。（逃走した）<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Magnus<span></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note0">numerus<span></span></a>
+<a class="note0">pecoris<span></span></a>
+<a class="note1">repertus,<span>reperio reperire, repperi, repertus V (4th) TRANS  <br>:discover, learn; light on; find/obtain/get; find out/to be, get to know; invent;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">multīque<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fugā<span><br><br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">comprehēnsī<span>comprehendo comprehendere, comprehendi, comprehensus V (3rd) TRANS  <br>:catch/<strong>seize</strong>/grasp firmly; arrest; take hold/root/fire, ignite; conceive (baby);<br>(完了 分詞 受動態 m 複数  主格),&nbsp; <br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">interfectī.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>そこには大変な数の家畜が残され、逃走中の多くが捕らえられ殺された。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

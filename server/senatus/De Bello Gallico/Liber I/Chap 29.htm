@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 29</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[29]<span></span></a>
+
+<a class="note0">In<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">Helvētiōrum<span><br><br></span></a>
+<a class="note1">tabulae<span>tabula, tabulae 名詞 (1st) F   :writing tablet (wax covered board); records (pl.);複　主格</span></a>
+<a class="note1">repertae<span>reperio, reperire, repperi, repertus 動詞 (4th) TRANS   :discover, learn; light on; find/obtain/get; 完了分詞　受動態</span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">litterīs<span>littera, litterae 名詞 (1st) F   :letter (alphabet); (pl.) letter, epistle; 奪格<br></span></a>
+<a class="note1">Graecīs<span>Graecus, Graeci N (2nd) M   :Greek; the Greeks (pl.);奪格<br></span></a>
+<a class="note1">cōnfectae<span>conficio 完了分詞　受動態　奪格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">relātae,<span>refero, referre, rettuli, relatus 動詞   :bring/carry back/again/home; move/draw/force back, withdraw; go back, return;  <br>完了分詞　受動態<br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">tabulīs<span>奪格<br></span></a>
+<a class="note1">nōminātim<span>nominatim, 副詞   :by name;<br></span></a>
+<a class="note1">ratiō<span>ratio, rationis 名詞 (3rd) F   :account, reckoning, invoice; plan; prudence; method; reasoning; rule; regard;主格<br></span></a>
+<a class="note0">cōnfectā<span><br><br></span></a>
+<a class="note0">erat,<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">numerus<span>numerus M 単　主格　;= number, sum, total</span></a>
+<a class="note1">domō<span>domus 奪格<br></span></a>
+<a class="note1">exīsset<span>exeo, exire, exivi(ii), exitus 動詞 INTRANS&nbsp;&nbsp;;= come, go, sail, march, move out, forth away 3 単 過去完了 接続法</span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">arma<span>armum n複　対格</span></a>
+<a class="note1">ferre<span>fero, ferre, tuli, latus 動詞   :bring, bear; 不定詞</span></a>
+<a class="note1">possent,<span>possum 3複　未完了　接続法</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">item<span>item, 副詞   :likewise; besides, also, similarly;</span></a>
+<a class="note1">sēparātim,<span>separatim, 副詞   :apart, separately;<br></span></a>
+<a class="note0">quot<span></span></a>
+<a class="note1">puerī,<span>puer, pueri 名詞 (2nd) M   :boy, lad, young man; servant; (male) child;<br></span></a>
+<a class="note1">senēs<span>senex, senis 名詞 (3rd) M   :old man;複　主格<br></span></a>
+<a class="note1">mulierēsque.<span>mulier, mulieris 名詞 (3rd) F   :woman; wife; mistress;複　主格<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>In castris Helvetiorum tabulae repertae sunt, : tabula文字版　stilusがペン</p>
+<p>litteris Graecis confectae　：　<strong>手段の奪格</strong>　ギリシャ文字で作られ（書かれ）confectae (sunt) </p>
+<p>domo : 場所の奪格で、どこからを示す。通常a, ab, exなどの前置詞と一緒に使われるが<u>domusは特例</u>である。（NewLatin229.1.b)</p>
+<p><strong>qui numerus domo exisset</strong> : quiはwhatで、間接疑問文 (間接話法の疑問文は接続法）numerusが主語</p>
+<p><strong>eorum qui arma ferre possent</strong> : 「その中で何人が武器を携えられるか」この節は先行詞（この場合数）を一般的に指して修飾する節になっており[<strong>特徴の節</strong>](Charachteristic clause)と呼ばれ、<u>接続法が使われる</u>。(AG535.a)(NewLatin283.2)</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>ヘルウェティのキャンプから文字板が見つかった、それはギリシャの文字で書かれており、カエサルのもとに届けられた。そこには名前が書かれた名簿があり、故郷からどれほどの人数が出発し、その中で何人が武器を携えられるかなどが書いてあった。同じように別のところでは、息子、年寄りまた女性について書かれていた。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[Quārum<span><br><br></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note0">rērum]<span><br><br></span></a>
+<a class="note1">summa<span>summa, summae 名詞 (1st) F   :sum; summary; chief point, essence,主格</span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">capitum<span>caput, capitis 名詞 (3rd) N   :head; person; life; leader <br>属格　=person</span></a>
+<a class="note0">Helvētiōrum<span><br><br></span></a>
+<a class="note1">mīlium<span>mille n 複　属格　;= thousand<br></span></a>
+<a class="note1">CCLXIII,<span>２６３　ducenta sexaginga tria</span></a>
+<a class="note0">Tulingōrum<span><br><br></span></a>
+<a class="note0">mīlium<span><br><br></span></a>
+<a class="note1">XXXVI,<span>36 triginta sex</span></a>
+<a class="note0">Latobrigōrum<span><br><br></span></a>
+<a class="note1">XIIII,<span>14 quattuordecim</span></a>
+<a class="note0">Rauracōrum<span><br><br></span></a>
+<a class="note1">XXIII,<span>23 viginti tria</span></a>
+<a class="note0">Bōiōrum<span><br><br></span></a>
+<a class="note1">XXXII;<span>32 triginta duo</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">arma<span></span></a>
+<a class="note0">ferre<span></span></a>
+<a class="note0">possent<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note1">nōnāgintā<span>数詞　90<br></span></a>
+<a class="note0">duo.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Quarum omnium rerum summa : 「これら全体の事柄の合計は」summaはTotalの意</p>
+<p>capitum : 頭という意味から人の数の意。　<strong>全体の属格</strong></p>
+<p>milium ：milleの複　属格で、この属格はeratの述語になっていて「<strong>性質の属格</strong>]（NewLatin 203)</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>これらの全部の合計では以下のようである。ヘルウェティの人口は２６万３０００，トリンギが３万６０００、ラトビキが１万４０００、ラウラキが２万３０００、ボイが３万２０００、これらのうち、武器を取ることが可能なものは約９万２０００というところである。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Summa<span></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note1">fuērunt<span>3 複 完了 (sum)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">mīlia<span>mille n 複　対格<br></span></a>
+<a class="note1">CCCLXVIII.<span>368 trecenta sexaginta octo</span></a>
+<a class="note0">Eōrum<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">domum<span></span></a>
+<a class="note1">rediērunt<span>= rediverunt <br>redeo, redire, redivi(ii), reditus 動詞   :return, go back, give back;3 複 完了<br></span></a>
+<a class="note1">cēnsū<span>census, censa, censum 形容詞   :registered; assessed. rated, estimated; judged　奪格<br></span></a>
+<a class="note1">habitō,<span>habeo 完了分詞　受動態<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">imperāverat,<span><br><br></span></a>
+<a class="note1">repertus<span>reperio, reperire, repperi, repertus 動詞 (4th) TRANS   :discover, learn; <br>完了分詞　受動　主格</span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">numerus<span></span></a>
+<a class="note0">mīlium<span><br><br></span></a>
+<a class="note1">C<span>centum et decem</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">X.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>fuerunt : ３複　完了形。主語はsummaで単数であるが、miliaに引きずられて複になっている。厳密に構文ではなく意味に従う事がある。（NewLatin254.4.a)</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>これらの全ての合計は約３６万８０００。それらのうち、故郷に帰ったものの人数がカエサルの命で、評価されたが、それによるとそれは約１１万である。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 36 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[36]<span></span></a>
+<a class="note0">Ac<span></span></a>
+<a class="note0">belli<span></span></a>
+<a class="note1">quidem<span>quidem ADV <br>:indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;<br><br></span></a>
+<a class="note1">aequitas<span>aequitas aequitatis N (3rd) F  <br>:justice, equity,<strong> fairness</strong>, impartiality; symmetry, conformity; evenness;<br>(X 単数 主格)<br></span></a>
+<a class="note1">sanctissime<span>sanctus sancta -um, sanctior -or -us, sanctissimus -a -um ADJ  最上級<br>:consecrated, sacred, inviolable; venerable, august, divine, holy, pious, just;<br><br><br></span></a>
+<a class="note1">fetiali<span>fetialis fetialis N (3rd) M  <br>:Roman priest/college of priests (pl.) representing Rome in diplomatic dealings;<br>(X 単数 奪格)<br><br></span></a>
+<a class="note0">populi<span></span></a>
+<a class="note0">Romani<span></span></a>
+<a class="note1">iure<span>jus juris N (3rd) N  <br>:law; legal system; code; right; duty; justice; court; binding decision; oath;<br>(N 単数 奪格)<br></span></a>
+<a class="note1">perscripta<span>perscribo perscribere, perscripsi, perscriptus V (3rd)  <br>:report; describe; write out in full; finish writing, write a detailed record;<br>(完了 分詞 受動態 F 単数 主格),&nbsp; (完了 分詞 受動態 N 複数 主格)<br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>belli aequitas est perscrita populi Romani fetiali iure. 「戦いの公平さについてはローマのfetialis法典に書かれている」</p>
+<p>fetialisというのがよくわからない。一種の僧侶で外交折衝などにあたったとされる。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>そして戦争の規則についてはローマの聖なる法典、fetialisに記述されている。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ex<span></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note1">intellegi<span>intellego intellegere, additional, forms V  <br>:understand; realize;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">potest<span></span></a>
+<a class="note0">nullum<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">iustum,<span>justus justa -um, justior -or -us, justissimus -a -um ADJ  <br>:just, fair, equitable; right, lawful, justified; regular, proper;<br>(N 単数 主格)<br></span></a>
+<a class="note0">nisi<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">rebus<span></span></a>
+<a class="note1">repetitis<span>repeto repetere, repetivi, repetitus V (3rd)  <br>:return to; get back; demand back/again; repeat; recall; claim;<br>&nbsp;(完了 分詞 受動態  複数 奪格)<br><br></span></a>
+<a class="note1">geratur<span>gero gerere, gessi, gestus V (3rd)  <br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">denuntiatum<span>denuntio denuntiare, denuntiavi, denuntiatus V (1st)  <br>:give notice, warn/foretell; threaten/enjoin/declare intent to injure; intimate;<br>(完了 分詞 受動態 N 単数 主格), <br></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">indictum.<span>indico indicere, indixi, indictus V (3rd)  <br>:declare publicly; proclaim, announce; appoint; summon;<br>(完了 分詞 受動態 N 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>res repetere</strong>というのは正式な開戦要求というニュアンスの常套句との由。（fetialisに決められている？）</p>
+<p>英語でformal demand of satisfactionとあり、この場合satisfactionは名誉回復の機会ということらしい。</p>
+<p><strong>（quod) sit denuntiatum et indictum ante</strong>. 「それが事前に通達され伝達されている」</p>
+<p>quo＝jure<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>その法典によれば、もし開戦要求がきちんと成されるか、または事前に相手に知らせ伝達されていない場合にはいかなる戦いも正当であるとはみなされ得ないということである。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[Popilius<span></span></a>
+<a class="note0">imperator<span></span></a>
+<a class="note1">tenebat<span>teneo tenere, tenui, tentus V (2nd)  <br>:hold, keep; comprehend; possess; master; preserve;<br>(3 単数 未完了 能動態 直接法 )<br></span></a>
+<a class="note0">provinciam,<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">cuius<span></span></a>
+<a class="note0">exercitu<span></span></a>
+<a class="note0">Catonis<span></span></a>
+<a class="note0">filius<span></span></a>
+<a class="note1">tiro<span>tiro tironis N (3rd) M  <br>:recruit; beginner, novice;<br>(X 単数 主格),<br></span></a>
+<a class="note1">militabat.<span>milito militare, militavi, militatus V (1st) INTRANS  <br>:serve as soldier, perform military service, serve in the army; wage/make war;<br>(3 単数 未完了 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>Popiliusとimperratorは同格<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>Popiliusは支配者としてこの地を獲得していたが、そこにCatoの息子が新兵として兵役についていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Cum<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">Popilio<span></span></a>
+<a class="note0">videretur<span></span></a>
+<a class="note0">unam<span></span></a>
+<a class="note1">dimittere<span>dimitto dimittere, dimisi, dimissus V (3rd) TRANS  <br>:|dissolve (assembly); part with; put away; divorce; pay off, settle (debt);<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">legionem,<span></span></a>
+<a class="note0">Catonis<span></span></a>
+<a class="note0">quoque<span></span></a>
+<a class="note0">filium,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eadem<span></span></a>
+<a class="note0">legione<span></span></a>
+<a class="note0">militabat,<span></span></a>
+<a class="note1">dimisit.<span>dimitto dimittere, dimisi, dimissus V (3rd) TRANS  <br>:send away/off; allow to go, let go/off; disband, discharge, dismiss (soldiers);<br>(3 単数 完了 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>unam legionem dimittere videretur Popilio : Popilioは奪格。主語は不定詞の部分。「一つの軍団がPopiliusによって解散される」が逐語訳。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>Popiliusが軍団の一つを解散させようとした時、その軍団にCatoの息子がいたのだが、彼を除隊させた。<br></p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sed<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">amore<span></span></a>
+<a class="note0">pugnandi<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">exercitu<span></span></a>
+<a class="note1">remansisset,<span>remaneo remanere, remansi, remansus V (2nd)  <br>:stay behind; continue, remain;<br>(3 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">Cato<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Popilium<span></span></a>
+<a class="note1">scripsit,<span>scribo scribere, scripsi, scriptus V (3rd)  <br>:write; compose;<br>(3 単数 完了 能動態 直接法 )<br></span></a>
+<a class="note0">ut,<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">patitur<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">exercitu<span></span></a>
+<a class="note0">remanere,<span></span></a>
+<a class="note1">secundo<span>secundus secunda -um, secundior -or -us, secundissimus -a -um ADJ  <br>:next, following; second; substituted; secondary/inferior; subordinate;<br>(N 単数 奪格)<br></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note1">obliget<span>obligo obligare, obligavi, obligatus V (1st)  <br>:bind, oblige;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">militiae<span></span></a>
+<a class="note1">sacramento,<span>sacramentum sacramenti N (2nd) N  <br>:sum deposited in a civil process, guaranty; <strong>oath of allegiance</strong>; sacrament;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">quia<span>quia CONJ <br>:because;<br><br></span></a>
+<a class="note0">priore<span></span></a>
+<a class="note0">amisso<span></span></a>
+<a class="note0">iure<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">hostibus<span></span></a>
+<a class="note0">pugnare<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">poterat.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>amore pugnandi : pugnandiは動名詞、属格で、amore不定詞を修飾。一般の名詞の修飾はよく見るが…</p>
+<p>si eum patitur remanere : eumは息子？ eum remanere で彼が残留すること（が許されるなら）</p>
+<p>obliget eum secundo militiae saramento　「彼に２度めの兵役の誓いに義務つけるよう」</p>
+<p>priore iure amisso : 独立奪格「以前の誓いは失われていて」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>しかしその息子が兵役が好きで留まる事になった時、Catoは手紙で、もし彼が留まるなら、２度めの忠誠の誓いに拘束するように言ってきた。というのは、以前の誓いは無効になっているので、敵と戦うことができないからである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

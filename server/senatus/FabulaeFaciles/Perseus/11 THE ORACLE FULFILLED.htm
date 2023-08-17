@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 11 THE ORACLE FULFILLED.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Post<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">Perseus<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">uxōre<span></span></a>
+<a class="note0">suā<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">urbem<span>urbs urbis N (3rd) F <br>:city; City of Rome;<br>(単数 対格) <br></span></a>
+<a class="note0">Acrisī<span></span></a>
+<a class="note1">rediit.<span>rĕdĕo redire, redivi(ii), reditus V  X<br>:return, go back, give back; fall back on, revert to; respond, pay back;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Ille<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Perseum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vīdit,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">terrōre<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">affectus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">est;<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">nam<span>nam CONJ <br>&gt;:for, on the other hand; for instance;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">propter<span>propter PREP ACC <br>&gt;:near; on account of; by means of; because of;<br><br></span></a>
+<a class="note0">ōrāculum<span></span></a>
+<a class="note1">istud<span>iste ista, istud PRON  <br>:that, that of yours, that which you refer to; such;<br>&nbsp;(N 単数 対格) <br></span></a>
+<a class="note1">nepōtem<span>nĕpos nepotis N (3rd) C <br>:grandson/daughter; descendant; spendthrift, prodigal, playboy; secondary shoot;<br>(単数 対格) <br></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note1">adhūc<span>adhuc ADV <br>&gt;:thus far, till now, to this point; hitherto; yet, as yet; still; besides;<br><br></span></a>
+<a class="note1">timēbat.<span>tĭmĕo timere, timui, - V (2nd)  X<br>:fear, dread, be afraid (ne + SUB = lest; ut or ne non + SUB = that ... not);<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">In<span></span></a>
+<a class="note1">Thessaliam<span>Thessalia : テッサリア F <br>Thessaliam : 大悪<br><br></span></a>
+<a class="note1">igitur<span>igitur CONJ <br>&gt;:therefore (postpositive), so/then; consequently; accordingly; well/in that case;<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">urbem<span></span></a>
+<a class="note1">Larīsam<span>Larissa : テッサリアの中心都市<br>F<br>Larissam : 対格<br><br></span></a>
+<a class="note0">statim<span></span></a>
+<a class="note1">refūgit,<span>rĕfŭgĭo refugere, refugi, - V (3rd)  X<br>:flee back; run away, escape;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note1">frūstrā<span>frustra ADV <br>&gt;:in vain; for nothing, to no purpose;<br><br></span></a>
+<a class="note0">tamen;<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">enim<span>enim CONJ <br>&gt;:namely (postpos.); indeed; in fact; for; I mean, for instance, that is to say;<br><br></span></a>
+<a class="note1">fātum<span>fātum fati N (2nd) N <br>:utterance, oracle; fate, destiny; natural term of life; doom, death, calamity;<br>&nbsp;(単数 対格)<br><br><br></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">vītāvit.<span>vīto vitare, vitavi, vitatus V (1st)  X<br>:avoid, shun; evade;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Post<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">paucōs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">annōs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">rēx<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Larīsae<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">lūdōs<span>lūdus ludi N (2nd) M <br>:game, play, sport, pastime, entertainment, fun; school, elementary school;<br>(複数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnōs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">fēcit;<span></span></a>
+<a class="note1">nuntiōs<span>nuntĭus nunti(i) N (2nd) M <br>:messenger/herald/envoy; message (oral), warning; report; messenger's speech;<br>(複数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">omnēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">partēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dīmīserat<span>dīmitto dimittere, dimisi, dimissus V (3rd) TRANS  <br>:send away/off; allow to go, let go/off; disband, discharge, dismiss (soldiers);<br>(3 単数 過去完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">diem<span>dĭes diei N (5th) C <br>:|specific day; day in question; date of letter; festival; lifetime, age; time;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">ēdīxerat.<span>ēdīco edicere, edixi, edictus V (3rd)  X<br>:proclaim, declare; appoint;<br>(3 単数 過去完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Multī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">urbibus<span></span></a>
+<a class="note0">Graeciae<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">lūdōs<span></span></a>
+<a class="note1">convēnērunt.<span>convĕnĭo convenire, conveni, conventus V (4th)  X<br>:|meet/assemble; go to meet; come together; (have sex); converge; visit/approach;<br>(3 複数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Ipse<span></span></a>
+<a class="note0">Perseus<span></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note1">aliōs<span>ălĭus alia, aliud ADJ  <br>:other, another; different, changed;<br>(M 複数 対格) <br></span></a>
+<a class="note1">certāmen<span>certāmen certaminis N (3rd) N <br>:contest, <strong>competition</strong>; battle, combat, struggle; rivalry; (matter in) dispute;<br>&nbsp;(単数 対格) <br></span></a>
+<a class="note1">discōrum<span>discus disci N (2nd) M <br>:disk/disc; discus; disk-shaped object; dish; gong; form of sundial; dial; CD;<br>(複数 属格) <br></span></a>
+<a class="note1">iniit.<span>ĭnĕo inire, inivi(ii), initus V  X<br>:enter; undertake; begin; go in; enter upon;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">At<span></span></a>
+<a class="note0">dum<span></span></a>
+<a class="note1">discum<span>discus disci N (2nd) M <br>:disk/disc; discus; disk-shaped object; dish; gong; form of sundial; dial; CD;<br>(単数 対格) <br></span></a>
+<a class="note1">conicit,<span>cōnĭcĭo conicere, conjeci, conjectus V (3rd) TRANS  <br>:|throw/cast/fling (into area); devote/pour (money); thrust, involve; insert;<br>(3 単数 現在 能動態 直接法) <br></span></a>
+<a class="note1">avum<span>ăvus avi N (2nd) M <br>:grandfather; forefather, ancestor;<br>(単数 対格) <br></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note1">cāsū<span>casu ADV <br>&gt;:by chance/accident; accidentally; casually; (ablative of casus);<br><br></span></a>
+<a class="note1">occīdit;<span>occīdo occidere, occidi, occisus V (3rd)  X<br>:kill, murder, slaughter, slay; cut/knock down; weary, be the death/ruin of;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Acrisius<span></span></a>
+<a class="note1">enim<span>enim CONJ <br>&gt;:namely (postpos.); indeed; in fact; for; I mean, for instance, that is to say;<br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note1">spectātōrēs<span>spectātor spectatoris N (3rd) M <br>:spectator;<br>(複数 対格) <br></span></a>
+<a class="note1">eius<span>is ea, id PRON  <br>:he/she/it/they (by GENDER/NUMBER); DEMONST: that, he/she/it, they/them;<br>&nbsp;(N 単数 属格) <br></span></a>
+<a class="note1">certāminis<span>certāmen certaminis N (3rd) N <br>:contest, competition; battle, combat, struggle; rivalry; (matter in) dispute;<br>(単数 属格) <br></span></a>
+<a class="note1">forte<span>forte ADV <br>&gt;:by chance; perhaps, perchance; as luck would have it;<br><br></span></a>
+<a class="note1">stābat.<span>sto stare, steti, status V (1st)  X<br>:stand, stand still, stand firm; remain, rest;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" style="font-size: 2.4rem;" spellcheck="false">
+<p><br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 2.4rem;" spellcheck="false"><p>その後、Perseusは妻を伴ってAcrisiusの町に戻りました。彼はPerseusを見て、恐怖のため動転しました。それは予言があったので自分の孫を恐れていたからです。そのためThessaliaのLarissaという町にすぐさま避難しました。しかしそれも詮無いことでした、自分の運命から逃れることはなかったのです。数年の後、Larissaの王が大きな催しを行いました。各地にお触れを回し、日程も発表されました。全ギリシャから多くの人が催しに参加しました。Perseusその人も多くの人とともに円盤投げ競技に参加しました。しかし円盤が投げられたときたまたま、自身の祖父を殺すことになりました。と言うのはAcrisiusが多くとの観客と一緒の中にたまたまいたのでした。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

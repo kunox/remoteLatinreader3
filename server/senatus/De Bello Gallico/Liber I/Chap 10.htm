@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 10</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[10]<span></span></a>
+
+<a class="note1">Caesarī<span>与格？<br></span></a>
+<a class="note1">renūntiātur<span>renuntio, renuntiare, renuntiavi, renuntiatus 動詞 (1st)   :report, announce; reject;3 単 現在 受動態<br></span></a>
+<a class="note1">Helvētiīs<span>Helvetii(pl) Helvetius <br>複　与格　所有の与格<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">animō<span>animus, animi 名詞 (2nd) M   :mind; intellect; soul; feelings; heart;奪格<br></span></a>
+<a class="note1">per<span>per, 前置詞 (対格)  :through (space); during (time); by, by means of;</span></a>
+<a class="note0">agrum<span></span></a>
+<a class="note0">Sēquanōrum<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Haeduōrum<span><br><br></span></a>
+<a class="note0">iter<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">Santonum<span>Santones　ーum</span></a>
+<a class="note1">fīnēs<span>対格<br></span></a>
+<a class="note0">facere,<span></span></a>
+<a class="note1">quī<span>主格</span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">longē<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note1">Tolōsātium<span>Tolosa = Toulouse <br>Tolosates -tium男性 <br>属格<br></span></a>
+<a class="note1">fīnibus<span>与格、奪格<br></span></a>
+<a class="note1">absunt,<span>absum, abesse, abfui, abfuturus 動詞   :be away/　absent/　distant/missing; <br>3 複 現在</span></a>
+<a class="note1">quae<span>civitasと一致　（主格、女性）しかし内容的にはTolosatiumを指す</span></a>
+<a class="note1">cīvitās<span>主格F<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">prōvinciā.<span><br><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p>renuntiatur : 非人称動詞で、カエサルに報告があった、</p>
+<p>[<strong>所有の与格</strong>] 人(与格)＋物(主格)＋SUM　で[（もの）は（人）のため]で所有の意味になる。（NewLatin190)</p>
+<p><strong>Helvetiis esse in animo iter~&nbsp;&nbsp;facere</strong> : ヘルウェティは～の旅を行う事を心に持っている　[Helvetii esse facere]が骨子</p>
+<p>per agrum Sequanorum et Haeduorum　in Santonum fines = ~の部分</p>
+<p>Tolosatium, quae civitas est in provincia : [<strong>先行詞の埋め込み</strong>]と言われる用法。本来はTolosatiumはcivitasと同格で、英語風に書けば[Tolosatium, a city which is in Provincia]となるところであるが、quaeが先にでて先行詞civitasが関係詞節に埋め込まれている。（NewLatin251.4.(b))</p>
+<p>Tolosa : 地名　女性　第一変化</p>
+<p>Tolosates : 部族名　男性　第三</p>
+</div>
+</div>
+<div class="translation">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p>ヘルウェティ族がセクアナ族の領地を通ってサントニ族の領地までの遠征を行うことを考えているという報告がカエサルのもとに届いた。サントニ族の領地はトロサ族の領地からも遠くなくトロサは属州の中にある。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Id<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">fieret,<span></span></a>
+<a class="note1">intellegēbat<span>intellego, intellegere, intellexi, intellectus 動詞 (3rd)   :understand; realize;3 単 未完了<br></span></a>
+<a class="note1">magnō<span>magunus 　奪格 (中性） <br>periculoに一致<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">perīculō<span>periculum, periculi 名詞 (2nd) N   :danger, peril; trial, attempt; risk; 奪格<br></span></a>
+<a class="note1">prōvinciae<span>単　属格<br></span></a>
+<a class="note1">futūrum<span>futurus sumの未来分詞、esse省略の不定詞<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">hominēs<span>homo 対格<br></span></a>
+<a class="note1">bellicōsōs,<span>bellicosus, bellicosa -um, bellicosior -or -us, bellicosissimus -a -um 形容詞   :warlike, fierce; fond of war; <br>対格<br></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">inimīcōs,<span>inimicus, inimica -um, inimicior -or -us, inimicissimus -a -um 形容詞   :unfriendly, hostile, harmful;対格<br></span></a>
+<a class="note1">locīs<span>locus, loci 名詞 (2nd) M   :place, territory/locality/neighborhood/region;複　与格<br></span></a>
+<a class="note1">patentibus<span>patens, patentis (gen.), patentior -or -us, patentissimus -a -um 形容詞   :open, accessible;　複奪格</span></a>
+<a class="note1">maximēque<span>maxime, 副詞   :especially, chiefly; certainly; most, very much;<br></span></a>
+<a class="note1">frūmentāriīs<span>frumentarius, frumentaria, frumentarium 形容詞   :grain producing; of/concerning grain; <br>奪格<br></span></a>
+<a class="note1">fīnitimōs<span>finitimus, finitima, finitimum 形容詞   :neighboring, bordering, adjoining;対格<br></span></a>
+<a class="note0">habēret.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p><font color="#0000ff"><strong>intellegebat ~futurum esse ut ーhabere</strong></font> : ーを持つことは将来～となるだろうと考えた。</p>
+<p><strong>magno cum periculo provinciae</strong>&nbsp;= with great danger of province　cumは with provinciaeは属格</p>
+<p>ut 以下は結果の名詞節で、futurum esseの主語。</p>
+<p>habere</p>
+<p>homines bellicosos, populi Romani inimicos,</p>
+<p><strong>locis patentibus frumentariis finitimos</strong>&nbsp;穀物を収穫する開けた場所 finitimosは対格で、述語対格である。(NewLatin177.1) homines = finitimos という関係。<font color="#0000ff">locisについては２つの説。</font><font color="#0000ff">Bennettは与格で、finitimosとの関連で、間接目的語相当（NewLatin192)とし、AGは単に場所の奪格としている。ここではAGに一票。</font></p>
+</div>
+</div>
+<div class="translation">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p>もしそれが起きれば、好戦的でローマ人民に対して敵意を持つ人を、穀物を生産している開けた場所に隣人として持つことになり、属州の大きな危険になるであろうと（カエサル）は考えた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Ob<span>ob, 前置詞 (対格)  :on account of, for the sake of, for; instead of; right before;</span></a>
+<a class="note1">eās<span>is 複　対格<br></span></a>
+<a class="note1">causās<span>causa, causae 名詞 (1st) F   :||thing(s);対格<br></span></a>
+<a class="note1">eī<span>単与格<br></span></a>
+<a class="note1">mūnītiōni<span>munitio, munitionis 名詞 (3rd) F   :fortifying; fortification;与格<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">fēcerat<span>3 単 過去完了 <br>主語はLabienum?<br></span></a>
+<a class="note0">T.<span></span></a>
+<a class="note1">Labiēnum<span>Labienus　対格<br></span></a>
+<a class="note1">lēgātum<span>legatus, legati 名詞 (2nd) M   :envoy, ambassador, legate; commander of a legion; officer; deputy;対格<br></span></a>
+<a class="note1">praeficit;<span>praeficio, praeficere, praefeci, praefectus 動詞 (3rd)   :put in charge, place in command (with ACC and DAT);3 単 現在</span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">Italiam<span>Italia, Italiae N (1st) F   :Italy; <br>対格 <br>Cisalpine(アルプスのこちら側のガリア）のこと<br></span></a>
+<a class="note0">magnīs<span><br><br></span></a>
+<a class="note1">itineribus<span>itiner奪格</span></a>
+<a class="note1">contendit<span>contendo, contendere, contendi, contentus 動詞 (3rd)   :|||hurl, shoot; direct; travel; extend; rush to, be in a hurry, hasten;３単　完了（現在も同型）</span></a>
+<a class="note1">duāsque<span>daus duoの複対格女性<br></span></a>
+<a class="note1">ibi<span>ibi, 副詞   :there, in that place; thereupon; <br>Italiamを指す</span></a>
+<a class="note1">legiōnēs<span>legio, legionis 名詞 (3rd) F   :legion; army;複　対格<br></span></a>
+<a class="note1">cōnscrībit<span>conscribo, conscribere, conscripsi, conscriptus 動詞 (3rd) TRANS   :enroll/enlist/raise (army); write on/down3 単 現在<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">trēs,<span><br><br></span></a>
+<a class="note1">quae<span>F 複　主格　tres legiones</span></a>
+<a class="note1">circum<span>circum, 副詞   :about, around; round about, near; <br>circum, 前置詞 (対格)  :around, about, among, near (space/time), in neighborhood of; in circle around;</span></a>
+<a class="note0">Aquilēiam<span><br><br></span></a>
+<a class="note1">hiemābant,<span>hiemo, hiemare, hiemavi, hiematus 動詞 (1st)   :winter, pass the winter, keep winter quarters; be wintry/frozen/stormy; <br>３複未完了<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">hībernīs<span>hibernum, hiberni 名詞 (2nd) N   :winter camp (pl.); winter quarters;複　奪格<br></span></a>
+<a class="note1">ēdūcit<span>educo, educere, eduxi, eductus 動詞 (3rd)   :lead out; draw up; bring up; rear; <br>３単現在<br></span></a>
+<a class="note0">et,<span></span></a>
+<a class="note1">quā<span>qua, 副詞   :where; by which route; <br></span></a>
+<a class="note0">proximum<span></span></a>
+<a class="note0">iter<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">ulteriōrem<span>ulterior, -or -us, ultimus -a -um 形容詞   :far; farther; farthest, <br>ulterの比較級<br></span></a>
+<a class="note0">Galliam<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">Alpēs<span><br><br></span></a>
+<a class="note0">erat,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">hīs<span>cumは奪格支配 <br>hic<br></span></a>
+<a class="note1">quīnque<span>quinque, quintus -a -um, quini -ae -a, quinquie(n)s 数詞   :five;<br></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note1">īre<span>eo不定詞<br></span></a>
+<a class="note0">contendit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p><strong>Ob eas causas</strong> : これらの(eas)事柄(causas)に関して(Ob)</p>
+<p>ei munitioni : その要塞化について、与格 (<strong>praeficitの間接目的語</strong>）</p>
+<p>Titus Labienus, legatum : 同格　高級将校であるラビエヌス　（<strong>praeficitの直接目的語</strong>）</p>
+<p>legatus(legati,pl)は司令官に次ぐ、高級将校で、ある程度の裁量を持たされていた。軍団で数名。<a class="imageshow">legatiサマリー<span>../images/Roman Army Summary.png</span></a></p>
+<p><strong>magnis itineribus　</strong>手段の奪格、 = hastens by great journeys</p>
+<p>Italia : <strong>Cisalpina</strong>(内なるガリア）↔　<strong>Transalpine</strong></p>
+<p>duas legiones conscribit : 第11、12師団のこと</p>
+<p>tres legiones : 第7、8、９師団のこと　（第10師団はガリアで編成 Chap 7, 8に記述あり）</p>
+<p><strong>qua proximum iter in ulteriorem Galliam per Alpes erat</strong> : quaは副詞で「そこを通って」proximum iter erat「最も近い旅程」「遠いガリアへの最も近い道筋であるアルペン経由で」という副詞節</p>
+</div>
+</div>
+<div class="translation">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p>これらに関しては、その要塞化については高級将校であるラビエヌスに命じ（彼はそれをやり遂げたが）カエサル自身はイタリア（内なるガリア）に向かって長駆急ぎ、そこで2つの軍団を編成する（11,12）そしてアクイレイア近くで冬営中の3つの軍団を冬営から起こし、これら5つの師団をガリアへ最も近い道筋であるアルプス経由で、急ぎ行軍させた。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ibi<span></span></a>
+<a class="note0">Ceutronēs<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Graioceli<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Caturiges<span></span></a>
+<a class="note1">locīs<span>locus, loci 名詞 (2nd) M   :place, territory/locality/neighborhood/region与格奪格（複）</span></a>
+<a class="note1">superiōribus<span>superus, supera -um, superior -or -us, supremus -a -um 形容詞   :above, high; higher, upper, of this world; greatest, last, highest;与格奪格（複）</span></a>
+<a class="note1">occupātīs<span>occupatus, occupata, occupatum 形容詞   :occupied; busy;奪格 <br>（独立奪格）</span></a>
+<a class="note1">itinere<span>itiner, itineris 名詞 (3rd) N   :journey; road; passage, path; march　奪格</span></a>
+<a class="note1">exercitum<span>exercitus, exercitus 名詞 (4th) M   :army, infantry; swarm, flock;単　対格</span></a>
+<a class="note1">prohibēre<span>prohibeo, prohibere, prohibui, prohibitus 動詞 (2nd)   :hinder, restrain; forbid, prevent; <br>不定詞</span></a>
+<a class="note0">cōnantur.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p><strong>locis superioribus occupatis　</strong>高地を占拠して　（名詞　＋形容詞の<strong>独立奪格</strong>）</p>
+<p>itinere exercitum prohibere　exercitum(軍隊）を行軍から禁止する（prevent the army from passing) itenereは[分離の奪格]</p>
+</div>
+</div>
+<div class="translation">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p>そこでは、ケウトロネスやカトゥリゲス、グライオケリらが、高地を占領して行軍を阻もうとしていた。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Complūribus<span>complus, (gen.), compluris 形容詞   :many (pl.), several, a fair/good number;奪格</span></a>
+<a class="note1">hīs<span>pulsisと一致格 <br>前述の阻止の事</span></a>
+<a class="note1">proeliīs<span>proelium, proeli(i) 名詞 (2nd) N   :battle/ fight/bout/ conflict/ dispute;複　奪格</span></a>
+<a class="note1">pulsīs<span>pello, pellere, pepuli, pulsus 動詞 (3rd)   :beat; drive out; push; banish, strike, defeat, drive away, rout; <br>完了分詞　受動態　奪格</span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">Ocelo,<span>Ocelum, Oceli N (2nd) N   :Ocelum, city in Cisalpine Gaul (N. Italy);</span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note1">citeriōris<span>citer, citera -um, citerior -or -us, citimus -a -um 形容詞   :near/on this side; (COMP) nearer;単属格</span></a>
+<a class="note0">prōvinciae<span></span></a>
+<a class="note1">extrēmum,<span>extremum, extremi 名詞 (2nd) N   :limit, outside; end;主格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span></span></a>
+<a class="note0">Vocontiōrum<span></span></a>
+<a class="note1">ulteriōris<span>ulterior　属格　farの比較級</span></a>
+<a class="note0">prōvinciae<span></span></a>
+<a class="note0">diē<span></span></a>
+<a class="note0">septimo<span></span></a>
+<a class="note1">pervenit;<span>pervenio, pervenire, perveni, perventus 動詞 (4th)   :come to; reach; arrive; <br>３単　現在/完了</span></a>
+<a class="note1">inde<span>inde, 副詞   :thence, thenceforth; from that place</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Allobrogum<span></span></a>
+<a class="note0">fīnēs,<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Allobrogibus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Segūsiāvōs<span></span></a>
+<a class="note1">exercitum<span>exercitus, exercitus 名詞 (4th) M   :army, infantry; swarm, flock;対格</span></a>
+<a class="note1">dūcit.<span>duco, ducere, additional, forms 動詞   :lead, command; think, consider, regard; prolong; <br>3単現在</span></a>
+</p>
+</div>
+<div class="spnote">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p>(compluribus) proeliis pulsis : 撃退された多くの戦い（<strong>独立奪格</strong>）</p>
+<p>Ab Ocelo in fines Vocntiorum die septimo pervenit. オケロを出てからウォコンティオルムに７日間で到着した。</p>
+</div>
+</div>
+<div class="translation">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p>このような妨害行為を撃退しながら、オケロ、それは属州の中で最も近い国境の町であったが、をでてさらに遠い属州の町、ウォコンティオルムに到着するのに７日かかった。そこから（カエサルは）軍隊をアロブログムの領地へ、さらにセグシアウォスに連れて行った。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hī<span>Segusianiのこと</span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">extrā<span><br>extra, 前置詞 (対格)  :outside of, beyond, without, beside; except;</span></a>
+<a class="note1">prōvinciam<span>extraは対格支配</span></a>
+<a class="note0">trāns<span></span></a>
+<a class="note1">Rhodanum<span>Rhodanus, Rhodani N (2nd) M   :Rhone; (river in SW Gaul - in Caesar's Gallic War);対格</span></a>
+<a class="note1">prīmī.<span>primus, prima, primum 形容詞   :first, foremost/best, chief, principal; nearest/next; <br>複　主格<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p>Hi sunt primi</p>
+</div>
+</div>
+<div class="translation">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p>彼らセグシアウォス族は属州の外側でロネ川を超えた最初の人達である。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 37 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[37]<span></span></a>
+<a class="note1">Adeo<span>adeo ADV <br>:to such a degree/pass/point; precisely, exactly; thus far; indeed, truly, even;<br><br></span></a>
+<a class="note0">summa<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">observatio<span>observatio observationis N (3rd) F  <br>:observation, attention, action of watching/taking notice; surveillance; usage;<br>(X 単数 主格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">bello<span>bellum belli N (2nd) N  <br>:war, warfare; battle, combat, fight; (at/in) (the) war(s); military force, arms;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">movendo.]<span>moveo movere, movi, motus V (2nd)  <br>:move, stir, agitate, affect, <strong>provoke</strong>, disturb;<br>(未来 分詞 受動態 N 単数 奪格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>in movendo bello : movendoは動形容詞。「起こすべき戦いにおいては」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>さほどに、戦いを始めるについては監視が厳しかったのである。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">M.<span></span></a>
+<a class="note0">quidem<span></span></a>
+<a class="note0">Catonis<span></span></a>
+<a class="note1">senis<span>senex senis N (3rd) M  <br>:old man;<br>(X 単数 属格)<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">epistula<span>epistula epistulae N (1st) F  <br>:letter/dispatch/written communication; imperial rescript; epistle; preface;<br>(C 単数 主格),<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">M.<span></span></a>
+<a class="note0">filium,<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">qua<span></span></a>
+<a class="note1">scribit<span>scribo scribere, scripsi, scriptus V (3rd)  <br>:write; compose;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">se<span></span></a>
+<a class="note1">audisse<span>audeo audere, ausus sum V (2nd) SEMIDEP  <br>:intend, be prepared; dare/have courage (to go/do), act boldly, venture, risk;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note1">missum<span>missus missus N (4th) M  <br>:sending (away); dispatch; shooting, <strong>discharge</strong> of missiles;<br>(C 単数 対格)<br></span></a>
+<a class="note0">factum<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">consule<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">Macedonia<span>Macedonia Macedoniae N (1st) F  <br>:Macedonia;<br>(C 単数 奪格)<br></span></a>
+<a class="note0">bello<span></span></a>
+<a class="note1">Persico<span>Persicus Persica, Persicum ADJ  <br>:Persian;<br>(N 単数 奪格)<br></span></a>
+<a class="note1">miles<span>miles militis N (3rd) M  <br>:soldier; foot soldier; soldiery; knight (Latham); knight's fee/service; (X 単数 呼格)<br></span></a>
+<a class="note0">esset.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>esse factum missum : = had been dismissed , been made to dismiss ちょっと英語的な感じ。</p>
+<p><strong>epistula est</strong> : espitulaは名詞、estは、したがって存在するの意。</p>
+<p>cum miles esset in Macedonia bello Persico : cumはwhen. 「マケドニアでペルシャとの戦いで兵役であるとき」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>実際、父親のCatoから息子に宛てた手紙があり、其の中で、「マケドニアでのペルシャとの戦いで、お前が司令官により除隊されたときいた」<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Monet<span>moneo monere, monui, monitus V (2nd)  <br>:remind, advise, warn; teach; admonish; foretell, presage;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">caveat,<span>caveo cavere, cavi, cautus V (2nd)  <br>:beware, avoid, take precautions/defensive action; give/get surety; stipulate;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">ne<span></span></a>
+<a class="note0">proelium<span></span></a>
+<a class="note1">ineat;<span>ineo inire, inivi(ii), initus V  <br>:enter; undertake; begin; go in; enter upon;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">negat<span>nego negare, negavi, negatus V (1st)  <br>:deny, refuse; <strong>say ... not;</strong><br>(3 単数 現在 能動態 直接法 )<br><br></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">ius<span></span></a>
+<a class="note0">esse,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">miles<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">hoste<span></span></a>
+<a class="note0">pugnare.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>negat iius esse pugnare (eum) qui sit non miles cum hoste</strong>. 「兵士でないものが敵と戦うことは正しいことであるとは言えない」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>「したがって教えておくが、用心して、戦いに入らないようしなさい。兵士でないものが敵と戦うのは正しいこととは言えない。」<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Equidem<span>equidem ADV <br>:truly, indeed; for my part;<br><br></span></a>
+<a class="note1">etiam<span>etiam CONJ <br>:and also, besides/furthermore, in addition/as well; even, actually; yes/indeed;<br><br></span></a>
+<a class="note0">illud<span></span></a>
+<a class="note1">animadverto,<span>animadverto animadvertere, animadverti, animadversus V (3rd)  <br>:pay attention to, attend to; notice, observe; judge, estimate; punish (in+ACC);<br>(１ 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">quod,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">proprio<span>proprius propria, proprium ADJ  <br>:own, very own; individual; special, particular, characteristic;<br>(N 単数 奪格)<br><br></span></a>
+<a class="note1">nomine<span>nomen nominis N (3rd) N  <br>:name, family name; noun; account, entry in debt ledger; sake; title, heading;<br>(N 単数 奪格<br></span></a>
+<a class="note1">perduellis<span>perduellis perduellis N (3rd) M  <br>:national enemy; enemy; adherent of country with which one's own is at war;<br>(X 単数 主格),<br></span></a>
+<a class="note0">esset,<span></span></a>
+<a class="note0">is<span></span></a>
+<a class="note0">hostis<span></span></a>
+<a class="note1">vocaretur,<span>voco vocare, vocavi, vocatus V (1st)  <br>:call, summon; name; call upon;<br>(3 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">lenitate<span></span></a>
+<a class="note1">verbi<span>verbum verbi N (2nd) N  <br>:word; proverb;<br>(N 単数 属格),<br><br></span></a>
+<a class="note0">rei<span></span></a>
+<a class="note1">tristitiam<span>tristitia tristitiae N (1st) F  <br>:sadness;<br>(C 単数 対格)<br></span></a>
+<a class="note1">mitigatam.<span>mitigo mitigare, mitigavi, mitigatus V (1st)  <br>:soften; lighten, alleviate; soothe; civilize;<br>(完了 分詞 受動態 F 単数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>animadvero rei tristitiam (esse) mitigatam verbi lenitate</strong>. rei tristitiamは不定詞の対格主語、不定詞はesse省略でmitigatam 「悲しい事柄が表現によって和らげられるのを見る」verbi lenitateは奪格で「言葉のスムーズさ」</p>
+<p><strong>equidem</strong>は「人はともあれ、私は～」というニュアンス。</p>
+<p><strong>hostis</strong>はサンスクリット語のGHASから由来し、英語のGuestと同根。見知らぬ人（を饗応する）という意味の由。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>更に私は観察するのだが、見にくい事実が言葉によって和らげられるということもある。それは、国家の敵ともいう人を「HOSTIS」と呼ぶことである。<br></p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hostis<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">maiores<span></span></a>
+<a class="note0">nostros<span></span></a>
+<a class="note0">is<span></span></a>
+<a class="note0">dicebatur,<span></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note1">nunc<span>nunc ADV <br>:now, today, at present;<br><br></span></a>
+<a class="note1">peregrinum<span>peregrinus peregrini N (2nd) C  <br>:foreigner, stranger, alien; foreign woman (F); foreign residents (pl.);<br>(C 単数 対格)<br></span></a>
+<a class="note1">dicimus.<span>dico dicere, dixi, dictus V (3rd)  <br>:say, declare, state; allege, declare positively; assert; plead (case);<br>(１ 複数 現在 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>hostis dicebatur is, quem dicimus peregrinum.&nbsp; 受動のdicoはよくCupula動詞として働く。「Hostisは我々が「異邦人」と呼ぶものである。」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>HOSTISという言葉は祖先の間では、今で言う「見知らぬ人」のことである。<br></p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Indicant<span></span></a>
+<a class="note0">duodecim<span></span></a>
+<a class="note0">tabulae:<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">status<span>status stata, statum ADJ  <br>:appointed;<br>(M 単数 主格)<br></span></a>
+<a class="note0">dies<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">hoste,<span></span></a>
+<a class="note1">itemque<span>item ADV <br>:likewise; besides, also, similarly;<br><br></span></a>
+<a class="note0">adversus<span></span></a>
+<a class="note0">hostem<span></span></a>
+<a class="note1">aeterna<span>aeternus aeterna -um, aeternior -or -us, aeternissimus -a -um ADJ  <br>:eternal/everlasting/imperishable; perpetual, w/out start/end;<br>(F 単数 主格), <br></span></a>
+<a class="note1">auctoritas.<span>auctoritas auctoritatis N (3rd) F  <br>:title (legal), <strong>ownership</strong>; <strong>right </strong>to authorize/sanction, power; decree, order;<br>(X 単数 主格), <br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>duodecim tabulae : 十二表法（ローマ法）</p>
+<p>status die　というのは出廷する日、という意味だそうである。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>十二表法には次のようにある。決められた日をHostisとともに、また同様にHOSTISと対抗するのは永遠の権利である。<br></p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quid<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">hanc<span></span></a>
+<a class="note1">mansuetudinem<span>mansuetudo mansuetudinis N (3rd) F  <br>:tameness, gentleness, mildness; clemency;<br>(C 単数 対格)<br></span></a>
+<a class="note1">addi<span>addo addere, addidi, additus V (3rd) TRANS  <br>:add, insert, bring/attach to, say in addition; increase; impart; associate;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">potest,<span></span></a>
+<a class="note0">eum,<span></span></a>
+<a class="note1">quicum<span>quicum   <br>:(w/-cum) only ABL with whom?, with which?;<br>(M 単数 主格), (M 複数 主格)<br></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">geras,<span>gero gerere, gessi, gestus V (3rd)  <br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>(2 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">tam<span>tam ADV <br>:so, so much (as); to such an extent/degree; nevertheless, all the same;<br><br></span></a>
+<a class="note1">molli<span>mollis molle, mollior -or -us, mollissimus -a -um ADJ  <br>:soft (cushion/grass); flexible/supple/loose/pliant; mild/tolerable; easy; calm;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">nomine<span>nomen nominis N (3rd) N  <br>:name, family name; noun; account, entry in debt ledger; sake; title, heading;<br>(N 単数 奪格),<br></span></a>
+<a class="note1">appellare?<span>appello appellare, appellavi, appellatus V (1st) TRANS  <br>:call (upon); address; dun; solicit; appeal (to); bring to court; accuse; name;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">Quamquam<span>quamquam CONJ <br>:though, although; yet; nevertheless;<br><br></span></a>
+<a class="note1">id<span>is ea, id PRON  <br>:he/she/it/they (by GENDER/NUMBER); DEMONST: that, he/she/it, they/them;<br>&nbsp;(N 単数 対格)<br></span></a>
+<a class="note0">nomen<span></span></a>
+<a class="note1">durius<span>durus dura -um, durior -or -us, durissimus -a -um ADJ  比較級<br>:hard, stern; <strong>hars</strong>h, rough, vigorous; cruel, unfeeling, inflexible; durable;<br>&nbsp;(N 単数 対格), <br></span></a>
+<a class="note1">effecit<span>efficio efficere, effeci, effectus V (3rd)  <br>:bring about; effect, execute, cause; accomplish; make, produce; prove;<br>(3 単数 完了 能動態 直接法 )<br></span></a>
+<a class="note1">iam<span>jam ADV <br>:now, already, by/even now; besides;<br><br></span></a>
+<a class="note1">vetustas;<span>vetustas vetustatis N (3rd) F  <br>:old age; antiquity; <strong>long duration;</strong><br>(X 単数 主格),<br></span></a>
+<a class="note0">a<span></span></a>
+<a class="note1">peregrino<span>peregrinus peregrini N (2nd) C  <br><strong>:foreigner, stranger</strong>, alien; foreign woman (F); foreign residents (pl.);<br>(X 単数 奪格)<br></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note1">recessit<span>recedo recedere, recessi, recessus V (3rd)  <br>:recede, go back, withdraw, ebb; retreat; retire; move/keep/pass/slip away;<br>(3 単数 完了 能動態 直接法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">proprie<span>proprie ADV <br>:particularly, specifically, especially; properly, appropriately, rightly;<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eo,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">arma<span></span></a>
+<a class="note0">contra<span></span></a>
+<a class="note0">ferret,<span></span></a>
+<a class="note1">remansit.<span>remaneo remanere, remansi, remansus V (2nd)  <br>:stay behind; continue, remain;<br>(3 単数 完了 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>quid potest addi ad hanc mansuetudinem?</strong> 「何がこの大人しさの方向に付け加えうるであろうか？」「これ以上、おとなしいことはない」</p>
+<p>mansuetudinemはeum以下で説明される。</p>
+<p><strong>appellare eum (,quicum bellum geras) molli nomine</strong>. 「あなたが戦って其の相手を優しい名前で呼ぶこと」mansuetudinemと同格。</p>
+<p>appellareは一般的には動名詞、属格が使われるというが…？（同格の属格か？）（NewLatin 202)</p>
+<p>quicumはquiの古語で、奪格のみである、という説明もあるが、副詞という説明もある。副詞の場合、cum qui = with whomという意味。</p>
+<p><strong>vetustas effecit id durius nomen</strong>. vetustasは長い時間経過、id はHOSTISという言葉で、二重対格。「長い間にそれはより厳しい意味になった。」</p>
+<p><strong>remansit (id) qui ferret arma contra</strong>. 「それが互いに武器を持ち出すという部分が残った。」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>あなたが戦っているその相手を穏やかな名前で呼ぶこと、これ以上の穏やかさを付け加えることができるだろうか？そして長い間にそれはより厳しい意味に変わってきた。つまり、見知らぬ人という意味はなくなり、其の中でも特別なもの、武器を相手に対し持ち出すという意味だけが残ったのである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

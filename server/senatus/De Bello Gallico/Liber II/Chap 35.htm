@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber II : Chap 35</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[35]<span></span></a>
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">gestīs<span>gero gerere, gessi, gestus V (3rd)  <br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note1">pācātā,<span>paco pacare, pacavi, pacatus V (1st)  <br>:pacify, subdue;<br>(完了 分詞 受動態 f 単数 主格)<br></span></a>
+<a class="note0">tanta<span></span></a>
+<a class="note1">huius<span>hic haec hoc 代名詞　単　属格　;= these</span></a>
+<a class="note0">bellī<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">barbarōs<span>barbarus barbari N (2nd) M  <br>:barbarian, uncivilized person; foreigner (not Greek/Roman);<br>(c 複数  対格)<br></span></a>
+<a class="note1">opīniō<span>opinio opinionis N (3rd) F  <br>:belief, idea, opinion; rumor (Plater);<br>(X 単数 主格)<br></span></a>
+<a class="note1">perlātā<span>perfero perferre, pertuli, perlatus V  <br>:carry through; bear, endure to the end, suffer; announce;<br>(完了 分詞 受動態 f 単数 主格)<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">utī<span>接続詞　;= in order that, so that<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note1">nātiōnibus<span>natio nationis F 複　奪格　;= nation, people, race, class<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">trāns<span><br><br></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note0">incolerent<span></span></a>
+<a class="note0">lēgātiōnēs<span><br><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">mitterentur,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">obsidēs<span>obses obsidis C 複　対格　;= hostage, pledge<br></span></a>
+<a class="note1">datūrās,<span>do dare, dedi, datus V (1st) TRANS  <br>:give; dedicate; sell; pay; grant/bestow/impart/offer/lend; devote; allow; make;<br>(未来 分詞 能動態 f 複数  対格)<br></span></a>
+<a class="note1">imperāta<span>imperatum imperati N (2nd) N  <br>:command, order;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note1">factūrās<span>facio facere, feci, factus V (3rd) TRANS  <br>:make/build/construct/create/cause/do; have built/made; fashion; work (metal);<br>(未来 分詞 能動態 f 複数  対格)<br><br></span></a>
+<a class="note1">pollicērentur.<span>polliceor polliceri, pollicitus sum V (2nd) DEP  <br>:promise;<br>(３人称 複数  未完了 受動態 接続法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p>his rebus gestis : 独立奪格　「これらの事が成されて」</p>
+<p>omni Gallia pacata :　分詞構文　「全ガリアは平定された」</p>
+<p>hujus belli opinio : これらの戦いの噂、評判など良い意味</p>
+<p>quae se obsides daturas (esse) : 未来不定詞で　pollicerenturの目的語 seはライン河の向こうの国。厳密にはab iis nationibusは主語にはなっていないが、主語と同等である。</p>
+<p>facturas (esse)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの事がなされ、全ガリアは平定された。これらの戦いの評判は噂となって広まり、結果、ライン河の向こうに住む国からも使者がカエサルのもとに送られ、人質を出すであろうこと、命令を順守するであろう事が約束された。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quās<span>quis f 複　対格<br></span></a>
+<a class="note0">lēgātiōnēs<span><br><br></span></a>
+<a class="note0">Caesar,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Italiam<span></span></a>
+<a class="note1">Īllyricumque<span>Illyricum Illyrici N (2nd) N  <br>:Illyricum; territory NE of Adriatic; Slovenia/Croatia region, Dalmatia/Albania;<br>(n 単数 対格)<br></span></a>
+<a class="note1">properābat,<span>propero properare, properavi, properatus V (1st)  <br>:hurry, speed up; be quick;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note1">initā<span>ineo inire, inivi(ii), initus V  <br>:enter; undertake; begin; go in; enter upon;<br>(完了 分詞 受動態 f 単数 奪格)<br><br></span></a>
+<a class="note0">proximā<span><br><br></span></a>
+<a class="note1">aestāte<span>aestas aestatis N (3rd) F  <br>:<strong>summer</strong>; summer heat/weather; a year;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">revertī<span>revertor reverti, reversus sum V (3rd) DEP  <br>:turn back, go back, return; recur;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">iussit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Italiam Illyricumque : 毎年、この地方の巡回裁判に行っていた。Italia = Cisalpine Gaul</p>
+<p>inita aestate : 独立奪格　で夏の初め ineunte(現在分詞　奪格）ではなくinita(完了分詞　奪格）がCaesarの常套（ChapIIにも出てくる）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの使節に対しカエサルは、イタリアとイリリア地方に急いでいたので、次の夏のはじめに再度、訪ねるよう命じた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipse<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Carnutēs,<span><br><br></span></a>
+<a class="note0">Andēs,<span><br><br></span></a>
+<a class="note0">Turonōs<span><br><br></span></a>
+<a class="note0">quaeque<span></span></a>
+<a class="note0">cīvitātēs<span><br><br></span></a>
+<a class="note1">propinquae<span>propinquus propinqua, propinquum 形容詞　ｆ複　主格　;= near, neighboring</span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note0">gesserat,<span></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">hīberna<span>hibernum hiberni N 複　対格　;= winter camp, winter quarter<br></span></a>
+<a class="note1">dēductīs,<span>deduco deducere, deduxi, deductus V (3rd) TRANS  <br>:lead/draw//pull/bring/stretch down/away/out/off; escort; eject/evict (claimant);<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Italiam<span></span></a>
+<a class="note1">profectus<span>profecio proficere, profeci, profectus 完了分詞　受動　m主格　;= make, accomplish, effect</span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>legionibus deductis, profectus est in Italiam:軍団を冬の駐屯地へと率いたあと、イタリアに出発した。</p>
+<p>quae civitates erant propinquae iis locis ubi ~ : ～の場所の近くにあった。locisは一般名詞で前置詞を伴わない奪格で場所を表す。（NewLatin228 )　iisがubiの先行詞。</p>
+<p>hibernaはhibernaculaというTextもあり。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサル自身は、Carnutes, Andes, Turonos それらの都市は戦いのあったところに近い場所であったが、などを通って軍団を冬営地に率い、その後イタリアへと出発した。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Ob<span>前置詞　（対格支配）　;= on account of, for the sake of, instead of</span></a>
+<a class="note0">eāsque<span><br><br></span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">litterīs<span>littera litterae N (1st) F  <br>:letter (alphabet); (pl.) letter, epistle; literature, books, <strong>records</strong>, account;<br>(c 複数  奪格)<br></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note0">diērum<span><br><br></span></a>
+<a class="note1">XV<span>quindecim 15<br><br></span></a>
+<a class="note1">supplicātiō<span>supplicatio supplicationis N (3rd) F  <br>:thanksgiving; supplication;<br>(X 単数 主格)<br></span></a>
+<a class="note1">dēcrēta<span>decerno decernere, decrevi, decretus V (3rd)  <br>:decide/settle/determine/resolve; decree/declare/ordain; judge; vote for/contend;<br>(完了 分詞 受動態 f 単数 主格<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">tempus<span></span></a>
+<a class="note1">accidit<span>accido accidere, accidi, accisus TRANS ３単　完了　;= 自動詞で　down, descend (他動詞で）happen (to) occur</span></a>
+<a class="note1">nūllī.<span>nullus 複　主格<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>litteris Caesaris :カエサルの公式報告</p>
+<p>quod accidit nulli : quodは前文の内容、１５日の感謝祭　</p>
+<p>ante id tempus : =before this time 「今までに」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルの公式報告によって、１５日間の感謝祭が決められた。これは今までには誰にも与えられなかった栄誉である。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

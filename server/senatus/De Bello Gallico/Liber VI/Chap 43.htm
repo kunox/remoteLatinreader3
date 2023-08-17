@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 43</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[43]<span></span></a>
+
+<a class="note0">Caesar<span></span></a>
+<a class="note0">rūrsus<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">vexandōs<span>vexo vexare, vexavi, vexatus V (1st)  <br>:shake, jolt, toss violently; annoy, trouble, harass, plague, disturb, vex;<br>(未来 分詞 受動態 m 複数  対格)<br>動形容詞<br></span></a>
+<a class="note1">hostēs<span>hostis hostis N (3rd) C  <br>:enemy (of the state); stranger, foreigner; the enemy (pl.);<br>(c 複数  対格), <br></span></a>
+<a class="note0">profectus<span></span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note1">coāctō<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">fīnitimīs<span><br><br></span></a>
+<a class="note0">cīvitātibus<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">partēs<span><br><br></span></a>
+<a class="note0">dīmittit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>ad vexandos hostes : vexandumが動名詞。動名詞は単数のみ。hostesは複、対格なのでvexandosと複、対格になる。</p>
+<p>magno numero coacto:独立奪格「非常な多数を集めて」（集めたのは騎兵、equitesを入ったテキストもあり）<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>Caesarは再び、敵を苦しめるために出かけ、大量の（騎兵を）近隣から集め、すべての地域に送り出した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Omnēs<span><br><br></span></a>
+<a class="note1">vīcī<span>vicus vici N (2nd) M  <br>:village; hamlet; street, row of houses;<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note1">aedificia<span>aedificium aedifici(i) N (2nd) N  <br>:building; edifice, structure;<br>(n 複数  主格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">quisque<span></span></a>
+<a class="note1">cōnspexerat<span>conspicio conspicere, conspexi, conspectus V (3rd) TRANS  <br>:observe/see/witness; notice; watch; gaze/stare on; catch/be in sight of; face;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note1">incendēbantur;<span>incendo incendere, incendi, incensus V (3rd) TRANS  <br>:set on fire; set fire to, kindle, burn; cause to flame/burn; keep fire burning;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">praeda<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note1">agēbātur;<span>ago agere, egi, actus V (3rd)  <br>:drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); deliver (speech);<br>(３人称 単数 未完了 受動態 直説法 )<br></span></a>
+<a class="note0">frūmenta<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">sōlum<span><br><br></span></a>
+<a class="note0">tantā<span><br><br></span></a>
+<a class="note0">multitūdine<span><br><br></span></a>
+<a class="note1">iūmentōrum<span>jumentum jumenti N (2nd) N  <br>:mule; beast of burden;<br>(X 複数  属格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note1">cōnsūmēbantur,<span>consumo consumere, consumpsi, consumptus V (3rd) TRANS  <br>:burn up, destroy/kill; put end to; reduce/wear away; annul; extinguish (right);<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">etiam<span>etiam CONJ <br>:and also, <strong>besides</strong>/furthermore, in addition/as well; even, actually; yes/indeed;<br><br></span></a>
+<a class="note0">annī<span><br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">imbribus<span>imber imbris N (3rd) M  <br>:rain, shower, storm; shower of liquid/snow/hail/missiles; water (in general);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">prōcubuerant<span>procubo procubare, procubui, procubitus V (1st)  <br>:lie outstretched;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">ut,<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">praesentiā<span>praesentia praesentiae N (1st) F  <br>:present time; presence;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">occultāssent,<span><br><br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">dēductō<span><br><br></span></a>
+<a class="note0">exercitū<span><br><br></span></a>
+<a class="note0">rērum<span><br><br></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note1">inopiā<span>inopia inopiae N (1st) F  <br>:lack, need; poverty, destitution, dearth, want, scarcity;<br>(c 単数 奪格), <br><br></span></a>
+<a class="note1">pereundum<span>pereo perire, perivi(ii), peritus V  <br>:die, pass away; be ruined, be destroyed; go to waste;<br>(未来 分詞 受動態 n 単数 対格)<br><br></span></a>
+<a class="note0">vidērētur.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>deducto exercitu : 独立奪格「軍が引き上げても」</p>
+<p><strong>omnium rerum inopia pereundum (esse) his</strong>. hisは隠れている人たちで、行為者の与格。preundumは動形容詞で、「彼らは殺されなければならない」</p>
+<p><strong>videretur his (esse) pereundum inopia.</strong></p>
+</div></div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>目に入る限りすべての村、建物は火が放たれ、略奪はあらゆるところで行われ、食料だけではなく膨大な数の家畜、人間が抹殺された。いずれにせよ、季節的にも、また雨によっても既に、横たわっているものがあったのだが。そしてもし今のところ隠れている者共も、いずれ軍勢が去ったときにも、飢え（欠乏）によって殺されることになるであろうと思われた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ac<span></span></a>
+<a class="note0">saepe<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">ventum<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">tantō<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">partēs<span><br><br></span></a>
+<a class="note1">dīvīsō<span>divido dividere, divisi, divisus V (3rd)  <br>:divide; separate, break up; share, distribute; distinguish;<br>(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note0">equitātū,<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">modo<span>modo ADV <br>:only, merely; just now/recently, lately; presently;<br><br></span></a>
+<a class="note0">vīsum<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">Ambiorīgem<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fugā<span><br><br></span></a>
+<a class="note1">circumspicerent<span>circumspicio circumspicere, circumspexi, circumspectus V (3rd)  <br>:look around/over/for, survey; inspect; search for/seek; examine/review; ponder;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">captīvī<span>captivus captivi N (2nd) C  <br>:prisoner of war (likely male, but maybe female), captive;<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note1">plānē<span>plane ADV <br>:clearly, plainly, distinctly; completely;<br><br></span></a>
+<a class="note1">etiam<span>etiam CONJ <br>:|now too, as yet, <strong>still</strong>, even now; yet again; likewise; (particle); (et-iam);<br><br></span></a>
+<a class="note1">abīsse<span>abeo abire, abivi(ii), abitus V INTRANS  <br>:depart, go away; go off, go forth; pass away, die, disappear; be changed;<br>(  完了 能動態 不定詞 )<br>=abivisse<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">cōnspectū<span><br><br></span></a>
+<a class="note0">contenderent,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">spē<span>spes spei N (5th) F  <br>:hope/anticipation/expectation; prospect/hope/promise; (inheriting/succeeding);<br>(c 単数 奪格)<br></span></a>
+<a class="note1">cōnsequendī<span>consequor consequi, consecutus sum V (3rd) DEP  <br>:follow, go/come after; attend on; pursue; <strong>catch up with</strong>, overtake; follow up;<br>(未来 分詞 受動態 n 単数 属格)<br></span></a>
+<a class="note1">illātā<span>infero inferre, intuli, illatus V TRANS  <br>:bring/carry in, import; advance, bring/march/step/move foward; impel, urge;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">īnfīnītō<span>infinitus infinita, infinitum ADJ  <br>:boundless, unlimited, endless; infinite;<br>( (m 単数 奪格)<br></span></a>
+<a class="note1">labōre<span>labor laboris N (3rd) M  <br>:labor/toil/exertion/effort/work; task/undertaking; production; childbirth;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">susceptō,<span>suscipio suscipere, suscepi, susceptus V (3rd)  <br>:undertake; support; accept, receive, take up;<br>(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">summam<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Caesare<span></span></a>
+<a class="note0">grātiam<span><br><br></span></a>
+<a class="note1">initūrōs<span>ineo inire, inivi(ii), initus V  <br>:enter; undertake; begin; go in; enter upon;<br>(未来 分詞 能動態 m 複数  対格)<br></span></a>
+<a class="note0">putārent,<span><br><br></span></a>
+<a class="note0">paene<span></span></a>
+<a class="note0">nātūram<span><br><br></span></a>
+<a class="note1">studiō<span>studium studi(i) N (2nd) N  <br>:eagerness, enthusiasm, zeal, spirit; devotion, pursuit, study;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">vincerent,<span>vinco vincere, vici, victus V (3rd)  <br>:conquer, defeat, excel; outlast; succeed;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">semperque<span>semper ADV <br>:always;<br><br></span></a>
+<a class="note1">paulum<span>paulum ADV <br>:little/bit; to a small extent, somewhat; only a small amount/short while;<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">summam<span></span></a>
+<a class="note1">fēlīcitātem<span>felicitas felicitatis N (3rd) F  <br>:luck, good fortune; happiness;<br>(c 単数 対格)<br></span></a>
+<a class="note1">dēfuisse<span>desum deesse, defui, defuturus V  <br>:be wanting/lacking; fail/miss; abandon/desert, neglect; be away/absent/missing;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">vidērētur,<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ille<span></span></a>
+<a class="note1">latebrīs<span>latebra latebrae N (1st) F  <br>:<strong>hiding place</strong>, retreat, lair; subterfuge;<br>(c 複数  奪格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">saltibus<span>saltus saltus N (4th) M  <br>:<strong>narrow passage (forest/mountain</strong>); defile, pass; woodland with glades (pl.);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">ēriperet<span>eripio eripere, eripui, ereptus V (3rd)  <br>:snatch away, take by force; rescue;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">noctū<span><br><br></span></a>
+<a class="note0">occultātus<span><br><br></span></a>
+<a class="note1">aliās<span>alius alia, aliud ADJ  <br>:other, another; different, changed;<br>(f 複数  対格)<br></span></a>
+<a class="note1">regiōnēs<span>regio regionis N (3rd) F  <br>:area, region; neighborhood; district, country; direction;<br>(c 複数  対格)<br></span></a>
+<a class="note0">partēsque<span><br><br></span></a>
+<a class="note1">peteret<span>peto petere, petivi, petitus V (3rd)  <br>:attack; <strong>aim at;</strong> desire; beg, entreat, ask (for); reach towards, make for;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">māiōre<span><br><br></span></a>
+<a class="note0">equitum<span></span></a>
+<a class="note1">praesidiō<span>praesidium praesidi(i) N (2nd) N  <br>:protection; help; guard; garrison, detachment;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">quattuor,<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">sōlis<span><br><br></span></a>
+<a class="note1">vītam<span>vita vitae N (1st) F  <br>:life, career, livelihood; mode of life;<br>(c 単数 対格)<br></span></a>
+<a class="note0">suam<span></span></a>
+<a class="note1">committere<span>committo committere, commisi, commissus V (3rd)  <br>:bring together, unite/join, connect/attach; put together, construct;<strong> entrust</strong>;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">audēbat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>ventum est&nbsp; in eum locum</strong>. : ventus estは自動詞受動態の非人称的使われ方。locumは場所ではなくsituationの意で、「そういう場面に来た」⇒そういう場面があった。<u>eum locumはut以下で説明される。</u></p>
+<p>また別の説によるとlocumをpassと解釈して「Ambiorixを捕らえそうになる」</p>
+<p><strong>equitatu diviso</strong>は独立奪格「騎兵は散開されており」</p>
+<p>ut captivi <strong>cicumspicerent Ambiorigem modo visum ab se in fuga</strong>: 「Ambiorixが自分の側で逃げていくのをごく最近、見た」</p>
+<p>&nbsp;<strong>contenderent etiam nec abisse plane ex conspectu</strong> : 「視界から完全には消えていないぐらいだと主張した」</p>
+<p><font color="#0000ff">（注：modoの前にnonが入っているテキストもある。その場合non modo ~ nec etiam と解釈され「側を逃げていくAmbiorixを見ただけではなく、まだ視界から消えていない」という文意になる。）</font></p>
+<p>,ut spe~は以上までの状況を受けた結果の節。</p>
+<p>ut (spe illata atque labore suscepto)独立奪格２つ。「希望が抱き、無限の労働を引き受ける」</p>
+<p>&nbsp;&nbsp;&nbsp; qui putarent se inituros (eese) summam gratiam ab Caesare, vincerent naturam studio [quiの節が主語]</p>
+<p>&nbsp;&nbsp;&nbsp; que viderentur semper paulum defuisse ad summan felicitatem</p>
+<p>atque ille eriperet se latebris aut saltibus [illeはAmbiorix]</p>
+<p>&nbsp;&nbsp;&nbsp; et occultatus nocte, peteret alias regiones partesque non maiore equitum praesidio quam quattuor.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>多数の騎兵があらゆるところに散開していたので、次のような場面によく出くわした。即ち捕虜が、つい先程Ambiorixが自分の側を逃げていくのを見た、とか未だ視界から消えていないぐらいだと主張するような場面である。結果として、彼を捕らえる希望に燃え、無限とも思える労苦を引き受けたのであるが、Caesarから最高の褒美を得ようというものが自然を熱意で克服した。（思いが、超人的にした)</p>
+<p>しかし、常に、少しだけ完全な幸運からは見放された。Ambiorixは隠れ場所や森野中の狭い道によって自身を助け、夜に紛れて、他の土地の違う地域を、４人よりは多くない護衛の騎兵とともに目指した。それが自分の命を預けられる人数であった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 21</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[21]<span></span></a>
+
+<a class="note1">Eōdem<span>idem 前置詞　m奪格　単　；＝same<br></span></a>
+<a class="note1">diē<span>dies diei C 単奪格　;= day
+時の奪格<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">explōrātōribus<span>explorator, exploratoris 名詞 (3rd) M   :investigator, one who searches out; scout, spy; 奪格<br></span></a>
+<a class="note1">certior<span>certus, certa -um, certior -or -us, certissimus -a -um 形容詞   :fixed, settled, firm; certain; trusty/reliable; sure; resolved, determined;</span></a>
+<a class="note1">factus<span>ceritor factus = being informed <br>(確かなものにする）</span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note1">sub<span>sub, 前置詞 (奪格)  :under, beneath, behind, at the foot of (rest); within; during, about (time);</span></a>
+<a class="note1">monte<span>奪格</span></a>
+<a class="note1">cōnsēdisse<span>consido, considere, consedi, consessus 動詞 (3rd) INTRANS   :|encamp/bivouac; take up a position; stop/stay, make one's home, settle; lodge; 完了不定詞<br></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note1">passuum<span>passus, passus 名詞 (4th) M   :step, pace;属格</span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">ipsīus<span>属格<br></span></a>
+<a class="note1">castrīs<span>castrum castri N 複　奪格　;= fort, military camp<br></span></a>
+<a class="note0">octō,<span><br><br></span></a>
+<a class="note1">quālis<span>qualis, qualis, quale 形容詞  <br> :what kind/sort/condition (of); what is (he/it) like; what/how excellent a ...;<br></span></a>
+<a class="note0">esset<span></span></a>
+<a class="note1">nātūra<span>＝characteristics<br></span></a>
+<a class="note1">montis<span>mons 属格</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quālis<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">circuitū<span>circuitus, circuitus 名詞 (4th) M   :going round; patrol/circuit; way/path round; circumference; outer surface/edge; 奪格<br></span></a>
+<a class="note1">ascēnsus<span>ascensus, ascensus 名詞 (4th) M   :ascent; act of scaling (walls); approach; a stage/step in advancement; height;<br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">cognōscerent<span>cognosco, cognoscere, cognovi, cognitus 動詞 (3rd) TRANS   :become acquainted with/aware of; recognize; learn, find to be; inquire/examine;3 複 未完了 能動態 接続法<br></span></a>
+<a class="note1">mīsit.<span>mitto ３単完了</span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false">
+<p>certior factu Chap11,12にも出てくる　estが省略されている</p>
+<p>milia passuum～ octo : 8ローママイル　octの場所が面白い！</p>
+<p>hostes(不定詞主語で対格) sub monte consedisse milia passuum ab ipsius castris octo,　certior factus estの従属節</p>
+<p>a ipsius catris : 自分の野営地から</p>
+<p><strong>qualis esset natura montis et qualis in circuitu ascensus qui cognoscerent misit.</strong>　動詞はmisit misitの目的語はqui, quiの先行詞は省略されたhominesまたは exploratoresなど。 <strike>cognoscerentする人</strike>, congnscoの目的語がqualis ~, qualis ~</p>
+<p>quiが関係詞で、目的の節を導いている。（NewLatin 282.2)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>同じ日に、敵がローマ軍のキャンプから８マイル先の山の麓に居ることが斥候から知らされた。（カエサルは）どういう山で、どういう上り道が有るかなどを調べるために（兵を）送った。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Renūntiātum<span>renuntio, renuntiare, renuntiavi, renuntiatus 動詞 (1st)   :report, announce; reject;完了 分詞 受動態 n 単 主格<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">facilem<span></span></a>
+<a class="note0">esse.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>ascensum esse facilem : ascensumが省略されている。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>報告されたことは容易であるということであった。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dē<span></span></a>
+<a class="note1">tertiā<span>３<br></span></a>
+<a class="note1">vigiliā<span>vigilia, vigiliae 名詞 (1st) F   :watch (fourth part of the night), vigil, wakefulness;<br></span></a>
+<a class="note0">T.<span></span></a>
+<a class="note0">Labiēnum,<span><br><br></span></a>
+<a class="note1">lēgātum<span>legatus, legati 名詞 (2nd) M   :envoy, ambassador, legate; commander of a legion; officer; deputy;対格<br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note1">praetōre,<span>praetor, praetoris 名詞 (3rd) M   :praetor (official elected by the Romans who served as a judge); abb. pr.;奪格 <br>プラエトルはコンスルにつぐ執政官<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">duābus<span>duo, -ae o, secundus -a -um, bini -ae -a, bis 数詞   :two (pl.); <br>奪格<br></span></a>
+<a class="note1">legiōnibus<span>legio 奪格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">iīs<span>is　奪格<br></span></a>
+<a class="note1">ducibus<span>dux, ducis 名詞 (3rd) M   :leader, guide; commander, general; Duke (medieval, Bee); <br>奪格</span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">iter<span></span></a>
+<a class="note1">cognōverant<span>3 複 過去完了 能動態 直説法 <br>cognosco = examine<br></span></a>
+<a class="note0">summum<span></span></a>
+<a class="note1">iugum<span>jugum, jugi 名詞 (2nd) N  <br>ridge (mountain), 対格</span></a>
+<a class="note0">montis<span></span></a>
+<a class="note1">ascendere<span>ascendo = go climb不定詞</span></a>
+<a class="note0">iubet;<span></span></a>
+<a class="note1">quid<span>quis 主格</span></a>
+<a class="note1">suī<span>suus 属格
+<br></span></a>
+<a class="note1">cōnsiliī<span>consilium, consili(i) 名詞 (2nd) N   :|decision/resolution; intention/purpose/policy/plan/action; diplomacy/strategy;  <br>consiliで属格<br></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note1">ostendit.<span>ostendo, ostendere, ostendi, ostensus 動詞 (3rd)   :show; reveal; make clear, point out, display, exhibit;3 単 現在 能動態</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>De tertia vigilia : 第三当直時から</p>
+<p><strong>legatum pro praetore</strong> : lieutenant with authority of general の意。legatusは高級将校であり、imperatorの代行として独立した作戦を任されることがあり、その時にはlegatus pro praetoreと呼ばれた。</p>
+<p><font style="background-color: rgb(204, 255, 255);">praetoreには２つの意味があり、一つは司令官、もう一つは行政官で司法長官のような地位。後者が一般的な使われ方。</font></p>
+<font style="background-color: rgb(204, 255, 255);">
+</font><p><font style="background-color: rgb(204, 255, 255);">因みにLegatusと言うのは司令官（imperator)の次に位する高級将校。通常３名ほどだがCaesarは１０名使っていた。</font></p>
+<p>T. Labienum　～　ascendere jubet : Labienusに登ることを命じた。</p>
+<p>quid sui consilii sit、 ostendit.　quid sui consiliを示した。</p>
+<p><u>what his plan isをostenditした。</u></p>
+<p>quid consilii est? : what is the plan?&nbsp;&nbsp;&lt;- <strong>predicate genitive&nbsp; 「</strong>計画が持っているのは何かを」が逐語訳</p>
+<p><strong>所有の属格はよく述語的に使われる。（NewLatin198.2, AG343.b)</strong></p>
+<p>(所有の属格は所有者に重きが置かれ、所有の与格は所有している事実に主眼がある）</p>
+<p>domus est regis. その家は王家のものだ。← cf: mihi est liber.(所有の与格）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>第三当直時に副官のラビエヌスに、２師団と調べてきた斥候と共に山の最も高い尾根に登るよう命じた。カエサルは彼に計画を示した。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipse<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">quārtā<span>4 <br>2A.M頃<br></span></a>
+<a class="note0">vigiliā<span><br><br></span></a>
+<a class="note0">eōdem<span><br><br></span></a>
+<a class="note0">itinere<span></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note1">ierant<span>eo, ire, ivi(ii), itus 動詞   :go, walk; march, advance; pass; flow; pass (time); ride; sail;3 複 過去完了</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note1">contendit<span>contendo, contendere, contendi, contentus 動詞 (3rd)   :|||hurl, shoot; direct; travel; extend; rush to, be in a hurry, hasten;3 単 現在 能動態</span></a>
+<a class="note0">equitātumque<span><br><br></span></a>
+<a class="note1">omnem<span>all men</span></a>
+<a class="note0">ante<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">mittit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>itinere : 手段の奪格</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>自身は第四当直時に敵と同じ道を通って、彼らを追い上げる。自分の前に全ての騎兵を送った。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">P.<span>Publius</span></a>
+<a class="note0">Cōnsidius,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">reī<span>属格 <br>目的語として属格支配のものがある。 <br>主として、希望、知識、記憶、権力など修飾する場合　petiusはその一つ<br></span></a>
+<a class="note1">mīlitāris<span>属格<br></span></a>
+<a class="note1">perītissimus<span>peritus, perita -um, peritior -or -us, peritissimus -a -um 形容詞   :skilled, skillful; experienced, expert; with gen;<br></span></a>
+<a class="note1">habēbātur<span>3 単 未完了 受動態 habeo<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">exercitū<span>exercitus, exercitus 名詞 (4th) M   :army, infantry; swarm, flock;奪格<br></span></a>
+<a class="note0">L.<span></span></a>
+<a class="note1">Sullae<span>Lucius Cornelius Sulla</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">posteā<span>postea, 副詞   :afterwards;<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">M.<span></span></a>
+<a class="note1">Crassī<span>Marcus Licinius Crassus<br></span></a>
+<a class="note1">fuerat,<span>3 単 過去完了 能動態 　sum</span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">explōrātōribus<span><br><br></span></a>
+<a class="note1">praemittitur.<span>praemitto, praemittere, praemisi, praemissus 動詞 (3rd)   :send ahead or forward;3 単 現在 受動態</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>rei militaris pertissimus : 目的語の属格　「希望、知識、豊富などの意味を持つ形容詞は属格の目的語を持つ」(AG349.a)</p>
+<p>(ex. avidi laudis =&nbsp; greedy of praise) 「expeert of military affair]</p>
+<p>habebantur ：　<u>habeoにはconsider,regardの意味がある</u>。従ってここは = considered, regarded　peritissimusは主格であるがここでは述語的に使用されている　<font style="background-color: yellow;">述語名詞: 主語と一致する名詞でsumなどの動詞で結ばれる。(copula)</font></p>
+<p>copula動詞にはSUM以外に、fio, maneo, videor, creor, appellor, <strong>habeor</strong>(以上受動形）が使われる。（NewLatin168)</p>
+<p>(ex. non mihi videor perisse : cicero letter) (Liber V, Chap44 )</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>P.コンシディウス、彼は軍事に関して熟練していると見られていて、スラとクラッススの軍隊にいた人であるが、斥候と一緒に先頭に送られた。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

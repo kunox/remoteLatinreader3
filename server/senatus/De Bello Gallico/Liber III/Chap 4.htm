@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chapter 4</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[4]<span></span></a>
+<a class="note0">Brevī<span><br><br></span></a>
+<a class="note1">spatiō<span>spatium spati(i) N (2nd) N  <br>:space; area/expanse, room (for); intervening space, gap/<strong>interval</strong>; length/width;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">interiectō,<span>intericio intericere, interjeci, interjectus V (3rd) TRANS  <br>:put/throw between; interpose; insert; introduce;<br>(完了 分詞 受動態 n 単数 奪格)<br></span></a>
+<a class="note1">vix<span>副詞　;= hardly, scarely, barely, only just, with difficulty, not easily<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note1">rēbus<span>res 複　与格<br></span></a>
+<a class="note0">quās<span><br><br></span></a>
+<a class="note1">cōnstituissent<span>constituo constituere, constitui, constitutus V (3rd)  <br>:|decide/resolve; decree/ordain; appoint, post/station (troops); settle (colony);<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">conlocandīs<span>conloco conlocare, conlocavi, conlocatus V (1st) TRANS  <br>:place/put/set in order/proper position, arrange; station, post, position; apply;<br>(未来 分詞 受動態  複数  与格)<br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">administrandīs<span>administro administrare, administravi, administratus V (1st)  <br>:administer, manage, direct; assist; operate, conduct; maneuver (ship); bestow;<br>(未来 分詞 受動態  複数  与格)<br><br></span></a>
+<a class="note1">tempus<span>tempus temporis N 単　主格　;= time, condition</span></a>
+<a class="note1">darētur,<span>do dare, dedi, datus V (1st) TRANS  <br>:give; dedicate; sell; pay; grant/bestow/impart/offer/lend; devote; allow; make;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">partibus<span></span></a>
+<a class="note0">signō<span><br><br></span></a>
+<a class="note0">datō<span><br><br></span></a>
+<a class="note1">dēcurrere,<span>decurro decurrere, decucurri, decursus V (3rd)  <br>:run/hurry/rush/flow/slope down; hasten; travel downstream; come to land/end;<br>(  現在 能動態 不定詞 )<br><br></span></a>
+<a class="note1">lapidēs<span>lapis lapis N (3rd) F  <br>:stone; milestone; jewel;<br>(c 複数  主格)<br></span></a>
+<a class="note1">gaesaque<span>gaesum gaesi N 複　主格　;= Gallic javelin</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">vāllum<span>vallum valli N 単　対格　;= wall, rampart<br></span></a>
+<a class="note1">coicere.<span>coicio coicere, cojeci, cojectus TRANS 不定詞　;= throw, cast</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>brevi spatio interiecto :独立奪格　「短い時間が挟まれ」「僅かな時間ののち」</p>
+<p>tempus daretur : 「時間が与えられた」</p>
+<p><strong>ut iis rebus conlocandis atque administrandis</strong> ：rebusは与格で、conlicandis は動形容詞(与格）で、ちょっと特殊な動形容詞の使い方。NewLatin191.3 （与格）を（動形容詞）するための、と訳す。二重与格。この場合、「これらの事柄を管理して遂行するための」</p>
+<p><strong>hostes decurrere, lapides coicere</strong> : 歴史的不定詞　従ってhostesは主格、lapidesも主格</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>しばし僅かな時間のあと、これらの決められた防衛の事を管理し遂行する時間が辛うじてあった。敵は全ての方向から、合図が出され突撃してきた。石や投槍が壁に向かって投げられた。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nostrī<span><br><br></span></a>
+<a class="note0">prīmō<span><br><br></span></a>
+<a class="note1">integris<span>integer integra, -um ,integrior -or -us, integerrimus -a -um 形容詞　複　奪格　;= untouched, whole, complete, fresh<br></span></a>
+<a class="note1">vīribus<span>vis viris F 複奪格　;= strength, force, power<br></span></a>
+<a class="note1">fortiter<span>副詞　strongly</span></a>
+<a class="note1">propugnāre<span>propugno propugnare, propugnavi, propugnatus 不定詞　;= fight on the defensive<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">ūllum<span></span></a>
+<a class="note1">flūstrā<span>frustraの誤植
+frustra 副詞　;= in vain, for nothing<br></span></a>
+<a class="note1">tēlum<span>telum teli N 単　対格　;= dart, spear<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note0">superiōre<span><br><br></span></a>
+<a class="note0">mittere,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">quaecumque<span>quacumque の奪格形　副詞　;= whereever, to any place, whenever</span></a>
+<a class="note1">pars<span>pars F　単　主格</span></a>
+<a class="note0">castrōrum<span><br><br></span></a>
+<a class="note1">nūdāta<span>nudo nudare, nudavi, nudatus 完了分詞　f単　主格　;= lay bare, strip, unprotected<br></span></a>
+<a class="note1">dēfēnsōribus<span>defensor defensoris M 複　奪格　;= defenser, protecter, defendant<br></span></a>
+<a class="note1">premī<span>premmo premere, pressi, pressus 受動　不定詞　;= press, press hard, overwhelm<br></span></a>
+<a class="note0">vidēbātur,<span><br><br></span></a>
+<a class="note1">eō<span>is 奪格<br></span></a>
+<a class="note1">occurrere<span>occurro occurrere, occucurri, occursus 不定詞　;= run to meet, oppose, resist, occur(w/Dat)</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">auxilium<span></span></a>
+<a class="note0">ferre,<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note1">superārī<span>supero superare, superavi, speratus 受動　不定詞　;= overcome, conquer, survive, suepass, be above, have upper hand<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">diūturnitāte<span>diuturnitas diuturnitatis F 単　奪格　;= long duration<br></span></a>
+<a class="note1">pugnae<span>pugna = fighting, battle 単　属格</span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note1">dēfessī<span>defetiscor defetisci, defessus sum DEP 完了分詞　受動　m複　主格　;= become exhausted, grow tired<br></span></a>
+<a class="note0">proeliō<span><br><br></span></a>
+<a class="note1">excēdēbant,<span>excedo excedere, excessi, excessus 3複　未完了　;= pass, withdraw, exceed, go away<br></span></a>
+<a class="note1">aliī<span>alius alia aliud 形容詞　複　主格　;= other, another<br></span></a>
+<a class="note0">integris<span><br><br></span></a>
+<a class="note0">vīribus<span></span></a>
+<a class="note1">succēdēbant;<span>succedo succedere, successi, successus V (3rd)  <br>:climb; advance; follow; succeed in;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false">
+<p>integris viribus : 独立奪格 「強さが新鮮だった時には」</p>
+<p><font color="red">flustra は誤植</font>　frustra　副詞で　＝<strong>in vain</strong> </p>
+<p>quaequmque : =whereever　副詞 cumque (-ever, -soever)と代名詞qui, quisの組み合わせでできる語。この語自身は、副詞としてno declineとなる。quodcumque, quicumqueなどもある。（AG151)</p>
+<p>nudata defensoribus : defensoribusは分離の奪格で「守り手から離されていて」　分詞構文</p>
+<p>quaecumqueの先行詞は　あとのeoであり　in eam partemの意味</p>
+<p>hoc superari : superari不定詞の主語は最初のnostri(全部の不定詞の主語になっている）hoc はhic= thisの奪格で、付帯状況の奪格か性質の奪格？「そこにおいて、我らは（敵によって）上回れていた＝不利であった」</p>
+<p>excedebant, succedebant : 未完了で、繰り返しのニュアンスがある。</p>
+<p>alli integris viribus : 性質の奪格で、前の独立奪格とは異る。（同型ではあるが）alliは名詞化</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>味方の軍勢は最初の疲労してない間は頑健に抵抗した。一本の無駄な投槍もなく、砦のなかでどこかが手勢が手薄のため押され気味になるのを見かけると、そこに急行し援軍となった。しかしながら、その状況は我らには不利であった。と言うのは敵は戦いが長引いて疲れると直ぐに戦闘から離脱し、別の新手が引き継ぐからである。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">quārum<span><br><br></span></a>
+<a class="note1">rērum<span>res 複　属格<br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">nostrīs<span><br><br></span></a>
+<a class="note1">propter<span>前置詞　ACC支配　;= on account of, by means of, because of</span></a>
+<a class="note1">paucitātem<span>paucitas paucitatis F 単　対格　;= scarcity, paucity<br></span></a>
+<a class="note1">fierī<span>fio 不定詞　;= be made, created, be prepared<br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">poterat,<span></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">modo<span></span></a>
+<a class="note1">dēfesso<span>defessus defessa, defessum 形容詞　m 単　与格 ;= worn out, weary, exhausted<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">pugnā<span><br><br></span></a>
+<a class="note1">excēdendi,<span>excedo excedere, excessi, excessus 　動名詞　属格　;= pass, withdraw, exceed, go away<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note1">sauciō<span>saucius saucia saucium 形容詞　m単　与格　;= wounded, ill, sick<br></span></a>
+<a class="note1">quidem<span>副詞　;= indeed(positively), certainly, even, at least</span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">locī<span>locum ｎ単　属格<br></span></a>
+<a class="note1">ubi<span>接続詞　;= where, whereby</span></a>
+<a class="note1">cōnstiterat<span>consisto consistere, constiti, constitus ３単　過去完了　;= make a stand, stay, remain, be established<br></span></a>
+<a class="note1">relinquendī<span>relinquo relinquere, reliqui, relictus 動形容詞　ｎ単　属格　;= leave behinde, abandon<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">suī<span><br><br></span></a>
+<a class="note1">recipiendī<span>recipio recipere, recepi, receptus   ;= keep back, recover, undertake<br></span></a>
+<a class="note1">facultās<span>facultas facultatis F 単　主格　;= means, ability, skill, opputunity, chance<br></span></a>
+<a class="note1">dabātur.<span>do ３単　未完了<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>難しい文。</p>
+<p>quarum rerum　：　内容的には前文の（敵のように）退却したり新手を繰り出す事。属格なのは全体の属格で、これらの事全部の内、一つも(nihil)という構造。nihilが主語。</p>
+<p>nihil quarum rerum fieri poterat a nostri. : 「このような事は味方によって一つも成されることは可能では無かった」「味方にはそのようなことをすることは可能ではなかった」</p>
+<p>non mond = non mnd non (NewLatin343) non mond ~ sed ne = : ~だけではなく＝も</p>
+<p>defesso , saucio : m単数　与格の形容詞で、名詞として使われている。あまりない使い方のようである。（NewLatin237)</p>
+<p>与格なのは、dabaturの間接目的語になっているから、</p>
+<p>最初の部分は、defesso ex pugna excedendi facultas dabatur. : excedendi動名詞,属格でfacultasを修飾、「退却するための機会」の意。</p>
+<p>loci relinquendi : 動形容詞構文　動名詞は目的語を取れる。この場合Loci。目的語を伴う属格（奪格）動名詞は動形容詞で、置き換えられる。locum relinquendi 「その場所を放棄する事の（facultas）」がlociとなった。</p>
+<p>sui recipiendi：これも同様に動形容詞構文。suiは動形容詞とともに、性、格も無関係に用いられる。（NewLatin339.5)</p>
+<p>これらの動形容詞文は全体として属格で、動名詞属格が名詞を修飾するように、この場合Facultasを修飾している。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの事は、一つとして味方には出来ないことであった。人数が欠乏していたからである。また、疲労困憊したものが戦いから離脱する機会は勿論、負傷しているものが自分がいた場所を放棄して自身を回復する様な機会すらも与えられなかった。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

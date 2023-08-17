@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 47</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[47]<span></span></a>
+
+<a class="note1">Bīduō<span>biduum, bidui 名詞 (2nd) N   :two days (period of ...); 奪格<br></span></a>
+<a class="note0">post<span></span></a>
+<a class="note0">Ariovistus<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">lēgātōs<span><br><br></span></a>
+<a class="note0">mīsit:<span><br><br></span></a>
+<a class="note0">velle<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">eōs<span></span></a>
+<a class="note1">egī<span>ago, agere, egi, actus 動詞 (3rd)   :drive/urge/conduct/act; 1 単 完了 能動態 直説法egiではなくagi(受動不定詞）のテキスト多し）<br></span></a>
+<a class="note1">coeptae<span><strike>coepio, coepere, -, - 動詞</strike> <br>coepi coepisse,-, coeptus(3rd)   :begin, commence, initiate; <br>完了分詞　受動　主格　複<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">perfectae<span>perficio, perficere, perfeci, perfectus 動詞 (3rd)   :complete, finish; 完了分詞　受動　主格複</span></a>
+<a class="note0">essent<span></span></a>
+<a class="note1">agere<span>ago 不定詞</span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">eō:<span><br><br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">iterum<span></span></a>
+<a class="note1">conloquiō<span>提示の与格<br></span></a>
+<a class="note0">diem<span></span></a>
+<a class="note1">cōnstitueret<span>constituo, constituere, constitui, constitutus 動詞 (3rd)   :set up/in position,<br></span></a>
+<a class="note0">aut,<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note1">minus<span>minus, 副詞   :less; not so well; not quite;</span></a>
+<a class="note0">vellet,<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note0">lēgātīs<span><br><br></span></a>
+<a class="note1">aliquem<span>aliqui, 代名詞  :any; some;</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">sē<span>アリオウィストゥスのこと<br></span></a>
+<a class="note0">mitteret.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><strong>
+</strong><p><strong>biduo post :</strong> 差異の奪格　（post, anteなどとともに使われ差異を表す）</p>
+<p><strong>se velle agere cum eo</strong>: 彼と交渉したい</p>
+<p><strong>de iis rebus quae</strong> : quae以下のことに関して</p>
+<p><strong>quae coeptae essent agi inter eos　</strong>：　which was begun to be treated between him彼との間で交渉が既に始まっている（もの）<strong>neque perfectae essent</strong> ：まだ終了していないもの</p>
+<p>uti iterum constitueret diem conloquio ：会談のための別な日を設定する</p>
+<p>mitteret.aliquem ex suis legatis ad se：アリオウィストゥスのところに彼の使者として誰かを送る</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>2日ののち、アリオウィストゥスがカエサルのところに使者を立て、言うには、彼は彼らの間で既に話し合いを始めたことでまだ決着していない事柄について話をしたい旨申し入れた。会談の日を設定するか、またもしカエサルがそれに、気乗りしないのであれば彼の連隊から誰かをアリオウィストゥスの元に送ってもらいたいとの事。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Conloquendī<span>動名詞　属格 <br>causa 属格で for the sake of~<br></span></a>
+<a class="note0">Caesarī<span><br><br></span></a>
+<a class="note0">causa<span><br><br><br></span></a>
+<a class="note1">vīsa<span>video 完了分詞　受動<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">eō<span>is 奪格（原因の奪格）<br><br></span></a>
+<a class="note1">magis<span>magis, 副詞   :to greater extent, more nearly;</span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">prīdiē<span>pridie, 副詞   :day before; <br>pridie eius diei =  on the day before that day<br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">diēī<span>dies 属格<br></span></a>
+<a class="note0">Germānī<span><br><br></span></a>
+<a class="note1">retinērī<span>retineo, retinere, retinui, retentus 動詞 (2nd)   :hold back, restrain; uphold; delay; hold fast; 受動　不定詞<br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">potuerant<span>possum 3 複 過去完了 能動態 直説法</span></a>
+<a class="note1">quīn<span>quin, 接続詞   :so that not, without; that not; but that; that;<br></span></a>
+<a class="note1">tēla<span>telum, teli 名詞 (2nd) N   :dart, spear; weapon, javelin; bullet (gun);<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note1">coicerent.<span>coicio, coicere, cojeci, cojectus 動詞 (3rd) TRANS   :throw/put/pile together; conclude3 複 未完了 能動態 接続法</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><strike>
+</strike><p><strike>Conloquendi causa ：for the sake of holding confference : </strike>conloquiendiは動名詞属格、会議の理由は</p>
+<p><strong>Cause non visa est, Caesari</strong> :カエサルに取っては存在しない　（causa 主格）</p>
+<p>et magis eo ：これに関してそれ以上に</p>
+<p>quod Germani non potuerant ：なぜならゲルマンたちは抑制できなかった</p>
+<p><strong>pridie eius diei　＝on the day before that day </strong>diei属格がpridieを修飾している稀な使い方（NewLatin201.3)</p>
+<p>quin = but that (quinは妨げる、などの動詞を伴う名詞節を導く接続詞　（NewLatin295.3)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>会談について言えばカエサルには全くその気がなかった。それどころかその前の日にはゲルマンたちは味方に槍を投げることを抑制することは出来なかった。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Lēgātum<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note1">magnō<span>magnus 奪格　periculo修飾<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">perīculō<span>奪格（cumは奪格支配）<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note1">missūrum<span>mitto 未来分詞　能動　esse省略で未来不定詞<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">hominibus<span>与格</span></a>
+<a class="note1">ferīs<span>ferus, fera, ferum 形容詞   :wild, savage; uncivilized; untamed; fierce;与格　hominibusに一致<br></span></a>
+<a class="note1">obiectūrum<span>obicio, obicere, objeci, objectus 動詞 (3rd) TRANS   :throw before/to, cast; object, oppose; upbraid; throw in one's teeth; present;未来不定詞<br></span></a>
+<a class="note1">exīstimābat.<span>existimo, existimare, existimavi, existimatus 動詞 (1st) TRANS   :value/esteem; form/hold opinion/view; think/suppose; 3 単 未完了 能動態 直説法<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>existimabat.　～と考えた。</p>
+<p>sese missurum ad eum cum magno periculo ：彼が大いなる危険と共に送るであろうこと</p>
+<p>obiecturum feris hominibus ：野蛮な敵に対して投げ出すであろうこと。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルは、自軍から使者を出すのは非常に危険を伴うし、野蛮な敵に差し出すようなものだと考えた。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Commodissimum<span>commodus, commoda -um, commodior -or -us, commodissimus -a -um 形容詞   :suitable, convenient, obliging;</span></a>
+<a class="note1">vīsum<span>video 完了分詞　受動　主格<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">C.<span></span></a>
+<a class="note0">Valerium<span></span></a>
+<a class="note0">Procillum,<span></span></a>
+<a class="note0">C.<span></span></a>
+<a class="note0">Valeriī<span><br><br></span></a>
+<a class="note0">Cabūrī<span><br><br></span></a>
+<a class="note0">fīlium,<span><br><br></span></a>
+<a class="note1">summā<span>summus, summa, summum 形容詞   :highest, the top of; greatest; last; the end of;奪格（virtuteに一致）<br></span></a>
+<a class="note1">virtūte<span>virtus, virtutis 名詞 (3rd) F   :strength/power; courage/bravery;奪格　（性質の奪格）<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">hūmānitāte<span>humanitas, humanitatis 名詞 (3rd) F   :human nature/character/feeling; kindness/courtesy; culture/civilization;奪格<br></span></a>
+<a class="note1">adulēscentem,<span>adulescens, adulescentis 名詞 (3rd) C   :young man, youth; youthful person; young woman/girl; 対格</span></a>
+<a class="note0">cuius<span></span></a>
+<a class="note0">pater<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note1">C.<span>Caius</span></a>
+<a class="note0">Valeriō<span><br><br></span></a>
+<a class="note0">Flaccō<span><br><br></span></a>
+<a class="note1">cīvitāte<span>civitas 奪格<br></span></a>
+<a class="note1">dōnātus<span>dono, donare, donavi, donatus 動詞 (1st)   :present, grant; forgive; give (gifts), bestow;完了 分詞 受動態 m 単 主格<br></span></a>
+<a class="note0">erat,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">propter<span>propter, 前置詞 (対格)  :near; on account of; by means of; because of;</span></a>
+<a class="note0">fidem<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">propter<span></span></a>
+<a class="note0">linguae<span></span></a>
+<a class="note0">Gallicae<span></span></a>
+<a class="note1">scientiam,<span>scientia, scientiae 名詞 (1st) F   :knowledge, science; skill;対格</span></a>
+<a class="note1">quā<span>Linguae Gallicaeのこと <br>utebaturを受けて奪格<br></span></a>
+<a class="note0">multā<span><br><br></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note0">Ariovistus<span></span></a>
+<a class="note1">longinquā<span>longinquus, longinqua -um, longinquior -or -us, longinquissimus -a -um 形容詞   :remote, distant, far off; lasting, of long duration;ｆ奪格<br></span></a>
+<a class="note1">cōnsuētūdine<span>奪格 <br>consuetudo, consuetudinis 名詞 (3rd) F   :habit/custom/usage/way;<br></span></a>
+<a class="note1">ūtēbātur,<span>utor, uti, usus sum 動詞 (3rd) DEP   :use, make use of, enjoy(with ABL);<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">peccandī<span>pecco peccare, peccavi, peccatus V (1st) INTRANS  <br>:sin; do wrong, commit moral offense; blunder, stumble; be wrong;<br>(動形容詞 m 単数 属格)<br><br></span></a>
+<a class="note1">Germānīs<span>所有の与格<br></span></a>
+<a class="note0">causa<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">esset,<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">mittere,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">ūnā<span>una, 副詞   :together, together with; at the same time; along with;<br></span></a>
+<a class="note1">M.<span>Marcus</span></a>
+<a class="note0">Metium,<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">hospitiō<span>hospitium, hospiti(i) 名詞 (2nd) N   :hospitality, entertainment; lodging; guest room/lodging; inn;<br></span></a>
+<a class="note0">Ariovistī<span><br><br></span></a>
+<a class="note0">ūtēbātur.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>Commodissimum visum est</strong> ：最も適していると見られる（事）は　<strong>videoは非人称的にit appears と訳される</strong></p>
+<p>mittere, ad eum　：彼のもとに送ること</p>
+<p>C. Valerium Procillum　：Caius Valerius Procillus　の対格</p>
+<p>filium, C. Valerii Caburi, adulēscentem, summa virtute et humanitate、：～の息子で、非常に勇敢、洗練された若者であった</p>
+<p>cuius pater erat, donatus civitate ：彼の父親は市民権をプレゼントされた　a C. Valerio Flaccoによって</p>
+<p>et propter fidem et propter linguae Gallicae scientiam,：その忠実さ、またガリアの言葉の知識もあり</p>
+<p><strong>qua Ariovistus utebatur, multa</strong> :それ（ガリア語）はアリオウィストゥスもよく使う</p>
+<p>et quod causa peccandi in eo non esset, Germanis : そしてなぜなら、彼に対し害する事はゲルマンは持っていない</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>最も適していると思われたのはカイウス　ワレリウム　プロキウムを送ることである。彼はCaius Valerium Cabrusの息子で、大変勇気のある洗練された若者で、忠実な点、またガリアの言葉、それには長い習慣からアリオウィストゥスも相当良く使うようになっていたが、に堪能なことなどで、それに彼に対し害するような理由をゲルマンは持っていないと考えたからである。それに、Marcus Metium、彼はアリオウィストゥスの接待を受けたことがあり、彼を一緒に送った。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note1">mandāvit<span>mando, mandare, mandavi, mandatus 動詞 (1st)   :entrust, commit to one's charge, deliver over; commission; order, command; ,3 単 完了 能動態 直説法)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">dīceret<span><br><br></span></a>
+<a class="note0">Ariovistus<span></span></a>
+<a class="note1">cognōscerent<span>cognosco, cognoscere, cognovi, cognitus 動詞 (3rd) TRANS   :become acquainted with/aware of; recognize; learn,<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">referrent.<span>refero, referre, rettuli, relatus 動詞   :|report (on), bring back news; 3 複 未完了 能動態 接続法)</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>mandavit His ：彼らに命じた</p>
+<p><strong>quaeの前にutがあるテキスト多し</strong>(Bennett, A&amp;G, Kelsey, Edwards etc)</p>
+<p><strong>ut cognoscerent quae Ariovistus diceret et referrent.ad se </strong>quae Ariovistus diceretは間接疑問文</p>
+<strong>
+</strong></div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼に命じたのは、アリオウィストゥスの云うことを理解して、私（カエサル）に報告すことである。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quōs<span>複　対格で彼ら二人のこと<br></span></a>
+<a class="note1">cum<span>When</span></a>
+<a class="note1">apud<span>apud, 前置詞 (対格)  :at, by, near</span></a>
+<a class="note1">sē<span>Ariovistusのこと<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">castrīs<span></span></a>
+<a class="note0">Ariovistus<span></span></a>
+<a class="note1">cōnspexisset,<span>conspicio, conspicere, conspexi, conspectus 動詞 (3rd) TRANS   :observe/see/witness; notice; watch; gaze/stare on; catch/be in sight of; face;3 単 過去完了 能動態 接続法)<br></span></a>
+<a class="note1">exercitū<span>exercitus, exercitus 名詞 (4th) M   :army, infantry; swarm, flock;奪格　独立奪格<br></span></a>
+<a class="note0">suō<span></span></a>
+<a class="note1">praesente<span>praesens, (gen.), praesentis 形容詞   :present; at hand; existing; prompt, in person; propitious; 奪格</span></a>
+<a class="note1">conclāmavit:<span>conclamo, conclamare, conclamavi, conclamatus 動詞 (1st)   :cry/shout aloud/out; 3 単 完了 能動態 直説法<br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">venīrent?<span>venio 3 複 未完了 能動態 接続法)<br></span></a>
+<a class="note1">an<span>an, 接続詞   :can it be that (introduces question expecting negative answer/further question);</span></a>
+<a class="note1">speculandī<span>speculor, speculari, speculatus sum 動詞 (1st) DEP   :watch, observe; spy out; examine, explore; 動名詞　属格<br></span></a>
+<a class="note0">causā?<span><br><br></span></a>
+<a class="note1">Cōnantēs<span>conor, conari, conatus sum 動詞 (1st) DEP   :attempt/try/endeavor, make an effort;<br></span></a>
+<a class="note0">dīcere<span></span></a>
+<a class="note1">prohibuit<span>prohibeo, prohibere, prohibui, prohibitus 動詞 (2nd)   :hinder, restrain; forbid, prevent;3 単 完了 能動態 直説法 主語はアリオウィストゥス</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">catēnās<span>catena, catenae 名詞 (1st) F   :chain; series; fetter, bond,対格<br></span></a>
+<a class="note1">coniēcit.<span>conicio, conicere, conjeci, conjectus 動詞 (3rd) TRANS   :|throw/cast/fling (into area);<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>cum Ariovistus conspexisset, Quos apud se in castris</strong> :アリオウィストゥスが野営地でかれの近くで彼らを見たとき</p>
+<p>exercitu suo praesente　：名詞（奪格）＋形容詞（奪格）の独立奪格</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>アリオウィストゥスが彼らを野営地の中で彼の近くで、彼らの軍勢のいるところで見た時に叫んだ。何故私のところに来た？偵察のためか？何か言おうとしたげれども禁止され鎖に繋がれてしまった。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 19</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[19]<span></span></a>
+
+<a class="note0">Caesar<span></span></a>
+<a class="note1">paucōs<span>paucus pauca -um, paucior -or -us, paucissimus -a -um ADJ  <br>:little, small in quantity/extent; few (usu. pl.); just a few; small number of;<br>(m 複数  対格)<br></span></a>
+<a class="note0">diēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note0">fīnibus<span><br><br></span></a>
+<a class="note1">morātus,<span>moratus morata, moratum ADJ  <br>:endowed with character or manners of a specified kind; gentle, civilized;<br>(m 単数 主格)<br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">vīcīs<span>vicus vici N (2nd) M  <br>:village; hamlet; street, row of houses;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">aedificiīsque<span>aedificium N 複　奪格　;= building<br><br></span></a>
+<a class="note1">incēnsis<span>incendo incendere, incendi, incensus V (3rd) TRANS  <br>:set on fire; set fire to, kindle, burn; cause to flame/burn; keep fire burning;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">frūmentīsque<span><br><br></span></a>
+<a class="note1">succīsīs,<span>succido succidere, succidi, succisus V (3rd) TRANS  <br>:cut down; cut from below, undercut; carve out underside; kill as 2nd offering;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span><br><br><br></span></a>
+<a class="note0">Ubiōrum<span><br><br></span></a>
+<a class="note1">recēpit<span>recipio recipere, recepi, receptus ３単　完了　;= keep back, recover, undertake, take in<br><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">hīs<span>与格<br><br></span></a>
+<a class="note0">auxilium<span></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note1">pollicitus,<span>polliceor polliceri, pollicitus sum V (2nd) DEP  <br>:promise;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Suēbis<span><br><br></span></a>
+<a class="note1">premerentur,<span>premo premere, pressi, pressus V (3rd)  <br>:press, press hard, pursue; oppress; overwhelm;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">cognōvit:<span><br><br></span></a>
+<a class="note0">Suēbōs,<span><br><br></span></a>
+<a class="note1">posteā<span>副詞　;= afterwards<br><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">explōrātōrēs<span>explorator M 複　対格　;= scout<br><br></span></a>
+<a class="note0">pontem<span></span></a>
+<a class="note1">fierī<span>fio 不定詞<br><br><br></span></a>
+<a class="note1">comperissent,<span>comperio comperire, comperi, compertus TRANS ３複　過去完了　接続法　;= learn, discover, find<br><br></span></a>
+<a class="note1">mōre<span>mos moris N (3rd) M  <br>:custom, habit; mood, manner, fashion; character (pl.), behavior, morals;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">suō<span><br><br></span></a>
+<a class="note1">conciliō<span>cocilium ｎ単　奪格<br><br><br></span></a>
+<a class="note1">habitō<span>habeo habere, habui, habitus V (2nd)  <br>:have, hold, consider, think, reason; manage, keep; spend/pass (time);<br>(完了 分詞 受動態 n 単数 奪格)<br><br></span></a>
+<a class="note0">nūntiōs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">partēs<span></span></a>
+<a class="note1">dīmīsisse,<span>dimitto dimittere, dimisi, dimissus V (3rd) TRANS  <br>:send away/off; allow to go, let go/off; disband, discharge, dismiss (soldiers);<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">oppidīs<span><br><br></span></a>
+<a class="note1">dēmigrārent,<span>demigro demigrare, demigravi, demigratus V (1st) INTRANS  <br>:emigrate; migrate; depart/remove/withdraw/go away (from situation/local/thing);<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">līberōs,<span><br><br><br></span></a>
+<a class="note0">uxōrēs<span><br><br></span></a>
+<a class="note0">suaque<span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">silvīs<span>複　奪格<br><br><br></span></a>
+<a class="note1">dēpōnerent<span>depono deponere, deposivi, depositus V (3rd) TRANS  <br>:put/lay down/aside/away; let drop/fall; give up; resign; deposit/entrust/commit;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">arma<span></span></a>
+<a class="note1">ferre<span>fero 不定詞　;= bear<br><br></span></a>
+<a class="note0">possent<span></span></a>
+<a class="note0">ūnum<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">convenīrent.<span>convenio convenire, conveni, conventus V (4th)  <br>:|meet/assemble; go to meet; come together; (have sex); converge; visit/approach;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>前半の骨子は　Caesar recepit</p>
+<p>後半は　cognovit　全体に分詞構文、独立奪格で、くだけた感じがする。</p>
+<p>Caesar ~ moratus, recepit se in fines Ubiorum : 逐語的には「そこに数日間滞在したカエサルはUbi族の領地に進んだ」</p>
+<p><strong>pollicitus (est) suum auxilium his, si premerentur a Suebis</strong> : もしスエビ族からの攻撃があったなら、援助する事を約束した。sumが省略されているとする。<u>premerenturは未完了形であるがここでは未来時制と考えられる</u>。接続法未来は無いので、従属節の中で接続法現在、未完了で未来を表すことが多い。（<strong>NewLatin 269.2</strong>)</p>
+<p>cognovit ab iis : 「彼らから以下のことを知る」</p>
+<p>more suo 「いつものように」「彼らの慣習により」原因の奪格</p>
+<p>concilio habito :独立奪格</p>
+<p>nuntios dimisisse in omnes partes : 不定詞句　nuntiosが主語</p>
+<p>uti demigrarent, ~ deponerent, ~convenirent : ここは前と同様接続法、未完了で未来時制を表している。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>カエサルは彼らの領地に数日留まり、村、建物を焼き払い、穀物を切取り、Ubii族の領地に入り、もしスエビ族からの攻撃があったら援助すると約束した。そこで彼らから聞いたのは、スエビ族は、橋の建設を斥候から聞いた後、彼らの習慣で会議を行い、全ての地域に使者を送り、町から避難するように、また女子どもは森に中に隠れるように、武器を取れるものは一つの場所に集まるようにした。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hunc<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">dēlectum<span>delectus delecta, delectum ADJ  <br>:picked, chosen, select; (for attaining high standard);<br>(n 単数 主格)<br></span></a>
+<a class="note1">medium<span>medius media, medium ADJ  <br>:middle, middle of, mid; common, neutral, ordinary, moderate; ambiguous;<br>(n 単数 対格)<br></span></a>
+<a class="note1">ferē<span>副詞　;= almost, about<br><br><br></span></a>
+<a class="note0">regiōnum<span><br><br></span></a>
+<a class="note0">eārum<span><br><br></span></a>
+<a class="note0">quās<span><br><br></span></a>
+<a class="note0">Suēbi<span><br><br></span></a>
+<a class="note1">obtinērent;<span>obtineo obtinere, obtinui, obtentus V (2nd)  <br>:get hold of; maintain; obtain; hold fast, occupy; prevail;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">hīc<span><br><br></span></a>
+<a class="note0">Rōmānōrum<span><br><br></span></a>
+<a class="note0">adventum<span></span></a>
+<a class="note1">expectāre<span>expecto expectare, expectavi, expectatus V (1st)  <br>:await, expect; anticipate; hope for;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note1">dēcertāre<span>decerto decertare, decertavi, decertatus V (1st)  <br>:fight (issue out/to the finish); contend/dispute/argue; struggle/compete over;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">cōnstituisse.<span>constituo constituere, constitui, constitutus V (3rd)  <br>:set up/in position, erect; place/dispose/locate; (call a) halt; plant (trees);<br>(  完了 能動態 不定詞 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>hun delectum esse medium fere regionum earum :その選ばれた場所は彼らの領地のほぼ真中であった。間接話法の主文で不定詞。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>選ばれた場所は彼らの領地のぼぼ真中で、そこでローマ軍を待ち、戦いを始める予定であった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quod<span>副詞　;= with respect to which<br><br></span></a>
+<a class="note1">ubi<span>副詞　;= when<br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">comperit,<span>comperio comperiore, comperi, compertus ３単　現在（完了）　;= learn, discover<br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">cōnfectīs,<span>conficio conficere, additional, forms V TRANS  <br>:|compose; amass, collect; raise (troops); traverse; eat up, consume; expend;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">quārum<span><br><br></span></a>
+<a class="note0">rērum<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note0">trādūcere<span><br><br></span></a>
+<a class="note0">cōnstituerat,<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">Germānīs<span><br><br></span></a>
+<a class="note1">metum<span>metus metus N (4th) M  <br>:fear, anxiety; dread, awe; object of awe/dread;<br>(c 単数 対格)<br></span></a>
+<a class="note1">iniceret,<span>inicio inicere, injeci, injectus V (3rd) TRANS  <br>:hurl/throw/strike in/into; inject; put on; inspire, instill (feeling, etc);<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">Sugambrōs<span><br><br></span></a>
+<a class="note1">ulcīscerētur,<span>ulciscor ulcisci, ultus sum V (3rd) DEP  <br>:avenge; punish;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">Ubiōs<span><br><br></span></a>
+<a class="note1">obsidiōne<span>obsidio f単　奪格<br><br><br></span></a>
+<a class="note1">līberāret,<span>libero liberare, liberavi, liberatus V (1st)  <br>:free; acquit, absolve; manumit; liberate, release;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">diēbus<span><br><br></span></a>
+<a class="note1">omnīnō<span>副詞　;= entirely<br><br><br></span></a>
+<a class="note1">XVIII<span>octodecim 18<br><br></span></a>
+<a class="note0">trāns<span><br><br></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note1">cōnsūmptīs,<span>consumo consumere, consumpsi, consumptus V (3rd) TRANS  <br>:burn up, destroy/kill; put end to; reduce/wear away; annul; extinguish (right);<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">satis<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">laudem<span>laus laudis N (3rd) F  <br>:praise, approval, merit; glory; renown;<br>(c 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">ūtilitātem<span>utilitas utilitatis N (3rd) F  <br>:usefulness, advantage;<br>(c 単数 対格)<br></span></a>
+<a class="note1">profectum<span>proficio proficere, profeci, profectus V (3rd)  <br>:make, accomplish, effect;<br>(完了 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note1">arbitrātus<span>arbitro arbitrare, arbitravi, arbitratus V (1st)  <br>:think, judge; consider; be settled/decided on (PASS);<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliam<span></span></a>
+<a class="note0">recēpit<span><br><br></span></a>
+<a class="note0">pontemque<span></span></a>
+<a class="note1">rescidit.<span>rescindo rescindere, rescidi, rescissus V (3rd)  <br>:cut out; cut down, destroy; annul; rescind;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>全体の骨子は</p>
+<p>Ubi Caesar comperit ~, recepit se in Galliam, rescidit pontem.</p>
+<p>omnibus iis rebus confectis : 「成し遂げられたこれらの事柄全て」によって arbitratusへとと続く。</p>
+<p>ut ~はこれらの成し遂げたことの具体的な内容。</p>
+<p>profectus (esse)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらの事をカエサルが知った時、軍団を率いてくる事にした事柄全てが成し遂げられた、即ちゲルマンに恐怖を与えること、Sugambi族に罰を与えること、Ubii族の人質を解放すること、１８日間ライン河の向こう側で行動したことなどが行われたので、十分にその成果と効果はあったと考え、ガリアに戻り、橋を破壊した。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 58%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 1</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[1]<span></span></a>
+<a class="note1">Gallia<span>Gallia (f, -ae) <br>ガリア、ゴール</span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">omnis<span>omnis omnis, omne 形容詞　C単数　主格　;= each, every, the whole of ,ここではGalliaにかかっている</span></a>
+<a class="note1">dīvīsa<span>divisus : dividō の完了分詞 <br>divisa : 女性、単数、主格 <br>ここでは、受動態ではなく、分詞の形容詞的働きとして、現在形に訳す。</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">partēs<span>pars (f, partis, 3rd) <br>part, piece, some, faction <br>partes :複数、対格</span></a>
+<a class="note0">trēs,<span></span></a>
+<a class="note1">quārum<span>関係代名詞、quiの女性、属格、複数 <br>partesの事。</span></a>
+<a class="note1">ūnam<span>unus (one)の対格 <br>incoluntの目的語</span></a>
+<a class="note1">incolunt<span>incolō incolere incoluī (--) <br>cultivate, inhabit, reside <br>3複現在</span></a>
+<a class="note0">Belgae,<span></span></a>
+<a class="note1">aliam<span>alius (m,-a,aliud) <br>other, another <br>女性、対格 <br>incoluntが省略されている？</span></a>
+<a class="note0">Aquītānī,<span></span></a>
+<a class="note1">tertiam<span>tertius (m,-a -um) <br>third (ordinary number) <br>女性、単数、対格</span></a>
+<a class="note1">quī<span>= teriam patrem ei incolunt, qui <br>qui以下でei(彼ら)を記述している <br>～と呼ばれる彼らが住んでいる</span></a>
+<a class="note1">ipsōrum<span>ipse(強意代名詞）m,n 複数属格 <br>their own <br>ipsorum lingua = their own tangue</span></a>
+<a class="note1">linguā<span>lingua (f,-ae)の奪格　(linguā) <br>tongue, speech, language etc</span></a>
+<a class="note0">Celtae,<span></span></a>
+<a class="note1">nostrā<span>ours <br>所有形容詞　nosterの女性、単数、奪格 <br>省略されているlinguāを修飾</span></a>
+<a class="note0">Gallī<span></span></a>
+<a class="note1">appellantur.<span>appello appellare, appellavi, appellatus V (1st) TRANS  <br>:call (upon); address; dun; solicit; appeal (to); bring to court; accuse; name;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Gallia est omnis divisa in partes tres</strong>,: omnisは主格でGalliaを修飾。divisaは完了分詞の形容詞的用法。</p>
+<p><strong>quarum unam incolunt Belgae</strong>, : incoluntはincoloの３複現在でBelgae（３複）と一致。即ち、Belgaeが主語で動詞がincoloである。incoloは他動詞で、「～に生息する」というふうに目的語を取る。それがunam (partemが省略されている）である。quarumは前のpartesを受け（両方共に複数）副詞的に使われ、意味は「その中で」となる。直訳すると「その中で、ベルガエ族が一つの地域に住む」となる。</p>
+<p><strong>aliam Aquitani</strong>, これは前文のBelgaeの代わりにAquitani,　unam partemの代わりにaliam partem、という省略形。「Aquitaniが別ののところ」が逐語訳。</p>
+<p><strong>tertiam qui ipsorum lingua Celtae, nostra Galli appellantur</strong>. : ここはもうひとつの省略形がある。tertiam ei, qui という風にei(彼ら）が３番目に、と前文と同じ形式であるがそのeiは省略されて、eiを説明する関係代名詞文が後に続く。このような、eiを前に出して、それを後から関係詞で説明する、という形式は多い。逐語的には「自身の言語ではCaltae,我々の言語ではGalliと呼ぶ人たちが３番目の地域に住んでいる」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>ガリアは全体として３つに分かれて居る、そのうちの一つにベルガエ人が住んでおり、他のところにはアクィタニ人が住み、三番目のところには、彼ら自身の言葉でケルタエ（ケルト）と呼ばれ我々がガリアと呼んでいる人たちが住んでいる。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hī<span></span></a>
+<a class="note1">omnēs<span>omnis, omnis 名詞 (3rd) C  : all men (pl.), all persons;</span></a>
+<a class="note1">linguā,<span>奪格で　Ablativus respectusと云われる観点の奪格</span></a>
+<a class="note1">īnstitūtīs,<span>institutum, instituti 名詞 (2nd) N  : custom, principle;(複 奪格)</span></a>
+<a class="note1">lēgibus<span>ex, legis 名詞 (3rd) F  : law; motion複 奪格)</span></a>
+<a class="note1">inter<span>inter, 前置詞 (対格) : between, among; during;</span></a>
+<a class="note0">sē<span></span></a>
+<a class="note1">differunt.<span>differo, differre, distuli, dilatus 動詞  : |spread abroad; scatter/disperse; separate; defame; confound/bewilder, distract;</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Hiは 代名詞hic(=this, these)の複数主格。一般に前に２つの人、ものがある場合はilleが前者、hicは後者&nbsp;を指すのに使用される。omnesはomnisの複、主格で主語。動詞がdifferuntで３人称複。文の構造は簡単で<strong>omnes differunt</strong>である。</p>
+<p>lingua, institutis, legibusは観点の奪格と呼ばれる奪格の用法の一つ。「～に関して言えば」と訳される。</p>
+<p>interは対格支配の前置詞なのでseはsuiの対格。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらは、言語、習慣、法律などの点でお互いに異なっていた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Gallōs<span>Gaul 複数　対格</span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">Aquītānīs<span>奪格</span></a>
+<a class="note1">Garumna<span>Garumna河</span></a>
+<a class="note1">flūmen,<span>flumen : (n,3rd) 河 <br>主格対格</span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">Belgīs<span></span></a>
+<a class="note0">Matrona<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Sēquana<span></span></a>
+<a class="note1">dīvidit.<span>divido, dividere, divisi, divisus 動詞 (3rd)  : divide; separate, <br>3 単 現在 能動態 直説法</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>Garumna flumen</strong> : Garumna河。主語であり動詞はdividitで目的語がGallos.逐語訳は「Garumna河がガリアを分割する」</p>
+<p>ab Aquitanisのabは奪格支配の前置詞でfromの意。aも同じ。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>ガリアは、アクイターナからはガルムナ河で、ベルガエからはモトロナ河とセクアナ川によって分割される。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hōrum<span>複数、属格</span></a>
+<a class="note1">omnium<span>複数、属格</span></a>
+<a class="note1">fortissimī<span>fortis forte, fortior, fortissimus
+最上級fortissimusのｍ複、主格。
+;= strong, powerful, mighty, vigorous, brave, bold</span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">Belgae,<span></span></a>
+<a class="note1">proptereā<span>propterea, 副詞  : therefore, for this reason; proptrea quodでBecauseの意味</span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note1">cultū<span>cultus, cultus 名詞 (4th) M 単数 <br>奪格（与格）文明</span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">hūmānitāte<span>humanitas -tis(3rd) 単数、奪格 <br>人間的なもの</span></a>
+<a class="note1">prōvinciae<span>provincia, provinciae 名詞 (1st) F  : province; office; duty; command; <br>単数、属格、複数主格</span></a>
+<a class="note0">longissimē<span></span></a>
+<a class="note1">absunt,<span>absum, abesse, abfui, abfuturus 動詞  : be away/absent/distant/missing; be free/removed ３複（主語はBelgae) <br>複数　３　現在</span></a>
+<a class="note1">minimēque<span>minime 副詞 <br>　least, not at all</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">eōs<span>Belgaeを指す。複数対格 <br>Adは対格支配</span></a>
+<a class="note1">mercātōrēs<span>複 主格 <br>商人たち</span></a>
+<a class="note0">saepe<span></span></a>
+<a class="note1">commeant<span>commeo, commeare, commeavi, commeatus 動詞 (1st) :go to, visit, travel; pass; resort to; go to and fro, come and go; communicate;３複</span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note1">quae<span>関係代名詞　pertinentまで(中性、複数対格？）</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">effēminandōs<span>effemino, effeminare, effeminavi, effeminatus 動詞 (1st)  : weaken, enervate, make effeminate, emasculate, unman;　未来分詞（動形容詞）対格 <br>adの後の対格の動形容詞は目的の意味で使用される</span></a>
+<a class="note1">animōs<span>animus, animi 名詞 (2nd) M  : mind; intellect; soul; feelings; heart; spirit, courage, character, pride; air;複対格</span></a>
+<a class="note1">pertinent<span>pertineo, pertinere, pertinui, pertentus 動詞 (2nd)  : reach; extend; relate to; concerns, pertain to;</span></a>
+<a class="note1">important,<span>importo importare, importavi, importatus ３複　現在
+eaを目的語として取る。 主語はMercatores ;= bring in、import</span></a>
+<a class="note0">proximīque<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">Germānīs,<span>与格、近接の形容詞を伴う与格 <br>（newLatin192)</span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">trāns<span>trans, 前置詞 (対格) : across, over; beyond; on the other side;</span></a>
+<a class="note0">Rhēnum<span></span></a>
+<a class="note0">incolunt,<span></span></a>
+<a class="note0">quibuscum<span></span></a>
+<a class="note1">continenter<span>continenter, 副詞  <br>:unbroken/continuously/without pause, uninterruptedly; repeatedly/successively;</span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">gerunt.<span>gero, gerere, gessi, gestus 動詞 (3rd)  : bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself); <br>3複現在</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>Belgae sunt fortissimi</strong> : ベルガエ族が最も強い。</p>
+<p><strong>horum omnium</strong> : omniumは形容詞omnisの複、属格で、horum (hicの複属格）と一致。「部分(全体の)の属格」と言われる用法で部分を表す語の後に全体を表す語の属格が続く(NewLatin201, AG346.a)。ここではちょっと変則で、fortissimi omniumという具合に使われている。「これらの全体の中で最も強い」</p>
+<p><strong>propterea quod</strong> : quodはこの場合接続詞でbecauseの意味がある。proptereaは副詞でtherefore。propterea quodはquodの強調形であり、意味は同じ。この表現はよく出てくるので一種の慣用句として覚える方が簡単。</p>
+<p>次の文は　<strong>absunt a cultu atque humanitate provinciae.</strong> であり主語はBelgaeである。absuntは[ ab+sum ]で、～から（離れて）存在する、というニュアンス。逐語的には「（彼らは）属州の文化、人間性から離れていたので」</p>
+<p><strong>mercatores commeant minimeque saepe</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(atque) important ea quae ~</strong> : 次の文はmercatores（商人たち）が主語で、commeant(訪れる)とimportant(運びこむ)の二つの動詞をもっており、２つともminime（最小限しか）という副詞にかかっている。「つまり商人たちは最小限の頻繁さで訪れ、最小限しか運び込まない」というのが大筋の文意。</p>
+<p>最初の文ではad eos(=Belgae)彼らに向かって</p>
+<p>importantも目的語は、eaでそれをquaeという関係代名詞文で説明している。</p>
+<p><strong>quae pertinent ad effeminandos animos</strong>: pertinentは関連するという意味の動詞で目的語はad以下。effeminandosはeffeminoの動名詞であり、ad+動名詞は目的を表す(AG506）逐語的には、「精神を弱める事に関連する」（もの）となる。</p>
+<p>qui trans Rhenum incolunt : ここのincoluntは自動詞。incoloは前出の他動詞的な使い方とこの自動詞的な使い方の両方の意味がある。</p>
+<p><strong>quibuscum</strong> continenter bellum gerunt : quibuscum = quibus + cum。cumは奪格支配の前置詞でwithの意。他にはmecum(me + cim) secum(se + cum)などがある。quibusは関係代名詞quiの奪格でGermanisを指す。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その中で最も強いのはベルガエ人である。なぜなら、彼らは属州の文明、人道から最も離れたところでいて、商人たちも彼らのところにはめったに訪れず、軟弱になるようなものを取り入れなかったからである。また彼らは最もゲルマンに近く、彼らはレヌム河の向かいに住んでおり、彼らといつも戦争をしていた。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quā<span>Qua de causaで <br>同じ理由で、（And for this reason)</span></a>
+<a class="note0">dē<span></span></a>
+<a class="note1">causā<span>causa, causae 名詞 (1st) F  : cause/reason/motive; origin, source, derivation; 奪格</span></a>
+<a class="note0">Helvētiī<span></span></a>
+<a class="note1">quōque<span>quoque, 副詞  <br>likewise/besides/also/too; not only; even/actually; (after word emphasized); <br>=as well as Begians</span></a>
+<a class="note1">reliquōs<span>reliquus, reliqua, reliquum 形容詞  : rest of/remaining/available/left; surviving; future/further; yet to be/owed;対格</span></a>
+<a class="note0">Gallōs<span></span></a>
+<a class="note1">virtūte<span>virtus, virtutis 名詞 (3rd) F  : strength/power; courage/bravery; 奪格 <br>（観点の奪格、～において）</span></a>
+<a class="note1">praecēdunt,<span>praecedo, praecedere, praecessi, praecessus 動詞 (3rd)  : go before, precede; surpass, excel;</span></a>
+<a class="note1">quod<span>quod, 接続詞 : because, as far as, insofar as;</span></a>
+<a class="note1">ferē<span>fere, 副詞  : almost; about, nearly; generally, in general;</span></a>
+<a class="note1">cotīdiānīs<span>cotidianus, cotidiana, cotidianum 形容詞  : daily, everyday; usual/habitual, normal/regular;</span></a>
+<a class="note1">proeliīs<span>proelium, proeli(i) 名詞 (2nd) N  :battle/fight/bout/conflict/dispute; <br>奪格（手段の奪格）</span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Germānīs<span></span></a>
+<a class="note1">contendunt,<span>contendo, contendere, contendi, contentus 動詞 (3rd)  : |compete/contend</span></a>
+<a class="note1">cum<span>quum 接続詞　;= when, while, as, since, although, as soon as</span></a>
+<a class="note1">aut<span>aut ~ aut (Either ~or~)</span></a>
+<a class="note0">suīs<span></span></a>
+<a class="note1">fīnibus<span>inis, finis 名詞 (3rd) C  : boundary, end, limit, goal; (pl.) country, territory, land; <br>奪格（分離の奪格）</span></a>
+<a class="note1">eōs<span>Germanusを指す <br>（Keep them off)</span></a>
+<a class="note1">prohibent<span>prohibeo, prohibere, prohibui, prohibitus 動詞 (2nd)  : hinder, restrain; forbid, prevent;</span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">ipsī<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">eōrum<span>Gerumanusの</span></a>
+<a class="note0">fīnibus<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">gerunt.<span>gero, gerere, gessi, gestus 動詞 (3rd)  <br> :bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><strong>
+</strong><p><strong>qua de causa : </strong>「その（同じ）理由によって」英語風に言えば、for this reason&nbsp;で前の内容を指し、英語では接続詞＋指示詞で表現されるものも関係詞を自由に使う。（NewLatin251.6)</p>
+<p><strong>Helvetii quoque reliquos Gallos virtute praecedunt</strong>：動詞はpraecedunt(praecedo) praeには前というニュアンスがあり（praeとい副詞,前置詞もある）cedoは行くとか与えるというニュアンスで、praecedoで先を行く、圧倒すると言う意味。virtuteは観点の奪格で、「力という観点において」</p>
+<p><strong>quod : </strong>=because ,propterea quodと同じ</p>
+<p>fere cotidianis proeliis cum Germanis <strong>contendunt</strong>,: 主語はHelvetiiで動詞はcontendunt 闘う相手はcum Germanisでゲルマンと。proeliisは手段の奪格と言われる用法。「ほぼ毎日の戦いという手段によって」contenduntしている、となる。</p>
+<p><strong>cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt</strong>. : ここのcumは前置詞ではなく,接続詞quumである。訳としてはなんでもありで、when, since,&nbsp; as, after that, など。</p>
+<p>aut ~ aut はeither ~ or。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>同じ理由で、（ベルガエ人同様）ヘルウェティ族は力の点で残りのガリアを凌いでいた、と言うのは、殆ど毎日のように戦争という手段でゲルマンと争っており、それはすなわち、彼らがゲルマンを領土から閉めだしたり、または彼らがゲルマンの領土の攻め入ったりしていたということである。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eōrum<span></span></a>
+<a class="note0">ūna<span></span></a>
+<a class="note0">pars,<span></span></a>
+<a class="note1">quam<span>obtinereの目的語 <br>Gallosが主語</span></a>
+<a class="note1">Gallōs<span>obtinereの意味上の主語（対格）</span></a>
+<a class="note1">obtinēre<span>obtineo, obtinere, obtinui, obtentus 動詞 (2nd)  : get hold of; maintain; obtain; hold fast, occupy; prevail;</span></a>
+<a class="note1">dictum<span>Dico 過去分詞　ditum estで「言われた」 <br>主語はquam Gallos obtinere</span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">initium<span>initium initi N 単数　対格　;= beginning, commencement</span></a>
+<a class="note1">capit<span>capio, capere, cepi, captus 動詞 (3rd) TRANS  : take hold, seize; grasp; <br>３単現　主語はEorum una pars</span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">flūmine<span></span></a>
+<a class="note0">Rhodanō;<span></span></a>
+<a class="note1">continētur<span>continor continari, continatus sum DEP 3単現在受動　;= encounter, meet with</span></a>
+<a class="note0">Garumnā<span></span></a>
+<a class="note1">flūmine,<span>奪格</span></a>
+<a class="note1">Ōceanō,<span>Oceanus,  : Ocean; <br>奪格</span></a>
+<a class="note1">fīnibus<span>finis, finis 名詞 (3rd) C  : boundary, end, limit, goal; (pl.) country, territory, land; <br>複数奪格</span></a>
+<a class="note1">Belgārum;<span>Belgaeの属格</span></a>
+<a class="note1">attingit<span>attingo, attingere, attigi, attactus 動詞 (3rd) TRANS  : touch, touch/border on; reach, arrive at, achieve; mention briefly; belong to;</span></a>
+<a class="note1">etiam<span>etiam, 接続詞  : and also, besides/furthermore, in addition/as well; even, actually; yes/indeed;</span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">Sēquanīs<span>Position is frequently expressed by the Ablative with ab (rarely ex ), properly meaning from:</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">Helvētiīs<span>奪格</span></a>
+<a class="note0">flūmen<span></span></a>
+<a class="note0">Rhēnum;<span></span></a>
+<a class="note1">vergit<span>vergo, vergere, -, - 動詞 (3rd)  <br> :incline, lie, slope;</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">septentriōnēs.<span>north複 対格</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Eorum una, pars, =(quam Gallos obtinere dictum est)</p>
+<p><strong>quam Gallos obtinere dictum est</strong>: quamは関係代名詞で前のparsを指す。Gallosは不定詞obtinereの意味上の主語であり、「ガリアが持っている」事。ここでは<u>主たる文はdictum est</u>でその<u>従属文が不定詞文</u>になっている。英語風に言えばit is said that Gallia obtinet.という構造でthat以下を不定詞で表現している。ラテン語では平叙文の間接話法は不定詞を使った名詞句が使われるので、obtinereという不定詞が使われ、その主語はラテン語特有であるが対格で表される。</p>
+<p><strong>initium capit a flumine Rhodano</strong>, : capit initiumで「発端を取り」、つまり始まり、の意。</p>
+<p><strong>continetur Garumna flumine, Oceano, finibus Belgarum, </strong>: contineturは受動態であるが、元々continorという形式受動態動詞とか異態動詞（Deponent)という動詞で意味は能動。～と遭遇する、と言う意。</p>
+<p><strong>attingit etiam ab Sequanis et Helvetiis flumen Rhenum </strong>: attingitは到達する、というニュアンス。ab Sequanis et Helvetiisは場所の奪格と言われる用法で、ab, exという前置詞と共に用いられ、「～から」と言う意。(NewLatin 229, AG429 b) 「また、Sequani族Helvetii族の（領地のところで）Rhenum河に触れ」</p>
+<p><strong>vergit ad septentriones</strong>.　北の方向に伸びている。　（orients, occodens, meridies, septentrio 東西南北）septentrioは北斗七星。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その最初の部分、これはガリアが持っていると言われているが、はロダノ河に端を発し、ガルムナ河と、外洋とベルガエ領によって囲まれ、セクアナ族とヘルウェイ族の領土の側を通ってからレヌム河と触れ、北の方に伸びている。</p>
+</div>
+</div>
+<div class="spacer">Line7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Belgae<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">extrēmīs<span>extremum, extremi 名詞 (2nd) N : limit, outside; end; <br>奪格、複数</span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note1">fīnibus<span>finis, finis 名詞 (3rd) C  : boundary, end, limit, goal; (pl.) country, territory, land;複 奪格</span></a>
+<a class="note1">oriuntur;<span>orior, ori, oritus sum 動詞 (3rd) DEP  : rise (sun/river); arise/emerge, crop up; get up (wake); (3 複 現在;</span></a>
+<a class="note1">pertinent<span>pertineo, pertinere, pertinui, pertentus 動詞 (2nd)  : reach; extend; relate to; concerns, pertain to;</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">īnferiōrem<span>infer, infera -um, inferior -or -us, infumus -a -um 形容詞  : below, beneath, underneath; of hell; vile; lower, further down; lowest, last;</span></a>
+<a class="note0">partem<span></span></a>
+<a class="note1">flūminis<span>単 属格</span></a>
+<a class="note1">Rhēnī;<span>単 属格</span></a>
+<a class="note1">spectant<span>specto, spectare, spectavi, spectatus 動詞 (1st) : observe, watch, look at, see; test; consider;</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">septentriōnem<span>septentrio, septentrionis 名詞 (3rd) M  : Big/Little Dipper (s./pl.); north, north regions/wind; brooch w/7 stones; 単 対格</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">orientem<span>oriens, (gen.), orientis 形容詞  : rising (sun/star); eastern; beginning, in its early stage (period/activity);</span></a>
+<a class="note1">sōlem.<span>sol, solis 名詞 (3rd) M : sun; 単 対格</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Belgae　: ベルガは</p>
+<p><strong>ab extremis Galliae finibus oriuntur</strong>,：Galliaの領土の境界から始まり　動詞はoriuntur</p>
+<p><strong>pertinent ad inferiorem partem fluminis Rheni,</strong> : 動詞はpertinent Rheni河の下流領域のほうに延び、</p>
+<p><strong>spectant in septentrionem et orientem solem.</strong>　: inは対格または奪格支配の前置詞 sptentrionemは北、orientem solem はRising Sunで、まあ東の事であろう。即ち「北東に面している」</p>
+<p>（方角はすべて、内ガリアと呼ばれたローマ属州から見た方角）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>ベルガエはガリアの国境の端から始まり、レヌル河の下流領域に至り、北東に面している。</p>
+</div>
+</div>
+<div class="spacer">Line8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Aquītāniā<span>f (1st)</span></a>
+<a class="note0">ā<span></span></a>
+<a class="note1">Garumnā<span>ｍ　奪格</span></a>
+<a class="note1">flūmine<span>ｎ　奪格</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">Pȳrēnaeōs<span>Pyrenaeus,  : Pyrenees (w/montes);複　対格</span></a>
+<a class="note1">montēs<span>m 複 主格 対格</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">eam<span>f 単 対格　Aquitaniaの事？</span></a>
+<a class="note1">partem<span>pars, partis 名詞 (3rd) F  <br> :part, region; share; direction; portion, piece; party, faction, side;</span></a>
+<a class="note1">Ōceanī<span>Oceanus, :（ｍ） Ocean;属格</span></a>
+<a class="note1">quae<span>pars (partem)のこと <br>（ｆ主格）</span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Hispāniam<span></span></a>
+<a class="note1">pertinet;<span>pertineo, pertinere, pertinui, pertentus 動詞 (2nd)  : reach; extend; relate to; concerns, pertain to;</span></a>
+<a class="note0">spectat<span></span></a>
+<a class="note1">inter<span>inter, 前置詞 (対格) : between, among; during;</span></a>
+<a class="note1">occāsum<span>occasus, occasus 名詞 (4th) M  : setting; Sun setなど　単　対格</span></a>
+<a class="note1">sōlis<span>sol, solis 名詞 (3rd) M  : sun;複 対格</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">septentriōnēs.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Aquitania</p>
+<p>a Garumna flumine ad Pyrenaeos montes et eam partem Oceani</p>
+<p>=(quae est ad Hispaniam) pertinet;</p>
+<p>（quaeはf、主格で、　parsがｆで、これを指す）</p>
+<p>spectat inter occasum solis et septentriones.</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>アクイタニアはガルムナ河からピレネー山脈とその外洋の領域のうちヒスパニア方向に至り、北西方向にある。（Provinceから見て）</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

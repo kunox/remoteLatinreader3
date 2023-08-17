@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 12</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[12]<span></span></a>
+<a class="note0">Erant<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">modī<span>modus modi M　複　主格　;= manner, mode, way<br></span></a>
+<a class="note1">ferē<span>副詞　;= almost, about, <strong>generally</strong><br></span></a>
+<a class="note1">sitūs<span>situs situs M 複　主格　；= situation, position, site, structure</span></a>
+<a class="note0">oppidorum<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">posita<span>pono ponere, posui, positus V (3rd) TRANS  <br>:|||put/lay down (load/arms), take off (clothes); shed (leaves); cut (nails);<br>(完了 分詞 受動態 f 単数 主格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">extrēmīs<span>extremum extremi N (2nd) N  <br>:limit, outside; end;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">lingulīs<span>lingula lingulae N (1st) F  <br>:tongue of land;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note1">prōmunturiīsque<span>promunturium promunturi(i) N (2nd) N  <br>:promontory, headland, spur, projecting part of a mountain (into the sea);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">pedibus<span></span></a>
+<a class="note1">aditum<span>aditus aditus M 単　対格;= approach, access</span></a>
+<a class="note0">habērent,<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">altō<span>altum alti N 単　奪格　;= the deep, the sea, deep water<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">aestus<span>aestus aestus N (4th) M  <br>:agitation, passion, seething; raging, boiling; heat/fire; <strong>sea tide</strong>/spray/swell;<br>(c 単数 主格),<br></span></a>
+<a class="note1">incitāvisset,<span>incito incitare, incitavi, incitatus V (1st)  <br>:enrage; urge on; inspire; <strong>arouse</strong>;<br>(３人称 単数 過去完了 能動態 接続法 )<br><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">[bis]<span></span></a>
+<a class="note1">accidit<span>accido 3単　完了　;= happen, happen to (w/DAT)</span></a>
+<a class="note0">semper<span></span></a>
+<a class="note1">hōrārum<span>hora horae N (1st) F  <br>:hour; time; season;<br>(c 複数  属格)<br></span></a>
+<a class="note0">XII<span></span></a>
+<a class="note1">spatiō,<span>spatium spati(i) N (2nd) N  <br>:||<strong>interval</strong>, time, extent, period, term; duration; distance; area; size; bulk;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">nāvibus,<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">rūrsus<span>副詞　;= turned back, backward, on the other hand<br></span></a>
+<a class="note1">minuente<span>minuo minuere, minui, minutus V (3rd)  <br>:lessen, reduce, diminish, impair, abate;<br>(現在 分詞 能動態  単数 奪格)<br></span></a>
+<a class="note1">aestu<span>aestus 単　奪格<br></span></a>
+<a class="note1">nāvēs<span>複　主格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">vadīs<span>vadum vadi 複　奪格　;= shallow place, ford<br></span></a>
+<a class="note1">adflīctārentur.<span>adflicto adflictare, adflictavi, adflictatus V (1st) TRANS  <br>:shatter, damage, strike repeatedly, buffet, <strong>wreck</strong>; oppress, afflict; vex;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>situs oppidorum erant eius modi</strong>.:eius modi 逐語的には「その方法で、そのやり方で」「その町の状況は次の通りである」ut以下で具体的に説明されている。<u>eius modi ut = of such sort that~</u></p>
+<p><strong>eiusmodiと一語で　副詞　;= in sucha manner, of such kind, of this sortとある！</strong></p>
+<p><strong>ut posita (oppida) in extremis... neque haberent</strong> : その～に位置している都市は～を持たない。</p>
+<p><strong>cum aestus incitavisset</strong> <strong>se ex alto:</strong> 「潮が深いところから上がって来た時には」cum + 直接法は繰り返し起きた事を表すが稀に接続法が使われることもある。（NewLatin288.3 (a))　alto ⇐ altus 深い海</p>
+<p>spatio : 時の奪格　（NewLatin231）</p>
+<p><strong>neque pedibus aditum haberent, neque navibus</strong> と続く</p>
+<p>bisはMSSのエラー。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その城塞の状況は次のようなやり方であった。即ち、岬の先端部分に位置する町は、徒歩で接近する事は出来ず、また潮が海から来た時も、それはいつも12時間毎に起きるのだが、船による接近も出来ない。それは引き潮により船が壊されるからである。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ita<span></span></a>
+<a class="note1">utrāque<span>uter utra utrum 形容詞　ｆ単　奪格　;= (w/que) each, either of two<br></span></a>
+<a class="note1">rē<span>res f 単　奪格<br></span></a>
+<a class="note0">oppidorum<span><br><br></span></a>
+<a class="note1">oppugnātiō<span>oppugnatio oppugnationis N (3rd) F  <br>:assault, siege, attack; storming;<br>(X 単数 主格)<br></span></a>
+<a class="note1">impediēbātur.<span>impedio impedire, impedivi, impeditus V (4th)  <br>:hinder, impede, hamper, obstruct, prevent from (w/ne, quin, or quominus);<br>(３人称 単数 未完了 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>uterque re : 独立奪格　「いずれの場合でも」</p>
+<p>impedienbatur : 邪魔をされる、即ち困難である。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そういう状態なので、いずれの場合でも攻撃は困難であった。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ac<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">quandō<span>副詞、接続詞　;= when ,since, at any time<br></span></a>
+<a class="note1">magnitūdine<span>magnitudo F 単　奪格　;= size, bulk, greateness<br></span></a>
+<a class="note1">operis<span>opus operis 単　属格　;= need, work, fortification</span></a>
+<a class="note1">forte<span>副詞　;= by chance, perphaps, as luck would have it</span></a>
+<a class="note1">superātī,<span>supero superare, superavi, superatus V (1st)  <br>:overcome, conquer; survive; outdo; surpass, be above, have the upper hand;<br>&nbsp;(完了 分詞 受動態 m 複数  主格)<br><br></span></a>
+<a class="note1">extrūsō<span>extrudo extrudere, extrusi, extrusus V (3rd)  <br>:thrust out; <strong>draw out</strong>;<br>&nbsp;(完了 分詞 受動態 n 単数 奪格)<br><br></span></a>
+<a class="note1">marī<span>mare N 単　奪格<br></span></a>
+<a class="note1">aggere<span>agger aggeris M 単　奪格　;= rampart, pier, mound, dam, dike</span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">mōlibus<span>moles molis N (3rd) F  <br>:|large structure/building; military structure, wall, ramp; causeway/embankment;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">hīs<span>複　奪格<br></span></a>
+<a class="note0">oppidī<span><br><br></span></a>
+<a class="note1">moenibus<span>moene moenis N 複　与格　;= defensive wall, town wall, fortification</span></a>
+<a class="note1">adaequātīs,<span>adaequo adaequare, adaequvi, adaequatus 完了分詞　受動　複　奪格　;= equalize, make equal in height, come up to level<br></span></a>
+<a class="note1">suīs<span>複与格　（形容詞）<br></span></a>
+<a class="note1">fortūnīs<span>fortuna fortunae F 複　与格　;= chance, luck, fate<br></span></a>
+<a class="note1">dēspērāre<span>despero desperare, desperavi, desperatus V (1st)  <br>:despair (of); have no/give up hope (of/that); give up as hopeless (of cure);<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">coeperant,<span>coepi 3複　過去完了</span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note0">nāvium<span><br><br></span></a>
+<a class="note1">adpulsō,<span>adpello adpellere, adpulsus 完了分詞　受動　ｍ単奪格　;= drive to, move, up, bring along, land ship<br></span></a>
+<a class="note0">cuius<span></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note1">summam<span>summus summa summum 形容詞　最上級　f 単　対格　;= highest, the top of, greatest</span></a>
+<a class="note1">facultātem<span>facultas facultatis N (3rd) F  <br>:means; ability, skill; opportunity, chance; resources (pl.), supplies;<br>(c 単数 対格)<br></span></a>
+<a class="note0">habēbant,<span><br><br></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note0">sua<span></span></a>
+<a class="note1">dēportābant<span>deporto deportare, deportavi, deportatus V (1st)  <br>:bring, convey (to); carry along/down (current); transport; take/bring home;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">sēque<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">proxima<span></span></a>
+<a class="note0">oppida<span></span></a>
+<a class="note1">recipiēbant:<span>recipio recipere, recepi, receptus V (3rd)  <br>:keep back; recover; undertake; guarantee; accept, take in; take back;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note1">ibi<span>副詞　;= there, in that place</span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">rūrsus<span>rursus 副詞　;= turned back, backward, in return<strong>,again</strong><br></span></a>
+<a class="note1">īsdem<span>idemの複　与格　奪格　(通常はoedem, eisdem）<br></span></a>
+<a class="note1">oportūnitātibus<span>oportunitas oportunitatis N (3rd) F  <br>:convenience, advantageousness; right time; opportuneness; opportunity, chance;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">locī<span><br><br></span></a>
+<a class="note0">dēfendēbant.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>si magnistudine operis superati</strong> : operisは「作業、工事」というニュアンスで属格 magnistidineは大きな規模のことで奪格、手段の奪格、superatiは完了分詞で分詞構文になっている。「大規模な工事によって攻略された（彼らは）」</p>
+<p><strong>extruso mari</strong> : 独立奪格、前出のmanitudine operisを説明している。掃き出された海、堰き止められた海</p>
+<p><strong>his adaequatis oppdi moenibus</strong> : hic = affre ac molibusのことで、<u>このhic とadaequatisで一種の独立奪格</u>。「これらが（城塞の壁と）同じ高さに達して」(moenibusは与格。adaequoは与格支配か？）</p>
+<p><strong>suis fortunis desperare coeperant</strong> : <font color="#0000ff">fortunisはdesperareが与格支配で、与格</font>「彼らの運命（先行き）に絶望する事」を始めた。coeperantはその前のsuperatiを受けている。即ち「大規模工事によって負けて、先行きに絶望し始めた」</p>
+<p><strong>magno numero navium adpulso</strong> : 独立奪格　「大変な数の船を岸につけ」naviumは部分の属格（全体の属格）船全体のうちの「大変な数」の船。</p>
+<p><strong>cuius rei = quarum</strong> ここではnaviumのこと。of which thing</p>
+<p>defendebant se: 彼らを防衛する。</p>
+<p><strong>isdem oprtunitatibus loci　</strong>： isdemはidemの複奪格の別形。手段の奪格で、「同じく、場所の優位性によって」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そして一旦、ローマによる大規模な工事で、それは海を堤防や盛り土で堰き止め、その堰き止めた堤防が城塞の壁と同じ高さになるようなものであったが、それにより制圧され、彼らは自身の先行きに絶望し始めると、大変な数の船、それは彼らは大層な量を持っていたがのだが、彼らの全財産と彼ら自身を積み込み近くの城塞に入り、そこで再び、おなじく場所の優位性をもって、守るのである。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Haec<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">facilius<span>副詞　比較級　；＝easily</span></a>
+<a class="note0">magnam<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note1">aestātis<span>aestas aestatis N (3rd) F  <br>:summer; summer heat/weather; a year;<br>(X 単数 属格)<br></span></a>
+<a class="note1">faciēbant<span>facio 3複　未完了<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">nostrae<span></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note1">tempestātibus<span>tempestas tempestatis N (3rd) F  <br>:season, time, weather; storm;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">dētinēbantur<span>detineo detinere, detinui, detentus V (2nd) TRANS  <br>:|hold/keep back (from use); keep, cause to remain; reserve; delay end, protract;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note1">summaque<span>summa summae F 単　主格　;= sum, chief point, essense, pricipal matter</span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">vastō<span>vastus vasta -um 形容詞　単　奪格　;= huge, vast, monstrous<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">apertō<span>apertus aperta -um 形容詞　単　奪格　;= open, uncovered, exposed<br></span></a>
+<a class="note0">marī,<span><br><br></span></a>
+<a class="note0">magnīs<span></span></a>
+<a class="note1">aestibus,<span>aestus aestus M 複　奪格　;= agitation, sea tide, swell</span></a>
+<a class="note1">rārīs<span>rarus rara -um, rarior -or -us, rarissimus -a -um ADJ  <br>:thin, scattered; few, infrequent; rare; in small groups; loose knit;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">prope<span></span></a>
+<a class="note1">nūllīs<span>nullus nulli M 複　奪格　;= no one<br></span></a>
+<a class="note1">portibus<span>portus portus M 複　奪格　；＝port, habor</span></a>
+<a class="note1">difficultās<span>difficultas difficultatis N (3rd) F  <br>:difficulty; trouble; hardship/want/distress/poverty (L+S); obstinacy;<br>(X 単数 主格),<br></span></a>
+<a class="note1">nāvigandi.<span>navigo navigare, navigavi, navigatus V (1st)  <br>:sail; navigate;<br>(未来 分詞 受動態 m 単数 属格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>haec facienbant: facio=bring into existence未完了は過去に繰り返された事象を表す。(NewLatin 260.2)「このように事が続いた」</p>
+<p>facilius magnam partem aestatis : 夏の大部分を</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>この様の事がその夏を通して（繰り返し）起こった。何故なら味方の船団が嵐により引き止められていたからである。主として、荒くて開けた海、大きな潮の満ち干き、希少な、殆どないと言って良い港、そして航海技術の難しさなどからくるものである。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

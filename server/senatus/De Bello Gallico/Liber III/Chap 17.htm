@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 17</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[17]<span></span></a>
+
+<a class="note1">Dum<span>接続詞　;= while, as long as, until, provided that</span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Venetīs<span><br><br></span></a>
+<a class="note1">geruntur,<span>gero 3複　現在　受動　;= carry, bear, manage, govern</span></a>
+<a class="note0">Q.<span></span></a>
+<a class="note0">Titūrius<span><br><br></span></a>
+<a class="note0">Sabīnus<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">cōpiīs<span><br><br></span></a>
+<a class="note0">quās<span><br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Caesare<span></span></a>
+<a class="note0">accēperat<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Venellōrum<span><br><br></span></a>
+<a class="note1">pervēnit.<span>pervenio 3単　現在　;= come<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Chap 11にTituriusが三個軍団を率いて、この辺り（Venelloｓ）に出発したことが書かれている。</p>
+<p>dum (while) ~には通常、歴史的現在が使われる。（NewLatin293）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Venetiでの事柄が処理されている間に、Q. Titurius Sabinusはカエサルから軍団を受け取りVenellosの国境に到着した。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note1">praeerat<span>praesum 3単　未完了　;= be in charge, </span></a>
+<a class="note0">Viridovix<span><br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">summam<span>summa summae F 単　対格　;= summary, chief point, priciple matter</span></a>
+<a class="note1">imperiī<span>imperium imperii N 単　属格　;= command, authority, supereme power<br></span></a>
+<a class="note1">tenēbat<span>teneo 3単　未完了　;= hold, keep, possess<br></span></a>
+<a class="note0">eārum<span><br><br></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note1">cīvitātum<span>civitas F &nbsp;複　属格<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">dēfēcerant,<span>deficio 3複　過去完了　;= fail, let down<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note0">[magnāsque<span><br><br></span></a>
+<a class="note0">cōpiās]<span><br><br></span></a>
+<a class="note1">coēgerat;<span>cogo 3単　過去完了　;= collect, gather<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">paucīs<span><br><br></span></a>
+<a class="note0">diēbus<span><br><br></span></a>
+<a class="note0">Aulercī<span><br><br></span></a>
+<a class="note0">Eburovīcēs<span><br><br></span></a>
+<a class="note0">Lexoviīque,<span><br><br></span></a>
+<a class="note0">senātū<span><br><br></span></a>
+<a class="note0">suō<span><br><br></span></a>
+<a class="note1">interfectō<span>interfico 完了分詞　m単　奪格　;= kill, destroy<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">auctōrēs<span>auctor auctoris C 複　主格　;= seller, vendor, originator, authority, supporter, founder<br></span></a>
+<a class="note0">bellī<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">nōlēbant,<span>nolo nolle, nolui - 3複　未完了　;= be unwilling, wish not ot, refuse to<br></span></a>
+<a class="note1">portās<span>porta portae 複　対格　;= gate<br></span></a>
+<a class="note1">clausērunt<span>claido claudere, clausi, clausus TRANS 3複　完了　;= close, shut, block up<br></span></a>
+<a class="note0">sēque<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Viridovīce<span><br><br></span></a>
+<a class="note1">coniūnxērunt;<span>conjungo conjungere, conjunxi, conjunctus TRANS 3複　完了　;= unite, connect, compound, join together<br></span></a>
+<a class="note0">magnaque<span></span></a>
+<a class="note1">praetereā<span>praeterea 副詞　;= besides, in addition<br></span></a>
+<a class="note0">multitūdō<span><br><br></span></a>
+<a class="note1">undique<span>副詞　;= from everywhere, completely, allover, in all respect</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note1">perditōrum<span>perditor perditoris M 複　属格　;= destroyer, one who ruins<br></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note1">latrōnumque<span>latro latronis N (3rd) M  <br>:robber, brigand, bandit; plunderer;<br>(c 複数  属格)<br></span></a>
+<a class="note1">convēnerat,<span>convenio convenire, conveni, conventus V (4th)  <br>:|meet/assemble; go to meet; come together; (have sex); converge; visit/approach;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note1">spēs<span>単　主格<br></span></a>
+<a class="note1">praedandī<span>praedo praedare, praedavi, praedatus TRANS 未来分詞　受動　m単　属格　;= pillage, despoil, plunder, rob<br></span></a>
+<a class="note1">studiumque<span>studium studi N 単　主格　;= eagerness, enthusiasm, spirit</span></a>
+<a class="note1">bellandī<span>bello bellare, belavi, bellatus INTRANS 未来分詞　受動　ｍ単　属格　;= fight, wage war, struggle<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">agrī<span>ager agri M 単　属格　;= field, farm<br></span></a>
+<a class="note1">cultūrā<span>cultura culturae F 単　奪格　;= agriculture, care of plants, field care<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cotīdiānō<span>副詞　;= every day, dauly<br></span></a>
+<a class="note1">labōre<span>labor laboris 単　奪格　;= labor, toil, work<br></span></a>
+<a class="note1">rēvocābat.<span>revoco revocare, revocavi, revocatus 3単　未完了　;= call back, recall, revive, regain<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>summam imperii</strong> : 指揮権の頂上　「最高指揮者」</p>
+<p>exercitumは正規軍で copiasは多分、混成部隊のようなニュアンス。</p>
+<p><strong>his paucis diebus</strong> : 時の奪格　＝in the course of last few day</p>
+<p>quod auctores belli esse nolebant : belli属格で「戦いの承認者」であることを嫌がったので</p>
+<p><strong>quos spes praedandi ~ ab ari cultura ~ revocabat</strong>. : quosはその前のconveneratした人たちで、revocabatの目的語。主語はspes praedandi, studium bellandiという動名詞で修飾された名詞。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そこはViridovixが攻め滅ぼした諸国の間で最高の指揮権を有しており、彼らから軍団と多くのその他の部隊を集めた。そして最近の何日かの間（Sabinusが到着する前の数日の間に）Aulerci EburoviceとLexovii、彼らは自分たちの長老達を戦争を承認しないからと殺しておいて、都市の門を閉じ、自身たちはViridoviceと連携した。それに加えガリアの全ての地域から、破壊者、盗賊などが集まった。略奪への希望、戦争への熱意などが彼らを、畑での作業や日常の仕事から呼び出したのである。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sabīnus<span><br><br></span></a>
+<a class="note1">idōneō<span>idoneus idonea, idoneum 形容詞　単　奪格　;= suitable, appropriate<br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">locō<span>locum 単　奪格　(場所の奪格）<br></span></a>
+<a class="note1">castrīs<span>catrum　複　奪格　場所の奪格<br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note0">tenēbat,<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Viridovix<span><br><br></span></a>
+<a class="note1">contrā<span>前置詞　対格支配　;= towards upto, in direction of, directly over<br></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">duōrum<span><br><br></span></a>
+<a class="note0">mīlium<span><br><br></span></a>
+<a class="note1">spatiō<span>spatium 単　奪格　;= interval, extent, distance<br></span></a>
+<a class="note1">cōnsēdisset<span>consido considere, considi, consessus INTRANS 3単　過去完了　;= encamp, sit down, take up a position<br></span></a>
+<a class="note1">cotīdiēque<span>副詞　;= daily, every day, day by day<br></span></a>
+<a class="note0">prōductīs<span><br><br></span></a>
+<a class="note0">cōpiīs<span><br><br></span></a>
+<a class="note0">pugnandī<span><br><br></span></a>
+<a class="note1">potestātem<span>potestas potestatis F 単　対格　;= power, rule, chance, opputunity <br></span></a>
+<a class="note0">faceret,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">sōlum<span><br><br></span></a>
+<a class="note0">hostibus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">contemptiōnem<span><br><br></span></a>
+<a class="note0">Sabīnus<span><br><br></span></a>
+<a class="note0">venīret,<span><br><br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">nostrōrum<span><br><br></span></a>
+<a class="note1">mīlitum<span>miles militis M 複　属格　;= soldier<br></span></a>
+<a class="note0">vōcibus<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note1">carperētur;<span>carpo carpere, carpsi, carptus TRANS 3単　未完了　受動　接続法　;= seize, pluck, tear off, blame, criticise<br></span></a>
+<a class="note0">tantamque<span></span></a>
+<a class="note1">opīniōnem<span>opinio opinionis F 単　対格　;= belief, idea<br></span></a>
+<a class="note1">timōris<span>timor timoris M 単　属格　;= fear, dread<br></span></a>
+<a class="note1">praebuit<span>praebeo praebere, praebui, praebitus 3単　完了　；= make available, supply, provide be the cause 主語はSabinus</span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">vāllum<span><br><br></span></a>
+<a class="note0">castrōrum<span><br><br></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note1">accēdere<span>accedo 不定詞　;= come near, approach<br></span></a>
+<a class="note1">audērent.<span>audeo 3複　未完了　接続法　;= intend, be prepared, act boldly, risk, have courage<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>omnibus rebus</strong> : 性質の奪格でidoneo locoを表している。idoneo locoは場所の奪格。castrisも場所の奪格。</p>
+<p>「Sabinusはあらゆる点で適切な場所で、自分自身を砦のなかに閉じ込めた。」</p>
+<p>duorum millum <strong>spatio</strong> : spatio奪格、[差異の度合いの奪格]</p>
+<p><strong>pugnandi potestatem</strong> ：pugnandiは動名詞で「戦争のための機会」</p>
+<p>ut iam ~ ：結果の節</p>
+<p><strong>hostibus : 敵にとっては「参照の与格」</strong><u>解りにくいが「参照の与格」はその与格を取り除いても文の意味があまり変わらないという特徴があるのでわかりやすい（AG376）</u></p>
+<p>nostrum militum vocibus : vocibusは奪格、手段の奪格で、味方の兵の声によって</p>
+<p>non nihil = to some extent</p>
+<p><strong>opinionem timoris</strong> : 臆病であることの確信</p>
+<u>
+</u></div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Sabunusはあらゆる点で最適な場所に砦を作りその中に自身で閉じこもった。その時Viridovixは彼らに向かって２マイルの距離をの所で野営を張り、毎日軍勢を繰り出しては戦争の機会を伺っていた。結果、Sabinusは敵と相争うために来たのだが、それだけではなく、味方の兵によって少なからず批判された。相当な程度の臆病であるという確信を（Sabinusは）与えてしまったので、今や敵は大胆に砦の壁に向かって攻略しようとせんばかりであった。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Id<span></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">faciēbat<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">tantā<span><br><br></span></a>
+<a class="note0">multitūdine<span><br><br></span></a>
+<a class="note0">hostium,<span></span></a>
+<a class="note1">praesertim<span>副詞　;= especially, particulary</span></a>
+<a class="note1">eō<span>is = he 奪格　（Caesar)<br></span></a>
+<a class="note1">absente<span>absens absentis 形容詞　単　奪格　;= absent, missing</span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">summam<span></span></a>
+<a class="note0">imperiī<span><br><br></span></a>
+<a class="note0">tenēret,<span><br><br></span></a>
+<a class="note0">nisi<span></span></a>
+<a class="note1">aequō<span>aequo aequa -um 形容詞　単　奪格　;= level, even, equal, fair<br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">oportūnitāte<span>oportunitate oprtunitatis F 単　奪格　;= convenience, adavantageousness, right time, oppotunity<br></span></a>
+<a class="note1">aliquā<span>副詞　;= somehow, in some way<br></span></a>
+<a class="note1">datā<span>do 完了分詞　受動　単　主格<br></span></a>
+<a class="note1">lēgātō<span>legatus 与格　単<br></span></a>
+<a class="note1">dīmicandum<span>dimico dimicare, dimicavi, dimicatus 未来分詞　受動　ｍ単　対格　;= fight, battle, peril(動形容詞）<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">exīstimābat.<span>existimo existimare, existmavi, existimatus TRANS ３単　未完了　;= value, esteem, opinion, estimate, judge<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>&nbsp;de cause id ea faciebat : 彼がそうした理由は （quod以下で説明）</p>
+<p><strong>eo absente</strong> : 独立奪格　、eoはカエサルのこと　（qui以下からわかる）で、彼なしで</p>
+<p><strong>legato dimicandum non</strong> : legatoはlegatus(Liutenant)は与格で、行為者の与格、dimicandumは動形容詞、司令官代理によって戦われるべきではない、</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼がそうしたのは次のような理由からである。司令官代理によって、それほどの規模の敵と、特に最高指揮権を持っている人間がいない状況で、特に同等かそれ以上の有利な何かが無いような状況で戦いをおこすべきではない、と考えからである。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

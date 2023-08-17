@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 17 THE DEFEAT OF THE MINYAE.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ergīnus,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">rēx<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Minyārum,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ob<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">haec<span>hīc haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>&nbsp;(N 複数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">vehementer<span>vehementer vehementius, vehementissime ADV <br>&gt;:vehemently, vigorously; exceedingly, very much;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">īrātus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">statim<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">cōpiīs<span>cōpĭa copiae N (1st) F <br>:plenty, abundance, supply; <strong>troops</strong> (pl.), supplies; forces;&nbsp; (複数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">fīnēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Thēbānōrum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">contendit.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Creōn<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">adventum<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">explōrātōrēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">cognōvit.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Ipse<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">pugnāre<span>pugno pugnare, pugnavi, pugnatus V (1st)  X<br>:fight; dispute;<br>不定詞<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">nōluit,<span>nōlo nolle, nolui, - V  X<br>:be unwilling; wish not to; refuse to;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">nam<span></span></a>
+<a class="note0">magnō<span></span></a>
+<a class="note0">timōre<span></span></a>
+<a class="note0">affectus<span></span></a>
+<a class="note0">erat;<span></span></a>
+<a class="note0">Thēbānī<span></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0">Herculem<span></span></a>
+<a class="note1">imperātōrem<span>impĕrātor imperatoris N (3rd) M <br>:emperor; general; ruler; commander (-in-chief);<br>(単数 対格) <br></span></a>
+<a class="note1">creāvērunt.<span>crĕo creare, creavi, creatus V (1st) TRANS  <br>:create/bring into being/make; procreate; beget/sire; give birth to;<br>(3 複数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Ille<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">nūntiōs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">omnēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">partēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">dīmisit,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">cōpiās<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">coēgit;<span>cōgo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">proximō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">diē<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">exercitū<span>exercĭtus exercitus N (4th) M <br>:army, infantry; swarm, flock;<br>(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">profectus<span>prŏfĭciscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>【完了分詞 ( 受動態 ) (M 単数 主格) 】<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">est.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Locum<span></span></a>
+<a class="note0">idōneum<span></span></a>
+<a class="note1">dēlēgit<span>dēlĭgo deligere, delegi, delectus V (3rd) TRANS  <br>:pick/pluck off, cull; choose, select, levy (soldiers), enroll; conduct a levy;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">aciem<span>ăcĭēs aciei N (5th) F <br>:sharpness, sharp edge, point; <strong>battle line/array</strong>; sight, glance; pupil of eye;<br>(単数 対格) <br></span></a>
+<a class="note1">īnstrūxit.<span>instrŭo instruere, instruxi, instructus V (3rd)  X<br>:construct, build; prepare, draw up; fit out; instruct, teach;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Tum<span></span></a>
+<a class="note0">Thēbānī<span></span></a>
+<a class="note0">ē<span></span></a>
+<a class="note0">superiōre<span></span></a>
+<a class="note0">locō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">impetum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">hostēs<span>hostis hostis N (3rd) C <br>:enemy (of the state); stranger, foreigner; the enemy (pl.);<br>&nbsp;(複数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">fēcērunt.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Illī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">impetum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">sustinēre<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">potuērunt;<span>possum posse, potui, - V  TO_BEING<br>:be able, can;<br>(3 複数 完了 能動態 直接法) <br></span></a>
+<a class="note1">itaque<span>itaque ADV <br>&gt;:and so, accordingly; thus, therefore, consequently;<br><br></span></a>
+<a class="note0">aciēs<span></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note1">pulsa<span>pello pellere, pepuli, pulsus V (3rd)  X<br>:beat; drive out; push; banish, strike, defeat, drive away, rout;<br>【完了分詞 ( 受動態 ) (F 単数 主格) 】<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">fugam<span>fŭga fugae N (1st) F <br>:flight, fleeing, escape; avoidance; exile;<br>(単数 対格) <br></span></a>
+<a class="note1">conversa.<span>converto convertere, converti, conversus V (3rd)  X<br>:|turn backwards, recoil; retort; drive back, repulse; direct (course/attention);<br>【完了分詞 ( 受動態 ) (F 単数 主格) 】<br></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>Erginus iratus : 怒り狂ったErginus<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>Minyaeの王であるErginusは此の事で大変怒り、すぐさま全軍を伴いテーベととの境界に押し出した。Creonは彼らの接近を偵察を通して知ったが、彼は戦うことは望まず、大変な恐怖でいっぱいになった。そこでテーベの人はHerculesを司令官にして、それを全土に知らしめ、軍を招集した。それは敵の大軍が出発した頃であった。適切な場所を選び戦線を展開した。それはテーベ軍が高い場所から敵を攻撃できるように出会った。彼っらはその攻撃に耐えきれず、敵の戦線は崩れ、逃走した。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

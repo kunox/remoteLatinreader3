@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 11</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[11]<span></span></a>
+<a class="note0">Itaque<span></span></a>
+<a class="note0">T.<span></span></a>
+<a class="note0">Labiēnum<span><br><br></span></a>
+<a class="note0">lēgātum<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Trēverōs,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">proximī<span>proximus proximma, proximum 最上級 複　主格<br></span></a>
+<a class="note1">flūminī<span>flumen fluminis N (3rd) N  <br>:river, stream; any flowing fluid; flood; onrush;<br>(X 単数 与格)<br></span></a>
+<a class="note1">Rhēnō<span>Rhenus Rheni N (2nd) M  <br>:Rhine; (river dividing Gaul and Germany - in Caesar's Gallic War);<br>(X 単数 与格)<br></span></a>
+<a class="note0">sunt,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">equitātū<span><br><br></span></a>
+<a class="note0">mittit.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>proximi flumini</strong> : proximiは複　主格　fluminiは単与格で一種の間接目的語。(they) are closest to flumine(河に最も近い）と言う感じで使用する。<font color="#ff6600">sunt proximi Germanis. nihi difficile amanti puto</font>.(I think nothing hard for lover)</p>
+<p>(newLatin 192, AG384) <u>ちょっと特殊な与格＋形容詞の用法</u></p>
+<p>別な用法でprimusと対格の組み合わせもある。</p>
+<u>
+</u></div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>対応して、軍団長であるTitum Labienusを騎兵と共にTreveros、それはRhenum河に最も近い場所に位置していたが、に送った。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Huic<span></span></a>
+<a class="note1">mandat,<span>mando mandare, mandavi, mandatus ３単　現在　;= entrust, deliver over, order, command</span></a>
+<a class="note0">Rēmōs<span><br><br></span></a>
+<a class="note0">reliquosque<span><br><br></span></a>
+<a class="note0">Belgās<span><br><br></span></a>
+<a class="note1">adeat<span>adeo adere, adivi, aditus ３単　現在 接続法　;= approach, attack, visit</span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">officiō<span>officium offici N 奪格　;= duty, obligation, kindness, service, office<br></span></a>
+<a class="note1">contineat<span>contineo continere, continui, contentus V (2nd) TRANS  <br>:secure, maintain, sustain; fasten/hold in position; retain, keep safe, preserve;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">Germanōsque,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">auxiliō<span>auxilium auxili N 単　与格　;= help, assistance, auxiliaries 目的の与格<br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Belgīs<span><br><br></span></a>
+<a class="note1">arcessītī<span>arcesso arcessere, arcessivi, arcessitus V (3rd) TRANS  <br>:send for, summon, indict; fetch, import; invite; invoke; bring on oneself;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note1">dīcēbantur,<span>dico ３複　未完了　受動<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">vim<span>vis vis ｆ　単　対格　;= strength, force, power</span></a>
+<a class="note0">nāvibus<span><br><br></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note0">trānsīre<span><br><br></span></a>
+<a class="note1">cōnentur,<span>conor conari, conatus sum V (1st) DEP  <br>:attempt/try/endeavor, make an effort; exert oneself; try to go/rise/speak;<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+<a class="note1">prohibeat.<span>prohibeo ３単　現在　接続法　;=hinder, restrain</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>adeat, contineat, prohobeat　</strong>名詞節を構成するが、通常はutが最初に来る。この場合、命令する、という動詞とともに、utなしの接続法が使われている。古典的な用法らしい。（NewLatin２９５、８）</p>
+<p>auxilio : 目的を表す与格、</p>
+<p><strong>qui auxilio a Belgis arcessiti&nbsp; dicebantur</strong>. 逐語的には「彼らは、Belgaeによって呼ばれたと、と言われていた」dicoが受動態で使われていて変な感じ。dicebanturはこの場合結合動詞で、構文的には qui dicebantur arcessiti. </p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>次のように命じた。Remoと残りのBelgas族を訪ねて、彼らをゲルマン、彼らはBelgasに援軍として呼ばれたと言われているが、双方を従順な状態に置くこと、もし彼らが力ずくで河を渡ろうとした場合は阻止する事、などである。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">P.<span></span></a>
+<a class="note0">Crassum<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">cohortibus<span></span></a>
+<a class="note1">legiōnāriīs<span>legionarius legionaria -um 形容詞　複　奪格　;= of legion<br></span></a>
+<a class="note1">XII<span>duodecim 12<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note0">equitātūs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Aquitaniam<span><br><br></span></a>
+<a class="note1">proficīscī<span>proficiscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">iubet,<span></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">nātiōnibus<span><br><br></span></a>
+<a class="note1">auxilia<span>auzilium 複　対格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliam<span></span></a>
+<a class="note1">mittantur<span>mitto ３複　受動　接続法　;=send for</span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">tantae<span></span></a>
+<a class="note0">nātiōnēs<span><br><br></span></a>
+<a class="note1">coniungantur.<span>conjungo conjungere, conjunxi, conjunctus V (3rd) TRANS  <br>:connect, join/yoke together; marry; connect/compound (words) (w/conjunctions);<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>cohortibus XII : 「１２のコホルス」Legionは１０のCohorsからなるので、600名づつであるが実際は３６０名程度だった由</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>プブリウム　クラッススは１２の大隊と、多くの騎兵と共にAquitaniaに出発するよう、命じられた。その辺りの部族からガリアへ援軍が送られないようにするためと、多くの部族が結託しないようにするためである。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Q.<span></span></a>
+<a class="note0">Titūrium<span><br><br></span></a>
+<a class="note0">Sabinum<span><br><br></span></a>
+<a class="note0">lēgātum<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note1">tribus<span>tres 3 複　奪格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Venellōs,<span><br><br></span></a>
+<a class="note0">Coriosolites<span></span></a>
+<a class="note0">Lexoviōsque<span><br><br></span></a>
+<a class="note0">mittit,<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note1">manum<span>manus manus F 単　対格　;= hand, fist, team, gang, band of soldier</span></a>
+<a class="note1">distinendam<span>distineo distinere, distinui, distentus V (2nd)  <br>:keep apart, separate; prevent, hold up; distract;<br>(未来 分詞 受動態 f 単数 対格)<br></span></a>
+<a class="note1">cūret.<span>curo curare, curavi, curatus V (1st)  <br>:arrange/see/attend to; take care of; provide for; worry/care about; heal/cure;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>distinendam : 動形容詞で義務,、必要のニュアンスを持つ。特にcuroと共に用いられた時は目的を表すために使われる。（NewLatin337.8, AG500.4)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Quintus Titurium Sabinumは将軍の一人であったが、第３軍団を率いてVeneli、Coriosolites、Lexoviiらのところに派遣された。そこでの軍勢同士を互いに切り離しておくためである。</p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">D.<span></span></a>
+<a class="note0">Brūtum<span><br><br></span></a>
+<a class="note1">adulēscentem<span>adulescens adulescentis C 単　対格　;= young man, youth, young woman<br></span></a>
+<a class="note1">classi<span>classis classis F 単　与格　;= class, <strong>fleet, navy</strong><br></span></a>
+<a class="note1">Gallicīsque<span>Gallicus Gallia, Gallicum 形容詞　複　与格　奪格　;= Gallic<br></span></a>
+<a class="note1">nāvibus,<span>navis navis N (3rd) F  <br>:ship;<br>&nbsp;(X 複数  与格)<br></span></a>
+<a class="note1">quās<span>qui quae, quod PRON  <br>:which?, what?; what kind of?;<br>(f 複数  対格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Pictonibus<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Santonīs<span><br><br></span></a>
+<a class="note0">reliquīsque<span><br><br></span></a>
+<a class="note1">pācātis<span>pacatus pacata -um, pacatior -or -us, pacatissimus -a -um ADJ  <br>:peaceful, calm;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">regiōnibus<span><br><br></span></a>
+<a class="note1">convenīre<span>convenio convenire, conveni, conventus V (4th)  <br>:|meet/assemble; go to meet; come together; (have sex); converge; visit/approach;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">iusserat,<span>jubeo ３単　過去完了</span></a>
+<a class="note1">praeficit<span>praeficio praeficere, praefeci, praefectus ３単　現在　;= put in charge, place in command (with ACC or DAT)</span></a>
+<a class="note0">et,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">prīmum<span><br><br></span></a>
+<a class="note0">possit,<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Venetos<span><br><br></span></a>
+<a class="note0">proficīscī<span><br><br></span></a>
+<a class="note1">iubet.<span>3単　現在　カエサル主語</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Decimus Brutus : 「ブルータス、お前もか」のBrutus</p>
+<p><strong>praeficit Brutum classi</strong> : praeficioは与格の間接目的語を取る。「Brutusを艦隊の指揮者に任命した」</p>
+<p>cum primum = as soon as でChap 9にも出てきた。これらの2回だけ？</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Decius Burutusには艦隊とガリアの海軍の指揮者に任命した。ガリアの船隊はPictones、Santoni、また残りの平定している部族に集めるよう命じてあったものである。それらをまとめて可能な限り早くVenetiに出発するよう命じた。</p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipse<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">pedestribus<span></span></a>
+<a class="note1">cōpiīs<span>copia 複　奪格<br></span></a>
+<a class="note0">contendit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>ipse = カエサル</p>
+<p>eo = Veneti</p>
+<p>pedestribus copiis : 随伴の奪格で　～と共に。普通はcumと一緒に使われるが、軍事の表現ではcum無しでも良い。（NewLatin222）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>私自身は軍団とともにそこに急いだ。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

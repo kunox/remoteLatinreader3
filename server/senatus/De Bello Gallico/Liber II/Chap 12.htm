@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber II : Chap 12</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[12]<span></span></a>
+
+<a class="note1">Postrīdiē<span>副詞　;= on the following day<br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">diēī<span>属格　変わった属格の用法の一つ。postridie eius diei, pridie eius dieiなど<br></span></a>
+<a class="note0">Caesar,<span></span></a>
+<a class="note1">prius<span>prius 副詞　before, earlier</span></a>
+<a class="note1">quam<span>priusquam CONJ <br>:before; until; sooner than;<br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">terrōre<span>terror terroris N (3rd) M  <br>:terror, panic, alarm, fear;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">fugā<span><br><br></span></a>
+<a class="note1">reciperent,<span>recipio ３複　未完了　接続法　;= keep back, recover</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Suessiōnum,<span><br><br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">proximī<span>proximus proximi N (2nd) M  <br>:neighbor; nearest one;<br>&nbsp;(c 複数  主格), <br></span></a>
+<a class="note0">Rēmīs<span><br><br></span></a>
+<a class="note0">erant,<span></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note1">dūxit<span>duco ducere, duxi, ductus ３単　完了　;= lead, command<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">magnō<span></span></a>
+<a class="note1">itinere<span>itiner itineris N (3rd) N  <br>:journey; road; passage, path; march<br>(n 単数 奪格)<br></span></a>
+<a class="note1">[cōnfectō]<span>conficio conficere, additional, forms V TRANS  <br>:make, construct; prepare, complete, accomplish; cause; perform; do thoroughly;<br>(完了 分詞 受動態 n 単数 奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note0">Noviodūnum<span><br><br></span></a>
+<a class="note0">contendit.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>postridie eius diei = on the next day of that day 慣用句</p>
+<p><strong>priusquam, antequam</strong>は直説法、接続法どちらでも使われる。直接法は事実、<u>接続法は予測</u>、意図のニュアンスが入る。(AG551, NewLatin292.1, ゼロからの11.4.2)</p>
+<p><strong>qui erant proximi Remis</strong>. Remis与格 Chap11 1行の　profectio videretur consimillis fugaeと同じ、「与格と相性の良い形容詞」(proxomiは複数、主格、与格のRemisは間接目的語）</p>
+<p><strong>magno itinere confecto</strong> : 独立奪格、<strong>magno itinere(27マイル／日）</strong>で、　<strong>justum iterは約２５Km（１５マイル程度）</strong></p>
+<p>Novioduum = NewTown ?</p>
+<strong>
+</strong></div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>翌日、Caesarは敵が恐怖と逃走から立ち直る前に、Suessiones族の領土、それはRemi族の隣であったが、に歩兵を率い、早足行軍でNoviodunumという城塞に向かい進んだ。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Id<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">itinere<span></span></a>
+<a class="note1">oppugnāre<span>oppugno 不定詞　;= attack, assault<br></span></a>
+<a class="note1">cōnātus,<span>conor DEP 完了分詞　受動　単　主格<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">vacuum<span>vacuus vacua, vacuum 形容詞　単　対格 ;= empty, vacant<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">dēfēnsōribus<span>defnsor defensoris M 複　奪格　;= defender/protector, defendant, defence advocate<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">audiēbat,<span>audio audire, audivi, auditus V (4th)  <br>:hear, listen, accept, agree with; obey; harken, pay attention; be able to hear;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note1">propter<span>対格支配の前置詞;= near, on account of, by means of, because of</span></a>
+<a class="note1">lātitūdinem<span>latitudo latitudinis F 単　対格　;= width, extent<br></span></a>
+<a class="note0">fossae<span></span></a>
+<a class="note1">mūrī<span>murus muri M 属格　;= wall<br></span></a>
+<a class="note1">altitūdinem<span>altitudo altitudinis F 対格　;= height <br></span></a>
+<a class="note0">paucīs<span><br><br></span></a>
+<a class="note0">dēfendentibus<span><br><br></span></a>
+<a class="note1">expugnāre<span>expugno expugnare, expugnavi, expugnatus V (1st)  <br>:assault, storm; conquer, plunder; accomplish; persuade;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">potuit.<span>possum 完了</span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p><strong>ex itinere</strong> : 行軍から直ぐに</p>
+<p><strong>quod audiebat, esse vacuum ab defensoribus</strong> 「何故なら、（そこは）防衛から無である、と聞いていたので」が逐語訳。</p>
+<p>defensoribusは分離の奪格</p>
+<p>propter fossae latitudinem, muri altitudinem : 堀幅の広さと、城壁の高さによって</p>
+<p><strong>paucis defentibus</strong> : 独立奪格</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>行軍から直ぐに攻撃を試みた、と言うのは守備隊はいないと聞いていたからであった。しかしその堀幅の広さと城壁の高さなどで、守備隊は少人数であったが、城塞を落とすことはできなかった。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Castrīs<span>cartrum　奪格<br></span></a>
+<a class="note1">mūnītīs<span>munio munire, munivi, munitus 完了分詞　受動　奪格　;= fortify, strengthen, protect, defend<br></span></a>
+<a class="note1">vīneās<span>vinea vineae F 対格　;= vines, movable shelter (屋根があり上からの攻撃に耐えられ、移動できる小屋のようなもの）<br></span></a>
+<a class="note1">agere<span>ago agere, egi, actus V (3rd)  <br>:drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); deliver (speech);<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">quaeque<span>quisque ；　each, any, every</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">oppugnandum<span>oppugno ;= attack の動名詞　ad + 動名詞</span></a>
+<a class="note1">ūsuī<span>usus usus N (4th) M  <br>:use, enjoyment; experience, skill, advantage; custom;<br>(c 単数 与格)<br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">comparāre<span>comparo comparare, comparavi, comparatus V (1st) TRANS  <br>:prepare; provide; compose; collect, get together/hold of; raise (force); unite;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">coepit.<span>coepi coepisse, -, coepitus３単　完了　（欠如動詞）;= begin, commence, initiate</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>castris munitis</strong> : 独立奪格　城塞が要塞化されていたので、</p>
+<p>quaeque は que quaeで、quaeの先行詞は省略されたeaのような単語でcomparareの目的語 </p>
+<p><strong>comparare ea, quae erant usi</strong></p>
+<p>usui erant : 述語与格 (NewLatin 191.1)</p>
+<p>quaeque usui erant　：で「使えるものは何でも」(gather the things )which were of use.</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>要塞化された城塞を前に、Vineaが作られ、攻撃のために使えるものをなんでも用意を始めた。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Interim<span></span></a>
+<a class="note1">omnis<span>omnis omnis C 　主格　;= all men all person形容詞　omnis omnis, omne 属格　</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">fugā<span><br><br></span></a>
+<a class="note1">Suessiōnum<span>Suessiones　複　属格<br></span></a>
+<a class="note1">multitūdō<span>multitudo multitudinis F 主格　;= multitude, great number<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note1">proximā<span>proximus proxima, proximum ADJ  最上級<br>:nearest/closest/next; most recent, immediately preceding, last; most/very like;<br>&nbsp;(f 単数 奪格)<br></span></a>
+<a class="note1">nocte<span>nox noctis N (3rd) F  <br>:night<br>(c 単数 奪格)<br>時の奪格<br></span></a>
+<a class="note1">convenit.<span>convenio ３単　完了<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>omnis ex fugae :&nbsp;&nbsp;退却から戻った全員</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p> そうしている間に、相当数のSuessiones族が退却から戻り夜の間に城塞に集まった。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Celeriter<span></span></a>
+<a class="note1">vīneīs<span>vinea vineae N (1st) F  <br>:vines in a vineyard/arranged in rows; vine; (movable) bower-like shelter;<br>(c 複数  奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note1">āctīs,<span>ago agere, egi, actus V (3rd)  <br>:drive/ urge/ conduct/ act; spend (time w/cum); thank (w/gratias); deliver (speech);<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">aggere<span>agger aggeris M 奪格　;=rampart, pier, mound, pile, mud wall</span></a>
+<a class="note0">iactō<span><br><br></span></a>
+<a class="note1">turribus<span>turris turris F 複　与格、奪格　;= tower, high building</span></a>
+<a class="note1">cōnstitūtīs,<span>constituo constituere, constitui, constitutus V (3rd)  <br>:set up/in position, erect; place/dispose/locate; (call a) halt; plant (trees);<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">magnitūdine<span>奪格<br></span></a>
+<a class="note1">operum,<span>opus operis N 属格　複　;= need, work, fortification</span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">vīderant<span><br><br></span></a>
+<a class="note1">ante<span>副詞　before, previously</span></a>
+<a class="note0">Gallī<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">audierant,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">celeritāte<span>celeritas celeritatis N (3rd) F  <br>:speed, quickness, rapidity; speed of action, dispatch; haste; early date;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">Rōmānōrum<span><br><br></span></a>
+<a class="note1">permōtī<span>permoveo permovere, permovi, permotus V (2nd)  <br>:stir up; move deeply; influence; agitate;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">lēgātōs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">dēditiōne<span>deditio deditionis N (3rd) F  <br>:surrender (of combatants / town /possessions); cession of right /title;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">mittunt<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">petentibus<span>peto petere, petivi, petitus 複　現在分詞　奪格　;= attack, desire, beg</span></a>
+<a class="note0">Rēmīs<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">cōnservārentur<span>conservo conservare, conservavi, conservatus V (1st)  <br>:keep safe/intact, save (from danger); preserve, maintain; spare; keep/observe;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+<a class="note1">impetrant.<span>impetro impetrare, impetravi, imperatus ３複　現在　;= obtain, produce, asking/request, succeed, be granted</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>vineis actis, aggere jacto, turrribus constitutis : 独立奪格　ウェネアが用意され、土嚢が積み上げられ、攻撃櫓が作られ、</p>
+<p>magnitudine operum et celeritate Romanorum ：作戦の規模と、ローマ人たちの機敏さによって</p>
+<p>mittunt, impetrantは歴史的現在なので、ut以下の従属節は未完了、か現在の接続法で受ける。conservarentur</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>素早くVineaが用意され、土嚢が積み上げられ、攻撃塔が組み立てられた。その作戦の規模の大きさと、ローマ人の素早さ、それはガリア人が以前に見たことも聞いたこともないものであったが、それらによって深く揺り動かされて、Caesarの元に、降伏の使者を送り、Remi族の願いもあり、聞き届けられた。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 17</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[17]<span></span></a>
+
+<a class="note0">Castrīs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note0">oppidī<span><br><br></span></a>
+<a class="note0">positīs<span><br><br></span></a>
+<a class="note0">Caesar,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">intermissa<span>intermitto intermittere, intermisi, intermissus V (3rd)  <br>:interrupt; omit; stop; <strong>leave off</strong> (temporarily); leave a gap;<br>(完了 分詞 受動態 f 単数 主格)<br></span></a>
+<a class="note0">[ā]<span></span></a>
+<a class="note0">flūmine<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note1">palūdibus<span>palus paludis N (3rd) F  <br>:swamp, marsh;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">aditum,<span>aditus aditus N (4th) M  <br>:approach, access; attack; entrance; chance, opportunity, means, way; beginning;<br>(c 単数 対格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">suprā<span><br><br></span></a>
+<a class="note0">dīximus,<span><br><br></span></a>
+<a class="note1">angustum<span>angustus angusta -um, angustior -or -us, angustissimus -a -um ADJ  <br>:narrow, steep, close, confined; scanty, poor; low, mean; narrowminded, petty;<br>&nbsp;(m 単数 対格)<br></span></a>
+<a class="note0">habēbat,<span><br><br></span></a>
+<a class="note1">aggerem<span>agger aggeris N (3rd) M  <br>:rampart (or material for); causeway, pier; heap/pile/mound; dam/dike; mud wall;<br>(c 単数 対格)<br></span></a>
+<a class="note1">apparāre,<span>apparo apparare, apparavi, apparatus V (1st) TRANS  <br>:prepare, fit out, make ready, equip, provide; attempt; organize (project);<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">vīneās<span>vinea vineae N (1st) F  <br>:vines in a vineyard/arranged in rows; vine; (movable) <strong>bower-like shelter</strong>;<br>(c 複数  対格)<br></span></a>
+<a class="note1">agere,<span>ago agere, egi, actus V (3rd)  <br>:drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); deliver (speech);<br>(  現在 能動態 不定詞 ),<br></span></a>
+<a class="note1">turrēs<span>turris turris N (3rd) F  <br>:tower; high building, palace, citadel; dove tower, dove cot;<br>(c 複数  対格)<br></span></a>
+<a class="note0">duās<span><br><br></span></a>
+<a class="note1">cōnstituere<span>constituo constituere, constitui, constitutus V (3rd)  <br>:set up/in position, erect; place/dispose/locate; (call a) halt; plant (trees);<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">coepit:<span>coepi coepisse, -, coeptus V (3rd)  <br>:begin, commence, initiate; (shows only PERFDEF);<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">nam<span></span></a>
+<a class="note1">circumvāllāre<span>circumvallo circumvallare, circumvallavi, circumvallatus V (1st) TRANS  <br>:surround with wall/siegeworks; blockade; beset, surround with troops/barriers;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">locī<span><br><br></span></a>
+<a class="note0">nātūrā<span><br><br></span></a>
+<a class="note0">prohibēbat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>castris positis : 独立奪格</p>
+<p>ad eam partem oppidi, quae habebat angustum aditum. quaeの先行詞はoppidi, 「城塞への狭い道がある側に向かって」adで始まる句はpositisを修飾する副詞句になっている。「城塞への狭い道がある側に向けて駐屯地を位置し」</p>
+<p>intermissa a flumine et a paludibus ：分詞構文で、quaeを修飾。河と沼が途切れている側、</p>
+<p>Caesar coepit aggerem aparare, vineas agere, turres duas constituere. が主文。「Caesarは土塁を作り、Vineasを運び込み２つの攻撃櫓を作成することなどを始めた。</p>
+</div></div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Caesarは、城塞の、河や沼が途切れて、前に言ったように一本の狭い道がある側に向かって野営地を置き、土塁を構築し、Vineasを運び込み、２つの攻撃櫓を作り始めた。場所の地形から完全に包囲することはできなかった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dē<span><br><br></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note0">frūmentāriā<span><br><br></span></a>
+<a class="note0">Boiōs<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">Aeduōs<span><br><br></span></a>
+<a class="note1">adhortārī<span>adhortor adhortari, adhortatus sum V (1st) DEP  <br>:encourage, urge on; rally; exhort;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">dēstitit;<span>desisto desistere, destiti, destitus V (3rd)  <br>:stop/cease/desist (from); give up, leave/stand off; dissociate oneself;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">quōrum<span><br><br></span></a>
+<a class="note1">alterī,<span>alter altera, alterum ADJ  <br>:one (of two); second/another; former/latter;<br>&nbsp;(m 複数  主格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">nūllō<span><br><br><br></span></a>
+<a class="note1">studiō<span>studium studi(i) N (2nd) N  <br>:eagerness, enthusiasm, zeal, spirit; devotion, pursuit, study;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">agēbant,<span>ago agere, egi, actus V (3rd)  <br>:drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); deliver (speech);<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">multum<span></span></a>
+<a class="note1">adiuvābant,<span>adjuvo adjuvare, adjuvavi, adjuvatus V (1st) TRANS  <br>:help, aid, abet, encourage, favor; cherish, sustain; be of use, be profitable;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">alterī<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">magnīs<span><br><br></span></a>
+<a class="note0">facultātibus,<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">cīvitās<span><br><br></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">exigua<span>exiguus exigua, exiguum ADJ  <br>:small; meager; dreary; a little, a bit of; scanty, petty, short, poor;<br>(f 単数 主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">īnfirma,<span>infirmus infirma -um, infirmior -or -us, infirmissimus -a -um ADJ  <br>:fragile/ frail/ feeble; unwell/ sick / infirm;<br>(f 単数 主格)<br></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">habuērunt<span><br><br></span></a>
+<a class="note1">consūmpsērunt.<span>consumo consumere, consumpsi, consumptus V (3rd) TRANS  <br>:|devour/swallow up/ consume/ eat/ use up/ exhaust /expend; spend; squander/waste;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>最初のalteriは、英語と同じで近い方、即ちAeduosを指し、次のalteriがBoiosを指している。</p>
+<p>alteri non magnis facultatibus : 付帯状況の奪格「大きな能力がなく」</p>
+<p>comsumpserunt celeter quod habuerunt. 主語はローマ軍、３複。「持っていたものを早く消費してしまった」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>兵糧に関してはBoi族とAeduo族に対し督促することを止めなかったが、それらのうちAeduo族は全く熱意がなく多くの援助は無かった。他方のBoi族は、部族として弱小であったため、大きな能力は無かった。持っていたものを、早くに消費してしまった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Summā<span><br><br></span></a>
+<a class="note0">difficultāte<span><br><br></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note1">frūmentāriae<span>frumentarius frumentaria, frumentarium ADJ  <br>:grain producing; of/concerning grain;<br>(f 単数 属格)<br></span></a>
+<a class="note0">adfectō<span><br><br></span></a>
+<a class="note0">exercitū<span><br><br></span></a>
+<a class="note0">tenuitāte<span><br><br></span></a>
+<a class="note0">Bōiōrum,<span><br><br></span></a>
+<a class="note0">indīligentiā<span><br><br></span></a>
+<a class="note0">Aeduōrum,<span><br><br></span></a>
+<a class="note0">incendiīs<span><br><br></span></a>
+<a class="note0">aedificiōrum,<span><br><br></span></a>
+<a class="note1">ūsque<span>usque PREP ACC <br>:up to (name of town or locality);<br><br></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">complūrēs<span><br><br></span></a>
+<a class="note0">diēs<span><br><br></span></a>
+<a class="note1">frūmentō<span>frumentum frumenti N (2nd) N  <br>:grain; crops;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note1">caruerint<span>careo carere, carui, caritus V (2nd)  <br>:be without/absent from/devoid of/free from; miss; abstain from, lack, lose;<br>(３人称 複数  未来完了 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">pecore<span>pecus pecoris N (3rd) N  <br>:cattle, herd, flock;<br>(n 単数 奪格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">longinquiōribus<span><br><br></span></a>
+<a class="note0">vīcīs<span><br><br></span></a>
+<a class="note0">adāctō<span><br><br></span></a>
+<a class="note0">extrēmam<span><br><br></span></a>
+<a class="note1">famem<span>fames famis N (3rd) F  <br>:hunger; famine; want; craving;<br>(c 単数 対格)<br></span></a>
+<a class="note0">sustentārent,<span><br><br></span></a>
+<a class="note0">nūlla<span><br><br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">vōx<span><br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eīs<span><br><br></span></a>
+<a class="note1">audītā<span>audio audire, audivi, auditus V (4th)  <br>:hear, listen, accept, agree with; obey; harken, pay attention; be able to hear;<br>(完了 分詞 受動態 f 単数 主格)<br></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">maiestāte<span>majestas majestatis N (3rd) F  <br>:majesty, dignity (of god/rank/position); majesty of people/state; sovereignty;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">superiōribus<span><br><br></span></a>
+<a class="note1">victōriīs<span>victoria victoriae N (1st) F  <br>:victory;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note1">indigna.<span>indignus indigna -um, indignior -or -us, indignissimus -a -um ADJ  <br>:unworthy, undeserving, undeserved; unbecoming; shameful; intolerable; cruel;<br>&nbsp;(f 単数 奪格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>adfecto exercitu, nulla vox est audita. が骨子。adfecto exercituは独立奪格で「軍団は苦しんだが（影響を受けた）」のニュアンス。</p>
+<p>summa difficultate rei frumentaria : 付帯状況の奪格？「食料に関する大変な困難な状況において」</p>
+<p>tenuitate Boiorum, indigligentia Aeduorum, incendiis aedificiorum ；原因の奪格？</p>
+<p>usque ~ : usqueは～まで、、という前置詞。内容はut以下に説明。</p>
+<p>milites caruerint frumento : frumentoは分離の奪格、食料から離れて、が逐語訳。</p>
+<p>sustentarent extremam famem pecore adcto ex longioribus vicis. 「遠くの村から運ばれた家畜によって飢えを満足させた」</p>
+<p>infigna majestate populi Romani. 指定の奪格「ローマ人の価値のない尊厳に関して」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Boi族の貧困さ、Aeduo族の怠慢、建物が火を掛けられたことなどにより、軍団は食料事情について大変な困難な状況に陥って、それは数日間兵士たちには穀物がなかったり、遠くの村から運ばれた家畜によって飢えを満たす、という具合であったのだが、その状況下においても彼らからはローマ人の価値のない尊厳や前の勝利に関する不満は一言も聞かれなかった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quīn<span>quin ADV <br>:why not, <strong>in fact</strong>;<br><br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">opere<span></span></a>
+<a class="note1">singulās<span>singulus singula, singulum ADJ  <br>:apiece (pl.); every; one each/at a time; individual/separate/single; several;<br>(f 複数  対格)<br></span></a>
+<a class="note1">legiōnēs<span>legio legionis N (3rd) F  <br>:legion; army;<br>(c 複数  対格)<br></span></a>
+<a class="note0">appellāret<span><br><br></span></a>
+<a class="note0">et,<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">acerbius<span>acerbus acerba -um, acerbior -or -us, acerbissimus -a -um ADJ  比較級<br>:harsh, strident, bitter, sour; unripe, green, unfinished; grievous; gloomy;<br>&nbsp;(n 単数 対格)<br></span></a>
+<a class="note1">inopiam<span>inopia inopiae N (1st) F  <br>:lack, need; poverty, destitution, dearth, want, scarcity;<br>(c 単数 対格)<br></span></a>
+<a class="note1">ferrent,<span>fero ferre, tuli, latus V  <br>:bring, bear; tell/speak of; consider; carry off, win, receive, produce; get;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">dīmissūrum<span>dimitto dimittere, dimisi, dimissus V (3rd) TRANS  <br>:|||discontinue, renounce, abandon/forsake, forgo, give up (activity); dispatch;<br>(未来 分詞 能動態 m 単数 対格)<br></span></a>
+<a class="note0">oppugnātiōnem<span><br><br><br></span></a>
+<a class="note0">dīceret,<span><br><br></span></a>
+<a class="note1">ūniversī<span>universus universi N (2nd) M  <br>:whole world; all men (pl.), everybody, the mass;<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eō,<span><br><br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">faceret,<span></span></a>
+<a class="note0">petēbant:<span><br><br></span></a>
+<a class="note0">sīc<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">complūrēs<span><br><br></span></a>
+<a class="note0">annōs<span><br><br></span></a>
+<a class="note1">illō<span>ille illa, illud PRON  <br>:that; those (pl.); also DEMONST; that person/thing; the well known; the former;<br>(m 単数 奪格)<br><br></span></a>
+<a class="note1">imperante<span>impero imperare, imperavi, imperatus V (1st)  <br>:order, command, levy; rule (over) (w/DAT);<br>(現在 分詞 能動態  単数 奪格)<br></span></a>
+<a class="note1">meruisse,<span>mereo merere, merui, meritus V (2nd)  <br>:earn; deserve/merit/have right; win/gain/incur; earn soldier/whore pay, serve;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">nūllam<span><br><br></span></a>
+<a class="note1">ignōminiam<span>ignominia ignominiae N (1st) F  <br>:disgrace, ignominy, dishonor;<br>(c 単数 対格)<br></span></a>
+<a class="note1">acciperent,<span>accipio accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">nusquam<span>nusquam ADV <br>:nowhere; on no occasion;<br><br></span></a>
+<a class="note1">īnfectā<span>infectus infecta, infectum ADJ  <br>:<strong>unfinished</strong>, undone, incomplete; infecta re = without having accomplished it;<br>(f 単数 奪格),<br></span></a>
+<a class="note1">rē<span>res rei N (5th) F  <br>:thing; event/affair/business; fact; cause; property;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">discēderent:<span>discedo discedere, discessi, discessus V (3rd)  <br>:go/march off, depart, withdraw; scatter, dissipate; abandon; lay down (arms);<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">hōc<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note1">ignōminiae<span>ignominia ignominiae N (1st) F  <br>:disgrace, ignominy, dishonor;<br>(c 単数 属格)<br></span></a>
+<a class="note1">lātūrōs<span>fero ferre, tuli, latus V  <br>:bring, bear; tell/speak of; consider; carry off, win, receive, produce; get;<br>(未来 分詞 能動態 m 複数  対格)<br></span></a>
+<a class="note0">locō,<span><br><br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">inceptam<span>incipio incipere, incepi, inceptus V (3rd)  <br>:begin; start, undertake;<br>(完了 分詞 受動態 f 単数 対格)<br></span></a>
+<a class="note0">oppugnātiōnem<span><br><br></span></a>
+<a class="note1">relīquissent:<span>relinquo relinquere, reliqui, relictus V (3rd)  <br>:leave behind, abandon; (pass.) be left, remain; bequeath;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">praestāre<span><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">perferre<span>perfero perferre, pertuli, perlatus V  <br>:carry through; bear, endure to the end, suffer; announce;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">acerbitātēs,<span>acerbitas acerbitatis N (3rd) F  <br>:harshness, severity; <strong>bitterness</strong>, sourness, ill feeling; anguish, <strong>hardship</strong>;<br>(c 複数  対格)<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">cīvibus<span>civis civis N (3rd) C  <br>:fellow citizen; countryman/woman; citizen, free person; a Roman citizen;<br>&nbsp;(X 複数  与格)<br></span></a>
+<a class="note0">Rōmānīs,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">Cēnabī<span>Cenabum Cenabi N (2nd) N  <br>:Cenabum; town in Gaul; Orleans;<br>&nbsp;(X 単数 <strong>処格</strong>)<br></span></a>
+<a class="note1">perfidiā<span>perfidia perfidiae N (1st) F  <br>:faithlessness, treachery, perfidy;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">Gallōrum<span><br><br></span></a>
+<a class="note1">interīssent,<span>=interivissent<br>intereo interire, interivi(ii), interitus V  <br>:perish, die; be ruined; cease;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">parentārent.<span>parento parentare, parentavi, parentatus V (1st)  <br>:perform rites at tombs; make appeasement offering (to the dead);<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>cum Caesar appellaret singulas legiones in opere. singulas legionesは各々の軍団兵を一つづつ、個別にというニュアンス。</p>
+<p><strong>diceret se dimissurum (esse) oppugnationem si acerbius inopiam ferrent</strong>. このseはCaesarの事で、未来不定詞を含む不定詞句となっていて、diceretの目的語。「もし不足がより厳しくなったら、攻撃をやめるべきであろうかと聞いた」</p>
+<p><strong>universi ab eo petebant ne id faceret</strong>. 彼らから全員が止めないでくれと懇願した。以下は軍団の言うことを間接話法で。</p>
+<p><strong>sic se meruisse illo imperante complures annos</strong>, ut ~. このseは軍団を指す。illo imperrante は多分付帯状況の奪格で「彼の指揮のもとで」meruisseは正確には　<u>stipendia merereの事</u>（Gerge Long)で軍役に付いてきたことを言う。</p>
+<p><strong>nusquam infecta re discederent</strong>. infecta reは形容詞＋名詞の独立奪格で「物事を終わらせないままで」</p>
+<p>se laturos (esse) ignominiae loco hoc, hocは次に始まるsi以下で説明される事で、原因の奪格。「我々はそれによって不名誉な場所を作るであろう」が逐語訳。</p>
+<p>praestare omnes perferre acerbitates, 「すべての苦役を耐える方が良い」</p>
+<p>quam non parentarent Romani civibus, qui interissent perfidia Gallorum Cenabi. Cenabiは処格。parentarentは死に対して贖う、とか死者を宥めるというニュアンス。正義の復讐をする、というニュアンスもあり。</p>
+<p><font color="#ff0000">最後のparentarentは本来はparentareと不定詞になるべき。utが抜けている、という主張もあるそうだが、やはり文法的な間違い、と解釈されている<font color="#333">。(Chap 1, Line9、Chap 10, line2</font></font>に似た文章があり、そこは不定詞になっている)</p>
+<p>しかし、こういうところで接続法を使うのは、Cicero, Livius, Tactiusなどにもあり、結構一般的な悪い文法使い出会ったようである。</p>
+</div></div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Caesarが作業中の軍団を一つづつ呼んで、もし不足が更に厳しくなった場合には攻撃を中止しても良いと言った時、彼ら全員から中止しないで欲しいと懇願された。彼らは長い間、Caesarの指揮下で兵役についており、その結果として、如何なる不名誉も受けなかったし、物事を片付けないで去ったこともない。もし始めた攻撃を後に残せば、それにより我々は不名誉な場所を作ることになる。Cenabiでガリア人の攻撃によって殺されたローマ市民の復讐が出来ないよりは、すべての苦役に耐えるほうが良い。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Haec<span></span></a>
+<a class="note0">eadem<span></span></a>
+<a class="note0">centuriōnibus<span><br><br></span></a>
+<a class="note0">tribūnīsque<span><br><br></span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note1">mandābant,<span>mando mandare, mandavi, mandatus V (1st)  <br>:entrust, commit to one's charge, deliver over; commission; order, command;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">dēferrentur.<span>defero deferre, detuli, delatus V  <br>:|||offer; bestow upon, confer/award/grant, entrust; submit, refer for decision;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>mandoというのは「委ねる、託す」という言葉。上官を通してその意志を伝えた、と言う事であろう。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>それと同じ事を百人隊長、軍付き護民官に託し、彼らを通してCaesarに伝わった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 30</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[30]<span></span></a>
+
+<a class="note0">Bellō<span><br><br></span></a>
+<a class="note0">Helvētiōrum<span><br><br></span></a>
+<a class="note1">cōnfectō<span>conficio, conficere, confeci, confectus 動詞 (3rd) TRANS   :make, construct; prepare, complete, accomplish; cause; perform; do thoroughly; <br>完了分詞　受動態　奪格<br></span></a>
+<a class="note0">tōtīus<span><br><br></span></a>
+<a class="note1">ferē<span>fere, 副詞   :almost; about, nearly; generally, in general; (w/negatives) hardly ever;<br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note1">lēgātī,<span>legatus, legati 名詞 (2nd) M   :envoy, ambassador, legate; <br>複　主格<br></span></a>
+<a class="note0">prīncipēs<span><br><br></span></a>
+<a class="note0">cīvitātum,<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">grātulātum<span>gratulor, gratulari, gratulatus sum 動詞 (1st) DEP   :congratulate; rejoice, be glad; thank, give/render thanks;  <br>目的分詞　対格　～するために<br></span></a>
+<a class="note1">convēnērunt:<span>convenio, convenire, conveni, conventus 動詞 (4th)   :|meet/assemble; go to meet; come together; (have sex); converge; visit(3 複 完了<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>[30] Bello Helvetiorum confecto ：<strong>独立奪格</strong>　ヘルウェティの戦いが終わった時</p>
+<p>gratulatum　：<strong>目的分詞</strong>、対格　～のために</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>ヘルウェティの戦いが終わった時、殆ど全ガリアの使者が、部族の主だった人たちがカエサルの元にお祝いを言うために集まった。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">intellegere<span>intellego, intellegere, intellexi, intellectus 動詞 (3rd)   :understand; realize;不定詞</span></a>
+<a class="note1">sēsē,<span>sui 対格 <br>彼ら<br></span></a>
+<a class="note1">tametsī<span>tametsi, 接続詞   :even if, although, though;<br></span></a>
+<a class="note0">prō<span></span></a>
+<a class="note1">veteribus<span>vetus, veteris 名詞 (3rd) N   :old/ancient times (pl.), antiquity; earlier events; old traditions/ways;奪格</span></a>
+<a class="note0">Helvētiōrum<span><br><br></span></a>
+<a class="note1">iniūriīs<span>injuria, injuriae 名詞 (1st) F   :injury; injustice, wrong, offense; insult, abuse; sexual assault; 奪格<br></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note1">Rōmānī<span>属格　injuriisの後の目的語の属格<br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note1">poenās<span>poena, poenae 名詞 (1st) F   revenge/retribution; 複　対格<br></span></a>
+<a class="note1">bellō<span>奪格<br></span></a>
+<a class="note1">repetisset,<span>=repetivisset <br>repeto, repetere, repetivi, repetitus 動詞 (3rd)   :return to; get back; demand back/again; repeat; recall; claim;3 単 過去完了 能動態 接続法)</span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note1">rem<span>対格　主語</span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">ūsū<span>usus, usus 名詞 (4th) M   :use, enjoyment; experience, skill, advantage; custom;<br></span></a>
+<a class="note1">[terrae]<span>terra, terrae 名詞 (1st) F   :earth, land, ground; country, region; <br>terrae Galliae : the country of Gallia</span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note1">quam<span>＝than</span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">accidisse,<span>accido, accidere, accidi, - 動詞 (3rd)   :fall upon/down/to/at or near, descend, alight; happen, occur; happen to (DAT);不定詞</span></a>
+<a class="note0">proptereā<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">cōnsiliō<span>consilium, consili(i) 名詞 (2nd) N   :|decision/resolution; intention/purpose/policy/plan/action; diplomacy/strategy;奪格<br></span></a>
+<a class="note1">flōrentissimis<span>florens, florentis (gen.), florentior -or -us, florentissimus -a -um 形容詞   :blooming/in bloom, flowering; flowery, bright/shining; flourishing, prosperous;最上級　奪格<br></span></a>
+<a class="note1">rēbus<span>florentissimis rebus :独立奪格<br></span></a>
+<a class="note1">domōs<span>domus 複　対格<br></span></a>
+<a class="note0">suās<span><br><br></span></a>
+<a class="note0">Helvētiī<span><br><br></span></a>
+<a class="note1">relīquissent<span>relinquo, relinquere, reliqui, relictus 動詞 (3rd)   :leave behind, abandon; (pass.) be left, remain; bequeath; 3 複 過去完了 能動態 接続法)<br></span></a>
+<a class="note1">uti<span>consilioの内容を説明する従属節</span></a>
+<a class="note0">tōtī<span><br><br></span></a>
+<a class="note1">Galliae<span>与格？</span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">īnferrent<span>infero, inferre, intuli, illatus 動詞 TRANS   :|inflict/cause/inflict/impose/inspire (w/DAT);3 複 未完了 能動態 接続法<br></span></a>
+<a class="note1">imperiōque<span>imperium, imperi(i) 名詞 (2nd) N   :command; authority; rule, supreme power; the state, the empire;奪格<br></span></a>
+<a class="note1">potirentur,<span>potior, poti, potitus sum 動詞 (3rd) DEP   :|seize, capture; control; have/possess; reign over; 3 複 未完了 受動態 接続法</span></a>
+<a class="note1">locumque<span>locum, loci 名詞 (2nd) N   :place, territory/locality/neighborhood/region; position/point; aim point; site; 対格</span></a>
+<a class="note1">domiciliō<span>domicilium, domicili(i) 名詞 (2nd) N   :residence, home, dwelling, abode; 与格 <br>＝for habitation<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">māgnā<span><br><br></span></a>
+<a class="note1">cōpiā<span>copia, copiae 名詞 (1st) F   :|number/amount/quantity; sum/whole amount; means, opportunity; quem以下に内容<br></span></a>
+<a class="note1">dēligerent<span>deligo, deligere, delegi, delectus 動詞 (3rd) TRANS   :pick/pluck off, cull; choose, select, levy (soldiers), enroll; conduct a levy;3 複 未完了 能動態 接続法)<br></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note1">oportūnissimum<span>oportunus, oportuna -um, oportunior -or -us, oportunissimus -a -um 形容詞   :suitable; advantageous; useful, fit, favorable/opportune, ready; liable/exposed;最上級<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">frūctuōsissimum<span>fructuosus, fructuosa -um, fructuosior -or -us, fructuosissimus -a -um 形容詞   :fruitful, productive, abounding in fruit; profitable, advantageous; 最上級<br></span></a>
+<a class="note1">iūdicāssent,<span>=judicavisset <br>judico, judicare, judicavi, judicatus 動詞 (1st)   :judge, give judgment; sentence; conclude, decide; declare, appraise;3 単 過去完了 能動態 接続法<br></span></a>
+<a class="note1">reliquāsque<span>reliquus, reliqua, reliquum 形容詞   :rest of/remaining/available/left; surviving; future/further; yet to be/owed;複　対格<br></span></a>
+<a class="note0">cīvitātēs<span><br><br></span></a>
+<a class="note1">stipendiāriās<span>stipendiarius, stipendiaria, stipendiarium 形容詞   :mercenary; paying tribute in the form of cash;複　対格<br></span></a>
+<a class="note0">habērent.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>ここから間接話法　主文は対格を伴って不定詞、副詞節など従属節は接続法</p>
+<p>sese: suiの対格で、intellegere の主語、彼らは</p>
+<p>intellegere, ~ repetisset, accidisse, ...</p>
+<p>pro veteribus Helvetiorum iniuriis populi Romani: 以前のヘルウェティのローマ人民への攻撃に対して（の代わりに）</p>
+<p>ab his poenas bello repetisset：それから戦争によって復讐を取り返した。（カエサル主語）</p>
+<p><strong>non minus ex usu　</strong>＝no less advantage = as much advantage to</p>
+<p>accidisse 主語はeam rem 一般的な物事</p>
+<p>eam rem non minus ex usu [terrae] Galliae quam populi Romani accidisse,　＝eam rem accidisset non minus ex usu Galliae quam Romani&nbsp;&nbsp; <u>Galliae, Romaniは[<strong>目的語の属格</strong>]で行為の向かう先を表す。(NewLatin200)</u></p>
+<p><strong>eo consilio</strong> : =　with their strategy (ヘルウェティの）uti以下に説明される計画。</p>
+<p><strong>florentissimis rebus　</strong>：[<strong>付帯状況の奪格</strong>](NewLatin221)</p>
+<p>Helvetii　reliquissent　domos suas, ut~.</p>
+<p><strong>toti Galliae bellum inferrent</strong> : inferrentは他動詞で、目的語がbellum間接目的語が与格でtoti Galliae</p>
+<p>imperio potior : potiorは奪格の目的語を取る。(NewLatin218)</p>
+<p><strong>domicilio</strong> : <strong>目的の与格</strong>　(NewLatin191.1) 「居住のために」</p>
+<p>ex magna copia :沢山の選択肢から　（選択肢の中身は　quem以下に）</p>
+<p>stipendiarias　＝属国</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼らは次のようなことは理解している（と言った）　カエサルは昔のヘルウェティのローマ人民に対する悪行に対して復讐したわけだが、ガリア全体に対して起きたことはローマ人民に対して起きたことよりも良かった。なぜなら、ヘルウェティの計画によれば、彼らは良い環境だったにも拘わらず、全ガリアに戦争を引き起こし覇権を取って、全ガリアのうち最も快適で生産性の上がる場所を判断するという沢山の選択肢から住む場所を決め、残りは税を納める部族に持たせることだったのだから。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Petiērunt<span>= petiverunt <br>peto, petere, petivi, petitus 動詞 (3rd)   :attack; aim at; desire; beg, entreat, ask (for); reach towards, make for;3 複 完了<br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">concilium<span>concilium, concili(i) 名詞 (2nd) N   :public gathering/meeting; popular assembly, council; hearing; debate/discussion;対格 consiliumと紛らわしい！</span></a>
+<a class="note0">tōtīus<span><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">diem<span></span></a>
+<a class="note1">certam<span>certus, certa -um, certior -or -us, certissimus -a -um 形容詞   :fixed, settled, firm; certain; trusty/reliable; sure; resolved, determined; 対格</span></a>
+<a class="note1">indīcere<span>indico, indicere, indixi, indictus 動詞 (3rd)   :declare publicly; proclaim, announce; appoint; summon;不定詞<br></span></a>
+<a class="note0">idque<span></span></a>
+<a class="note1">Caesaris<span>属格</span></a>
+<a class="note1">facere<span>facio 不定詞</span></a>
+<a class="note1">voluntāte<span>voluntas, voluntatis 名詞 (3rd) F   :will, desire; purpose; good will; wish, favor, consent; 奪格<br></span></a>
+<a class="note1">licēret:<span>licet, licere, licuit, licitus est 動詞 (2nd) IMPERS   :it is permitted, one may; it is all right, lawful, allowed, permitted;3 単 未完了 能動態 接続法<br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note0">habēre<span><br><br></span></a>
+<a class="note1">quāsdam<span>quidam, quaedam, quoddam    :(w/-dam) certain; as INDEF a certain thing; somebody, one, something;<br></span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note1">quās<span>qui 複　対格<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">commūnī<span>commune, communis 名詞 (3rd) N   :joint/common/public property/rights; public; public places/interests (pl.); 与格　奪格<br></span></a>
+<a class="note1">cōnsēnsū<span>consensus, consensus 名詞 (4th) M   :agreement (opinion), consent,奪格<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">eō<span>Caesar<br></span></a>
+<a class="note1">petere<span>peto 不定詞</span></a>
+<a class="note1">vellent.<span>volo, velle, volui, - 動詞   :wish, want, prefer; be willing, will; <br>(3 複 未完了 能動態 接続法</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Petierunt　uti sibi ~ liceret: 逐語的には「～を彼らが行うことが出来る（了解されている）事を嘆願した」～することを嘆願した。sibiは与格で<strong>参照の与格</strong>。(NewLatin188) 彼らに取って、または彼らの自由である、</p>
+<p>licetは非人称動詞で、主語は二つの不定詞 indicere, facere</p>
+<p><strong>indicere totius Galliae concilium in diem certam</strong>. 「ある特定の日に全ガリアの集会を招集する事」</p>
+<p><strong>id facere Caesaris voluntate</strong> 「それをカエサルの了解のもとで成す事」voluntateは[<strong>付帯状況の奪格</strong>](NewLatin221)</p>
+<p><strong>sese habere～ : </strong>&nbsp;ここから間接話法。seseが対格の主語で、動詞はhabere,　petieruntから推測される間接話法。（NewLatin 314.2) <strong>sese habere quasdam res, quas ex communi consensu ab eo petere vellent</strong></p>
+<p><u>quas は関係代名詞でresを修飾。</u>間接話法の従属節を構成し、その動詞はvellent. 「（何かを持つこと）その何かは全体の同意によりカエサルに嘆願することを望むもの」</p>
+<p><strong>ab eo</strong>が難しい。abはfromのニュアンスがあり「カエサルから」と言う感じが強くカエサルに頼む、と言うのは奇異に感じる。AGの辞書によるとabはofの意味もあり、例文<strong>[postulare ab]で[ask of]</strong>となっている。petere, postulareは殆ど同義なのでここではask of himとする。</p>
+<p><strong>quindamはaliquiよりも確定度が高い</strong>、quindam &gt; aliqui &gt; quis の関係（NewLatin 252.3)</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>彼らは、決めた日に全ガリアの集会を召集すること、またそれをカエサルの了解の下で行うことを許可するよう、（カエサル）に頼んだ。そして何か、全体の同意によりカエサルに対し嘆願したいことがある（と言った）とのことであった。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eā<span><br><br></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note1">permissā<span>permitto, permittere, permisi, permissus 動詞 (3rd)   :let through; let go through; relinquish; permit, allow; entrust; hurl;完了分詞　受動態 f 単　奪格<br></span></a>
+<a class="note1">diem<span>dies 対格</span></a>
+<a class="note1">conciliō<span>concilium　　与格<br></span></a>
+<a class="note1">cōnstituērunt<span>constituo, constituere, constitui, constitutus 動詞 (3rd)   :set up/in position, erect; place/dispose/locate; (call a) halt; plant (trees); 3 複 完了<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">iūre<span>jure, 副詞   :by right, rightly, with justice; justly, deservedly;<br></span></a>
+<a class="note1">iūrandō<span>jurandum, jurandi 名詞 (2nd) N   :oath;　奪格<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note1">quis<span>m単　主格　;= who, what</span></a>
+<a class="note1">ēnūntiāret,<span>enuntio, enuntiare, enuntiavi, enuntiatus 動詞 (1st)   :reveal; say; disclose; report; speak out, express, declare;3 単 未完了 能動態 接続法)<br></span></a>
+<a class="note1">nisi<span>nisi, 接続詞   :if not; except, unless;</span></a>
+<a class="note1">quibus<span>qui 与格</span></a>
+<a class="note1">commūnī<span>cimmune communis N 単　奪格　;= common, public, general rule<br></span></a>
+<a class="note1">cōnsiliō<span>consilium consili N 単　奪格　;= plan, design, scheme, advice, prudent, choice, consent<br></span></a>
+<a class="note1">mandātum<span>mando, mandare, mandavi, mandatus 動詞 (1st)   :entrust, commit to one's charge, deliver over; commission; order, command;完了分詞　受動<br></span></a>
+<a class="note0">esset,<span></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">sānxērunt.<span>sancio, sancire, sanxi, sanctus 動詞 (4th) TRANS   :confirm, ratify; sanction; fulfill (prophesy); enact (law); ordain; dedicate; 3 複 完了<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Ea re permissa: 独立奪格　許可は行われ、</p>
+<p>diem concilio constituerunt　：集会の日取りが決められた。concilioは与格でfor assembly.間接目的語の与格</p>
+<p>iure iurando　＝jurejurando [<strong>手段の奪格</strong>]~ inter se sanxerunt = They confirm by oath to one another</p>
+<p><strong>sanxerunt ne quis enuntiaret</strong>, nisi ~ : ne quis enuntiaretはsanxeruntの目的の名詞節。ne quis = no oneでenuntiaretの主語。「誰も（それについて）漏らさない事を誓った」</p>
+<p>nisi (ei) quibus mandatum esset ：quibus は与格。ei省略で　those to whom </p>
+<p><u>mantatum essetは非人称で、it is assigned, it is comitted</u> 「割り当てられた人以外」</p>
+<p><strong>communi consilio</strong> : 手段の奪格か付帯状況の奪格。全般の合意によって</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>その許可は行われ、集会の日取りが決められた。そして彼らは、命令されたもの以外にはそれを漏らさないようお互いに宣誓によって定めた</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

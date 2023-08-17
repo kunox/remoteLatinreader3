@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 48</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[48]<span></span></a>
+
+<a class="note0">Eōdem<span><br><br></span></a>
+<a class="note0">diē<span><br><br></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">prōmōvit<span>promoveo, promovere, promovi, promotus 動詞 (2nd)   :move forward; 3 単 完了 能動態 直説法<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">mīlibus<span>奪格　程度の差異を表す奪格 <br>（Abl measure)<br></span></a>
+<a class="note1">passuum<span>passus 属格　passuum mille</span></a>
+<a class="note1">VI<span>sex</span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note0">castrīs<span></span></a>
+<a class="note0">sub<span></span></a>
+<a class="note0">monte<span></span></a>
+<a class="note1">cōnsēdit.<span>consido, considere, consedi, consessus 動詞 (3rd) INTRANS   :sit down/be seated; hold sessions,3 単 完了 能動態 直説法<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Eodem die promovit castra :同じ日、野営地を前進させた</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>同じ日、アリオウィストゥスは野営地を前進させ、カエサルから6マイルの、山裾に設営した。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Postrīdiē<span>postridie, 副詞   :on the following day;<br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">diēī<span>属格<br></span></a>
+<a class="note1">praeter<span>praeter, 前置詞 (対格)  :besides, except, contrary to; beyond (rank), in front of, before; more than;</span></a>
+<a class="note0">castra<span></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note0">suās<span><br><br></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note0">trādūxit<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">mīlibus<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note1">duōbus<span>duo<br></span></a>
+<a class="note1">ultrā<span>ultra, 前置詞 (対格)  :beyond, on the other side, on that side; more than, besides;<br></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note0">fēcit<span><br><br></span></a>
+<a class="note0">eō<span></span></a>
+<a class="note1">cōnsiliō<span>consilium 名詞　N <br>奪格　plan, action <br>原因の奪格<br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note1">frūmentō<span>flumentum 奪格　N <br>grian, crops <br>分離の奪格<br></span></a>
+<a class="note1">commeātūque<span>commenatus M <br>passage, caravan, supplies, provision, goods, <br>奪格<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Sēquanīs<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Haeduīs<span><br><br></span></a>
+<a class="note1">supportārētur<span>supporto 3 単　未完了　受動　接続法 <br>carry up trnasport<br></span></a>
+<a class="note1">Caesarem<span>対格　intercluderetの目的語</span></a>
+<a class="note1">interclūderet.<span>interclūdō <br>cut off, blockade <br>3 単　未完了　接続法<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Postridie eius diei :その日の次の日</p>
+<p>traduxit suas copias praeter castra Caesaris ：カエサルの陣の前に軍勢を率いてきた。</p>
+<p>et fecit castra ultra eum milibus passuum duobus：そしてカエサルの反対側、２マイルのところに設営した。</p>
+<p>uti intercluderet.Caesarem frumento commeatuque (ex Sequanis et Haeduis supportaretur)：それによってカエサルを補給線から遮るために</p>
+<p>eo consilio と ut intercluderetは同格。</p>
+<p>supportarentur : 接続法。接続法の従属節はAttractionで接続法になる。（NewLatin324）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その次の日、（アリオウィストゥス）は率いてカエサルの陣の前方にきて、２マイルのところに設営した。それはカエサルを、セクアナ、ハエドゥによって支えられている補給線を遮るためであった。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ex<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">diē<span><br><br></span></a>
+<a class="note0">diēs<span><br><br></span></a>
+<a class="note1">continuōs<span>continuus 形容詞　continua, continuum  <br>continuous, connected<br></span></a>
+<a class="note1">V<span>quinque = 5</span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">suās<span><br><br></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note1">prōdūxit<span>produco 3 単 完了 能動態 直説法 <br>bring out, lead forward<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">aciem<span>acies f 対格 <br>battle line, array</span></a>
+<a class="note1">īnstrūctam<span>instruo <br>完了分詞受動　f 単　対格 <br>construct, prepare, draw up<br></span></a>
+<a class="note0">habuit,<span></span></a>
+<a class="note0">ut,<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">vellet<span></span></a>
+<a class="note0">Ariovistus<span></span></a>
+<a class="note0">proeliō<span><br><br></span></a>
+<a class="note1">contendere,<span>contendo 不定詞 <br>contend fight, make effort</span></a>
+<a class="note1">eī<span>is 与格　アリオウィストゥスのこと<br></span></a>
+<a class="note1">potestās<span>potestas potestatis N (3rd) F  <br>:power, rule, force; strength, ability; chance, opportunity;<br>(X 単数 主格)<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">deesset.<span>desum deesse, defui, defuturus V  <br>:be wanting/lacking; fail/miss; abandon/desert, neglect; be away/absent/missing;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Ex eo die continuos V dies :そのときから５日間　連続で、</p>
+<p>Caesar produxit suas copias pro castris ：カエサルは自軍を野営地の前に率いて</p>
+<p>et habuit, aciem instructam : 展開された戦闘態勢をもった　展開して戦闘態勢をとった</p>
+<p>potestas non deesset.ei&nbsp;&nbsp;: eiはアリオウィストゥス、　desum=wanting、lacking 力、機会が足りなくないように、「彼に対抗する力が不足しないように」potestasが主語</p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false">
+<p>その日から５日間連続で、カエサルは自軍を野営地の前に率いて戦闘態勢をひいた。それはもしアリオウィストゥスが戦いを望んだ場合に備え、彼に対抗出来るようにである。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ariovistus<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">diēbus<span><br><br></span></a>
+<a class="note1">exercitum<span>excercitus m 単数　対格 <br>infantry</span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">continuit,<span>contineo continere, continui, contentus V (2nd) TRANS  <br>:||keep/hold/hang together/fast; surround, enclose, contain, limit; concentrate;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note1">equestrī<span>equester, equestris, equestre 形容詞   :equestrian, mounted on horse; 奪格<br></span></a>
+<a class="note1">proeliō<span>proelium 奪格　方法の奪格<br></span></a>
+<a class="note1">cotīdiē<span>cotidie, 副詞   :daily, every day; day by day; usually, ordinarily, commonly;<br></span></a>
+<a class="note1">contendit.<span>contendo 3 単 完了 能動態 直説法</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>アリオウィストゥスはその間中、歩兵を野営地にとどめておき、毎日騎兵による攻撃をおこなった。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Genus<span>genus 名詞　n 主格 <br>birth, origin, ancestry</span></a>
+<a class="note0">hōc<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">pugnae,<span>pugna 属格</span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">Germānī<span>Gerumanus 複　主格<br></span></a>
+<a class="note1">exercuerant:<span>excerceo exercere, exercui, exercitus 動詞 (2nd)  <br>exercise, train practice</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>hoc erat Genus pugnae,&nbsp; :これが戦いの種類である。(This is a kind of battle)</p>
+<p>quo Germani exercuerant se :　ゲルマン人が自身を訓練した、練習した</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>それはゲルマン人がよく訓練した戦い方であった。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">equitum<span>eques, equitis 名詞 (3rd) M   :horseman/cavalryman <br>複　属格</span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">VI,<span>sex<br><br></span></a>
+<a class="note1">totidem<span>totidem, undeclined 形容詞  <br>as many, the equivalent number of, same</span></a>
+<a class="note1">numerō<span>numerus 奪格　指定の奪格（数について言えば）<br><br></span></a>
+<a class="note1">peditēs<span>pedes, peditis 名詞 (3rd) M   :foot soldier, infantryman; <br>複　主格<br></span></a>
+<a class="note1">vēlōcissimī<span>velox, velocis (gen.), velocior -or -us, velocissimus -a -um 形容詞 swift, quick, fleet, rapid, speedy; <br>最上級　主格<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">fortissimī,<span>fortis, forte, fortior -or -us, fortissimus -a -um 形容詞   :strong, powerful, mighty, <br>複　主格<br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">omnī<span></span></a>
+<a class="note0">cōpiā<span><br><br></span></a>
+<a class="note1">singulī<span>singulus 配分数　１　複　主格 <br>一つづつ　（必ず複数）<br></span></a>
+<a class="note1">singulōs<span>singulus 対格<br></span></a>
+<a class="note0">suae<span></span></a>
+<a class="note1">salūtis<span>salus salutis N (3rd) F  <br>:health; prosperity; good wish; greeting; salvation, safety;<br>(X 単数 属格)<br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">dēlēgerant:<span>deligo, deligere, delegi, delectus 動詞 (3rd) TRANS   :pick/pluck off, cull; choose,3 複 過去完了 能動態 直説法<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">proeliīs<span><br><br></span></a>
+<a class="note1">versābantur,<span>versor DEP 3 複 未完了 受動態 直説法 <br>move about 主語はequites<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">equitēs<span><br><br></span></a>
+<a class="note1">recipiēbant;<span>recipio, recipere, recepi, receptus 動詞 (3rd)   :keep back; retreat<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>VI, milia equitum erant ：騎兵の数、６０００</p>
+<p>totidem pedites numero (erant):　数によって同じ程度の歩兵　（同数の歩兵）</p>
+<p>quos singuli delegerant: singulos ex omni copia 各々の騎兵が一人づづの歩兵を全軍から選び</p>
+<p>causa suae salutis : 自身を守るために</p>
+<p>equites versabantur, cum his in proeliis:騎兵は戦いに彼ら歩兵を共に動き回る</p>
+<p>se recipiebant;ad eos：seは騎兵　また騎兵は歩兵の方に退却する</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>騎兵の数は６０００。同数の最も素早く頑健な歩兵。その歩兵は全軍の中から各々の騎兵一人に一人づつ、自身の安全のため選択したもので、彼らと共に戦場では動きまわり、また彼らの元に退却する。</p>
+</div>
+</div>
+<div class="spacer">Line7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">hī,<span><br><br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">quid<span>quis =anything</span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">dūrius,<span>durus 比較級 <br>hard, harsh, rough, durable <br>主格<br></span></a>
+<a class="note1">concurrēbant,<span>concurro  <br>run together, assemble3 複 未完了 能動態 直説法<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">graviōre<span>gravis 比較級　奪格 <br>heavy; painful; important; serious;<br></span></a>
+<a class="note1">vulnere<span>vulnus 名詞　N <br>奪格 <br>wound, hurt, injury</span></a>
+<a class="note1">acceptō<span>accipio accipere, accepi, acceptus 動詞 (3rd) TRANS  <br>:take, grasp, receive, 完了 分詞 受動態 n 単 奪格<br></span></a>
+<a class="note1">equō<span>equus, equi 名詞 (2nd) M   :horse; steed;奪格（分離の奪格）<br></span></a>
+<a class="note1">dēciderat,<span>decido = de cado <br>fall off, fall down<br></span></a>
+<a class="note1">circumsistēbant;<span>circumsisto, circumsistere, circumstiti, circumstatus 動詞 (3rd) TRANS   :stand/gather/crowd/take a stand around; surround, 3 複 未完了 能動態 直説法)<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">quō<span>不定　qui = to any place <br>rare use ? 副詞、接続詞？<br><br></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">longius<span>longus longa -um, longior -or -us, longissimus -a -um ADJ  比較級<br>:long; tall; tedious, taking long time; boundless; far; of specific length/time;<br>&nbsp;(n 単数 <strong>対格</strong>)<br></span></a>
+<a class="note1">prōdeundum<span>prodeo 未来分詞　受動 <br>動形容詞、主格 <br>to go, advance, go forward<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">celerius<span>celer 比較級　主格 <br>celer, celeris -e, celerior -or -us, celerrimus -a -um 形容詞 :swift, quick</span></a>
+<a class="note1">recipiendum,<span>recipio recipere, recepi, receptus V (3rd)  <br>:keep back; recover; undertake; guarantee; accept, take in; take back;<br>(未来 分詞 受動態 n 単数 主格),<br>動形容詞＋SUMで～すべき<br></span></a>
+<a class="note1">tanta<span>tantus, tanta, tantum 形容詞   :of such size; so great, so much;</span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">hōrum<span>hoc 複　属格<br></span></a>
+<a class="note1">exercitātiōne<span>exercitatio, exercitationis 名詞 (3rd) F   :exercise, training, practice; discipline; 奪格(方法）<br></span></a>
+<a class="note1">celeritās<span>celeritas 名詞　F <br>speed, quickness, rapidity; speed<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">iubīs<span>juba, jubae 名詞 (1st) F   :mane of a horse; crest (of a helmet);奪格（手段）たてがみ<br><br></span></a>
+<a class="note1">sublevātī<span>sublevo 完了 分詞 受動態 m 複 主格 <br>lift up, raise; support; assist; lighten;<br></span></a>
+<a class="note0">equōrum<span><br><br></span></a>
+<a class="note1">cursum<span>cursus, cursus 名詞 (4th) M   :running; speed/zeal; charge, onrush;対格</span></a>
+<a class="note1">adaequārent.<span>adaequo, adaequare, adaequavi, adaequatus 動詞 (1st)   :equalize, make equal in height, come up to level; 3 複 未完了 能動態 接続法<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>si quid erat durius :もし何か危険な場合には</p>
+<p>si qui graviore vulnere accepto equo deciderat, ：もし誰かが傷つき落馬したような場合には <strong>graviore vulnere : 独立奪格</strong></p>
+<p><strong>si qui = si quis</strong>（quisは疑問代名詞、quiは形容詞）<strong>si + quisは必ず, anyoneの意味</strong></p>
+<p><strong>si prodeundum erat</strong> ：もし前進すべき場合には(<strong>動形容詞＋SUM</strong> 義務、必要）</p>
+<p><font color="#ff0000">quo longius ：どこか遠くに : <font color="#000000">比較級、最上級　＋副詞で、時にtoo, very exceeding の意味を持つことがある。</font></font></p>
+<p>aut recipiendum, celerius ：より早く退却すべき場合には</p>
+<p>celeritas horum erat tanta exercitatione ：訓練により彼らの早さは大変なものである</p>
+<p><strong>sublevati iubis equorum</strong>：馬のたてがみによって補助された歩兵は　<strong>sublevati (pedites)はadaequarentの主語</strong></p>
+<p>cursum = runningでこの場合騎兵の早さ</p>
+<p>馬に補助された歩兵は騎兵の早さに追いついた。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼ら（歩兵）は、もし何か危険があれば走って近づき、もし騎兵が重傷で落馬したような場合には周りを取り囲んだ。もしどこか遠くに前進する、また急いで退却するようば場合には、訓練により彼らの早さは大変なものである。馬によって補助された歩兵は騎兵の速度に追いつくものであった。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

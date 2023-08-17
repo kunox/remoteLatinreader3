@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 36</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[36]<span></span></a>
+
+<a class="note0">Cicerō,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">superiōrēs<span><br><br></span></a>
+<a class="note0">diēs<span><br><br></span></a>
+<a class="note1">praeceptīs<span>praeceptum praecepti N (2nd) N  <br>:teaching, lesson, precept; <strong>order</strong>, <strong>command</strong>;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">summā<span><br><br></span></a>
+<a class="note1">dīligentīa<span>diligentia diligentiae N (1st) F  <br>:diligence/ care/ attentiveness; economy/ frugality/ thrift; industry; love (Souter);<br>(c 単数 奪格)<br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">continuisset<span>contineo continere, continui, contentus V (2nd) TRANS  <br>:secure, maintain, <strong>sustain</strong>; fasten/ hold in position; retain, keep safe, preserve;<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note1">cālōnem<span>calo calonis N (3rd) M  <br>:camp /soldier's servant; type of awkwardness/ stupidity; low servant /drudge (L+S);<br>(c 単数 対格)<br><br></span></a>
+<a class="note1">quidem<span>quidem ADV <br>:indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;<br><br></span></a>
+<a class="note0">quemquam<span></span></a>
+<a class="note0">extrā<span><br><br></span></a>
+<a class="note0">mūnītiōnem<span><br><br></span></a>
+<a class="note1">ēgredī<span>egredior egredi, egressus sum V (3rd) DEP  <br>:go/march/<strong>come out</strong>; set sail; land, disembark; surpass, go beyond;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">passūs<span>patior pati, passus sum V (3rd) DEP  <br>:suffer; allow; undergo, endure; <strong>permit</strong>;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note1">esset,<span>sum esse, fui, futurus V  <br>:be;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note1">septimo<span>septimus <br>序数 7<br>(n 単数 奪格)<br></span></a>
+<a class="note1">diē<span>dies diei N (5th) C  <br>:day; daylight; (sunlit hours); (24 hours from midnight); open sky; weather;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">diffīdēns<span>diffido diffidere, diffisus sum V (3rd) SEMIDEP  <br>:<strong>distrust</strong>; despair; (w/DAT) lack confidence (in), despair (of); expect not;<br>(現在 分詞 能動態  単数 主格)<br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note0">diērum<span><br><br></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">fidem<span>fides fidei N (5th) F  <br>:faith, loyalty; honesty; credit; confidence, trust, belief; good faith;<br>(c 単数 対格)<br></span></a>
+<a class="note1">servātūrum,<span>servo servare, servavi, servatus V (1st)  <br>:watch over; protect, store, <strong>keep</strong>, guard, preserve, save;<br>esse省略の未来不定詞<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">longius<span></span></a>
+<a class="note0">prōgressum<span><br><br></span></a>
+<a class="note1">audiēbat,<span>audio audire, audivi, auditus V (4th)  <br>:hear, listen, accept, agree with; obey; harken, pay attention; be able to hear;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">ūlla<span>ullus ulla, ullum (gen -ius) ADJ  <br>:any;<br>(f 単数 主格)<br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">reditū<span>reditus reditus N (4th) M  <br>:return, returning; revenue, income, proceeds; produce (Plater);<br>(X 単数 奪格)<br></span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note1">fāma<span>fama famae N (1st) F  <br>:rumor; reputation; tradition; fame, public opinion, ill repute; report, news;<br>(c 単数 主格)<br></span></a>
+<a class="note1">adferēbātur,<span>adfero adferre, adtuli, adlatus V TRANS  <br>:bring to, carry, convey; report, bring word, allege, announce; produce, cause;<br>(３人称 単数 未完了 受動態 直説法 )<br></span></a>
+<a class="note0">simul<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">permōtus<span>permoveo permovere, permovi, permotus V (2nd)  <br>:stir up; move deeply; <strong>influence</strong>; agitate;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">vōcibus,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">illīus<span><br><br></span></a>
+<a class="note1">patientiam<span>patientia patientiae N (1st) F  <br>:endurance/hardiness; patience/persistence; apathy; sufferance; hardship;<br>(c 単数 対格)<br></span></a>
+<a class="note0">paene<span></span></a>
+<a class="note1">obsessiōnem<span>obsessio obsessionis N (3rd) F  <br>:blockade, siege; obsession (Cal);<br>(c 単数 対格)<br></span></a>
+<a class="note0">appellābant,<span><br><br></span></a>
+<a class="note1">sīquidem<span>siquidem CONJ <br>:accordingly; if indeed/in fact/it is possible, even supposing; since/in that;<br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">ēgredī<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">licēret,<span><br><br><br></span></a>
+<a class="note0">nūllum<span><br><br></span></a>
+<a class="note1">eiusmodī<span>ejusmodi ADV <br>:of this sort; of such kind;<br><br></span></a>
+<a class="note1">cāsum<span>casus casus N (4th) M  <br>:fall, overthrow; chance/fortune; <strong>accident</strong>, emergency, calamity, plight; fate;<br>(c 単数 対格)<br></span></a>
+<a class="note1">exspectāns,<span>exspecto exspectare, exspectavi, exspectatus V (1st)  <br>:lookout for, await; expect, anticipate, hope for;<br>(現在 分詞 能動態  単数 主格)<br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">novem<span></span></a>
+<a class="note1">oppositīs<span>oppono opponere, opposui, oppositus V (3rd)  <br>:oppose; place opposite;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note1">maximōque<span>maximus maxima, maximum ADJ  最上級<br>:greatest/biggest/largest; longest; oldest; highest, utmost; leading, chief;<br>(m 単数 奪格)<br></span></a>
+<a class="note1">equitātū<span>equitatus equitatus N (4th) M  <br>:cavalry, horse-soldiers; equestrian order; bodies of cavalry (pl.);<br>(X 単数 奪格)<br></span></a>
+<a class="note1">dispersīs<span>dispergo dispergere, dispersi, dispersus V (3rd)  <br>:scatter (about), disperse;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">paene<span></span></a>
+<a class="note1">dēlētīs<span>deleo delere, delevi, deletus V (2nd) TRANS  <br>:erase, wipe/scratch/remove (letters/marks), wipe/blot out, expunge, delete;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">hostibus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">mīlibus<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note1">tribus<span>tres -es -ia, tertius -a -um, terni -ae -a, ter NUM  3<br>:three;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">offendī<span>offendo offendere, offendi, offensus V (3rd)  <br>:offend, give offense (to); displease/annoy/vex; trouble/upset, hurt (feelings);<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">posset,<span></span></a>
+<a class="note0">quīnque<span></span></a>
+<a class="note0">cohortēs<span></span></a>
+<a class="note1">frūmentātum<span>frumentor frumentari, frumentatus sum V (1st) DEP  <br>:get grain, forage;<br>(完了 分詞 受動態 m 単数 対格), <br><strong>目的分詞</strong><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">proximās<span><br><br></span></a>
+<a class="note1">segetēs<span>seges segetis N (3rd) F  <br>:grain field; crop;<br>(c 複数  対格)<br></span></a>
+<a class="note0">mittit,<span></span></a>
+<a class="note1">quās<span>qui quae, quod PRON  <br>:which?, what?; what kind of?;<br>(f 複数  対格)<br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">castra<span>castrum castri N (2nd) N  <br>:fort/fortress; camp (pl.), military camp/field; army; war service; day's march;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note0">ūnus<span><br><br></span></a>
+<a class="note0">omnīnō<span><br><br></span></a>
+<a class="note0">collis<span></span></a>
+<a class="note0">intererat.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>構造は次の通り</p>
+<p>Cicero,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; qui ~ continuisset,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ac ~ pasus esset,</p>
+<p>septimo die, diffidens ~</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; quod ~ audiebat</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; neque ~ afferebatur,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;simul permotus eorum vocibus qui ~ appellantur</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (siquidem ~ liceret)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; expectans nullam casum quo ~ posset</p>
+<p>mittit quinque cohortes.</p>
+<p><br></p>
+<p><strong>Cicero septimo die mittit quinque cohortes frumentatum in proximas segetes</strong>.　frumentatumはfrumentorの目的分詞「飼料のために」「Ciceroは7日目に、飼料を得ようと、近くの畑に５大隊送った。」これだけが文の骨子である。</p>
+<p><strong>qui continuisset milites in castris cum summa diligentia omnes superiores dies praeceptis Caesaris</strong>. Ciceroを修飾している文の①「彼はそれまでの期間では、Caesarの命令に従い、野営地内の兵士たちを最高に精勤の状態で保ち」<u>continuissetが接続法で「譲歩の接続法」と呼ばれる。</u></p>
+<p><strong>ac esset passus ne quidem quamque calonem egredi extra munitionem</strong>.Ciceroの記述②　「一人たりとも従軍奴隷たちを砦の外に出すことを禁止した」（やはり譲歩の接続法）</p>
+<p>この譲歩の接続法はCiceroがそれまで優秀であったの「だけれども」と、後に「でもこんな失策があった」という記述の伏線とも言うべきニュアンスであろう。</p>
+<p><strong>septimo die diffidens</strong> : septio dieは時の奪格。「７日めに」diffidensは現在分詞で、文法的には主語のCiceroを修飾している、分詞構文。<strong>Caesar servaturum (esse) fidem de numero dierum</strong>.&nbsp; diffidensの「信頼せず」の中身。「Caesarが日数に関する約束を守ること」quodで疑っていいた理由を２つばかりあげている。</p>
+<p><strong>simul permotus eorum vocibus　</strong>：これもpermotus完了分詞で、分詞構文。「同時に、彼らの声に影響されて」彼らとは次のqui関係代名詞で説明される。</p>
+<p><strong>qui appellabant illus patientiam paene obsessionem</strong>.「この耐久をほとんど籠城と呼んでいた」述語対格。</p>
+<p><strong>siquidem non liceret egredi ex catris</strong>. 「と言うのは実に砦の外に行くことが禁じられていたからである。」</p>
+<p><strong>expectans nullam casum eiusmodi quo posset offendi</strong>.　「また（Ciceroは）何か攻撃される類の事故を想定していなかった。」</p>
+<p>novem legionibus oppositis&nbsp; : 独立奪格「９軍団が配置されており」</p>
+<p>maximo equitatu dispersis : 独立奪格　「最高の騎兵たちがそのあたりに散らばっており」</p>
+<p>hostibus pane deletis : 独立奪格「ほとんど崩壊した敵」</p>
+<p>inter quas et castra unus collis omnino intererat.<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>Ciceroは、それまでの期間はCaesarの命令に従い、野営地内で兵士たちを最高に精勤の状態に保ち、一人たりとも、従軍奴隷を砦の外に出すことはしなかったが、７日目に、Caesarが日数に関して約束を守るか不安になり、と言うのは遠くへ行ったと聞いていたし、帰還に関する如何なる言伝も来ていなかったからである。同時に、その我慢はまさしく籠城と同じである、という人々の声にも動かされて、また、攻撃されるような危険を想定してなかったので、と言うのは、砦の３マイル以内に９軍団が配置されており、最大の騎兵が散開しており、敵はほとんど壊滅状態であったわけであるから。そこで飼料を得るため、近くの畑に５大隊を送り出した。そこと砦の間には一つの丘があるだけであった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Complūres<span><br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note1">aegrī<span>aeger aegra -um, aegrior -or -us, aegerrimus -a -um ADJ  <br>:sick/ill, infirm; unsound, injured; painful, grievous; corrupt; sad/sorrowful;<br>(m 複数  主格)<br></span></a>
+<a class="note1">relictī;<span>relinquo relinquere, reliqui, relictus V (3rd)  <br>:leave behind, abandon; (pass.) be left, remain; bequeath;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note1">spatiō<span>spatium spati(i) N (2nd) N  <br>:||interval, time, extent, period, term; duration; distance; area; size; bulk;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">diērum<span><br><br></span></a>
+<a class="note1">convaluerant,<span>convalo convalere, convalui, convalitus V (3rd) INTRANS  <br>:grow strong/thrive/gain power; regain health/strength, <strong>recover</strong>, get well/better;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">CCC,<span></span></a>
+<a class="note0">sub<span></span></a>
+<a class="note1">vēxillō<span>vexillum vexilli N (2nd) N  <br>:flag, banner;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">una<span>una ADV <br>:together, together with; at the same time; along with;<br><br></span></a>
+<a class="note0">mittuntur;<span><br><br><br></span></a>
+<a class="note0">māgna<span><br><br></span></a>
+<a class="note1">praetereā<span>praeterea ADV <br>:besides, thereafter; in addition;<br><br></span></a>
+<a class="note0">multitūdō<span><br><br></span></a>
+<a class="note0">cālōnum,<span><br><br></span></a>
+<a class="note0">māgna<span><br><br></span></a>
+<a class="note0">vīs<span><br><br></span></a>
+<a class="note1">iūmentōrum,<span>jumentum jumenti N (2nd) N  <br>:mule; beast of burden;<br>(X 複数  属格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">subsēderant,<span>subsido subsidere, subsedi, subsessus V (3rd)  <br>:settle, sink, subside; neglect (Latham);<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">factā<span><br><br></span></a>
+<a class="note1">potestāte<span>potestas potestatis N (3rd) F  <br>:power, rule, force; strength, ability; chance, opportunity;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">sequitur.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>aegri complures erant relicti. 逐語的には「病気の多くのものは残された」</p>
+<p>hoc spatio dierum : 時の奪格。逐語的には「その日数の間」つまり７日間、またはCaesarは出発してからの期間。</p>
+<p>vexillo vexillariusというのは一般的には赤い小さな旗で、Signaとは区別し易いもの。正規の軍から離れているものを表していた。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>軍団から、負傷により多くのものが砦に残されていたが、その中からその時までに回復したもの、約３００名ほども一つの旗をつけて送り出された。さらに多くの従軍奴隷の群れ、多くのロバたち、それらは砦のなかにいたのだが、許可が与えられ、追いかけた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

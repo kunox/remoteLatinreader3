@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber II : Chap 2</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[2]<span></span></a>
+
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note1">nūntiīs<span>nuntium(n) or nuntius(m)複　奪格message, news<br></span></a>
+<a class="note1">litterīsque<span>littera f 複　奪格letter(alphabet) pl : letter<br></span></a>
+<a class="note1">commōtus<span>commoveo commovere, commovi, commotus V (2nd) TRANS  <br>:shake/stir up, agitate; displace, disturb, trouble/worry, upset; jolt; excite;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">duās<span>duo= 2の対格　複<br></span></a>
+<a class="note0">legiōnēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">citeriōre<span><br><br></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note1">novās<span>novus f 複　対格<br></span></a>
+<a class="note1">cōnscrīpsit<span>conscribo conscribere, conscripsi, conscriptus V (3rd) TRANS  <br>:<strong>enroll</strong>/<strong>&nbsp;raise (army</strong>); write on/down, commit to/cover with writing; compose<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">initā<span>ineo inire, inivi(ii), initus V  <br>:enter; undertake; begin; go in; enter upon;<br>(完了 分詞 受動態 f 単数 奪格),<br></span></a>
+<a class="note1">aestāte<span>aestas aestatis N (3rd) F  <br>:summer; summer heat/weather; a year;<br>&nbsp;(c 単数 奪格)<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">ulteriōrem<span>ulterior 比較級far, further<br></span></a>
+<a class="note0">Galliam<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">dēdūceret<span>deduco 3 単　接続法: lead, draw, pull ,escort<br></span></a>
+<a class="note0">Q.<span></span></a>
+<a class="note0">Pedium<span></span></a>
+<a class="note0">lēgātum<span><br><br></span></a>
+<a class="note0">mīsit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>commontus Caesar : 刺激されたカエサルは (分詞構文、叙述用法とも言われている(NewLatin 337.2))</p>
+<p>nuntiisは　nuntius(m)の奪格であり、nuntium(n)の奪格である、違いはmessangerかmessage。ここでは多分messanger</p>
+<p>duas novas legiones : 第１３，１４軍団の由。合計で８軍団で５万～６万の兵力。</p>
+<p><strong>inita aestate</strong> : 独立奪格　「夏が始まる頃」</p>
+<p><strong>Caesar conscripsit novas, misit Q. Pedium qui deduceret in ulteriorem Galliam</strong>. が骨子。</p>
+<p><strong>qui deduceret</strong> : 目的節。ちょっと変な感じであるが、<u>こういう関係代名詞が目的の節を導くことは頻繁にあるそうである</u>。（NewLatin 282.2) Pediusを送り込んで、彼に（軍）を率いらせて（citeriore Galliaより）遠くへやるため、</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの知らせや手紙によって警告されたカエサルは内ガリアで新たな二つの軍団を編成した。そして夏の初めの頃、彼の士官であるQ. Pediumをそれらの軍団を遠くのガリアに率いるために送った。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipse,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">prīmum<span><br><br></span></a>
+<a class="note1">pābulī<span>pabulum pabuli N (2nd) N  <br>:fodder, forage, food for cattle; food/sustenance; fuel (for fire);<br>(n 単数 属格)<br></span></a>
+<a class="note0">cōpia<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">inciperet,<span>incipio incipere, incepi, inceptus V (3rd)  <br>:begin; start, undertake;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note1">vēnit.<span>venio venire, veni, ventus V (4th)  <br>:come;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>cum primum = as soon as</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p> 彼自身は、家畜の食料が十分になるのを待って、軍隊の方に出発した。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dat<span></span></a>
+<a class="note1">negōtium<span>negotium negoti(i) N (2nd) N  <br>:pain, trouble, annoyance, distress; work, business, activity, job;<br>(X 単数 対格)<br></span></a>
+<a class="note1">Senonibus<span>Senones senonis 中央ガリアの一族　m与格　</span></a>
+<a class="note0">reliquīsque<span><br><br></span></a>
+<a class="note1">Gallīs<span>与格<br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">fīnitimī<span>finitumus finitima, finitimum形容詞　複　主格neighboring, bordering, adjoining<br></span></a>
+<a class="note1">Belgīs<span>Belga Belgae N (1st) M  <br>:Belgae (pl.); (people of N Gaul - in Caesar's Gallic War);<br>(c 複数  与格)<br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note1">gerantur<span>gero gerere, gessi, gestus V (3rd)  <br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+<a class="note1">cognōscant<span>cognosco cognoscere, cognovi, cognitus V (3rd) TRANS  <br>:become acquainted with/aware of; recognize; learn, find to be; inquire/examine;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">sēque<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">certiōrem<span>certus certa -um, certior -or -us, certissimus -a -um ADJ  比較級<br>:fixed, settled, firm; certain; trusty/reliable; sure; resolved, determined;<br>(c 単数 対格)<br></span></a>
+<a class="note0">faciant.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>dat negotium Seninibus ut cognoscant qua gerantur, faciant certiorem. が骨子</strong>。ut以下はnegotiumを説明。直接目的語がnegotiumでSenonibus（他）は与格で間接目的語。</p>
+<p>qui finitimi Belgis erant : finitimiはfinitimus（neighboringの形容詞）　与格と「仲良し、近い」形容詞（New Latin 192)</p>
+<p>ex. sunt proximi Gemanisなど</p>
+<p><strong>congnoscant ea quae geruntur apud&nbsp;eos.</strong> 「そこ（eos)で起きている事を知り」&nbsp;</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>（カエサルは）セノネ族と残りのガリアでベルガエと近くにいる人々に対し、何が起きているか、（事情を）見つけてカエサルの元に報告するよう課題を与えた。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hī<span><br><br></span></a>
+<a class="note1">cōnstanter<span>constanter constantius, constantissime ADV <br>:firmly, immovably; steadily, constantly, without change; resolutely; loyally;<br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">nūntiāvērunt<span>nuntio nuntiare, nuntiavi, nuntiatus V (1st) TRANS  <br>:announce/report/bring word/give warning; convey/deliver/relate message/greeting;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note1">manūs<span>manus manus N (4th) F  <br>:hand, fist; team; gang, <strong>band of soldiers</strong>; handwriting; (elephant's) trunk;<br>&nbsp;(c 複数  対格)<br></span></a>
+<a class="note1">cōgi,<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">ūnum<span><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">condūci.<span>conduco conducere, conduxi, conductus V (3rd) INTRANS  <br>:be of advantage/profitable/expedient; be proper/fitting/concerned with; tend to<br>(  現在 受動態 不定詞 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>hic omnes : these all (レポートさせた者達は全ておしなべて）</p>
+<p>nuntiaverunt constanter : 同じようにレポートした</p>
+<p>manus cogi, exercitum conduci : 小さな武装集団は集められ、軍隊は（一箇所に）集められた。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらのレポートは一貫して次のように伝えた。すなわち、小さな兵士の集団は集約され、軍隊は一つの場所に集められている、と。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Tum<span>tum ADV <br>:then, next; besides; at that time;<br><br></span></a>
+<a class="note1">vērō<span>vero ADV <br>:yes; in truth; certainly; truly, to be sure; however;<br><br></span></a>
+<a class="note1">dubitandum<span>dubito 未来分詞　受動doubt, deliberate, hesitate, be uncertain 動形容詞（未来分詞受動は動形容詞）</span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">exīstimāvit<span>existino 3　単　完了valuse, esteem, hold opnion, think, estimate<br></span></a>
+<a class="note1">quīn<span>quin CONJ <br>:so that not, without; that not; but that; that;<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note1">proficīscerētur.<span>proficiscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>dubitandum non (esse) : 躊躇わないべきであること　未来不定詞</p>
+<p>quin proficiscerentur : without that he (should) proceed （それに対して）進軍しない事　quinは接続詞であり、従属節を構成している。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そこでカエサルは本当に、それらに対して進軍しないなどと躊躇うべきではないと考えた。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Rē<span><br><br></span></a>
+<a class="note1">frūmentāriā<span>frumentarius frumentaria, frumentarium ADJ  <br>:grain producing; of/concerning grain;<br>&nbsp;(f 単数 奪格)<br><br></span></a>
+<a class="note1">provīsa<span>provideo providere, providi, provisus V (2nd)  <br>:foresee; provide for, make provision; with DAT;<br>(完了 分詞 受動態 f 単数 奪格)<br><br></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">movet<span>: moveo 3単現在　カエサルが主語</span></a>
+<a class="note1">diēbusque<span>dies diei N (5th) C  <br>:day; daylight; (sunlit hours); (24 hours from midnight); open sky; weather;<br>(c 複数  奪格)<br></span></a>
+<a class="note1">circiter<span>　：前置詞　= about, around, near</span></a>
+<a class="note0">XV<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Belgārum<span><br><br></span></a>
+<a class="note0">pervenit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Re frumentaria provisa : 独立奪格　兵糧などの事柄の調達を行い、</p>
+<p>movet castra : キャンプを移動し（全て主語はカエサル）</p>
+<p>and circiter XV diebus, prevenit ad fines Begarum.</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>食料などの調達を行い、カエサルはキャンプを移動した。約１５日後でベルガエの領地に到着した。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

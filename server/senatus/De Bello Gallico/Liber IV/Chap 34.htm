@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 34</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[34]<span></span></a>
+
+<a class="note0">Quibus<span></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">perturbātīs<span>perturbo perturbare, perturbavi, perturbatus V (1st)  <br>:confuse, throw into confusion; disturb, perturb, trouble; alarm;<br>(完了 分詞 受動態  複数  与格)<br></span></a>
+<a class="note0">nostrīs<span><br><br></span></a>
+<a class="note0">[novitāte<span><br><br></span></a>
+<a class="note0">pugnae]<span></span></a>
+<a class="note1">tempore<span>tempus N 単　奪格<br><br></span></a>
+<a class="note1">oportūnissimō<span>oportunus oportuna -um, oportunior -or -us, oportunissimus -a -um ADJ  最上級<br>:suitable; advantageous; <strong>useful</strong>, fit, <strong>favorable</strong>/ opportune, ready; liable/exposed;<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">auxilium<span></span></a>
+<a class="note1">tulit:<span>fero ３単　完了　;= bring, bear, tell, consider<br><br></span></a>
+<a class="note0">namque<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">adventū<span>M 単　奪格<br><br></span></a>
+<a class="note0">hostēs<span></span></a>
+<a class="note1">cōnstitērunt,<span>consisto ３複　完了　;= stop, halt<br><br><br></span></a>
+<a class="note0">nostrī<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">timōre<span>timor , timoris M 単　奪格　;= fear, dread<br><br></span></a>
+<a class="note0">recēpērunt.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Caesar tulit auxilium perturbatis nostri. 「カエサルは混乱した味方に援助を成した。」目的語はauxilium（対格）nostriは間接目的語の与格。quibus rebusは手段の奪格でpertibatis にかかる。</p>
+<p>tempore oportunissimo : <strike>独立奪格</strike>　「最適なタイミングで」手段の奪格？<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらのことによって（戦いの新しさ）混乱された味方に、カエサルの援軍は時期に叶うものであった。その出現によって敵は立ち止まり、味方が己を恐怖から取り戻した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quō<span><br><br></span></a>
+<a class="note0">factō,<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">lacessendum<span>lacesso lacessere, lacessivi, lacessitus V (3rd)  <br>:provoke, excite, harass, challenge, harass; attack, assail;<br>(未来 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note0">hostem<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">committendum<span>committo committere, commisi, commissus V (3rd)  <br>:bring together, unite/join, connect/attach; put together, construct; entrust;<br>(未来 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note0">proelium<span></span></a>
+<a class="note1">aliēnum<span>alienus aliena -um, alienior -or -us, alienissimus -a -um ADJ  <br>:foreign; unconnected; another's; contrary; unworthy; averse, hostile; mad;<br>(n 単数 主格<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">tempus<span></span></a>
+<a class="note0">arbitrātus<span><br><br></span></a>
+<a class="note0">suō<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note1">continuit<span>contineo continere, continui, contentus V (2nd) TRANS  <br>:secure, maintain, sustain; fasten/hold in position; retain, keep safe, preserve;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">brevī<span><br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note1">intermissō<span>intermitto intermittere, intermisi, intermissus V (3rd)  <br>:interrupt; omit; stop; leave off (temporarily); leave a gap;<br>(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note0">legiōnēs<span><br><br></span></a>
+<a class="note0">redūxit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>quo facto : 独立奪格で、逆接の意、although this&nbsp;was accomplished </p>
+<p>arbitratus tempus esse alienum : alienumは敵対的と言う意味。「時期は良くないと考えた。」</p>
+<p>ad lacessendum hostem, (ad) committendum proelium ：ad + 動名詞、対格で目的を表す。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらを成し遂げたが、敵を殲滅する、戦いを開始するためには時期が良くないと判断して、自身を自分たちの場所に確保し、短時間で切り上、部隊を駐屯地に率いた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dum<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">geruntur,<span></span></a>
+<a class="note0">nostrīs<span><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">occupātīs<span>occupo occupare, occupavi, occupatus V (1st)  <br>:seize; gain; overtake; capture, occupy; attack;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">agrīs<span><br><br></span></a>
+<a class="note1">reliquī<span>reliquus 形容詞　ｍ複　主格　（名詞化）<br><br><br></span></a>
+<a class="note1">discessērunt.<span>discedo discedere, discessi, discessus V (3rd)  <br>:go/march off, depart, withdraw; scatter, dissipate; abandon; lay down (arms);<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>nostri ombibus occupatis : 独立奪格　「味方は全員忙しくしている間に」</p>
+<p>reliqui (ei) ,qui erant in agaris, dsiscesserunt. 畑にいた残りの人達は出発した。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>こういうことが進行中、味方は全員忙しくしている間に、残りの、彼らは畑にいたのだけれど、ブリタニア人は行ってしまった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Secūtae<span>secor seci, secuus sum DEP 完了分詞　受動　ｆ複　主格　;= follow, escort, attend<br><br><br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">continuōs<span>continuus continua, continuum ADJ  <br>:|continuous, connected/hanging together; uninterrupted; indivisible; lasting;<br>(m 複数  対格)<br></span></a>
+<a class="note0">complūrēs<span><br><br><br></span></a>
+<a class="note0">diēs<span><br><br></span></a>
+<a class="note1">tempestātēs,<span>tempestas tempestatis N (3rd) F  <br>:season, time, weather; storm;<br>(c 複数  主格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">continērent<span>contineo ３複　未完了　接続法　;= keep, hold<br><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">hostem<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">pugnā<span><br><br><br></span></a>
+<a class="note1">prohibērent.<span>3複　未完了　接続法<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>tempestates sunt secutae complures continuos dies 「嵐がその後の数日間続いた」diesは時の奪格。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>その後数日間嵐が続き、我々を駐屯地に閉じ込め、敵が戦闘することを妨げた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Interim<span></span></a>
+<a class="note1">barbarī<span>ｍ複　主格<br><br><br></span></a>
+<a class="note1">nūntiōs<span>nuntius nunti(i) N (2nd) M  <br>:messenger/herald/envoy; message (oral), warning; report; messenger's speech;<br>(c 複数  対格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">partēs<span><br><br></span></a>
+<a class="note1">dīmīsērunt<span>dimitto dimittere, dimisi, dimissus V (3rd) TRANS  <br>:send away/off; allow to go, let go/off; disband, discharge, dismiss (soldiers);<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note1">paucitātemque<span>paucitas paucitatis N (3rd) F  <br>:scarcity; paucity;<br>(c 単数 対格)<br></span></a>
+<a class="note0">nostrōrum<span><br><br></span></a>
+<a class="note1">mīlitum<span>miles militis N (3rd) M  <br>:soldier; foot soldier; soldiery; knight (Latham); knight's fee/service;<br>(c 複数  属格)<br></span></a>
+<a class="note1">suīs<span>suus 与格<br><br><br></span></a>
+<a class="note1">praedicāvērunt<span>praedico praedicare, praedicavi, praedicatus V (1st) TRANS  <br>:proclaim/declare/make known/publish/announce formally; praise/recommend; preach;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">quanta<span>quantus quanta, quantum ADJ  <br>:how great; how much/many; of what size/amount/degree/number/worth/price;<br>(n 複数  対格)<br></span></a>
+<a class="note1">praedae<span>praeda praedae N (1st) F  <br>:booty, loot, spoils, plunder, prey;<br>(c 単数 属格)<br></span></a>
+<a class="note1">faciendae<span>facio 動形容詞　ｆ単　属格　;= do, make, act<br><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">perpetuum<span>perpetuus perpetua, perpetuum ADJ  <br>:continuous, uninterpreted; whole; perpetual, lasting; everlasting;<br>(n 単数 対格)<br></span></a>
+<a class="note1">suī<span>suus m 単　属格　;= his, own<br><br><br></span></a>
+<a class="note1">līberandī<span>libero liberare, liberavi, liberatus V (1st)  <br>:free; acquit, absolve; manumit; liberate, release;<br>(未来 分詞 受動態 m 単数 属格)<br>動形容詞<br></span></a>
+<a class="note0">facultās<span><br><br></span></a>
+<a class="note1">darētur,<span>３単　未完了　接続法　受動<br><br><br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">Rōmānōs<span><br><br></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">expulissent,<span>expello expellere, expuli, expulsus V (3rd)  <br>:drive out, expel, banish; disown, reject;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">dēmōnstrāvērunt.<span>demonstro demonstrare, demonstravi, demonstratus V (1st) TRANS  <br>:point out/at/to, draw attention to; explain/describe/show, give an account of;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p><strong>barbari dimiserunt nuntios, praedicaverunt</strong> ~. 「未開人どもは使者を送り出し、～を知らしめた」</p>
+<p>次の文はちょっと混乱する。条件文の間接話法ではなく、疑問文の間接話法に、si~がついて全体としては条件文になっている構成である。条件文の間接話法ならば、帰結節は不定詞文になるはず。したがって si ~, demonstraverunt quanta ~　：という構成のはず。</p>
+<p><strong>praedae faciendae</strong> : 動形容詞文、praedum faciendi -&gt; praedae faciendae 「与えるであろう損害」</p>
+<p><strong>sui liberandi</strong> : 動形容詞文　suiの場合は性も数も無関係に用いられる。（NewLatin339.5)元々、中性単数形容詞の名詞的用法であるから。「自身を自由にする事」</p>
+<p>si Romanos catris <strong>expulissent</strong> : expulissentは過去完了であるが、ここでは<strong>未来完了の接続法</strong>と同じ。(接続法では未来、未来完了がないので、歴史時制（daretur)に続く接続法、過去完了は未来完了を表す。（NewLatin269)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>その間に、未開人どもはすべての地域に使者を送り出し、我々の軍勢の少なさを知らしめた。更に、もし砦のローマ軍を放逐すれは、どんなに大きな損害を与えられるか、未来永劫に自身に自由を与えられるかを、示した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note0">magnā<span><br><br></span></a>
+<a class="note0">multitūdine<span><br><br></span></a>
+<a class="note0">peditātūs<span><br><br><br></span></a>
+<a class="note0">equitātūsque<span><br><br><br></span></a>
+<a class="note1">coāctā<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>(完了 分詞 受動態 f 単数 主格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note0">vēnērunt.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>magna multitudine peditatus equitatus venerunt. 「非常に大勢の歩兵、騎兵がきた」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらにより集められた、非常な歩兵、騎兵の大軍が駐屯地に押し寄せた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

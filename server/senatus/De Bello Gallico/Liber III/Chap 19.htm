@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 19</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[19]<span></span></a>
+
+<a class="note0">Locus<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">castrōrum<span><br><br></span></a>
+<a class="note1">ēditus<span>editus edita, -um, editior, editssimus 形容詞　ｍ単　主格　;= high, elevated, rising<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">paulātim<span>paulatim 副詞　;= little by little, gradually<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">īmō<span>imus ima, imum 形容詞　最上級　奪格　;= inmost, deepest, bottommost<br></span></a>
+<a class="note1">acclīvis<span>acclivis acclivis, acclive 形容詞　単　主格　;= rising, sloping, accending<br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note1">passūs<span>passus passus M 複　対格　;= step, pace<br></span></a>
+<a class="note0">mīlle.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>paulatim acclivis ：　「ゆっくりと登っていき」</p>
+<p>passus mille : 時空の対格</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>砦のある場所は高いところである。ゆっくりとした上りで、最も低いところからは約1000歩の高さである。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hūc<span><br><br></span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note1">cursū<span>cursus crusus M 単　奪格　;= course, direction, line of advance<br></span></a>
+<a class="note0">contendērunt,<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">quam<span>この場合のquamは副詞で、;= how, how much, as than</span></a>
+<a class="note1">minimum<span>parvus 最上級　単　対格</span></a>
+<a class="note1">spatiī<span>spatium spati(i) N 単　属格　;= interval, time<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">colligendōs<span>colligo 未来分詞　受動　m複　対格　;= collect, assemble (ad + 動名詞）<br></span></a>
+<a class="note1">armandōsque<span>armo armare, armavi, armatus 未来分詞　受動　ｍ複　対格　;= equip, fit with armor, arm<br></span></a>
+<a class="note0">Rōmānīs<span><br><br></span></a>
+<a class="note0">darētur,<span><br><br></span></a>
+<a class="note1">exanimātīque<span>exanimo exanimare, exanimavi, exanimatus 完了分詞　受動 m複　主格　;= kill, tire, exhaust, be out of breath　<br></span></a>
+<a class="note1">pervēnērunt.<span>pervenio 3複　完了 ;= come to<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>mango cursu : at full speed</p>
+<p>quam minimum : as little as possible</p>
+<p>ad colligendos armandosque se : ad＋動名詞で目的 armandos se ：自身を武装する</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>出来るだけ、人を集めたり武装したりするための時間をローマ軍に与えないようにするために、彼らはそこを全速力で突進して来て、息を切らせて到着した。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sabīnus<span><br><br></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note1">hortātus<span>hortor 完了分詞　受動（DEP)　ｍ単　主格　;= encourage<br><br></span></a>
+<a class="note1">cupientibus<span>cupiens cupitis 形容詞　与格　;= desirous, eager, anxious</span></a>
+<a class="note0">signum<span></span></a>
+<a class="note0">dat.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>sous hortatus : 分詞構文、「部下を励まして」</p>
+<p>cupientibus (iis) : 与格で、兵士達のこと</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Sabinusは部下を励まし、はやる彼らに戦闘のシグナを与えた。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Impedītīs<span>impeditius impedita, -um 形容詞　複　奪格　;= hindered, hampered<br></span></a>
+<a class="note0">hostibus<span></span></a>
+<a class="note0">propter<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">ferēbant<span>fero ferre, tuli, latus 3複　未完了　;= bring, bear, consider, carry off<br></span></a>
+<a class="note1">onera<span>onus oeris N 複　対格　;= load, burden</span></a>
+<a class="note0">subitō<span><br><br></span></a>
+<a class="note0">duābus<span><br><br></span></a>
+<a class="note1">portīs<span>複　奪格<br></span></a>
+<a class="note1">ēruptiōnem<span>eruptio eruptionis F 単　対格　;= sortie, rush, sally<br></span></a>
+<a class="note1">fierī<span>fio = be made 不定詞<br></span></a>
+<a class="note0">iubet.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>impeditis hostibus : 独立奪格</p>
+<p>jubet subito eruptionem fieri : erpitioが成されることを命じた。「突撃を命じた」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>敵は荷物を運んできたので不自由であった。そこへSabinusは2つの門から突撃するよう命じた。</p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Factum<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">oportūnitāte<span>oportunitas oportunitatis F 単　奪格　;= cinvenience, advantagesness, oppotunity<br></span></a>
+<a class="note1">locī,<span>locum　属格<br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note1">īnscientiā<span>inscientia inscientiae F 単　奪格　;= ignorance<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">dēfatigātiōne,<span>defatigatio defatigationis F 単　奪格　;= weariness, fatigue, physical exhaustion<br></span></a>
+<a class="note1">virtūte<span>virtus virtustis F 単　奪格　;= strength, power, courage, bravery<br></span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">superiōrum<span>superus above, high 以外にlastという訳あり、= previous<br></span></a>
+<a class="note0">pugnārum<span><br><br></span></a>
+<a class="note1">exercitātiōne,<span>exercitatio exercitationis F 単　奪格　;= exercise, training, practice<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">ūnum<span><br><br></span></a>
+<a class="note0">quidem<span></span></a>
+<a class="note0">nostrōrum<span><br><br></span></a>
+<a class="note0">impetum<span></span></a>
+<a class="note1">ferrent<span>fero ferre, tuli, latus 3複　未完了　接続法　;= bring, <strong>bear</strong>, carry off</span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">statim<span>副詞　;= at once, immediately</span></a>
+<a class="note1">terga<span>tegrum tergi N 複　対格 ;= back, rear</span></a>
+<a class="note1">verterent.<span>verto vertere, verti, versus 3複　未完了　接続法　;= turn, turn around</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>factum est : ラテン語では不定のもの、人（it, one, people)が主語の様な文は非人称、受動が用いられる。この場合、主語は前出の命令、と解釈もできるが、もっと広い記述に思えるので、次のようなことが成された、と言う訳の方がよいかも？</p>
+<p><strong>superiorum : former</strong> (前の章でも出てきたが根拠は？）</p>
+<p>exercitatio = exercise/ training&nbsp;からexercitus&nbsp;が 正規軍</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>敵は実に味方の一撃に耐えられず、すぐさま反転して敗走した。それは一つは、場所が有利だっからであり、その他の理由は、敵の無知と疲労、味方の兵の勇敢さ、最近の戦いからの経験などである。</p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quōs<span><br><br></span></a>
+<a class="note0">impedītōs<span><br><br></span></a>
+<a class="note1">integrīs<span>integer integra, integrum 複　奪格　;= untouched, whole, fresh, uninjured<br></span></a>
+<a class="note1">vīribus<span>vis vis F 複　奪格　;= strength, force<br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note0">nostrī<span><br><br></span></a>
+<a class="note1">cōnsecūtī<span>consequor consequi, consectus sum DEP 完了分詞　ｍ複　主格　;= seek after, aim at, follow<br><br></span></a>
+<a class="note0">magnum<span></span></a>
+<a class="note0">numerum<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">occīdērunt;<span>occido occidere, occidi, occasus 3複　完了　;= kill, saly<br><br></span></a>
+<a class="note0">reliquōs<span><br><br></span></a>
+<a class="note0">equitēs<span><br><br></span></a>
+<a class="note1">consectātī<span>consector consectari, consectatus sum DEP 完了分詞　ｍ複　主格　;= seek, purpue, hint down, seek out to destry<br><br></span></a>
+<a class="note1">paucōs,<span>paucus pauci M 複　対格　;= only small, few, a few<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">fugā<span><br><br></span></a>
+<a class="note1">ēvāserant,<span>evado evadere, evasi, evasus 3複　過去完了　;= evade, escape, avoid<br></span></a>
+<a class="note1">relīquērunt.<span>relinquo 3複　完了　;= leave behind, abandon, be left<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>quos imepditos : 完了分詞に修飾されたquos</p>
+<p>integris virbus : 独立奪格　「全力をあげて」</p>
+<p>最初のconsecutiはconsequor、二番目のconsectatiはconsector、少しだけの違いで、意味もほとんど同じ？同根？</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>不自由な戦いを強いられた者共を味方の兵は全力で追いかけ、大変な数の人間を殺した。残りは騎兵が駆り立て、逃れられたのはほんの少数しかいなかった。</p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Sīc<span>副詞　;= thus, so , as follows<br></span></a>
+<a class="note0">ūnō<span><br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">dē<span></span></a>
+<a class="note1">nāvālī<span>navalis navalis navale 形容詞　単　奪格　;= naval, of ships<br></span></a>
+<a class="note0">pugnā<span><br><br></span></a>
+<a class="note0">Sabīnus<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">Sabīnī<span><br><br></span></a>
+<a class="note0">victōriā<span><br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">certior<span></span></a>
+<a class="note0">factus,<span></span></a>
+<a class="note0">cīvitātēsque<span><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">statim<span>statim ADV <br>:at once, immediately;<br><br></span></a>
+<a class="note0">Titūriō<span><br><br></span></a>
+<a class="note1">dēdidērunt.<span>dedo dedere, dedidi, deditus TRANS 3複　完了　;= give up, surrender<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>uno tempore : 時の奪格　一度に　⇒　同じ時に</p>
+<p>Sabinus est certior factus de navali pugna, Caesar est certior factus de Sabini victoria. </p>
+<p>Titurio : 与格、Titurius　Sabinusの事</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>同じときに、Sabinusは海戦について、カエサルはSabiusの勝利について知らされた。近隣の諸国は直ぐにSabinusに対し降伏してきた。</p>
+</div>
+</div>
+<div class="spacer">Line 8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Nam<span>接続詞　;= for, on the other hand, for instance</span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">bella<span></span></a>
+<a class="note1">suscipienda<span>suscipio suscipere, suscepi, susceptus 未来分詞　受動　m単　主格　;= undertake, support, accept, receive</span></a>
+<a class="note0">Gallōrum<span><br><br></span></a>
+<a class="note1">alacer<span>alacer alacris, alacrie, alacrior, alacerrrimus 形容詞　単　主格　;= eager, keen, quick, brisk, active</span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">prōmptus<span>promptus prompta -um 形容詞　単　主格　;= set forth, disclosed, ready, quick<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">animus,<span></span></a>
+<a class="note0">sīc<span><br><br></span></a>
+<a class="note1">mollis<span>mollis molle, mollior, mollissimus 形容詞　単　主格　;= soft, flexible, mild</span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">minimē<span>parvus minor, mimimus から出来た副詞　;= samll, little<br></span></a>
+<a class="note1">resistēns<span>resisto resistere, restiti ,- 現在分詞　単ｍ　主格　;= pause, resist, oppose<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">calamitātēs<span><br><br></span></a>
+<a class="note1">ferendās<span>fero 未来分詞　受動　ｆ複　対格　;= bring, bear<br></span></a>
+<a class="note1">mēns<span>mens mentis F 単　主格　;= mind, reason, judgement, plan, courage<br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>ad bella suscipienda</strong> : 動名詞でbellaを修飾　「行うべき戦いに対して」</p>
+<p><strong>ad calamitates ferendas</strong> : 同じ構文で　「耐えるべき災厄にたいして」</p>
+<p>Gallorum animus est alacer ac promptus,</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>このように、行われるべき戦いに対するガリア人の心は早く、前向きであるが、耐えられるべき災厄については柔らかく、最低限の抵抗しか示さない。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

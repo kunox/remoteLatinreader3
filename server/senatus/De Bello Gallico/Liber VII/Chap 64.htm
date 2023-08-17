@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 64</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[64]<span></span></a>
+
+<a class="note0">Ipse<span></span></a>
+<a class="note0">imperat<span></span></a>
+<a class="note0">reliquīs<span><br><br></span></a>
+<a class="note0">cīvitātibus<span><br><br></span></a>
+<a class="note0">obsidēs<span><br><br></span></a>
+<a class="note0">diemque<span></span></a>
+<a class="note0">eī<span><br><br></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note1">cōnstituit.<span>constituo constituere, constitui, constitutus V (3rd)  <br>:set up/in position, erect; place/dispose/locate; (call a) halt; plant (trees);<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>ipseはVercingetorixの事。</p>
+<p>ei rei : 其のこと<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>彼は残りの部族に人質を命じ、其のことの期日も決めた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Omnēs<span><br><br></span></a>
+<a class="note0">equitēs,<span><br><br></span></a>
+<a class="note0">quīndecim<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">numerō,<span><br><br></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note1">convenīre<span>convenio convenire, conveni, conventus V (4th)  <br>:|meet/assemble; go to meet; come together; (have sex); converge; visit/approach;<br>(２人称 単数 現在 受動態 命令法 ), (  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">iubet;<span></span></a>
+<a class="note1">peditātū<span>peditatus peditatus N (4th) M  <br>:infantry;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">anteā<span><br><br></span></a>
+<a class="note0">habuerit<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">fore<span>sum esse, fui, futurus V  <br>:be;<br>(  未来 能動態 不定詞 )<br></span></a>
+<a class="note1">contentum<span>contentus contenta -um, contentior -or -us, contentissimus -a -um ADJ  <br>:content, <strong>satisfied</strong> (w/ABL); content with, pleased;<br>&nbsp;(m 単数 対格)<br></span></a>
+<a class="note0">dīcit,<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">fortūnam<span><br><br></span></a>
+<a class="note1">temptātūrum<span>tempto temptare, temptavi, temptatus V (1st)  <br>:test, try; urge; worry; bribe;<br>(未来 分詞 能動態 m 単数 対格)<br>未来不定詞<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">aciē<span><br><br></span></a>
+<a class="note1">dīmicātūrum,<span>dimico dimicare, dimicavi, dimicatus V (1st) INTRANS  <br>:fight, battle; struggle/contend/strive; brandish weapons; be in conflict/peril;<br>(未来 分詞 能動態 m 単数 対格)<br></span></a>
+<a class="note0">sed,<span></span></a>
+<a class="note1">quoniam<span>quoniam CONJ <br>:because, since, seeing that;<br><br></span></a>
+<a class="note1">abundet<span>abundo abundare, abundavi, abundatus V (1st)  <br>:abound (in), have in large measure; overdo, exceed; overflow; be rich/numerous;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">equitātū,<span><br><br></span></a>
+<a class="note0">perfacile<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">factū<span>factum, factuでfacioの目的分詞<br><br><br></span></a>
+<a class="note1">frūmentātiōnibus<span>frumentatio frumentationis N (3rd) F  <br>:foraging; collecting of grain;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">pābulātiōnibusque<span>pabulatio pabulationis N (3rd) F  <br>:foraging;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">Rōmānōs<span><br><br></span></a>
+<a class="note0">prohibēre,<span><br><br></span></a>
+<a class="note0">aequō<span><br><br></span></a>
+<a class="note1">modo<span>modo CONJ <br>:but,<strong> if only</strong>; but only;<br><br></span></a>
+<a class="note0">animō<span><br><br></span></a>
+<a class="note0">suā<span><br><br></span></a>
+<a class="note1">ipsī<span>ipse ipsa, ipsum PRON  <br>:himself/herself/itself; the very/real/actual one; in person; themselves (pl.);<br>&nbsp;(m 複数  主格)<br></span></a>
+<a class="note1">frūmenta<span>frumentum frumenti N (2nd) N  <br>:grain; crops;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note1">corrumpant<span>corrumpo corrumpere, corrupi, corruptus V (3rd) TRANS  <br>:spoil/<strong>rot</strong>; taint/contaminate; damage/ruin, undo; destroy/deface; digest; infect;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">aedificiaque<span></span></a>
+<a class="note1">incendant,<span>incendo incendere, incendi, incensus V (3rd) TRANS  <br>:set on fire; set fire to, kindle, burn; cause to flame/burn; keep fire burning;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">quā<span></span></a>
+<a class="note1">reī<span>res rei N (5th) F  <br>:thing; event/affair/business; fact; cause; property;<br>(c 単数 属格)<br></span></a>
+<a class="note1">familiāris<span>familiaris familiaris N (3rd) C  <br>:member of household (family/servant/esp. slave); familiar acquaintance/friend;<br>(X 単数 属格)<br></span></a>
+<a class="note1">iactūrā<span>jactura jacturae N (1st) F  <br>:loss; sacrifice; expense, cost; throwing away/overboard;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">perpetuum<span>perpetuus perpetua, perpetuum ADJ  <br>:continuous, uninterpreted; whole; perpetual, lasting; everlasting;<br>&nbsp;(n 単数 対格)<br></span></a>
+<a class="note0">imperium<span></span></a>
+<a class="note0">lībertātemque<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">cōnsequī<span>consequor consequi, consecutus sum V (3rd) DEP  <br>:||seek after, aim at; achieve, reach; <strong>obtain</strong>; <strong>acquire</strong>, gain; grasp/comprehend;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">videant.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>quindecim milia numero 「其の数15000」という事であろうがこのnumeroは何の奪格？<br></p>
+<p><strong>se fore contentum</strong> : contentumは形容詞contentusで「満足している」の意。</p>
+<p><strong>esse perfacile factu</strong>. <u>factuは目的分詞奪格で「指定の奪格」</u>として扱われる。uで終わる目的分詞は非常に限られている。（NewLatin 340.2) </p>
+<p><strong>esse perfecile factu prhibere</strong>. 「遮断することに関して容易である。」</p>
+<p><strong>modo ipsi corrumpant sua frumenta incendant aedificiaque</strong>. : modoはonly if でここの接続法は、「奨励の接続法」と呼ばれ<strong>[let's ~]</strong>と訳される。（AG439, NewLatin 274)</p>
+<p><strong>qua jactura familiaris rei videant, se conseui perpetuum imperium libertatemque.　</strong>quaは奪格で「それにより」の意<br></p>
+<strong>
+</strong></div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>また彼は皆に数にして1万5000の騎兵を、素早く揃えるよう命令した。歩兵については、前から持っているものに満足しており、運命を試すようなことはしないし、戦線で戦うようなこともするつもりがないと言った。しかし騎兵に関して十分持つのは、ローマ軍を食料や飼料から遮断することが大変容易になるからである。平穏な気持ちで、穀物を腐らせ、建物を焼き払うようしようではないか。それらの見るであろう家族の財産の犠牲によって、我らに永遠の支配権と自由がもたらされるのである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">cōnstitūtīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">Aeduīs<span>Aeduus Aedui N (2nd) M  <br>:Aedui (pl.); (also Haedui); (tribe of Cen. Gaul - in Caesar's Gallic War);<br>(X 複数  奪格)<br></span></a>
+<a class="note0">Segusiāvīsque,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">fīnitimī<span>finitimus finitima, finitimum ADJ  <br>:neighboring, bordering, adjoining;<br>(m 複数  主格)<br><br></span></a>
+<a class="note1">prōvinciae,<span>provincia provinciae N (1st) F  <br>:province; office; duty; command;<br>(c 単数 与格)<br><br></span></a>
+<a class="note0">decem<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">peditum<span></span></a>
+<a class="note0">imperat;<span></span></a>
+<a class="note0">hūc<span><br><br></span></a>
+<a class="note1">addit<span>addo addere, addidi, additus V (3rd) TRANS  <br>:add, insert, bring/attach to, say in addition; increase; impart; associate;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">equitēs<span><br><br></span></a>
+<a class="note0">octingentos.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらの事が手配され、AuduiとSegusianiに対して、彼らの領土は属州と隣接していたのだが、1万の歩兵を命じ、それに８００の騎兵が付け加えられた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hīs<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(X 複数  与格)<br></span></a>
+<a class="note0">praeficit<span></span></a>
+<a class="note0">frātrem<span><br><br></span></a>
+<a class="note0">Eporēdorīgis<span><br><br></span></a>
+<a class="note0">bellumque<span></span></a>
+<a class="note1">īnferrī<span>infero inferre, intuli, illatus V TRANS  <br>:|inflict/　cause/　inflict/　impose/　inspire (w/DAT);<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">Allobrogibus<span>Allobrox Allobrogis N (3rd) M  <br>:Allobroges (pl.); (tribe of Gaul - in Caesar's Gallic War);<br>&nbsp;(X 複数  与格),<br></span></a>
+<a class="note0">iubet.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>inferi bellum Allogrogibus. Allobrogibusは与格で、間接目的語。inferiは「運ぶ」より「与える」の意。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらに対しEporedorixの兄弟を指揮者に任命し、Allobrogesと戦うよう命令した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Alterā<span>alter altera, alterum ADJ  <br>:one (of two); second/another; former/latter;<br>&nbsp;(f 単数 奪格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note1">Gabalōs<span>Gabalus Gabali N (2nd) M  <br>:Gabali, tribe of Gaul;<br>(c 複数  対格)<br></span></a>
+<a class="note0">proximōsque<span><br><br></span></a>
+<a class="note1">pāgōs<span>pagus pagi N (2nd) M  <br>:country district/community, canton;<br>(c 複数  対格)<br></span></a>
+<a class="note1">Arvernōrum<span>Arvernus Arverni N (2nd) M  <br>:Arverni (pl.); (tribe of SE Gaul - in Caesar's Gallic War);<br>(X 複数  属格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Helviōs,<span><br><br></span></a>
+<a class="note0">item<span></span></a>
+<a class="note0">Rutēnōs<span><br><br></span></a>
+<a class="note0">Cadūrcōsque<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Volcārum<span><br><br></span></a>
+<a class="note0">Arecomicōrum<span><br><br></span></a>
+<a class="note1">dēpopulandōs<span>depopulor depopulari, depopulatus sum V (1st) DEP  <br>:sack/ plunder/ pillage/ rob/ despoil; ravage/ devastate/ destroy /lay waste; overgraze;<br>(未来 分詞 受動態 m 複数  対格)<br><br></span></a>
+<a class="note0">mittit.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>ex altera parte : 別のところから、一方</p>
+<p>Gabalos proximosque pagos Arvenorum : 「GabaliとArverniの近隣の地域の部族を」</p>
+<p><strong>ad depopulandos fines</strong> Volcarum Arecomicorum. ad + 動名詞の変形 ad + 動形容詞+ 目的語<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>他方、Gabali族及びHerviiのArverni族の近隣諸国とRuteni族とCadurci族を、Volcae Arecominiの境界を荒らすために派遣した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nihilō<span><br><br></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note1">clandestīnīs<span>clandestinus clandestina, clandestinum ADJ  <br>:secret, hidden, concealed, clandestine; acting/done/made secretly/silently;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">nūntiīs<span>nuntius nunti(i) N (2nd) M  <br>:messenger/herald/envoy; message (oral), warning; report; messenger's speech;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">lēgātiōnibusque<span><br><br></span></a>
+<a class="note0">Allobrogas<span></span></a>
+<a class="note1">sollicitat,<span>sollicito sollicitare, sollicitavi, sollicitatus V (1st)  <br>:disturb, worry; stir up, arouse, agitate, incite;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">quōrum<span></span></a>
+<a class="note1">mentēs<span>mens mentis N (3rd) F  <br>:mind; reason, intellect, judgment; plan, intention, frame of mind; courage;<br>(c 複数  対格)<br></span></a>
+<a class="note1">nōndum<span>nondum ADV <br>:not yet;<br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">superiōre<span><br><br></span></a>
+<a class="note0">bellō<span><br><br></span></a>
+<a class="note1">resēdisse<span>resideo residere, resedi, resessus V (2nd)  <br>:sit down/on/in; settle; be perched; remain seated/idle/fixed/in place; squat;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">spērābat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>nihilominus = nevertheless<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>それらにも拘らず、VercingetorixはAllobrogesを秘密の伝言と使者によって懐柔しようとした。彼らの精神が前の戦いから立ち直っていないことを望みながら。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hōrum<span><br><br></span></a>
+<a class="note0">prīncipibus<span><br><br></span></a>
+<a class="note0">pecūniās,<span><br><br></span></a>
+<a class="note1">cīvitātī<span>civitas civitatis N (3rd) F  <br>:community/city/town/state; citizens; citizen rights/citizenship; naturalization;<br>(X 単数 与格)<br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">imperium<span></span></a>
+<a class="note0">tōtīus<span><br><br></span></a>
+<a class="note0">prōvinciae<span><br><br></span></a>
+<a class="note1">pollicētur.<span>polliceor polliceri, pollicitus sum V (2nd) DEP  <br>:promise;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>彼らの主要なものたちには、お金、国に対しては全属州の支配権を約束した。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

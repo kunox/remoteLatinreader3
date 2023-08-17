@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber II : Chap 29</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[29]<span></span></a>
+<a class="note1">Atuatucī,<span>Atuatucus Atuatuci N (2nd) M  <br>:Atuatuci, tribe of north (Belgic) Gaul - Caesar;<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">suprā<span>supra ADV <br>:on top; more; above; before, formerly;<br><br></span></a>
+<a class="note0">dīximus,<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">cōpiīs<span><br><br></span></a>
+<a class="note1">auxiliō<span>auxilium auxili(i) N (2nd) N  <br>:help, assistance; remedy/antidote; supporting resource/force; auxiliaries (pl.);<br>(X 単数 与格)<br></span></a>
+<a class="note1">Nerviīs<span>Nervius Nervii M 複　与格　</span></a>
+<a class="note1">venīrent,<span>venio venire, veni, ventus V (4th)  <br>:come;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">hāc<span><br><br></span></a>
+<a class="note0">pugnā<span><br><br></span></a>
+<a class="note0">nūntiātā<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">itinere<span></span></a>
+<a class="note0">domum<span></span></a>
+<a class="note1">revertērunt;<span>reverto revertere, reverti, - V (3rd)  <br>:turn back, go back, return; recur (usually DEP);<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note1">cūnctis<span>cunctus cuncta, cunctum ADJ  <br>:altogether (usu. pl.), in a body; every, all, entire; total/complete; whole of;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">oppidīs<span>複　奪格<br></span></a>
+<a class="note1">castellīsque<span>castellum castelli N 複　奪格　;= town, village<br></span></a>
+<a class="note1">dēsertīs<span>desero deserere, deserui, desertus V (3rd) TRANS  <br>:leave/depart/quit/desert; forsake/ <strong>abandon</strong>/give up; withdraw support, <strong>let down</strong>;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">sua<span></span></a>
+<a class="note1">omnia<span>複　対格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">ūnum<span><br><br></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note1">ēgregiē<span>egregie ADV <br>:excellently, admirably well; signally/remarkably, to outstanding degree;<br><br></span></a>
+<a class="note0">nātūrā<span><br><br></span></a>
+<a class="note1">mūnitum<span>munio munire, munivi, munitus V (4th)  <br>:fortify; strengthen; protect, defend, safeguard; build (road);<br>(完了 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note1">contulērunt.<span>confero conferre, contuli, collatus V TRANS  <br>:bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="construction" id="sheet1" style="display: none; background-color: rgb(255, 255, 248);">
+<div class="constline" id="10" style="border: currentColor; border-image: none;" spellcheck="false"><font color="#000000"><strong>Atuatucī,</strong></font> </div><div class="constline" style="border: currentColor; border-image: none; margin-left: 41px;" spellcheck="false">dē quibus suprā dīximus, </div><div class="constline" style="border: currentColor; border-image: none; margin-left: 41px;" spellcheck="false">cum omnibus cōpiīs auxiliō Nerviīs venīrent, （cumは譲歩節（反意節）「～したが」）</div><div class="constline" style="border: currentColor; border-image: none; margin-left: 361px;" spellcheck="false"><font color="#ff8000">[hāc pugnā nūntiātā ]</font></div><div class="constline" style="border: currentColor; border-image: none;" spellcheck="false"><strong><font color="#ff0000">revertērunt</font>;</strong> domum ex itinere </div><div class="constline" style="border: currentColor; border-image: none; margin-left: 241px;" spellcheck="false"><font color="#ff8000">[cūnctis oppidīs castellīsque dēsertīs ]</font></div><div class="constline" style="border: currentColor; border-image: none;" spellcheck="false"><font color="#ff0000"><strong>contulērunt.</strong></font> </div><div class="constline" style="border: currentColor; border-image: none;" spellcheck="false"><font color="#0000ff"><strong>sua omnia</strong> </font>in ūnum oppidum ēgregiē nātūrā mūnitum </div>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>Atuatucum : Chap１６に出てくる。</p>
+<p>auxilio Nerviis : 二重与格　（Predicative Dative)　<font color="#000000">ネルウィの援</font>軍として</p>
+<p>ex itinere : 直訳すれば「行軍から」</p>
+<p>reverterunt : 完了系では能動の<strong>reverto</strong>が使われ、現在系ではDEPの<strong>revertor</strong>が使われる。</p>
+<p>domum : <strong>動作限定の対格</strong>（NewLatin 182.1(b)) domum, domos, rusに使われる。（注：domumが建物としての家の場合は前置詞付き）</p>
+<p>cunctis oppidis castellisque desertis : 独立奪格　「城塞、村を壊し」</p>
+<p>sua omnia contulerunt : 自身のすべてのものを運び込んだ。</p>
+<p>この町は、現在のベルギーのNamurであると推測される。（ナポレオンも其処であると特定した！　C.C. Tancok）</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>Atuatucum族は、それについては前に述べたが、ネルウィ族の援軍のために全軍を率いてきたが、戦いの報告を受けて行軍途中から引き返した。そして自分たちの町、村などを取り壊し、自然の要塞とも言える一つの城塞に全てのものを集中した。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quod<span>qui quae, quod PRON  <br>:which?, what?; what kind of?;<br>(N 単数 主格)<br></span></a>
+<a class="note1">cum<span>副詞で　whereas, seeing thatというのがある。</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">circuitū<span>circuitus circuitus N (4th) M  <br>:going round; patrol/circuit; way/path round; circumference; outer surface/edge;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">partibus<span></span></a>
+<a class="note1">altissimās<span>altus alta -um, altior -or -us, altissimus -a -um ADJ  最上級<br>:high; deep/profound; shrill; lofty/noble; deep rooted; far-fetched; grown great;<br>(f 複数  対格)<br></span></a>
+<a class="note1">rūpēs<span>rupes rupis N (3rd) F  <br>:cliff; rock;<br>(c 複数  対格)<br></span></a>
+<a class="note1">dēiectusque<span>dejectus dejectus N (4th) M  <br>:<strong>slope</strong>, sloping surface, declivity; act of throwing/causing to fall/felling;<br>(c 複数  対格)<br><br></span></a>
+<a class="note0">habēret,<span><br><br></span></a>
+<a class="note0">ūnā<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note0">lēniter<span><br><br></span></a>
+<a class="note1">acclīvis<span>acclivis acclivis, acclive ADJ  <br>:rising, sloping/inclining upward, ascending, up hill; steep;<br>(c 単数 主格)<br></span></a>
+<a class="note1">aditus<span>aditus aditus M 単　主格　;= approach, access, attack, entrance</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">lātitūdinem<span>latitudo latitudinis N (3rd) F  <br>:width, breadth, extent;<br>(c 単数 対格)<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">amplius<span>ampluus ampla, -um amplior, amplissimus 単数　対格　;= great, large, sapcious, wide
+</span></a>
+<a class="note1">pedum<span>pes pedis M 複　属格　;= foot</span></a>
+<a class="note1">CC<span>ducentōrum<br><br></span></a>
+<a class="note1">relinquēbātur;<span>relinquo relinquere, reliqui, relictus V (3rd)  <br>:leave behind, abandon; (pass.) be left, remain; bequeath;<br>(３人称 単数 未完了 受動態 直説法 )<br></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">duplicī<span>duplex (gen.), duplicis ADJ  <br>:twofold, double; divided; two-faced;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">altissimō<span><br><br></span></a>
+<a class="note1">mūrō<span>murus muri N (2nd) M  <br>:wall, city wall;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">mūnierant;<span>=munieverant<br>munio munire, munivi, munitus V (4th)  <br>:fortify; strengthen; protect, defend, safeguard; build (road);<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0">magnī<span><br><br></span></a>
+<a class="note1">ponderis<span>pondus ponderis N 単　属格　;= weight, burden, impediment</span></a>
+<a class="note1">saxa<span>saxum saxi N 複主格　;= stone</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">praeacūtās<span>praeacutus praeacuta, praeacutum ADJ  <br>:sharpened, pointed;<br>(f 複数  対格)<br></span></a>
+<a class="note1">trabēs<span>trabes trabis N (3rd) F  <br>:tree-trunk, beam, timber; ship;<br>(c 複数  対格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">mūrō<span><br><br></span></a>
+<a class="note1">conlocābant.<span>conloco conlocare, conlocavi, conlocatus TRANS ３複　未完了　;= put, place, assemble, settle, position, apply<br></span></a>
+</p>
+</div>
+<div class="construction" id="sheet2" style="display: none; background-color: rgb(255, 255, 248);">
+<div class="constline" id="20" style="border: currentColor; border-image: none;" spellcheck="false">cum <strong>Quod</strong> <font color="#ff0000">habēret</font>, <font color="#0000ff">altissimās rūpēs dēiectusque </font>ex omnibus in circuitū partibus </div><div class="constline" style="border: currentColor; border-image: none;" spellcheck="false">lēniter acclīvis <strong>aditus</strong> （nōn amplius pedum CC ,ex ūnā parte ) <font color="#ff0000">relinquēbātur</font>; </div><div class="constline" style="border: currentColor; border-image: none; margin-left: 41px;" spellcheck="false"><font color="#0000ff">quem</font> locum <font color="#ff0000">mūnierant</font>; [<font color="#ff8000">duplicī altissimō mūrō] </font>, tum <font color="#ff0000">conlocābant</font>. <font color="#0000ff">magnī ponderis saxa et praeacūtās trabēs </font>in mūrō </div>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p><strike>quod cum ex omnibus~ : quodは接続詞で =because、cumは副詞で=seeing that、exは?全体から</strike></p>
+<p><strong>ex omnibus partibus in circuitu</strong> : exは[外側]のニュアンス。「囲われている全ての部分の外側」が逐語訳</p>
+<p>quodは中性、主格で、前の城砦を指す。<font style="background-color: rgb(255, 255, 0);">quae cum ita sint</font>の例文にあるように（NewLatin251.6)、関係代名詞の使い方の一つで、英語では指示代名詞と接続詞を使うような場合である。quod = this、cum = becauseで <strong>cum quod haberet</strong>の意。（それが持っているの、もっていたのだが？)（多分譲歩節）</p>
+<p>qui cum ~という表現は多い。Chap13、L2など。<font style="background-color: rgb(255, 255, 0);">qua de causa = for this reason</font>, など</p>
+<p>pedem duocentorum : 性質の属格</p>
+<p>CC : ducentorum</p>
+<p>magni ponderis saxa : 性質の属格</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>それは周り全てが切り立った崖と急な斜面をもっており、一箇所からのみ緩やかな上りで、広さが２００フィートにみたない入り口への通路が残されるのみである。その場所は二重の非常に高い壁で守られており、更にその壁には重たい石や先の鋭い木などを装備していた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipsī<span><br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">Cimbrīs<span>Cimber Cimbri N (2nd) M  <br>:<strong>Cimberi</strong> (pl.), a German tribe, invaded Gaul - in Caesar's "Gallic War";<br>(X 複数  奪格)<br></span></a>
+<a class="note1">Teutonīsque<span>Teutonus Teutoni N (2nd) M  <br>:<strong>Teutoni</strong>, German tribe from Baltic, migrated w/Cimbri, smashed by Marius 102 BC;<br>X 複数  奪格)<br></span></a>
+<a class="note1">prōgnātī,<span>prognatus prognata, prognatum ADJ  <br>:sprung from; descended;<br>&nbsp;(m 複数  主格)<br></span></a>
+<a class="note0">quī,<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">iter<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">prōvinciam<span><br><br></span></a>
+<a class="note0">nostram<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">Italiam<span></span></a>
+<a class="note0">facerent,<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">impedīmentīs<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">sēcum<span><br><br></span></a>
+<a class="note1">agere<span>ago agere, egi, actus V (3rd)  <br>:drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); deliver (speech);<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">portāre<span>porto portare, portavi, portatus V (1st)  <br>:carry, bring;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">poterant<span></span></a>
+<a class="note1">citrā<span>前置詞　(対格支配）　;= on this side, near side<br></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note1">dēpositīs<span>depono deponere, deposivi, depositus V (3rd) TRANS  <br>:put/lay down/aside/away; let drop/fall; give up; resign; deposit/entrust/commit;<br>(完了 分詞 受動態  複数&nbsp; 奪格),<br><br></span></a>
+<a class="note1">cūstōdiam<span>custodia custodiae N (1st) F  <br>:protection, safe-keeping, defense, preservation; custody, charge; prisoner;<br>(c 単数 対格)<br><br></span></a>
+<a class="note0">[ex<span></span></a>
+<a class="note0">suīs]<span><br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">praesidium<span>praesidium praesidii N 単　対格　;= protection, help, guard, garrison</span></a>
+<a class="note0">VI<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note1">ūnā<span>副詞　;= together, together with, along with<br></span></a>
+<a class="note1">relīquērant.<span>relinquo relinquere, reliqui, relictus V (3rd)  <br>:leave behind, abandon; (pass.) be left, remain; bequeath;<br>(3 複数 過去完了 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="construction" id="sheet3" style="display: none; background-color: rgb(255, 255, 248);">
+<div class="constline" id="30" style="border: currentColor; border-image: none;" spellcheck="false">Ipsī <font color="#ff0000">erant</font> prōgnātī, ex <font style="background-color: rgb(214, 255, 255);">Cimbrīs Teutonīsque </font></div><div class="constline" style="border: currentColor; border-image: none; margin-left: 41px;" spellcheck="false"><font style="background-color: rgb(214, 255, 255);"><font style="background-color: rgb(214, 255, 255);"><strong>quī</strong></font>,</font> </div><div class="constline" style="border: currentColor; border-image: none; margin-left: 81px;" spellcheck="false">cum facerent, iter in prōvinciam nostram atque Italiam </div><div class="constline" style="border: currentColor; border-image: none; margin-left: 241px;" spellcheck="false"><font color="#ff8000">[iīs<font style="background-color: rgb(255, 255, 153);"> impedīmentīs </font>dēpositīs </font>citrā flūmen Rhēnum ]</div><div class="constline" style="border: currentColor; border-image: none; margin-left: 281px;" spellcheck="false"><font style="background-color: rgb(255, 255, 153);"><font style="background-color: rgb(255, 255, 153);"><font style="background-color: rgb(255, 255, 153);">[quae</font> </font></font>sēcum agere ac portāre nōn poterant ]</div><div class="constline" style="border: currentColor; border-image: none; margin-left: 41px;" spellcheck="false"><font color="#ff0000"><strong>relīquērant.</strong> </font></div><div class="constline" style="border: currentColor; border-image: none; margin-left: 41px;" spellcheck="false"><font color="#ff0000"><font color="#ff0000"><font color="#0000ff"><strong>VI mīlia hominum cūstōdiam ac praesidium [ex suīs]</strong> </font></font></font></div>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>Ipsi erant prognati ex CImbris Teutonisque : 「彼らはCimbrisとTeutonisから下って来た」</p>
+<p>qui, cum : <strike>quiはIpsiのこと</strike>。quiはCimbris, Teutonisのこと。cumはWhen</p>
+<p>cum iter in ~ fecerent : facio iter　「旅をする」ことであるが侵略したことかも。</p>
+<p>iis impedimentis : 与格、行為の目的方向の与格で,「～のために」impedimentumと言うのはここでは牛など家畜と何かもの、従って動詞としてagere(駆る）とportare(運ぶ）が使用されている。そしてそれらは(quae(対格))彼らと共に運べなかったので、depositisしたもの。<strike>depositisは完了分詞受動で、impedimentisを修飾。</strike>　<strong>impedimentis depositis</strong>で独立奪格では？</p>
+<p>reliquerant VI milia hominum custdiam ac praesidium. このhomonumとcastodiam ac praesidiumは二重対格で、述語対格と言われるもの。「～として」</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>その彼らは、CimbrisとTeutonisの子孫で、彼らは、我々の属州とイタリアに侵入した時に、彼らとともに運べない家畜、物資などをライン河のこちらに残したのだが、それらを守り防御するために６０００名の人間を残したのである。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hī<span></span></a>
+<a class="note0">post<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">obitum<span>obitus obitus M 単　対格　;= approaching, visit, death,destruction, ruin</span></a>
+<a class="note0">multōs<span><br><br></span></a>
+<a class="note0">annōs<span><br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">fīnitimīs<span><br><br></span></a>
+<a class="note1">exagitātī,<span>exagito exagitare, exagitavi, exagitatus V (1st)  <br>:drive out; stir up, disturb continually, harass; attack, scold, discuss;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">aliās<span>alias ADV <br>:at/in another time/place; previously, subsequently; elsewhere; otherwise;<br><br></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">īnferrent,<span>infero inferre, intuli, inlatus TRANS ３複　未完了　接続法　;= inflict,cause, inpose<br></span></a>
+<a class="note0">aliās<span><br><br></span></a>
+<a class="note1">inlātum<span>infero inferre, intuli, illatus V TRANS  <br>:bring/carry in, import; advance, bring/march/step/move foward; impel, urge;<br>&nbsp;(完了 分詞 受動態 N 単数 対格)<br></span></a>
+<a class="note1">dēfenderent,<span>defendo defendere, defendi, defensus V (3rd) TRANS  <br>:defend/guard/protect, look after; act/speak/plead/write for defense; prosecute;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">cōnsēnsū<span>consensus consensus N (4th) M  <br>:agreement (opinion), consent, harmony; unanimity; conclusion, plot, conspiracy;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">omnium<span>omnis omnis N (3rd) C  <br>:all men (pl.), all persons;<br>(C 複数 属格)<br></span></a>
+<a class="note1">pāce<span>pax pacis N (3rd) F  <br>:peace; harmony;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">factā<span>facio facere, feci, factus V (3rd) TRANS  <br>:make/build/construct/create/cause/do; have built/made; fashion; work (metal);<br>(完了 分詞 受動態 F 単数 奪格)<br></span></a>
+<a class="note0">hunc<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">domiciliō<span>domicilium domicili(i) N (2nd) N  <br>:residence, home, dwelling, abode;<br>(X 単数 与格)<br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">dēlēgerant.<span>deligo deligere, delegi, delectus V (3rd) TRANS  <br>:pick/pluck off, cull; choose, select, levy (soldiers), enroll; conduct a levy;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="construction" id="sheet4" style="display: none; background-color: rgb(255, 255, 248);">
+<div class="constline" id="40" style="border: currentColor; border-image: none;" spellcheck="false"><strong>Hī</strong> </div><div class="constline" style="border: currentColor; border-image: none; margin-left: 41px;" spellcheck="false">exagitātī, ā fīnitimīs multōs annōs post eōrum obitum （分詞構文、hiを修飾）</div><div class="constline" style="border: currentColor; border-image: none; margin-left: 41px;" spellcheck="false">cum aliās bellum īnferrent, aliās inlātum dēfenderent, （副詞節）</div><div class="constline" style="border: currentColor; border-image: none; margin-left: 201px;" spellcheck="false"><font color="#ff8000">pāce factā cōnsēnsū eōrum omnium (後半の奪格は手段の奪格）</font></div><div class="constline" style="border: currentColor; border-image: none;" spellcheck="false"><font color="#ff0000"><strong>dēlēgerant.</strong> </font></div><div class="constline" style="border: currentColor; border-image: none;" spellcheck="false"><font color="#0000ff"><strong>locum </strong></font></div><div class="constline" style="border: currentColor; border-image: none;" spellcheck="false">domiciliō sibi </div>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>hi = sex milia homnium</p>
+<p>obitum : obitus = destruction (BC101, BC102にMariusによってAquae Sextiae, Vercellaeで敗れている）</p>
+<p>inferent bellum, defenderent inlatum (bellum) 戦いを起こしたり、起こされた戦いを防御したり、</p>
+<p>aliasはこの場合副詞で、sometime, in another timeの意。<font color="#ff0000">cumは難しいが時の節か</font>？</p>
+<p>sibi domicilio : sum動詞はないが、やはり目的を示す与格、二重与格である。(NewLatin 191.2.(b))</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>その人達は彼ら部族の滅亡の後長年に渡って近隣諸国と揉め事を起こしながら、ある時は戦いを仕掛け、ある時は抗争相手から防御しながら、全体としての合意で和平をなして、其処を彼らの居住地とした。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

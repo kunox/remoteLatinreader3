@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 41</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[41]<span></span></a>
+
+<a class="note0">Hāc<span><br><br></span></a>
+<a class="note0">ōrātiōne<span><br><br></span></a>
+<a class="note1">habitā<span>habeo 奪格 <br>oratine とで独立奪格<br></span></a>
+<a class="note1">mīrum<span>mirus, mira, mirum 形容詞   :wonderful, strange, remarkable,<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">modum<span>modus, modi 名詞 (2nd) M   :manner, mode, way,</span></a>
+<a class="note1">conversae<span>converto, convertere, converti, conversus 動詞 (3rd)   :turn upside down/side-to-side;完了 分詞 受動態 f 複 主格</span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note1">mentēs<span>mens, mentis 名詞 (3rd) F   :mind; reason, intellect <br>複　主格<br></span></a>
+<a class="note1">summaque<span>summus summa, summum ADJ  最上級<br>:highest, the top of; greatest; last; the end of;<br>&nbsp;f　単数&nbsp; 主格<br><br></span></a>
+<a class="note1">alacritās<span>alacritas, alacritatis 名詞 (3rd) F   :eagerness, enthusiasm,主格 単<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cupiditās<span>cupiditas, cupiditatis 名詞 (3rd) F  :enthusiasm/　eagerness/　passion;主格,単<br><br></span></a>
+<a class="note0">bellī<span><br><br></span></a>
+<a class="note1">gerendī<span>gero, gerere, gessi, gestus 動詞 (3rd)   :bear, carry, wear; carry on; manage, govern;　属格 動形容詞<br></span></a>
+<a class="note1">innāta<span>innascor, innasci, innatus sum 動詞 (3rd) DEP   :be born (in or on);完了 分詞 受動態 f 単 主格<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">prīncepsque<span><br><br></span></a>
+<a class="note1">X.<span>decima<br><br></span></a>
+<a class="note0">legiō<span><br><br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">tribūnōs<span>tribunus, tribuni 名詞 (2nd) M   :tribune; 複　対格<br></span></a>
+<a class="note1">mīlitum<span>miles, militis 名詞 (3rd) M   :soldier; foot soldier;属格<br></span></a>
+<a class="note1">eī<span>カエサルのこと与格</span></a>
+<a class="note1">grātiās<span>gratia, gratiae 名詞 (1st) F   :|favor/　goodwill/　kindness/　friendship; influence; gratitude; thanks (pl.); 対格<br></span></a>
+<a class="note1">ēgit<span>ago, agere, egi, actus 動詞 (3rd) thank (w/gratias); 3 単 完了 能動態 直説法<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">optimum<span></span></a>
+<a class="note1">iūdicium<span>judicium, judici(i) 名詞 (2nd) N   :|judgment/sentence/verdict; judging;対格<br></span></a>
+<a class="note1">fēcisset,<span>facio 3 単 過去完了 能動態 接続法<br></span></a>
+<a class="note0">sēque<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">gerendum<span>gero 動形容詞　対格</span></a>
+<a class="note1">parātissimam<span>paratus, parata -um, paratior -or -us, paratissimus -a -um 形容詞   :prepared; ready; equipped, provided;対格<br></span></a>
+<a class="note1">cōnfirmāvit.<span>confirmo, confirmare, confirmavi, confirmatus 動詞 (1st) TRANS   :|assert positively; declare, prove, confirm, support; sanction; encourage;3 単 完了 能動態 直説法<br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false">
+<p>oratione habita　：独立奪格　この演説があって</p>
+<p>mentes omnium conversae sunt&nbsp;&nbsp;:　みんなの気持ちが変わった</p>
+<p>in mirum modum　:よいように　（in wonderful manner)</p>
+<p>que summa alacritas et cupiditas belli gerendi est innata. </p>
+<p>summaはsuperusの最上級、ｆ単でalacritasを修飾。あとのcupiditasにもsummaが省略されていると考える。</p>
+<p>que priceps : このprincepsは形容詞だが、副詞的に訳す。（NewLatin239)</p>
+<p><strike>ad bellum gerendum : 動形容詞構文</strike></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>この演説がなされ、皆の気持ちが良い方向に変わった。戦いに対する熱意と情熱が生じた。まず第十軍団からカエサルにトリビューンを通して、最高の評価をしてくれたことに対して感謝がなされ、彼らが戦いに対して準備ができている事を保証した。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Deinde<span>deinde, 副詞   :then/next/afterward; thereon/henceforth/from there/then; in next position/place;</span></a>
+<a class="note0">reliquae<span></span></a>
+<a class="note0">legiōnēs<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">tribūnīs<span><br><br></span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">prīmōrum<span>primus, prima, primum 形容詞   :first, foremost/best, chief, principal; nearest/next; 属格<br></span></a>
+<a class="note1">ōrdinum<span>ordo, ordinis 名詞 (3rd) M   :row, order/rank; 属格</span></a>
+<a class="note1">centuriōnibus<span>centurio, centurionis 名詞 (3rd) M   :centurion, captain/commander of a century/company; 奪格 <br>centuriones(対格）とするテキストの方が多い<br></span></a>
+<a class="note1">ēgērunt<span>ago, agere, egi, actus 動詞 (3rd)   :drive/urge/conduct/act; 3 複 完了 能動態 直説法<br></span></a>
+<a class="note0">utī<span></span></a>
+<a class="note1">Caesarī<span>与格</span></a>
+<a class="note1">satis<span>satisfacerent 3 複 未完了 能動態 接続法</span></a>
+<a class="note0">facerent:<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">umquam<span>umquam, 副詞   :ever, at any time;</span></a>
+<a class="note1">dubitāsse<span>dubitavisse <br>doubt 不定詞<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">timuisse<span>timeo, timere, timui, - 動詞 (2nd)   :fear, dread, be afraid  <br>不定詞</span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">dē<span></span></a>
+<a class="note1">summā<span>summa, summae 名詞 (1st) F   :sum; summary; chief point, essence,奪格</span></a>
+<a class="note0">bellī<span></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note1">iūdicium<span>judicium, judici(i) 名詞 (2nd) N   :|judgment/sentence/verdict; <br>対格<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">imperātōris<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">exīstimāvisse.<span>existimo, existimare, existimavi, existimatus 動詞 (1st) TRANS   :value/esteem; form/hold opinion/view; 不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>reliquae legiones egerunt uti Caesari satis facerent　：　satisfacerentと１語のテキスト多し。<strike>カエサルに満足してもらおうと</strike>ago（Act or Urge)した。<strong>satisfecerent = apologize</strong></p>
+<p>se neque dubitasse umquam ：　一度たりとも疑ったことはない</p>
+<p>neque timuisse ：怯えたことはない</p>
+<p>neque existimavisse iudicium de summa belli esse suum :戦いの主要点に対する判断が彼らのものであると考えない。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そして残りの軍団は、兵士のトリビューンや上級の百人隊長などとともにカエサル<strike>を満足させようとした</strike>謝罪した。曰く、彼らは一度たりとも疑ったことはないし、怯えたこともなければ、戦いの主要点についての判断が彼らのものであると考えたことない、と。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eōrum<span><br><br></span></a>
+<a class="note1">satisfactiōne<span>satisfactio, satisfactionis 名詞 (3rd) F   :penalty; satisfaction for an offense; 奪格<br></span></a>
+<a class="note1">acceptā<span>accipio, accipere, accepi, acceptus 動詞 (3rd) TRANS   :take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;完了 分詞 受動態 f 単 奪格　独立奪格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">itinere<span>itiner, itineris 名詞 (3rd) N   :journey; road; passage, path; march奪格</span></a>
+<a class="note1">exquīsītō<span>exquiro, exquirere, exquisivi, exquisitus 動詞 (3rd)   :seek out, search for, hunt up; inquire into; 完了 分詞 受動態 m 単 奪格<br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">Dīviciācum,<span><br><br></span></a>
+<a class="note1">quod<span>= because</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Gallīs<span></span></a>
+<a class="note1">eī<span>与格、Diviciacumの事</span></a>
+<a class="note0">maximam<span></span></a>
+<a class="note1">fidem<span>fides, fidei 名詞 (5th) F   :faith, loyalty; honesty; credit; confidence, trust, belief; good faith;</span></a>
+<a class="note0">habēbat,<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">mīlium<span><br><br></span></a>
+<a class="note1">amplius<span>amplius, undeclined 形容詞   :greater (w/indef. subject, eg., number than), further/more, longer;</span></a>
+<a class="note1">quīnquāgintā<span>quinquaginta, quinquagesimus -a -um, quinquageni -ae -a, quinquagie(n)s 数詞   :fifty;</span></a>
+<a class="note1">circuitū<span>circuitus, circuitus 名詞 (4th) M   :going round; patrol/circuit; way 奪格<br></span></a>
+<a class="note1">locīs<span>奪格</span></a>
+<a class="note1">apertīs<span>apertus, aperta -um, apertior -or -us, apertissimus -a -um 形容詞   :open/public/free; 奪格<br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note1">dūceret,<span>duco, ducere, additional, forms 動詞   :lead, command;3 単 未完了 能動態 接続法<br></span></a>
+<a class="note0">dē<span></span></a>
+<a class="note0">quārtā<span><br><br></span></a>
+<a class="note0">vigiliā,<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">dīxerat,<span>dico <br>3 単 過去完了 能動態 直説法<br></span></a>
+<a class="note1">profectus<span>proficio, proficere, profeci, profectus 動詞 (3rd)   :depart, set out, proceed ;完了 分詞 受動態 m 単 主格<br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>satisfactione accepta</strong> : 独立奪格　「謝罪は受け入れられ」</p>
+<p><strong>itinere exquisito</strong> : 独立奪格「見つけておいた行路で」</p>
+<p>quod habebat ei maximam fidem ex Gallis : <strong>quod = because</strong></p>
+<p><strong>ut exercitum duceret</strong> : <font color="#0000ff">duceretはitinereを参照している</font>。その道は～に軍隊を導びくために（目的のut節で接続法）</p>
+<p>milium (passuum) quiauaginta : miliumは「性質の属格」で広さ長さを表す。（NewLatin 203.2)、circuituに掛かる。circuituは迂回路の意味。森に覆われていない場所を行軍するためには迂回をしなければならない。circuituは「<strong>手段の奪格</strong>？」</p>
+<p>locis apertis : 「<strong>通り道の奪格</strong>」（NewLatin218.9) 「開けた場所を通って」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの謝罪は受け入れられ、ガリアの中では最も信頼していたDiviciacusにより見つけられていたルートに、それは開けた場所を通って軍隊を導くための50マイル以上に渡る迂回路であったのだが、前に言ったように第４当直時に出発した。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Septimō<span>septimo : 　NUM20 序数7<br></span></a>
+<a class="note0">diē,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">iter<span></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">intermitteret,<span>intermitto, intermittere, intermisi, intermissus 動詞 (3rd)   :interrupt; omit; stop;3 単 未完了 能動態 接続法</span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">explōrātōribus<span><br><br></span></a>
+<a class="note0">certior<span></span></a>
+<a class="note0">factus<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">Ariovistī<span><br><br></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">nostrīs<span></span></a>
+<a class="note0">mīlia<span></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note1">IIII<span>quatuor = 4</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">XX<span>viginti, vicesimus -a -um, viceni -ae -a, vicie(n)s 数詞   :twenty;</span></a>
+<a class="note1">abesse.<span>absum, abesse, abfui, abfuturus 動詞   :be away/absent/distant/missing;</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>７日間、何の障害もなく行軍し、斥候によって分かった事はAriovistusの軍勢が我軍から２４マイルのところにいることであった。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

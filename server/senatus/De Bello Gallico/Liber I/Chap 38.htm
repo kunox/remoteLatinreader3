@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 38</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[38]<span></span></a>
+
+<a class="note0">Cum<span></span></a>
+<a class="note1">trīduī<span>triduum, tridui 名詞 (2nd) N   :three days; 属格<br></span></a>
+<a class="note1">viam<span>via <br>via, viae 名詞 (1st) F   :way, road, street; journey; 対格</span></a>
+<a class="note1">prōcessisset,<span>procedo, procedere, processi, processus 動詞 (3rd)   :proceed; advance; appear; 3 単 過去完了 能動態 接続法)<br></span></a>
+<a class="note1">nūntiātum<span>nuntio, nuntiare, nuntiavi, nuntiatus 動詞 (1st) TRANS   :announce/report/bring word/give warning; (完了 分詞 受動態 m 単 対格<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">eī<span>与格　カエサル</span></a>
+<a class="note1">Ariovistum<span>対格　conteendereの主語</span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">cōpiīs<span><br><br></span></a>
+<a class="note1">ad<span>対格支配　 <br>攻撃されるべきウェソンティオに向かって</span></a>
+<a class="note1">occupandum<span>occupo, occupare, occupavi, occupatus 動詞 (1st)   :seize; gain; overtake; capture, occupy; attack; 未来 分詞 受動態 m 単 対格　Gerundive <br>Vesontinemを修飾</span></a>
+<a class="note1">Vesontiōnem,<span>Vesontio 現在のBesancon<br><br></span></a>
+<a class="note1">quod<span>中性。<br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note0">maximum<span></span></a>
+<a class="note0">Sēquanōrum,<span><br><br></span></a>
+<a class="note1">contendere<span>contendo 不定詞</span></a>
+<a class="note1">[trīduīque<span>triduum tridui N 単　属格　;= three days<br><br><br></span></a>
+<a class="note1">viam<span>via viae N 単　対格　;= way, road, journey<br><br></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">suīs<span></span></a>
+<a class="note0">fīnibus<span></span></a>
+<a class="note1">prōcessisse].<span>procedo 完了　不定詞　;= procedd, advance<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>processisset tridui viam : <strong>viam</strong>は「<strong>同族対格</strong>」と言われるもの。（NewLatin176.4.a, AG 390)　procedoは自動詞（進む）であるが、意味が似ている名詞を結果の対格として取ることがある。副詞的に訳される。</p>
+<p><strong>tridui</strong>は属格で、「<strong>性質の属格</strong>」（NewLatin203.2) 広さ、長さなどを表す。</p>
+<p>nuntiatum est ei ei=カエサル（与格）：カエサルにレポートされた　内容はAriovistum以下</p>
+<p><strong>ad occupandum Vesontionem</strong> : <strong>動形容詞構</strong>文。　ad occupandumは ad + 動名詞で目的を表し、その目的語はVesontionem.　それの性、格、数を合わせた動形容詞がoccupandum<strike>。（結局同じで区別がつかない？）</strike> 区別はある。<strong>動名詞は属格と奪格の時にしか直接目的語を取れない</strong>。（NewLatin338.5) なので動形容詞構文としか解釈出来ない。</p>
+<p><strong>quod est oppidum</strong> ~ . quodは関係代名詞quiの中性、単数で先行詞はVesontionem（ｍ）であるが、<u>関係代名詞を主語とする述語があるので、この場合oppidumでそれに合わせて中性になっている</u>。（NewLatin250.3)</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>3日間進軍したところで、アリオウィストゥスが彼の全ての軍勢を率いてウェソンティオを、それはセクアナの最も主要な城塞であったが、攻略すべく向かっているとの報告があった。（それは3日、彼の領地から進んだとところである）</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Id<span>accideretの主語</span></a>
+<a class="note1">nē<span>否定的な目的を表す副詞節の接続詞 <br>～しないように<br></span></a>
+<a class="note1">accideret,<span>accido, accidere, accidi, - 動詞 (3rd)   :fall upon/down/to/at or near, descend, alight; happen, occur; happen to (DAT);3 単 未完了 能動態 接続法</span></a>
+<a class="note1">magnopere<span>magnopere, 副詞   :greatly, exceedingly; with great effort; very much; particularly, especially;</span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">praecavendum<span>praecaveo, praecavere, praecavi, praecautus 動詞 (2nd)   :guard (against), beware;(未来 分詞 受動態 m 単 対格</span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">exīstimābat.<span>existimo 3 単 未完了 能動態 直説法<br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>praecavendum : 動形容詞で、sibiは行為者の与格<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>それが起きないように最大限の防衛をすべきであると、カエサルは判断した。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Namque<span>namque, 接続詞   :for and in fact, on the other hand; insomuch as (strengthened nam);</span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note1">rērum<span>res 　複　属格<br></span></a>
+<a class="note1">quae<span>f 複　主格</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">ūsuī<span>usus, usus 名詞 (4th) M   :use, enjoyment; experience, skill, advantage; custom;与格<br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">summa<span>summus, summa, summum 形容詞   :highest, the top of; greatest; last; the end of;</span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note1">facultās,<span>facultas, facultatis 名詞 (3rd) F   :means; ability, skill; opportunity, chance; resources (pl.), supplies; X 単　主格<br><br></span></a>
+<a class="note0">idque<span></span></a>
+<a class="note1">nātūrā<span>natura, naturae 名詞 (1st) F   :nature; birth; character;奪格（手段）<br></span></a>
+<a class="note1">locī<span>locus　属格<br></span></a>
+<a class="note1">sīc<span>sic, 副詞   :thus, so; as follows; in another way; in such a way;<br></span></a>
+<a class="note1">mūniēbātur<span>munio, munire, munivi, munitus 動詞 (4th)   :fortify; strengthen; protect, defend, safeguard; build (road);3 単 未完了 受動態 直説法<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">magnam<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">dūcendum<span>duco, ducere, duxi, ductus 動詞 (3rd)   :lead, command; think, consider, regard; prolong;未来 分詞 受動態 m 単 対格 動名詞<br><br></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">daret<span>3 単 未完了 能動態 接続法 <br>do</span></a>
+<a class="note1">facultātem,<span>facultas, facultatis 名詞 (3rd) F   :means; ability, skill; opportunity, chance; resources (pl.), supplies; 対格<br></span></a>
+<a class="note0">proptereā<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note1">[alduas]<span>Alduasdubis = Doubas = Doubs</span></a>
+<a class="note0">Dubis<span></span></a>
+<a class="note1">ut<span>= as</span></a>
+<a class="note1">circinō<span>circinus, circini 名詞 (2nd) M   :pair of compasses; circular line/arc;奪格<br></span></a>
+<a class="note1">circumductum<span>circumduco, circumducere, circumduxi, circumductus 動詞 (3rd) TRANS   :|lead/wheel/draw a line/ring around/in a circle; prolong (sound); build around;(完了 分詞 受動態 m 単 対格</span></a>
+<a class="note1">paene<span>paene, 副詞   :nearly, almost; mostly;</span></a>
+<a class="note0">tōtum<span><br><br></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note1">cingit,<span>cingo, cingere, cinxi, cinctus 動詞 (3rd) TRANS   :surround/encircle/ring; enclose; beleaguer; accompany; gird, equip; ring (tree); 3 単 現在 能動態 直説法</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Namque summa facultas erat in eo oppido</strong> :　実に、最高の「もの」がその町の中にある。</p>
+<p>quae erant usui ad bellum : resにかかる形容詞句　erant usui = for use&nbsp;&nbsp;ad bellum = to war</p>
+<p>このUSUI（与格）は「<strong>述語与格</strong>」とか「<strong>目的の与格</strong>」と言われ、主語＋SUM +名詞与格　（＋別な与格）の形式 (<em>NewLatin 191.1</em>)</p>
+<p><strong>omnium rerum quae erat usui ad bellum</strong> :戦争のために役立つ全てのものの（facultas =物資）<strong>omnium rerumは部分の属格</strong>で、summa facultasを修飾。</p>
+<p>id muniebantur natura loci:　「それは場所の自然により要塞化されていた」、が逐語訳 naturaは手段の奪格</p>
+<p><strong>sic ut ～　</strong>：～の具合に　～という風に　（in a such way that~)</p>
+<p>ad ducendum bellum : <strike>長引かされるべき戦いにために　（<strong>ad + 動名詞、対格は目的を表す</strong>）(<em>NewLatin 338.3</em>) </strike>ここは「戦いを長引かせるための」の方がしっくりする。そうだとするとbellumはducoの目的語になるので、Line1と同様、動形容詞文である。</p>
+<p><strong>daret magnam facultatem</strong> : 素晴らしい便宜を与えてくれる</p>
+<p>flumen Dubis cingit paene totum oppidum. : Dubis河は殆ど町全体を取り囲んでいる</p>
+<p>ut circino circumductum : まるでコンパスによって描かれたように</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>実にその町の中には、戦争に役立つ全てのものの中でも最高の物資、資源がある。またそこは自然によって要塞化されており、戦いを長引かせるための非常な便宜を与えてくれる。と言うのは、Dubis河が、まるでコンパスで描いたように、殆ど町全体を取り囲むように流れているからである。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">reliquum<span>reliquus, reliqua, reliquum 形容詞   :rest of/remaining/available/left; surviving; future/further; yet to be/owed;対格</span></a>
+<a class="note1">spatium,<span>spatium, spati(i) 名詞 (2nd) N   :space;対格</span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">amplius<span>amplus, ampla -um, amplior -or -us, amplissimus -a -um 形容詞   :great, large, spacious, wide, 比較級</span></a>
+<a class="note0">pedum<span></span></a>
+<a class="note1">MDC,<span>M=1000 <br>DC= 600 <br>DC表記のテキスト多数</span></a>
+<a class="note1">quā<span>qua, 副詞   :where; by which route;<br></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note1">intermittit,<span>intermitto, intermittere, intermisi, intermissus 動詞 (3rd)   :interrupt; omit; stop; leave off (temporarily); leave a gap; 3 単 現在 能動態 直説法</span></a>
+<a class="note0">mōns<span><br><br></span></a>
+<a class="note1">continet<span>contineo, continere, continui, contentus 動詞 (2nd) TRANS   :secure, maintain, sustain; fasten/<strong>hold in position</strong>; retain3 単 現在 能動態 直説法)<br></span></a>
+<a class="note0">magnā<span><br><br></span></a>
+<a class="note1">altitūdine,<span>F 単　奪格　（性質の奪格）<br><br><br></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note1">ut<span>続く結果を述べるut <br>so that</span></a>
+<a class="note1">rādīcēs<span>radix, radicis 名詞 (3rd) F   :root; base; square-root (math);複　対格<br><br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">montis<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">utrāque<span>uter, utra, utrum 形容詞   :|(w/que) each/either (of two); both (separately); each side (pl.), each set; 単　奪格<br></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note1">rīpae<span>ripa, ripae 名詞 (1st) F   :bank; 複　主格<br><br></span></a>
+<a class="note0">flūminis<span><br><br></span></a>
+<a class="note1">contingant,<span>contingo, contingere, contigi, contactus 動詞 (3rd) TRANS   :touch; reach (to); border on, be connected with; affect, hit; take hold, seize;3 複 現在 能動態 接続法</span></a>
+<a class="note1">hunc<span>hic 代名詞　ｍ単　対格　<br><br></span></a>
+<a class="note1">mūrus<span>murus, muri 名詞 (2nd) M   :wall, city wall;主格<br></span></a>
+<a class="note1">circumdatus<span>circumdo, circumdare, circumdedi, circumdatus 動詞 (1st) TRANS   :surround; envelop, post/put/place/build around; enclose; beset; pass around; 完了 分詞 受動態 m 単 主格</span></a>
+<a class="note1">arcem<span>arcs, arcis 名詞 (3rd) F   :citadel, stronghold; height; the Capitoline hill Rome; defense, refuge; 単　対格</span></a>
+<a class="note1">efficit<span>efficio, efficere, effeci, effectus 動詞 (3rd)   :bring about; effect, execute, cause; accomplish; make, produce; prove; 3 単 現在 能動態 直説法</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note1">coniungit.<span>conjungo, conjungere, conjunxi, conjunctus 動詞 (3rd) TRANS   :connect, join/yoke together;3 単 現在 能動態 直説法)</span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false">
+<p>MDC　:　M = 1000、DC=600 (mille et sexcentorum)</p>
+<p>reliquum spatium&nbsp;&nbsp;qua flumen intermittit : 河が途切れている残りの土地は</p>
+<p>mons continet magna altitudine : altitudineは性質の奪格（Abl of Quality) (NewLatin 224)</p>
+<p>ut = so that</p>
+<p><strong>ripae fluminis contingant radices eius montis</strong>, : (河の両岸の）土手は山の麓と繋がっている。<strong>ripaeが主語で、radicesは目的語</strong>。</p>
+<p><strong>murus circumdatus efficit hunc arcem</strong>. efficitの目的語はhunc<strike>でこれは山の麓</strike>を指している。(正確に言えばhuncは男性名詞であり、radixは女性なので合わない。したがって<strong>mons</strong>(男性名詞）を指していると考えるべきであろう。）arcemは述語対格で、「壁が山を砦に成す」（hunc = arcem)　(newLatin 177.1)</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>河の途切れている、残りのスペースは、それは1600(600?)フィートも無かったが、そこでは非常に高い山がそびえており、山の麓は両側で河の土手と合流している。そこを取り囲む壁が砦を構成し、城塞と繋がって居る。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hūc<span>huc, 副詞   :here, to this place; to this point;<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">magnīs<span>奪格<br></span></a>
+<a class="note1">nocturnīs<span>nocturnus, nocturna, nocturnum 形容詞   :nocturnal, of night, at night, by night;奪格<br></span></a>
+<a class="note1">diurnīsque<span>diurnus, diurna, diurnum 形容詞   :by day, of the day; daily;<br></span></a>
+<a class="note0">itineribus<span></span></a>
+<a class="note1">contendit<span>contendo = rush in</span></a>
+<a class="note1">occupātōque<span>occupo, occupare, occupavi, occupatus 動詞 (1st)   :seize; gain; overtake; capture, occupy; attack;完了分詞　受動　奪格<br></span></a>
+<a class="note1">oppidō<span>奪格　occupato oppidoで独立奪格<br></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note1">praesidium<span>praesidium, praesidi(i) 名詞 (2nd) N   :protection; help; guard; garrison, detachment</span></a>
+<a class="note1">conlocat.<span>conloco, conlocare, conlocavi, conlocatus 動詞 (1st) TRANS   :place/put/set in order/proper position, arrange; 3 単 現在 能動態 直説法</span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>Caesar contendit, que occupato oppido, conlocat praesidium ibi. : occupato oppido は独立奪格で、城塞を占領して<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>その場所へカエサルは昼夜兼行で急行し、町を占領して駐屯地とした。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

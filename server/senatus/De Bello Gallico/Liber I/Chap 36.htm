@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 36</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[36]<span></span></a>
+
+<a class="note0">Ad<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">Ariovistus<span></span></a>
+<a class="note0">respondit:<span></span></a>
+<a class="note1">iūs<span>jus, juris 名詞 (3rd) N   :law; legal system; code; right; duty; justice; court; binding decision; oath;<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">bellī<span>bellum 属格<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">vīcissent<span>vinco 3 複 過去完了 能動態 接続法<br></span></a>
+<a class="note1">iīs<span>is 与格　imperoの目的語 <br>iis quos vicissent<br></span></a>
+<a class="note0">quōs<span></span></a>
+<a class="note0">vīcissent<span><br><br></span></a>
+<a class="note1">quem<span>qui 対格　（ｍ単）</span></a>
+<a class="note1">ad<span>quemadmodum副詞 <br>in what way, how; as, just as; to the extent that;</span></a>
+<a class="note1">modum<span>modus, modi 名詞 (2nd) M   :manner, mode, way, method; rule, rhythm, beat, measure, size; bound, limit; 対格</span></a>
+<a class="note1">vellent<span>volo3 複 未完了 能動態 接続法)</span></a>
+<a class="note1">imperārent.<span>impero, imperare, imperavi, imperatus 動詞 (1st)   :order, command, levy; rule (over) (w/DAT);<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>belli jus esse : 戦争の正義とは</p>
+<p>qui vicissent　：勝ったものが、</p>
+<p>iis quos vicissent　：(私が）勝った相手に対し　= whom they had conquered</p>
+<p><strong>quemadmodum</strong>はそれ自体で副詞として辞書にある。逐語的には　<strong>according to which way</strong> で <u>in what way, how, as, just as, to the extent that</u> の意味</p>
+<p>belli ius esse ut qui vicissent imperarent iis quos vicissent.</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>それに対し、アリオウィストゥスから返事があった。（曰く）戦争の正義とは、勝ったものが負けたものをいかようにでも思い通りに命令するということである。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Item<span>item, 副詞   :likewise; besides, also, similarly;</span></a>
+<a class="note0">populum<span></span></a>
+<a class="note0">Rōmānum<span><br><br></span></a>
+<a class="note1">victīs<span>vinco　完了分詞、受動　与格　imperoから<br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">alterius<span>alius&nbsp;X単　属格　代名詞的形容詞;= the other<br><br></span></a>
+<a class="note1">praescrīptum,<span>praescriptum, praescripti 名詞 (2nd) N   :precept, rule; route; <br>対格<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note1">arbitrium<span>arbitrium, arbitri(i) 名詞 (2nd) N   :arbitration; choice, judgment, decision; sentence; will, mastery, authority</span></a>
+<a class="note1">imperāre<span>impero, imperare, imperavi, imperatus 動詞 (1st)   :order, command, levy; rule (over) (w/DAT);<br></span></a>
+<a class="note1">cōnsuēsse.<span>=consuevisse <br>consuesco, consuescere, consuevi, consuetus 動詞 (3rd)   :accustom oneself; become/be accustomed/used;不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Romanum populum consuesse imperare victis non ad ~ :　が骨子。imperoは与格支配</p>
+<p>ad alterius praescriptum　：他者のルールにの方向に　（沿って）</p>
+<p><u>alteriusは代名詞的形容詞（Pronominal adjective)であり、その属格が代名詞的に使われている</u>。（形容詞だと修飾する名詞に性、格、数が一致しなければならない）</p>
+<p>ad suum arbitrium：自身の意志の方向に</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>同じように、ローマ人民は勝った相手に対し、彼らのルールに従ってではなく、自身の意志に従って命令する事に慣れているのではないか。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sī<span><br><br></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note0">populō<span><br><br></span></a>
+<a class="note1">Rōmānō<span>与格 <br>praescribooは与格支配？<br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">praescrīberet<span>praescribo, praescribere, praescripsi, praescriptus 動詞 (3rd)   :order, direct;3 単 未完了 能動態 接続法<br></span></a>
+<a class="note1">quem<span>quemadmodum, 副詞   :in what way, how; as, just as; to the extent that;</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">modum<span></span></a>
+<a class="note1">suō<span>奪格 Jureに一致 <br>Po.Rom.のこと<br></span></a>
+<a class="note1">iūre<span>jus, juris 名詞 (3rd) N   :law; legal system; code; right; duty; justice; court; binding decision; oath;奪格　utorから<br></span></a>
+<a class="note1">ūterētur,<span>utor, uti, usus sum 動詞 (3rd) DEP   :use, make use of, enjoy; enjoy the friendship of (with ABL); 3 単 未完了 受動態 接続法 主語はPop. Rom.<br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">oportēre<span>oportet, oportere, oportuit, - 動詞 (2nd) IMPERS   :it is right/proper/necessary; it is becoming; it behooves; ought;不定詞<br></span></a>
+<a class="note1">sē<span>アリオウィストゥスのこと。対格　pmediriの主語<br></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">populō<span></span></a>
+<a class="note1">Rōmānō<span>m単　奪格<br><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">suō<span><br><br></span></a>
+<a class="note0">iūre<span><br><br></span></a>
+<a class="note1">impedīrī.<span>impedio, impedire, impedivi, impeditus 動詞 (4th)   :hinder, impede, hamper, obstruct, prevent from (w/ne, quin, or quominus);不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Si ipse non praescriberet :もし自身（Speaker、アリオウィストゥス）が命令しないとすれば</p>
+<p>populo Romano：与格、Praescriboから</p>
+<p>quem ad modum suo iure uteretur　＝quemadnodum suo jure uterretur: suoはローマ人民　<strong>quemadmodumはhow</strong>の意味</p>
+<p>で、「ローマ人がどのように権利を行使するか」<strong>jureは奪格で、utorは奪格の目的語を持つ</strong>。(手段の奪格の一種）<strong>NewLatin218.1</strong></p>
+<p>utereturは間接疑問で接続法　（NewLatin 300.2)</p>
+<p>non oportere　：　oprtetは非人称動詞　It is not right to～</p>
+<p>in suo jure :　このsuoはAriovistus</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>もし自分が（アリオウィストゥスが）ローマ人民に対して、ローマ人が如何に自身の権利を行使するかについて、命令しないとすれば、自分がローマ人民から自分の権利を禁止される事は正しくない。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Haeduōs<span><br><br></span></a>
+<a class="note0">sibi,<span></span></a>
+<a class="note1">quoniam<span>quoniam, 接続詞   :because, since, seeing that;</span></a>
+<a class="note0">bellī<span></span></a>
+<a class="note1">fortūnam<span>fortuna, fortunae 名詞 (1st) F   :chance, luck, fate; prosperity; condition, wealth, property; 対格<br></span></a>
+<a class="note1">temptāssent<span>=temptavissent <br>tempto, temptare, temptavi, temptatus 動詞 (1st)   :test, try; urge; worry; bribe;  <br>3 複 過去完了 能動態 接続法<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">armīs<span>armum, armi 名詞 (2nd) N   :arms (pl.), weapons, armor, shield; close fighting weapons; equipment; force; 手段の奪格<br></span></a>
+<a class="note1">congressī<span>congredior, congredi, congressus sum 動詞 (3rd) DEP   :meet, approach, near; join in battle, come to grips; contend/engage (at law);  <br>完了分詞　受動</span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">superātī<span>supero, superare, superavi, superatus 動詞 (1st)   :overcome, conquer; survive; outdo; surpass,完了分詞　受動<br></span></a>
+<a class="note0">essent,<span></span></a>
+<a class="note1">stīpendiāriōs<span>stipendiarius, stipendiaria, stipendiarium 形容詞   :mercenary; paying tribute in the form of cash;複　対格<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">factōs.<span>完了 分詞 受動態 m 複 対格<br>fio feri, factum sum SEMDEP ：＝be made, become (facioの受動）<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Haeuos esse factos stipendiarios sibi, quoniam~.&nbsp; sibiはAriovistus ?<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>ハエドゥは、戦いに賭け武器をとって参加し負けたので、自分に対し貢ぐものになった。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Magnam<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">iniūriam<span><br><br></span></a>
+<a class="note0">facere,<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">suō<span></span></a>
+<a class="note1">adventū<span>adventus, adventus 名詞 (4th) M   :arrival, approach; visit, appearance, advent; ripening; invasion, incursion;奪格<br></span></a>
+<a class="note1">vectīgālia<span>vectigal, vectigalis 名詞 (3rd) N   :tax, tribute, revenue; 対格<br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">dēteriōra<span>deterior, -or -us, deterrimus -a -um 形容詞   :low/bad/inferior; poor/mean; unfavorable; weak; degenerate/wicked;<br></span></a>
+<a class="note0">faceret.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Caesarem facere Magnam iniuriam:　カエサルは大きな不正を行った。行っている。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルは大きな不正義をしている。それは現れることによって、彼の年貢を減らすことである。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Haeduīs<span>与格<br></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">obsidēs<span><br><br></span></a>
+<a class="note1">redditūrum<span>reddo, reddere, reddidi, redditus 動詞 (3rd)   :return; restore; deliver; hand over, pay back, render, give back; translate; 未来 分詞 能動態 m 単 対格<br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">hīs<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">sociīs<span>socius, soci(i) 名詞 (2nd) M   :associate, companion; ally;<br></span></a>
+<a class="note1">iniūriā<span>injuria injuriae F 単　奪格　;= injury, injustice, wrong, offense<br><br><br><br></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">inlātūrum,<span>infero, inferre, intuli, illatus 動詞 TRANS   :bring/carry in, import; advance,未来 分詞 能動態 m 単 対格<br></span></a>
+<a class="note0">sī<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">manērent<span>maneo, manere, mansi, mansus 動詞 (2nd)   :remain, stay, abide; wait for;3 複 未完了 能動態 接続法<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">convēnisset<span>convenio, convenire, conveni, conventus 動詞 (4th)   :be appropriate to, fit, be correctly shaped/consistent; harmonize, agree, tally;3 単 過去完了 能動態 接続法<br></span></a>
+<a class="note1">stīpendiumque<span>対格<br></span></a>
+<a class="note1">quotannīs<span>quotannis, 副詞   :every year, yearly;</span></a>
+<a class="note1">penderent;<span>pendo, pendere, pependi, pensus 動詞 (3rd)   :weigh out; pay, pay out;3 複 未完了 能動態 接続法</span></a>
+<a class="note0">sī<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">fēcissent,<span><br><br></span></a>
+<a class="note0">longē<span></span></a>
+<a class="note1">iīs<span>与格　Haeduis</span></a>
+<a class="note1">frāternum<span>対格<br></span></a>
+<a class="note0">nōmen<span></span></a>
+<a class="note0">populī<span></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">āfutūrum.<span>absum, abesse, abfui, abfuturus 動詞   :be away/absent/distant/missing;未来 分詞 能動態 m 単 対格　Esse省略の未来不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Haeduis （与格、ハエドゥに）se(主語）obsides（人質を）redditurum non esse（返さないであろう）</p>
+<p>neque inlaturum (esse) injuria bellum. 「不正義に戦いを持ち込むことはない」iniuria は「<strong>随伴の奪格</strong>(abl. of Manner)で軍事の場合はcum無しで用いられる。（NewLatin222.1)</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>私はハエドゥに人質を返すつもりはないが、不当な戦いを持ち込むこともない。もし彼らがそこに留まるなら、前に決められた年貢を毎年払わなければならない。もし払わなければ、彼ら（Haedui)にとって、ローマ人民の兄弟という名前は非常に遠いことになるであろう。</p>
+</div>
+</div>
+<div class="spacer">Line7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quod<span>se以下のこと <br>対格</span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">dēnūntiāret<span>denuntio, denuntiare, denuntiavi, denuntiatus 動詞 (1st)   :give notice, warn/foretell; threaten/enjoin/declare intent to injure; intimate; 3 単 未完了 能動態 接続法<br></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">Haeduōrum<span><br><br></span></a>
+<a class="note0">iniūriās<span><br><br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">neglēctūrum,<span><br><br></span></a>
+<a class="note1">nēminem<span>nemo, neminis 名詞 (3rd) C   :no one, nobody;対格<br></span></a>
+<a class="note1">sēcum<span>副詞　　with itself、with himself</span></a>
+<a class="note0">sine<span></span></a>
+<a class="note0">suā<span></span></a>
+<a class="note1">perniciē<span>pernicies, perniciei 名詞 (5th) F   :ruin; disaster; pest, bane; curse; destruction, calamity; mischief; 奪格<br></span></a>
+<a class="note1">contendisse.<span>contendo 不定詞　;= compete, contend<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><u>
+</u><p><strong>quod sibi Caesar denuntiaret</strong> ~ : quodで始まる名詞節は「<strong>～という事に関しては</strong>」という意味合いになる。（<strong>NewLatin299.</strong>2)</p>
+<p>ここではquodからnon neglecturumまでがquodで始まる、名詞節で、その中での主動詞はdenuntiaretであり続くesse neglecturumの不定詞句は、denuntiaretの目的語になっている。</p>
+<p><u>sibi = Ariovistus, se = Caesar, secum= Ariovistus, sua = neminem</u></p>
+<p>neminem　contendisse secum sine sua pernicie：逐語的には「誰も自身の破滅なしに私と争うものはない」</p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false">
+<p>カエサルがハエドゥへの不正義を見逃すことはないと<strike>警告したが</strike>、警告したことに付いて言えば<strike>、（その返事は）</strike>彼と争うもので悲惨なめに遭わなかったものはいない、というものであった。</p>
+</div>
+</div>
+<div class="spacer">Line8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Cum<span>＝when</span></a>
+<a class="note0">vellet,<span></span></a>
+<a class="note1">congrederētur:<span>congredior, congredi, congressus sum 動詞 (3rd) DEP   :meet, approach, near; join in battle, 3 単 未完了 受動態 接続法<br></span></a>
+<a class="note1">intellēctūrum<span>intellego, intellegere, intellexi, intellectus 動詞 (3rd)   :understand; realize;未来 分詞 能動態 m 単 対格 Esse省略の未来不定詞<br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note1">invictī<span>invictus, invicta, invictum 形容詞   :unconquered; unconquerable, invincible;<br></span></a>
+<a class="note1">Germānī,<span>複　主格<br></span></a>
+<a class="note1">exercitātissimī<span>exercitatus, exercitata -um, exercitatior -or -us, exercitatissimus -a -um 形容詞   :trained, practiced, skilled; disciplined; troubled;最上級 <br>複　主格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">armīs,<span>armum, armi 名詞 (2nd) N   :arms (pl.), weapons, armor, shield;</span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">inter<span>inter, 前置詞 (対格)  :between, among; during;</span></a>
+<a class="note0">annōs<span></span></a>
+<a class="note1">XIIII<span>quattuordecim<br><br></span></a>
+<a class="note1">tēctum<span>tectum, tecti 名詞 (2nd) N   :roof; ceiling; house;対格<br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">subīssent,<span>=subivissent <br>subeo, subire, subivi(ii), subitus 動詞 INTRANS   :go/move/pass/sink/extend underneath/into;3 複 過去完了 能動態 接続法<br></span></a>
+<a class="note1">virtūte<span>virtus, virtutis 名詞 (3rd) F   :strength/power; courage/bravery;奪格<br></span></a>
+<a class="note0">possent.<span></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false">
+<p>Cum vellet, congrederetur:直訳は、彼(Caesar)が望んだ時彼は戦争を開始する、<strike>だが、開戦の条件は整った、という感じか？</strike></p>
+<p><strong>congrederenturは間接話法での命令文である</strong>。そうでないと不定詞文でないので、地の文ということになり、続くintellecturumがAriovistusの言っている事とくらべておかしな構成になる。しかし、この部分をAriovistusが言っている事だとすると不定詞文でなければならないが、ここは命令文の間接話法である。（NewLatin316) したがって訳は<strong>「（カエサルは）望むときに戦争を始めよ</strong>」となる。</p>
+<p>intellecturum quid Germani (facere) possent. ：　quid quiの中性対格で名詞節を構成。ゲルマンができる事を知るであろう。</p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false">
+<p>（<strike>こういう状況で）彼は望むときに出て行き（開戦できる）状況になった。　</strike>カエサルはいつでも戦争を始めるが良い。そして、征服不能なゲルマン、武器の扱いに非常に訓練されており、１４年間も屋根の下にいないという（ゲルマン）の戦場での勇猛さを知ることになるであろう。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

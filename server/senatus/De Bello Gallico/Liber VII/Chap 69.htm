@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 69</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[69]<span></span></a>
+
+<a class="note0">Ipsum<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note0">Alesia<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">colle<span></span></a>
+<a class="note0">summō<span><br><br></span></a>
+<a class="note1">admodum<span>admodum ADV <br>:very, exceedingly, greatly, quite; excessively; just so; certainly, completely;<br><br></span></a>
+<a class="note1">ēditō<span>editus edita -um, editior -or -us, editissimus -a -um ADJ  <br>:high, elevated; rising;<br>(m 単数 奪格)<br></span></a>
+<a class="note1">locō,<span>locus loci N (2nd) M  <br>:place, territory/locality/neighborhood/region; position/point; aim point; site;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">nisi<span></span></a>
+<a class="note1">obsidiōne<span>obsidio obsidionis N (3rd) F  <br>:siege; blockade;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">expugnārī<span>expugno expugnare, expugnavi, expugnatus V (1st)  <br>:assault, storm; <strong>conquer</strong>, plunder; accomplish; persuade;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">posse<span></span></a>
+<a class="note0">vidērētur;<span><br><br></span></a>
+<a class="note0">cuius<span></span></a>
+<a class="note1">collis<span>collis collis N (3rd) M  <br>:hill, hillock, eminence, hill-top; mound; high ground; mountains (pl.) (poetic);<br>(X 単数 属格)<br></span></a>
+<a class="note1">rādīcēs<span>radix radicis N (3rd) F  <br>:root; base; square-root (math);<br>(c 複数  対格)<br></span></a>
+<a class="note0">duo<span></span></a>
+<a class="note0">duābus<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">partibus<span></span></a>
+<a class="note1">flūmina<span>flumen fluminis N (3rd) N  <br>:river, stream; any flowing fluid; flood; onrush;<br>(n 複数  主格)<br></span></a>
+<a class="note1">subluēbant.<span>subluo subluere, sublui, sublutus V (3rd)  <br>:wash, flow at the base of;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>oppidum Alesia ipsum erat in colle summo, edito locl. edito locoはcolleと同格。処格は奪格を同格で持つことがある。ここではcolleは処格。（NewLatin 169.4)</p>
+<p>duo flumina subluebant ex duabus partibus radices cuius collis. 「２つの河が２つの場所でその丘の根元を濡らしていた。」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Alesiaの町そのものは丘の頂上にあり、大変高いところであるので、封鎖なしでは攻略する事は出来ないように思えた。２つの河が２つの場所でその丘の根元を濡らしている。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ante<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note1">plānitiēs<span>planities planitiei N (5th) F  <br>:plain, <strong>plateau</strong>, a flat/plane/level surface; a plane (geometry); flatness;<br>(c 単数 主格),<br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note0">tria<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">longitūdinem<span><br><br></span></a>
+<a class="note1">patēbat:<span>pateo patere, patui, - V (2nd)  <br>:stand open, be open; extend; be well known; lie open, be accessible;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">reliquīs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">partibus<span></span></a>
+<a class="note0">collēs<span><br><br></span></a>
+<a class="note0">mediocrī<span><br><br></span></a>
+<a class="note1">interiectō<span>interjectus interjecta, interjectum ADJ  <br>:lying between;<br>(n 単数 奪格)<br><br></span></a>
+<a class="note1">spatiō<span>spatium spati(i) N (2nd) N  <br>:space; area/expanse, room (for); intervening space, gap/interval; length/width;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">parī<span><br><br></span></a>
+<a class="note1">altitūdinis<span>altitudo altitudinis N (3rd) F  <br>:height, altitude; depth; loftiness, profundity, noblemindedness, secrecy;<br>(X 単数 属格)<br></span></a>
+<a class="note1">fastīgiō<span>fastigium fastigi(i) N (2nd) N  <br>:peak, summit, top; slope, declivity, descent; gable, roof; sharp point, tip;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note1">cingēbant.<span>cingo cingere, cinxi, cinctus V (3rd) TRANS  <br>:surround/encircle/ring; enclose; beleaguer; accompany; gird, equip; ring (tree);<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>reliquis ex omnibus partibus, colles cingebant oppidum.</p>
+<p>mediocri spatio interjecto, pari fastigio altitudinis. ここは前のcolleを修飾していると思われる。「均等な距離を置きながら高さの揃っている」ところの丘。関係代名詞のようなものはない？<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>城塞の前には長さにして3マイルほどの平地が横たわっており、残りの全ての場所は、均等な間隔で位置する高さの揃った丘が城塞を取り囲んでいる。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sub<span></span></a>
+<a class="note0">mūrō,<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">pars<span></span></a>
+<a class="note0">collis<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">orientem<span></span></a>
+<a class="note0">sōlem<span><br><br></span></a>
+<a class="note1">spectābat,<span>specto spectare, spectavi, spectatus V (1st)  <br>:observe, watch, look at, see; test; consider;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">hunc<span></span></a>
+<a class="note0">omnem<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">cōpiae<span><br><br></span></a>
+<a class="note0">Gallōrum<span><br><br></span></a>
+<a class="note1">complēverant<span>compleo complere, complevi, completus V (2nd) TRANS  <br>:fill (up/in); be big enough to fill; <strong>occupy space</strong>, crowd; furnish/supply/man;<br>(３人称 複数  過去完了 能動態 直説法 )<br><br></span></a>
+<a class="note0">fossamque<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">māceriam<span>maceria maceriae N (1st) F  <br>:wall (of brick/stone); (esp. one enclosing a garden);<br>(c 単数 対格)<br></span></a>
+<a class="note0">sex<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">altitūdinem<span></span></a>
+<a class="note0">pedum<span></span></a>
+<a class="note1">praedūxērant.<span>praeduco praeducere, praeduxi, praeductus V (3rd)  <br>:extend; construct;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>quae pars collis ad orientem solem spectabat: orientem solem spectabatは昇る太陽を見るということで東方向の意。</p>
+<p>sub muro, quae ~, copiae Gallorum compleverant omnem locum. 「壁の下ではガリア軍勢が全ての場所を埋めていた」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>東側の壁のしたでは、全ての場所にガリア兵が配置されており、更に塹壕や高さ６フィートの石の壁などが構築されてた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eius<span></span></a>
+<a class="note1">mūnītiōnis<span>munitio munitionis N (3rd) F  <br>:fortifying; fortification;<br>(X 単数 属格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Rōmānīs<span><br><br></span></a>
+<a class="note1">instituēbātur<span>instituo instituere, institui, institutus V (3rd)  <br>:set up, establish, found, make, institute; build; prepare; decide;<br>(３人称 単数 未完了 受動態 直説法 )<br></span></a>
+<a class="note1">circuitūs<span>circuitus circuitus N (4th) M  <br>:going round; patrol/<strong>circuit</strong>; way/path round; <strong>circumference</strong>; outer surface/edge;<br>(c 単数 主格)<br></span></a>
+<a class="note0">XI<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note1">tenēbat.<span>teneo tenere, tenui, tentus V (2nd)  <br>:|represent; support;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>circitus eius munitionis tenebat indecim milia passuum. 「これらの要塞の周りは、１１マイルに及んだ」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらの包囲装置の周りは、それはローマ軍により始められたが、11マイルに及んだ。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Castra<span></span></a>
+<a class="note1">opportūnīs<span>opportunus opportuna -um, opportunior -or -us, opportunissimus -a -um ADJ  <br>:suitable; advantageous; useful, fit, favorable/opportune, ready; liable/exposed;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">locīs<span>locus loci N (2nd) M  <br>:place, position/point; aim point; site;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note0">posita<span></span></a>
+<a class="note0">ibique<span></span></a>
+<a class="note1">castella<span>castellum castelli N (2nd) N  <br>:redoubt, fortress, stronghold, fortified settlement, refuge; castle, citadel;<br>(n 複数  主格)<br></span></a>
+<a class="note0">viginti<span></span></a>
+<a class="note0">tria<span></span></a>
+<a class="note1">facta,<span>facio facere, feci, factus V (3rd) TRANS  <br>:make/build/construct/create/cause/do; have built/made; fashion; work (metal);<br>&nbsp;(完了 分詞 受動態 n 複数  主格), <br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">castellīs<span><br><br></span></a>
+<a class="note1">interdiū<span>interdiu ADV <br>:in the daytime, by day;<br><br></span></a>
+<a class="note1">statiōnes<span>statio stationis N (3rd) F  <br>:outpost, picket; station; watch;<br>(c 複数  主格)<br></span></a>
+<a class="note1">pōnēbantur,<span>pono ponere, posui, positus V (3rd) TRANS  <br>:put/place/set; station/post (troops); pitch (camp); situate; set up; erect;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note1">quā<span>aliquis aliquis, aliquid PRON  <br>:anyone, anybody, anything; someone, something; one or another;<br>(n 複数  主格), (n 複数  対格)<br></span></a>
+<a class="note0">subitō<span><br><br></span></a>
+<a class="note1">ēruptiō<span>eruptio eruptionis N (3rd) F  <br>:sortie, rush, sally, sudden rush of troops from a position;<br>(X 単数 主格)<br></span></a>
+<a class="note0">fieret:<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">eadem<span></span></a>
+<a class="note0">noctū<span><br><br></span></a>
+<a class="note1">excubitōribus<span>excubitor excubitoris N (3rd) M  <br>:sentinel; watchman;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">fīrmīs<span>firmus firma -um, firmior -or -us, firmissimus -a -um ADJ  <br>:|loyal/staunch/true/constant; stable/mature; valid/convincing/well founded;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">praesidiīs<span><br><br></span></a>
+<a class="note1">tenēbantur.<span>teneo tenere, tenui, tentus V (2nd)  <br>:hold, keep; comprehend; possess; master; preserve;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>castra erant posita opportunis locis. </p>
+<p>castella viginti tria (erant) facta. </p>
+<p>ne qua subito eruptio fieret. ここのquiはaliquiと同じ不定代名詞。如何なる（ne,nisi, siなどの後のaliquiはquiになる）<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>野営地は適当な場所に置かれ、そこには２３の砦が作られた。その砦には昼間は番兵が配置され、突然の蜂起に備えた。夜には同じように衛兵と屈強な番兵が配置された。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

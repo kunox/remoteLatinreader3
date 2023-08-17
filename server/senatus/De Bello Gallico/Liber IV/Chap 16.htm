@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 16</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[16]<span></span></a>
+
+<a class="note1">Germānicō<span>Germanicus Germanica, Germanicum ADJ  <br>:German;<br>(n 単数 奪格)<br></span></a>
+<a class="note1">bellō<span>bellum belli N (2nd) N  <br>:war, warfare; battle, combat, fight; (at/in) (the) war(s); military force, arms;<br>&nbsp;(X 単数 奪格)<br><br></span></a>
+<a class="note0">cōnfectō<span><br><br></span></a>
+<a class="note1">multīs<span>multus 形容詞　複　奪格　ｆ<br><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">causīs<span>causa causae N (1st) F  <br>:cause/reason/motive; origin, source, derivation; responsibility/blame; symptom;<br>(c 複数  奪格)<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">statuit<span>statuo statuere, statui, statutus ３単　完了（現在）　;= set up, think, decide<br><br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">trānseundum;<span>transeo transire, transivi(ii), transitus V  <br>:go over, cross;<br>(未来 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">quārum<span><br><br></span></a>
+<a class="note0">illa<span></span></a>
+<a class="note0">fuit<span></span></a>
+<a class="note1">iūstissima<span>justus justa -um, justior -or -us, justissimus -a -um ADJ  最上級<br>:just, fair, equitable; right, lawful, justified; regular, proper;<br>(f 単数 主格)<br></span></a>
+<a class="note0">quod,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">vidēret<span><br><br></span></a>
+<a class="note0">Germānōs<span><br><br></span></a>
+<a class="note1">tam<span>副詞　;= so, somuch as,<br><br></span></a>
+<a class="note0">facile<span></span></a>
+<a class="note1">impellī<span>impello impellere, impuli, impulsus V (3rd) TRANS  <br>:drive/persuade/impel; urge on/action; push/thrust/strike against; overthrow;<br>(  現在 受動態 不定詞 )<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliam<span></span></a>
+<a class="note1">venīrent,<span>venio venire, veni, ventus V (4th)  <br>:come;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">suīs<span></span></a>
+<a class="note1">quōque<span>副詞　;= liewise<br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">timēre<span><br><br></span></a>
+<a class="note1">voluit,<span>volo velle, volui, - V  <br>:wish, want, prefer; be willing, will;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">intellegerent<span>3複　未完了接続法<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">posse<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">audēre<span>audeo audere, ausus sum V (2nd) SEMIDEP  <br>:intend, be prepared; dare/have courage (to go/do), act boldly, venture, risk;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note0">trānsīre.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>sibi esse transendum Rhenum. Rhenumは目的語。<u>transeoは自動詞なので、３人称のSUM　＋　<strong>中性単数の動形容詞</strong></u>で「誰々は～しなければならない」の意味になる。この場合主語は不要で、<strong>行使者は与格で示す</strong>。ここではsibi（カエサル）</p>
+<p><strong>quorum illa fuit justissima</strong> : いくつもある理由の内、illaが最も説得力がある　illaは以下のquod句で説明される。</p>
+<p><strong>cum videret</strong> ~,<strong> voluit eos timere</strong>. 主語はカエサルで、「カエサルが～を見るにつけ、彼らも恐れる事を望む」</p>
+<p>cum intellegarent populi Romani exercitum posse et audere transire Rhenum. 「ローマの正規軍もまたライン河を渡ることが可能で、敢えて渡ることを彼らが理解した時」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>ゲルマンとの戦いを終えて、沢山の理由からカエサルは自分はライン河を渡るべきであると考えた。その中でも特に説得力のあるものは次の様である。即ち彼らはやすやすと推し進めてガリアに来るように見えるが、同様に彼らにも自分たちのものを心配することをさせたい。彼らがローマ正規軍もまた、ライン河を渡ることが可能だし、敢えて渡る事を理解した時には（そうなるであろう）<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Accessit<span>accedo accedere, accessi, accessus V (3rd)  <br>:come near, approach; agree with; be added to (w/ad or in + ACC); constitute;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">illa<span></span></a>
+<a class="note0">pars<span></span></a>
+<a class="note0">equitātūs<span><br><br></span></a>
+<a class="note0">Usipetum<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Tencterōrum,<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">suprā<span>副詞　on top, more, above, beyond over<br><br><br></span></a>
+<a class="note1">commemorāvī<span>commemoro commemorare, commemoravi, commemoratus V (1st) TRANS  <br>:recall (to self/other); keep in mind, remember; mention/relate; place on record;<br>(１人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">praedandī<span><br><br></span></a>
+<a class="note0">frūmentandī<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">Mosam<span></span></a>
+<a class="note0">trānsīsse<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">proeliō<span><br><br></span></a>
+<a class="note1">interfuisse,<span>intersum interesse, interfui, interfuturus V  <br>:be/lie between, be in the midst; be present; take part in; be different;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">post<span></span></a>
+<a class="note0">fugam<span></span></a>
+<a class="note0">suōrum<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">trāns<span><br><br></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Sugambrōrum<span><br><br></span></a>
+<a class="note1">recēperat<span>recipio recipere, recepi, receptus V (3rd)  <br>:keep back; recover; undertake; guarantee; accept, take in; take back;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">sēque<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note1">coniūnxerat.<span>conjungo conjungere, conjunxi, conjunctus V (3rd) TRANS  <br>:|unite (sexually); place/bring side-by-side; juxtapose; share; add; associate;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>accessit qoud</strong> : quod以下は名詞節　「それに加えて」「次の理由としては」</p>
+<p><strong>illa pars equitatus</strong> : equitatusは名詞equitatus(m)の単数　属格。全体の属格。「騎兵の内その地方のものは」</p>
+<p><u>illa parsは主格でこの文全体の主語。動詞は<strong>receperat</strong>, <strong>conjunxerat</strong>(これらの動詞は単であり、parsと合致）</u></p>
+<p>Usipetum et tencterorum　：属格でequitatusを修飾</p>
+<p>quamは関係代名詞で従属節を導いている。quam対格で、不定詞の主語になっている。transisse, interfuisse</p>
+<p>supra commemoravi :<strong><font color="#ff0000"> 1人称で動詞！！　</font></strong>「前に私が言ったように」</p>
+<p>receperant se in fines Sugambrorum:「彼らは自身をSugambriの領地に潜み」</p>
+<p>conjunxerat seque cum his　：「彼らと一緒に同化した」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それに加える理由としては次のようである。Usipetes、Tenchteri族の騎兵のうちその地方のものは、私が前に言ったように、略奪と食料補給の目的Meuse河を渡り、戦いには参加していなく、彼らは味方の逃走のあと、ライン河を渡りSugambri族の領地に自身を潜め、彼らと同化していた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ad<span></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">nūntiōs<span><br><br></span></a>
+<a class="note0">mīsisset,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">postulārent<span>postulo postulare, postulavi, postulatus V (1st)  <br>:demand, claim; require; ask/pray for;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">Galliaeque<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">intulissent<span>infero inferre, intuli, illatus V TRANS  <br>:bring/carry in, import; advance, bring/march/step/move foward; impel, urge;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">dēderent,<span>dedo dedere, dedidi, deditus V (3rd) TRANS  <br>:give up/in, surrender; abandon/consign/devote (to); yield, hand/deliver over;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">respondērunt:<span>respondeo respondere, respondi, responsus V (2nd)  <br>:answer;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note0">imperium<span></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note1">fīnīre;<span>finio finire, finivi, finitus V (4th)  <br>:limit, end; finish; determine, define; mark out the boundaries;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">sē<span>ここは奪格<br><br><br></span></a>
+<a class="note1">invītō<span>invitus invita, invitum ADJ  <br>:reluctant; unwilling; against one's will;<br>&nbsp;(m 単数 奪格)<br></span></a>
+<a class="note0">Germānōs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliam<span></span></a>
+<a class="note0">trānsīre<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">aequum<span>aequus aequa -um, aequior -or -us, aequissimus -a -um ADJ  <br>:level, even, equal, like; just, kind, impartial, fair; patient, contented;<br>&nbsp;(n 単数 対格)<br></span></a>
+<a class="note0">exīstimāret,<span><br><br></span></a>
+<a class="note1">cūr<span>副詞　;= why, wherefore, for what reason<br><br><br></span></a>
+<a class="note0">suī<span><br><br></span></a>
+<a class="note1">quicquam<span>=quodquam<br>quisquam quaequam, quidquam ADJECT  <br>:(w/-quam) any; anyone/anybody (no pl.) (INDEF) anything; any man, any person;<br>(n 単数 主格),<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">imperiī<span>imperium imperi(i) N (2nd) N  <br>:command; authority; rule, supreme power; the state, the empire;<br>(X 単数 処格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">potestātis<span>potestas potestatis N (3rd) F  <br>:power, rule, force; strength, ability; chance, opportunity;<br>(X 単数 属格)<br></span></a>
+<a class="note1">trāns<span>前置詞　対格支配<br><br><br></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note1">postulāret?<span>postulo postulare, postulavi, postulatus V (1st)  <br>:demand, claim; require; ask/pray for;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">Ubiī<span><br><br></span></a>
+<a class="note0">autem,<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">ūnī<span>unus una, unum (gen -ius) ADJ  <br>:alone, a single/sole; some, some one; only (pl.); one set of (denoting entity);<br>&nbsp;(m 複数  主格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">Trānsrhēnānīs<span>transrhenanus transrhenana, transrhenanum ADJ  <br>:beyond the Rhine;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">lēgātōs<span><br><br></span></a>
+<a class="note0">mīserant,<span><br><br></span></a>
+<a class="note0">amīcitiam<span><br><br></span></a>
+<a class="note1">fēcerant,<span>facio facere, feci, factus V (3rd) TRANS  <br>:make/build/ construct/ create/ cause/do; have built/made; fashion; work (metal);<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">obsidēs<span><br><br></span></a>
+<a class="note1">dederant,<span>do ３複　過去完了<br><br></span></a>
+<a class="note0">magnopere<span></span></a>
+<a class="note1">ōrābant<span>oro orare, oravi, oratus V (1st)  <br>:beg, ask for, pray; beseech, plead, entreat; worship, adore;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">auxilium<span></span></a>
+<a class="note0">ferret,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">graviter<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Suēbis<span><br><br></span></a>
+<a class="note1">premerentur;<span>premo premere, pressi, pressus ３複　未完了　受動　接続法　;= press, press hard, pursue<br><br></span></a>
+<a class="note0">vel,<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">facere<span></span></a>
+<a class="note1">occupātiōnibus<span>occupatio occupationis N (3rd) F  <br>:occupation, employment;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note0">pūblicae<span><br><br></span></a>
+<a class="note0">prohibērētur,<span><br><br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note1">modo<span>副詞　;only, merely, just<br><br><br></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note1">trānsportāret:<span>transporto transportare, transportavi, transportatus V (1st)  <br>:carry across, transport;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">auxilium<span></span></a>
+<a class="note0">spemque<span></span></a>
+<a class="note0">reliquī<span></span></a>
+<a class="note0">temporis<span></span></a>
+<a class="note0">satis<span></span></a>
+<a class="note0">futūrum.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>qui postularent<strike> eos</strike> : quiはnuntiosで、<strike>eosはSugambriを指す</strike>。「使者は<strike>Sugambriに</strike>要求した」</p>
+<p><strong>dederent sibi eos qui intulissent bellum sibi Galliaeque</strong>. eosはquiの先行詞。　「自身と（カエサル）とガリアに戦争をもたらした者共は降伏せよ」sibi Galliaeは間接目的語の与格</p>
+<p>populi Romani imperium Rhenum finire. 間接話法でfinireが動詞。finireをlimitと取るか、endとするかで、imperiumが主語か、Rhenumが主語かが変わる。</p>
+<p><strong>se invito</strong> : 独立奪格の一種。（形容詞と名詞の独立奪格）「自身の意に背いて」</p>
+<p>existimaret transire non aequum : transireが直接目的語で、non aequumは述語対格　（NewLatin171)　「渡ることが適切でないと考える」</p>
+<p>cur <strong>postularet</strong> quicquam trans Rhenum esse sui imperii aut potestatis . 間接話法のなかの疑問文、で接続法(NewLatin315)</p>
+<p><strong>quiquam&nbsp;trans Rheum</strong>&nbsp;: ライン河を越えたどの部分が</p>
+<p>sui imperii auto potestatisは所有の属格(NewLatin198)</p>
+<p>si prohiberentur facere id occupationibus rei publicae, modo transportaret excercitum Rhenum. <strong>occupationibus rei publicae</strong>は原因の奪格。「公共の業務によって」か？ transportaret は間接話法内の命令法</p>
+<p>id futurum (esse) satis sibi ad auxilium spemque reliqui temporis . 動詞はfuturum esseで～であるだろう。reliqui temporis は属格でspemに掛かる。「残りの期間の希望」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼らに対しカエサルは使者を送って要求した。我々とガリアに対し戦闘をもたらした者共は降伏しろ、と。それに対する返答は次のようであった。ローマの支配権はライン河が境である。もし意に反してゲルマンがライン河を渡ることが不適切と考えるなら、何故、ライン河を渡ったどの部分が彼の支配権であり権力下であると要求するのか？一方、Ubii族、彼らは唯一ライン河の向こうからカエサルに使者を送り、恭順を誓い、人質を出している部族だが、彼らは彼らに（ローマ軍が）援助するよう、強く要請した。と言うのはSuebi族からの強い圧力があるためである。もし、公共の業務のためそれが出来ないのであれば、単に軍勢をしてライン河を渡らせる。それが、彼らにとって援助として、また残りの将来にとっての希望として十分であるであろう。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Tantum<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">nōmen<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">opīniōnem<span>opinio opinionis N (3rd) F  <br>:belief, idea, opinion; rumor (Plater);<br>(c 単数 対格)<br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">exercitūs<span>exercitus exercitus N (4th) M  <br>:army, infantry; swarm, flock;<br>(c 単数 属格)<br></span></a>
+<a class="note0">Ariovistō<span><br><br></span></a>
+<a class="note0">pulsō<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note0">novissimō<span><br><br></span></a>
+<a class="note0">proeliō<span><br><br></span></a>
+<a class="note0">factō<span><br><br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">ultimās<span>ulterior -or -us, ultimus -a -um ADJ  最上級<br>:far; farther; farthest, latest; last; highest, greatest;<br>(f 複数  対格)<br></span></a>
+<a class="note0">Germānōrum<span><br><br></span></a>
+<a class="note0">nātiōnēs,<span><br><br></span></a>
+<a class="note1">utī<span>uti CONJ <br>:in order that; that, so that; as, when;<br><br></span></a>
+<a class="note0">opīniōne<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">amīcitiā<span><br><br></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">tūtī<span>tutus tuta -um, tutior -or -us, tutissimus -a -um ADJ  <br>:safe, prudent; secure; protected;<br>(m 複数  主格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">possint.<span>３複　接続法<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>eius exercitus opinionem atque nomen esse tantum : 我軍の名前や評判は大変であった。</p>
+<p>Ariovisto pulso et novissimo proelio : 原因の奪格　Ariovistusを破った事や最近の戦いによって</p>
+<p>uti ~ 結果の名詞節</p>
+<p>possint esse tuti<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>Ariovistusを破った事や最近の最も偉大なゲルマン国との戦いなどの理由で、我軍の名前や評判は偉大であり、ローマ軍の評判とその友好によって彼らは（Ubii?）安全であった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Nāvium<span>navis navis N (3rd) F  <br>:ship;<br>(c 複数  属格)<br></span></a>
+<a class="note0">magnam<span></span></a>
+<a class="note1">cōpiam<span>copia copiae N (1st) F  <br>:plenty, abundance, supply; troops (pl.), supplies; forces; resources; wealth;<br>(c 単数 対格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">trānsportandum<span><br><br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note1">pollicēbantur.<span>polliceor polliceri, pollicitus sum V (2nd) DEP  <br>:promise;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼らは渡るべき軍勢に対して大変な数の船を約束する。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

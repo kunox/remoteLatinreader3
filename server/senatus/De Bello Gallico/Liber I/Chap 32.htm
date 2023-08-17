@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 32</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[32]<span></span></a>
+
+<a class="note0">Hāc<span><br><br></span></a>
+<a class="note1">ōrātiōne<span>oratio, orationis 名詞 (3rd) F   :speech, oration; eloquence; prayer;奪格<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Dīviciāco<span><br><br></span></a>
+<a class="note1">habitā<span>habeo 完了分詞　受動態<br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">aderant<span>adsum, adesse, adfui, adfuturus 動詞   :be near, be present, be in attendance3 複 未完了 能動態 直説法)</span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note1">flētū<span>fletus, fletus 名詞 (4th) M   :weeping, crying, tears; wailing; lamenting;奪格<br></span></a>
+<a class="note0">auxilium<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Caesare<span></span></a>
+<a class="note1">petere<span>peto 不定詞</span></a>
+<a class="note1">coepērunt.<span>coepio = begin, commence 3 複 完了 能動態 直説法)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>oratione habita : having been spoken</p>
+<p>magno fletu : 大きな泣くこと (<strong>付帯状況の奪格</strong>　NewLatin221)</p>
+<p>petere auxlium a Caesare : カエサルからの援助を懇願する事</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>このディウィアクスの話が終わって、その場に居た全員が、泣きながらカエサルの援助の懇願を始めた。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Animadvertit<span>animadverto, animadvertere, animadverti, animadversus 動詞 (3rd)   :pay attention to, attend to; notice, observe; judge, estimate; punish (in+ACC); 3 単 現在 能動態</span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">ūnōs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">Sēquanōs<span>対格<br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note1">eārum<span>is 属格<br></span></a>
+<a class="note1">rērum<span>属格<br></span></a>
+<a class="note1">facere<span>facio　不定詞</span></a>
+<a class="note0">quās<span><br><br></span></a>
+<a class="note1">cēterī<span>ceterus, cetera, ceterum 形容詞   :the_other; the_others (pl.). the_remaining/rest, all the_rest;<br></span></a>
+<a class="note1">facerent<span>3 複 未完了 能動態 接続法</span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">trīstēs<span>tristis, tristis, triste 形容詞   :sad, sorrowful; gloomy;<br></span></a>
+<a class="note1">capite<span>caput, capitis 名詞 (3rd) N   :head; person; life; leader; 奪格</span></a>
+<a class="note1">dēmissō<span>demitto, demittere, demisi, demissus 動詞 (3rd) TRANS   :drop, let fall; sink; 完了分詞　受動態<br></span></a>
+<a class="note1">terram<span>terra 対格</span></a>
+<a class="note1">intuēri.<span>intueor, intueri, intuitus sum 動詞 (2nd) DEP   :look at; consider, regard; admire; stare; 不定詞　主語はSequanos<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Animadvertit Caesar <strong>Sequanos</strong>, nihil ~ facere,&nbsp;intueri terra.　従属節の主語はSequanos（対格）</p>
+<p>unos ex omnibu　：全体の中から一つ　unosはunusの対格で、形式的にはSequanosを修飾。意味としては「全体になかでただ一人だけ」と副詞的に訳すか。</p>
+<p>nihil earum rerum facere　：そういうことをしない erum rerumは<strong>全体の属格</strong>で「そういう事全体の内何も（nihil)」</p>
+<p>quas ceteri facerent　quaはearum rerum　</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルは気がついたが、全体のなかでセクアナ族だけが、みんながしていることをしないで、悲しげな頭を垂れて、地面を見つめているのだった。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eius<span><br><br></span></a>
+<a class="note1">reī<span>res 単　属格<br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">causa<span>causa causae N (1st) F  <br>:cause/reason/motive; origin, source, derivation; responsibility/blame; symptom;<br>f&nbsp;単数 主格<br></span></a>
+<a class="note1">esset<span>疑問文の間接話法</span></a>
+<a class="note1">mīrātus<span>miro, mirare, miravi, miratus 動詞 (1st)   :be amazed/surprised/bewildered (at); look in wonder/awe/admiration at; 完了分詞　受動　主格<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">ipsīs<span>それ自身によって（ただ俯いている事に）？<br></span></a>
+<a class="note1">quaesiit.<span>=quaesivit <br>quaero, quaerere, quaesivi, quaesitus 動詞 (3rd)   :search for, seek, strive for; obtain; ask, inquire, demand; (3 単 完了 能動態</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>quae esset causa ejus rei : 逐語的には「何がその事の原因なのか？」</p>
+<p>miratus　：分詞構文　驚いて,不思議に思い、</p>
+<p>quaesiit <strong>ex ipsis</strong> : ipsisはSequanosを指すと思われる。彼ら自身から（聞こうと）尋ねた。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>（カエサル）はそのことに驚いて何が原因なのか尋ねた。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nihil<span></span></a>
+<a class="note0">Sēquanī<span><br><br></span></a>
+<a class="note0">respondēre,<span><br><br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">eādem<span>idem same<br></span></a>
+<a class="note1">trīstitiā<span>tristitia, tristitiae 名詞 (1st) F   :sadness;<br></span></a>
+<a class="note1">tacitī<span>tacitus, tacita, tacitum 形容詞   :silent, secret;<br></span></a>
+<a class="note1">permanēre.<span>permaneo, permanere, permansi, permansus 動詞 (2nd)   :last, continue; remain; endure;不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>respondere, permanere ：歴史的不定詞 (NewLatin 335, AG463)直説法、未完了と同じ<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>セクアナは答えず、同じような悲しみの沈黙が続いた。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Cum<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note1">saepius<span>saepeの比較級</span></a>
+<a class="note1">quaereret<span>quaero, quaerere, quaesivi, quaesitus 動詞 (3rd)   :search for, seek, strive for; obtain; ask, inquire, demand;3 単 未完了 能動態 接続法</span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">ūllam<span>ullus, ulla, ullum (gen -ius) 形容詞   :any;対格<br></span></a>
+<a class="note1">omnīnō<span>副詞　entirely, altogether<br></span></a>
+<a class="note1">vōcem<span>vox, vocis 名詞 (3rd) F   :voice, tone, expression;対格<br></span></a>
+<a class="note1">exprimere<span>exprimo, exprimere, expressi, expressus 動詞 (3rd)   :squeeze, squeeze/press out; imitate, copy; portray; pronounce, express; 不定詞</span></a>
+<a class="note0">posset,<span></span></a>
+<a class="note0">īdem<span><br><br></span></a>
+<a class="note0">Diviācus<span><br><br></span></a>
+<a class="note0">Haeduus<span></span></a>
+<a class="note0">respondit:<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" style="display: block;" spellcheck="false">
+<p>Cum = quum = as</p>
+<p><strong>cum quaereret saepius ab his</strong> : 繰り返し彼らに尋ねた時も、cum + 接続法はその時の状況を表す。（NewLatin２８８）</p>
+<p><font color="#33cccc"><font color="#339966"><strong>ab his</strong>のhisはSequaniで彼らにquaereretとなる。Line3にも[ex ipsis]という表現があり、exにしてもabにしても「そこから」というニュアンスで、彼ら<strong>に尋ねる</strong>いう表現とは逆向きの感じがある。多分、quaeroという単語に「~から聞く」というニュアンスがあるのであろう。</font></font></p>
+<p>neque omnio posset : not possible at-all.</p>
+<p>ullam vocem exprimere : 一つの声を発する</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルが繰り返したずねるても、一言も発することはなかった。そこで同じハエドゥのディウィアクスが答えた。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">hōc<span>hic の奪格　＝by this<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">miseriōrem<span>miser, misera -um, miserior -or -us, miserrimus -a -um 形容詞   :poor, miserable, wretched比較級　対格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">graviōrem<span>gravis, grave, gravior -or -us, gravissimus -a -um 形容詞   :heavy; painful;比較級　対格<br></span></a>
+<a class="note1">fortūnam<span>fortuna, fortunae 名詞 (1st) F   :chance, luck, fate; prosperity; condition, wealth, property; 対格<br></span></a>
+<a class="note0">Sēquanōrum<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">reliquōrum,<span>reliquus, reliqua, reliquum 形容詞  <br> :rest of/remaining<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">sōlī<span>solus sola, solum 形容詞　;= only, alone, <br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">occultō<span>occultum, occulti 名詞 (2nd) N   :secrecy; hiding;奪格<br></span></a>
+<a class="note1">quidem<span>quidem, 副詞   :indeed (postpositive), certainly, even, ne quidemでnot evenの意。</span></a>
+<a class="note1">querī<span>queror, queri, questus sum 動詞 (3rd) DEP   :complain; protest, grumble, gripe; make formal complaint in court of law; 受動態　不定詞<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">auxilium<span></span></a>
+<a class="note1">implōrāre<span>imploro, implorare, imploravi, imploratus 動詞 (1st)   :appeal to, invoke; beg, beseech, implore; ask for help/favor/protection;不定詞<br></span></a>
+<a class="note1">audērent<span>audeo, audere, ausus sum 動詞 (2nd) SEMIDEP   :intend, be prepared; dare/have courage (to go/do), act boldly, venture, risk; 3 複 未完了 能動態 接続法 <br>soliが主語<br></span></a>
+<a class="note1">absentisque<span>absens, (gen.), absentis 形容詞   :absent, missing, away, gone;</span></a>
+<a class="note1">Ariovistī<span>属格<br></span></a>
+<a class="note1">crūdēlitātem,<span>crudelitas crudelitatis F 単　対格　;= cruelty<br></span></a>
+<a class="note1">velut<span>velut, 副詞   :just as, as if;</span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">cōram<span>coram, 前置詞 (奪格)  :in the presence of, before; (may precede or follow object); personally (L+S);<br></span></a>
+<a class="note1">adesset,<span>3 単 未完了 能動態 接続法</span></a>
+<a class="note1">horrērent,<span>horreo, horrere, horrui, - 動詞 (2nd)   :dread, shrink from, shudder at;　目的語はcrudelitatem<br></span></a>
+<a class="note0">proptereā<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">reliquīs<span><br><br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">fugae<span></span></a>
+<a class="note1">facultās<span>facultas, facultatis 名詞 (3rd) F   :means; ability, skill; opportunity, chance; resources (pl.), supplies;<br></span></a>
+<a class="note1">darētur,<span>do 3 単 未完了 受動態 接続法)<br></span></a>
+<a class="note0">Sēquanīs<span><br><br></span></a>
+<a class="note1">vērō,<span>vero, 副詞   :yes; in truth; certainly; truly, to be sure; however;<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">intrā<span><br><br></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note0">Ariovistum<span></span></a>
+<a class="note1">recēpissent,<span>recipio, recipere, recepi, receptus 動詞 (3rd)   :keep back; recover; undertake; guarantee; accept, take in; take back; 3 複 過去完了 能動態 接続法)<br></span></a>
+<a class="note0">quōrum<span><br><br></span></a>
+<a class="note0">oppida<span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">potestāte<span>potestas, potestatis 名詞 (3rd) F   :power, rule, force; strength, ability; chance, opportunity; 奪格<br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">essent,<span></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">cruciātūs<span>cruciatus, cruciatus 名詞 (4th) M   :torture/cruelty; torture form/apparatus; suffering, severe physical/mental pain;<br></span></a>
+<a class="note0">essent<span></span></a>
+<a class="note1">perferendī.<span>perfero, perferre, pertuli, perlatus 動詞   :carry through; bear, endure to the end, suffer; announce;未来分詞　受動態<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>fortunam Sequanorum esse hoc miseriorem et graviorem</strong> :セクアナの運命は（残りの部族よりも）惨めで痛ましいものであった。hoc　=　on this accountと訳すが、<u>差異の度合いの奪格か原因の奪格</u>。比較級と共に用いられる。</p>
+<p><strong>soli auderent ne quidem queri (in occulto)&nbsp;neque auxilium implorare</strong>, 「彼らは一人隠れて不満を言わず助けも求めない」soliは形容詞solumの複、主格。後にeiなどの省略か、形容詞の名詞化か、Sequanisを指す、主格。<strong>in occulto 隠れて　ne quidem</strong>はnot~evenの意</p>
+<p>absentisque Ariovisti crudenlitatem queは前接語で、節をつなげるときは必ずふたつ目の節の先頭に付ける。　「不在であるアリオウィストゥスの残虐さに」が逐語訳。　（NewLatin341.2(a)) ここではcrudelitatem対格で、あとのhorrerentの目的語。</p>
+<p>velut si coram adesset　あたかも彼らが目の前にいるかのように</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>セクアナはの運命は残りの部族よりももっと惨めで悲惨だった。と言うのは彼らはただ一人で、隠れてでも不満を言わず、助けも求めず、アリオウィストゥスが不在の時でもあたかも目の前にいるかのごとく、その残虐さに打ち震えている。なぜなら、残りの部族には逃亡の機会が与えられていたが、しかし、セクアナは、自分の領土にアリオウィストゥスと受け入れたのであるが、それが故に彼らの全ての城塞はアリオウィストゥスの支配下にあり、全ての残虐さに耐え続けることになる。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

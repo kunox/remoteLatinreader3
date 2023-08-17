@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 19</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[19]<span></span></a>
+
+<a class="note1">Cassivellaunus,<span>Cassivellaunus Cassivellauni N (2nd) M  <br>:Cassiveellaunus, Commander of forces of Britons - Caesar;<br>(X 単数 主格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">suprā<span><br><br></span></a>
+<a class="note1">dēmōnstrāvimus,<span>demonstro demonstrare, demonstravi, demonstratus V (1st) TRANS  <br>:point out/at/to, draw attention to; explain/describe/show, give an account of;<br>(１人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note1">dēpositā<span>depono deponere, deposivi, depositus V (3rd) TRANS  <br>:put/lay down/aside/away; let drop/fall;<strong> give up; resign</strong>; deposit/entrust/commit;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note0">spē<span><br><br></span></a>
+<a class="note1">contentiōnis<span>contentio contentionis N (3rd) F  <br>:|competition, struggle, effort, exertion; controversy, <strong>contention</strong>, contrast;<br>(X 単数 属格)<br></span></a>
+<a class="note1">dīmissīs<span>dimitto dimittere, dimisi, dimissus V (3rd) TRANS  <br>:|||discontinue, renounce, <strong>abandon/forsake</strong>, forgo, <strong>give up</strong> (activity); dispatch;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">ampliōribus<span>amplus ampla -um, amplior -or -us, amplissimus -a -um ADJ  比較級<br>:great, large, spacious, wide, ample; distinguished, important, honorable;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">cōpiīs<span><br><br></span></a>
+<a class="note1">mīlibus<span>mille milis N (3rd) N  <br>:thousand; thousands (men/things); miles;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">circiter<span>circiter ADV <br>:nearly, not far from, almost, approximately, around, about;<br><br></span></a>
+<a class="note1">quattuor<span>quattuor quartus -a -um, quaterni -ae -a, - NUM <br>:four;<br><br></span></a>
+<a class="note1">essedāriōrum<span>essedarius essedari(i) N (2nd) M  <br>:gladiator, <strong>soldier fighting from a chariot;</strong><br>(X 複数  属格)<br></span></a>
+<a class="note1">relīctīs<span>relinquo relinquere, reliqui, relictus V (3rd)  <br>:leave behind, abandon; (pass.) be left, remain; bequeath;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">itinera<span>itiner itineris N (3rd) N  <br>:journey; road; passage, path; march<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note0">nostra<span></span></a>
+<a class="note0">servābat<span><br><br></span></a>
+<a class="note1">paulumque<span>paulum pauli N (2nd) N  <br>:little/small; (only a) small amount/quantity/extent; little bit/while; trifle;<br>&nbsp;(n 単数 対格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">viā<span><br><br></span></a>
+<a class="note1">excēdēbat<span>excedo excedere, excessi, excessus V (3rd)  <br>:pass, withdraw, exceed; go away/out/beyond; die;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">locīsque<span><br><br></span></a>
+<a class="note1">impedītīs<span>impeditus impedita -um, impeditior -or -us, impeditissimus -a -um ADJ  <br>:hindered/obstructed/encumbered/hampered; difficult/impeded; <strong>inaccessible</strong>;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">silvestribus<span>silvestris silvestris, silvestre ADJ  <br>:wooded, <strong>covered with woods</strong>; found/situated/living in woodlands; wild, untamed;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note1">occultābat,<span>occulto occultare, occultavi, occultatus V (1st)  <br>:hide; conceal;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">eīs<span></span></a>
+<a class="note0">regiōnibus<span><br><br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">nōs<span><br><br></span></a>
+<a class="note0">iter<span></span></a>
+<a class="note0">factūrōs<span><br><br></span></a>
+<a class="note1">cognōverat<span>cognosco cognoscere, cognovi, cognitus V (3rd) TRANS  <br>:become acquainted with/aware of; recognize; learn, find to be; inquire/examine;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">pecora<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">hominēs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">agrīs<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">silvās<span><br><br></span></a>
+<a class="note1">compellēbat<span>compello compellere, compuli, compulsus V (3rd) TRANS  <br>:drive together (cattle), round up; force, compel, impel, drive; squeeze; gnash;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">et,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">equitātus<span><br><br></span></a>
+<a class="note0">noster<span></span></a>
+<a class="note1">līberius<span>libere(副詞）の比較級<br>副詞の比較級は形容詞比較級の中性単　対格である。<br>liber(adj) → libere(副詞は形容詞男性属格の語尾をiからeにしたもの）<br><br></span></a>
+<a class="note1">praedandī<span>praedor praedari, praedatus sum V (1st) DEP  <br>:acquire loot (by robbery/war/depredation); obtain food by hunting/preying;<br>(動名詞 受動態 n 単数 属格)<br>動名詞は基本、ｎ単数のみ<br></span></a>
+<a class="note1">vāstandīque<span>vasto vastare, vastavi, vastatus V (1st)  <br>:lay waste, ravage, devastate;<br>(動名詞&nbsp;n 単数 属格)<br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">agrōs<span><br><br></span></a>
+<a class="note1">ēiēcerat,<span>eicio eicere, ejeci, ejectus V (3rd) TRANS  <br>:cast/throw/fling/drive out/up, extract, expel, discharge, vomit; out (tongue);<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">viīs<span>via viae N (1st) F  <br>:way, road, street; journey;<br>&nbsp;(c 複数  奪格)通り道の奪格<br></span></a>
+<a class="note1">sēmitīsque<span>semita semitae N (1st) F  <br>:path;(c 複数  奪格)<br></span></a>
+<a class="note0">essedāriōs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">silvīs<span><br><br></span></a>
+<a class="note1">ēmittēbat<span>emitto emittere, emisi, emissus V (3rd)  <br>:hurl; let go; utter; send out; drive; force; cast; discharge; expel; publish;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">perīculō<span><br><br></span></a>
+<a class="note0">nostrōrum<span><br><br></span></a>
+<a class="note0">equitum<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">eīs<span></span></a>
+<a class="note1">cōnflīgēbat<span>confligo confligere, conflixi, conflictus V (3rd)  <br>:clash, collide; contend/fight/combat; be in conflict/at war; argue/disagree;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note1">metū<span>metus metus N (4th) M  <br>:fear, anxiety; dread, awe; object of awe/dread;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">lātius<span>副詞late (latusから）の比較級<br><br><br></span></a>
+<a class="note1">vagārī<span>vagor vagari, vagatus sum V (1st) DEP  <br>:wander, roam;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">prohibēbat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>omni <strong>spe</strong> contionis <strong>deposta</strong> : 独立奪格「<strike>全ての対抗する希望を放棄し</strike>」「全軍で対抗する希望を諦め」（omniはspeに掛かるのではなく、手段の奪格、名詞か）</p>
+<p><strong>dismissis</strong> (amplioribus ) <strong>coppiis</strong> : 独立奪格　「<strike>大量の物資を打ち捨</strike>て」「部隊の大部分を解散し」</p>
+<p><strong>relictis</strong> <strong>milibus</strong> quatuor essendariorum : 独立奪格　「約4000の一輪戦闘馬車要員を残し」</p>
+<p><strong>servabat</strong> itinera nostra : 「我々の進軍を見て」（未完了で、過去の繰り返される行動を表す？）</p>
+<p><strong>excedebat</strong> paulum ex via : <strong>paulumはこの場合名詞</strong>で、目的語になっている。「道を通って少し撤退し」</p>
+<p><strong>occultabat</strong> sese locis impeditis ac silvestribus : 手段の奪格で「森で近寄れない場所を使って自身を隠した」</p>
+<p><strong>compellebat</strong> pecora atque homines ex agrins in silvas : 「家畜や人を平地から森に移動させた」</p>
+<p><strong>eis regionibus quibus congnovera nos facturos (esse) iiter</strong>. quibusは関係代名詞、「<strong>通り道の奪格</strong>」nosは対格でfacturos は<strong>esse省略の不定詞</strong>。facio iterは行程を作る、つまりそこを通る、と言う意味。我軍が通ると分かっている地域から</p>
+<p>cum noster equitus eiecerat se in agros liberius.　: <strong>libeiusは副詞libereの比較級</strong>　「我軍の騎兵が気軽に畑に入ったりした時」</p>
+<p>prohibebat vagari latius hoc metu. latiusは副詞lateの比較級。lateは形容詞latusの属格latiiからの派生副詞　hoc metuは原因の奪格</p>
+<p>emittebat, confligebat, prohibebatの主語はCassivellaunus.<br></p>
+<strong>
+</strong></div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>Cassivellaunusは、上で我々が述べたように、全軍で対抗する事を諦め、部隊の大部分を解散して、約4000の一輪戦闘馬車要員を残し、我らが進軍するのを見ては少しだけ退き障害物があり森になっているところに隠れるのであった。そして、我々が行くことが解った地域から家畜や人を平地から森の中に移し、味方の騎兵が略奪や荒らすために畑にバラバラに自由に入るところを、一輪馬車をあらゆる道を通って森から送り出し、騎兵に戦いを仕掛け彼らを大変危険な状態にするのであった。このため、味方は展開する事が出来なかった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Relinquēbātur<span>relinquo relinquere, reliqui, relictus V (3rd)  <br>:leave behind, abandon; (pass.) <strong>be left</strong>, remain; bequeath;<br>(３人称 単数 未完了 受動態 直説法 )<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">longius<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">agmine<span>agmen agminis N (3rd) N  <br>:stream; herd, flock, troop, crowd; marching army, <strong>column</strong>, line; procession;<br>(n 単数 奪格)<br></span></a>
+<a class="note0">legiōnum<span><br><br></span></a>
+<a class="note1">discēdī<span>discedo discedere, discessi, discessus V (3rd)  <br>:go/march off, depart, withdraw; <strong>scatter</strong>, dissipate; abandon; lay down (arms);<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">paterētur,<span>patior pati, passus sum V (3rd) DEP  <br>:suffer; allow; undergo, endure; <strong>permit</strong>;<br>(３人称 単数 未完了 受動態 接続法 )<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">tantum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">agrīs<span><br><br></span></a>
+<a class="note1">vāstandīs<span>vasto vastare, vastavi, vastatus V (1st)  <br>:lay waste, ravage, devastate;<br>&nbsp;(未来 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">incendiīsque<span><br><br></span></a>
+<a class="note1">faciendīs<span>facio 未来分詞 受動　faciendus　奪格<br><br><br><br></span></a>
+<a class="note1">hostibus<span>hostis hostis N (3rd) C  <br>:enemy (of the state); stranger, foreigner; the enemy (pl.);<br>&nbsp;(X 複数  与格)<br></span></a>
+<a class="note1">nocērētur,<span>noceo nocere, nocui, nocitus V (2nd)  <br>:harm, hurt; injure (with DAT);<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note1">quantum<span>quantum ADV <br>:so much as; how much; how far;<br><br></span></a>
+<a class="note1">labōre<span>labor laboris N (3rd) M  <br>:labor/toil/exertion/effort/work; task/undertaking; production; childbirth;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">itinere<span>itiner itineris N (3rd) N  <br>:journey; road; passage, path; march<br>(n 単数 奪格)<br></span></a>
+<a class="note0">legiōnāriī<span><br><br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note1">efficere<span>efficio efficere, effeci, effectus V (3rd)  <br>:bring about; effect, execute, cause; accomplish; make, produce; prove;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">poterant.<span></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p><strong>ut Caesar paterentur noque discedi ~ , relinquebatur</strong>. ut~の名詞節が主語でrelinquebaturが動詞（非人称）</p>
+<p>neque discedi longius ab agmine legionum 「軍団の隊列（カラム）からあまり離れて広がらない事」<strong>discediは自動詞受動で、非人称</strong>。この「自動詞の受動で非人称」という使い方は日本語にはなく解りにくい。敢えて訳せは、discedo→広がる、散らばる discenduntur →（それは）広がられる、散らばられる。　その不定詞で（それは）広がられる事。広がられる、という日本語はすでにおかしいが、しいて言えばある特定の人物を主語にしないためにはこういう言い方になるのであろう。そういえば日本語は主語がなくても（曖昧でも）文は成りたつ。（例えば「広がらないように」と言う文の主語は曖昧）</p>
+<p>nocerenturも同じく受動、非人称。</p>
+<p><strong>nocentur hostibus in agris vastandis incendiisque faciendis</strong>. vastandis, faciendisは動形容詞で、文法的にはagrisを修飾。</p>
+<p><strong>tantum quantum legionarii milites poterant efficere labore atque itinere</strong>. <strong>tantum quantumはso mauch as</strong>で～するがぎりで</p>
+<p>labore atque itinere : 手段の奪格。同時に「<strong>二詞一意</strong>」（hendiadys)と云われる用法で、２つの名詞を繋いで名詞＋属格の意味を表すこと。この場合「行進しながら」の意。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>そこで残された手段として、Caesarは軍団の隊列から離れて広がることを禁止し、畑を荒らしたり燃やしたりすることで敵に害するのは軍団が行軍しながらできる範囲で行うようにした。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

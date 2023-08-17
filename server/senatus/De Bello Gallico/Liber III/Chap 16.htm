@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 16</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[16]<span></span></a>
+
+<a class="note0">Quō<span><br><br></span></a>
+<a class="note0">proeliō<span><br><br></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">Venetōrum<span>Venetus 複　属格<br></span></a>
+<a class="note0">tōtīusque<span><br><br></span></a>
+<a class="note0">ōrae<span><br><br></span></a>
+<a class="note0">maritimae<span></span></a>
+<a class="note1">confectum<span>conficio conficere, confeci, confectus TRANS 完了分詞　ｎ単　主格　;= complete, make, construct<br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>proelio : 奪格で「この戦いで」</p>
+<p>Venetorum et totius orae maritimae bellum : bellumに掛かる</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>この戦いによって、Venetusと近隣の海岸の諸国との戦争は終わった。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">omnis<span></span></a>
+<a class="note1">iuventūs,<span>juventus juventustis F 単　主格　;= youth, young persons<br></span></a>
+<a class="note1">omnēs<span>omnis omnis 複　主格<br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">graviōris<span>gravis grave, gravior, gravissimus 形容詞　比較級　単　属格　;= heavy, important, serious, burdensome<br></span></a>
+<a class="note1">aetātis<span>aetas aetatis F 単　属格　;= lifetime, age, generation<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">aliquid<span>aliquis ｎ　単　主格　;= anything, something</span></a>
+<a class="note1">cōnsiliī<span>consilium consili(i) N 単　属格　;= intelligence, mental ability,decision, plan<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">dignitātis<span>dignitas dignitatis F 単　属格　;= worth, excellence, honor, rank, status<br></span></a>
+<a class="note0">fuit<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">convēnerant,<span>convenio convenire, conveni, conventus ３複　過去完了　;= meet, assemble, go to meet, come together<br></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0">nāvium<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">ubīque<span>ubique 副詞　;= anywhere, everywhere (ubiuitous)<br></span></a>
+<a class="note1">fuerat<span>3単　過去完了</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">ūnum<span><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">coēgerant;<span>cogo cogere, coegi, coactus TRANS ３複　過去完了　;= collect, gather<br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">āmissīs<span>amitto amittere, amisi, amissus TRANS 完了分詞　受動　複　奪格 ;= lose, lose by death, send away, dismiss, let go<br></span></a>
+<a class="note1">reliquī<span>reliquus 形容詞　ｍ複　主格<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">reciperent<span>recipio ３複　未完了 接続法　;= keep back, recover, guarantee, accept</span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">modum<span>quemad modum 副詞　；= how</span></a>
+<a class="note1">oppida<span>oppidum oppidi 複　対格　;= town</span></a>
+<a class="note1">dēfenderent<span>defendo ３複　未完了　接続法<br></span></a>
+<a class="note1">habēbant.<span>3複　未完了<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>juenntus </strong>: 17歳から　45歳で、軍務につける年齢層の事を指す。</p>
+<p><strong>gravioris aetatis</strong> : より高齢の（人）omnesを修飾</p>
+<p><strong>in quibus aliquid consilii aut dignitatis fuit</strong> : 賢明または尊厳なものがそこにある</p>
+<p>cum ~ tum = :not only ~, but also =</p>
+<p>quibus amissis : 独立奪格　「それらをなくした状態で」</p>
+<p>reliqui reliquumの複　主格で　名詞化</p>
+<p>quo se reciperent : quoは疑問副詞　= where to </p>
+<p><strong>quem ad modum = quemadmodum</strong> 副詞　;= in what way, how</p>
+<p><strong>reciperent, defenderent</strong> : 「間接疑問の接続法」(NewLatin300)</p>
+<p>habebant : consider</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>軍務に付ける若い層、またもっと高齢で、知恵や地位のある層など皆が集まり、また船をそれが元あった一つの場所に集めた。それらを失い、残った人間は、どこに退去するか、どうやって都市を守るかなど何も考えられない状況であった。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Itaque<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">suaque<span></span></a>
+<a class="note1">omnia<span>副詞　in all respect</span></a>
+<a class="note0">Caesarī<span><br><br></span></a>
+<a class="note1">dēdidērunt.<span>dedo dedere, dedidi, deditus TRANS 3複　完了　;= give up, surrender<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>かくして、彼らは彼ら自身、彼らのものすべてをカエサルに降伏した。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">In<span></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">gravius<span>gravis 比較級　ｎ単　主格　対格　;= heavy, painful</span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">vindicandum<span>vindico vindicare, vindicavi, vindicatus 未来分詞　受動　m単　主格　;= claim, vindicate, punish avenge</span></a>
+<a class="note1">statuit<span>statuo statuere, statui, statutus 3単　完了　;= set up, establish, set, place, decide, think</span></a>
+<a class="note1">quō<span>副詞　;= to what purpose, for which reason<br></span></a>
+<a class="note1">dīligentius<span>副詞　diligenter diligentius, diligentissine 比較級　;= carefully, attensively, diligently<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">reliquum<span></span></a>
+<a class="note0">tempus<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">barbarīs<span><br><br></span></a>
+<a class="note1">iūs<span>jus juris N 単　主格　;= law, legal, right, duty, justice, oath<br></span></a>
+<a class="note1">lēgātōrum<span>legatus ここでは多分　ambassadorの意か<br></span></a>
+<a class="note1">cōnservārētur.<span>conservo conservare, conservavi, conservatus 3単　未完了受動　接続法　;= keep safe, intact, preserve<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>eo ~ quo ~</p>
+<p>gravius vindicandum (esse) : 動形容詞、叙述的に使われ非人称、受け身「もっと厳しくあるべきだ」</p>
+<p>jus legatorum : 使者の権利、尊重すべき権利</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルは彼らに対してはより厳しい処罰をすべきであろうと考えた、それは、今後、野蛮人共が使者の権利をもっと慎重に扱うようにするためである。</p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Itaque<span></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note1">senātū<span>senatus senatus M 単　奪格　;= senate<br></span></a>
+<a class="note1">necātō<span>neco necare, necavi, necatus TRANS 完了分詞　受動　m単　奪格　;= kill, murder<br></span></a>
+<a class="note0">reliquōs<span><br><br></span></a>
+<a class="note0">sub<span></span></a>
+<a class="note1">corōnā<span>corona coronae F crown, garland, wreath, holo ring<br></span></a>
+<a class="note1">vēndidit.<span>vendo vendere, vendidi, venditus 3単　完了　;= sell<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>sub corona : 奴隷として売られる捕虜の頭には花輪が載せられる事になっていた。そこで「奴隷として」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そこで、長老達は全て殺され、残りは奴隷として売った。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

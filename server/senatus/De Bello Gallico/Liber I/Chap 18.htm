@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 18</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[18]<span></span></a>
+
+<a class="note0">Caesar<span></span></a>
+<a class="note0">hāc<span><br><br></span></a>
+<a class="note1">ōrātiōne<span>奪格<br></span></a>
+<a class="note1">Liscī<span>属格<br></span></a>
+<a class="note1">Dumnorīgem,<span>Dumnorix, Dumnorigis N (3rd) M   :Dumnorix, name of a Gaul - in Caesar's Gallic War;対格<br></span></a>
+<a class="note1">Dīviciācī<span>Diviciacus, Diviciaci N (2nd) M   :Diviciacus; an Aeduan Gaul chief in Caesar; a Suessiones king;属格<br></span></a>
+<a class="note1">frātrem,<span>frater, fratris 名詞 (3rd) M   :brother; cousin;対格<br></span></a>
+<a class="note1">dēsignārī<span>designo, designare, designavi, designatus 動詞 (1st) TRANS   :mark; point/mark/trace out, outline/describe; indicate/designate/denote;不定詞<br></span></a>
+<a class="note1">sentiēbat,<span>sentio, sentire, sensi, sensus 動詞 (4th)   :perceive, feel, experience; think, realize, see, understand;3 単 未完了<br></span></a>
+<a class="note0">sed,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">plūribus<span>plus, (gen.), pluris 形容詞   :more; several. many; (COMP of multus) 奪格<br></span></a>
+<a class="note1">praesentibus<span>praesens, (gen.), praesentis 形容詞   :present; at hand; existing; prompt, in person; propitious;奪格</span></a>
+<a class="note0">eās<span><br><br></span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note1">iactārī<span>jacto, jactare, jactavi, jactatus 動詞 (1st)   :throw away, throw out, throw, jerk about; disturb; boast, discuss;不定詞<br></span></a>
+<a class="note1">nōlēbat,<span>nolo, nolle, nolui, - 動詞   :be unwilling; wish not to; refuse to;nolo, nolle, nolui, - 動詞   :be unwilling; wish not to; refuse to;3 単 未完了<br></span></a>
+<a class="note1">celeriter<span>celeriter, celerius, celerrime 副詞   :quickly/rapidly/speedily; hastily; soon/at once/early moment; in short period;</span></a>
+<a class="note0">concilium<span></span></a>
+<a class="note1">dīmittit,<span>dimitto, dimittere, dimisi, dimissus 動詞 (3rd) TRANS   :|||discontinue, renounce, abandon/forsake, forgo, give up (activity); dispatch; 3 単 現在</span></a>
+<a class="note0">Liscum<span></span></a>
+<a class="note1">retinet.<span>retineo, retinere, retinui, retentus 動詞 (2nd)   :hold back, restrain; uphold; delay; hold fast; retain,preserve; 3 単 現在</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Caesar sentiebat</strong></p>
+<p><strong>Dumnorigem designari</strong> : Dumnorixが指されている事　（sentiebatの目的、名詞句）</p>
+<p>hac oratione Lisci : このLiscusの話から</p>
+<p>pluribus praesentibus　：独立奪格　何人もの人が居るところでは</p>
+<p>nolebat eas res iactari : これらの事柄が論じられることを望まない</p>
+<p>LIBER PRIMUS IV/X 1:30あたりから</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>カエサルはリスカスの話の中でドゥムノリックス、ディウィコの兄弟であったが、についての指摘があったと考えたが、大勢が居るところでは話をしたくなかったので、早々に会議を切り上げ、後でリスカスを呼び戻した。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quaerit<span>quaero, quaerere, quaesivi, quaesitus 動詞 (3rd)   :search for, seek, strive for; obtain; ask, inquire, demand;3 単 現在</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">sōlō<span>solus, sola, solum (gen -ius) 形容詞   :only, single; lonely; alone, having no companion/friend/protector; unique; 奪格<br><br></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">conventū<span>conventus, conventus 名詞 (4th) M   :|gathering, meeting; assembly, people in assembly;  <br>奪格<br></span></a>
+<a class="note1">dīxerat.<span>3 単 過去完了 dico</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>　ex solo =<b> ex solo Liscoで</b>Liscus一人から</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>カエサルはリスカスだけにして、先ほどの会議で彼が言った事を尋ねた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dīcit<span><br><br></span></a>
+<a class="note1">līberius<span><strike>liber, libera -um, liberior -or -us, liberrimus -a -um 形容詞   </strike>:free (man); unimpeded; void of; independent,副詞　比較級　libere liberius(副詞は形容詞比較級の中性単数対格）<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">audācius.<span><strike>audax, audacis (gen.), audacior -or -us, audacissimus -a -um 形容詞  </strike> :bold, daring; courageous; reckless, rash;副詞　比較級</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>liber →　libere(副詞）</p>
+<p>liber liberior liberrimus 比較級は第三変化形容詞で、その中性対格単数は副詞の比較級</p>
+<p>liberior →liberius</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>リスカスはより自由にまたより率直に語った。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eadem<span></span></a>
+<a class="note1">sēcrētō<span>secreto, 副詞   :separately; secretly, in private;</span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">aliīs<span>alius, alia, aliud 形容詞   :other, another; different, changed;  <br>奪格<br></span></a>
+<a class="note1">quaerit;<span>quaero, quaerere, quaesivi, quaesitus 動詞 (3rd)   :search for, seek, strive for; obtain; ask, inquire, demand;</span></a>
+<a class="note1">reperit<span>reperio, reperire, repperi, repertus 動詞 (4th) TRANS   :discover, learn; light on; find/obtain/get;3 単 現在</span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">vēra:<span>verus, vera -um, verior -or -us, verissimus -a -um 形容詞   :true, real, genuine, actual; properly named; well founded; right, fair, proper; 主格対格<br></span></a>
+<a class="note1">ipsum<span>ipse, 代名詞    対格      　:himself/herself/itself; the very/real/actual one; in person; themselves (pl.);</span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">Dumnorīgem,<span><br><br></span></a>
+<a class="note1">summā<span>summus, summa, summum 形容詞   :highest, the top of; greatest; last; the end of;単数　奪格<br></span></a>
+<a class="note1">audāciā,<span>audacia, audaciae 名詞 (1st) F   :boldness, daring, courage, confidence; recklessness, effrontery, audacity;単　奪格　〈性質を表す奪格）<br></span></a>
+<a class="note1">magnā<span>奪格？F?<br></span></a>
+<a class="note1">apud<span>apud, 前置詞 (対格)  :at, by, near, among; at the house of; before, in the presence/writings/view of;</span></a>
+<a class="note1">plēbem<span>plebes, plebis 名詞 F   :common people, general citizens, commons/plebeians; lower class/ranks; mob/mass;対格<br></span></a>
+<a class="note1">propter<span>propter, 前置詞 (対格)  :near; on account of; by means of; because of;</span></a>
+<a class="note1">līberālitātem<span>liberalitas, liberalitatis 名詞 (3rd) F   :courtesy, kindness, nobleness; generosity; frankness; gift; 対格<br><br></span></a>
+<a class="note1">grātiā,<span>gratia, gratiae 名詞 (1st) F   :|favor/goodwill/kindness/friendship; influence; gratitude; thanks (pl.); Graces　奪格<br></span></a>
+<a class="note1">cupidum<span>cupidus, cupida -um, cupidior -or -us, cupidissimus -a -um 形容詞   :eager/passionate; longing for/desirous of (with gen.); greedy; wanton/lecherous;対格　Dumnorigemに一致</span></a>
+<a class="note1">rērum<span>res 属格</span></a>
+<a class="note1">novārum.<span>novus(=new)の属格</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p> Eadem secreto ab aliis quaerit　：カエサルは同じことを他からも内密に聴いた。</p>
+<p>reperit (haec) esse vera　：discover (them) to be true. </p>
+<p>ipsum esse Dumnorigem : Dumnorix is the very person. 「Dumnorixがその人であった」（ipse, Dumnorigemが対格であることに注意。これは間接話法で、対格＋不定詞になっているためである）</p>
+<p>summa audacia　：<strong>性質を表す奪格</strong>　a man of audacia(豪胆）Dumnorigemを指す。同格。</p>
+<p>magna gartia apud plebem : 平民の中で人気がある　gratiaは<strong>性質の奪格</strong>（形容詞に形容されて性質を表す）</p>
+<p>cupidum rerum novarum　：革新に熱心　rerum novarum<strong> 目的の属格</strong>（感情の向かう先）</p>
+<p>(<strong>rerum novarumと言うのは政変を表す普通の表現とのこと[AG])</strong></p>
+<p>以下、Line８まで間接話法、話者はLiscusで文の主語はDumnorixである。</p>
+<font color="#ffd700">
+</font><p><font color="#333">ipsum esse Dumnorigemは主語が対格のDumnorixである。後はそれと同格の名詞節が続いている。cupidumは形容詞だが、名詞化していると考える。</font></p>
+<font color="#008000">
+</font><p><font color="#ffd700"></font></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>同じことを内密に他からも聴いた。そしてそれが事実であると判明した。すなわち、ドゥムノリックスその人がまさにその人物であり、豪胆な人と呼ばれ、その気前良さで平民の中で大きな人気をもち、新しい政府を待ち望んでいる人物。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Complūres<span>complus, (gen.), compluris 形容詞   :many (pl.), several, a fair/good number; more than one (L+S);複　対格時間の対格 ＝multos annos</span></a>
+<a class="note0">annōs<span></span></a>
+<a class="note1">portōria<span>portorium, portori(i) 名詞 (2nd) N   :port duty; customs duty; tax; 複　対格<br></span></a>
+<a class="note1">reliquaque<span>reliquus, reliqua, reliquum 形容詞   :rest of/remaining/available/left; surviving; future/further; yet to be/owed; 対格</span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note0">Haeduōrum<span><br><br></span></a>
+<a class="note1">vectīgālia<span>vectigal, vectigalis 名詞 (3rd) N   :tax, tribute, revenue;対格</span></a>
+<a class="note1">parvō<span>parvus, parva -um, minor -or -us, minimus -a -um 形容詞   :small, little, cheap; unimportant; (SUPER) smallest, least; 奪格<br></span></a>
+<a class="note1">pretiō<span>pretium, preti(i) 名詞 (2nd) N   :price/value/worth; reward/pay; money; prayer/request; 奪格〈価格の奪格）<br></span></a>
+<a class="note1">redēmpta<span>redimo, redimere, redemi, redemptus 動詞 (3rd) TRANS   :buy back, recover, replace by purchase; buy up; make good, fulfill (promise);完了分詞受動</span></a>
+<a class="note0">habēre,<span><br><br></span></a>
+<a class="note0">proptereā<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">illō<span>illeの奪格 <br>独立奪格<br></span></a>
+<a class="note1">licente<span>liceor, liceri, licitus sum 動詞 (2nd) DEP   :bid on/for, bid, bid at auction; make a bid; 奪格</span></a>
+<a class="note1">contrā<span>前置詞　対格支配　against, opposit<br></span></a>
+<a class="note1">licēri<span>liceor不定詞　受動</span></a>
+<a class="note1">audeat<span>audeo, audere, ausus sum 動詞 (2nd) SEMIDEP   :intend, be prepared; dare/have courage (to go/do), act boldly, venture, risk;3 単 現在 能動態 接続法</span></a>
+<a class="note0">nēmō.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>(Dumnorigem) habere prtoria et vectigalia complures annos. (annosは時空の対格　NewLatin181)</p>
+<p>portria : portorium 通行税</p>
+<p>reliquaque omnia Headuorum vectigal : その他のハエドゥの税の全て</p>
+<p>habere redempta : had purchased and held 英語Have + 完了分詞と同じ<font color="#0000ff">(AG497.b) </font><font color="#000000">Chap 15 coactum habebat</font></p>
+<font color="#000000">
+</font><p><font color="#000000"></font><strong>illo licente</strong> : 独立奪格、彼がBiｄした時に</p>
+<p><strong>nemo audeat liceri contra = no one dare to bit against</strong></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>（ドゥムノリックス）は長年の間、通行税とその他のハエドゥの税全般の徴収の権利を保持している、それは彼が安い価格で競り落としたものである。なぜなら敢えて誰も彼に対抗して競り合う人間がいないからである。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">suam<span>彼自身の</span></a>
+<a class="note0">rem<span></span></a>
+<a class="note1">familiārem<span>familiaris, familiaris 名詞 (3rd) C   :<strong>member of household</strong> (<strong>family/servant/esp. slave</strong>); familiar acquaintance/friend; <br>対格<br></span></a>
+<a class="note1">auxisse<span>augeo, augere, auxi, auctus 動詞 (2nd) TRANS   :<b>increase</b>, enlarge, augment; spread; honor, promote, raise; exalt; make a lot of; 不定詞　完了</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">facultātēs<span>facultas, facultatis 名詞 (3rd) F   :means; ability, skill; opportunity, chance; <b>resources (pl.), </b>supplies; 複　対格<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">largiendum<span>largior, largiri, largitus sum 動詞 (4th) DEP   :grant; give bribes/presents corruptly; give generously/bountifully; 動名詞　対格 ad + 動名詞　＝目的を表す</span></a>
+<a class="note1">magnās<span>magnus (形容詞）複　対格 facultatesを修飾<br></span></a>
+<a class="note1">comparāsse;<span>=comparavisse comparo, comparare, comparavi, comparatus 動詞 (1st) TRANS   :prepare; provide; compose; collect, get together/hold of; raise (force); unite;不定詞　完了</span></a>
+<a class="note0">magnum<span></span></a>
+<a class="note1">numerum<span>numerus 対格</span></a>
+<a class="note1">equitātūs<span>equitatus 対格<br></span></a>
+<a class="note0">suō<span><br><br></span></a>
+<a class="note1">sūmptū<span>sumptus, sumptus 名詞 (4th) M   :cost, charge, expense;奪格</span></a>
+<a class="note0">semper<span></span></a>
+<a class="note1">alere<span>alo, alere, alui, alitus 動詞 (3rd) TRANS   :feed, nourish, rear, nurse, suckle; cherish; support, maintain, develop;不定詞</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">circum<span>circum, 前置詞 (対格)  :around, about, among, near (space/time), in neighborhood of; in circle around;</span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">habēre,<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">sōlum<span>solum, 副詞   :only/just/merely/barely/alone;<br></span></a>
+<a class="note1">domī,<span>domus, domi 名詞 (2nd) F   :house, building; home, household;複　主格　単属格 <br>または <br>副詞で　at home, in the house<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note1">fīnitimās<span>finitimus, finitima, finitimum 形容詞   :neighboring, bordering, adjoining;複対格</span></a>
+<a class="note1">cīvitātēs<span>複　主格　対格</span></a>
+<a class="note1">largiter<span>largiter, 副詞   :in abundance, plentifully, liberally, much; greatly; has great influence;</span></a>
+<a class="note1">posse,<span>possum 不定詞</span></a>
+<a class="note1">atque<span>and</span></a>
+<a class="note0">huius<span><br><br></span></a>
+<a class="note1">potentiae<span>potentia, potentiae 名詞 (1st) F   :force, power, political power; <br>属格</span></a>
+<a class="note1">causā<span>causa, 前置詞 (属格)  :for sake/purpose of (preceded by GEN.), on account/behalf of, with a view to;<br></span></a>
+<a class="note1">mātrem<span>mater 対格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">Biturīgibus<span>Biturig, Biturigis N (3rd) M   :Bituriges (pl.), a people of SW Gaul, Aquitania - in Caesar's "Gallic War";与格奪格<br></span></a>
+<a class="note1">hominī<span>homo 与格単数間接目的語<br></span></a>
+<a class="note1">illīc<span>illic, 副詞   :in that place, there, over there;</span></a>
+<a class="note1">nōbilissimō<span>nobilis 最上級　与格　奪格<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">potentissimō<span><br><br></span></a>
+<a class="note1">conlocāsse;<span>conloco, conlocare, conlocavi, conlocatus 動詞 (1st) TRANS   :|put together, assemble; settle/establish in a place/marriage; billet; lie down; 不定詞完了= conlocāvisse<br></span></a>
+<a class="note0">ipsum<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Helvētiīs<span><br><br></span></a>
+<a class="note0">uxōrem<span><br><br></span></a>
+<a class="note0">habēre,<span><br><br></span></a>
+<a class="note1">sorōrum<span>soror, sororis 名詞 (3rd) F   :sister; (applied also to half sister, sister-in-law, and mistress!);属格</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">mātre<span>奪格</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">propinquās<span>propinquus, propinqui 名詞 (2nd) M   :relative;対格<br></span></a>
+<a class="note0">suās<span><br><br></span></a>
+<a class="note1">nūptum<span>nubo nubere, nupsi, nuptus目的分詞　nuptusの対格結婚するために</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">aliās<span>alius, alia, aliud 形容詞   :other, another; different, changed;  <br>F対格<br></span></a>
+<a class="note0">cīvitātēs<span><br><br></span></a>
+<a class="note0">conlocāsse.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>His rebus　：これらの事柄により　（ドゥムノリックス）は</p>
+<p><font color="#ff0000">auxisse</font> (increase) suam rem familiarem　：彼自身の家族（使用人）を増やし</p>
+<p>et</p>
+<p><font color="#ff0000">comparavisse</font> magnas facultates ad largiendum : 賄賂のための大量の資源を集めた</p>
+<p>(<font color="#0000ff">ad + 動名詞で目的を表す<i>動名詞対格が使えるのは対格支配の前置詞と一緒の場合のみ[<strong>AG506</strong>] [<strong>NewLatin338.3</strong>]</i>）</font></p>
+<p>et</p>
+<p><font color="#ff0000">alere</font> equitatus suo sumptu　：自身の経費で騎兵隊を保持した。</p>
+<p>et</p>
+<p><font color="#ff0000">habere</font> circum se, 自身の近くにもった　このseは語り手のことではなくDumnorixのこと<font color="#0000ff">（newLatin 244.3)</font></p>
+<p><font color="#ff0000">posse</font> largiter neque ~ sed etiam = not only~but also : 大きな影響力を持っている</p>
+<p>largiter = has great infulence</p>
+<p>----------------------------------</p>
+<p>atque huius potentiae causa : ここのcausaは原因という名詞ではなく前置詞、<strong>属格を伴い</strong>、for the sake of ~, on account of ~の意味　：　個人の力（影響力）という点については(<strong>NewLatin198.1</strong>)</p>
+<p>　　　potentia : power as attribute of the person</p>
+<p>　　　potentas : power to do something</p>
+<p>　　　facultas : oppotunity</p>
+<p><font color="#ff0000">conlocasse</font> martem homini : 母親を～の人との（政略）結婚をアレンジし</p>
+<p><font color="#ff0000">habere</font> ipsum uxorem ex Helvettis : 自分自身はヘルウエティからの妻を持ち</p>
+<p><font color="#ff0000">conlocasse</font> nuptum sororum ~ : ~の妹を結婚するためにアレンジした(<font color="#ff0000">sororumが属格なのは？　</font>sororem(対格）のテキスト多し）</p>
+<p>conloncasse = conloncavisse :<strong> conloco = colloco = settle nuptum(目的分詞）を追加して(次の行で同じように使っている）</strong></p>
+<p><strong>nuptum collocasse = to place to be married = to give in marriage(結婚するために配置する）</strong></p>
+<p>in Biturigibus homini illic nobilissimo : Biturigesの人、その人はそこで最も高貴であった</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>これらの事柄により、彼は自身の財産〈奴隷）を増やし、賄賂で政治的なサポートを得た。また非常に多くの騎兵を自身の費用で養い常に彼の身辺に配置していた。（依然として間接話法の中にある）彼は家で（自分の種族）の中だけではなく近隣の種族でも大変な影響力を持っている。その影響力、力について言えば、まず彼は母親をビトゥリンゲスの最も高貴で最も有力な人間に政略結婚で送り込み、自身はヘルウェティの妻を持ち（オルゲトリックスの娘）母方の姉妹、自分の親戚たちを異なる種族と結婚させた。</p>
+</div>
+</div>
+<div class="spacer">Line7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Favēre<span>faveo, favere, favi, fautus 動詞 (2nd)   :favor (w/DAT), befriend, support, back up;<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cupere<span>cupio, cupere, cupivi, cupitus 動詞 (3rd) TRANS   :wish/long/be eager for; desire/want, covet; desire as a lover; favor, wish well;</span></a>
+<a class="note1">Helvētiīs<span>与格<br></span></a>
+<a class="note1">propter<span>propter, 前置詞 (対格)  :near; on account of; by means of; because of;</span></a>
+<a class="note1">eam<span>対格</span></a>
+<a class="note1">adfīnitātem,<span>adfinitas, adfinitatis 名詞 (3rd) F   :relation(ship) by marriage; relationship (man+wife), bond/union; neighborhood;<br></span></a>
+<a class="note1">ōdisse<span>odi, odisse, osus 動詞 PERFDEF   :hate (PERF form, PRES force), dislike; be disinclined/reluctant/adverse to;不定詞</span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">suō<span><br><br></span></a>
+<a class="note1">nōmine<span>suo nomine = on his own account 商業的な慣用句（奪格、奪格）</span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Rōmānōs,<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">adventū<span>adventus, adventus 名詞 (4th) M   :arrival, approach; visit, appearance, advent; ripening; invasion, incursion; 奪格<br></span></a>
+<a class="note1">potentia<span>主格　主語</span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note1">dēminūta<span>deminuo, deminuere, deminui, deminutus 動詞 (3rd) TRANS   :|weaken; curtail; impair; understate; make diminutive; take away/deduct/deprive;  完了分詞　受動</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Dīviciācus<span><br><br></span></a>
+<a class="note1">frāter<span>frater, fratris 名詞 (3rd) M   :brother; cousin;主格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">antīquum<span>antiquus, antiqua -um, antiquior -or -us, antiquissimus -a -um 形容詞   :old/ancient/aged; time-honored; simple/classic; venerable; archaic/outdated;対格<br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">grātiae<span>gratia, gratiae 名詞 (1st) F   :popularity/esteem/credit <strong>infulence</strong>; ;属格 単<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">honōris<span>honor, honoris 名詞 (3rd) M   :honor; respect/regard; mark of esteem, reward; dignity/grace; public office; 属格<br></span></a>
+<a class="note1">sit<span>3 単 現在 能動態 接続法)</span></a>
+<a class="note1">restitūtus.<span>restituo, restituere, restitui, restitutus 完了分詞　受動　主格　単　M  :restore; revive; bring back; make good;</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>adfinitatem　：affinitas = adfinitas = affinity(English) 結婚による関係</p>
+<p><strong>faveo cupio共に与格支配の動詞</strong></p>
+<p>in antiquum locum = in an old place</p>
+<p>deminuta : sitが省略されていると考える。eius potentia deminuta sit.</p>
+<p>adventu　：奪格、原因の奪格<strike></strike></p>
+<strike>
+</strike><p><strike></strike></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼は結婚による関係からヘルウェティをサポートし良かれと思ってきた。そして彼自身の都合からもカエサルやローマを憎んでいる。と言うのは彼ら〈カサル、ローマ）の到着により、彼の影響力は弱まり、彼の兄弟であるディウィキティアクスはその影響力と名誉に於ける立場を以前のものに戻したからである。(復権した、ということ）</p>
+</div>
+</div>
+<div class="spacer">Line8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sī<span><br><br></span></a>
+<a class="note1">quid<span>quis ここは不定代名詞のquis, 中性、主格</span></a>
+<a class="note1">accidat<span>acido accidere,accidi, -;= fall upon, happen, occur, happen to (DAT)３単　接続法</span></a>
+<a class="note0">Rōmānīs,<span><br><br></span></a>
+<a class="note1">summam<span>summus 形容詞　ｆ単　対格;= highest, top, 最上級</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">spem<span>spes spei  F ;= hope expectation, promise</span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">Helvētiōs<span><br><br></span></a>
+<a class="note0">rēgnī<span><br><br></span></a>
+<a class="note1">obtinendī<span>obtineo 動形容詞<br></span></a>
+<a class="note0">venīre;<span><br><br></span></a>
+<a class="note1">imperiō<span>imperium 奪格<br></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">modo<span>副詞　= only, merely</span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">rēgnō,<span>regnumの奪格(deは奪格支配）<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">habeat<span></span></a>
+<a class="note1">grātiā<span>gratia 奪格;= influence<br></span></a>
+<a class="note1">dēspērāre.<span>despero, desperare, despervi, desperatus 不定詞;= despair (of), have no hope, hopeless<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>si quid accidat : もし（与格）に何か起きたらquidは不定代名詞quisの中性、主格</p>
+<p>venire in summam spem : 最大の希望に至る</p>
+<p><strong>obtinendi regni</strong> : obtinendiはobtineoの動形容詞　元々はobtinendi regnum(動名詞+対格）を動形容詞で置き換えの例、属格でspemに掛かる。覇権を得ることの（希望）（<strong>動形容詞文</strong>）</p>
+<p>imperio populi Romani : ローマの支配下においては　（<strong>付帯状況の奪格</strong>）（NewLatin221)</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>もしローマ軍に何か（悪いこと）あれば、それが彼の&nbsp;&nbsp;ヘルウエティによる支配という希望の最大のチャンスにあるであろう。ローマ軍の支配下に置いては、支配権の問題だけでなく、今たくさん持っている影響力に関しても絶望的になる。</p>
+</div>
+</div>
+<div class="spacer">Line9</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Reperiēbat<span>reperio ３単　未完了;= discover</span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">quaerendō<span>quaero quaerere, quaesivi, quaesistus 未来分詞　受動この場合、動名詞　奪格　（in+奪格）quaerundum の中性、奪格;= search for , seek, obtain, inquire<br></span></a>
+<a class="note0">Caesar,<span></span></a>
+<a class="note1">quod<span>副詞　;= with respect to which</span></a>
+<a class="note1">proelium<span>proelium proeli ;= battle　ｎ　単数　主格</span></a>
+<a class="note1">equestre<span>equester 形容詞　ｎ単　主格　proeliumを修飾</span></a>
+<a class="note1">adversum<span>advvensus 形容詞　N単主格　proeliumに掛かる;= unfavorable, opposite, direct facing</span></a>
+<a class="note0">paucīs<span></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note0">diēbus<span></span></a>
+<a class="note0">esset<span></span></a>
+<a class="note0">factum,<span></span></a>
+<a class="note1">initium<span>initium initi N ;= beginning, commencement 対格　不定詞の主語</span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">fugae<span>fuga fugae F ;= fleeting, escape, exile</span></a>
+<a class="note0">factum<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Dumnorīge<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note1">equitibus<span>eques equitis M  複　奪格　（与格）;= knight、 horse</span></a>
+<a class="note1">(nam<span>接続詞　;= for, thus, because, actually</span></a>
+<a class="note1">equitātuī,<span>equitatus equitatis M 単　与格　;= cavalry, hoorse-soldiers</span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">auxiliō<span><br><br></span></a>
+<a class="note0">Caesarī<span><br><br></span></a>
+<a class="note0">Haeduī<span><br><br></span></a>
+<a class="note1">mīserant,<span>mitto mittere, misi, missus３複　過去完了;= send, throw</span></a>
+<a class="note0">Dumnorīx<span><br><br></span></a>
+<a class="note1">praeerat):<span>praesum praeesse, praefui 3単　未完了;= be in charge, be control (w/DAT)</span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">fugā<span>奪格（原因の奪格）<br></span></a>
+<a class="note0">reliquum<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">equitātum<span><br><br></span></a>
+<a class="note1">perterritum.<span>perterreo perterrere, perterritus 完了分詞　受動　;= frighten, greatly terrified</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Caesar reperiebat etiam in quaerendo</strong> :&nbsp;&nbsp;「カエサルは、また、調査することで、発見した」</p>
+<p>&nbsp;<strong>quearendoは動名詞、奪格 </strong>(NewLatin 338.4.b)</p>
+<p>quod&nbsp;はこの場合副詞で「with respect to which]の意。<font color="#000000">&nbsp;直訳すれば「数日前に残念な騎兵による戦いが起きたが、それについては～」</font></p>
+<font color="#000000">
+</font><p><font color="#000000"></font>advensum proelium equestre : 騎兵による残念な戦い</p>
+<p>esset factum ante paucis diebus : 数日前に起きた</p>
+<p>initium eius fugae factum (esse) a ~ : ～によってそれらの退却は開始された、</p>
+<p>a Dumnorige atque eius equitibus ドムノリックスと彼の騎兵から</p>
+<p>nam Dumnorix praeerant equitatui : と言うのはドムノリックスが騎兵の指揮をとっていたので　（<u>praesumは与格の目的をとる）</u></p>
+<p>quem Haedui miserant axilio Caesari : それはハエドゥがカエサルへの支援のため送ったものであったが axilio (<strong>目的の与格</strong>）(NewLatin 191) Caesari (<strong>受益の与格</strong>）(NewLatin188)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>&nbsp;&nbsp;カエサルはまた、調査により次のことを発見した。数日前に残念な騎兵による戦いがあったが、我々の退却はドムノリックスとその騎兵により始まり、それにより残りの騎兵たちは恐怖に駆られたということである。（当時、ハエドゥがカエサル支援のために送った騎兵隊を指揮していた）</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

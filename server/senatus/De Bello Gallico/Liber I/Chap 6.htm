@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 6</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[6]<span></span></a>
+
+<a class="note1">Erant<span>3複　未完了</span></a>
+<a class="note1">omnīnō<span>omnino, 副詞   :entirely, altogether</span></a>
+<a class="note1">itinera<span>itiner, itineris 名詞 (3rd) N   :journey; road; passage, path; march主格</span></a>
+<a class="note0">duo,<span></span></a>
+<a class="note1">quibus<span>qui 奪格</span></a>
+<a class="note0">itineribus<span></span></a>
+<a class="note0">domō<span></span></a>
+<a class="note1">exīre<span>exeo exire, exivi(i) exitus INTRANS 不定詞　;= come, go, march, move out</span></a>
+<a class="note1">possent:<span>possum : 3 複 未完了 能動態 接続法<br></span></a>
+<a class="note1">ūnum<span>中性　単　主格</span></a>
+<a class="note1">per<span>＝through 対格支配</span></a>
+<a class="note1">Sēquanōs,<span>Sequanus, Sequani N (2nd) M   :Sequani, tribe in E. Gaul - in Caesar's "Gallic War";</span></a>
+<a class="note1">angustum<span>angustus, angusta -um, angustior -or -us, angustissimus -a -um 形容詞 n単　主格&nbsp;;= narrow, steep, close,</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">difficile,<span>difficilis, difficile, difficilior -or -us, difficillimus -a -um 形容詞 n 単　主格 ;= difficult, troublesome;</span></a>
+<a class="note1">inter<span>=between</span></a>
+<a class="note0">montem<span></span></a>
+<a class="note0">Iūram<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">flūmen<span></span></a>
+<a class="note1">Rhodanum,<span>Rhodanus, Rhodani N (2nd) M   :Rhone; (river in SW Gaul - in Caesar's Gallic War);</span></a>
+<a class="note1">vix<span>vix, 副詞   :hardly, scarcely, barely, only just <br>quaのまえにある場合にはよ強調的</span></a>
+<a class="note1">quā<span>qua, 副詞   :where; by which route;</span></a>
+<a class="note1">singulī<span>singulus, singula, singulum 形容詞   :apiece (pl.); every; one each/at a time複　主格 <br>Singuliは複数で使用する（G.L)</span></a>
+<a class="note1">carrī<span>carrus, carri 名詞 (2nd) M   :wagon; (Gallic type); 複　主格</span></a>
+<a class="note1">dūcerentur;<span>duco ducere, duxi, ductus 3 複 未完了 受動態 接続法 ;= lead, command,draw</span></a>
+<a class="note0">mōns<span></span></a>
+<a class="note1">autem<span>autem, 接続詞   :but (postpositive), on the other hand/contrary</span></a>
+<a class="note0">altissimus<span></span></a>
+<a class="note1">impendēbat,<span>impendeo, impendere, -, - 動詞 未完了　３単&nbsp;;= overhang, hang over</span></a>
+<a class="note1">ut<span>目的、結果を表すut + 接続法</span></a>
+<a class="note1">facile<span>facile, facilius, facillime 副詞</span></a>
+<a class="note1">perpaucī<span>perpaucus, perpauca, perpaucum 形容詞   :very few (pl.); select;複　主格</span></a>
+<a class="note1">prohibēre<span>prohibeo 不定詞hinder, restrain; forbid, prevent;</span></a>
+<a class="note0">possent:<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>quibus itineribus domo exire possent</strong>：　itineribus [<strong>手段の奪格</strong>] ：intineraとintineribusと同じ名詞を繰り返すのはラテン語はよくある。（AG370) possent　接続法なのは従属節であるから。<strong>特徴の節</strong>、と言われるもので接続法。（NewLatin283)</p>
+<p><strong>unum (est) per Sequanos</strong> : unum (itiner) (est) per Sequanos 形容詞unusは省略されたitiner(中性）に合わせて中性、単になっている。</p>
+<p>angustum et difficile, inter montem Juram et flumen Rodanum,</p>
+<p><strong>vix qua singuli carri ducerentur　</strong>: quaはここでは副詞で　「そこを通って」の意。</p>
+<p><strong>singuli carri</strong> : carriはcarrusの複、主格なので　singulusという形容詞も複数形になっている。singleなのに複数とは、ちょっと違和感があるが、論理的。（形容詞は修飾する名詞と格、数、性を合わせる）</p>
+<p><strong>ducerentur</strong> : 接続法なのは前と同様、特徴の節だから。</p>
+<p><strong>facile perpauci prohibere possent</strong>: facileは副詞、簡単に　主語はperpauci perpauci (homines)、prohibere (eos)の省略があると考える。「大変少数の人間で、Helvetiを禁止可能」perは強調接頭語で　per + paucus　大変少人数</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>故郷を離れるには全部で２つの道しかなかった。一つはセクアナ族を通る道で、ジュラ山脈とロネ川の間の狭くて困難な道であり、そこでは馬車は一列でしか引くことができずような道であり、他方（反対側の）山は高くて入りだしており、大変少人数でも簡単に行く手を塞ぐことができるようであった。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">alterum<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">prōvinciam<span></span></a>
+<a class="note1">nostram,<span>noster = ours (対格）</span></a>
+<a class="note1">multō<span>副詞　;= much, by much, a great deal</span></a>
+<a class="note0">facilius<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">expedītius,<span>expeditus, expedita -um, expeditior -or -us, expeditissimus -a -um 形容詞&nbsp;&nbsp; 比較級　ｎ単　主格 ;= unencumbered; without baggage; light armed;</span></a>
+<a class="note1">proptereā<span>propterea quodでbecause</span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">fīnēs<span></span></a>
+<a class="note0">Helvētiōrum<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">Allobrogum,<span>Allobroges Provinciaの北東のガリアの国（ファビウス　Allobrogicusによって平定されていた）</span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">nūper<span>nuper, -, nuperrime 副詞 ;= recently, not long ago;</span></a>
+<a class="note1">pācātī<span>pacatus, pacata -um, pacatior -or -us, pacatissimus -a -um 形容詞 m 複　主格　;= peaceful, calm;</span></a>
+<a class="note0">erant,<span></span></a>
+<a class="note0">Rhodanus<span></span></a>
+<a class="note1">fluit,<span>fluo, fluere, fluxi, fluxus&nbsp;3単　現在 ;= flow, stream;</span></a>
+<a class="note0">isque<span></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">nūllīs<span>nullus 奪格</span></a>
+<a class="note1">locīs<span>locum, loci 名詞 (2nd) N   :place, territory/locality/neighborhood/region　奪格</span></a>
+<a class="note1">vadō<span>vadum, vadi 名詞 (2nd) N   :shallow place, stream; ford, shoal; channel;奪格（手段）</span></a>
+<a class="note1">trānsītur.<span>transeo, transire, transivi(ii), transitus ３単　受動;=&nbsp;go over, cross;</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Allobrogum　：　Fabius AllobrogicusによってBC121に平定され　BC61にPomptiniusによって再度平定された、Provinciaの北東のガリアの国&nbsp; <u>Allobrox</u> <u>Allobrogis</u> M 複は　<u>Allobroges</u></p>
+<p><strong>nōn nūllīs　</strong>：Not Noone＝多くの ,some</p>
+<p><strong>locis </strong>: [場所の奪格]</p>
+<p><strong>vado</strong> : [手段の奪格]　いくつかの場所で、浅瀬によって渡される　</p>
+<p><strong>Rhodanus fluit, transitur</strong>. : transiturは受動形で、「渡られる」主語はRhodanusなので、逐語的には「ロダヌス河は流れ、渡られる」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>他方の道は我々の属州を通る道で、はるかに容易で軽装で済むものであった。なぜなら、ヘルウェティとアロブロゲス、それらはここしばらく平和な国であったが、の領地の間にはロネ川が流れており渡れる浅瀬が沢山あった。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Extrēmum<span>extremum, extremi 名詞 (2nd) N   :limit, outside; end;単　主格　中性</span></a>
+<a class="note1">oppidum<span>中性 単　主格</span></a>
+<a class="note1">Allobrogum<span>Allorox Allobrogis M　子音幹第三 <strong>複　属格</strong><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">proximumque<span></span></a>
+<a class="note0">Helvētiōrum<span></span></a>
+<a class="note1">fīnibus<span>finis finis C 複　与格　;= boundary, end limit, country</span></a>
+<a class="note0">Genāva.<span></span></a>
+<a class="note0">Ex<span></span></a>
+<a class="note1">eō<span>isの奪格</span></a>
+<a class="note0">oppidō<span></span></a>
+<a class="note1">pōns<span>pons, pontis 名詞 (3rd) M   :bridge;主格</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Helvētiōs<span></span></a>
+<a class="note1">pertinet.<span>pertineo, pertinere, pertinui, pertentus 動詞 (2nd)   :reach; extend; relate to; concerns, pertain to;３単現在</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Extrēmum oppidum Allogrogum : アロブロゲスの端の町</p>
+<p>oppidum est Genava. : が普通の文</p>
+<p><strong>proximumque Helvētiōrum fīnibus</strong> ：finibus が与格なのは近接の形容詞と共に用いられる与格（NewLatin192.1) Chap1 Line4にも同様の用法がある。</p>
+<p>pons pertinet.</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>アロブロゲスの端で、ヘルウェティの領地に最も近い都市がジェノバである。湖の街から橋はヘルウェティの領地に延びている。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Allobrogibus<span>与格　persuasurosの目的語</span></a>
+<a class="note1">sēsē<span>対格 意味上の主語 <br>Helvetiのこと</span></a>
+<a class="note1">vel<span>vel, 副詞   :even, actually; or even, in deed; or;</span></a>
+<a class="note1">persuāsūrōs,<span>persuadeo, persuadere, persuasi, persuasus 動詞 (2nd)   :persuade, convince (with dat.); <br>未来分詞　能動　対格 <br>不定詞</span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">nōndum<span>nondum, 副詞   :not yet;</span></a>
+<a class="note0">bonō<span></span></a>
+<a class="note1">animō<span>animus, animi 名詞 (2nd) M   :mind; intellect; soul; feelings; heart; spirit, courage, character, pride; air;与格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">populum<span></span></a>
+<a class="note1">Rōmānum<span>対格</span></a>
+<a class="note1">vidērentur,<span>video <br>３複　未完了受動　接続法 <br>主語はアロブロゲスで「見なされる」 <br>〈従属節の動詞で接続法）</span></a>
+<a class="note1">exīstimābant<span>existimo, existimare, existimavi, existimatus TRANS 3複　未完了 ;= value, esteem; form/hold opinion, view;think, suppose; estimate;&nbsp;judge/consider;</span></a>
+<a class="note0">vel<span></span></a>
+<a class="note1">vī<span>vis, viris 名詞 (3rd) F   :strength (bodily) (pl.), force, power, f 単　奪格</span></a>
+<a class="note1">coāctūrōs<span>] cogo, cogere, coegi, coactus 動詞 (3rd) TRANS   :collect/gather, round up, restrict/confine; force/compel <br>未来分詞　複　対格</span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">suōs<span>Allobrogum</span></a>
+<a class="note0">fīnēs<span></span></a>
+<a class="note1">eōs<span>Helvetiosのこと <br>ireの意味上の主語</span></a>
+<a class="note1">īre<span>eo ire, ivi(i), itus 不定詞　;= go, walk, march</span></a>
+<a class="note1">paterentur.<span>patior, pati, passus sum 動詞 (3rd) DEP   :suffer; allow; undergo, endure; permit; <br>３複受動態　接続法</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>aut A aut B = vel A vel B = A またはB</p>
+<p>exīstimābant(主語はHelvetii)</p>
+<p>全体の構文は　<strong>Helveti exitimabant vel esse persuasuros vel esse coacturos</strong> : 「ヘルウェイティは説得または強引に～しようと考えていた。」</p>
+<p><strong>vel persuāsūrōs　(esse)　（未来不定詞）</strong>sese : 対格で意味上の主語　ヘルウェティのこと</p>
+<p><strong>vel vī coāctūrōs　(esse)（</strong>未来不定詞）<strong>vi(奪格）力で</strong></p>
+<p><strong>ut per suōs fīnēs eōs īre paterentur</strong>.　：目的の名詞節　suosはAllobroges、eosはHelvetiでireの主語</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Allobrogisはその頃まだローマに人には好意的にみなされていなかったが、HelvetiはそのAllobrogisの領地を通る事を許すよう、Allobrogisを説得するかまたは武力で従わせようとしていた。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Omnibus<span>奪格</span></a>
+<a class="note1">rēbus<span>奪格 <br>omnis res = everything</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">profectiōnem<span>profectio, profectionis 名詞 (3rd) F   :departure;単　対格</span></a>
+<a class="note1">comparātīs,<span>comparo, comparare, comparavi, comparatus 動詞 (1st) TRANS   :prepare <br>完了分詞　奪格</span></a>
+<a class="note1">diem<span>dies C 対格</span></a>
+<a class="note1">dīcunt,<span>dico = declare <br>3 複 現在</span></a>
+<a class="note1">quā<span>qui f 単　奪格</span></a>
+<a class="note1">diē<span>diesの奪格</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">rīpam<span>ripa, ripae 名詞 (1st) F   :bank <br>対格</span></a>
+<a class="note0">Rhodanī<span></span></a>
+<a class="note0">omnēs<span></span></a>
+<a class="note1">conveniant.<span>convenio, convenire, conveni, conventus 動詞 (4th)   :|meet/assemble; go to meet; come together;３複現在　接続法</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Omnibus rēbus　：omnis res = Everything　奪格</p>
+<p><strong>Omnibus rēbus comparātīs</strong> : 独立奪格</p>
+<p>(Hervettii) dicunt diem</p>
+<p><strong>qua die conveniant</strong> 関係代名詞で導かれた目的節　<font style="background-color: rgb(255, 255, 0);">diem qua die :と先行詞の繰り返しはLine1のitinerと同じ</font></p>
+<p>（NewLatin282.2 : 関係代名詞(quī) や関係副詞(ubi, unde, quō) が目的の節を導くことが頻繁にあります。)</p>
+<p>qua die：[時の奪格] (NewLatin230)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>出発に向かって、全ての準備は整ったので、日にちが決められ、その日にRhodani川の土手に集合することになった。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Is<span>ｍ　単　主格 <br>前はFで表現していたのに？</span></a>
+<a class="note1">diēs<span>dies 単数　主格</span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">a.<span></span></a>
+<a class="note1">d.<span>ante diem quintum Kalends of April</span></a>
+<a class="note0">V.<span></span></a>
+<a class="note1">Kal.<span>Kalenda, Kalendae N (1st) F   :Kalends (pl.), 1st of month; abb. Kal./Kl.; 対格 <br>どうして対格？</span></a>
+<a class="note0">Aprīl.,<span><br><br></span></a>
+<a class="note0">L.<span></span></a>
+<a class="note1">Pīsōne,<span>Piso</span></a>
+<a class="note0">A.<span></span></a>
+<a class="note1">Gabīniō<span>Gabinius</span></a>
+<a class="note0">cōnsulibus.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>a. d. V. Kal. April. = ante diem quintum Kalendas Apriles = the day was before fifth day the Kalends of April.</p>
+<p>ante diem quintum Kalendas(対格）:anteはKalenasにかかり対格、diem, quintumもanteとKalendasの間で対格</p>
+<p>3月（Marutius)は大の月で３１日。５日前は４月１日を１と数えてるので、３月２８日となる。</p>
+<p>is dies : isからdiesがMであることが判る。Line5ではqua からdiem, dieはFであることが判る。通常diesは男性扱いで、単数で特定の日を示すとき、女性になることがある。（NewLatin53, AG97)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その日は、L. PisoとA. Gabiniusがコンスルの年（BC 58)の４月１日より５日前であった。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

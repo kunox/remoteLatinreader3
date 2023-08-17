@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 23 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[23]<span></span></a>
+<a class="note0">Fundamentum<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">iustitiae<span>justitia justitiae N (1st) F  <br>:justice; equality; righteousness (Plater);<br>(C 単数 属格)<br></span></a>
+<a class="note1">fides,<span>fides fidei N (5th) F  <br>:faith, loyalty; honesty; credit; confidence, trust, belief; good faith;<br>(C 単数 主格)<br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">dictorum<span>dictum dicti N (2nd) N  <br>:words/utterance/remark; one's word/<strong>promise</strong>; saying/maxim; bon mot, witticism;<br>(X 複数 属格)<br></span></a>
+<a class="note1">conventorumque<span>conventum conventi N (2nd) N  <br>:agreement, compact, covenant; convention, accord (L+S);<br>(X 複数 属格)<br></span></a>
+<a class="note1">constantia<span>constantia constantiae N (1st) F  <br>:|steadiness, regularity, consistency; constancy; resistance to change;<br>(C 単数 主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">veritas.<span>veritas veritatis N (3rd) F  <br>:truth, fact, accuracy; honesty, truthfulness, frankness; sincerity, uprightness;<br>(X 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>iustiae fundamentum est fides : 正義の基盤は誠実である。</p>
+<p>dictorum ：dicoから来て、誓約<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>正義の基盤は誠実であり、それは誓約や契約の安定であり真実である。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ex<span></span></a>
+<a class="note0">quo,<span></span></a>
+<a class="note1">quamquam<span>quamquam CONJ <br>:though, although; yet; nevertheless;<br><br></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note1">videbitur<span>video videre, vidi, visus V (2nd)  <br>:see, look at; consider; (PASS) seem, seem good, appear, be seen;<br>(3 単数 未来 受動態 直接法 )<br></span></a>
+<a class="note1">fortasse<span>fortasse ADV <br>:perhaps, possibly; it may be;<br><br></span></a>
+<a class="note1">cuipiam<span>quispiam quaepiam, quidpiam INDEF <br>:(w/-piam) any/somebody, any, some, any/something;<br>(X 単数 与格)<br></span></a>
+<a class="note1">durius,<span>durus dura -um, durior -or -us, durissimus -a -um ADJ  比較級<br>:hard, stern; harsh, rough, vigorous; cruel, unfeeling, inflexible; durable;<br>(N 単数 主格)<br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">audeamus<span>audeo audere, ausus sum V (2nd) SEMIDEP  <br>:intend, be prepared; dare/have courage (to go/do), act boldly, venture, risk;<br>(１ 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">imitari<span>imitor imitari, imitatus sum V (1st) DEP  <br>:imitate/copy/mimic; follow; make an imitation/reproduction; resemble; simulate;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">Stoicos,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">studiose<span>studiose studiosius, studiosissime ADV <br>:eagerly, zealously, studiously, ardently, earnestly, attentively, assiduously;<br><br></span></a>
+<a class="note1">exquirunt,<span>exquiro exquirere, exquisivi, exquisitus V (3rd)  <br>:seek out, search for, hunt up; inquire into;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">unde<span>unde ADV <br>:from where, whence, from what or which place; from which; from whom;<br><br></span></a>
+<a class="note1">verba<span>verbum verbi N (2nd) N  <br>:word; proverb;<br>(N 複数 主格)<br></span></a>
+<a class="note0">sint<span></span></a>
+<a class="note1">ducta,<span>duco ducere, additional, forms V  <br>:lead, command; think, consider, regard; prolong;<br>(完了 分詞 受動態 N 複数 主格)<br></span></a>
+<a class="note1">credamusque,<span>credo credere, credidi, creditus V (3rd)  <br>:trust, entrust; commit/consign; believe, trust in, rely on, confide; suppose;<br>(１ 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">quia<span>quia CONJ <br>:because;<br><br></span></a>
+<a class="note1">fiat,<span>fio feri, factus sum V SEMIDEP  <br>:||be made/become; (facio PASS);<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">dictum<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">appellatam<span>appello appellare, appellavi, appellatus V (1st) TRANS  <br>:call (upon); address; dun; solicit; appeal (to); bring to court; accuse; name;<br>(完了 分詞 受動態 F 単数 対格)<br></span></a>
+<a class="note1">fidem.<span>fides fidei N (5th) F  <br>:faith, loyalty; honesty; credit; confidence, trust, belief; good faith;<br>(C 単数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>audeamus</strong> imitari Stoicos,&nbsp; <strong>credamusque</strong> fidem appellatam quia~&nbsp; ：が骨子。</p>
+<p>hoc videbitur fortasse cuipiam durius : 「これらはある人達には多分難しいかもしれないが」</p>
+<p>audeamus imitari Stoicos : 「あえてストア派学者に真似をしてみると」これは多分に皮肉または嘲笑を含んだ文章である。</p>
+<p>unde verba sint ducta : どこから言葉が派生したか</p>
+<p>quia fiat quod dictum est : 約束したことが行われるがゆえに</p>
+<p>credamus appellatam fidem 「Fidemと呼ばれたと信じる」fidem (esse) appellatam か？<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>ここで、ある人には困難かもしれないが、言葉がどこから派生したか熱心に研究したストア派学者の真似をしてみると、fidemという言葉がそう呼ばれるのは、約束したことが成される（fiat)からであると信じることになる。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sed<span></span></a>
+<a class="note0">iniustitiae<span></span></a>
+<a class="note1">genera<span>genus generis N (3rd) N  <br>:birth/ descent/ origin; race/ family/ house/ stock/ancestry; offspring/descent;<br>(N 複数 主格)<br></span></a>
+<a class="note0">duo<span></span></a>
+<a class="note0">sunt,<span></span></a>
+<a class="note0">unum<span></span></a>
+<a class="note0">eorum,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">inferunt,<span>infero inferre, intuli, illatus V TRANS  <br>:bring/carry in, import; advance, bring/march/step/move foward; impel, urge;<br>(3 複数 現在 能動態 直接法 )<br><br></span></a>
+<a class="note0">alterum<span></span></a>
+<a class="note0">eorum,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">is,<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">infertur,<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">possunt,<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">propulsant<span>propulso propulsare, propulsavi, propulsatus V (1st)  <br>:repulse, drive back/off; ward off, repel, avert; pound, batter;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">iniuriam.<span>injurius injuria, injurium ADJ  <br>:unjust, harsh;<br>(F 単数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>iniustitiae gerant sunt duo : 「２種類ある」</p>
+<p>1) qui inferunt (iniuriam) ：「不正義を持ち込む人」</p>
+<p>2) qui non propulsant iniuriam .: 「不正義を撃退しない人」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>しかしながら、不正義には２種類ある。その一つは不正義を働くひとであり、もう一つは、不正義をはたらく人から、可能であっても不正義を撃退しない人である。<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">iniuste<span>injustus injusta, injustum ADJ  <br>:unjust, wrongful; severe, excessive; unsuitable;<br>(M 単数 呼格)副詞<br></span></a>
+<a class="note1">impetum<span>impetus impetus N (4th) M  <br>:attack, assault, charge; attempt; impetus, vigor; violent mental urge, fury;<br>(C 単数 対格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">quempiam<span>quispiam quaepiam, quidpiam INDEF <br>:(w/-piam) any/somebody, any, some, any/something;<br>(M 単数 対格)<br></span></a>
+<a class="note0">facit<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">ira<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">aliqua<span>aliqui aliqua, aliquod PRON  <br>:any; some;<br>(F 単数 奪格)<br></span></a>
+<a class="note1">perturbatione<span>perturbatio perturbationis N (3rd) F  <br>:disturbance; commotion;<br>(C 単数 奪格)<br></span></a>
+<a class="note1">incitatus,<span>incito incitare, incitavi, incitatus V (1st)  <br>:enrage; urge on; inspire; arouse;<br>(完了 分詞 受動態 M 単数 主格)<br></span></a>
+<a class="note0">is<span></span></a>
+<a class="note0">quasi<span></span></a>
+<a class="note1">manus<span>manus manus N (4th) F  <br>:hand, <strong>fist</strong>; team; gang, band of soldiers; handwriting; (elephant's) trunk;<br>&nbsp;(C 複数 対格)<br></span></a>
+<a class="note1">afferre<span>affero afferre, attuli, allatus V TRANS  <br>:bring to (word/food), carry, convey; report, allege, announce; produce, cause;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">videtur<span></span></a>
+<a class="note1">socio;<span>socius soci(i) N (2nd) M  <br>:associate, companion; ally;<br>(X 単数 与格)<br><br></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">autem<span>autem CONJ <br>:but (postpositive), on the other hand/contrary; while, however; moreover, also;<br><br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">defendit<span>defendo defendere, defendi, defensus V (3rd) TRANS  <br>:defend/guard/protect, look after; act/speak/plead/write for defense; prosecute;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note1">obsistit,<span>obsisto obsistere, obstiti, obstitus V (3rd)  <br>:oppose, resist; stand in the way; make a stand against, withstand;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">potest,<span></span></a>
+<a class="note1">iniuriae,<span>injuria injuriae N (1st) F  <br>:injury; injustice, wrong, offense; insult, abuse; sexual assault;<br>&nbsp;(C 単数 与格)?<br></span></a>
+<a class="note0">tam<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">vitio,<span>vitium viti(i) N (2nd) N  <br>:fault, vice, crime, sin; defect;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">quam<span>quam ADV <br>:how, how much; as, than;<br><br></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">parentes<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">amicos<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">patriam<span></span></a>
+<a class="note1">deserat.<span>desero deserere, deserui, desertus V (3rd) TRANS  <br>:leave/ depart/quit/ desert; forsake/ abandon/ give up; withdraw support, let down;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>qui facit impetum, is videretur afferre manus socio. : 「攻撃を成す人は、味方に拳を上げるがごとくである。」</p>
+<p>qui non defendit, est in vitio quam~ : 「防御しないひとは恰も～のような罪がある。」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>つまり、怒りや何らかの混乱に作用されて、誰かを不当に攻撃する人は、いわば味方に拳を上げるようなものであり、また可能であっても不正義に対し防御または抵抗しない人は、恰も、両親、友人さらには祖国を放棄するような罪を犯すことになる。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

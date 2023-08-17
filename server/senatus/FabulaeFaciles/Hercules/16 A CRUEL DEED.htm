@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 16 A CRUEL DEED.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Herculēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">iam<span>jam ADV <br>&gt;:now, already, by/even now; besides;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">adulēscēns<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">Thēbīs<span>Thebae 奪格<br>テーベ、ギリシャの都市<br>Thebae<br>Thebas<br>Thebarum<br>Thebis<br>Thebis<br><br><br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">habitābat.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Rēx<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Thēbārum,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vir<span></span></a>
+<a class="note1">ignāvus,<span>ignāvus ignava -um, ignavior -or -us, ignavissimus -a -um ADJ  <br>:lazy/idle/sluggish; spiritless; cowardly, faint-hearted; ignoble, mean; useless;<br>(M 単数 主格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">Creōn<span>神話でのテーベの王、主格<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">appellābātur.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Minyae,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">gēns<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">bellicōsissima,<span>bellĭcōsus bellicosa -um, bellicosior -or -us, bellicosissimus -a -um ADJ  最上級<br>:warlike, fierce; fond of war;<br>(F 単数 主格) <br></span></a>
+<a class="note0">Thēbānīs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">fīnitimī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">erant.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">Lēgātī<span>lēgātus legati N (2nd) M <br>:envoy, ambassador, legate; commander of a legion; officer; deputy;<br>(複数 主格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Minyīs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Thēbānōs<span></span></a>
+<a class="note1">quotannīs<span>quotannis ADV <br>&gt;:every year, yearly;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">mittēbantur;<span>mitto mittere, misi, missus V (3rd)  X<br>:send, throw, hurl, cast; let out, release, dismiss; disregard;<br>(3 複数 未完了 受動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">hī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">Thēbās<span>Thebae 対格<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">veniēbant<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">centum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">bovēs<span>bōs bovis N (3rd) C <br>:ox; bull; cow; ox-ray; cattle (pl.); (ox-like animals);<br>&nbsp;(複数 対格) <br></span></a>
+<a class="note1">postulābant.<span>postŭlo postulare, postulavi, postulatus V (1st)  X<br>:demand, claim; require; ask/pray for;<br>(3 複数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Thēbānī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ōlim<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Minyīs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">superātī<span>sŭpĕro superare, superavi, superatus V (1st)  X<br>:overcome, <strong>conquer</strong>; survive; outdo; surpass, be above, have the upper hand;<br>【完了分詞 ( 受動態 ) (M 複数 主格)&nbsp; 】<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">erant;<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">tribūta<span>trĭbūtum tributi N (2nd) N <br>:tax, tribute;<br>(複数 主格) <br></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0">rēgī<span></span></a>
+<a class="note0">Minyārum<span></span></a>
+<a class="note0">quotannīs<span></span></a>
+<a class="note1">pendēbant.<span>pendo pendere, pependi, pensus V (3rd)  X<br>:weigh out; pay, pay out;<br>(3 複数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">At<span></span></a>
+<a class="note0">Herculēs<span></span></a>
+<a class="note1">cīvēs<span>cīvis civis N (3rd) C <br>:fellow citizen; countryman/woman; citizen, free person; a Roman citizen;<br>&nbsp;(複数 対格)<br></span></a>
+<a class="note0">suōs<span></span></a>
+<a class="note0">hōc<span></span></a>
+<a class="note1">stipendiō<span>stīpendĭum stipendi(i) N (2nd) N <br>:tribute, stipend; pay, wages; military service;<br>&nbsp;(単数 奪格) <br><br></span></a>
+<a class="note1">līberāre<span>lībĕro liberare, liberavi, liberatus V (1st)  X<br>:free; acquit, absolve; manumit; liberate, release;<br>不定詞<br></span></a>
+<a class="note1">cōnstituit;<span>constĭtŭo constituere, constitui, constitutus V (3rd)  X<br>:|decide/resolve; decree/ordain; appoint, post/station (troops); settle (colony);<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">lēgātōs<span></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0">comprehendit,<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">aurēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">eōrum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">abscīdit.<span>abscīdo abscidere, abscidi, abscisus V (3rd) TRANS  <br>:hew/cut off/away/out; fell/cut down; remove, separate/cut off/destroy, divide;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Lēgātī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">omnēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">gentēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">sānctī<span>sanctus sancti N (2nd) M <br>:saint;<br>(複数 主格)<br></span></a>
+<a class="note1">habentur.<span>hăbĕo habere, habui, habitus V (2nd)  X<br>:have, hold, <strong>consider,</strong> think, reason; manage, keep; spend/pass (time);<br>(3 複数 現在 受動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>Thebis : 場所の奪格（処格）</p>
+<p>Legati sacti habentur.&nbsp; sanctiは主格であり述語名詞。habeoなどの動詞の受動態とともによく使われる。（sum以外では）(B.168.2)<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>Herculesは若い頃、テーベで暮らしていた。テーベの王様は怠惰な男で、Creonと呼ばれていた。テーベの隣国はMinyaeといい、大変好戦的な民族であった。そしてMinyaeからは毎年、テーベに使者が送られ、彼らはテーベを訪れ１００頭の牛を要求した。と言うのはテーベはかってMinyaeによって征服されていたからである。なので毎年Minyaeの王に税を支払ってイアたのである。しかしHerculesは市民たちをそれらの課税から自由にしようと決心した。そして使者を捕らえ彼らの耳を切り落とした。しかし死者たちはあまねく人々の中で神聖であると考えられた。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

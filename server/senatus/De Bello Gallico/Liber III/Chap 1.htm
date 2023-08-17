@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chapter 1</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[1]<span></span></a>
+<a class="note0">Cum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Italiam<span></span></a>
+<a class="note1">proficīscerētur<span>proficiscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">Caesar,<span></span></a>
+<a class="note0">Ser.<span></span></a>
+<a class="note0">Galbam<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">legiōne<span><br><br></span></a>
+<a class="note1">XII<span>duodecima<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">parte<span>pars partis N (3rd) F  <br>:part, region; share; direction; portion, piece; party, faction, side;<br>(C 単数 奪格)<br></span></a>
+<a class="note1">equitātūs<span>equitatus equitatus M 単　属格　;= carvaly, horse-soldier<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">Nantuātēs,<span>部族名　Rhone河上流、Lake of Genevaの上辺りに住んでいた。<br><br></span></a>
+<a class="note0">Veragrōs<span><br><br></span></a>
+<a class="note0">Sedūnōsque<span><br><br></span></a>
+<a class="note0">mīsit,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">fīnibus<span><br><br></span></a>
+<a class="note0">Allobrogum<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">lacū<span>lacus lacus M 単　奪格　;= basin, lake</span></a>
+<a class="note0">Lemannō<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">flūmine<span><br><br></span></a>
+<a class="note0">Rhodanō<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">summās<span><br><br></span></a>
+<a class="note0">Alpēs<span><br><br></span></a>
+<a class="note1">pertinent.<span>pertineo 3複　現在　;= reach, extend</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>XII : duodecima</p>
+<p>Ser. Galbam : Servium Galbam</p>
+<p>ad summas Alpes : Alpesの頂上に向かって</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルがイタリアに向かって出発したとき、Servius Galbamを第12軍団と、一部の騎兵と共に、Nantuates, Veragros, Sedunosへ送った。それらの国はAllobroguesと領土を接し、Lemanno湖とRohdano河からアルプスの頂上に向かって拡がっていた。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Causa<span></span></a>
+<a class="note1">mittendī<span>mitto mittere, misi, missus V (3rd)  <br>:send, throw, hurl, cast; let out, release, dismiss; disregard;<br>(未来 分詞 受動態 m 単数 属格)<br>動名詞、属格、causaを修飾<br></span></a>
+<a class="note0">fuit<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">iter<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">Alpēs,<span><br><br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">perīculō<span><br><br></span></a>
+<a class="note1">magnīsque<span>magnus magna, major -or -us, maxumus -a -um 形容詞　複　奪格　;= great, full, mighty<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">portōriīs<span>portorium portori(i) N (2nd) N  <br>:port duty; customs duty; tax;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">mercātōrēs<span>mercator mercatoris N (3rd) M  <br>:trader, merchant;<br>(c 複数  対格)<br></span></a>
+<a class="note1">īre<span>eo　不定詞<br></span></a>
+<a class="note1">cōnsuērant,<span>consuesco consuescere, consuevi, consuetus V (3rd)  <br>:accustom oneself; become/be accustomed/used; inure, habituate; familiarize;<br>(３人称 複数  過去完了 能動態 直説法 )<br><br></span></a>
+<a class="note1">patefierī<span>patefio pateferi, patefactus sum V SEMIDEP  <br>:be made known/ opened/ revealed/ uncovered/ disclosed/ exposed; (patefacio PASS);<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">volēbat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>mittendi (legionem) : 彼、または軍団が送られた（理由は）となる。分詞の完了は受動態しかないことに注意。</p>
+<p>quo = Alpes　quoは奪格で、by whichと解釈するか、関係副詞で「そこを通って」とするか、意味は同じ</p>
+<p>quo mercatores consueverant ire</p>
+<p>cum magno periculo et cum magnis portotiis </p>
+<p>quod volebat patefieri iter per Alpes : patefieri目的語がiter 「Alpsを通る道を明らかにしておきたいと望んだため」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>送った理由は、大変危険で、通行税も高く商人たちが行き慣れているというAlpesを通る道筋を明らかにしておきたいと思ったからである。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Huic<span></span></a>
+<a class="note1">permīsit,<span>permitto permittere, permisi, permissus V (3rd)  <br>:let through; let go through; relinquish; permit, allow; entrust; hurl;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">opus<span>opus operis N 単　主格　;= need, work</span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">arbitrārētur,<span>arbitror arbitrari, arbitratus sum DEP ３複、未完了、接続法、受動　;= observe, witness, testify<br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note0">legiōnem<span><br><br></span></a>
+<a class="note1">hiemandī<span>hiemo hiemare, hiemavi, hiematus 未来分詞　受動　n 単　属格　;= winter, pass the winter, keep winter quarter<br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">conlocāret.<span>conloco conlicare, conlocavi, conlocatus TRANS ３複　単　未完了　接続法　;= place, in proper position, station<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p>huic = Galba</p>
+<p>opus est : ~が必要である。～には主語で、中性代名詞や形容詞、受動完了分詞などがよく来る。(普通の名詞が主語なることはめったにない）(NewLatin 218.2) ex1. <strong>hoc mihi opus est</strong>.&nbsp; ex2. <strong>opus est properato.</strong> (properatoは受動完了分詞、奪格)</p>
+<p>ここでは「必要（主格）」として主語</p>
+<p>hiemandi causa : 冬季野営地のために 動名詞、属格はcausaと一緒に使われ、目的を表す(NewLatin338)</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>(カエサルは）彼に、もし必要と考えるなら、軍団ををその地において冬営させても良いと許可した。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Galba<span></span></a>
+<a class="note1">secundīs<span>secundus secunda -um, secundior -or -us, secundissimus -a -um ADJ  <br>:|favorable, fair (wind/current); fortunate, propitious; smooth, w/the grain;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">aliquot<span>aliquot Undecline 形容詞　;= some, several</span></a>
+<a class="note1">proeliīs<span>proelium proeli(i) N (2nd) N  <br>:battle/fight/bout/conflict/dispute; armed/hostile encounter; bout of strength;<br>(X 複数  奪格)<br><br></span></a>
+<a class="note1">factīs<span>facio 完了分詞　複　奪格<br></span></a>
+<a class="note0">castellīsque<span><br><br></span></a>
+<a class="note1">complūribus<span>complus (gen.), compluris ADJ  <br>:many (pl.), several, a fair/good number; more than one (L+S);<br>(X 複数  奪格)<br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">expugnātīs,<span>expugno expugnare, expugnavi, expugnatus V (1st)  <br>:assault, storm; conquer, plunder; accomplish; persuade;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">missīs<span>mitto mittere, misi, missus V (3rd)  <br>:send, throw, hurl, cast; let out, release, dismiss; disregard;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note1">undique<span>undique 副詞　;= everywhere, from every side, allover,</span></a>
+<a class="note1">lēgātīs<span>legatus legati N (2nd) M  <br>:envoy, ambassador, legate; commander of a legion; officer; deputy;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">obsidibusque<span></span></a>
+<a class="note0">datīs<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">pāce<span>pax pacis 単　奪格　;= peace<br></span></a>
+<a class="note0">factā,<span><br><br></span></a>
+<a class="note1">cōnstituit<span>constituo constituere, constitui, constitutus V (3rd)  <br>:|decide/resolve; decree/ordain; appoint, post/station (troops); settle (colony);<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">cohortēs<span>cohors cohortis N (3rd) F  <br>:|cohort, tenth part of legion (360 men); armed force; band; ship crew; bodyguard<br>(c 複数  対格)<br></span></a>
+<a class="note1">duās<span>duo -ae o, secundus -a -um, bini -ae -a, bis NUM  2<br>:two (pl.);<br>(f 複数  対格)<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Nantuātibus<span><br><br></span></a>
+<a class="note0">conlocāre<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">reliquīs<span><br><br></span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note0">legiōnis<span><br><br></span></a>
+<a class="note0">cohortibus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">vicō<span>vicus vici N (2nd) M  <br>:village; hamlet; street, row of houses;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">Veragrōrum,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">appellātur<span><br><br></span></a>
+<a class="note0">Octodūrus<span><br><br></span></a>
+<a class="note1">hiemāre;<span>hiemo hiemare, hiemavi, hiematus V (1st)  <br>:winter, pass the winter, keep winter quarters; be wintry/frozen/stormy;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">vīcus<span><br><br></span></a>
+<a class="note1">positus<span>pono ponere posui, positus TRANS 完了分詞　受動　ｍ単　主格　;= put, lay down </span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">valle<span>valles vallis F 単　奪格　;= valley, hollow</span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">magnā<span>f単　奪格<br></span></a>
+<a class="note1">adiectā<span>adicio adicere, adjeci, adjectus V (3rd) TRANS  <br>:add, increase, raise; add to (DAT/ad+ACC); suggest; hurl (weapon); throw to/at;<br>(完了 分詞 受動態 f 単数 主格)<br></span></a>
+<a class="note1">plānitiē<span>planities planitiei N (5th) F  <br>:plain, plateau, a flat/plane/level surface; a plane (geometry); flatness;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">altissimīs<span>altus alta -um, altior -or -us, altissimus -a -um ADJ  最上級<br>:high; deep/profound; shrill; lofty/noble; deep rooted; far-fetched; grown great;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">montibus<span></span></a>
+<a class="note0">undique<span></span></a>
+<a class="note1">continētur.<span>continor continari, continatus sum V (1st) DEP  <br>:encounter, meet with;<br>(３人称 単数 現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>全体の骨子は　主語Galba　動詞はconstituit その間に沢山の独立奪格が入って、いろいろな状況を説明している。むしろ独立奪格の連続で、箇条書きか日本語の体言止めの連続のようなニュアンスか？</p>
+<p>secundis aliquot proeliis dactis : 独立奪格　「幾つかの成功した戦いをなして」</p>
+<p>castellis compluribus eorum expugnatis : [彼らの幾つかの都市をを制圧し]</p>
+<p>missis ad eum legatis obsisdibusque : eumはGalbaの事　「彼のもとに使節と人質が送られ」</p>
+<p>pace facta : 「和平が成された」</p>
+<p>constituit ~ conlocare et ~ hiemare ：二つの不定詞句を目的語にしてそれららを「決めた」</p>
+<p>qui vicus positus continetur altissimis montibus : Octodurusを記述する節。</p>
+<p>in valle non magna adiecta planitie : non magna adjecta は　planitieを修飾していると考える。「あまり高くない平地に」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Galbaは幾つかの勝利した戦いとして、また彼らの幾つかの都市を制圧、そして彼にあらゆるところから使節と人質が送られ、和平が成立した、そして彼は２個分団をNantatesに配置し、彼自身は残りの軍団と共にVeragriにある村落で、Octodurusと呼ばれていたところで冬営する事に決めた。その村はあまり高くない谷の中の平地で、四方を高い山に接していた。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Cum<span>副詞　;= as soon, whereas, in that, as , which</span></a>
+<a class="note0">hīc<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">duās<span>duo -ae f複　対格<br></span></a>
+<a class="note0">partēs<span><br><br></span></a>
+<a class="note1">flūmine<span>flumen N 単数　奪格<br></span></a>
+<a class="note1">dīviderētur,<span>divido dividere, divisi, divisus V (3rd)  <br>:divide; separate, break up; share, distribute; distinguish;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note1">alteram<span>alter altera alterum 形容詞　単　対格　;= one (of two), second another</span></a>
+<a class="note0">partem<span></span></a>
+<a class="note1">eius<span>属格</span></a>
+<a class="note1">vīcī<span>vicus vici N (2nd) M  <br>:village; hamlet; street, row of houses;<br>(X 単数 属格<br></span></a>
+<a class="note1">Gallīs<span>与格<br></span></a>
+<a class="note0">[ad<span></span></a>
+<a class="note0">hiemandum]<span></span></a>
+<a class="note1">concessit,<span>concedo concedere, concessi, concessus ３単　完了　;= relinquish, give up, concede, depart, pardon, submit</span></a>
+<a class="note0">alteram<span></span></a>
+<a class="note1">vacuam<span>vacuus vacua vacuum ｆ単　対格　;= empty, vacant</span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note1">relictam<span>relictus relicta -um, relictior -or -us, relictissimus -a -um ADJ  <br>:forsaken, abandoned, derelict; left untouched;<br>(f 単数 対格)<br></span></a>
+<a class="note0">cohortibus<span></span></a>
+<a class="note1">attribuit.<span>attribuo attribuere, attribui, attributus ３単　完了　;= assign, allot, grant</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>flumine : 手段の奪格　「河によって」</p>
+<p>alteram partem eius vici : eius viciは全体の属格　「その村の一つ目の部分を」</p>
+<p>vacuam relictam : vacuam predicative Adj </p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>其処は川によって二つの部分に分けられていたので、一つの部分をガリアの人（冬営のために）に譲り、その残りの空いている部分を分隊のために指定した。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eum<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">vāllō<span>vallum valli N 単　奪格　;= wall, rampart<br></span></a>
+<a class="note0">fossāque<span><br><br></span></a>
+<a class="note1">mūnivīt.<span>munio munire, munivi, munitus V (4th)  <br>:fortify; strengthen; protect, defend, safeguard; build (road);<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その場所を、壁と溝で要塞化した。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

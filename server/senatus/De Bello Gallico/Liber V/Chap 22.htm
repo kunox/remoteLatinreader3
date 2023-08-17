@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 22</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[22]<span></span></a>
+
+<a class="note0">Dum<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note1">geruntur,<span>gero gerere, gessi, gestus V (3rd)  <br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note0">Cassivellaunus<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Cantium,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">mare<span></span></a>
+<a class="note0">suprā<span><br><br></span></a>
+<a class="note0">dēmōnstrāvimus,<span><br><br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">regiōnibus<span>regio regionis N (3rd) F  <br>:area, region; neighborhood; district, country; direction;<br>&nbsp;(X 複数  与格)<br></span></a>
+<a class="note0">quattuor<span></span></a>
+<a class="note0">rēgēs<span><br><br></span></a>
+<a class="note1">praeerant,<span>praesum praeesse, praefui, praefuturus V  <br>:be in charge/control/head (of) (w/DAT); take the lead (in); be present (at);<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">Cingetorix,<span></span></a>
+<a class="note0">Carvilius,<span></span></a>
+<a class="note0">Taximagulus,<span></span></a>
+<a class="note0">Segovax,<span></span></a>
+<a class="note0">nūntiōs<span><br><br></span></a>
+<a class="note0">mittit<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">eīs<span><br><br></span></a>
+<a class="note0">imperat<span></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note1">coāctīs<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">cōpiīs<span><br><br></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note0">nāvālia<span><br><br></span></a>
+<a class="note0">dē<span></span></a>
+<a class="note1">imprōvīsō<span>improvisus improvisa, improvisum ADJ  <br>:unforeseen/unexpected;<br>(n 単数 奪格)<br><br></span></a>
+<a class="note1">adoriantur<span>adorior adoriri, adortus sum V (4th) DEP  <br>:assail/assault/attack, rise against (military/political/plague); accost/address;<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">oppugnent.<span>oppugno oppugnare, oppugnavi, oppugnatus V (1st)  <br>:attack, assault, storm, besiege;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p><strong>Dum haec geruntur in his locis, Cassivellaunus mittit nuntios atque imperat ut~.</strong> が骨子。「こういうことが進行中にCassivellaunusは使者を送り～を命じた」</p>
+<p>quibus regionibus quatuor reges praeerant. quibus regionibusは与格でpraeeratの間接目的語。</p>
+<p>uti omnibus coppis coactis, adoriantur navalia castra de improviso atque oppugnent. <strong>de improvisoでunexpectedly</strong></p>
+<p>Book2 Chap3にも出てくる。improvisoは奪格、単数　中性でこの場合名詞化。deは「始まり、～から」を意味していて、from unseenなのでunexpectedlyになる。（Reynolds)　他に <strong>de industria = purposely</strong>, <strong>de integro = afresh</strong>などがある。omnibus coppis coactisは独立奪格<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>こういうことが進行中にCassivellaunusはCantium、それは前に述べたように海辺にあり、Cingetrix, Carvilius, Taximagulus, Segovaxという４人の王が支配していたが、彼らに使者を送り、全軍を挙げて海辺の基地を奇襲し、略奪するよう命じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ei<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note0">vēnissent,<span><br><br></span></a>
+<a class="note0">nostrī<span><br><br></span></a>
+<a class="note1">ēruptiōne<span>eruptio eruptionis N (3rd) F  <br>:sortie, rush, sally, sudden rush of troops from a position;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">facta<span></span></a>
+<a class="note1">multīs<span>multus multa -um, -, plurimus -a -um ADJ  <br>:much, many, great, many a; large, intense, assiduous; tedious;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">interfectīs,<span>interficio interficere, interfeci, interfectus V (3rd)  <br>:kill; destroy;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">captō<span>capio capere, cepi, captus V (3rd) TRANS  <br>:take hold, seize; grasp; take bribe; arrest/capture; put on; occupy; captivate;<br>(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">nōbilī<span>nobilis nobile, nobilior -or -us, nobilissimus -a -um ADJ  <br>:noble, well born; aristocratic; outstanding (in rank/deed); important/prominent;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">duce<span>dux ducis N (3rd) M  <br>:leader, guide; commander, general; Duke (medieval, Bee);<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">Lugotorīge<span></span></a>
+<a class="note0">suōs<span></span></a>
+<a class="note1">incolumēs<span>incolumis incolumis, incolume ADJ  <br>:unharmed, uninjured; alive, safe; unimpaired;<br>(c 複数  対格)<br></span></a>
+<a class="note1">redūxērunt.<span>reduco reducere, reduxi, reductus V (3rd)  <br>:lead back, bring back; restore; reduce;<br>(３人称 複数  完了 能動態 直説法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>cum venissent ad castra : 駐屯地に来た時、接続法なのはその時の状況を表すため（NewLatin288.1.B)</p>
+<p>multis eorum interfectis : 独立奪格　</p>
+<p>duce Lugotrige capto : 独立奪格</p>
+<p>reduxerunt suos incolumes : 述語対格、自身を安全なところに引き上げた。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>彼らがその基地に来た時、味方は突出して彼らの多くを殺し、リーダーのLugotorigeを捕虜にした。彼らは安全なところに引き上げた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Cassivellaunus<span></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note1">proeliō<span>proelium proeli(i) N (2nd) N  <br>:battle/fight/bout/conflict/dispute; armed/hostile encounter; bout of strength;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">nūntiātō<span>nuntio nuntiare, nuntiavi, nuntiatus V (1st) TRANS  <br>:announce/report/bring word/give warning; convey/deliver/relate message/greeting;<br>&nbsp;(完了 分詞 受動態 n 単数 奪格)<br></span></a>
+<a class="note1">tot<span>tot NUM <br>:so many, such a number of; as many, so many; such a great number of;<br><br></span></a>
+<a class="note1">dētrīmentīs<span>detrimentum detrimenti N (2nd) N  <br>:|defeat, loss of battle; overthrow;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">acceptīs,<span>accipio accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">vāstātīs<span>vasto vastare, vastavi, vastatus V (1st)  <br>:lay waste, ravage, devastate;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">fīnibus,<span><br><br></span></a>
+<a class="note0">maximē<span><br><br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">permōtus<span>permoveo permovere, permovi, permotus V (2nd)  <br>:stir up; move deeply; influence; agitate;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note1">dēfectiōne<span>defectio defectionis N (3rd) F  <br>:desertion/<strong>revolt</strong>/defection; failure/deficiency; ellipsis (grammar); eclipse;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">cīvitātum<span><br><br></span></a>
+<a class="note0">lēgātōs<span><br><br><br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">Atrebātem<span><br><br></span></a>
+<a class="note0">Commium<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">dēditiōne<span>deditio deditionis N (3rd) F  <br>:surrender (of combatants/town/possessions); cession of right/title;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">mittit.<span></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>proelio nuntitato : 独立奪格「戦いの報告を受けて」</p>
+<p>tot detrimentis acceptis : 独立奪格「そんなにも損害を受けて」</p>
+<p>vastatis finibus : 独立奪格「領地を荒らして」</p>
+<p>permotus ciivitatum defectione : 分詞構文「人々の反乱に心を動かされた（Cassivellaunusは）」<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>戦いの報告を受け、多大な損害を出し、領地を荒らしてしまい、また人々からの反乱をに動揺したCassivellaunusはAtrebatemのCommiumを通してCaesarに降伏についての使者を送った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Caesar,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">cōnstituisset<span>constituo constituere, constitui, constitutus V (3rd)  <br>:|decide/resolve; decree/ordain; appoint, post/station (troops); settle (colony);<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">hiemāre<span>hiemo hiemare, hiemavi, hiematus V (1st)  <br>:winter, <strong>pass the winter</strong>, keep winter quarters; be wintry/frozen/stormy;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">continentī<span><br><br></span></a>
+<a class="note1">propter<span>propter PREP ACC <br>:on account of;<br><br></span></a>
+<a class="note1">repentīnōs<span>repentinus repentina, repentinum ADJ  <br>:sudden, hasty; unexpected;<br>(m 複数  対格)<br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note1">mōtus,<span>motus motus N (4th) M  <br>:movement, motion; riot, commotion, disturbance; gesture; emotion;<br>&nbsp;(c 複数  対格)<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">multum<span></span></a>
+<a class="note1">aestātis<span>aestas aestatis N (3rd) F  <br>:<strong>summer</strong>; summer heat/weather; a year;<br>(X 単数 属格)<br></span></a>
+<a class="note1">superesset,<span>supersum superesse, superfui, superfuturus V  <br>:<strong>be left over</strong>; survive; be in excess/superfluous (to); remain to be performed;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note1">facile<span>facile facilius, facillime ADV <br>:easily, readily, without difficulty; generally, often; willingly; heedlessly;<br><br></span></a>
+<a class="note1">extrahī<span>extraho extrahere, extraxi, extractus V (3rd)  <br>:drag out; <strong>prolong</strong>; rescue, extract; remove;<br>(  現在 受動態 不定詞 )<br><br></span></a>
+<a class="note0">posse<span></span></a>
+<a class="note0">intellegeret,<span></span></a>
+<a class="note0">obsidēs<span><br><br></span></a>
+<a class="note0">imperat<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">annōs<span><br><br></span></a>
+<a class="note0">singulōs<span><br><br></span></a>
+<a class="note1">vectīgālis<span>vectigal vectigalis N (3rd) N  <br>:tax, tribute, revenue;<br>(X 単数 属格)<br></span></a>
+<a class="note0">populō<span><br><br></span></a>
+<a class="note0">Rōmānō<span><br><br></span></a>
+<a class="note0">Britannia<span></span></a>
+<a class="note1">penderet<span>pendo pendere, pependi, pensus V (3rd)  <br>:weigh out; pay, pay out;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note1">cōnstituit;<span>constituo constituere, constitui, constitutus V (3rd)  <br>:<strong>set up</strong>/in position, erect; place/dispose/locate; (call a) halt; plant (trees);<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">interdīcit<span>interdico interdicere, interdixi, interdictus V (3rd)  <br>:forbid, interdict, prohibit; debar (from);<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">imperat<span></span></a>
+<a class="note0">Cassivellaunō,<span><br><br></span></a>
+<a class="note0">nē<span></span></a>
+<a class="note0">Mandubraciō<span></span></a>
+<a class="note0">neu<span></span></a>
+<a class="note0">Trinobantibus<span></span></a>
+<a class="note1">noceat.<span>noceo nocere, nocui, nocitus V (2nd)  <br>:harm, hurt; injure (with DAT);<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>Caesar imperat obsides et constituit quid vectigalis Britannia penderet; </p>
+<p>interdict atque imperat ne noceat ~. が骨子。</p>
+<p>propter repentinos Galliae motus : 突然のガリアの動勢のために</p>
+<p>intellegeret id facile extrahi posse : 容易に長引く事があり得るとわかっていたので<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>Caesarは、最近のガリアの動向もあり大陸で越冬すると決めており、夏の残りも少なくなって、またこれは容易に長引く可能性もあり得る事がわかっていたので、人質を命じまたBritanniaがローマに１年で支払うべき賠償金（税金）の額を決めた。またCassivelaunusにMandubraciusとTrinobantesを害さないよう、禁止し命令した。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

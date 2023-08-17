@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 14 THE MUSIC-LESSON.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Herculēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">puerō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">corpus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dīligenter<span>diligenter diligentius, diligentissime ADV <br>&gt;:carefully; attentively; diligently; scrupulously; thoroughly/completely/well;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">exercēbat;<span>exercĕo exercere, exercui, exercitus V (2nd)  X<br>:exercise, train, drill, practice; enforce, administer; cultivate;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnam<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note0">diēī<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">palaestrā<span>pălaestra palaestrae N (1st) F <br>:palaestra, wrestling school; gymnasium;<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note1">consūmēbat;<span>consūmo consumere, consumpsi, consumptus V (3rd) TRANS  <br>:|devour/swallow up/consume/eat/use up/exhaust/expend; spend; squander/waste;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note1">didicit<span>disco discere, didici, discitus V (3rd) TRANS  <br>:learn; hear, get to know, become acquainted with; acquire knowledge/skill of/in;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">arcum<span>arcus arcus N (4th) M <br>:bow, arc, coil, arch; rainbow; anything arched or curved;<br>(単数 対格) <br></span></a>
+<a class="note1">intendere<span>intendo intendere, intendi, intentus V (3rd)  X<br>:hold out; stretch, strain, exert;<br>&nbsp;不定詞<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">tēla<span>tēlum teli N (2nd) N <br>:dart, spear; weapon, javelin; bullet (gun);<br>(複数 対格) <br></span></a>
+<a class="note1">conicere.<span>cōnĭcĭo conicere, conjeci, conjectus V (3rd) TRANS  <br>:throw/put/pile together; conclude, infer/guess; assign, make go; classify, put;<br>&nbsp;不定詞<br></span></a>
+<a class="note0">Hīs<span></span></a>
+<a class="note1">exercitātiōnibus<span>exercĭtātĭo exercitationis N (3rd) F <br>:exercise, training, practice; discipline;<br>&nbsp;(複数 奪格) <br></span></a>
+<a class="note1">vīrēs<span>vīs viris N (3rd) F <br>:strength (bodily) (pl.), force, power, might, violence; resources; large body;<br>(複数 主格) <br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">cōnfirmātae<span>confirmo confirmare, confirmavi, confirmatus V (1st) TRANS  <br>:strengthen, develop, build up (w/troops); make secure/firm; reassure; secure;<br>【完了分詞 ( 受動態 ) (F 複数 主格)】<br></span></a>
+<a class="note0">sunt.<span></span></a>
+<a class="note0">In<span></span></a>
+<a class="note0">musicā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Linō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">centaurō<span>centaurus centauri N (2nd) M <br>&gt;:centaur, a mythical creature, half man and half horse; name of constellation;<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">ērudiēbātur<span>ērŭdĭo erudire, erudivi, eruditus V (4th)  X<br>:educate, teach, instruct;<br>(3 単数 未完了 受動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">(centaurī<span>centaurus centauri N (2nd) M <br>&gt;:centaur, a mythical creature, half man and half horse; name of constellation;<br>(複数 主格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">equī<span>ĕquus equi N (2nd) M <br>:horse; steed;<br>(複数 主格) <br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">caput<span></span></a>
+<a class="note0">hominis<span></span></a>
+<a class="note0">habēbant);<span></span></a>
+<a class="note0">huic<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">artī<span>ars artis N (3rd) F <br>:skill/craft/art; trick, wile; science, knowledge; method, way; character (pl.);<br>(単数 与格) <br></span></a>
+<a class="note1">minus<span>parvus parva -um, minor -or -us, minimus -a -um ADJ  比較級<br>:small, little, cheap; unimportant; (SUPER) smallest, least;<br>&nbsp;(N 単数 対格) <br></span></a>
+<a class="note1">dīligenter<span>diligenter diligentius, diligentissime ADV <br>&gt;:carefully; attentively; diligently; scrupulously; thoroughly/completely/well;<br><br></span></a>
+<a class="note1">studēbat.<span>stŭdĕo studere, studui, - V (2nd)  X<br>:desire, be eager for; busy oneself with; strive;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">Hic<span></span></a>
+<a class="note0">Linus<span></span></a>
+<a class="note0">Herculem<span></span></a>
+<a class="note1">ōlim<span>olim ADV <br>&gt;:formerly; <strong>once</strong>, once upon a time; in the future;<br><br></span></a>
+<a class="note1">obiurgābat,<span>objurgo objurgare, objurgavi, objurgatus V (1st)  X<br>:scold, chide, reproach;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">studiōsus<span></span></a>
+<a class="note0">erat;<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">puer<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">īrātus<span>īrātus irata -um, iratior -or -us, iratissimus -a -um ADJ  <br>:angry; enraged; furious; violent (L+S); raging; angered;<br>(M 単数 主格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">citharam<span>cĭthăra citharae N (1st) F <br>:cithara, lyre; lute, guitar (L+S);<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">subitō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">rapuit,<span>răpĭo rapere, rapui, raptus V (3rd)  X<br>:drag off; snatch; destroy; seize, carry off; pillage; hurry;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vīribus<span></span></a>
+<a class="note0">caput<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">magistrī<span>măgister magistri N (2nd) M <br>:teacher, tutor, master, expert, chief; pilot<br>&nbsp;(単数 属格) <br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">īnfēlīcis<span>infēlix infelicis (gen.), infelicior -or -us, infelicissimus -a -um ADJ  <br>:unfortunate, unhappy, wretched; unlucky, inauspicious; unproductive (plant);<br>(M 単数 属格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">percussit.<span>percŭtĭo percutere, percussi, percussus V (3rd)  X<br>:beat, strike; pierce;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Ille<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ictū<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">prōstrātus<span>prōsterno prosternere, prostravi, prostratus V (3rd) TRANS  <br>:knock over, lay low; strike down, overthrow; exhaust; debase/demean; prostrate;<br>【完了分詞 ( 受動態 ) (M 単数 主格) 】<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">paulō<span></span></a>
+<a class="note0">post<span></span></a>
+<a class="note0">ē<span></span></a>
+<a class="note1">vītā<span>vīta vitae N (1st) F <br>:life, career, livelihood; mode of life;<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note1">excessit,<span>excēdo excedere, excessi, excessus V (3rd)  X<br>:pass, withdraw, exceed; go away/out/beyond; die;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">quisquam<span>quisquam quaequam, quidquam  PRON INDEF<br>:(w/-quam) any; anyone/anybody (no pl.) (INDEF) anything; any man, any person;<br>(M 単数 主格) <br></span></a>
+<a class="note0">posteā<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note1">officium<span>offĭcĭum offici(i) N (2nd) N <br>:duty, obligation; kindness; service, office;<br>&nbsp;(単数 対格) <br></span></a>
+<a class="note1">suscipere<span>suscĭpĭo suscipere, suscepi, susceptus V (3rd)  X<br>:undertake; support; accept, receive, take up;<br>&nbsp;不定詞<br></span></a>
+<a class="note0">voluit.<span></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false">
+<p><br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>Herculesは子供の時から身体に対して注意深く訓練をしてきた。一日の多くはジムで過ごし、弓を引くこと、投槍を投げることなどを学んだ。こういうことで身体は発達した。音楽については、ケンタウロスであるLinusから教育された。（ケンタウロスは馬であるが人間の頭を持っている）彼はこの技術に対してはあまり十分に熱心ではなかった。一度Linusは、熱心でないからと、Herculesを叱った。その時、怒った少年はすぐさま竪琴を破壊し、満身の力で不運な先生の頭を叩いた。その一撃で先生は気絶し、少し後に死んでしまった。その事の後に、その役割を担う人は誰ひとりいなかった。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

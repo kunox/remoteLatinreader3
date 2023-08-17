@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 17 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[17]<span></span></a>
+<a class="note0">Reliquis<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">tribus<span></span></a>
+<a class="note0">virtutibus<span></span></a>
+<a class="note1">necessitates<span>necessitas necessitatis N (3rd) F  <br>:need/necessity; inevitability; difficult straits; poverty; obligation; bond;<br>&nbsp;(C 複数 主格)<br></span></a>
+<a class="note1">propositae<span>propono proponere, proposui, propositus V (3rd)  <br>:display; propose; relate; put or place forward;<br>(完了 分詞 受動態 F 複数 主格), <br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eas<span></span></a>
+<a class="note0">res<span></span></a>
+<a class="note1">parandas<span>paro parare, paravi, paratus V (1st) TRANS  <br>:prepare; furnish/supply/provide; produce; obtain/get; buy; raise; put up; plan;<br>(未来 分詞 受動態 F 複数 対格)<br></span></a>
+<a class="note1">tuendasque,<span>tueor tueri, tuitus sum V (2nd) DEP  <br>:see, look at; protect, watch; uphold;<br>(未来 分詞 受動態 F 複数 対格)<br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">actio<span>actio actionis N (3rd) F  <br>:act, action, activity, deed; incident;, plot (play); legal process, suit; plea;<br>(X 単数 主格)<br></span></a>
+<a class="note0">vitae<span></span></a>
+<a class="note1">continetur,<span>contineo continere, continui, contentus V (2nd) TRANS  <br>:secure, maintain, sustain; fasten/<strong>hold in position</strong>; retain, keep safe, preserve;<br>(3 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">societas<span>societas societatis N (3rd) F  <br>:society; alliance/partnership; trading company; fellowship, communion;<br>(X 単数 主格<br></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note1">coniunctioque<span>conjunctio conjunctionis N (3rd) F  <br>:|conjunction (word); combination; compound proposition; association/affinity;<br>(X 単数 主格)<br></span></a>
+<a class="note1">servetur<span>servo servare, servavi, servatus V (1st)  <br>:watch over; protect, store, keep, guard, preserve, save;<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">animi<span></span></a>
+<a class="note1">excellentia<span>excellentia excellentiae N (1st) F  <br>:excellence, superiority; merit;<br>(C 単数 主格)<br></span></a>
+<a class="note1">magnitudoque<span>magnitudo magnitudinis N (3rd) F  <br>:size, magnitude, bulk; greatness. importance, intensity;<br>(X 単数 主格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">augendis<span>augeo augere, auxi, auctus V (2nd) TRANS  <br>:increase, enlarge, augment; spread; honor, promote, raise; exalt; make a lot of;<br>&nbsp;(未来 分詞 受動態  複数 奪格)<br></span></a>
+<a class="note1">opibus<span>ops opis N (3rd) F  <br>:power, might; help; influence; resources/wealth (pl.);<br>(X 複数 奪格)<br></span></a>
+<a class="note1">utilitatibusque<span>utilitas utilitatis N (3rd) F  <br>:usefulness, advantage;<br>(X 複数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">suis<span></span></a>
+<a class="note1">comparandis,<span>comparo comparare, comparavi, comparatus V (1st) TRANS  <br>:|<strong>place together</strong>, match, couple, pair; set/pit against; treat as equal; compare;<br>&nbsp;(未来 分詞 受動態  複数 与格)<br><br></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0">multo<span></span></a>
+<a class="note0">magis<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">his<span></span></a>
+<a class="note0">ipsis<span></span></a>
+<a class="note1">despiciendis<span>despicio despicere, despexi, despectus V (3rd)  <br>:look down on/over; relax attention; disdain, despise; express contempt for;<br>&nbsp;(未来 分詞 受動態  複数 奪格)<br></span></a>
+<a class="note1">eluceat.<span>eluceo elucere, eluxi, - V (2nd)  <br>:shine forth; show itself; be manifest;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>necessitates sunt proposita : 「必要性が提示される」</p>
+<p>ad eas res (est) parandas tuendasque : easはnecessitateを指し「<font color="#000000">それに対</font>して物事が供給され守備される」</p>
+<p>quibus actio vitae continetur : quibus=necessitate 「それにより生活の活動が保たれ」</p>
+<p>ut societas hominum coniunctioque servetur : utは結果の節を導く（？）「そして人間の社会、結びつきが確保され」</p>
+<p>animi excellentia eluceat: 「精神の偉大さが明確になる」</p>
+<p>cum~ tum ~ : not only~ but also ~(Bullion 1374)</p>
+<p>in augendis opibus utilitatibusque : 「増大した力と自身とその家族の有用性において」</p>
+<p>in his ipsis despiciendis : 「自身の無関心において」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>他方、残りの３つの徳によって、それに対して物事が供給され保たれるような必要性が提示される。それにより生活の活動が保全され、人間の社会や結びつきが確保され、更には精神の高貴な偉大さが、単に増大した力や自分と家族の有用性においてだけでなく、もっと重要なことには自身の無関心さに於いても、明確になることである。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Ordo<span>ordo ordinis N (3rd) M  <br>:row, order/rank; succession; series; class; bank (oars); order (of monks) (Bee);<br>(X 単数 主格)<br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">constantia<span>constantia constantiae N (1st) F  <br>:|steadiness, regularity, consistency; constancy; resistance to change;<br>(C 単数 主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">moderatio<span>moderatio moderationis N (3rd) F  <br>:moderation; <strong>self control</strong>; guidance; government, regulation;<br>(X 単数 主格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ea,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">his<span></span></a>
+<a class="note1">similia,<span>similis simile, similior -or -us, simillimus -a -um ADJ  <br>:like, similar, resembling;<br>(N 複数 主格)<br></span></a>
+<a class="note1">versantur<span>versor versari, versatus sum V (1st) DEP  <br>:move about; live, dwell; be;<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eo<span></span></a>
+<a class="note1">genere<span>genus generis N (3rd) N  <br>:|noble birth; <strong>kind/sort/</strong>variety; class/rank; mode/method/style/fashion/way;<br>(N 単数 奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">adhibenda<span>adhibeo adhibere, adhibui, adhibitus V (2nd) TRANS  <br>:summon, invite, bring in; consult; put, add; use, employ, apply; hold out to;<br>(未来 分詞 受動態&nbsp;F 複数 主格)<br><br></span></a>
+<a class="note1">actio<span>actio actionis N (3rd) F  <br>:act, action, activity, deed; incident;, plot (play); legal process, suit; plea;<br>(X 単数 主格)<br></span></a>
+<a class="note1">quaedam,<span>quidam quaedam, quoddam   <br>:(w/-dam) certain; as INDEF a certain thing; somebody, one, something;<br>(F 単数 主格), <br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">solum<span></span></a>
+<a class="note1">mentis<span>mens mentis N (3rd) F  <br>:mind; reason, intellect, judgment; plan, intention, frame of mind; courage;<br>(X 単数 属格)<br></span></a>
+<a class="note1">agitatio.<span>agitatio agitationis N (3rd) F  <br>:brandishing/ waving/ shaking/ moving violently; movement; <strong>exercise;</strong> working (land);<br>(X 単数 主格)<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Ordo (etc) versantur in eo genere : 「秩序などなどのものはそういう類のものである。」</p>
+<p>ad quod actio quaedam est adhibenda : quodはgenereを指す関係代名詞。「それに対して何らかの活動が適用される」</p>
+<p>non solum mentis agitatio : 「が精神の働きだけはなく」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>他方、秩序、一貫性、自己抑制またはそれに似たようなものは、精神の働きだけではなく、ある種の活動も要求される類のものである。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Is<span></span></a>
+<a class="note1">enim<span>enim CONJ <br>:namely (postpos.); indeed; in fact; for; I mean, for instance, that is to say;<br><br></span></a>
+<a class="note0">rebus,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">tractantur<span>tracto tractare, tractavi, tractatus V (1st)  <br>:draw, haul, pull, drag about; handle, manage, treat, discuss;<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">vita,<span></span></a>
+<a class="note1">modum<span>modus modi N (2nd) M  <br>:manner, mode, way, method; rule, rhythm, beat, measure, size; bound, limit;<br>(C 単数 対格)<br></span></a>
+<a class="note1">quendam<span>quidam quaedam, quoddam   <br>:(w/-dam) certain; as INDEF a certain thing; somebody, one, something;<br>(M 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ordinem<span></span></a>
+<a class="note1">adhibentes,<span>adhibeo adhibere, adhibui, adhibitus V (2nd) TRANS  <br>:summon, invite, bring in; consult; put, add; use, employ, apply; hold out to;<br>(現在 分詞 能動態 C 複数 対格), <br></span></a>
+<a class="note1">honestatem<span>honestas honestatis N (3rd) F  <br>:honor, integrity, honesty; wealth (Plater);<br>(C 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">decus<span>decus decoris N (3rd) N  <br>:glory/splendor; honor/distinction; deeds; dignity/virtue; decorum; grace/beauty;<br>(N 単数 対格), <br></span></a>
+<a class="note1">conservabimus.<span>conservo conservare, conservavi, conservatus V (1st)  <br>:keep safe/intact, save (from danger); preserve, maintain; spare; keep/observe;<br>(１ 複数 未来 能動態 直接法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>rebus : 与格　「物事に対して」</p>
+<p>is rebus quae tractantur in vita : 日常の生活に入っているような物事にたいして</p>
+<p>modum quendam et ordinem adhibentes : 対格だが、使われ方がわからない。<font color="#ff0000">？？？</font></p>
+<p><font color="#ff0000">tractanturの目的語、modum et ordinem　<font color="#000000">「ある一定のやり方と適用された秩序を日常生活に持ち込まれているようなものに対しては」</font></font></p>
+<p><font color="#ff0000"><font color="#ff0000">conservabimusの目的語、honestatem, decus　</font></font><font color="#000000">「我々は名誉と尊厳を保つべきである。」</font></p>
+<p><font color="#ff0000"></font><br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>ある一定の方法と適用された秩序を日常生活に持ち込まれているような物事に対しては、我々は名誉と尊厳を保つべきである。（？？）<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

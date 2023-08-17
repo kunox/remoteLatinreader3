@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 20 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[20]<span></span></a>
+<a class="note0">De<span></span></a>
+<a class="note0">tribus<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">reliquis<span>reliquus reliqua, reliquum ADJ  <br>:rest of/remaining/available/left; surviving; future/further; yet to be/owed;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note1">latissime<span>latus lata -um, latior -or -us, latissimus -a -um ADJ  最上級<br>:wide, broad; spacious, extensive;副詞<br></span></a>
+<a class="note1">patet<span>pateo patere, patui, - V (2nd)  <br>:stand open, be open; extend; be well known; lie open, be accessible;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">ratio,<span></span></a>
+<a class="note1">qua<span>qui quae, quod PRON  <br>:which?, what?; what kind of?;<br>(F 単数 奪格)<br></span></a>
+<a class="note0">societas<span></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">ipsos<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">vitae<span></span></a>
+<a class="note1">quasi<span>quasi ADV <br>:as if, just as if, as though; as it were; about; so to speakの意らしい<br><br><br></span></a>
+<a class="note1">communitas<span>communitas communitatis N (3rd) F  <br>:partnership, joint possession/use/participation; fellowship; community, kinship;<br>(X 単数 主格)<br></span></a>
+<a class="note1">continetur;<span>continor continari, continatus sum V (1st) DEP  <br>:encounter, meet with;<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note1">cuius<span>qui quae, quod PRON  <br>:which?, what?; what kind of?;<br>(X 単数 属格)<br></span></a>
+<a class="note1">partes<span>pars partis N (3rd) F  <br>:part, region; share; direction; portion, piece; party, faction, side;<br>(C 複数 主格)<br></span></a>
+<a class="note1">duae:<span>duo -ae o, secundus -a -um, bini -ae -a, bis NUM  2<br>:two (pl.);<br>(F 複数 主格)<br></span></a>
+<a class="note1">iustitia,<span>justitia justitiae N (1st) F  <br>:justice; equality; righteousness (Plater);<br>(C 単数 主格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">qua<span></span></a>
+<a class="note0">virtutis<span></span></a>
+<a class="note1">splendor<span>splendor splendoris N (3rd) M  <br>:brilliance, luster, sheen; magnificence, sumptuousness, grandeur, splendor;<br>(X 単数 主格)<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">maximus,<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">qua<span></span></a>
+<a class="note1">viri<span>vir viri N (2nd) M  <br>:man; husband; hero; person of courage, honor, and nobility;<br>&nbsp;(C 複数 主格), <br></span></a>
+<a class="note1">boni<span>bonus boni N (2nd) M  <br>:good/moral/honest/brave man; man of honor, gentleman; better/rich people (pl.);<br>(X 単数 主格)<br><br></span></a>
+<a class="note1">nominantur,<span>nomino nominare, nominavi, nominatus V (1st)  <br>:name, call;<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">huic<span></span></a>
+<a class="note1">coniuncta<span>conjunctus conjuncta, conjunctum ADJ  <br>:adjoining/contiguous/linked; connected/contemporary (time), continuous; complex;<br>(F 単数 主格)<br></span></a>
+<a class="note1">beneficentia,<span>beneficentia beneficentiae N (1st) F  <br>:<strong>beneficence</strong>, kindness; honorable treatment;<br>(C 単数 主格)<br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">eandem<span></span></a>
+<a class="note0">vel<span></span></a>
+<a class="note1">benignitatem<span>benignitas benignitatis N (3rd) F  <br>:kindness, courtesy; friendliness, benevolence; liberality, favor; bounty; mercy;<br>(C 単数 対格)<br></span></a>
+<a class="note0">vel<span></span></a>
+<a class="note1">liberalitatem<span>liberalitas liberalitatis N (3rd) F  <br>:courtesy, kindness, nobleness; <strong>generosity</strong>; frankness; gift;<br>(C 単数 対格)<br></span></a>
+<a class="note1">appellari<span>appello appellare, appellavi, appellatus V (1st) TRANS  <br>:call (upon); address; dun; solicit; appeal (to); bring to court; accuse; name;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">licet.<span>licet licere, licuit, licitus est V (2nd) IMPERS  <br>:it is permitted, one may; it is all right, lawful, allowed, permitted;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>ea ratio patet lastissime</strong>.&nbsp; : ratioはlocusとかresとかparsとか呼んでいた、４つの要素のこと。</p>
+<p>vitae societasが一般的な言い方で、vitae communitasというのは珍しい言い方。（Holden) したがってquasi (いわば）を使ったと思われる。</p>
+<p><strong>qua societas hominum et vitae quasi communitas continetur</strong>. 「人の社会と生活のいわば場とも言うべきものを結合してる」</p>
+<p>構文的には逐語的には「それにより人の社会と～結合しているような大きな要素がある」となる。</p>
+<p>in qua virtutis splendor est maximus : quaはiustitia。「その中で徳の輝きは最大であり」</p>
+<p>ex qua viri boni nominantur. <strong>viri nominatur boni</strong>でnominaturはコピュラ動詞。「それにより人は善人と呼ばれる」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>また残りの３つの要素に関して言えば、それにより、人の社会と生活のいわば基盤とも言うべきものが結びついているような大きなものがある。それらは２つから成っていて、一つは「正義」であり、その中で徳が最大に輝き、それにより人は善人と呼ばれるものである。もう一つは正義と寄り添う形での「慈善」である。それはまた「親切」とか「気前良さ」とか呼ばれても良い。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sed<span></span></a>
+<a class="note0">iustitiae<span></span></a>
+<a class="note0">primum<span></span></a>
+<a class="note1">munus<span>munus muneris N (3rd) N  <br>:service; duty, office, function; gift; tribute, offering; bribes (pl.);<br>&nbsp;(X 単数 主格)<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ne<span></span></a>
+<a class="note1">cui<span>quis quis, quid PRON  <br>:who?, which one?, what man?, what thing? (type/nature); what kind of; what?;<br>(X 単数 与格)<br></span></a>
+<a class="note0">quis<span></span></a>
+<a class="note1">noceat,<span>noceo nocere, nocui, nocitus V (2nd)  <br>:harm, hurt; injure (with DAT);<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">nisi<span></span></a>
+<a class="note1">lacessitus<span>lacesso lacessere, lacessivi, lacessitus V (3rd)  <br>:provoke, excite, harass, challenge, harass; attack, assail;<br>(完了 分詞 受動態 M 単数 主格)<br></span></a>
+<a class="note1">iniuria,<span>injuria injuriae N (1st) F  <br>:injury; injustice, wrong, offense; insult, abuse; sexual assault;<br>(C 単数 主格)<br></span></a>
+<a class="note1">deinde<span>deinde ADV <br>:then/next/afterward; thereon/henceforth/from there/then; in next position/place;<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">communibus<span>commune communis N (3rd) N  <br>:joint/ common/ public property/ rights; public; public places/ interests (pl.);<br>(X 複数 奪格)<br></span></a>
+<a class="note1">pro<span>pro PREP ABL <br>:on behalf of; before; in front/instead of; for; about; according to; as, like;<br><br></span></a>
+<a class="note0">communibus<span></span></a>
+<a class="note1">utatur,<span>utor uti, usus sum V (3rd) DEP  <br>:use, make use of, enjoy; enjoy the friendship of (with ABL);<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note1">privatis<span>privatus privati N (2nd) M  <br>:private citizen;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">suis.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>cui quisは不定代名詞で、誰かが誰かにたいしての意。（aliquisはnisiと一緒だとaliが省略される）</p>
+<p>communibus pro communibus utatur : utorの目的語は奪格。communiaとはここでは、公共のものの意。「公共のものを公共のために使う」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>しかしながら、正義の第一の役割は、罪の意識なしでは、誰かが誰かを傷つけないためである。そうして更には、公共のものを公共のために使い、個人のものを彼らのものとして扱うことである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

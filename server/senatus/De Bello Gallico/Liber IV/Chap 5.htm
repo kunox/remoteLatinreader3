@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 5</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[5]<span></span></a>
+
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">certior<span></span></a>
+<a class="note0">factus<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">īnfīrmitātem<span>infirmitas infirmitatis N (3rd) F  <br>:weakness; sickness;<br>(c 単数 対格)<br></span></a>
+<a class="note0">Gallōrum<span><br><br></span></a>
+<a class="note1">veritus,<span>vereor vereri, veritus sum V (2nd) DEP  <br>:revere, respect; fear; dread;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">cōnsiliīs<span>consilium consili(i) N (2nd) N  <br>:|decision/resolution; intention / purpose/ policy/ plan/ action; diplomacy/ strategy;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">capiendīs<span>capio capere, cepi, captus TRANS 未来分詞　受動　奪格　;= take hold, seize (動形容詞）<br></span></a>
+<a class="note1">mōbilēs<span>mobilis mobile, mobilior -or -us, mobilissimus -a -um ADJ  <br>:movable; mobile; quick, active; changeable, shifting; fickle, easily swayed;<br>(c 複数  主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">novīs<span><br><br></span></a>
+<a class="note1">plērumque<span>plerus, plera, plerum 形容詞　n単　主格　;= (w/que) the majority, most, very great part<br></span></a>
+<a class="note1">rēbus<span>res 与格<br></span></a>
+<a class="note1">student,<span>studeo studere, studui - 3複　現在　;= desire, be eger for, study</span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note1">committendum<span>committo committere, commisi, commissus 未来分詞　受動　ｎ単　対格　;= attach, construct, entrust</span></a>
+<a class="note0">exīstimāvit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Caesar ~ existimavit nihil his committendum (esse).：が全体の構成。　～は文法的にはCaesarを修飾&nbsp;</p>
+<p>certior factus de his rebus : 完了分詞でCaesarを修飾　：　これらの事柄に関して報告された（カエサル）</p>
+<p>veritus Gllorum infirmitatem : 同様に「ガリア人のimfirmitatemを恐れた（心配した）（カエサル）</p>
+<p>infirmatemは　weakness of purposeと言う意味で「<b>意志が弱いこと</b>」</p>
+<p>sunt mobiles in consiliis capiendis : capiendisは動形容詞で「確保すべき」（決意を修飾）</p>
+<p>plerumque student novis rebus : novis rebusは間接目的語の与格「多くは新しいものが好きである」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらの報告を受け、カエサルはガリア人の気まぐれを心配した。というのも彼らは確保すべき決定を変更しがちであり、大部分が新しい事に熱しやすいからである。カエサルは彼らに信頼を置くべきではないと考えた。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Est<span></span></a>
+<a class="note1">enim<span>接続詞　;= namely, indeed, infact<br></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note0">Gallicae<span></span></a>
+<a class="note1">cōnsuētūdinis,<span>consuetudo consuetudinis N (3rd) F  <br>:habit/custom/usage/way; normal/general/customary practice, tradition/convention;<br>(X 単数 属格)<br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">viātōrēs<span>viator viatoris N (3rd) M  <br>:traveler;<br>(c 複数  対格)<br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">invītōs<span>invitus invita, invitum ADJ  <br>:reluctant; unwilling; against one's will;<br>(m 複数  対格)<br></span></a>
+<a class="note1">cōnsistere<span>consisto consistere, constiti, constitus V (3rd)  <br>:stop/stand/halt/cease; pause, linger; stop spreading/flowing; take a position;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">cōgant<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/<strong>compel</strong>; convene; congeal;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">quid<span>quis ;=what n単　対格</span></a>
+<a class="note1">quisque<span>quisque quaeque quidque m単　主格；＝each, every, everyone</span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">quāque<span>quisque ｆ単　奪格　;= each, everybody<br></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note1">audierit<span>=audiveritaudio 3単　完了　接続法</span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">cognōverit<span>cognosco cognoscere, cognovi, cognitus V (3rd) TRANS  <br>:become acquainted with/aware of; recognize; learn, find to be; inquire/examine;<br>&nbsp;(３人称 単数 完了 能動態 接続法 )<br></span></a>
+<a class="note1">quaerant<span>quaero &nbsp;quaerere, quaesivi, quaesitus 3複　現在　接続法　;= search for, seek, strive,obtain</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">mercātōrēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">oppidīs<span><br><br></span></a>
+<a class="note1">vulgus<span>vulgus vulgi N 単　主格　;= common people, general public&nbsp;</span></a>
+<a class="note1">circumsistat<span>circumsisto circumsistere, circumstiti, circumstatus TRANS ３単　接続法　;= stand, gather, crowd, surround</span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">regiōnibus<span><br><br></span></a>
+<a class="note1">veniant<span>venio ３複　接続法</span></a>
+<a class="note0">quās<span><br><br></span></a>
+<a class="note1">ibi<span>副詞　there, in that place</span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note0">cognōverint<span><br><br></span></a>
+<a class="note1">prōnūntiāre<span>pronuntio pronuntiare, pronuntiavi, pronuntiatus V (1st)  <br>:announce; proclaim; relate; divulge; recite; utter;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">cōgat.<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>enim hoc est Galliae consuetudinis : しかしそれこそガリアの慣習である。　Galliae cosuetudinisは属格で「所有の属格」</p>
+<p>uti以下　：結果の名詞節で、hocと同格　（NewLatin 297.3) (cogat, quaerant, の主語は彼ら＝ガリア人）</p>
+<p><b>cogant consistere viatores etiam invitos</b> : invitos viatores で「嫌がる旅人をして」立ち止まるよう強要し、</p>
+<p><b>quaerant quid quisque eorum</b> audierit aut cognoverit de quaeque re: <b>audierit, cognveritの主語はquisque eorum</b> (彼らの各々）「彼らの各々が、いろんな事に関して何を聞き、何を知ったかなどを尋ねる。</p>
+<p>vulgus circumsistat mercatores in oppidis cogat pronuntiare : 民衆は街にいる商人たちを取り囲み～を言うことを強要する。</p>
+<p>cogatは３人称、単数であるがvulgusは集合名詞である。（単で複の意味）</p>
+<p>ex quisbus regionubus veniant, quas res cognoverint ibi : どの地方から来たのか、そこで何を知ったか</p>
+<p><br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>実にそれがガリア人の慣習である。即ち、人々は嫌がる旅人に立ち止まるよう強要し、各々に、各々に関して何を聞き、何を知ったかなどを尋ね、町にいる商人達を取り囲み、どこからきたか、何を知っているかなどを話すよう強要するのである。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">audītiōnibus<span>auditio auditionis N (3rd) F  <br>:hearing, act/sense of hearing; report, hearsay, rumor; lecture, recital;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">permōtī<span>permoveo permovere, permovi, permotus V (2nd)  <br>:stir up; move deeply; influence; agitate;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">summīs<span><br><br></span></a>
+<a class="note0">saepe<span></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">cōnsilia<span>consilium consili(i) N (2nd) N  <br>:|decision/resolution; intention/ purpose/policy/plan/action; diplomacy/strategy;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note1">ineunt,<span>ineo inire, inivi, initus ３複　現在　;= enter, undertake, begin, go in, enter upon</span></a>
+<a class="note0">quōrum<span><br><br></span></a>
+<a class="note1">eōs<span>m複対格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">vēstīgiō<span>vestigium vestigi(i) N (2nd) N  <br>:step, track; trace; footstep;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">paenitēre<span>paenitet paenitere, paenituit, - V (2nd) IMPERS  <br>:it displeases, makes angry, offends, dissatisfies, makes sorry;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">necesse<span>necesse Undeclined 形容詞　;= necessary, essential, unavaidable, inevitable</span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">incertīs<span>incertus incerta, incertum ADJ  <br>:uncertain; unsure, inconstant, variable; doubtful;<br>(X 複数  与格)<br></span></a>
+<a class="note1">rūmōribus<span>rumor rumoris m 複　与格　;= hearsay, rumor, gossip, reputation　（serviantは与格支配）<br></span></a>
+<a class="note1">serviant<span>servio servire, servivi, servitus V (4th)  <br>:serve; be a slave to; with DAT;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">plērī<span>plerus plera, plerum ADJ  <br>:(w/que) the majority, most, very great part; about all; very many, a good many;<br>&nbsp;(m 複数  主格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">voluntātem<span>voluntas voluntatis N (3rd) F  <br>:will, desire; purpose; good will; wish, favor, consent;<br>(c 単数 対格)<br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">fīcta<span>fictus ficta, fictum ADJ  <br>:feigned, false; counterfeit;<br>(n 複数  対格)<br></span></a>
+<a class="note1">respondeant.<span>respondeo respondere, respondi, responsus ３複　現在　;= answer</span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>permoti his rebus atque auditionibus : rebus atque auditionibusは「事実と噂」これらの事実と噂に影響され、</p>
+<p>inerunt consilia : <b>consilium inere（慣用句）</b>で「計画を立てる」</p>
+<p><strong>de summis rebus</strong> : 最も大切なことに関して</p>
+<p>quorum est necesse paenitere eos in vestigo : 「それに対し彼らが後悔する事が必然であるような、」quorumは関係代名詞で前のconsliaを指す。paenitereは不定詞で、eosは複　対格でpaenitereの主語。<b>paenitet非人称動詞は、影響を受ける人の対格と、感情の向かう先の人、物の属格を取る。（NewLatin209）</b></p>
+<p><strong>in vestigo : </strong>その場で、直ぐにの意</p>
+<p>cum serviant incertis rumoribus : cumはこの場合When。serviantは与格支配。主語はvulgus、ガリア人。「彼らが不確かなことの奴隷である時」</p>
+<p>pleri (viatores) respondeant ficta ad eorum voluntatem: pleri多くの（旅人たち） ad eorum voluntatem 「彼らの意に沿ったように」、ficta＝false形容詞の名詞化</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼らは事実や噂取り混ぜたものにより影響され、しばしば、直ぐに後悔する事が必然であるような、重要な計画をたてる。彼らが、不確かな噂の虜になっている場合、多くの旅人は彼らの意に沿った様な偽りの答えをするものである。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

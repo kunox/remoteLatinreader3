@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber II : Chap 9</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[9]<span></span></a>
+
+<a class="note1">Palūs<span>palus paludis N (3rd) F  <br>:swamp, marsh;<br>(X 単数 主格)<br></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">magna<span></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note1">nostrum<span>noster nostra, nostrum ADJ  <br>:our;<br>&nbsp;(m 単数 対格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">hostium<span>hostis hostis N (3rd) C  <br>:enemy (of the state); stranger, foreigner; the enemy (pl.);<br>(c 複数  属格)<br></span></a>
+<a class="note0">exercitum.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>inter nostrum atque hostium excecitum : <font color="#0000ff">nostrumは所有形容詞nosterのM、対格、hostiumはhostisの属格,</font><strike> nostrum はnos = we の属格で、</strike>２つの属格がexercitumに掛かる。人称代名詞の属格は所有の意味を持たないので、～の家、とか～の軍隊、という表現はできない。所有形容詞を使用する。名詞属格は所有の意味があるのでhostiumは属格はで良い。</p>
+<p>(人称代名詞属格のうちmei, tui, nostri, vestriは目的語の属格としてのみ使用され、nostrum, vestrumは全体の属格としてのみ使われる。（NewLatin 242.2)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>自軍と敵の部隊との間に小さな湿地帯があった。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hanc<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">nostrī<span></span></a>
+<a class="note0">trānsīrent<span><br><br><br></span></a>
+<a class="note1">hostēs<span>hostis 複　主格<br></span></a>
+<a class="note1">expectābant;<span>expecto expectare expectavi expectatus ３複　未完了（敵の事）;= await, expect, anticipate<br></span></a>
+<a class="note1">nostrī<span>noster 複、主格<br></span></a>
+<a class="note1">autem,<span>接続詞;= but, on the other hand, however,<b> also</b></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">illīs<span>奪格<br></span></a>
+<a class="note1">initium<span>initium initi N 単　主格　対格;= beginning, commencement</span></a>
+<a class="note1">trānseundī<span>transeo transire, transivi(ii), transitus V  <br>:go over, cross;<br>(未来 分詞 受動態 n 単数 属格)<br><br></span></a>
+<a class="note0">fieret,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">impedītōs<span>impeditus impedita -um, impeditior -or -us, impeditissimus -a -um ADJ  <br>:hindered/obstructed/encumbered/hampered; difficult/impeded; inaccessible;<br>(m 複数  対格)<br></span></a>
+<a class="note1">adgrederentur,<span>adgredior adgredi adgressus sum　DEP　3　複　未完了　接続法　;= approach, advance, attack</span></a>
+<a class="note1">parātī<span>paro parare paravi paratus完了分詞　受動　m 複　主格<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">armīs<span></span></a>
+<a class="note0">erant.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p><strong>si nostri transirent</strong> = if ours crossed <u>間接疑問形は時としてsiに導かれる</u>。(AG 576 a)(NewLatin300.3)間接疑問文は名詞節で、ここではexpectabanturの目的語</p>
+<p><strong>si ab illis initium transeundi fieret</strong> : 直訳、渡ることの始めが彼らによって作られれば　 initiumが主語</p>
+<p>nostri erant parati in armis, si initium transeundi fieret illis, : illisは手段の奪格、彼らにより。同じくsiで始まる間接疑問文。</p>
+<p>ut impeditos adgrenderentur. 目的のut節。impeditosは形容詞の名詞化で、湿地帯で「動きの鈍いひと」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そこで、敵は我軍が渡らないかと期待してした。我軍も、もし彼らが渡ることを始めたら&nbsp;&nbsp;攻撃をしようと武装して用意していた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Interim<span>副詞　meanwhile, in the meantime</span></a>
+<a class="note1">proeliō<span>proelium proeli(i) N (2nd) N  <br>:battle/fight/bout/conflict/dispute; armed/hostile encounter; bout of strength;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">equestrī<span>equester equestris, equestre ADJ  <br>:equestrian, mounted on horse; of/belonging to/consisting of horseman/cavalry;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note1">duās<span>duo NUM 複　対格<br></span></a>
+<a class="note0">aciēs<span><br><br></span></a>
+<a class="note0">contendebatur.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>
+Liber Iではcontendoとproelioの組み合わせが多く出てくる。
+</p>
+<p>①　48.&nbsp;&nbsp; si vellet Ariovistus proelio contendere</p>
+<p>② 48. equestri proelio contidie contendit</p>
+<p>③ 50. si ante novam linam proelio contendissent</p>
+<p>---- →　これらから「戦いによって争う」と言う感じで使われている</p>
+<p><strong>contendebaturは非人称として使われて「</strong>戦われている」</p>
+<font color="#ff0000">
+</font><p><font color="#ff0000"></font></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そのうちに２つの戦列の間で騎兵による争いが始まった。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ubi<span></span></a>
+<a class="note1">neutrī<span>neuter 形容詞　m 複数主格;= neither<br></span></a>
+<a class="note1">trānseundī<span>transeoの動形容詞　属格<br></span></a>
+<a class="note1">initium<span>initium initi(i) N (2nd) N  <br>:beginning, commencement; entrance;<br>(n 単数 主格),<br></span></a>
+<a class="note0">faciunt,<span></span></a>
+<a class="note1">secundiore<span>secundus secunda -um, secundior -or -us, secundissimus -a -um ADJ  比較級<br>:|favorable, fair (wind/current); fortunate, propitious; smooth, w/the grain;<br>(X 単数 奪格)<br><br></span></a>
+<a class="note0">equitum<span></span></a>
+<a class="note0">proeliō<span><br><br></span></a>
+<a class="note1">nostrīs<span>noster nostra, nostrum ADJ  <br>:our;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">redūxit.<span>reduco reducere, reduxi, reductus V (3rd)  <br>:lead back, bring back; restore; reduce;<br>(３人称 単数 完了 能動態 直説法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>secundiore nostris : 独立奪格　自軍に有利であるときに</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>どちらの陣営も渡り始めることをしないときに、Caesarは自軍が有利に展開するや、野営地の方に引き上げた。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hostēs<span>hostis 複　対格　主格;= enemy<br></span></a>
+<a class="note1">prōtinus<span>protinus ADV <br>:straight on, forward; immediately; without pause; at once;<br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note0">Axonam<span></span></a>
+<a class="note1">contendērunt,<span>contendo contendere,contendi, contentus ３複　完了 ;=hurl, rush to be in a hurry<br></span></a>
+<a class="note1">quod<span>qui quae, quod PRON  <br>:which?, what?; what kind of?;<br>(n 単数<strong> 対格</strong>)<br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">post<span>in the rear of </span></a>
+<a class="note0">nostra<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">dēmōnstrātum<span>demonstro demonstrare, demonstravi, demonstratus V (1st) TRANS  <br>:point out/at/to, draw attention to; explain/describe/show, give an account of;<br>&nbsp;(完了 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>post&nbsp;&nbsp;= in the rear of</p>
+<p>demonstratum est = （前に）指摘したように、</p>
+<p>文法的にはちょっと解りにくい。</p>
+<p><font color="#0000ff">quod esse post nostra castra : quodは関係代名詞で、flumen Axonamが先行詞。ここは不定詞句になっており、quod(対格）主語のesseで「それが我々の野営地の後ろに存在する事」の意。この不定詞句がest demonstratumの主語。逐語的には「それが我々の後ろ側にあることは指摘されていた。」となる。</font></p>
+<strong>
+</strong></div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>敵はすぐさまその場所からAxona河へ向かって突進してきた。そこは（前に）述べたように我が野営地の後ろであった。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Ibi<span>副詞　;= there, in that place</span></a>
+<a class="note1">vadīs<span>vadum vadi N (2nd) N  <br>:shallow place, stream; ford, shoal; channel;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">repertis<span>reperio reperire, repperi, repertus V (4th) TRANS  <br>:<strong>discover</strong>, learn; light on; find/obtain/get; find out/to be, get to know; invent;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note0">suārum<span><br><br></span></a>
+<a class="note0">cōpiārum<span><br><br></span></a>
+<a class="note0">trādūcere<span><br><br></span></a>
+<a class="note1">cōnātī<span>conor conari, conatus sum V (1st) DEP  <br>:attempt/try/endeavor, make an effort; exert oneself; try to go/rise/speak;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">cōnsiliō<span>consilium consili(i) N (2nd) N  <br>:|decision/resolution; intention/ purpose/ policy /<strong>plan</strong>/ action; diplomacy/strategy;<br>(X 単数 奪格)<br><br></span></a>
+<a class="note0">ut,<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">possent,<span>接続法　未完了</span></a>
+<a class="note0">castellum,<span></span></a>
+<a class="note0">cui<span></span></a>
+<a class="note0">praeerat<span></span></a>
+<a class="note0">Q.<span></span></a>
+<a class="note0">Titūrius<span><br><br></span></a>
+<a class="note0">lēgātus,<span><br><br></span></a>
+<a class="note1">expugnārent<span>expugno expugnare, expugnavi, expugnatus V (1st)  <br>:assault, storm; conquer, plunder; accomplish; persuade;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">pontemque<span></span></a>
+<a class="note1">interscinderent;<span>interscindo interscindere, interscidi, interscissus V (3rd)  <br>:cut down; cut through, sever;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note1">potuissent,<span>possum posse, potui, - V  <br>:be able, can;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">agrōs<span><br><br></span></a>
+<a class="note0">Rēmōrum<span><br><br></span></a>
+<a class="note1">populārentur,<span>populor populari, populatus sum V (1st) DEP  <br>:ravage, devastate, lay waste; plunder; despoil, strip;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note0">nōbīs<span><br><br></span></a>
+<a class="note1">ūsuī<span>usus usus N (4th) M  <br>:use, enjoyment; experience, skill, advantage; custom;<br>(c 単数 与格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">gerendum<span>gero gerere, gessi, gestus 未来分詞　受動 ;= bear, carry, wear</span></a>
+<a class="note0">erant,<span></span></a>
+<a class="note1">commeātū<span>commeatus commeatus M単　奪格　（第４変化で特殊）;= supplies, goods<br></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note1">prohibērent.<span>prohibeo 3複　未完了　接続法 ;= hinder, resstrain prevent<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p><strong>vadis repertis</strong> : 独立奪格　浅瀬を発見して、</p>
+<p><strong>sunt conati traducere</strong> :　「渡る事を試みた。」主語はBelgae軍。Depの完了受動態なので能動。</p>
+<p><strong>eo consilio</strong> :<strike> 独立奪格　彼らの計画では</strike>、多分「<strong>態度の奪格</strong>」（Abl. of Manner)（NewLatin220.3）～に則って、「<strong>ut以下のような計画に則って</strong>（河を渡ろうとした）」</p>
+<p><strong>ut si</strong> ~ : これは目的の節で、eo consilioと同格風に使われる。（eo consilioを説明している)中では接続法が使われる。（NewLatin282. f)</p>
+<p><strong>si possent, expugnarent castellum, interscinderent pontem</strong> :可能であれば要塞を攻撃して橋を断つ</p>
+<p><strong>si minus potuissent, popularentur agros</strong> : ダメなら畑を荒らす</p>
+<p><font color="#ff0000">possentとpotuissent（未完了、過去完了）の時制の違いは？</font></p>
+<font color="#ff0000">
+</font><p><font color="#333"><em>接続法では未来形がないが、歴史時制に続けて接続法未完了を使うと未来を表す。接続法過去完了だと、未来完了になる。（NewLatin269) </em></font></p>
+<p><font color="#0000ff">possent（未完了）は可能ならば、と城塞を攻撃するのは同じ時期だが、potuissent（過去完了）は、主節よりも以前のタイミングであることを表す。（</font><font color="#000000"><strike>因みにsuntは歴史的現在と考え、第二時制</strike>）</font></p>
+<font color="#0000ff">
+</font><p><font color="#0000ff"></font><strong>magno nobis usui erant</strong> : usuiはPredicative Dative(二重与格、SUM動詞ともう一つの与格で構成される）（NewLatin191.2)</p>
+<p><strong>ad bellum gerendum</strong> : gerendum 動形容詞で　<u>元はad + 動名詞(gerendum)　＋動名詞の直接目的語(bellum)であるが、こういう場合は必ず動形容詞構文にしなければならない。（NewLatin339.2</u>)</p>
+<p>commeatu : 分離の奪格</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>そこで浅瀬を見つけて彼らの軍勢の一部を渡らせようとした。意図したところは、もし可能であればローマ軍の守備隊、それは（第５章にあるように）Tituriusが率いている守備砦であったが、それを攻撃し橋を落とす、もしそれがダメなら、Remi族の畑、それは我軍が戦いを続けるためには大変有益であるもので、それを荒らして我々の兵糧を断つというものであった。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 24 </h1>
+</div>
+<div class="spacer">Line0</div>
+</a><div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[24]<span></span></a>
+<a class="note0">Atque<span></span></a>
+<a class="note0">illae<span></span></a>
+<a class="note1">quidem<span>quidem ADV <br>:indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;<br><br></span></a>
+<a class="note0">iniuriae,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">nocendi<span>noceo nocere, nocui, nocitus V (2nd)  <br>:harm, hurt; injure (with DAT);<br>&nbsp;(未来 分詞 受動態 N 単数 属格)<br></span></a>
+<a class="note0">causa<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note1">industria<span>industria industriae N (1st) F  <br>:industry; purpose/diligence; purposeful/diligent activity; purposefulness (pl.);<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note0">inferuntur,<span></span></a>
+<a class="note0">saepe<span></span></a>
+<a class="note0">a<span></span></a>
+<a class="note1">metu<span>metus metus N (4th) M  <br>:fear, anxiety; dread, awe; object of awe/dread;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">proficiscuntur,<span>proficiscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">is,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">nocere<span>noceo nocere, nocui, nocitus V (2nd)  <br>:harm, hurt; injure (with DAT);<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">alteri<span>alter altera, alterum ADJ  <br>:one (of two); second/another; former/latter;<br>(X 単数 与格)<br></span></a>
+<a class="note1">cogitat,<span>cogito cogitare, cogitavi, cogitatus V (1st)  <br>:think; consider, reflect on, ponder; imagine, picture; intend, look forward to;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">timet,<span>timeo timere, timui, - V (2nd)  <br>:fear, dread, be afraid (ne + SUB = lest; ut or ne non + SUB = that ... not);<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">ne,<span></span></a>
+<a class="note0">nisi<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">fecerit,<span></span></a>
+<a class="note1">ipse<span>ipse ipsa, ipsum PRON  <br>:himself/herself/itself; the very/real/actual one; in person; themselves (pl.);<br>(M 単数 主格)<br></span></a>
+<a class="note1">aliquo<span>aliquo ADV <br>:to some place/person (or other); in some/any direction/quarter; some/anywhere;<br><br></span></a>
+<a class="note1">afficiatur<span>afficio afficere, affeci, affectus V (3rd) TRANS  <br>:affect, make impression; move, influence; cause (hurt/death), afflict, weaken;<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note1">incommodo.<span>incommodum incommodi N (2nd) N  <br>:disadvantage, inconvenience, setback, harm, detriment; defeat/disaster; ailment;<br>&nbsp;(X 単数 奪格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>illae iniuriae proficiscuntur a metu</strong>. : 「これらの不正義は恐怖にその端を発している」</p>
+<p>cum is : cum = since?</p>
+<p>cum is timet ne ipse aliquo afficiatur incommodo. 「彼は自分が何やら不都合な事によって影響を受けるのではないかと恐れる（時）」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>そしてこれらの、意図的に悪意をもってもたらされる不正義というのは往々にして恐怖から生じている。というのは、他の人を傷つけようと考える人は、もしそうしなかったら自分が何やら不都合なことで影響を受けることを恐れるからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Maximam<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">iniuriam<span></span></a>
+<a class="note0">faciendam<span></span></a>
+<a class="note1">aggrediuntur,<span>aggredio aggredere, aggressi, aggressus V (3rd) INTRANS  <br>:approach, advance; attack, assail; undertake, seize (opportunity), attempt;<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">adipiscantur<span>adipiscor adipisci, adeptus sum V (3rd) DEP  <br>:gain, secure, win, obtain; arrive at, come up to/into; inherit; overtake;<br>(3 複数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">ea,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">concupiverunt;<span>concupisco concupiscere, concupivi, concupitus V (3rd)  <br>:desire eagerly/ardently; covet, long for; aim at; conceive a strong desire for;<br>(3 複数 完了 能動態 直接法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note1">vitio<span>vitium viti(i) N (2nd) N  <br>:fault, vice, crime, sin; defect;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">latissime<span>latus lata -um, latior -or -us, latissimus -a -um ADJ  最上級<br>:wide, broad; spacious, extensive;副詞<br></span></a>
+<a class="note1">patet<span>pateo patere, patui, - V (2nd)  <br>:stand open, be open; extend; be well known; lie open, be accessible;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">avaritia.<span>avaritia avaritiae N (1st) F  <br>:greed, avarice; rapacity; miserliness, stinginess, meanness;<br>(C 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>maximam partem</strong> : 一種の時空の対格で「殆どの場合」の意</p>
+<p>(homines) aggrediuntur ad iniuriam faciendam ut adipiscantur. : 「人は得るために不正義を成すべく進む」が逐語訳。「人は何かを得ようとして不正義を行う」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>しかし殆どの場合、人はなにか欲しいものを得ようと不正義を行うのである。この種の罪では強欲が最大の動機である。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

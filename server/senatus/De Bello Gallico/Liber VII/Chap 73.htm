@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 73</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[73]<span></span></a>
+
+<a class="note0">Erat<span></span></a>
+<a class="note0">eōdem<span><br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">māteriārī<span>materior materiari, materiatus sum V (1st) DEP  <br>:get timber;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">frūmentārī<span>frumentor frumentari, frumentatus sum V (1st) DEP  <br>:get grain, forage;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">tantās<span>tantus tanta, tantum ADJ  <br>:of such size; so great, so much;<br>(f 複数  対格)<br></span></a>
+<a class="note1">mūnītiōnēs<span>munitio munitionis N (3rd) F  <br>:fortifying; fortification;<br>(c 複数  対格)<br></span></a>
+<a class="note1">fierī<span>facio facere, feci, factus V (3rd) TRANS  <br>:make/ build/ construct/ create/ cause/ do; have built/made; fashion; work (metal);<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">necesse<span>necesse undeclined ADJ <br>:necessary, essential; unavoidable, compulsory, inevitable; a natural law; true;<br><br></span></a>
+<a class="note1">dēminūtīs<span>deminuo deminuere, deminui, deminutus V (3rd) TRANS  <br>:make smaller; cut up small; lessen/diminish/reduce (size/number/amount/scope);<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">nostrīs<span><br><br></span></a>
+<a class="note1">cōpiīs<span>copia copiae N (1st) F  <br>:plenty, abundance, supply; <strong>troops</strong> (pl.), supplies; forces; resources; wealth;<br>(c 複数  奪格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">longius<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">prōgrediēbantur:<span>progredior progredi, progressus sum V (3rd) DEP  <br>:go, come forth, go forward, march forward; advance. proceed. make progress;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">numquam<span>numquam ADV <br>:never;<br><br></span></a>
+<a class="note1">opera<span>opus operis N (3rd) N  <br>:need; work; fortifications (pl.), works;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note0">nostra<span></span></a>
+<a class="note0">Gallī<span><br><br></span></a>
+<a class="note1">temptāre<span>tempto temptare, temptavi, temptatus V (1st)  <br>:test, try; urge; worry; bribe;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ēruptiōnem<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note0">plūribus<span><br><br></span></a>
+<a class="note0">portīs<span><br><br></span></a>
+<a class="note0">summā<span><br><br></span></a>
+<a class="note0">vī<span><br><br></span></a>
+<a class="note0">facere<span></span></a>
+<a class="note1">cōnābantur.<span>conor conari, conatus sum V (1st) DEP  <br>:attempt/try/endeavor, make an effort; exert oneself; try to go/rise/speak;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>erat necesse eoadem tempore. 同じ時期に必要である。必要な事は不定詞で、materari, frumentari, fieri</p>
+<p>nostri copiis deminutis : 独立奪格「我が軍は弱体化して」</p>
+<p><strong>non numquam = nonnumquam = sometimes</strong></p>
+<p>Galli conabantur temptare opera nostra atque facere eruptionem. temptare責め立てる、攻撃するの意。</p>
+<p>summa vi : 最大の激しさで<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>大規模な包囲施設を成すために材料を調達すること、食料を調達することが同時に必要になった。陣地から更に遠くに出かけて行くようになり、我軍は弱っていった。また度々、ガリア人どもは我々の作業を攻撃し、また複数の門から最大の激しさで出撃することなどを始めた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quārē<span>quare ADV <br>:in what way? how? by which means, whereby; why; wherefore, therefore, hence;<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note1">rūrsus<span>rursus ADV <br>:turned back, backward; on the contrary/other hand, in return, in turn, again;<br><br></span></a>
+<a class="note0">opera<span></span></a>
+<a class="note1">addendum<span>addo addere, addidi, additus V (3rd) TRANS  <br>:add, insert, bring/attach to, say in addition; increase; impart; associate;<br>(未来 分詞 受動態 n 単数 対格)<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">putāvit,<span>puto putare, putavi, putatus V (1st) TRANS  <br>:think, believe, suppose, hold; reckon, estimate, value; clear up, settle;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note1">quō<span>quo ADV <br>:where, to what place; to what purpose; for which reason, therefore;<br><br></span></a>
+<a class="note0">minōre<span><br><br></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note0">mūnītiōnēs<span><br><br></span></a>
+<a class="note1">dēfendī<span>defendo defendere, defendi, defensus V (3rd) TRANS  <br>:defend/guard/protect, look after; act/speak/plead/write for defense; prosecute;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">possent.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Caesar putavit opera (esse) addendum。addendum 動形容詞で「義務」のニュアンス。「Caesarは作業は追加されるべきであると考えた」が逐語訳。</p>
+<p>quoは副詞で、so thatの意。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>そこでCaesarはそれに対し再び作業を追加するべきであると考えた。そうすることにより、より少ない兵で包囲設備を守ることが可能になる。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Itaque<span></span></a>
+<a class="note1">truncīs<span>truncus trunci N (2nd) M  <br>:trunk (of a tree);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">arborum<span>arbor arboris N (3rd) F  <br>:tree; tree trunk; mast; oar; ship; gallows; spearshaft; beam; squid?;<br>(c 複数  属格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">admodum<span>admodum ADV <br>:very, exceedingly, greatly, quite; excessively; just so; certainly, completely;<br><br></span></a>
+<a class="note0">fīrmīs<span><br><br></span></a>
+<a class="note1">rāmīs<span>ramus rami N (2nd) M  <br>:branch, bough;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">abscīsīs<span>abscido abscidere, abscidi, abscisus V (3rd) TRANS  <br>:|take away violently; expel/banish; destroy (hope); amputate; prune; cut short;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">hōrum<span><br><br></span></a>
+<a class="note1">dēlibrātīs<span>delibro delibrare, delibravi, delibratus V (1st) TRANS  <br>:peel, remove/strip the bark (from); strip/take off (bark); (rind L+S);<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">praeacūtīs<span>praeacutus praeacuta, praeacutum ADJ  <br>:sharpened, pointed;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">cacūminibus<span>cacumen cacuminis N (3rd) N  <br>:top, peak, summit; shoot, blade of grass, tip of tree/branch; zenith; limit;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">perpetuae<span>perpetuus perpetua, perpetuum ADJ  <br>:continuous, uninterpreted; whole; perpetual, lasting; everlasting;<br>(f 複数  主格)<br></span></a>
+<a class="note1">fossae<span>fossa fossae N (1st) F  <br>:ditch, trench, canal; moat; dike, fosse;<br>(c 複数  主格)<br></span></a>
+<a class="note0">quīnōs<span><br><br></span></a>
+<a class="note0">pedēs<span><br><br></span></a>
+<a class="note1">altae<span>altus alta -um, altior -or -us, altissimus -a -um ADJ  <br>:high; <strong>deep</strong>/profound; shrill; lofty/noble; deep rooted; far-fetched; grown great;<br>&nbsp;(f 複数  主格)<br></span></a>
+<a class="note1">dūcēbantur.<span>duco ducere, additional, forms V  <br>:lead, command; think, consider, regard; prolong;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p><strong>abscisis truncis arborum aut firmis ramis</strong> : 独立奪格で「木の幹またはしっかりした枝を切り倒し」</p>
+<p><strong>delibratis ac praeacutis horum cacuminibus</strong> : 「それらの上部の皮をはぎ尖らせ」delibratisは完了分詞であるがPraeacutisは形容詞である。ここでは形容詞＋名詞の独立奪格と考える。</p>
+<p>perpetuae fossae ducebantur : ここも解りにくい。連続した溝が命じられた、が逐語訳。他方、 quintos pedes altaeのquintosは配分数詞であり、「各々５フィートの深さの」とあることから、溝は複数個あり、一つではない。連続したというのは一つになっているという意味ではなく比較的小さな５フィートの溝が、たくさんある、ないしは至る所にという意味のようである。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>なので、木の幹または非常に大きな枝を切り倒し、それらの上部の皮を剥がし尖らせておいて、各々５フィートの深さの溝を至るところに掘った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hūc<span>huc ADV <br>:here, to this place; to this point;<br><br></span></a>
+<a class="note1">illī<span>ille illa, illud PRON  <br>:that; those (pl.); also DEMONST; that person/thing; the well known; the former;<br>(m 複数  主格)<br></span></a>
+<a class="note1">stīpitēs<span>stipes stipitis N (3rd) M  <br>:post, <strong>stake</strong>;<br>(c 複数  対格)<br></span></a>
+<a class="note1">dēmissī<span>demitto demittere, demisi, demissus V (3rd) TRANS  <br>:drop, let fall; sink; send/cast/go/flow/float/slope down; flow/shed/let (blood);<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">īnfimō<span>infimus infima, infimum ADJ  最上級<br>:<strong>lowest</strong>, deepest, furtherest down/from the surface; humblest; vilest, meanest;<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note1">revinctī,<span>revincio revincire, revinxi, revinctus V (4th)  <br>:bind fast, <strong>fasten</strong>;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note1">revellī<span>revello revellere, revelli, revulsus V (3rd) TRANS  <br>:tear/pull away/loose/out/from/down/up; wrench off; remove (person);<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">possent,<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">rāmīs<span>ramus rami N (2nd) M  <br>:branch, bough;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">ēminēbant.<span>emineo eminere, eminui, - V (2nd)  <br>:stand out; be prominent/preeminent, excel; project;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>huc はそれらの溝を指す。</p>
+<p>ab ramis ：abはここではbyで「枝によって突き出ている」枝だけが出ている、というニュアンスか？<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらの溝にその杭を沈め底の部分でよく固定し、取れることがないようにしておいて、枝の部分を突き出しておいた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quīnī<span>Quini <br>配分数 5<br>(m 複数  主格)<br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">ōrdinēs<span>ordo ordinis N (3rd) M  <br>:<strong>row</strong>, order/rank; succession; series; class; bank (oars); order (of monks) (Bee);<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note1">coniūnctī<span>conjungo conjungere, conjunxi, conjunctus V (3rd) TRANS  <br>:connect, join/yoke together; marry; connect/compound (words) (w/conjunctions);<br>(完了 分詞 受動態 m 複数  主格)<br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">implicātī;<span>implico implicare, implicui, implicitus V (1st) TRANS  <br>:||interweave/interlace/intertwine; clasp/grasp (L+S); unite/join/mix;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note1">quō<span>quo ADV <br>:where, to what place; to what purpose; for which reason, therefore;<br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">intrāverant,<span>intro intrare, intravi, intratus V (1st)  <br>:enter; go into, penetrate; reach;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">ipsī<span><br><br></span></a>
+<a class="note0">acūtissimis<span><br><br></span></a>
+<a class="note0">vāllīs<span><br><br></span></a>
+<a class="note1">induēbant.<span>induo induere, indui, indutus V (3rd)  <br>:put on, clothe, cover; dress oneself in;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>quini ordines erant coniuncti inter se atque implicati. 「５本ずつの列は互いに結ばれ撚り合わされていた」</p>
+<p>ipsi, quo qui intraverant, induebant se acutissimis vallis. 「そこに入っていく人は鋭い杭によって自身を刺し貫く」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>それらの杭は５本づつ互いに結ばれ撚り合わされていた。そこに入っていく人は、鋭い杭で刺されることになる。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hōs<span><br><br></span></a>
+<a class="note1">cippōs<span>cippus cippi N (2nd) M  <br>:boundary stone/post/pillar; tombstone (usu. indicating extent of cemetery);<br>(c 複数  対格)<br></span></a>
+<a class="note0">appellābant.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>それらは「墓石」と呼ばれた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ante<span></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note1">oblīquīs<span>obliquus obliqua, obliquum ADJ  <br>:slanting; oblique;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">ōrdinibus<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">quīncuncem<span>quincunx quincuncis N (3rd) M  <br>:quincunx, the five on dice; 5/12, esp. of an as = 5 unciae;<br>(c 単数 対格)<br>五葉配列、５つ目模様<br></span></a>
+<a class="note0">dispositīs<span><br><br></span></a>
+<a class="note1">scrobēs<span>scrobis scrobis N (3rd) C  <br>:ditch, trench; dike;<br>(c 複数  主格)<br><br></span></a>
+<a class="note0">trēs<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">altitūdinem<span><br><br></span></a>
+<a class="note0">pedēs<span></span></a>
+<a class="note1">fodiēbantur<span>fodio fodere, fodi, fossus V (3rd)  <br>:dig, dig out/up; stab;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note1">paulātim<span>paulatim ADV <br>:little by little, by degrees, gradually; a small amount at a time, bit by bit;<br><br></span></a>
+<a class="note1">angustiōre<span>angustus angusta -um, angustior -or -us, angustissimus -a -um ADJ  比較級<br>:narrow, <strong>steep</strong>, close, confined; scanty, poor; low, mean; narrowminded, petty;<br>(X 単数 奪格)<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">īnfimum<span>infimus infima, infimum ADJ  最上級<br>:lowest, deepest, furtherest down/from the surface; humblest; vilest, meanest;<br>(n 単数 対格)<br></span></a>
+<a class="note1">fastīgiō.<span>fastigium fastigi(i) N (2nd) N  <br>:peak, summit, top; slope, declivity, descent; <strong>gable</strong>, roof; sharp point, tip;<br>(X 単数 奪格)切妻、破風<br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p><strong>obliquis ordinibus dispositis in quincumcem</strong>. 何か難しいが独立奪格。obliquisは筋交差状にの意。「五葉配列のように互いに斜め向かいに配置されるように」</p>
+<p>scrobes fodiebantur : 穴が掘られた。</p>
+<p><strong>paulatim angustinore fastigio ad infimum</strong> : angustinore fastigioは「性質の奪格」(NewLatin 224)「そこに向かって徐々に狭くなる切妻の形をした」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>それらの前に、五葉配列のように互いに向かい合うように穴が掘られた。それは深さが３フィートで、そこに向かって徐々に狭くなる形のものであった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hūc<span><br><br></span></a>
+<a class="note1">teretēs<span>teres (gen.), teretis ADJ  <br>:smooth; tapering;<br>(c 複数  主格),<br></span></a>
+<a class="note1">stīpitēs<span>stipes stipitis N (3rd) M  <br>:post, <strong>stake</strong>;<br>(c 複数  主格)<br></span></a>
+<a class="note1">feminis<span>femen feminis N (3rd) N  <br>:<strong>thigh</strong> (human/animal); flat vertical band on triglyph;<br>(X 単数 属格)<br></span></a>
+<a class="note1">crassitūdine<span>crassitudo crassitudinis N (3rd) F  <br>:<strong>thickness</strong> (measure); density/consistency (liquid); richness (soil); sediment;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">summō<span><br><br></span></a>
+<a class="note1">praeacūtī<span>praeacutus praeacuta, praeacutum ADJ  <br>:sharpened, pointed;<br>(m 複数  主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">praeūstī<span>praeustus praeusta, praeustum ADJ  <br>:burnt at the end; hardened by burning;<br>(m 複数  主格)<br></span></a>
+<a class="note1">dēmittēbantur,<span>demitto demittere, demisi, demissus V (3rd) TRANS  <br>:drop, let fall; sink; send/cast/go/flow/float/slope down; flow/shed/let (blood);<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">amplius<span></span></a>
+<a class="note1">digitīs<span>digitus digiti N (2nd) M  <br>:finger; toe; finger's breadth, <strong>inch</strong>; (1/16 of a pes); twig;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">quattuor<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">terrā<span><br><br></span></a>
+<a class="note1">ēminērent;<span>emineo eminere, eminui, - V (2nd)  <br>:stand out; be prominent/preeminent, excel; project;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">simul<span>simul ADV <br>:at same time; likewise; also; simultaneously; at once;<br><br></span></a>
+<a class="note1">cōnfīrmandī<span>confirmo confirmare, confirmavi, confirmatus V (1st) TRANS  <br>:strengthen, develop, build up (w/troops); make secure/firm; reassure; secure;<br><strike>(未来 分詞 受動態 n 単数 属格)</strike><br>動名詞　属格<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">stabiliendī<span>stabilio stabilire, stabilivi, stabilitus V (4th)  <br>:make firm, establish;<br><strike>(未来 分詞 受動態 n 単数 属格)</strike><br>動名詞、属格<br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">singulī<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">īnfimō<span><br><br></span></a>
+<a class="note1">solō<span>solum soli N (2nd) N  <br>:bottom, ground, floor; soil, land;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">pedēs<span>pes pedis N (3rd) M  <br>:foot;<br>(c 複数  対格)<br>なぜ複数なのか？<br></span></a>
+<a class="note1">terrā<span>terra terrae N (1st) F  <br>:earth, land, ground; country, region;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">exculcābantur,<span>exculco exculcare, exculcavi, exculcatus V (1st)  <br>:trample down;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">reliqua<span></span></a>
+<a class="note0">pars<span></span></a>
+<a class="note1">scrobis<span>scrobis scrobis N (3rd) C  <br>:ditch, trench; dike;<br>(X 単数 主格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">occultandās<span>occulto occultare, occultavi, occultatus V (1st)  <br>:hide; conceal;<br>(未来 分詞 受動態 f 複数  対格)<br></span></a>
+<a class="note1">īnsidiās<span>insidia insidiae N (1st) F  <br>:ambush/ambuscade (pl.); plot; treachery, treacherous attack/device; trap/snare;<br>(c 複数  対格)<br></span></a>
+<a class="note1">vīminibus<span>vimen viminis N (3rd) N  <br>:twig, shoot;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">virgultīs<span>virgultum virgulti N (2nd) N  <br>:brushwood;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">integēbātur.<span>intego integere, intexi, intectus V (3rd)  <br>:cover; cover over;<br>(３人称 単数 未完了 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>teretes, ab summo praeacuti et praeusti stipites demittebantur. 「丸い、先に部分が尖って焼入れされている杭が打ち込まれた」<strong>feminis crassitudine</strong> : これも「性質の奪格」で形容詞ではなく属格が使われている例。「人の大腿ほどの太さの」</p>
+<p>singuli pedes exculcabntur terra ab infimo solo: 各々の（杭の）１フィートは底から土で覆われていた。</p>
+<p>ad occultandas insidias : 罠を隠すため<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>そこに丸くて、先を尖らせ焼入れした杭が打ち込まれた。それは土からは４インチ以上は飛びださないようにしてあった。強度と安定性のため、各々の杭は底から１フィートばかりは土で覆われ、残りの部分は罠を隠すため、小枝や藪などで覆っていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 9</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Huius<span></span></a>
+<a class="note0">generis<span></span></a>
+<a class="note1">octōnī<span>octoni <br>配分数 8<br>(m 複数  主格)<br></span></a>
+<a class="note0">ōrdinēs<span><br><br></span></a>
+<a class="note1">ductī<span>duco ducere, additional, forms V  <br>:lead, command; think, consider, regard; prolong;<br>&nbsp;(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note1">ternōs<span>terni <br>配分数 3<br>(m 複数  対格)<br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">pedēs<span><br><br></span></a>
+<a class="note1">distābant.<span>disto distare, -, - V (1st)  <br>:stand apart, be distant; be different;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>octoni ordines huius generis ducti : この種類の８個づつの列が、</p>
+<p>distabant ternos pedes inter se : 互いに３フィートの間隔で配置された。</p>
+<p>ductiがしっくり来ない。何と訳すのか？「延ばされた」？<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>この種類の８個づつで出来た列が、互いに３フィートの間隔で配置された。<br></p>
+</div>
+</div>
+<div class="spacer">Line 10</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Id<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">similitūdine<span><br><br></span></a>
+<a class="note1">flōris<span>flos floris N (3rd) M  <br>:flower, blossom; youthful prime;<br>(X 単数 属格)<br></span></a>
+<a class="note1">līlium<span>lilium lili(i) N (2nd) N  <br>:lily; "lily" trap;<br>(n 単数 主格),(X 単数 対格)<br></span></a>
+<a class="note0">appellābant.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>それは花との相似性から、ゆりと呼んだ。<br></p>
+</div>
+</div>
+<div class="spacer">Line 11</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ante<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note1">tāleae<span>talea taleae N (1st) F  <br>:block; bar;<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note0">pedem<span></span></a>
+<a class="note0">longae<span></span></a>
+<a class="note1">ferreīs<span>ferreus ferrea, ferreum ADJ  <br>:iron, made of iron; cruel, unyielding; (blue);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">hāmīs<span>hamus hami N (2nd) M  <br>:hook; barb of an arrow; <strong>spike</strong>;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">īnfīxīs<span>infigo infigere, infixi, infixus V (3rd)  <br>:fasten (on), fix, implant, affix; impose; drive/thrust in;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">tōtae<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">terram<span></span></a>
+<a class="note1">īnfodiēbantur<span>infodio infodere, infodi, infossus V (3rd)  <br>:bury, inter;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note1">mediocribusque<span>mediocris mediocris, mediocre ADJ  <br>:medium/average/intermediate; middling/fair/ordinary/moderate/tolerable; trivial;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">intermissīs<span>intermitto intermittere, intermisi, intermissus V (3rd)  <br>:interrupt; omit; stop; leave off (temporarily); leave a gap;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">spatiīs<span>spatium spati(i) N (2nd) N  <br>:space; area/expanse, room (for); intervening space, gap/interval; length/width;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note1">disserēbantur;<span>dissero disserere, dissevi, dissitus V (3rd) TRANS  <br>:plant/sow at intervals; scatter/distribute, plant here/there; separate/part;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note1">stimulōs<span>stimulus stimuli N (2nd) M  <br>:spur/goad; trap/spike in earth; prick/sting/cause of torment/torture instrument;<br>(c 複数  対格)<br></span></a>
+<a class="note1">nōminābant.<span>nomino nominare, nominavi, nominatus V (1st)  <br>:name, call;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>taleae infodiebant totae in terram: 棒は全部土に埋められた。</p>
+<p>ferreis hamis infixis : 独立奪格「鉄製の鈎が固定されている」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>それらの前には、１フィートばかりの長さの棒に、鉄製の鈎を固定して、全体を土に埋め、適当な間隔で至るとこに埋め込んだ。それらは拍車と呼ばれた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

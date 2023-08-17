@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber II : Chap 25</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[25]<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">X.<span></span></a>
+<a class="note0">legiōnis<span><br><br></span></a>
+<a class="note1">cohortātiōne<span>cohortatio cohortationis N (3rd) F  <br>:encouragement, exhortation, inciting;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">dextrum<span>dextrum dextri N 単　対格　;= right hand, right side</span></a>
+<a class="note1">cornū<span>cornu cornus N (4th) N  <br>:horn; hoof; beak/tusk/claw; bow; horn/trumpet; end, <strong>wing of army</strong>; mountain top;<br>&nbsp;(n 単数 対格),<br><br></span></a>
+<a class="note1">profectus,<span>proficio proficere, profeci, profectus V (3rd)  <br>:make, accomplish, effect;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note1">urgērī<span>urgeo urgere, ursi, - V (2nd)  <br>:press/squeeze/bear hard/down; tread/traverse continually; push/shove/thrust;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">signīsque<span>signum signi N (2nd) N  <br>:<strong>battle standard</strong>; indication; seal; sign, proof; signal; image, statue;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">ūnum<span><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">conlātis<span>confero conferre, contuli, collatus V TRANS  <br>:bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">XII.<span></span></a>
+<a class="note0">legiōnis<span><br><br></span></a>
+<a class="note1">cōnfertōs<span>confercio confercire, confersi, confertus V (4th) TRANS  <br>:stuff/cram/<strong>pack</strong>/press (close) together; fill densely; raise a shout in unison;<br>(完了 分詞 受動態 m 複数  対格)<br><br></span></a>
+<a class="note1">mīlitēs<span>miles militis M 複　対格（主格）　;= soldier, foot soldier</span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">ipsōs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">pugnam<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">impedīmentō<span>impedimentum 与格　;= hinderance<br></span></a>
+<a class="note1">vīdit,<span>video videre, vidi, visus V (2nd)  <br>:see, look at; consider; (PASS) seem, seem good, appear, be seen;<br>(３人称 単数 完了 能動態 直説法 )<br><br></span></a>
+<a class="note1">quārtae<span>序数　４<br></span></a>
+<a class="note1">cohortis<span>corhors cohortis F 属格　;= cohort, legionの１/10 360名大隊。</span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">centuriōnibus<span>centurio centurionis N (3rd) M  <br>:<strong>centurion</strong>, captain/commander of a century/company;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">occīsīs<span>occido occidere, occidi, occisus V (3rd)  <br>:kill, murder, slaughter, slay; cut/knock down; weary, be the death/ruin of;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">signiferōque<span>signifer signiferi 単　奪格　;= standard bearer<br></span></a>
+<a class="note1">interfectō,<span>interficio interficere, interfeci, interfectus V (3rd)  <br>:kill; destroy;<br>(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note1">signō<span>signumの単奪格<br></span></a>
+<a class="note1">āmissō,<span>amitto amittere, amisi, amissus V (3rd) TRANS  <br>:lose; <strong>lose by death</strong>; send away, dismiss; part with; let go/slip/fall, drop;<br>(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note0">reliquārum<span><br><br></span></a>
+<a class="note0">cohortium<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">ferē<span>副詞　;= almost, about, nearly<br></span></a>
+<a class="note0">centuriōnibus<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">vulnerātīs<span>vulnero vulnerare, vulneravi, vulneratus V (1st) TRANS  <br>:wound/injure/harm, pain/distress; inflict wound on; damage (things/interest of);<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">occīsīs,<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note1">prīmipīlō<span>primipilus primipili N (2nd) M  <br>:first centurion;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">P.<span></span></a>
+<a class="note0">Sextiō<span><br><br></span></a>
+<a class="note0">Baculō,<span><br><br></span></a>
+<a class="note0">fortissimō<span><br><br></span></a>
+<a class="note0">virō,<span><br><br></span></a>
+<a class="note0">multīs<span><br><br></span></a>
+<a class="note1">gravibusque<span>gravis grave garavior gravissimus 形容詞　複　奪格　;= heavy, painful, serious</span></a>
+<a class="note0">vulneribus<span></span></a>
+<a class="note0">cōnfectō,<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">sustinēre<span>sustineo sustinere, sustinui, sustentus V (2nd)  <br>:support; check; put off; put up with; sustain; hold back;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">posset,<span></span></a>
+<a class="note1">reliquōs<span>reliquus 複対格<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">tardiōrēs<span>tardus tarda -um, tardior -or -us, tardissimus -a -um ADJ  比較級<br>:slow, limping; deliberate; late;<br>&nbsp;(c 複数  対格),<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">nūllōs<span>nullus nulli N (2nd) M  <br>:no one;<br>(c 複数  対格)<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">novissimīs<span>novissimum novissimi N (2nd) N  <br>:<strong>rear</strong> (pl.), those at the rear (the freshest troops);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">dēsertō<span>desero deserere, deserui, desertus V (3rd) TRANS  <br>:<strong>leave</strong>/depart/quit/desert; forsake/ abandon/give up; withdraw support, let down;<br>(完了 分詞 受動態 m 単数 奪格)<br><br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note0">proeliō<span><br><br></span></a>
+<a class="note1">excēdere<span>excedo excedere, excessi, excessus V (3rd)  <br>:pass, withdraw, exceed; go away/out/beyond; die;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">tēla<span>telum teli N 複対格（主格）　;= dart, spear, javelin,</span></a>
+<a class="note1">vītāre,<span>vito vitare, vitavi, vitatus V (1st)  <br>:avoid, shun; evade;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">fronte<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">īnferiōre<span>infer infera -um, inferior -or -us, infumus -a -um ADJ  比較級<br>:below, beneath, underneath; of hell; vile; lower, further down; lowest, last;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note1">subeuntēs<span>subeo subire, subivi(ii), subitus V INTRANS  <br>:go/move/pass/sink/extend underneath/into; climb/come/go up, ascend; steal in on;<br>(現在 分詞 能動態 c 複数  対格),<br></span></a>
+<a class="note1">intermittere<span>intermitto intermittere, intermisi, intermissus V (3rd)  <br>:interrupt; omit; stop; leave off (temporarily); leave a gap;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">utrōque<span>utroque ADV <br>:to both places; in both directions; to both sides (in conflict);<br><br></span></a>
+<a class="note1">latere<span>latus lateris N 単　奪格　;= side, flank</span></a>
+<a class="note1">īnstāre<span>insto instare, institi, - V (1st)  <br>:pursue, threaten; approach, press hard; be close to (w/DAT); stand in/on;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">angustō<span>angustum angusti N (2nd) N  <br>:small/confined/narrow space/place/passage, strait, channel; crisis, extremities;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">vīdit,<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">ūllum<span>ullus ulla, ullum (gen -ius) 形容詞　単　対格（主格）;= any<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">subsidium<span>sunsidium subsidi N 単　　対格　;= help, relief, reinforcement<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">submittī<span>submitto submittere, submisi, submissus V (3rd)  <br>:allow to grow long; emit, put forth, raise; lower, moderate, relieve; submit;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">posset,<span></span></a>
+<a class="note1">scūtō<span>scutum scuti N (2nd) N  <br>:shield; (heavy shield of Roman legion infantry);<br>(X 単数 奪格)<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">novissimīs<span><br><br></span></a>
+<a class="note0">[ūnī]<span><br><br></span></a>
+<a class="note1">mīlītī<span>miles militis 単　与格　　;= soldier, foot soldier 行為の方向を示す与格<br></span></a>
+<a class="note1">dētrāctō,<span>detraho detrahere, detraxi, detractus V (3rd) TRANS  <br>:drag/pull/strip/take down/away/off; remove; exclude, omit, cut out; subtract;<br>(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note1">eō<span>that pointの意<br></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note0">scūtō<span><br><br></span></a>
+<a class="note0">vēnerat,<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">prīmam<span>序数　１<br></span></a>
+<a class="note0">aciem<span></span></a>
+<a class="note1">prōcessit<span>procedo procedere, processi, processus V (3rd)  <br>:proceed; advance; appear;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">centuriōnibusque<span><br><br></span></a>
+<a class="note1">nōminātim<span>nominatim ADV <br>:by name;<br><br></span></a>
+<a class="note1">appellātīs<span>appello appellere, appellavi, appellatus TRANS 完了分詞受動　複　奪格　;= call, address, appeal to<br></span></a>
+<a class="note0">reliquōs<span><br><br></span></a>
+<a class="note1">cohortātus<span>cohortor cohortari, cohortatus sum DEP 完了分詞受動 m単主格　;= encourage, cheer up, exhort<br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note0">signa<span></span></a>
+<a class="note1">īnferre<span>infero inferre, intui, inlatus TRANS 不定詞　;= bring advance impel<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">manipulōs<span>manipulus manipuli N (2nd) M  <br>:maniple, company of soldiers, one third of a cohort; handful, bundle;<br>(c 複数  対格)<br></span></a>
+<a class="note1">laxāre<span>laxo laxare, laxavi, laxatus V (1st)  <br>:loosen, slaken, relax, weaken; expand, open up, extend;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">iussit,<span></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note1">facilius<span>副詞　比較級　facile</span></a>
+<a class="note1">gladiīs<span>gladius gladi(i) N (2nd) M  <br>:sword;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">ūtī<span><br><br></span></a>
+<a class="note0">possent.<span></span></a>
+</p>
+</div><div class="construction" id="sheet1" style="display: none;">
+<div class="constline" id="10" spellcheck="false">
+<p><br></p>
+</div>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>X : decimae(序数１０f 属格）</p>
+<p>XII : duodecimae</p>
+<p>ここから話はChap21の続きに戻る。</p>
+<p>Latin語特有の形態の文で、Period（棹尾文）と言われる。語の位置ではなく、語と語の関連で表現されるので、こういう形態が可能になる。主たる動詞を文の最後の方に置き、徐々に緊張を盛り上げていくやり方である。この場合、Caesarが主語で、動詞はprocessit(最後から３行目後半）である。構造的には、従って <font style="background-color: yellow;">Caesar..vidit....processit</font>というだけのものである。</p>
+<p>しかし、その間には分詞構文、特に独立奪格の嵐である。</p>
+<p>ab decimae legionis cohortatione : abが奪格支配なので、cohortatione（元気づけ）は奪格。decimae legionisは[目的語の属格]と言われるもので行為の向かう先を示す。（NewLatin２００）「第１０軍団を励ましてから」</p>
+<p>ad dextrum cornu profectus : profectusはprofecisiorの完了分詞、受動で、分詞構文になっている。「右翼のほうに向かい」</p>
+<p>ubi~ vidit：そこで～を見て、～はいくつかある。</p>
+<p>　　　１）suos urgri : 不定詞　suos対格で主語。「味方は打ちのめされ」</p>
+<p>　　　２）signisque in unum locum conlatis duodecimae legionis : 独立奪格「第１２軍団のシグナは一箇所に集められ」</p>
+<p>　　　３）confertos milites (対格で不定詞主語）esse impedimento sibi ipso ad pugnam :sibiとimpedimento で述語与格（二重与格）になっている。逐語的には「集まった歩兵たちは彼自身に取って戦いのための妨害であった」</p>
+<p><u>sibi ipso のipsoは強調のため。通常訳す必要なし。Chap20のL3にも出ている。よく、主語と格が一致する。</u></p>
+<p><br></p>
+<p>更にいろいろなものを「見る」。（下から４行目の戦闘のviditまで）<font color="red">注このviditは文があまり長いので再度挿入されたもので、最初のviditと同様ubiに先導されてる文の一部である。</font></p>
+<p>　　　１）quartae cohortis omnibus centrionibus occisis: 独立奪格　「第４大隊の全ての（６名）の百人隊長は殺され」</p>
+<p>　　　２）signiferoque interfecto : 独立奪格 「シグナ旗手も殺害され」</p>
+<p>　　　３）signo amisso ：独立奪格　「シグナは失われ」</p>
+<p>　　　４）reliquorum cohortrium ~ aut occisis :独立奪格「残りの大隊の百人隊長といえば殆ど全てにわたって傷ついているか殺されており」</p>
+<p>　　　　　４－１）ここで第一百人隊長のSextio Baculoの状態の記述があり（<strong>Publius Setius Baculus</strong>)</p>
+<p>　　　　　　　　　Baculo vulneribus confecto : 独立奪格</p>
+<p>　　　　　　　　　ut iam se sustinere non posset : non iam = no longer ,seはBaculo自身「持ちこたえる事はできない」（<font color="#ff0000">名詞節？）</font></p>
+<p>　　　　　　　　　<font color="#0000ff">multis gravibusque multusと他の形容詞が同じ名詞を限定する時はet, queでつなぐ(NewLatin 241.3)</font></p>
+<p><font color="#0000ff">　　　　　　　　　confectus vulneribus : idiomで傷により消耗して</font></p>
+<p>　　　５）reliquos esse tradiores :「残りは負傷でもたついている」</p>
+<p>　　　６）non nullos ~ excedere ac tela vitare : non nullos対格でexcedere vitareの主語　deserto proelio独立奪格</p>
+<p>　　　７）hostes ~ intermitere et ~ insatre</p>
+<p>　　　８）rem esse in angusto ：in 奪格支配　「状況は危機的である」</p>
+<p>neque ullum esse subsidium quod submitti posset:quodは関係代名詞でsubsidiumを修飾　「（状況を）救える援軍は一つもない」</p>
+<p>次に、いわばメインの文に戻る。</p>
+<p>scuto dectracto processi in primam aciem : 盾を取って第一戦列に進んだ（主語はカエサル）</p>
+<p>centurionibusque nomimatiam appelatis : 独立奪格　百人隊長らを名前で呼びながら</p>
+<p>iussit signa interfere et manipulos laxare : 「シグナを立て（突撃の合図）戦列を開く事を命じた」manipulos laxareと言うのは偶数列の兵士が一歩前に行く事で行われる。（Liddle)</p>
+<p>quo facilius gladiis uti possent : 「奪格のquo」（Chap１７　Line4参照）</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルは第１０軍団を励ましたあと、右翼に向かった。そこでは味方は打ちのめされ第１２軍団の徽章は一箇所にまとめらおり、兵士たちは一箇所に固まってお互いが邪魔で戦えないような状況であった。第４大隊は全ての百人隊長が殺され徽章旗手も殺害され、徽章は失われていた。残りの大隊の百人隊長もほとんどが傷つくか殺されていた。その中でも、第一百人隊長であるBaculoは最も強い男であったが全身深刻な傷を負っており持ちこたえることはできなかった。残りも負傷で戦意を失っていた。後方にいる少なからずのものが、持ち場を放棄し、戦場から離脱し槍を避けている。敵は正面から低いところから登りながら、攻撃を緩めることはなく、更に両サイドからも攻撃を仕掛けていて、危機的状況であり、事態を打開できる様な援軍はない。そこでカエサルは後方の兵士から盾をとり、と言うのは自身はそこには盾を持たないできたので、第一戦列に進み、百人隊長を名前で呼びながら士気を鼓舞し、残りの兵士を励まし、徽章を立て、剣を使いやすくするため戦列を開くよう命じた。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Cuius<span></span></a>
+<a class="note0">adventū<span><br><br></span></a>
+<a class="note1">spē<span>spes （ｆ）の奪格<br></span></a>
+<a class="note1">inlātā<span>inferoの完了分詞 奪格　ｆ<br></span></a>
+<a class="note1">mīlitibus<span>miles (=soldier)の与格　これはInlata（infero)が与格支配であるから<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">redintegrātō<span>redintegro redintegrare, redintegravi, redintegratus V (1st)  <br>:renew; revive;<br>(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note1">animō,<span>animus animi N (2nd) M  <br>:mind; intellect; soul; feelings; heart; spirit, courage, character, pride; air;<br>&nbsp;(X 単数 奪格)<br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">quisque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">cōnspectū<span>conspectus conspectus N (4th) M  <br>:view, (range of) sight; aspect/appearance/look; perception/contemplation/survey;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">imperātōris<span>imperator imperatoris N (3rd) M  <br>:emperor; general; ruler; commander (-in-chief);<br>(X 単数 属格)<br></span></a>
+<a class="note1">etiam<span>etiam 接続詞　;= also, now too, even, yet, indeedなどなど
+ここではevenの意</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">extrēmīs<span>extremum extremi N (2nd) N  <br>:limit, outside; end;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">operam<span>opera operae f 単　対格　;= work, care, aid, service</span></a>
+<a class="note1">nāvāre<span>navo navare, navavi, navatus V (1st)  <br>:do with zeal;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">cuperet,<span>cupio cupere, cupivi, cupitus TRANS ３単未完了　接続法　;= wish, long, be eager for, desire, want</span></a>
+<a class="note1">paulum<span>副詞　;= little, bit, to small extent</span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note1">impetus<span>impetus impetus M 単数　主格　;= attack, assault, charge</span></a>
+<a class="note1">tardātus<span>tardo tardare, tardavi, tardatus V (1st)  <br>:check, retard; hinder;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>spe inlata militibus : spe(奪格）inlata(奪格）で独立奪格　militibusはinferoが与格支配なので与格</p>
+<p>redintergo animo : 独立奪格</p>
+<p>cum pro se ~ : cum= when, while&nbsp;&nbsp; pro se= according to his ability 能力に応じて</p>
+<p>in extremis suis rebus : 自身の極限の事柄 = 命に関わるような</p>
+<p>operam navare : この二つの組み合せでよく使われる。navareは元々　to make knowの意味で、示すが語源のようであるが、普通はdisplay of energyの意味で殆どaccomplishと同義である、とのこと。(shuckburgh, evelyn shirley)</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p>その人の到着によって、兵士たちに盛り返す希望がわき、新たな勇気も出てきた。司令官の視界の中で、各自その能力に応じて、それが例え命に関わるようなことであって熱心にやり遂げようとした。その結果敵の攻撃を少しは跳ね返した。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

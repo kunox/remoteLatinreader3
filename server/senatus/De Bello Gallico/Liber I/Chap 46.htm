@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 46</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[46]<span></span></a>
+
+<a class="note1">Dum<span>dum, 接続詞   :while, as long as, until; provided that;</span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">conloquiō<span>conloquium, conloquii 名詞 (2nd) N   :talk, conversation; colloquy/discussion;<br></span></a>
+<a class="note1">geruntur,<span>gero, gerere, gessi, gestus 動詞 (3rd)   :bear, carry, wear; carry on;3 複 現在 受動態 直説法</span></a>
+<a class="note0">Caesarī<span><br><br></span></a>
+<a class="note0">nūntiātum<span><br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">equitēs<span>eques, equitis 名詞 (3rd) M   :horseman/cavalryman/rider; horsemen (pl.), cavalry; equestrian order; 対格<br></span></a>
+<a class="note0">Ariovistī<span><br><br></span></a>
+<a class="note1">propius<span>propior, propior, propius 形容詞   :nearer, closer; more recent;</span></a>
+<a class="note1">tumulum<span>tumulus, tumuli 名詞 (2nd) M   :mound, hillock; mound, tomb; <br>対格</span></a>
+<a class="note1">accēdere<span>accedo, accedere, accessi, accessus 動詞 (3rd)   :come near, approach; agree 不定詞<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">nostrōs<span>対格<br></span></a>
+<a class="note1">adequitāre,<span>adequito, adequitare, adequitavi, adequitatus 動詞 (1st) INTRANS   :ride up to/towards/near, gallop up; 不定詞<br></span></a>
+<a class="note1">lapidēs<span>lapis, lapis 名詞 (3rd) F   :stone; milestone; jewel; <br>対格<br></span></a>
+<a class="note1">tēlaque<span>telum, teli 名詞 (2nd) N   :dart, spear; weapon, javelin; bullet (gun);対格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note1">coicere.<span>coicio, coicere, cojeci, cojectus 動詞 (3rd) TRANS   :throw/put/pile together; conclude, infer, guess; assign, make go; classify, put; 不定詞</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>dumで始まる時の節は通常、直接法の歴史的現在をとる。（NewLatin293)</p>
+<p>propius tumlum : propiusは対格を取ることがある。（NewLatin141.3)</p>
+<p><strong>numtiatum est accedere, adequitare, coicere</strong>. この場合のestの主語のあとにある不定詞である。こういうときはThere is ~と訳すと良い。この書き方はよく出てくる。Flumen est Arar.(I-12) Erant itinera duo.(I.6) このあとのLine 4　elatum estも？<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの会談の途中でカエサルは、アリオウィストゥスの騎兵が山裾に近づき味方に向かってギャロップで向かい石や槍を投げているという報告を受け取った。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Caesar<span></span></a>
+<a class="note1">loquendī<span>loquor, loqui, locutus sum 動詞 (3rd) DEP   :speak, tell; talk; mention; say, utter; phrase;  <br>動名詞　属格<br></span></a>
+<a class="note1">fīnem<span>finis, finis 名詞 (3rd) C   :boundary, end, limit, goal; (pl.) country, territory, land; 対格<br></span></a>
+<a class="note0">fēcit<span></span></a>
+<a class="note0">sēque<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note1">recēpit<span>recipio, recipere, recepi, receptus 動詞 (3rd)   :keep back; recover; undertake; guarantee; accept, take in; take back;3 単 完了 能動態 直説法<br></span></a>
+<a class="note0">suīsque<span><br><br></span></a>
+<a class="note0">imperāvit<span><br><br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note1">quod<span>qui 不定形容詞？　中性　複　対格</span></a>
+<a class="note1">omnīnō<span>omnino, 副詞   :entirely, altogether;<br></span></a>
+<a class="note1">tēlum<span>telum, teli 名詞 (2nd) N   :dart, spear; weapon, javelin; bullet (gun); n 単 対格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note1">rēicerent.<span>reicio, reicere, rejeci, rejectus 動詞 (3rd) TRANS   :throw back; drive back; repulse, repel; refuse, reject, scorn;3 複 未完了 能動態 接続法<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Caesar fecit loquendi finem :　話の最後を作る、話を止める</p>
+<p><strong>recepit se suisque ad suos, imperavit ne</strong> ～　：自分と部下を自軍のほうに引き返させ、～しないように命じた。</p>
+<p>quod omnino telum :quodの意味、役割？　qui=不定形容詞？でどんな槍も全く？</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルは会談を止め、自軍の方へ引き返し、一本たりとも槍を敵に投げ返さないよう命じた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Nam<span>nam, 接続詞   :for, on the other hand; for instance;</span></a>
+<a class="note1">etsī<span>etsi, 接続詞   :although, though, even if; albeit; I know that but;<br></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note1">ūllō<span>ullus, ulla, ullum (gen -ius) 形容詞   :any;<br></span></a>
+<a class="note0">perīculō<span><br><br></span></a>
+<a class="note1">legiōnis<span>legio 属格<br></span></a>
+<a class="note1">dēlēctae<span>delectus, delecta, delectum 形容詞   :picked, chosen, select; (for attaining high standard); <br>属格<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">equitātū<span><br><br></span></a>
+<a class="note1">proelium<span>proelium 対格 <br>foreの主語</span></a>
+<a class="note1">fore<span>SUM未来不定詞</span></a>
+<a class="note1">vidēbat,<span>3 単 未完了 能動態 直説法<br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">committendum<span>committo, committere, commisi, commissus 動詞 (3rd)   :|engage (battle), set against; begin/start; bring about; commit; incur; forfeit;動形容詞 <br>esse省略のするべきの意味</span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">putābat<span><br><br></span></a>
+<a class="note0">ut,<span></span></a>
+<a class="note1">pulsīs<span>pello, pellere, pepuli, pulsus 動詞 (3rd)   :beat; drive out; push; banish, strike, defeat, drive away, rout;完了分詞　受動 奪格<br><br></span></a>
+<a class="note1">hostibus,<span>奪格　独立奪格</span></a>
+<a class="note1">dīcī<span>dico　受動　不定詞<br></span></a>
+<a class="note0">posset<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">fidem<span>fides, fidei 名詞 (5th) F   :faith, loyalty; honesty; credit; confidence, trust, belief; good faith;対格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">conloquiō<span><br><br></span></a>
+<a class="note1">circumventōs.<span>circumvenio, circumvenire, circumveni, circumventus 動詞 (4th) TRANS   :encircle, surround; assail, beset; enclose; circumvent; <strong>defraud/trick</strong>; surpass; 完了分詞 <br>対格<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>Nam etsi videbat</strong>, : ～だと見たけれども</p>
+<p><strike>proelium legionis delectae cum equitatu ：騎兵と共に選択された師団の戦い</strike></p>
+<p><strong>delectae legionis periculo</strong> : 選ばれた軍団への危険（目的の属格）</p>
+<p><strong>proelium cum equitatu</strong> : (敵の）騎兵との戦い</p>
+<p>fore sine ullo periculo : いかなる危険もないであろう　（foreの主語はproelium)</p>
+<p>tamen putabat non committendum <strong>(esse)：</strong>しかし戦いを開始すべきではないと考えた。</p>
+<p>ut, posset dici :なぜなら云われる可能性がある（原因の節。原因が自分のものであれば直説法、人のものなら接続法）</p>
+<p><strong>pulsis hostibus</strong> : 独立奪格「打ち負かされた敵でも」</p>
+<p>eos circumventos. (esse) ab se per fidem in conloquio : 彼らは私によって会談での誠実を通して欺かれた</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルは騎兵との戦いが選ばれた軍団にとって、いかなる危険があるとは思わなかったが、戦いを開始すべきではないと考えた。それは、敵は負けても、会談で誠実そうに装って欺いた、ということを言う可能性があるからである。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Posteā<span>postea, 副詞   :afterwards;<br></span></a>
+<a class="note1">quam<span>posteaquamでafter</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">vulgus<span>vulgus, vulgi 名詞 (2nd) N   :common people/general public/multitude/common herd/rabble/crowd/mob; flock;</span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note1">ēlātum<span>elatus, elata -um, elatior -or -us, elatissimus -a -um 形容詞   :raised, reaching high level; head high,<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">quā<span>qui quae, quod PRON  <br>:which?, <strong>what</strong>?; what kind of?;<br>(f 単数 奪格)<br></span></a>
+<a class="note1">arrogantiā<span>arrogantia, arrogantiae 名詞 (1st) F   :insolence, arrogance, conceit, haughtiness; presumption;奪格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">conloquiō<span><br><br></span></a>
+<a class="note0">Ariovistus<span></span></a>
+<a class="note1">ūsus<span>utor, uti, usus sum 動詞 (3rd) DEP   :use, make use of, enjoy; enjoy the friendship of (with ABL);完了分詞　受動 m 主格<br><br></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note1">Galliā<span>Gallia Galliae N (1st) F  <br>:Gaul; (early Northern Italy, then South-East France, then France and Belgium);<br>(c 単数 奪格) 分離の奪格<br></span></a>
+<a class="note1">Rōmānīs<span>与格(関与の与格）<br><br></span></a>
+<a class="note1">interdīxisset,<span>interdico, interdicere, interdixi, interdictus 動詞 (3rd)   :forbid, interdict, prohibit; debar (from); 3 単 過去完了 能動態 接続法)<br></span></a>
+<a class="note1">impetumque<span>impetus, impetus 名詞 (4th) M   :attack, assault, charge; attempt; impetus, vigor; violent mental urge, fury; 対格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">equitēs<span><br><br></span></a>
+<a class="note0">fēcissent,<span><br><br></span></a>
+<a class="note0">eāque<span></span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note0">conloquium<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">dirēmisset,<span>dirimo, dirimere, diremi, diremptus 動詞 (3rd) TRANS   :pull/break/take apart; cleave; 3 単 過去完了 能動態 接続法)<br></span></a>
+<a class="note0">multō<span><br><br></span></a>
+<a class="note1">maior<span>magnus magna -um, major -or -us, maximus -a -um ADJ  比較級<br>:|great (achievement); mighty; distinguished; skilled; bold/confident; proud;<br>(c 単数 主格)<br></span></a>
+<a class="note1">alacritās<span>alacritas, alacritatis 名詞 (3rd) F   :eagerness, enthusiasm主格<br></span></a>
+<a class="note1">studiumque<span>studium, studi(i) 名詞 (2nd) N   :eagerness, enthusiasm,</span></a>
+<a class="note1">pugnandī<span>pugno, pugnare, pugnavi, pugnatus 動詞 (1st)   :fight; dispute;動名詞　属格<br></span></a>
+<a class="note1">maius<span>magnus magna -um, major -or -us, maximus -a -um ADJ  比較級<br>:|great (achievement); mighty; distinguished; skilled; bold/confident; proud;<br>(n 単数 主格),<br></span></a>
+<a class="note1">exercituī<span>exercitus, exercitus 名詞 (4th) M   :army, infantry; swarm, flock;与格<br></span></a>
+<a class="note1">iniectum<span>inicio, inicere, injeci, injectus 動詞 (3rd) TRANS   :hurl/throw/strike in/into; inject; 完了分詞　受動</span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Posteaquam est elatum</strong> qua ： qua以下が主語で　：後で～が広まったとき</p>
+<p>in vulgus militum：一般兵士の間で</p>
+<p><strong>qua arrogantia usus in conloquio　</strong>：会談で傲慢にしながら　（分詞構文）ususは奪格支配。完了分詞、受動、主格で文法的にはAriovistusを修飾。<strong>qua = what</strong></p>
+<p>Ariovistus interdixisset, Romanis omni Gallia ：アリオウィストゥスがローマに対し全ガリアを禁止した</p>
+<p>eius equites fecissent, impetumque in nostros：彼らの騎兵が味方に攻撃を仕掛けた</p>
+<p><strike><strong>ut eaque res diremisset, conloquium</strong> ：「結果としてこれらのことが会談を物別れに終わらせた」？</strike></p>
+<p><strong>ea res ut dremisset conloquium</strong>. ut = howで。「その事が如何にして会談を物別れに終わらせた」？</p>
+<p>utが「疑問副詞」で間接疑問文になっている。(NewLatin 300.1)(A&amp;G 573)</p>
+<p>multo <strong>maior alacritas maius studiumque</strong> pugnandi ：（pugnandiは動名詞、属格で　戦うことの）たくさんの戦いに対する熱意、情熱が この maior alacritas, studium maius という表現はChiasmusと呼ばれる修辞法。（英語での例：not ask what <strong>your country</strong> can do for <strong>you</strong>, ask what <strong>you</strong> can do for <strong>your country</strong>.)</p>
+<p>iniectum est.exercitui ：我が軍に注ぎ込まれる exercituiは与格</p>
+<p><br></p>
+<p>骨子は　<strong>postereaquam ~ est elatum, multo -- est injectum.</strong> </p>
+<p>~、とーーは体言であるべき。ーーは名詞なので大丈夫だが、～の方は？名詞節を導く接続詞がないのでは？utが省略されていると考えるべきか　→　<strong>多くがutなしの接続法を取ることがある。（NewLatin 295. 8)</strong></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>後になって兵士の中に、如何に傲岸に振る舞いながらアリオウィストゥスがガリアに対してローマに対し禁止したか、また味方に対し攻撃を仕掛けたこと、従って会談が物別れに終わってしまったことなどが伝われば、それが多くの、戦いに関する熱意、情熱を注ぎ込むことになる。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width,  initial-scale=2.0">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            width: 100%;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 1_The_Ark </h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin" style="font-size: 2.0vw;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Haec<span>hīc haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>&nbsp;(N 複数 主格) <br></span></a>
+<a class="note1">nārrantur<span>narro narrare, narravi, narratus V (1st)  X<br>:tell, tell about, relate, narrate, recount, describe;<br>(3 複数 現在 受動態 直接法) <br></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note1">poētīs<span>pŏēta poetae N (1st) M <br>:poet;<br>&nbsp;(複数 奪格) <br></span></a>
+<a class="note0">dē<span></span></a>
+<a class="note0">Perseō.<span></span></a>
+<a class="note0">Perseus<span></span></a>
+<a class="note0">fīlius<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">Iōvis,<span>Jupiter Jovis N (3rd) M <br>&gt;:Jupiter; (Roman chief/sky god); (supreme being); heavens/sky (poetic);<br>(単数 属格) <br></span></a>
+<a class="note1">maximī<span>maxĭmus maxima, maximum ADJ  最上級<br>:greatest/biggest/largest; longest; oldest; highest, utmost; leading, chief;<br>&nbsp;(M 単数 属格) <br></span></a>
+<a class="note1">deōrum;<span>deus dei N (2nd) M <br>&gt;:God (Christian text); god; divine essence/being, supreme being; statue of god;<br>(複数 属格) <br></span></a>
+<a class="note1">avus<span>ăvus avi N (2nd) M <br>:grandfather; forefather, ancestor;<br>(単数 主格) <br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">Acrisius<span>アクリシウス<br>JupiterとDanaeの間の子がPerseus。DanaeはAcrisiusの娘である。<br><br><br><br></span></a>
+<a class="note1">appellābātur.<span>appello appellare, appellavi, appellatus V (1st) TRANS  <br>:call (upon); address; dun; solicit; appeal (to); bring to court; accuse; name;<br>(3 単数 未完了 受動態 直接法) <br></span></a>
+<a class="note0">Acrisius<span></span></a>
+<a class="note1">volēbat<span>vŏlo velle, volui, - V  X<br>:wish, want, prefer; be willing, will;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">Perseum<span></span></a>
+<a class="note1">nepōtem<span>nĕpos nepotis N (3rd) C <br>:grandson/daughter; descendant; spendthrift, prodigal, playboy; secondary shoot;<br>(単数 対格) <br></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note1">necāre;<span>nĕco necare, necavi, necatus V (1st) TRANS  <br>:kill/murder; put to death; suppress, destroy; kill (plant); quench/drown (fire);<br>&nbsp;不定詞<br></span></a>
+<a class="note1">nam<span>nam CONJ <br>&gt;:for, on the other hand; for instance;<br><br></span></a>
+<a class="note1">propter<span>propter PREP ACC <br>&gt;:near; on account of; by means of; because of;<br><br></span></a>
+<a class="note1">ōrāculum<span>ōrācŭlum oraculi N (2nd) N <br>:oracle (place/agency/mouthpiece); prophecy; oracular saying/precept/maxim;<br>(単数 対格) <br></span></a>
+<a class="note0">puerum<span></span></a>
+<a class="note1">timēbat.<span>tĭmĕo timere, timui, - V (2nd)  X<br>:fear, dread, be afraid (ne + SUB = lest; ut or ne non + SUB = that ... not);<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note1">Comprehendit<span>comprĕhendo comprehendere, comprehendi, comprehensus V (3rd) TRANS  <br>:catch/seize/grasp firmly; arrest; take hold/root/fire, ignite; conceive (baby);<br>(3 単数 現在 能動態 直接法) <br></span></a>
+<a class="note1">igitur<span>igitur CONJ <br>&gt;:therefore (postpositive), so/then; consequently; accordingly; well/in that case;<br><br></span></a>
+<a class="note0">Perseum<span></span></a>
+<a class="note1">adhūc<span>adhuc ADV <br>&gt;:thus far, till now, to this point; hitherto; yet, as yet; still; besides;<br><br></span></a>
+<a class="note1">īnfantem,<span>infans infantis N (3rd) C <br>:infant; child (Bee);<br>(単数 対格) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">mātre<span>māter matris N (3rd) F <br>:mother, foster mother; lady, matron; origin, source, motherland, mother city;<br>(単数 奪格) <br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">arcā<span>arca arcae N (1st) F <br>:|ark (Noah's); Ark of the Covenant;<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note1">ligneā<span>lignĕus lignea, ligneum ADJ  <br>:wooden, wood-; woody, like wood, tough/stringy;<br>&nbsp;(F 単数 奪格) <br></span></a>
+<a class="note1">inclūsit.<span>inclūdo includere, inclusi, inclusus V (3rd)  X<br>:shut up/in, imprison, enclose; include;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note1">Tum<span>tum CONJ <br>&gt;:moreover; (frequent in Cicero and before; rare after);<br><br></span></a>
+<a class="note0">arcam<span></span></a>
+<a class="note0">ipsam<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">mare<span>măre maris N (3rd) N <br>:sea; sea water;<br>(単数 対格) <br></span></a>
+<a class="note1">coniēcit.<span>cōnĭcĭo conicere, conjeci, conjectus V (3rd) TRANS  <br>:|throw/cast/fling (into area); devote/pour (money); thrust, involve; insert;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Danaē,<span></span></a>
+<a class="note0">Perseī<span></span></a>
+<a class="note0">māter,<span></span></a>
+<a class="note1">magnopere<span>magnopere ADV <br>&gt;:greatly, exceedingly; with great effort; very much; particularly, especially;<br><br></span></a>
+<a class="note1">territa<span>terrĕo terrere, terrui, territus V (2nd)  X<br>:frighten, scare, terrify, deter;<br>【完了分詞 ( 受動態 ) (F 単数 主格) <br></span></a>
+<a class="note0">est;<span></span></a>
+<a class="note1">tempestās<span>tempestas tempestatis N (3rd) F <br>:season, time, weather; storm;<br>(単数 主格) <br></span></a>
+<a class="note1">enim<span>enim CONJ <br>&gt;:namely (postpos.); indeed; in fact; <strong>for</strong>; I mean, for instance, that is to say;<br><br><br></span></a>
+<a class="note0">magna<span></span></a>
+<a class="note0">mare<span></span></a>
+<a class="note1">turbābat.<span>turbo turbare, turbavi, turbatus V (1st)  X<br>:disturb, agitate, throw into confusion;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">Perseus<span></span></a>
+<a class="note1">autem<span>autem CONJ <br>&gt;:but (postpositive), on the other hand/contrary; while, however; moreover, also;<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">sinū<span>sĭnus sinus N (4th) M <br>:curved or bent surface; bending, curve, fold; bosom, <strong>lap</strong>; bay;<br>(単数 奪格) <br><br></span></a>
+<a class="note0">mātris<span></span></a>
+<a class="note1">dormiēbat.<span>dormĭo dormire, dormivi, dormitus V (4th) INTRANS  <br>:sleep, rest; be/fall asleep; behave as if asleep; be idle, do nothing;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<br>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" style="font-size: 1.2vw;" spellcheck="false"><p>narrantur : 受動態、haecはこの場合、複数主格、中性。一種の非人称動詞のような使われ方。(B.138)</p>
+<p>Perseum nepotem suum necare : 目的語を持つ不定詞句。自身の孫であるペルセウスを殺すこと。</p>
+<p>propter oraculum : 対格支配の前置詞「予言のせいで」</p>
+<p>in arca : in +奪格, in mare : in + 対格 ：奪格は静止、対格は動作を伴う場合に使われる。各々 「方舟の中に」「海に向かって」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" style="font-size: 1.2vw;" spellcheck="false">
+これは詩人によるペルセウスのお話しです。ペルセウスは、偉大な神Jupiterの子であり、その祖父はアクリシウスであると言われていました。アクリシウスは孫のペルセウスを殺そうとしていました。。と言うのは予言のせいで息子を恐れていたからです。そこで未だ幼いペルセウスを捕らえ、母とともに木の方舟の中に閉じ込めました。さらにはその方舟を海に向かって押し出したのです。ペルセウスの母であるダナエは大変怖がりました。というのも嵐が非常に荒れていたからです。ペルセウスは、しかし、母の膝で眠っていました。<br><p></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a><!-- div -->
+</div>
+</div>
+</body>
+</html>

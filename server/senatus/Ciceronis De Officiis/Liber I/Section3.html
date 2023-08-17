@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 3 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[3]<span></span></a>
+<a class="note0">Quam<span></span></a>
+<a class="note0">ob<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note1">magnopere<span>magnopere ADV <br>:greatly, exceedingly; with great effort; very much; particularly, especially;<br><br></span></a>
+<a class="note0">te<span></span></a>
+<a class="note1">hortor,<span>hortor hortari, hortatus sum V (1st) DEP  <br>:encourage; cheer; incite; urge; exhort;<br>(１ 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">mi<span></span></a>
+<a class="note0">Cicero,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">solum<span></span></a>
+<a class="note1">orationes<span>oratio orationis N (3rd) F  <br>:speech, oration; eloquence; prayer;<br>(C 複数 対格)<br></span></a>
+<a class="note0">meas,<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">hos<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(M 複数 対格)<br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">philosophia<span></span></a>
+<a class="note1">libros,<span>liber libri N (2nd) M  <br>:book, volume; inner bark of a tree;<br>(C 複数 対格)<br></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note1">illis<span>ille illa, illud PRON  <br>:that; those (pl.); also DEMONST; that person/thing; the well known; the former;<br>(X 複数 与格)<br></span></a>
+<a class="note0">fere<span></span></a>
+<a class="note0">se<span></span></a>
+<a class="note1">aequarunt,<span>aequo aequare, aequavi, aequatus V (1st) TRANS  <br>:level, make even/straight; equal; compare; reach as high or deep as;<br>(3 複数 完了 能動態 直接法 )<br>aequaverunt<br></span></a>
+<a class="note1">studiose<span>studiose studiosius, studiosissime ADV <br>:eagerly, zealously, studiously, ardently, earnestly, attentively, assiduously;<br><br></span></a>
+<a class="note1">legas,<span>lego legere, legi, lectus V (3rd)  <br>:read; gather, collect (cremated bones); furl (sail), weigh (anchor); pick out;<br>(2 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">–<span></span></a>
+<a class="note1">vis<span>vis viris N (3rd) F  <br>:strength (bodily) (pl.), force, power, might, violence; resources; large body;<br>(X 単数 主格)<br></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note1">maior<span>magnus magna -um, major -or -us, maximus -a -um ADJ  比較級<br>:|great (achievement); mighty; distinguished; skilled; bold/confident; proud;<br>(C 単数 主格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">illis<span></span></a>
+<a class="note1">dicendi<span>dico dicere, dixi, dictus V (3rd)  <br>:|talk/speak; make speech; play (instrument); pronounce, articulate; utter; mean;<br>(未来 分詞 受動態 M 単数 属格)<br><br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note1">quoque<span>quoque ADV <br>:likewise/ besides/ also/ too; not only; even/actually; (after word emphasized);<br><br><br></span></a>
+<a class="note1">colendum<span>colo colere, colui, cultus V (3rd)  <br>:live in (place), inhabit; till, <strong>cultivate</strong>, <strong>promote growth</strong>; foster, maintain;<br>&nbsp;(未来 分詞 受動態 N 単数 主格)<br>動形容詞<br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">aequabile<span>aequabilis aequabile, aequabilior -or -us, aequabilissimus -a -um ADJ  <br>:equal, alike, uniform, steady; unruffled; equal proportion, fair, just;<br>&nbsp;(N 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">temperatum<span>temperatus temperata -um, temperatior -or -us, temperatissimus -a -um ADJ  <br>:temperate, <strong>mild</strong>;<br>(M 単数 対格)<br></span></a>
+<a class="note0">orationis<span></span></a>
+<a class="note1">genus.<span>genus generis N (3rd) N  <br>:|noble birth; kind/sort/variety; class/ rank; mode/　method/　<strong>style</strong>/　fashion/ way;<br>(N 単数 対格), (X 単数 主格),<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>hortor te ut ~.</strong> : ut~を行うよう君を激励したい。ut～は意志法から派生した名詞節で、奨励命令忠告などで使われる。（NewLatin295)</p>
+<p><strong>ut legas libros de pholosopia</strong>. : 哲学に関する本を読む（こと）</p>
+<p>qui iam illis fere se aequarunt : quiはlibros先行詞の関係代名詞。illisは「前者」であり、orationes を指し、「前者とほぼ同等のレベルにある」（同じ程度の数がある、の意味）</p>
+<p>vis (est)&nbsp;maior in illis decendi : dicendiは動名詞でillisを修飾「力は前者を読む方にあるが」</p>
+<p>hoc est colendum aequabile et temperatum orationis genus. genusはcolendum est の目的語。「～を発掘するべきである」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>そういうことであるから私は、親愛なるキケロ君、君に強く薦める。君が私の演説に関するものだけではなく哲学に関する本、その数は今や同程度あるのであるが、を熱心に読むことを。力は確かに前者が優れているが、しかし同程度に演説の安定した穏やかな種類のものを学ぶ価値は充分ある。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Et<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note1">quidem<span>quisquis quisquis, quidquid  <br>:whoever; every one who; whoever it be; everyone; each;<br>(M 複数 主格)<br></span></a>
+<a class="note1">nemini<span>nemo neminis N (3rd) C  <br>:no one, nobody;<br>&nbsp;(X 単数 与格)<br></span></a>
+<a class="note0">video<span></span></a>
+<a class="note1">Graecorum<span>Graecus Graeci N (2nd) M  <br>:Greek; the Greeks (pl.);<br>(X 複数 属格)<br></span></a>
+<a class="note1">adhuc<span>adhuc ADV <br>:thus far, till now, to this point; hitherto; yet, as yet; still; besides;<br><br></span></a>
+<a class="note1">contigisse,<span>contingo contingere, contigi, contactus V (3rd) INTRANS  <br>:happen, befall, turn out, come to pass, <strong>be granted to one</strong>; be produced;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">idem<span></span></a>
+<a class="note1">utroque<span>utroque ADV <br>:to both places; in both directions; to both sides (in conflict);<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">genere<span></span></a>
+<a class="note1">elaboraret<span>elaboro elaborare, elaboravi, elaboratus V (1st)  <br>:take pains, exert oneself; bestow care on;<br>(3 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note1">sequereturque<span>sequor sequi, secutus sum V (3rd) DEP  <br>:|support/back/side with; obey, observe; pursue/chase; range/spread over; attain;<br>(3 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">illud<span></span></a>
+<a class="note1">forense<span>forensis forensis, forense ADJ  <br>:public; pertaining to the courts;<br>&nbsp;(N 単数 対格)<br></span></a>
+<a class="note0">dicendi<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note1">quietum<span>quies quietis N (3rd) F  <br>:quiet, calm, rest, peace; sleep;<br>(C 複数 属格)<br></span></a>
+<a class="note1">disputandi<span>disputo disputare, disputavi, disputatus V (1st)  <br>:discuss, debate, argue;<br>(未来 分詞 受動態 M 単数 属格),<br></span></a>
+<a class="note0">genus,<span></span></a>
+<a class="note0">nisi<span></span></a>
+<a class="note1">forte<span>forte ADV <br>:by chance; perhaps, perchance; as luck would have it;<br><br></span></a>
+<a class="note0">Demetrius<span></span></a>
+<a class="note0">Phalereus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note1">numero<span>numerus numeri N (2nd) M  <br>:number/sum/total/rank; (superior) numerical strength/plurality; <strong>category</strong>; tally;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">haberi<span>habeo habere, habui, habitus V (2nd)  <br>:have, hold, consider, think, reason; manage, keep; spend/pass (time);<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">potest,<span></span></a>
+<a class="note1">disputator<span>disputator, oris, m <br>ギリシャ語由来の名詞で<br>論客、（Charton Lewis)<br><br></span></a>
+<a class="note0">subtilis,<span></span></a>
+<a class="note1">orator<span>orator oratoris N (3rd) M  <br>:speaker, orator;<br>(X 単数 主格),<br></span></a>
+<a class="note0">parum<span></span></a>
+<a class="note1">vehemens,<span>vehemens vehementis (gen.), vehementior -or -us, vehementissimus -a -um ADJ  <br>:violent, severe, vehement; emphatic, vigorous, lively;<br>(X 単数 主格)<br></span></a>
+<a class="note1">dulcis<span>dulcis dulce, dulcior -or -us, dulcissimus -a -um ADJ  <br>:pleasant, charming; sweet; kind, dear; soft, flattering, delightful;<br>(C 単数 主格),<br></span></a>
+<a class="note0">tamen,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">Theophrasti<span></span></a>
+<a class="note1">discipulum<span>discipulus discipuli N (2nd) M  <br>:student, pupil, trainee; follower, disciple;<br>(C 単数 対格)<br></span></a>
+<a class="note1">possis<span>possum posse, potui, - V  <br>:be able, can;<br>(2 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">agnoscere.<span>agnosco agnoscere, agnovi, agnitus V (3rd)  <br>:recognize, realize, discern; acknowledge, claim, admit to/responsibility;<br>(  現在 能動態 不定詞 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>video contigisse nemini Graecorum id ut ~: contingoは自動詞で与格の間接目的語、neminiを取る。「私は術のギリシャ人の中で誰にも起きたことがないのを見る」「私は全ギリシャ人のなかでもut以下のことが起きたひとは誰もいないと思う。」</p>
+<p>elaboro : 苦心の努力（努力の末の成功、というニュアンスもあるようである）</p>
+<p>sequor : 追求</p>
+<p>ut idem sequerentur illud forense dicendi et hoc quietum disputandi genusm, elaboraretque utroque in genere. 多分倒逆法。「一人の同じ人間が法廷での演説と静かな論議の両方を追求し、それらの二つの領域で苦心して成功したということ」</p>
+<p><font color="#ff0000">dispurator</font> : ギリシャ語由来の男性名詞で、「論客」の意。</p>
+<p>in hoc numero : 「この分類のなかで」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>そして私は思うのだが、すべてのギリシャ人の中でも次のことが当てはまる人はだれもいないのではないか。つまり一人の同じ人物が法廷での議論、演説とより静かな種類の論議を追求し、その二つともの領域で成功しているような人のことである。あえて言えば多分 Demetrius Phalereusがこの分類に持てるかもしれない。微妙な言い回しのできる論客で、あまり激しくない演説者であり、しかしながら魅力的な人物であるので、Theophrastus派とみなすことができるであろう。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Nos<span>nos nostrum/nostri PRON PERS  <br>:we (pl.), us;<br>(C 複数 主格), <br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">quantum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">utroque<span></span></a>
+<a class="note1">profecerimus,<span>proficio proficere, profeci, profectus V (3rd)  <br>:make, accomplish, effect;<br>(１ 複数 未来完了 能動態 直接法 ), (１ 複数 完了 能動態 接続法 )<br></span></a>
+<a class="note1">aliorum<span>alius alia, aliud ADJ  <br>:other, another; different, changed;<br>(M 複数 属格), (N 複数 属格)<br></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note1">iudicium,<span>judicium judici(i) N (2nd) N  <br>:|judgment/sentence/verdict; judging; jurisdiction/authority; opinion/belief;<br>(N 単数 主格),<br></span></a>
+<a class="note0">utrumque<span></span></a>
+<a class="note1">certe<span>certe ADV <br>:surely, certainly, without doubt, really; at least/any rate, in all events;<br><br></span></a>
+<a class="note0">secuti<span></span></a>
+<a class="note1">sumus.<span>sum esse, fui, futurus V  <br>:be;<br>(１ 複数 現在 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>しかし、私がどの程度双方の分野で成し遂げたかの判断は第三者のものである。間違いなく私は両方を追求はした。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

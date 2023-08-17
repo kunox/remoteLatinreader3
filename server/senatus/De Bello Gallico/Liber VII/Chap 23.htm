@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 23</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[23]<span></span></a>
+
+<a class="note1">Mūrī<span>murus muri N (2nd) M  <br>:wall, city wall;<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">Gallicī<span><br><br></span></a>
+<a class="note0">hāc<span><br><br></span></a>
+<a class="note1">ferē<span>fere ADV <br>:almost; about, nearly; generally, in general; (w/negatives) hardly ever;<br><br></span></a>
+<a class="note0">fōrmā<span><br><br><br></span></a>
+<a class="note0">sunt.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>omens Gallici muri fere sunt&nbsp; hac forma.<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>ほとんど全てのガリアの城壁は次のようであった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Trabēs<span>trabes trabis N (3rd) F  <br>:tree-trunk, beam, timber; ship;<br>(X 単数 主格)<br></span></a>
+<a class="note1">dērēctae<span>derectus derecta -um, derectior -or -us, derectissimus -a -um ADJ  <br>:straight/not curved; moving straight forward/in straight line; direct/absolute;<br>(f 単数 属格)<br><br><br></span></a>
+<a class="note1">perpetuae<span>perpetuus perpetua, perpetuum ADJ  <br>:continuous, uninterpreted; whole; perpetual, lasting; everlasting;<br>(f 単数 属格)<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">longitūdinem<span><br><br></span></a>
+<a class="note0">paribus<span></span></a>
+<a class="note0">intervāllīs,<span><br><br></span></a>
+<a class="note1">distantēs<span>distans (gen.), distantis ADJ  <br>:distant; separate;<br>(c 複数  主格), <br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">bīnōs<span>bini <br>配分数 2<br>(m 複数  対格)<br></span></a>
+<a class="note0">pedēs,<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">solō<span>solum soli N (2nd) N  <br>:bottom, ground, floor; soil, land;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">collocantur.<span>colloco collocare, collocavi, collocatus V (1st) TRANS  <br>:place/put/set in order/proper position, arrange; station, post, position; apply;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>～distantes trabes collocantur in solo.　が骨子。</p>
+<p>derectae perpetuaae in longitudinem : まっすぐで、長さが一定の（木材）</p>
+<p>paribus intervallis : 付帯状況の奪格？「均等な間隔で」</p>
+<p>distantes inter se binos pedes, : 互いに2フィートの距離の　（trabesに掛かる形容詞句）<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>まっすぐで長さが一定の木材が、2フィート間隔で地面に置かれる。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hae<span></span></a>
+<a class="note1">revinciuntur<span>revincio revincire, revinxi, revinctus V (4th)  <br>:bind fast, fasten;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note1">intrōrsus<span>introrsus ADV <br>:within, inside, to within, <strong>inwards</strong>, inwardly, internally;<br><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">multō<span><br><br></span></a>
+<a class="note1">aggere<span>agger aggeris N (3rd) M  <br>:rampart (or material for); causeway, pier; heap/<strong>pile</strong>/<strong>mound</strong>; dam/dike; mud wall;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">vestiuntur:<span>vestio vestire, vestivi, vestitus V (4th)  <br>:clothe;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">autem,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">dīximus,<span><br><br></span></a>
+<a class="note1">intervālla<span>intervallum intervalli N (2nd) N  <br>:interval, space, distance; respite;<br>(n 複数  主格),<br></span></a>
+<a class="note1">grandibus<span>grandis grandis, grande ADJ  <br>:full-grown, grown up; large, great, grand, tall, lofty; powerful; aged, old;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fronte<span></span></a>
+<a class="note0">saxīs<span><br><br></span></a>
+<a class="note1">effarciuntur.<span>effarcio effarcire, -, effartus V (4th)  <br>:stuff full;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>haec revinciuntur introsus : introsusは内側のほうの意。つまり木材は中から外に向かって置かれている。</p>
+<p>intervalla effarciuntur grandibus saxis in fronte. in fronteは前に方、つまり外側<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>それらは中側でしっかり固定され大量の土で覆われる。そして、言った様にその間は先の方で大きな石によって埋められる。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hīs<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>&nbsp;(X 複数  奪格)<br><br></span></a>
+<a class="note1">collocātīs<span>colloco collocare, collocavi, collocatus V (1st) TRANS  <br>:place/put/set in order/proper position, arrange; station, post, position; apply;<br>(完了 分詞 受動態  複数  奪格)<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">coagmentātīs<span>coagmento coagmentare, coagmentavi, coagmentatus V (1st)  <br>:join/fasten together, connect; make by joining/construct; fit (words) together;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br><br></span></a>
+<a class="note0">alius<span></span></a>
+<a class="note1">īnsuper<span>insuper ADV <br>:above, on top; in addition (to); over;<br><br><br></span></a>
+<a class="note1">ōrdō<span>ordo ordinis N (3rd) M  <br>:<strong>row</strong>, <strong>order</strong>/rank; succession; series; class; bank (oars); order (of monks) (Bee);<br>(X 単数 主格)<br><br></span></a>
+<a class="note0">additur,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">idem<span></span></a>
+<a class="note1">illud<span>ille illa, illud PRON  <br>:that; those (pl.); also DEMONST; that person/thing; the well known; the former;<br>(n 単数 主格)<br></span></a>
+<a class="note0">intervāllum<span><br><br></span></a>
+<a class="note1">servētur<span>servo servare, servavi, servatus V (1st)  <br>:watch over; protect, store, keep, guard, preserve, save;<br>(３人称 単数 現在 受動態 接続法 )<br><br></span></a>
+<a class="note0">neque<span><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">contingant<span>contingo contingere, contigi, contactus V (3rd) TRANS  <br>:touch; reach (to); border on, be connected with; affect, hit; take hold, seize;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">trabēs,<span><br><br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">paribus<span></span></a>
+<a class="note1">intermissae<span>intermitto intermittere, intermisi, intermissus V (3rd)  <br>:interrupt; omit; stop; leave off (temporarily); <strong>leave a gap</strong>;<br>(完了 分詞 受動態 f 単数 属格)<br></span></a>
+<a class="note1">spatiīs<span>spatium spati(i) N (2nd) N  <br>:space; area/expanse, room (for); intervening space, gap/interval; length/width;<br>&nbsp;(X 複数  奪格)<br><br></span></a>
+<a class="note1">singulae<span>singulus singula, singulum ADJ  <br>:apiece (pl.); every; one each/at a time; individual/ separate/ single; <strong>several</strong>;<br>&nbsp;(f 複数  主格)<br></span></a>
+<a class="note1">singulīs<span>singulus singula, singulum ADJ  <br>:apiece (pl.); every; one each/at a time; individual/separate/single; several;<br>(X 複数&nbsp; 奪格）<br><br></span></a>
+<a class="note1">saxīs<span>saxum saxi N (2nd) N  <br>:stone;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">interiectīs<span>intericio intericere, interjeci, interjectus V (3rd) TRANS  <br>:put/throw between; <strong>interpose</strong>; insert; introduce;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br><br></span></a>
+<a class="note1">artē<span>arte artius, artissime ADV <br>:closely/tightly (bound/filled/holding); briefly, in a confined space, compactly;<br><br></span></a>
+<a class="note1">contineantur.<span>contineo continere, continui, contentus V (2nd) TRANS  <br>:secure, maintain, sustain; <strong>fasten</strong>/<strong>hold in position</strong>; retain, keep safe, preserve;<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>hic collocatis et coagmentatis : 独立奪格「これらが置かれ固定されると」</p>
+<p>alius ordo additur insuper. 「別の段がその上に付け加えられる」</p>
+<p>ut illud servetur idem intervallum. 「それは同じ間隔を保つように」</p>
+<p>neque inter se cotingant trabes. 木材が互いに接触しないように（互い違いに置かれる）</p>
+<p>singulae contineantur arte sigulis interriectis saxis. 各々は各々の間に埋められた石によって位置を固定される。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらが置かれ固定されると、次の段が付け加わる。同じ間隔を保ち、しかし木材は互いに接触しないように、均等な距離で、各々が各々の間に埋められた石によってその位置で固定される。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sīc<span><br><br></span></a>
+<a class="note1">deinceps<span>deinceps ADV <br>:in order/succession/turn; one after/beside another, successively; etc; very next<br><br></span></a>
+<a class="note0">omne<span></span></a>
+<a class="note0">opus<span></span></a>
+<a class="note1">contexitur,<span>contexo contexere, contexui, contextus V (3rd) TRANS  <br>:weave/entwine/braid/twist together; compose/ connect /link/ combine; make/ join/ form<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note1">dum<span>dum CONJ <br>:while, as long as, until; provided that;<br><br></span></a>
+<a class="note1">iūsta<span>justus justa -um, justior -or -us, justissimus -a -um ADJ  <br>:just, fair, equitable; right, lawful, justified; regular, <strong>proper</strong>;<br>(f 単数 主格),<br></span></a>
+<a class="note0">mūrī<span><br><br></span></a>
+<a class="note0">altitūdō<span><br><br></span></a>
+<a class="note1">expleātur.<span>expleo explere, explevi, expletus V (2nd)  <br>:fill out; fill, fill up, complete, finish; satisfy, satiate;<br>(３人称 単数 現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>dum iusta muri altitudo explleatur. iustaは適切な「適切な壁の高さに達するまで」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>この様にして、壁が適当な高さになるまで、全ての作業が編み込まれている。（積み上げられる）<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hōc<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">speciem<span>species speciei N (5th) F  <br>:sight, appearance, show; splendor, beauty; kind, type;<br>(c 単数 対格)<br></span></a>
+<a class="note1">varietātemque<span>varietas varietatis N (3rd) F  <br>:variety, difference; mottled appearance;<br>(c 単数 対格)<br></span></a>
+<a class="note0">opus<span></span></a>
+<a class="note1">dēfōrme<span>deformis deforme, deformior -or -us, deformissimus -a -um ADJ  <br>:deformed/illformed/ misshapen/ disfigured; shameful/ degrading/ base; <strong>ugly</strong>/loathsome<br>(n 単数 主格)<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">alternīs<span><br><br></span></a>
+<a class="note0">trabibus<span></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">saxīs,<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">rēctīs<span>rectus recta -um, rectior -or -us, rectissimus -a -um ADJ  <br>:right, proper; straight; honest;<br>(X 複数  与格)<br></span></a>
+<a class="note1">līneīs<span>linea lineae N (1st) F  <br>:string, line (plumb/fishing);<br>&nbsp;(c 複数  与格), (c 複数  奪格)<br></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note1">ōrdinēs<span>ordo ordinis N (3rd) M  <br>:row, <strong>order</strong>/rank; succession; <strong>series</strong>; class; bank (oars); order (of monks) (Bee);<br>(c 複数  対格)<br></span></a>
+<a class="note1">servant,<span>servo servare, servavi, servatus V (1st)  <br>:watch over; protect, store, keep, guard, preserve, save;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">ūtilitātem<span>utilitas utilitatis N (3rd) F  <br>:usefulness, advantage;<br>(c 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">dēfēnsiōnem<span>defensio defensionis N (3rd) F  <br>:defense/protection; act of defending; argument/justification in defense, excuse;<br>(c 単数 対格)<br></span></a>
+<a class="note1">urbium<span>urbs urbis N (3rd) F  <br>:city; City of Rome;<br>(c 複数  属格)<br></span></a>
+<a class="note0">summam<span></span></a>
+<a class="note1">habet<span>habeo habere, habui, habitus V (2nd)  <br>:have, hold, consider, think, reason; manage, keep; spend/pass (time);<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">opportūnitātem,<span>opportunitas opportunitatis N (3rd) F  <br>:convenience, advantageousness; right time; opportuneness; opportunity, chance;<br>(c 単数 対格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">incendiō<span>incendium incendi(i) N (2nd) N  <br>:fire, conflagration; fiery heat; fiery passion/love/hostility; arson (Latham);<br>(X 単数 奪格)<br></span></a>
+<a class="note0">lapis<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">ariete<span>aries arietis N (3rd) M  <br>:ram (sheep); battering ram; the Ram (zodiac); large unidentified marine animal;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">māteria<span>materia materiae N (1st) F  <br>:wood (building material), lumber, timber; woody branch/growth/part of tree;<br>(c 単数 主格)<br></span></a>
+<a class="note0">dēfendit,<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">perpetuīs<span><br><br></span></a>
+<a class="note0">trabibus<span></span></a>
+<a class="note0">pedēs<span></span></a>
+<a class="note1">quadrāgēnos<span>quadrageni <br>配分数 40<br>(m 複数  対格)<br></span></a>
+<a class="note1">plērumque<span>plerumque ADV <br>:generally, commonly; mostly, for the most part; often, frequently;<br><br></span></a>
+<a class="note0">intrōrsus<span><br><br></span></a>
+<a class="note1">revīncta<span>revincio revincire, revinxi, revinctus V (4th)  <br>:bind fast, fasten;<br>(完了 分詞 受動態 f 単数 主格), <br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">perrumpī<span>perrumpo perrumpere, perrupi, perruptus V (3rd)  <br>:break through;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">distrahī<span>distraho distrahere, distraxi, distractus V (3rd)  <br>:draw/pull/tear apart, wrench, separate, (sub)divide; sell in parcels; distract;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">potest.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>cum ~ tum : <strong>解説のcum</strong>（NewLatin 290.1)のときは直接法「～だけでなくとりわけ～も」</p>
+<p><strong>cum opus est non deforme in speciem varieta</strong>temque. 「この仕事は外観上、変化のあるという観点からは見苦しくはなく」alternis trabibus ac saxis : <u>原因の奪格</u>で「木材と石が交互になっていて」</p>
+<p><strong>quae servant suos ordines rectis lineis</strong>. rectis lineisは間接目的語の与格。「それは整然と正しく配置されており」</p>
+<p>tum habet summam opportunitatem. 「だけでなく最大の利点を持っていた」が逐語訳。</p>
+<p>lapis ad incendo, materia ab ariete defendit. arieteは破城槌。「石が火から、木材は破城槌から守り」</p>
+<p>quae reevincta introsus perpetuis trabis pedes quadragenos. quaeはｍateriaを指す。この句そのものは分詞構文句になっている、「内部で40フィートの一定長さの木材で固定されているそれ」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>その城壁は、石と木材が交互になって外観上、斑模様をなし、それが整然と並んでおり見苦しくはないだけではなく、特に城塞の防衛上の非常に有効な利点があった。と言うのは石が火から、木材は破城槌から守ったからである。木材は内部的に一定の40フィート程度の木材で固定されており、それは突破するのも破壊することもできなかった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 18</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[18]<span></span></a>
+
+<a class="note0">Hāc<span><br><br></span></a>
+<a class="note1">cōnfīrmāta<span>confirmo confirmare, confirmavi, confirmatus 完了分詞　受動　f単　奪格　;= assert, declare, confirm, support, sanction<br></span></a>
+<a class="note0">opīniōne<span><br><br></span></a>
+<a class="note0">timōris<span><br><br></span></a>
+<a class="note1">idōneum<span>idoneus idonea, idoneum 形容詞　単　対格　;= suitable, appropriate, adequate</span></a>
+<a class="note1">quendam<span>quidam 代名詞　ｍ単　対格　;= certain, somebody, one, something</span></a>
+<a class="note0">hominem<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">callidum<span>callidus callida, callidum n単　対格　;= crafty, sly, cunning, wise, expert, skillful</span></a>
+<a class="note1">dēlīgit,<span>deligo deligare, deligavi, deligatus TRANS ３単　現在　;= pick, cull, choose<br></span></a>
+<a class="note1">Gallum,<span>Gallus Galli M　単　対格　;= Gaul</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note1">auxiliī<span>auxilium auxili(i) N 単　属格　;= help<br></span></a>
+<a class="note1">causā<span>前置詞　前に属格を伴って　;= for sake of, purpose of<br></span></a>
+<a class="note0">sēcum<span><br><br></span></a>
+<a class="note0">habēbat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>confirmata opinione : 独立奪格　「これらの臆病の疑いが確認されて」</p>
+<p>ex iis quos ~ habebat : iisはquosの先行詞　「彼が援軍として持っていた者達から（一人）」</p>
+<p><strong>causaは前置詞</strong>として、その前に属格を伴って、＝for shake of, purpose ofの意味</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの怯懦の疑いを確認して、（Sabinusは）才覚がある一人の適任者を選んだ。それは、援軍として彼の元でいたガリア人の一人である。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Huic<span>hic 単数　与格 前出のGalusのこと</span></a>
+<a class="note1">magnīs<span>magnus 与格、奪格<br></span></a>
+<a class="note1">praemiīs<span>praemium praemi(i) N 複　奪格　;= prize, reward<br></span></a>
+<a class="note1">pollicitātiōnibusque<span>pollocitatio pollicitationis F 複　与格、奪格　;= promise<br></span></a>
+<a class="note1">persuādet<span>persuadeo persuadere, persuasi, persuasus ３単　現在　;= persuade, convince (w/DAT)<br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note0">trānseat,<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">quid<span>quis ｎ単　主格</span></a>
+<a class="note1">fierī<span>fio feri, factus sum SEMDEP 不定詞　;= be made, be done<br></span></a>
+<a class="note1">velit<span>volo velle volui - ３単　現在　接続法　;= wish, want</span></a>
+<a class="note1">ēdocet.<span>edoceo edcere, edcui, edoctus ３単　現在　;= teach, inform thoroughly<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>huicは与格で、persuadetも間接目的語、Gallusを指す。magnis praemiis pollocitationibus は奪格、手段の奪格</p>
+<p>edocet quid velit fieri : teach what (he) wants to be done.</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>莫大な褒賞を約束して彼を敵を越えていくよう説得した。そして、Sabinusが何を成し遂げたいのかを教えこんだ。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quī<span><br><br></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note1">prō<span>奪格支配　前置詞　on behalf,of, instead of, <strong>as, like</strong><br></span></a>
+<a class="note1">perfugā<span>perfuga perfugae M 単　主格　;= deserter<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">vēnit,<span><br><br></span></a>
+<a class="note0">timōrem<span><br><br></span></a>
+<a class="note0">Rōmānōrum<span><br><br></span></a>
+<a class="note1">prōpōnit,<span>propono proponere, proposui, propostius ３単　現在　;= display, propose, relate, put or place forward<br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">angustiīs<span>angustia angustiae F 複　奪格　;= narrow passage, strait, difficulties<br></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Venetīs<span><br><br></span></a>
+<a class="note1">premātur<span>premo premere, pressi, pressus ３単　現在　受動　接続法　;= press, press hard, pursue, overwhelm<br></span></a>
+<a class="note1">docet,<span>docet docere, docui, doctus ３単　現在　;= teach, show</span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">longius<span></span></a>
+<a class="note0">abesse<span></span></a>
+<a class="note1">quīn<span>接続詞　；＝ so that&nbsp; quinで始まる名詞節は疑い、怠慢の動詞とともに～であろうか？と言う意味<br></span></a>
+<a class="note0">proximā<span><br><br></span></a>
+<a class="note0">nocte<span></span></a>
+<a class="note0">Sabīnus<span><br><br></span></a>
+<a class="note1">clam<span>副詞　;= secretly,</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note1">ēdūcat<span>educo ３単　現在　;= bring up, draw up, lead out<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">auxiliī<span><br><br></span></a>
+<a class="note0">ferendī<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">proficīscātur.<span>profiscor proficisci, profectus sum DEP ３単　現在　受動　deaprt, set out<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>qui : 主格で前出のGallus</p>
+<p>pro perfugae : 難民のふりをして</p>
+<p>quibus angustiis ipse Caesar a Venetis prematur : 間接疑問文（接続法になる）奪格なのは原因の奪格で、次の文の理由担っているから？ with what difficulties Caesar was pressed</p>
+<p>neque longius abesse quin proxima nocte Sabinus ~ : quinで始まる名詞節　（NewLatin２９８）</p>
+<p>auxilli ferendi causa : Line 1のCausaと同じ用法</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼は難民のふりをして彼らの所を訪ね、ローマ軍の怯懦について話し、またカエサル自身もVenetiから押されてどれほどの難局にあるか教えた。更に、そのため、あまり遠くない、すぐにでもSabinusは兵を従え砦からでて、カエサルの援助のために出発する疑いがある、とも教えた。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quod<span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0">audītum<span><br><br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">conclāmant<span>conclamo conclamare, conclamvi, conclamatus ３複　現在　;= cry, shout loud<br></span></a>
+<a class="note1">omnēs<span>複　主格　ここでは主語<br></span></a>
+<a class="note1">occāsiōnem<span>occasio occasionis F 単　対格　;= oppotunity, chance<br></span></a>
+<a class="note1">negōtiī<span>negotium negoti(i) 単　属格　;= pain, trouble, work, activity, job<br></span></a>
+<a class="note1">bene<span>bene melius, optime 副詞　; = well, very, quite, in good style, better</span></a>
+<a class="note1">gerendī<span>gero 完了分詞　受動　ｍ単　属格　;= bear, carry, manage, govern<br></span></a>
+<a class="note1">āmittendam<span>amitto amittere, amisi, amissus TRANS 未来分詞　受動　ｆ単　対格　;= lose, dismiss<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">esse:<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">īrī<span>eo 現在受動不定詞<br></span></a>
+<a class="note1">oportēre.<span>oportet oportere, oportui, - IMPERS 不定詞　;= it is right, necessary, ought<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>quod : 前に言われた事柄</p>
+<p>negotii bene gerendi : 逐語的には、うまく取り扱われたビジネス　この場合「成功間違いなしの戦いの機会」</p>
+<p>amittendam non esse : 歴史的不定詞　</p>
+<p>iri oportere : iriはeoの不定詞で、ここではoportereの目的語、oportereも不定詞だがこちらは歴史的不定詞。どちらも非人称動詞。「行くことは正しいことである」「行くべきである」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>それを聞いて彼らは全員で歓声をあげた。そして、そういう間違いない戦いを逃すわけには行かない、今直ぐ砦に進軍すべきであるということになった。</p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Multae<span></span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note0">cōnsilium<span><br><br></span></a>
+<a class="note0">Gallōs<span><br><br></span></a>
+<a class="note1">hortābantur:<span>hortor hortari, hortatus sum DEP　3複　未完了　受動　;= encourage, cheer, incite<br></span></a>
+<a class="note1">superiōrum<span>superus supera -um, superior, superemus 形容詞　比較級　複 属格　；＝higher, high<br></span></a>
+<a class="note0">diērum<span><br><br></span></a>
+<a class="note0">Sabīnī<span><br><br></span></a>
+<a class="note1">cunctātiō,<span>cunctatio cunctationis F 単　主格　;= delay, hesitation, inactivity<br></span></a>
+<a class="note0">perfugae<span></span></a>
+<a class="note0">cōnfīrmātiō,<span><br><br></span></a>
+<a class="note1">inopia<span>inopia inopiae F 単　主格　;= lack, need, peverty</span></a>
+<a class="note1">cibāriōrum,<span>cibarium cibari(i) N 複　属格　;= ration, food, provisions,<br></span></a>
+<a class="note0">cui<span></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note1">parum<span>副詞　;= too little, not enough</span></a>
+<a class="note1">dīligenter<span>副詞　;= carefully, attentively<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">prōvīsum,<span>provideo providere, providi, provisus 完了分詞　受動　ｎ単　主格　;= foresee, provide for, (w/DAT)<br><br></span></a>
+<a class="note0">spēs<span><br><br></span></a>
+<a class="note0">Veneticī<span><br><br></span></a>
+<a class="note0">bellī,<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">ferē<span>副詞　;= almost, nearly, generally<br></span></a>
+<a class="note1">libenter<span>libenter libentius, lebetissime 副詞　;= willingly, gladly, with pleasure</span></a>
+<a class="note0">hominēs<span><br><br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">volunt<span></span></a>
+<a class="note1">crēdunt.<span>credo credere, credidi, creditus ３複　現在　;= trust, entrust, believe, rely on<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>superiorum dierum : 「最近の数日間」</p>
+<p>erat provisum cui rei parum deligenter ：provideoは与格支配で、cui rei、parum diligenterは副詞で、「最低限に注意深く」「彼らによるこれらに関する先読みは最低限の注意深さであった。</p>
+<p><font style="background-color: rgb(255, 255, 0);">provisumをどう訳すか？　予測と訳すか、供給と訳すか？どちらでも通じる？</font>　<font style="background-color: rgb(255, 255, 0);">主語はない？</font>　erat provisum.</p>
+<p>quod fere libenter homines id quod volunt credunt.最初のquodは＝bcause</p>
+<p><strong>homines fere libenter credunt id quod volunt</strong> : 人は一般に欲するものを信じたがる。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>大きの事柄がガリア人の計画を後押しした。最近のSabinusの不活発さ、難民による確認、食料の欠乏、これに関しては彼らは最低限の注意深さで予測していたのだが、またVenetiの戦争による期待、そして何より人は欲しいものを信じるものだからである。</p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">adductī<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">prius<span></span></a>
+<a class="note0">Viridovīcem<span><br><br></span></a>
+<a class="note0">reliquōsque<span><br><br></span></a>
+<a class="note0">ducēs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">conciliō<span><br><br></span></a>
+<a class="note1">dīmittunt<span>dimitto ３複　現在　;= release, set free, allow to escape<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note0">concessum<span></span></a>
+<a class="note0">arma<span></span></a>
+<a class="note1">utī<span>utor不定詞<br></span></a>
+<a class="note0">capiant<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">contendant.<span>contendo ３複　現在　;= rush to, be in a hurry (make effortという意味もある）</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Hic rebus adducti : よく出てくる分詞構文、「これらに駆り立てられて」</p>
+<p><strong><font style="background-color: rgb(255, 255, 0);">prius ~ quam = priusquam = until</font></strong> (~より前）</p>
+<p>arma uti sit concessum : utiはutorの不定詞、armaは複、対格「武器を使う事が承認される」</p>
+<p>capiant et contendant ad castra. : (武器）取って砦に突進した。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらに駆り立てられて、彼らは武器を使うことが承認されるまで、Viridovixやその他の指導者たちを会議から解放しなかった。（承認されて）武器を取って砦に駆けつけた。</p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quā<span><br><br></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note0">concessā<span><br><br></span></a>
+<a class="note1">laetī,<span>laeti laeta -um 形容詞　複　主格　;= happy, glad<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">explōrātā<span>exploro explorare, exploravi, exploratus 完了分詞　受動　f単　奪格　;= search out, try out<br></span></a>
+<a class="note1">victōriā,<span>victoria victoriae F 単　奪格　;= victory<br></span></a>
+<a class="note1">sarmentīs<span>sarmentum sarmenti N 複　奪格　;= shoot; twigs, cut twigs, brushwood<br></span></a>
+<a class="note1">virgultīsque<span>virgultum virgulti 複　奪格　;= brushwood<br></span></a>
+<a class="note1">collēctīs,<span>colligo colligere, collexi, collectus TRANS 完了分詞　受動　複　奪格　;= collect, assemble<br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">fossās<span><br><br></span></a>
+<a class="note0">Rōmānōrum<span><br><br></span></a>
+<a class="note1">compleant,<span>compleo complere, complevi, completus TRANS ３複　現在　;= fill up, be big enough to fill, occupy sapce</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">pergunt.<span>pergo pergere, perrexi, perrectus ３複　現在　;= go on, proceed</span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p>laeti : 形容詞であるが、副詞のように訳される。（NewLatin239）(A&amp;G 290)</p>
+<p>explorata victoria : 独立奪格　「勝利が探しだされたように」「勝利を得たように」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらは喜んで承認され、あたかも勝利を得たかのように、下草とか小枝を集めて、それでローマ軍の堀（溝）を埋めて砦に進んだ。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

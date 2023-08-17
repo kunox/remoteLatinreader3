@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 49</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[49]<span></span></a>
+
+<a class="note0">Ubi<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note1">castrīs<span>場所の奪格<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">tenēre<span>teneo, tenere, tenui, tentus 動詞 (2nd)   :hold, keep; comprehend;不定詞<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">intellēxit,<span>intellego, intellegere, intellexi, intellectus 動詞 (3rd)   :understand; realize;3 単 完了 能動態 直説法<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note1">diūtius<span>diu diutius, diutissime ADV <br>:(for) a long/considerable time/while; long since;<br><br></span></a>
+<a class="note1">commeātū<span>commeatus, commeatus 名詞 (4th) M   :supplies/provisions; goods;奪格<br></span></a>
+<a class="note1">prohibērētur,<span>prohibeo, prohibere, prohibui, prohibitus 動詞 (2nd)   :hinder, restrain; forbid, prevent; (3 単 未完了 受動態 接続法<br></span></a>
+<a class="note0">ultrā<span><br><br></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">locum,<span></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note0">Germānī<span><br><br></span></a>
+<a class="note1">cōnsēderant,<span>consido, considere, consedi, consessus 動詞 (3rd) INTRANS   :|encamp/bivouac; take up a position; 3 複 過去完了 能動態 直説法<br></span></a>
+<a class="note1">circiter<span>circiter, 前置詞 (対格)  :about, around, near (space/time/numeral); towards;</span></a>
+<a class="note0">passūs<span><br><br></span></a>
+<a class="note1">DC<span>sexcentos = 600</span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">hīs,<span><br><br></span></a>
+<a class="note1">castrīs<span>castra castrae N (1st) F  <br>:camp, military camp/field; army; fort, fortress; war service; day's march;<br>(c 複数  与格)<br></span></a>
+<a class="note1">idōneum<span>doneus, idonea, idoneum 形容詞   :suitable, appropriate, adequate,対格<br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">dēlēgit<span><br><br></span></a>
+<a class="note1">aciēque<span>acies, aciei 名詞 (5th) F   battle line/array;  <br>奪格<br></span></a>
+<a class="note1">triplicī<span>triplex, (gen.), triplicis 形容詞   :threefold, triple; three; 奪格<br></span></a>
+<a class="note1">īnstrūctā<span>instruo, instruere, instruxi, instructus 動詞 (3rd)   :construct, build; prepare, draw up;完了 分詞 受動態 f 単 奪格 <br>独立奪格<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">vēnit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Ubi Caesar intellexit, eum se tenere castris</strong> ：彼が自身をキャンプの中に留め置いている事をカエサルが知ったとき</p>
+<p>(eum = Ariovistus, seはtenereの目的語）</p>
+<p>ne prohiberetur, commeatu diutius ：これ以上補給路を圧迫されないように</p>
+<p>delegit locum castris idoneum ：野営地に適当な場所を選んだ</p>
+<p>ultra eum locum, in quo loco Germani consederant, ：ゲルマンが野営している場所を越えて、</p>
+<p>circiter DC passus ab his, ：彼らから約６００歩離れた</p>
+<p>triplici acieque instructa venit.ad eum locum：３重の戦列を構成して、その場所の方へ進んだ</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルは彼（アリオウィストゥス）が野営地から出てこない事を知り、かつ補給路をこれ以上絶たれないように、彼らの野営地の向こう側、約600歩の距離に野営に適当な場所を選び、3列の戦列を組み、そこへ進んだ。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Prīmam<span>対格　第一<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">secundam<span>secundus 第二　対格</span></a>
+<a class="note1">aciem<span>acies = battle line 対格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">armīs<span>armum, armi 名詞 (2nd) N   :arms (pl.), weapons, armor, shield; close fighting weapons; equipment; force;奪格<br></span></a>
+<a class="note0">esse,<span></span></a>
+<a class="note0">tertiam<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">mūnīre<span>munio, munire, munivi, munitus 動詞 (4th)   :fortify; strengthen; protect, defend, safeguard; 不定詞<br></span></a>
+<a class="note0">iussit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>第一、第二戦列は武装し、第三戦列は野営地を要塞化するよう命じられた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[Hīc<span><br><br></span></a>
+<a class="note0">locus<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">hoste<span></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">passūs<span><br><br></span></a>
+<a class="note0">DC,<span></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">dictum<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">aberat.<span>absum, abesse, abfui, abfuturus 動詞   :be away/absent/distant/missing;3 単 未完了 能動態 直説法)</span></a>
+<a class="note0">]<span></span></a>
+<a class="note0">Eō<span><br><br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note1">XVI<span>sexdecem = sedecim :16</span></a>
+<a class="note1">mīlia<span>対格　misitの目的語<br></span></a>
+<a class="note1">expedīta<span>expeditus, expedita -um, expeditior -or -us, expeditissimus -a -um 形容詞   :unencumbered; without baggage; light armed;対格　複<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note1">equitātū<span>equitatus, equitatus 名詞 (4th) M   :cavalry, horse-soldiers;奪格<br></span></a>
+<a class="note0">Ariovistus<span></span></a>
+<a class="note0">mīsit,<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">cōpiae<span>複　主格<br></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note1">terrērent<span>terreo, terrere, terrui, territus 動詞 (2nd)   :frighten, scare, terrify, deter; 3 複 未完了 能動態 接続法<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">mūnītiōne<span>munitio, munitionis 名詞 (3rd) F   :fortifying; fortification;分離の奪格<br></span></a>
+<a class="note0">prohibērent.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>uti dictum est：前に言われたように</p>
+<p>Ariovistus misit, Eo circiter XVI milia hominum expedita cum omni equitatu ：アリオウィストゥスは約１万６０００の軽武装の兵と全ての騎兵を送ってきた</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>前に言ったように、そこは敵から約６００歩離れていた。アリオウィストゥスはそこに約１万６０００の軽武装の兵と全騎兵を送り込んできた。それは我々を脅かし要塞化を妨げるためであった。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Nihilō<span>nihilum, nihili 名詞 (2nd) N   :nothing; nothingness, which does not exist; something valueless; no respect; 奪格 <br> = by nothing<br></span></a>
+<a class="note1">sētius<span>setius, 副詞   :less, worse;  <br>nihilo setius = nevertheless<br></span></a>
+<a class="note0">Caesar,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note1">cōnstituerat,<span>constituo, constituere, constitui, constitutus 動詞 (3rd)   :|decide/resolve; 3 単 過去完了 能動態 直説法<br></span></a>
+<a class="note0">duās<span><br><br></span></a>
+<a class="note0">aciēs<span><br><br></span></a>
+<a class="note0">hostem<span></span></a>
+<a class="note1">prōpulsāre,<span>propulso, propulsare, propulsavi, propulsatus 動詞 (1st)   :repulse, drive back/off;<br></span></a>
+<a class="note0">tertiam<span></span></a>
+<a class="note1">opus<span>opus, operis 名詞 (3rd) N   :need; work; fortifications (pl.), works;</span></a>
+<a class="note1">perficere<span>perficio, perficere, perfeci, perfectus 動詞 (3rd)   :complete, finish 不定詞</span></a>
+<a class="note0">iussit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Nihilo setius　＝　nevertheless nihiloは程度の奪格であり何も変わらない程度、という意</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの行動にも拘わらず、カエサルは、前に決めていたとおり、２列に敵に対し防戦し、３列目は作業を完成するよう命じた。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Mūnītīs<span>munio, munire, munivi, munitus 動詞 (4th)   :fortify; strengthen; protect, defend, safeguard; build (road); 完了分詞　奪格　独立奪格<br></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">duās<span><br><br></span></a>
+<a class="note0">ibi<span></span></a>
+<a class="note0">legiōnēs<span><br><br><br></span></a>
+<a class="note1">relīquit<span>relinquo, relinquere, reliqui, relictus 動詞 (3rd)   :leave behind, abandon3 単 完了 能動態 直説法　主語はカエサル<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note1">auxiliōrum,<span>auxilium, auxili(i) 名詞 (2nd) N   :help, assistance; 属格<br></span></a>
+<a class="note0">quattuor<span></span></a>
+<a class="note0">reliquās<span><br><br></span></a>
+<a class="note0">legiōnēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">māiōra<span>magnus 比較級　対格<br></span></a>
+<a class="note1">redūxit.<span>reduco, reducere, reduxi, reductus 動詞 (3rd)   :lead back, bring back; restore; reduce;<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>野営地が要塞化され、カエサルはそこに２個軍団と幾つかの補助部隊を残し残りの４軍団を大きな野営地に連れて帰った。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

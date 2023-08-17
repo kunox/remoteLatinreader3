@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 22 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[22]<span></span></a>
+<a class="note0">Sed<span></span></a>
+<a class="note1">quoniam,<span>quoniam CONJ <br>:because, since, seeing that;<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">praeclare<span>praeclarus praeclara, praeclarum ADJ  <br>:very clear; splendid; famous; bright, illustrious; noble, distinguished;<br>(M 単数 呼格)副詞<br></span></a>
+<a class="note1">scriptum<span>scribo scribere, scripsi, scriptus V (3rd)  <br>:write; compose;<br>(完了 分詞 受動態 N 単数 対格), <br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">Platone,<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">nobis<span>nos nostrum/nostri PRON PERS  <br>:we (pl.), us;<br>(C 複数 奪格)<br></span></a>
+<a class="note0">solum<span></span></a>
+<a class="note1">nati<span>nascor nasci, natus sum V (3rd) DEP  <br>:be produced spontaneously, come into existence/being; spring forth, grow; live;<br>(完了 分詞 受動態 M 複数 主格)<br></span></a>
+<a class="note1">sumus<span>sum esse, fui, futurus V  <br>:be;<br>(１ 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">ortusque<span>ortus ortus N (4th) M  <br>:|birth; ancestry; coming into being; source; springing up (wind);<br>(C&nbsp;複数 主格)<br><br></span></a>
+<a class="note0">nostri<span></span></a>
+<a class="note1">partem<span>pars partis N (3rd) F  <br>:part, region; share; direction; portion, piece; party, faction, side;<br>(C 単数 対格)<br></span></a>
+<a class="note1">patria<span>patria patriae N (1st) F  <br>:native land; home, native city; one's country;<br>(C 単数 主格),<br></span></a>
+<a class="note1">vindicat,<span>vindico vindicare, vindicavi, vindicatus V (1st)  <br>:claim, vindicate; punish, avenge;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note1">amici,<span>amicus amica -um, amicior -or -us, amicissimus -a -um ADJ  <br>:friendly, dear, fond of; supporting (political), loyal, devoted; loving;<br>&nbsp;(M 複数 主格)<br></span></a>
+<a class="note0">atque,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">placet<span>placet placere, -, placitus est V (2nd) IMPERS  <br>:it is pleasing/satisfying, gives pleasure; <strong>is believed</strong>/ settled/ agreed/ decided;<br>(3 単数 現在 能動態 直接法 )<br><br></span></a>
+<a class="note1">Stoicis,<span>Stoicus Stoica, Stoicum ADJ  <br>:Stoic;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">terris<span></span></a>
+<a class="note1">gignantur,<span>gigno gignere, genui, genitus V (3rd)  <br>:give birth to, bring forth, bear; beget; be born (PASSIVE);<br>(3 複数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">usum<span></span></a>
+<a class="note1">hominum<span>homo hominis N (3rd) M  <br>:man, human being, person, fellow;<br>(C 複数 属格)<br></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note1">creari,<span>creo creare, creavi, creatus V (1st) TRANS  <br>:create/bring into being/make; procreate; beget/sire; give birth to;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">homines<span>homo hominis N (3rd) M  <br>:man, human being, person, fellow;<br>(C 複数 対格)<br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note0">causa<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">generatos,<span>genero generare, generavi, generatus V (1st)  <br>:beget, father, produce, procreate; spring/descend from (PASSIVE);<br>(完了 分詞 受動態 M 複数 対格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">ipsi<span>ipse ipsa, ipsum PRON  <br>:himself/herself/itself; the very/real/actual one; in person; themselves (pl.);<br>(X 単数 与格)<br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">se<span></span></a>
+<a class="note0">aliis<span></span></a>
+<a class="note0">alii<span></span></a>
+<a class="note1">prodesse<span>prosum prodesse, profui, profuturus V  <br>:be useful, be advantageous, benefit, profit (with DAT);<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">possent,<span>possum posse, potui, - V  <br>:be able, can;<br>(3 複数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0">naturam<span></span></a>
+<a class="note1">debemus<span>debeo debere, debui, debitus V (2nd)  <br>:owe; be indebted/responsible for/obliged/bound/destined; ought, must, should;<br>(１ 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">ducem<span>dux ducis N (3rd) M  <br>:leader, guide; commander, general; Duke (medieval, Bee);<br>(C 単数 対格)<br></span></a>
+<a class="note0">sequi,<span></span></a>
+<a class="note1">communes<span>communis communis, commune ADJ  <br>:common/joint/public; general/universal;<br>(C 複数 対格)<br></span></a>
+<a class="note1">utilitates<span>utilitas utilitatis N (3rd) F  <br>:usefulness, advantage;<br>(C 複数 対格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">medium<span>medium medi(i) N (2nd) N  <br>:middle, center; medium, mean; midst, community, <strong>public; publicity;</strong><br>(X 単数 対格)<br></span></a>
+<a class="note1">adferre,<span>adfero adferre, adtuli, adlatus V TRANS  <br>:bring to, carry, convey; report, bring word, allege, announce; produce, cause;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">mutatione<span>mutatio mutationis N (3rd) F  <br>:change, alteration; interchange, exchange;<br>(C 単数 奪格)<br></span></a>
+<a class="note0">officiorum,<span></span></a>
+<a class="note1">dando<span>do dare, dedi, datus V (1st) TRANS  <br>:give; dedicate; sell; pay; grant/bestow/impart/offer/lend; devote; allow; make;<br>(未来 分詞 受動態 N 単数 奪格)<br></span></a>
+<a class="note1">accipiendo,<span>accipio accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>&nbsp;(未来 分詞 受動態 N 単数 奪格)<br></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note1">artibus,<span>ars artis N (3rd) F  <br>:skill/craft/<strong>art</strong>; trick, wile; science, knowledge; method, way; character (pl.);<br>(X 複数 奪格)<br><br></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0">opera,<span></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note1">facultatibus<span>facultas facultatis N (3rd) F  <br>:means; ability, skill; opportunity, chance; <strong>resources</strong> (pl.), supplies;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note1">devincire<span>devincio devincire, devinxi, devinctus V (4th) TRANS  <br>:tie/ bind up, hold/ fix fast; subjugate; obligate/ oblige/ constrain; unite closely;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">homines<span></span></a>
+<a class="note1">societatem.<span>societas societatis N (3rd) F  <br>:society; alliance/partnership; trading company; fellowship, communion;<br>(C 単数 対格)<br></span></a>
+</p>
+</div><div class="construction" id="sheet0" style="display: none;">
+<div class="constline" id="00" spellcheck="false">
+<p><br></p>
+</div>
+</div>
+<div class="spnote" style="display: block; " >
+<div class="innerdiv" spellcheck="false"><p>sed quoaniam 1) ut ~ a Platone, ~</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2) ut placet Stoicis ,</p>
+<p>in hoc debemus sequi naturam ducem,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (debemus) adferre, ~&nbsp; のような構造で結構複雑。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (debemus) devincire ~</p>
+<p>自然を指標として追いかけ、公共のためになるよう貢献すべきである、というのが最後の２つの結論。</p>
+<p><strong>(Nos) sumus nati ortusque non solum nobis</strong> : 「我々は、我々のためにだけ生まれてきたのでは無い」</p>
+<p><strong>paritia vindicat partem, amici (vindicat) partem</strong>. 「祖国はその一部を要求するし、友人も同様である。」</p>
+<p><strong>(id) quae in terris gignantur</strong> : 地球に生まれたものは</p>
+<p><strong>omnia creari ad usum hominum:</strong> 「すべて人類が使うために創造された」</p>
+<p><font color="#0000ff"><strong>ut placet ~ creari</strong> </font>: <font color="#0000ff">２つの構文の混合</font>。ut placet Storcis , omniia creatur 「ストア派によって信じられたように全ては創造された。」</p>
+<p>placet Stocis omnia creari 「全ては創造<font color="#000000">されたことが</font>ストア派によって信じられた」これは意図的に強調を狙った「<font color="#ff0000">破格構文」（Anacoluthon</font>)と言われる修辞法とのこと。</p>
+<p>communes utilitates in medium adferre : adferreはdebemusに掛かる不定詞。「共通の有用性を一般に投入すべき」が逐語訳。commonesはむしろ一般の互いに、というニュアンスで、mediumはpublicと英訳されているように共通に,みんなに、というニュアンスか？</p>
+<p><strong>mutaione officiorum</strong> : 「officiumの相互交換により」officiumの定義が広くわかりにくいが、ともあれそのofficiumを互いに交換することによって、公共のために貢献する、という意味か？</p>
+<p>devincire hominum inter homines societatem.　：devincireもdebemusにかかり、「人の社会を結合するべきである。」</p>
+<p>tumはmoreoverの意で、「更には芸術により、作業により、または財産により」</p>
+<p>facultates は所有するもの、リソースの意。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>しかし、プラトンにより明快に書かれているように、人はその人のためにだけに生まれてくるのではなく、祖国もその一部を要求するし、友人たちも要求する、またストア派によって信じられていることだが、地上の命あるものはすべて人によって使われるために創造された、ということを勘案しても、人は人のために生まれ、相互に益をなすものである。そしてその中で我々は自然を手本にして、互いにOfficiumを交換することにより、あるいは与え、あるいは受け取る事により公共の有用性に貢献すべきある。更には、才覚により、また作業により、または財産により、人の相互の社会を強固にすべきである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

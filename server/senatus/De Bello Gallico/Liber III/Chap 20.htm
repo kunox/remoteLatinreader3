@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 20</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[20]<span></span></a>
+
+<a class="note0">Eōdem<span><br><br></span></a>
+<a class="note1">ferē<span>副詞　;= almost<br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0">P.<span></span></a>
+<a class="note0">Crassus,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Aquitāniam<span><br><br></span></a>
+<a class="note1">pervēnisset,<span>3単　過去完了　接続法<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">[pars],<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note0">dictum<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">[et<span></span></a>
+<a class="note1">regiōnum<span>regio regionis F 複　奪格　;= area, region, district<br></span></a>
+<a class="note1">lātitūdine<span>latitudo latitudinis F 単　奪格　;= latitude<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">multitūdine<span>奪格<br></span></a>
+<a class="note0">hominum]<span></span></a>
+<a class="note1">tertiā<span>序数　３　f単　主格<br></span></a>
+<a class="note1">pars<span>pars partis F 単　主格　;= part</span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">[aestimanda],<span>aestimo aestimare, aestimavi, aestimatus TRANS 未来分詞　受動　ｆ単　主格　;= value, asses, estimate, reckon, consider, judge</span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">intellegeret<span>３単　未完了　接続法</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note0">gerendum<span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0">paucīs<span><br><br></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note0">annīs<span><br><br></span></a>
+<a class="note0">L.<span></span></a>
+<a class="note0">Valerius<span></span></a>
+<a class="note1">Praecōninus<span>praecon + inus<br>Roman family name<br><br><br></span></a>
+<a class="note0">lēgātus<span><br><br></span></a>
+<a class="note0">exercitū<span><br><br></span></a>
+<a class="note0">pulsō<span><br><br></span></a>
+<a class="note1">interfectus<span>interficio 完了分詞　受動　ｍ単　主格　;= kill, destroy</span></a>
+<a class="note0">esset<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">unde<span></span></a>
+<a class="note0">L.<span></span></a>
+<a class="note0">Manlius<span></span></a>
+<a class="note0">prōcōnsul<span><br><br></span></a>
+<a class="note0">impedīmentīs<span><br><br></span></a>
+<a class="note1">āmissīs<span>amitto 完了分詞　受動　複　奪格 ;= lose, let go<br></span></a>
+<a class="note1">profūgisset,<span>profugio profugere, profugi ,- ３単　過去完了　接続法 ;= escape, run away from<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">mediocrem<span>mediocris mediocris, mediocre 形容詞　単　対格　;= moderate, middle, mediocre, small</span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">dīligentiam<span>diligentia dilegentiae F 単　対格　;= diligence, care, <br></span></a>
+<a class="note1">adhibendam<span>adhibeo adhibere, adhibui, adhibitus TRANS 未来分詞　受動　ｆ単　対格　;= summon, invite, bring in, add, apply</span></a>
+<a class="note0">intellegēbat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>eodem tempore : 同じ頃</p>
+<p><strong>Publius Crassus intellegebat non mediocrem diligentiam adhibendam sibi</strong>. : ちょっと解りにくいが動詞はintellegebatで[理解している]、目的語の対格はdiligentiamで[注意]、どういう注意かといえばまず、non mediocrem (普通ではない）次にadhibendam これは動形容詞で[用いるべき]、sibiは動形容詞とともに用いられ行為者を表す。逐語的には「普通でない注意を理解していた」→　普通でない注意を払わなければならないと思った。</p>
+<p>全体の構造は, </p>
+<p><font color="#0000ff">P. Crasus intellgebat .... , cum pervenisset, cum intellegeret　</font>二つの[過去を表すcumの副詞節」を持っている。（接続法なので、その時に状況を表しているNewLatin288)</p>
+<p>regionum latitudine, multidine hominum : 原因の奪格？</p>
+<p><strong>sibi bellum gerendum</strong> : gerendumは動形容詞、sibiは行為者を表し「自分がmanageすべき戦い」</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p>殆ど同じ頃、Publius CrasusはAquitaniaに到着していた。そこは、前に言及したように、その緯度と人口からガリアで第三の地域であった（と見做されていた）が、そこは自分が行うべき戦いの場所であり、そこではそう遠くない前に副将であったV.Praeconiumの正規軍が敗れて、殺された場所であり、またプロコンスルのL.Manliusが輜重の馬車を失い、敗走した場所であることを知っていた。（従って）何か普通ではない更に深い注意を払うべきであると理解していた。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Itaque<span></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note0">frūmentāriā<span><br><br><br></span></a>
+<a class="note0">prōvīsā,<span><br><br></span></a>
+<a class="note0">auxiliīs<span><br><br></span></a>
+<a class="note1">equitātūque<span>equitatus M 単　奪格　;= cavalry<br></span></a>
+<a class="note1">comparātō,<span>comparo comparare, comparavi, comparatus TRANS 完了分詞　ｍ単　奪格　;= acquire, secure, arrange, setup<br></span></a>
+<a class="note0">multīs<span><br><br></span></a>
+<a class="note1">praetereā<span>副詞 ;= besides, in addition<br></span></a>
+<a class="note0">virīs<span><br><br></span></a>
+<a class="note0">fortibus<span></span></a>
+<a class="note0">Tolōsā<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Carcasōne<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Narbōne,<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">cīvitātēs<span><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">prōvinciae<span><br><br></span></a>
+<a class="note1">fīnitimae,<span>finitimus finitima, finitimum 形容詞　ｆ　複　主格　;= neighboring, boedering, adjoining<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">regiōnibus<span><br><br></span></a>
+<a class="note1">nōminātim<span>副詞　;= by name<br></span></a>
+<a class="note1">ēvocātis,<span>evoco evocare, evocavi, evocatus 完了分詞　受動　複　奪格　;= call forth, summon, evoke<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Sōtiātium<span><br><br></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note0">intrōdūxit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>auxiliis equitatuque comparata </strong>: comparataは単、ｍ，奪格で、equitatuと合致、しかし意味的にはauxiliisにも掛かる。近くの物に合致する。</p>
+<p><strong>evocatus</strong>と言うのは一度は正規兵であり、徴兵期間が終わっていたが再度入隊するものを指す。(夜警をしない、給料が高いなど特権があったようである）</p>
+<p><strong>frumentaria provisa</strong> : 分詞構文　食料は補給され、</p>
+<p><strong>auxiliis equitatuque comparata</strong> : 独立奪格　予備軍、騎兵軍は確保され、</p>
+<p><strong>(multis fortibus) viris&nbsp;evocatis</strong> : 独立奪格　多くの屈強な男たちが召喚され</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>かくして、食料は補給され、予備軍と騎兵軍が編成され、さらにTolosa、Carcasone、Narbone、それらはガリア属州と接していた都市であるが、その地域から多くの屈強な古参の兵を名指しで再召集して、Sotiatiumの領地に軍勢を率いた。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Cuius<span><br><br></span></a>
+<a class="note0">adventū<span><br><br></span></a>
+<a class="note1">cognitō<span>cognosco cognoscere, cognovi, cognitus TRANS 完了分詞　受動　ｍ単　奪格　;= become acquainted, recoganize, find to be<br></span></a>
+<a class="note0">Sōtiātes<span><br><br></span></a>
+<a class="note0">magnīs<span><br><br></span></a>
+<a class="note0">cōpiīs<span><br><br></span></a>
+<a class="note1">coāctīs,<span>cogo cogere, coegi, coactus TRANS 完了分詞　複　奪格　;= collect, round up,<br></span></a>
+<a class="note0">equitātūque,<span><br><br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note1">plūrimum<span>plurimusの中性、単、対格で副詞化<br></span></a>
+<a class="note1">valēbant,<span>valeo valere, valui, valitus ３複　未完了　;= be strong, powerful<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">itinere<span></span></a>
+<a class="note1">agmen<span>agmen agminis N 単　対格　;= troop, matching army</span></a>
+<a class="note0">nostrum<span></span></a>
+<a class="note1">adortī<span>adorior adoriri, adortus sum DEP 完了分詞　受動　ｍ複　主格　;= assail, assault, rise against<br></span></a>
+<a class="note0">prīmum<span><br><br></span></a>
+<a class="note1">equestre<span>equester equestris equestre 形容詞　ｎ単　対格　;= equestrian, of calvalry</span></a>
+<a class="note0">proelium<span></span></a>
+<a class="note1">commīsērunt,<span>commito ３複　完了　;= engage battle<br></span></a>
+<a class="note1">deinde<span>副詞　;= then, next</span></a>
+<a class="note0">equitātū<span><br><br></span></a>
+<a class="note0">suō<span><br><br></span></a>
+<a class="note0">pulsō<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">īnsequentibus<span>insequor 現在分詞　複　奪格　;= follow, come after, attack<br></span></a>
+<a class="note0">nostrīs<span><br><br></span></a>
+<a class="note0">subitō<span><br><br></span></a>
+<a class="note0">pedestrēs<span><br><br></span></a>
+<a class="note0">cōpiās,<span><br><br></span></a>
+<a class="note0">quās<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">convalle<span>convalis convalis F 単　奪格　;= valley, ravine, deep, narrow valley</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">īnsidiīs<span>insidia insidiae F 複　奪格 ;= ambush, plot<br></span></a>
+<a class="note1">conlocāverant,<span>conloco ３複　過去完了　;= place, station<br></span></a>
+<a class="note1">ostendērunt.<span>ostendo ostendere, ostendi, ostentus ３複　完了　;= show, reveal<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>adventu congnito : 独立奪格　「これらの到着を知って」</p>
+<p>plurimum, primum ：形容詞、中性、単、対格に起因する形容詞の副詞化</p>
+<p>equitatu suos pulso : 独立奪格　「自身の騎兵が破られて」この場合、suosはSatiatesを指す。</p>
+<p>ostenderunt : 目的語がpedetres copiasで間接目的語がnostris (与格）逐語的には、「追いかける味方に対し、歩兵を見せた」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>この到着をしり、Sotiatesは軍勢を集め、まず騎兵それは非常に強いものであったが、味方の行軍を攻撃した。最初に騎兵の戦いを始め、それが破られる。それを追う味方のに対し、突然谷に隠れていた待ち伏せの歩兵が現れた。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hī<span><br><br></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note1">disiectōs<span>disicio disicere, disjeci, disjectus TRANS 完了分詞　受動、ｍ　複　対格　;= break up, scattered, drive apart<br></span></a>
+<a class="note1">adortī<span>addorior 完了分詞　受動　複ｍ　主格　;= assault<br></span></a>
+<a class="note0">proelium<span></span></a>
+<a class="note1">renovārunt.<span>renovo renovare, renovavi, renovatus ３複　完了　;= renew, restore <strong>= renovaverunt</strong><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>それが味方を攻撃し、戦いは再開された。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

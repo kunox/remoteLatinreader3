@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 25</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[25]<span></span></a>
+
+<a class="note0">Ibi<span></span></a>
+<a class="note1">cum<span>while~の意味</span></a>
+<a class="note1">aliī<span>接続詞　alii ;= some ... others ...<br></span></a>
+<a class="note0">fossās<span><br><br></span></a>
+<a class="note0">complērent,<span><br><br></span></a>
+<a class="note0">aliī<span><br><br></span></a>
+<a class="note0">multīs<span><br><br></span></a>
+<a class="note1">tēlīs<span>telum teli N 複　奪格　;= dart, spear, javelin<br><br></span></a>
+<a class="note1">coniectīs<span>conicio conicere, conjeci, conjectus TRANS 完了分詞　受動　奪格　複　;= throw, cast, make go<br></span></a>
+<a class="note1">dēfēnsōrēs<span>defensor defensoris M 複　対格　;= defender, protector<br></span></a>
+<a class="note1">vāllō<span>vallum valli N 単　奪格　;= wall, rampart, entrenchment<br></span></a>
+<a class="note1">mūnītiōnibusque<span>minitio munitionis F 複　奪格　;= fortifying, fortification<br></span></a>
+<a class="note1">dēpellerent,<span>depello depellere, depuli, depulsus ３複　未完了　接続法　;= push out, drive away, expel<br></span></a>
+<a class="note0">auxiliārēsque,<span><br><br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">pugnam<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">multum<span></span></a>
+<a class="note0">Crassus<span></span></a>
+<a class="note1">cōnfīdēbat,<span>confido confidere, confisus sum SEMIDEP ３単　未完了　；= have confidence, rely on<br></span></a>
+<a class="note1">lapidibus<span>llapis lapidis M 複　奪格　;= stone, jewel lapis lapisでFもある。意味は同じ</span></a>
+<a class="note0">tēlīsque<span><br><br></span></a>
+<a class="note1">subministrandīs<span>subministro subministrare, subministravi, subministratus 未来分詞　受動 (動形容詞）　複　奪格　;= supply, furnish, afford<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">aggerem<span>agger aggeris M 単　対格　;= rampart, causeway, pier</span></a>
+<a class="note1">caespitibus<span>caespes caespitis M 複　奪格　;= grassy ground, grass, turf, sod</span></a>
+<a class="note1">comportandīs<span>comport comportare, comportavi, comportatus TRANS 未来分詞　受動 (動形容詞）　複　奪格　;= carry, transport, bring in<br></span></a>
+<a class="note1">speciem<span>species speciei F 単　対格　;= sight, appearance, show</span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">opīniōnem<span>opinio opinionis F 単　対格　;= belief, idea, opinion, rumor<br></span></a>
+<a class="note1">pugnantium<span>pugno pugnare, pugnavi, pugnatus 現在分詞　複　属格　;= fight, dispute</span></a>
+<a class="note1">praebērent,<span>praebeo praebere, praebui, praebitus TRANS ３複　未完了　接続法　;= present, show, put forward, offer<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">item<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">hostibus<span></span></a>
+<a class="note1">cōnstanter<span>constanter, constantius, constantissime 副詞　;= firmly, immovably, steady, constantly<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">timidē<span>timide timidius, timidissime 副詞　;= timidly, fearly<br></span></a>
+<a class="note1">pugnārētur<span>pugno ３単　未完了　受動　接続法<br></span></a>
+<a class="note1">tēlaque<span>telum 複　主格<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note0">superiōre<span><br><br></span></a>
+<a class="note0">missa<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">frūstrā<span>frustra 副詞　;= in vain, for nothing<br></span></a>
+<a class="note1">acciderent,<span>accido ３複　未完了　接続法　;= cut, overthrow, destroy, weaken</span></a>
+<a class="note0">equitēs<span><br><br></span></a>
+<a class="note1">circumitīs<span>circumeo circimre, circumivi, circumitus 完了分詞　受動　複　奪格　;= encircle, surround, borden<br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">Crassō<span><br><br></span></a>
+<a class="note1">renūntiāvērunt<span>renuntio ３複　完了　;= report<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">eādem<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">dīligentiā<span>dekigentia deligentiae F 単　主格　;= diligence, care, industry<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">decumānā<span><br><br></span></a>
+<a class="note0">portā<span><br><br></span></a>
+<a class="note1">castra<span>castra castrae F 単　主格　;= camp, fort, military camp</span></a>
+<a class="note0">mūnīta<span><br><br></span></a>
+<a class="note0">facilemque<span><br></span></a>
+<a class="note1">aditum<span>aditus aditus 単　対格　;= approach, access, attack, entrance</span></a>
+<a class="note0">habēre.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>alii .... alii - : 「一方では...　他方では-」</p>
+<p>telis coniectis : 独立奪格</p>
+<p>vollo : 分離の奪格</p>
+<p>auxiliaresque, quibus ... ：quibusは間接目的の与格</p>
+<p>ab hostibus ... pugnarentur. 自動詞pugnoの受動で、非人称。敵からも、戦われた。</p>
+<p>lapidis telisque subministrandis,&nbsp; caespitibus comportandis : 動形容詞が奪格とともに使われ、動形容詞は手段を表す。（AG507)</p>
+<p>decumana porta : 野営地の後方の門。前方の門はpraetoria portaと呼ばれた。decumana portaには商人などが入ってものを売っていた由。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>一方では砦の溝を埋め、他方では沢山の槍を投げて敵を壁や砦から後退させた。予備軍、彼らにはCrassusは戦いに関してはあまり信頼していなかったのだが、石や槍を運び、芝生を砦の塀の方に運び込んだりして、戦闘員のように見せていた。同様に敵も確実に、恐れの色も見せず戦った。そして高いところから投げられる槍は味方に損害を及ぼした。砦を一周した騎兵はCrassusに報告した。後方の門は同じ堅牢さではなく、攻撃しやすいと。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

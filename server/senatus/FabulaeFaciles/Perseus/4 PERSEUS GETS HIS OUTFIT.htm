@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 4 PERSEUS GETS HIS OUTFIT.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Perseus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">ubi<span>ubi ADV <br>&gt;:where; in what place; (time) <strong>when</strong>, whenever; as soon as; in which; with whom;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">audīvit,<span>audĭo audire, audivi, auditus V (4th)  X<br>:hear, listen, accept, agree with; obey; harken, pay attention; be able to hear;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">īnsulā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">discessit,<span>discēdo discedere, discessi, discessus V (3rd)  X<br>:go/march off, depart, withdraw; scatter, dissipate; abandon; lay down (arms);<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">postquam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">continentem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vēnit,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Medūsam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">quaesīvit.<span>quaero quaerere, quaesivi, quaesitus V (3rd)  X<br>:search for, seek, strive for; obtain; ask, inquire, demand;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">Diū<span>diu diutius, diutissime ADV <br>&gt;:(for) a long/considerable time/while; long since;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">frūstrā<span>frustra ADV <br>&gt;:in vain; for nothing, to no purpose;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">quaerēbat;<span>quaero quaerere, quaesivi, quaesitus V (3rd)  X<br>:search for, seek, strive for; obtain; ask, inquire, demand;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note1">namque<span>namque CONJ <br>&gt;:for and in fact, on the other hand; insomuch as (strengthened nam);<br><br></span></a>
+<a class="note0">nātūram<span></span></a>
+<a class="note0">locī<span></span></a>
+<a class="note1">ignorābat.<span>ignōro ignorare, ignoravi, ignoratus V (1st)  X<br>:not know; be unfamiliar with; disregard; ignore; be ignorant of;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note1">Tandem<span>tandem ADV <br>&gt;:finally; at last, in the end; after some time, eventually; at length;<br><br></span></a>
+<a class="note0">Apollō<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Minerva<span></span></a>
+<a class="note1">viam<span>vĭa viae N (1st) F <br>:way, road, street; journey;<br>(単数 対格) <br></span></a>
+<a class="note0">dēmōnstrāvērunt.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">Prīmum<span>primum ADV <br>&gt;:at first; in the first place;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">Graeās,<span>Graeae graearum <br>ギリシャ神話に出てくる怪物の3姉妹。目と歯を共有した。<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">sorōrēs<span>sŏror sororis N (3rd) F <br>:sister; (applied also to half sister, sister-in-law, and mistress!);<br>&nbsp;(複数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Medūsae,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">pervēnit.<span>pervĕnĭo pervenire, perveni, perventus V (4th)  X<br>:come to; reach; arrive;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Ab<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">hīs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">tālāria<span>talare talaris N (3rd) N <br>&gt;:winged sandals (pl.) of Mercury; skirts/robes reaching to ankles;<br>&nbsp;(複数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">galeam<span>gălĕa galeae N (1st) F <br>:helmet;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">magicam<span>măgĭcus magica, magicum ADJ  <br>:magic, magical;<br>(F 単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">accēpit.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Apollō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">autem<span>autem CONJ <br>&gt;:but (postpositive), on the other hand/contrary; while, however; moreover, also;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Minerva<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">falcem<span>falx falcis N (3rd) F <br>:sickle. scythe; pruning knife; curved blade; hook for tearing down walls;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">speculum<span>spĕcŭlum speculi N (2nd) N <br>:mirror, looking glass, reflector; copy, imitation;<br>&nbsp;(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">eī<span>is ea, id PRON  <br>:he/she/it/they (by GENDER/NUMBER); DEMONST: that, he/she/it, they/them;<br>&nbsp;(M 単数 与格)<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">dedērunt.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Tum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">postquam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">tālāria<span>talare talaris N (3rd) N <br>&gt;:winged sandals (pl.) of Mercury; skirts/robes reaching to ankles;<br>&nbsp;(複数 対格)<br></span></a>
+<a class="note1">pedibus<span>pēs pedis N (3rd) M <br>:foot;<br>(複数 与格)<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">induit,<span>indŭo induere, indui, indutus V (3rd)  X<br>:put on, clothe, cover; dress oneself in;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">āera<span>āēr aeris N C <br>:air (one of 4 elements); atmosphere, sky; cloud, mist, weather; breeze; odor;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">ascendit.<span>ascendo ascendere, ascendi, ascensus V (3rd)  X<br>:climb; go/climb up; mount, scale; mount up, embark; rise, ascend, move upward;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Diū<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">āera<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">volābat;<span>vŏlo volare, volavi, volatus V (1st)  X<br>:fly;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tandem<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vēnit<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">ubi<span>ubi ADV <br>&gt;:where; in what place; (time) when, whenever; as soon as; in which; with whom;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Medūsa<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">cēterīs<span>cētĕrus cetera, ceterum ADJ  <br>:the_other; the_others (pl.). the_remaining/rest, all the_rest;<br>(F 複数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">Gorgonibus<span>Gorgo -onis :&nbsp; F ゴルゴン<br><br><br></span></a>
+<a class="note0">habitābat.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Gorgonēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">mōnstra<span>monstrum monstri N (2nd) N <br>:monster; portent, unnatural thing/event regarded as omen/sign/portent;<br>(複数 主格)<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">speciē<span>spĕcĭes speciei N (5th) F <br>:sight, appearance, show; splendor, beauty; kind, type;<br>(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">horribilī;<span>horrĭbĭlis horribile, horribilior -or -us, horribilissimus -a -um ADJ  <br>:awful, horrible, terrible; monstrous; rough;<br>&nbsp;(F 単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">capita<span>căpŭt capitis N (3rd) N <br>:head; person; life; leader; top; source/mouth (river); capital (punishment);<br>(<strong>複数</strong> 主格) <br></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">eārum<span></span></a>
+<a class="note1">anguibus<span>anguis anguis N (3rd) C <br>:snake, serpent; dragon; (constellations) Draco, Serpens, Hydra;<br>&nbsp;(複数 奪格) <br></span></a>
+<a class="note1">omnīnō<span>omnino ADV <br>&gt;:entirely, altogether;<br><br></span></a>
+<a class="note1">contēcta<span>contĕgo contegere, contexi, contectus V (3rd) TRANS  <br>:cover up, conceal, hide; protect; clothe; roof over; bury/entomb; strew thickly;<br>【完了分詞 ( 受動態 )&nbsp; (N 複数 主格) 】<br></span></a>
+<a class="note0">erant.<span></span></a>
+<a class="note1">Manūs<span>mănus manus N (4th) F <br>:hand, fist; team; gang, band of soldiers; handwriting; (elephant's) trunk;<br>&nbsp;(複数 主格)<br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">aere<span>aes aeris N (3rd) N <br>:money, pay, fee, fare; copper/bronze/brass, base metal; (w/alienum) debt; gong;<br>(単数 奪格) <br></span></a>
+<a class="note0">factae<span></span></a>
+<a class="note0">erant.<span></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>naturam loci ignorabat : 場所の性質を知らなかった、つまりどういうところを探せばよいかということも解っていなかったということか？</p>
+<p>tataria pedibus induit. : tatariaは対格で目的語、pedibusは与格で間接目的語。これは与格の定型的な用法の一つで英語で[to]をつけるような場合である。tatariaをpesに着けた。</p>
+<p><br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>Perseusはそれを聞き島を出ました。本土に向かって進み、Medusaを探しました。長く無意味な捜索でどういう所を探すのかも解りません。ついにAppoloとMinervaが道筋を示してくれました。まずはMedusaの姉妹であるGraeae3姉妹のとこに行く。そこで羽のある靴と魔法のヘルメットを受け取りました。一方ApolloとMinervaは剣と鏡を彼に授けました。羽のついた靴を足に履き、空に向かって飛び立ちました。長い間空を飛びついにMedusaが他のゴルゴンたちと住む場所に来ました。ゴルゴンたちは見た目に恐ろしい怪物で、彼らの頭は全体が蛇に覆われ、手は真鍮でできていました。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

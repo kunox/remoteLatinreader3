@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 46 </h1>
+</div>
+<div class="spacer">Line0</div>
+</a><div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[46]<span></span></a>
+<a class="note1">Quoniam<span>quoniam CONJ <br>&gt;:because, since, seeing that;<br><br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">vivitur<span>vīvo vivere, vixi, victus V (3rd)  <br>:be alive, live; survive; reside;<br>( 3 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">perfectis<span>perfectus perfecta, perfectum ADJ  <br>:perfect, complete; excellent;<br>&nbsp;(M 複数 奪格),<br></span></a>
+<a class="note1">hominibus<span>hŏmo hominis N (3rd) M  <br>:man, human being, person, fellow;<br>&nbsp;(複数 奪格)<br></span></a>
+<a class="note1">planeque<span>plane ADV <br>&gt;:clearly, plainly, distinctly; completely;<br><br></span></a>
+<a class="note1">sapientibus,<span>săpĭens sapientis N (3rd) M  <br>:wise (virtuous) man, sage, philosopher; teacher of wisdom;<br>&nbsp;(複数 奪格)<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">iis,<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">praeclare<span>praeclārus praeclara, praeclarum ADJ  <br>:very clear; splendid; famous; bright, illustrious; noble, distinguished;<br>単数属格のiをeにした副詞<br><br></span></a>
+<a class="note1">agitur,<span>ăgo agere, egi, actus V (3rd)  <br>:drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); deliver (speech);<br>( 3 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">simulācra<span>sĭmŭlācrum simulacri N (2nd) N  <br>:likeness, image, statue;<br>(複数 主格)<br><br></span></a>
+<a class="note0">virtutis,<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">hoc<span>hīc haec, hoc PRON   ADJECT<br>:this; these (pl.); (also DEMONST);<br>&nbsp;(N 単数 対格), ?<br><br><br></span></a>
+<a class="note1">intellegendum<span>intellĕgo intellegere, additional, forms V  <br>:understand; realize;<br>未来分詞 受動態(M 単数 対格<br></span></a>
+<a class="note0">puto,<span></span></a>
+<a class="note1">neminem<span>nēmō neminis N (3rd) C  <br>:no one, nobody;<br>(単数 対格)<br></span></a>
+<a class="note1">omnino<span>omnino ADV <br>&gt;:entirely, altogether;<br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">neglegendum,<span>neglĕgo neglegere, neglexi, neglectus V (3rd) TRANS  <br>:disregard, neglect, ignore, regard of no consequence; do nothing about; despise;<br>未来分詞 受動態 (M 単数 対格), <br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note1">aliqua<span>ălĭqui aliqua, aliquod PRON  ADJECT<br>:any; some;<br>(N 複数 主格),<br></span></a>
+<a class="note1">significātio<span>signĭfĭcātĭo significationis N (3rd) F  <br>:signal, outward sign; indication, applause; meaning; suggestion, hint;<br>(単数 主格)<br><br></span></a>
+<a class="note0">virtutis<span></span></a>
+<a class="note1">appāreat,<span>appārĕo apparere, apparui, apparitus V (2nd) INTRANS  <br>:appear; be evident/visible/noticed/found; show up, occur; serve (w/DAT);<br>( 3 単数 現在 能動態 接続法 )<br><br></span></a>
+<a class="note1">colendum<span>cŏlo colere, colui, cultus V (3rd)  <br>:|honor, cherish, worship; tend, <strong>take care of</strong>; <strong>adorn</strong>, dress, decorate, embellish;<br>未来分詞 受動態 (N 単数 対格)<br><br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note1">quemque<span>quisque quaeque,quodque ADJECT   ADJECT<br>:(w/-que) any; each;<br>(M 単数 対格)<br></span></a>
+<a class="note1">maxime,<span>maxime ADV <br>&gt;:especially, chiefly; certainly; most, very much; (forms SUPER w/ADJ/ADV);<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">quisque<span>quisque quaeque,quodque ADJECT   ADJECT<br>:(w/-que) any; each;<br>(M 単数 主格)<br></span></a>
+<a class="note0">maxime<span></span></a>
+<a class="note1">virtutibus<span>virtūs virtutis N (3rd) F  <br>:strength/power; courage/bravery; worth/ manliness/ virtue/ character/ excellence;<br>&nbsp;(複数 奪格)<br></span></a>
+<a class="note0">his<span></span></a>
+<a class="note1">lenioribus<span>lēnis lene, lenior -or -us, lenissimus -a -um ADJ  比較級<br>:gentle, kind, light; smooth, mild, easy, calm;<br>(M 複数 奪格), <br><br></span></a>
+<a class="note1">erit<span>sum esse, fui, futurus V  <br>:be;<br>( 3 単数 未来 能動態 直接法 )<br></span></a>
+<a class="note1">ornatus,<span>orno ornare, ornavi, ornatus V (1st)  <br>:equip; dress; decorate, honor; furnish, adorn, garnish, trim;<br>完了分詞 ( 受動態 )(M 単数 主格)<br></span></a>
+<a class="note1">modestia,<span>mŏdestĭa modestiae N (1st) F  <br>:restraint, temperateness; discipline; modesty;<br>(単数 主格<br></span></a>
+<a class="note1">temperantia,<span>tempĕrans (gen.), temperantis ADJ  <br>:restrained, self-controlled;<br>(N 複数 主格), <br></span></a>
+<a class="note0">hac<span></span></a>
+<a class="note1">ipsa,<span>ipse ipsa, ipsum PRON   X<br>:himself/herself/itself; the very/real/actual one; in person; themselves (pl.);<br>&nbsp;(F 単数 奪格)<br></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">qua<span></span></a>
+<a class="note0">multa<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note0">dicta<span></span></a>
+<a class="note0">sunt,<span></span></a>
+<a class="note0">iustitia.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>cum iis, in quibus praeclare agitur, si sunt simulacra virtutis. 「もし彼らの中に徳に似たものがあれば、明らかに感謝される、そういう人たちと」quoibusはiisを先行詞とする関係代名詞。</p>
+<p>etiam puto hoc (esse) intellegendum. 「そしてそれは理解されるべきである」hocは続いて述べられる。</p>
+<p>neminem esse neglegendum 「誰も無視されるべきではない」</p>
+<p>colendum esse&nbsp;quemque maxime&nbsp;「各自は特に身につけるべきである」<font color="#ff0000">quisqueが難しい</font>、各自なのかそれともなにかのもの（vrtute)?</p>
+<p>ut quisque maxime erit ornatus virtutibus his lenioribus. 各自は穏やかな徳により身にまとわれうべきであろう。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>我々は完璧な人間とか完全に賢い人と暮らしているわけではなく、もしその人の中に徳に似たものを持てば、明らかに感謝されるような人たちと一緒である。そして次のことは理解されるべきと思う。すなわち、もしその人の中に何らかの徳が見えるならば誰も無視されるべきではないということである。特に各々は身につけるべきである。各自は穏やかの徳を身につけるであろう。それらは、中庸であり自己制御である。それ自身が、それらについて何度も言及したが、正義である。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note1">fortis<span>fortis forte, fortior -or -us, fortissimus -a -um ADJ  <br>:strong, powerful, mighty, vigorous, firm, steadfast, courageous, brave, bold;<br>(M 単数 主格), <br></span></a>
+<a class="note1">animus<span>ănĭmus animi N (2nd) M  <br>:mind; intellect; soul; feelings; heart; spirit, courage, character, pride; air;<br>(単数 主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">magnus<span>magnus magna -um, major -or -us, maximus -a -um ADJ  <br>:|great (achievement); mighty; distinguished; skilled; bold/confident; proud;<br>(M 単数 主格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">homine<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">perfecto<span></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note0">sapiente<span></span></a>
+<a class="note1">ferventior<span>ferventer adv hotly, warmly<br>これの比較級か？<br><br><br></span></a>
+<a class="note1">plerumque<span>plerumque ADV <br>&gt;:generally, commonly; mostly, for the most part; often, frequently;<br><br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">illae<span></span></a>
+<a class="note0">virtutes<span></span></a>
+<a class="note0">bonum<span></span></a>
+<a class="note0">virum<span></span></a>
+<a class="note0">videntur<span></span></a>
+<a class="note0">potius<span></span></a>
+<a class="note1">attingere.<span>attingo attingere, attigi, attactus V (3rd) TRANS  <br>:touch, touch/border on; reach, arrive at, achieve; mention briefly; belong to;<br>&nbsp;不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>fofrtis animus et magnus est ferventior plerumque. 強い精神偉大さというものは一般には激しすぎる。</p>
+<p>in homine non perfecto nec sapiente. 「完全でもなく全能でもない人のなかでは」</p>
+<p>illae virtutes videntur attingere bonum virum. attingereはbelong toで善人に宿る、というニュアンス。「さきに述べたような徳はむしろ善人に宿っているように見える」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>強く偉大な精神というものは、完全でも全能でもない人間には普通は激しすぎるものである。それらの（穏やかな）徳はむしろ善人に宿るように見える。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Atque<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">moribus.<span>mos moris N (3rd) M  <br>:custom, habit; mood, manner, fashion; character (pl.), behavior, morals;<br>(複数 奪格),<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>そして彼らの道徳の中にもである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 23</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[23]<span></span></a>
+
+<a class="note0">Armīs<span><br><br></span></a>
+<a class="note1">obsidibusque<span>obses obsidis C 複　奪格　;= hostage, pledge</span></a>
+<a class="note1">acceptīs,<span>accipio accipere, accepi, acceptus TRANS 完了分詞　受動　複　奪格　;= take, grasp, receive, accept<br></span></a>
+<a class="note0">Crassus<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Vocātium<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Tarusātium<span><br><br></span></a>
+<a class="note1">profectus<span>proficiscor proficisci profectus sum DEP　完了分詞　受動　ｍ　単　主格　；= depart, proceed</span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Crassus est profectus. profectusはproficiscor(DEP)の受動、完了</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>武器、人質などが受け取られ、CrassusはVoatium とTarusatiumの領地に向かって出発した。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Tum<span>then</span></a>
+<a class="note1">vērō<span>副詞　;= yes, in truth, certainly<br></span></a>
+<a class="note0">barbarī<span><br><br></span></a>
+<a class="note1">commōtī,<span>commovero TRANS 完了分詞　受動　ｍ　複　主格　;= shake, upset, excite, provoke<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">nātūrā<span><br><br></span></a>
+<a class="note0">locī<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">manū<span>manus manus F 単　奪格　;= hand, fist<br></span></a>
+<a class="note1">mūnītum<span>munio munire munivi, munitus 完了分詞　受動　n 単　主格<br></span></a>
+<a class="note0">paucīs<span><br><br></span></a>
+<a class="note1">diēbus<span>dies 複　奪格<br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">ventum<span>venio 完了分詞　受動　ｎ　単　手段</span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">expugnātum<span>expugno 完了分詞　受動　m単　主格　;= assault, storm, conquer, plunder<br></span></a>
+<a class="note1">cognōverant,<span>cognosco TRANS 3複　過去完了　;= become acquainted, recoganize, learn, find to be<br></span></a>
+<a class="note0">lēgātōs<span><br><br></span></a>
+<a class="note0">quōque<span><br><br></span></a>
+<a class="note0">versum<span></span></a>
+<a class="note0">dīmittere,<span><br><br></span></a>
+<a class="note0">coniūrāre,<span><br><br></span></a>
+<a class="note0">obsidēs<span><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">dare,<span></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note0">parāre<span><br><br></span></a>
+<a class="note0">coepērunt.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>barbari commoti</strong> : 独立奪格　「野蛮人は興奮して、刺激されて」</p>
+<p>natura loci et manu : 手段の奪格　「自然にも人工物にもよって」</p>
+<p><strong>oppidum munitum</strong> : 分詞構文　「都市は要塞化されており」</p>
+<p><strong>paucis diebus, quibus eo ventum erat　</strong>：　eoはCrassusこと。またはローマ軍。quibusは「時、どのぐらいの奪格」(NewLatin231) 「その到着から少しのち」</p>
+<p>expugnatum (esse) : congnoverantの目的語</p>
+<p><strong>quoque versum = quoqueversum　</strong>(quoqueは場所、versumは方向を表して、要は「あらゆるところに」）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その時、現地人どもは実に刺激を受けたようで、その到着から数日としないうちに都市は自然と人工物により要塞化されたところからも、彼らは襲われることを理解していた。使節があらゆるところに送られ、盟約は結ばれ、人質が交換され、食料の備蓄が始まった。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Mittuntur<span>mitto mittere, misi, missus 3複　現在　受動　;= send, </span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eās<span><br><br></span></a>
+<a class="note0">cīvitātēs<span><br><br></span></a>
+<a class="note0">lēgātī<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">citeriōris<span>citer 比較級　;= near<br></span></a>
+<a class="note1">Hispāniae<span>Hispania Hispaniae F 単　属格<br></span></a>
+<a class="note1">fīnitimae<span>funitimus finitima, -um ｆ単　主格　;= neighboring, bordering, adjoining<br></span></a>
+<a class="note1">Aquītāniae:<span>与格<br></span></a>
+<a class="note1">inde<span>;= thence, from that place</span></a>
+<a class="note0">auxilia<span></span></a>
+<a class="note1">ducēsque<span>dux ducis M 複　対格　;= leader, guide, general<br></span></a>
+<a class="note1">arcessuntur.<span>arcessor arcessere, arcessivi, arcessitus TRANS 3複　現在　受動　;= send for, summon, fetch, invite</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>legati mittuntur etiam ad civitates : quodqueversumということで、こういう国にも送られた。</p>
+<p>quae sunt citerioris Hispaniae : Hispaniaeは属格で、所有の属格の叙述的用法（NewLatin198.2)</p>
+<p>(quae sunt) finitimae Aquitaniae : Aquitaniaeは与格で間接目的語　形容詞finitimaeと共に（NewLatin192.1)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>使者は近い方のスペインに属し、Aquitaniaに接している諸国にも送られた。そこから、援軍、将官たちが送られてきた。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quōrum<span><br><br></span></a>
+<a class="note1">adventū<span>adventus 単　奪格<br></span></a>
+<a class="note0">magnā<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">auctōritāte<span>auctoritas auctoritastis F 単　奪格　;= title, authority, infulence, prestige, reputation<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">magnā<span><br><br></span></a>
+<a class="note0">[cum]<span></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note0">multitūdine<span><br><br></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note0">gerere<span></span></a>
+<a class="note1">cōnantur.<span>conor DEP 3複　現在　受動　;= attempt, make aan effort, exert oneself<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>cum magna auctoritate, et cum magna multitudine hominum : これらはadventuを修飾している。「偉大なる評判と大いなる人員が到着したことで」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>それらは、偉大な評判と大いなる人数で到着し、其のことで彼らは戦闘を遂行する努力をした。</p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Ducēs<span>dux　複　主格<br></span></a>
+<a class="note0">vērō<span><br><br></span></a>
+<a class="note0">iī<span><br><br></span></a>
+<a class="note1">dēliguntur<span>deligo deligeare, deligavi, deligatus TRANS 3複　受動　;= pick, select, levy, enroll<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">ūnā<span>副詞;= together<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Q.<span></span></a>
+<a class="note0">Sertōriō<span><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">annōs<span><br><br></span></a>
+<a class="note0">fuerant<span></span></a>
+<a class="note0">summamque<span></span></a>
+<a class="note1">scientiam<span>単　対格</span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note0">mīlitāris<span><br><br></span></a>
+<a class="note0">habēre<span><br><br></span></a>
+<a class="note1">exīstimābantur.<span>existimo 3複　未完了　受動　;= value, think estimate<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Sertorio : BC82~72 スペインでSullaに対抗して独自政府を樹立、保持していた、ローマの将軍、政治家</p>
+<p>omnes annos : 全期間</p>
+<p>summamque scientiam : queは、前文に続けるための接続詞的な語で、「そして大事な知識を」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>選ばれた将官は、Sertorioとその戦いの全期間一緒に居て、従って軍事の事柄の本質的な知識を持っていると思われていた。</p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hī<span><br><br></span></a>
+<a class="note1">cōnsuētūdine<span>consuetudo consuetudinis F 単　奪格　;= habit, custome, way, <br><br></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note0">loca<span></span></a>
+<a class="note0">capere,<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note0">mūnīre,<span><br><br></span></a>
+<a class="note0">commeātibus<span><br><br></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note1">interclūdere<span>intercludo intercludere, interclusi, interclusus 不定詞　;= cut off, blockade, block up<br></span></a>
+<a class="note1">īnstituunt.<span>instituo institure, institui, institutus 3複　;= set up, establish, make, institute, prepare, decide<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>loca capere : 「場所をとる事」つまりCampの場所の選び方</p>
+<p>consuetudine populi Romani : 「ローマ人のやり方で」手段の奪格</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼らは、ローマ人のやり方で、野営地を選び、砦を要塞化し、我々の食料の遮断などをやり始めた。</p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quod<span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0">Crassus<span></span></a>
+<a class="note1">animadvertit,<span>animadverto animadvertere, animadverti, animadversus ３単　現在（完了）　;= pay attention, attend to, notice, observe, judge</span></a>
+<a class="note0">suās<span><br><br></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note1">propter<span>前置詞　対格支配　;= near, on acocunt of, by mean of, because of</span></a>
+<a class="note1">exiguitātem<span>exiguitas exiguitatis F 単　対格　;= smallness, paucity, shortness<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">facile<span>ここでは副詞　easily</span></a>
+<a class="note1">dīdūcī,<span>diduco diducere, diduxi, diducus TRANS 受動不定詞　;= divide, split, separate<br></span></a>
+<a class="note0">hostem<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">vagārī<span>vagor vagari, vagatus sum DEP 受動　不定詞　;= wander, roam<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">viās<span>via viae F 複　対格　;= way, road, journey<br></span></a>
+<a class="note1">obsidēre<span>obsideo obsidere, obsedi, obsessus 不定詞　;= blockage, besiege, invest, beset, take possesion<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">satis<span></span></a>
+<a class="note1">praesidiī<span>praesidum praesidi(i) N 単　属格　;= protection, help, guard<br></span></a>
+<a class="note1">relinquere,<span>relinquo relinquere, reliqui, relictus 不定詞　;= leave, behinde, abandon, remain</span></a>
+<a class="note1">ob<span>前置詞　対格支配　;= on account of, for the sake of, for, instead</span></a>
+<a class="note0">eam<span></span></a>
+<a class="note0">causam<span></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note1">commodē<span>commode commodius, commodissime 副詞　;= conveniently, neatly, suitably<br></span></a>
+<a class="note0">frūmentum<span><br><br></span></a>
+<a class="note1">commeātumque<span>commeatus commeatus M 単　対格　;= supplies, provision, goods, voyage<br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">supportārī,<span>supporto suppotare, supportavi - 受動　不定詞　;= carry up, transport<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">diēs<span><br><br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">numerum<span></span></a>
+<a class="note1">augērī,<span>augeo augere, auxi, auctus TRANS 不定詞　;= increase, enlarge, spread<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">cunctandum<span>conctor conctari, conctatus sum DEP 未来分詞受動　ｎ単　対格　;= delay, impede, hold up</span></a>
+<a class="note1">exīstimāvit<span>existimo ３単　完了　;= value, think, estimae<br></span></a>
+<a class="note1">quīn<span>接続詞　;= so that not, without that not, but that<br></span></a>
+<a class="note1">pugnā<span>pugna pugnae F 単　主格　;= battle<br></span></a>
+<a class="note1">dēcertāret.<span>decerto decertare, decertavi, decrtatus ３単　未完了　接続法　;= fight, contend, struggle<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>animadverit : animum adveritと２語もあり。気がつく</p>
+<p><strong>suas copia .... diduci, hostem et ... relinquere</strong> : 二つの不定詞句、<font style="background-color: rgb(255, 255, 0);">これが最初のquodの先行詞</font></p>
+<p><strong>hostem et vagari et vias obsidere et</strong> ... : <strong>Polysyndeton</strong>と呼ばれる技法　？</p>
+<p>sibi supportari : were being carried to his camp　能動態で訳すほうが良い</p>
+<p><strong>in dies : day by day</strong></p>
+<p><strong>non cunctamdum existimavit quin pugna decertaret</strong>. quinはちょっと日本語には異質な感じの接続詞。「疑い、怠慢」の動詞とともに使われ、～などと誰が疑おうか？　～は疑いはなかった、などの意味になる。(NewLatin 298)</p>
+<p><font color="#3366ff">non dubitum erat quin verturus esset : 彼が来ることに疑いはなかった</font>。</p>
+<p>ここではeratの代わりにexstimavitが入って、「戦を戦う事を遅らせないべきである、と考えた」conctandumは動形容詞で名詞として扱われている。（動形容詞は名詞または形容詞として、義務、必要のニュアンスを持つ）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Crassusは、自軍は数が少ないので容易には分散出来ないこと、敵は至る所にいて、要所を分断し、それでもなお充分な数の守備兵を砦に残している事などを知り、また自軍に対する食料、その他の補給が充分には行われておらず、また日に日に敵の数が増えていることなどからして、戦いを遅らせるべきではないと考えた。</p>
+</div>
+</div>
+<div class="spacer">Line 8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hāc<span><br><br></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">cōnsilium<span><br><br></span></a>
+<a class="note1">dēlātā,<span>defero defere, detuli, delatus 完了分詞　受動　f単　主格　;= offer, bestow upon, confer, submit</span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">idem<span></span></a>
+<a class="note1">sentīre<span>sentio sentire, sensi, sensus 不定詞　;= perceive, feel, experience, think, realize<br></span></a>
+<a class="note0">intellēxit,<span><br><br></span></a>
+<a class="note1">posterum<span>posterus postera -um, posterior -or -us, posteremus -a -um 形容詞　;= coming after, following, next</span></a>
+<a class="note0">diem<span></span></a>
+<a class="note1">pugnae<span>pugna 単　与格</span></a>
+<a class="note1">cōnstituit.<span>constituo constiere, constitui, constitutus ３単　完了　;= decide, appoint</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>re delata : 事は挙げられ　会議のテーマとして提案される、というニュアンス。</p>
+<p>idem sentire : idemはsentireの目的語　「同じ考えを持つ」</p>
+<p>pugnae : 目的の与格(NewLatin191.1)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>事は戦略会議に諮られ、皆同じ意見であることが分かった。翌日戦端を開くことに決めた。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

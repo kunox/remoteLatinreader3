@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 8</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[8]<span></span></a>
+
+<a class="note1">Intereā<span>interea, 副詞   :meanwhile;<br></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note1">legiōne<span>legio 単数 奪格<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">sēcum<span>se cum (with ~self)<br></span></a>
+<a class="note1">habēbat<span>3 単 未完了<br></span></a>
+<a class="note1">mīlitibusque,<span>miles 奪格<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">prōvinciā<span><br><br></span></a>
+<a class="note1">convēnerant,<span>convenio, convenire, conveni, conventus 動詞 (4th)   :|meet/assemble; go to meet; come together; (have sex); converge;3 複 過去完了<br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note1">lacū<span>lacus, laci 名詞 (2nd) M   :basin/tank/tub; lake/pond; <br>奪格<br></span></a>
+<a class="note0">Lemannō,<span><br><br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note0">Rhodanum<span></span></a>
+<a class="note1">īnfluit,<span>influo, influere, influxi, influxus 動詞 (3rd)   :flow into; flow; ３単現在<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">montem<span>mons montis M 単　対格　;= mountain</span></a>
+<a class="note1">Iūram,<span>単　対格<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Sēquanōrum<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Helvētiīs<span><br><br></span></a>
+<a class="note0">dīvidit,<span><br><br></span></a>
+<a class="note1">mīlia<span>mille, millesimus -a -um, milleni -ae -a, milie(n)s 数詞   :thousand; a thousand; n 複　対格<br>milia passuum で１０００歩＝１ローママイル<br></span></a>
+<a class="note1">passuum<span>passus, passus 名詞 (4th) M   :step, pace; 複　属格</span></a>
+<a class="note1">XVIIII<span>１９ decem novem</span></a>
+<a class="note1">mūrum<span>murus, muri 名詞 (2nd) M   :wall, city wall;単数　対格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">altitūdinem<span>altitudo, altitudinis 名詞 (3rd) F   :height, altitude; depth;単数対格<br></span></a>
+<a class="note1">pedum<span>pes, pedis 名詞 (3rd) M   :foot;属格</span></a>
+<a class="note1">sēdecim<span>sedecim, -, -, sedecie(n)s 数詞   :sixteen;<br></span></a>
+<a class="note1">fossamque<span>fossa, fossae 名詞 (1st) F   :ditch, trench, canal; moat; dike, fosse;対格</span></a>
+<a class="note1">perdūcit.<span>perduco, perducere, perduxi, perductus 動詞 (3rd)   :lead, guide; prolong; induce, conduct, bring through;３単現在<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>文の骨格は単純で、perducit. である。その間に、何をとかどうやってという説明が長々挟まれる。これもラテン語の特性の一つか？</p>
+<p><strong>ea legione militibusque</strong> : 手段の奪格、各々、説明が付いている。</p>
+<p>legione = quam secum....&nbsp;&nbsp;&nbsp; militibusque = qui ex ....</p>
+<p>a lacu Lemanno ad montem Iuram : レマヌ湖からジュラ山まで</p>
+<p><strong>（milia passuum XVIIII) murum (in altitudinem pedum sedecim) fossamque</strong> : milla passuumは[<strong>時空の対格</strong>](NewLatin181)&nbsp; &nbsp;pedum sedecim 属格は[<strong>性質の属格</strong>] (newLatin203)</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>カエサルは、その間に彼が唯一持っていた軍団と属州で集めた兵士達で、レマン湖ーそこからロダヌム側が発しているところであるが、ジュラ山脈　ー　そこがセクアナ族の領地をヘルウェティ族から分けている辺りであり、までの１９ローママイルに及ぶ高さ１６フィートの壁との前の堀を作った。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span><br><br></span></a>
+<a class="note1">opere<span>opus, operis 名詞 (3rd) N   :need; work; fortifications (pl.), works;奪格</span></a>
+<a class="note1">perfectō<span>perficio, perficere, perfeci, perfectus 動詞 (3rd)   :complete, finish; execute; <br>完了分詞　受動　奪格<br></span></a>
+<a class="note1">praesidia<span>praesidium, praesidi(i) N&nbsp;複　対格 ;= protection; help; guard; garrison, detachment;</span></a>
+<a class="note1">dispōnit,<span>dispono, disponere, disposui, dispositus TRANS&nbsp;３単　現在 ;= dispose, place here and there, distribute; set/lay out;<br></span></a>
+<a class="note1">castella<span>castellum, castelli N 複　対格　;= redoubt, fortress,</span></a>
+<a class="note1">commūnit,<span>communio, communire, communivi, communitus 動詞 (4th) TRANS   :fortify strongly, entrench, barricade; strengthen, secure, reinforce; <br>３単数現在<br></span></a>
+<a class="note1">quō<span>接続詞 ;= whither, in what place, where (比較級とともに）<br></span></a>
+<a class="note1">facilius,<span>副詞　比較級　facile facilius facillime ;= easily, readily</span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">sē<span>奪格 <br>invitoと共に独立奪格 <br>自身の意志に反して<br></span></a>
+<a class="note1">invītō<span>nvitus, invita, invitum 形容詞   :reluctant; unwilling; against one's will;奪格<br></span></a>
+<a class="note1">trānsīre<span>transeo =cross <br>不定詞<br></span></a>
+<a class="note1">cōnentur,<span>conor, conari, conatus sum 動詞 (1st) DEP   :attempt/try/endeavor, <br>３複数現在（彼ら）<br></span></a>
+<a class="note1">prohibēre<span>prohibeo, prohibere, prohibui, prohibitus 動詞 (2nd)   :hinder, restrain; forbid, prevent;<br></span></a>
+<a class="note1">possit.<span>3 単 現在 接続法</span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Eo opere perfecto　</strong>：独立奪格　これらの作業を終えて、</p>
+<p><strong>praesidia disponit　</strong>：歩哨を配置する</p>
+<p><strong>castella communit　</strong>：要塞を強化する</p>
+<p><strong>quo facilius prohibere possit</strong> ：quoが目的の従属節を導く接続詞で、比較に意味を含む場合に使われる。（NewLatin282.1.(1)) faciliusは副詞facileの比較級、「より容易に守ることが出来るように」</p>
+<p><strong>se invito　</strong>：　独立奪格　自身（カエサル）の意志に反して (分詞ではなく形容詞の例）</p>
+<p>conentur →　conarenturのテキスト多し</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>これらの作業を終え、カエサルは歩哨を配置し、要塞を強化した。これらの事により、もしヘルウェティが彼の意志に反して渡河しようと企てても容易に阻止できる事になった。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Ubi<span>副詞　when</span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">diēs<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">cōnstituerat<span>constituo, constituere, constitui, constitutus 動詞 (3rd)   :set up/in position,3単過去完了<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">lēgātīs<span>legatus奪格（cum奪格支配）<br></span></a>
+<a class="note1">vēnit<span>venio = come 3単現在・ <br>3単完了<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">lēgātī<span>legatus 主格　複<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note1">revertērunt,<span>reverto = turn back <br>3複完了<br></span></a>
+<a class="note1">negat<span>nego, negare, additional, forms 動詞   :deny, refuse; say ... not; <br>3単現在</span></a>
+<a class="note1">sē<span>対格 <br>意味上の主語<br></span></a>
+<a class="note1">mōre<span>mos, moris 名詞 (3rd) M   :custom, habit;奪格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">exemplō<span>exemplum, exempli 名詞 (2nd) N   :example, sample, specimen; instance; precedent, <br>奪格<br></span></a>
+<a class="note0">populī<span></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">posse<span>possum 不定詞</span></a>
+<a class="note0">iter<span></span></a>
+<a class="note1">ūllī<span>ullus, ulla, ullum (gen -ius) 形容詞   :any;<br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">prōvinciam<span></span></a>
+<a class="note0">dare<span></span></a>
+<a class="note0">et,<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">vim<span>vis 対格 <br>Power</span></a>
+<a class="note0">facere<span></span></a>
+<a class="note0">cōnentur,<span><br><br></span></a>
+<a class="note1">prohibitūrum<span>prohibeo, prohibere, prohibui, prohibitus 動詞 (2nd)   :hinder, restrain; forbid, prevent; <br>未来分詞、能動<br></span></a>
+<a class="note1">ostendit.<span>ostendo, ostendere, ostendi, ostensus 動詞 (3rd)   :show; reveal; make clear, point out, display, exhibit３単現在</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Ubi ea dies =(quam constituerat cum legatis) venit</strong> : cumは奪格支配で、ここでは　= with</p>
+<p>legati ad eum(Caesar) reverterunt</p>
+<p><strong>negat se （more et exemplo populi Romani)&nbsp;&nbsp;posse</strong> : &nbsp;対格を伴う不定詞主語はse カエサル 逐語的には「彼自身が可能にする事を否定した」ラテン語ではよくあるidiomである。</p>
+<p><strong>more et exemplo</strong>：慣用句　慣行と過去の事例から言って [<strong>態度の奪格</strong>](NewLatin220.3)</p>
+<p><strong>iter ulli per provinciam dare　</strong>：posseの目的語</p>
+<p><strong>prohibiturum （esse) 不定詞　ostendit</strong>.：多分se prohibiturum esse が本来の文。逐語的には「（私が）阻止するであろうことを示した」</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>使節団と約した日にちが来て、彼のところに使節が戻ってきた。カエサルは、慣習と過去の事例から言っても、属州を旅することを許可することはできない。もし力づくでによるならばそれは阻止されるであろう、と言った。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Helvētiī<span><br><br></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note1">spē<span>spes, spei 名詞 (5th) F   :hope/anticipation/expectation;  <br>単　奪格<br></span></a>
+<a class="note1">dēiectī<span>deicio, deicere, dejeci, dejectus&nbsp;完了分詞　受動　m複　主格 TRANS ;= overthrow, bring down, depose, bring down, knock down<br><br></span></a>
+<a class="note1">nāvibus<span>navis, navis 名詞 (3rd) F   :ship; <br>複　奪格<br></span></a>
+<a class="note1">iūnctīs<span>jungo, jungere, junxi, junctus 動詞 (3rd)   :join, unite; bring together, clasp (hands); connect, yoke, harness;完了分詞受動　奪格<br></span></a>
+<a class="note1">ratibusque<span>ratis, ratis 名詞 (3rd) F  <br> :raft; ship, boat; <br>複　奪格</span></a>
+<a class="note1">complūribus<span>complus, (gen.), compluris 形容詞   :many (pl.), several, a fair/good number <br>複　奪格<br></span></a>
+<a class="note1">factīs,<span>facio  <br>完了分詞　複　奪格<br></span></a>
+<a class="note1">aliī<span>alius, alia, aliud 形容詞   :other, another;複　主格<br></span></a>
+<a class="note1">vadīs<span>vadum, vadi 名詞 (2nd) N   :shallow place, stream; ford, shoal; channel; 複　奪格<br></span></a>
+<a class="note0">Rhodanī,<span><br><br></span></a>
+<a class="note0">quā<span><br><br></span></a>
+<a class="note0">minima<span></span></a>
+<a class="note0">altitūdō<span><br><br></span></a>
+<a class="note0">flūminis<span><br><br></span></a>
+<a class="note0">erat,<span></span></a>
+<a class="note1">nōn<span>nonnumquamでsometime<br></span></a>
+<a class="note1">numquam<span>numquam, 副詞   :never;</span></a>
+<a class="note1">interdiū,<span>interdiu, 副詞   :in the daytime, by day;<br></span></a>
+<a class="note1">saepius<span>=saepe <br>saepe, saepius, saepissime 副詞   :often, oft, oftimes, many times, frequently;</span></a>
+<a class="note1">noctū<span>noctu, 副詞   :by night, at night;<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">perrumpere<span>perrumpo, perrumpere, perrupi, perruptus 動詞 (3rd)   :break through;</span></a>
+<a class="note1">possent<span>3 複 未完了 能動態 接続法</span></a>
+<a class="note1">cōnātī,<span>conor(DEP) <br>完了 分詞 受動態 m 複 主格<br></span></a>
+<a class="note1">operis<span>opera, operae 名詞 (1st) F   :work, care; aid; service, effort/trouble;複　奪格</span></a>
+<a class="note1">mūnītiōne<span>munitio, munitionis 名詞 (3rd) F   :fortifying; fortification;要塞化、奪格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">mīlitum<span>miles, militis 名詞 (3rd) M   :soldier; foot soldier; soldiery; knight (Latham);複　属格<br></span></a>
+<a class="note1">concursū<span>concursus, concursus 名詞 (4th) M   :running to and fro/together, collision, charge/attack; assembly/crowd; tumult;奪格　単<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">tēlīs<span>telum, teli 名詞 (2nd) N   :dart, spear; weapon, javelin; bullet (gun);複　奪格<br></span></a>
+<a class="note1">repulsī,<span>repello, repellere, reppuli, repulsus 動詞 (3rd) TRANS   :drive/push/thrust back/away; repel/rebuff/spurn;完了 分詞 受動態 m 複 主格<br></span></a>
+<a class="note0">hōc<span></span></a>
+<a class="note1">cōnātū<span>conatus, conatus 名詞 (4th) M   :attempt, effort; exertion, struggle; impulse, tendency; endeavor, design;奪格（分離の）<br></span></a>
+<a class="note1">dēstitērunt.<span>desisto, desistere, destiti, destitus 動詞 (3rd)   :stop/cease/desist (from); give up, leave/stand off; dissociate oneself;3 複 完了 能動態<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>全体の骨子は　<strong>Helvetii hoc conatu destiterunt</strong>.</p>
+<p><strong>ea spe deiecti</strong> : 分詞構文でHelvetiiを修飾。speは[分離の奪格](NewLatin214)で「希望から見放されて」</p>
+<p><strong>navibus iunctis</strong> : 独立奪格、または手段の奪格「船を結びつけたり」</p>
+<p><strong>ratibusque compluribus factis</strong> : 独立奪格　「沢山の筏を作ったり」</p>
+<p><strong>alli si perrumpere possent conati</strong> : 他のものは渡ることが可能かと試してみたり</p>
+<p><u>conati, repulsi : Helvetiiに掛かる分詞構文</u></p>
+<p><strong>operis munitione et militum concursu et telis　</strong>要塞化の仕事、兵士達の攻撃、また投槍などによって</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>この通り抜けるという希望を却下されたヘルウェティは、船どうしを結んだり、沢山の筏を作ったりして、またあるものは河が最も浅くなる浅瀬を、時々は昼間だがほとんどは夜間に渡れないものかと試みたりしたが、（これらの試みは）要塞化の作業や、兵士達の攻撃、投槍等によって退けられ、これらの試みを諦める。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

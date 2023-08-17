@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 31</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[31]<span></span></a>
+
+<a class="note1">Cōnsurgitur<span>consurgo consurgere, consurrexi, consurrectus V (3rd) INTRANS  <br>:rise/stand up (body of people); rise (jury/from meal/to speak/from bed); ambush;<br>(３人称 単数 現在 受動態 直説法 )<br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">cōnsiliō;<span><br><br></span></a>
+<a class="note1">comprehendunt<span>comprehendo comprehendere, comprehendi, comprehensus V (3rd) TRANS  <br>:catch/seize/grasp firmly; arrest; <strong>take hold</strong>/root/fire, ignite; conceive (baby);<br>(３人称 複数  現在 能動態 直説法 )<br><br></span></a>
+<a class="note1">utrumque<span>uter utra, utrum ADJ  <br>:|(w/que) each/either (of two); both (separately); each side (pl.), each set;<br>(n 単数 対格),<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">ōrant,<span>oro orare, oravi, oratus V (1st)  <br>:beg, ask for, pray; beseech, plead, entreat; worship, adore;<br>(３人称 複数  現在 能動態 直説法 )<br><br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">suā<span><br><br></span></a>
+<a class="note1">dissēnsiōne<span>dissensio dissensionis N (3rd) F&nbsp; :disagreement, quarrel; dissension, conflict;<br>単　奪格<br><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">pertināciā<span>pertinacia pertinaciae N (1st) F  <br>:determination/perseverance; persistence; obstinacy, stubbornness, defiance;<br>(c 単数 奪格)<br><br></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">summum<span></span></a>
+<a class="note0">perīculum<span><br><br></span></a>
+<a class="note1">dēdūcat:<span>deduco deducere, deduxi, deductus V (3rd) TRANS  <br>:lead/draw//pull/bring/stretch down/away/out/off; escort; eject/evict (claimant);<br>(３人称 単数 現在 能動態 接続法 )<br><br></span></a>
+<a class="note0">facilem<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">rem,<span></span></a>
+<a class="note1">seu<span>seu CONJ <br>:or if; or;<br><br></span></a>
+<a class="note1">maneant,<span>maneo manere, mansi, mansus V (2nd)  <br>:remain, stay, abide; wait for; continue, endure, last; spend the night (sexual);<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">seu<span></span></a>
+<a class="note1">proficīscantur,<span>proficiscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">modo<span>modo ADV <br>:only, merely; just now/recently, lately; presently;<br><br></span></a>
+<a class="note0">ūnum<span><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">sentiant<span>sentio sentire, sensi, sensus V (4th)  <br>:perceive, feel, experience; think, realize, see, understand;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">probent;<span>probo probare, probavi, probatus V (1st) TRANS  <br>:approve (of), esteem/ commend/ recommend/certify; give assent/ approval/ sanction;<br>(３人称 複数  現在 能動態 接続法 )<br><br></span></a>
+<a class="note0">contrā<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">dissēnsiōne<span><br><br></span></a>
+<a class="note0">nūllam<span><br><br></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">salūtem<span><br><br></span></a>
+<a class="note1">perspicere.<span>perspicio perspicere, perspexi, perspectus V (3rd)  <br>:see through; examine; observe;<br>(  現在 能動態 不定詞 )<br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p><strong>consurgitur </strong>: 自動詞受け身で、<u>非人称的に用いている</u>。「会議から立たれた」⇒　皆、会議で立ち上がった。</p>
+<p><strong>ne deducat rem in summum periculum sua dissensione et pertinacia</strong>. dissecsione, pertinaciaは原因の奪格。「物事を最も危険な状態に、不一致と頑迷さによって、しないように」</p>
+<p><strong>si modo</strong> omnes sentiant ac probent unum : si modo = if onlyで、もし皆が一つの事を考え、承認しさえすれば<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>皆、会議で立ち上がった。双方の（SabinusとCotta)身体を掴み、懇願した。不一致と頑迷さによって物事を最も危険な状態に導くことがないように、と。留まるにせよ、出立するにせよ、もし皆が一つの案を理解し承認さえすれば、物事は容易である。逆に不一致であれば、安全ではなくなるだろう。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Rēs<span><br><br></span></a>
+<a class="note0">disputātiōne<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">mediam<span></span></a>
+<a class="note0">noctem<span></span></a>
+<a class="note1">perdūcitur.<span>perduco perducere, perduxi, perductus V (3rd)  <br>:lead, guide; prolong; induce, conduct, bring through;<br>(３人称 単数 現在 受動態 直説法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>res perducitur. 事態は長引いた。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>不一致のため、会談は深夜まで続いた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Tandem<span></span></a>
+<a class="note1">dat<span>do dare, dedi, datus V (1st) TRANS  <br>:give; dedicate; sell; pay; grant/bestow/impart/offer/lend; devote; allow; make;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">Cotta<span></span></a>
+<a class="note1">permōtus<span>permoveo permovere, permovi, permotus V (2nd)  <br>:stir up; move deeply; influence; agitate;<br>(完了 分詞 受動態 m 単数 主格)<br><br></span></a>
+<a class="note0">manūs:<span><br><br></span></a>
+<a class="note0">superat<span></span></a>
+<a class="note0">sententia<span></span></a>
+<a class="note0">Sabīnī.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p><strong>dat manus</strong> : 譲る、降伏する。(戦場での降伏の動作との事）</p>
+<p>permotusは文法的にはCottaを修飾「影響されたCottaは」<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>最後にはCottaが譲り、Sabinusの案を勝利した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Prōnūntiātur<span>pronuntio pronuntiare, pronuntiavi, pronuntiatus V (1st)  <br>:announce; proclaim; relate; divulge; recite; utter;<br>(３人称 単数 現在 受動態 直説法 )<br><br></span></a>
+<a class="note0">prīma<span><br><br></span></a>
+<a class="note0">lūce<span><br><br></span></a>
+<a class="note0">itūrōs.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>prima luce: 独立奪格　「夜明けに」</p>
+<p>ituros (esse)<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>夜明けに出発することが発表された。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Cōnsūmitur<span>consumo consumere, consumpsi, consumptus V (3rd) TRANS  <br>:|devour/swallow up/ consume/ eat/ use up/ exhaust/ expend; spend; squander/ waste;<br>(３人称 単数 現在 受動態 直説法 )<br><br></span></a>
+<a class="note1">vigiliīs<span>vigilia vigiliae N (1st) F  <br>:watch (fourth part of the night), vigil, <strong>wakefulness</strong>;<br>(c 複数  奪格)<br></span></a>
+<a class="note0">reliqua<span></span></a>
+<a class="note1">pars<span>pars partis N (3rd) F  <br>:part, region; share; direction; portion, piece; party, faction, side;<br>(X 単数 主格)<br></span></a>
+<a class="note1">noctis,<span>nox noctis N (3rd) F  <br>:night<br>(X 単数 属格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">sua<span></span></a>
+<a class="note1">quisque<span>quisque quaeque,quodque ADJECT  <br>:(w/-que) any; each;<br>&nbsp;(m 複数  主格)<br></span></a>
+<a class="note0">mīles<span></span></a>
+<a class="note1">circumspiceret,<span>circumspicio circumspicere, circumspexi, circumspectus V (3rd)  <br>:look around/ over /for, survey; inspect; search for/seek; examine/review; ponder;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">sēcum<span><br><br></span></a>
+<a class="note0">portāre<span><br><br></span></a>
+<a class="note0">posset,<span></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">īnstrūmentō<span><br><br></span></a>
+<a class="note0">hībernōrum<span><br><br></span></a>
+<a class="note1">relinquere<span>relinquo relinquere, reliqui, relictus V (3rd)  <br>:leave behind, abandon; (pass.) be left, remain; bequeath;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">cōgerētur.<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/ confine; force/ compel; convene; congeal;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>reliqua pars noctis consumitur vigiliis. vigiliisは奪格で、「ずっと起きている事」<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>その夜の残りは寝ずに消費された。というのは兵士、各々は何を自分とともに運べるか、冬営地の備品のから何を残していくべきだろうと調べていたからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Omnia<span></span></a>
+<a class="note1">excōgitantur,<span>excogito excogitare, excogitavi, excogitatus V (1st)  <br>:think out; devise, invent, contrive;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note1">quārē<span>quare ADV <br>:in what way? how? by which means, whereby; why; wherefore, therefore, hence;<br><br></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note0">perīculō<span><br><br><br></span></a>
+<a class="note1">maneātur,<span>maneo manere, mansi, mansus V (2nd)  <br>:remain, stay, abide; wait for; continue, endure, last; spend the night (sexual);<br>(３人称 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">languōre<span>languor languoris N (3rd) M  <br>:faintness, feebleness; languor apathy;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">mīlitum<span>miles militis N (3rd) M  <br>:soldier; foot soldier; soldiery; knight (Latham); knight's fee/service;<br>(c 複数  属格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">vigiliīs<span>vigilia vigiliae N (1st) F  <br>:watch (fourth part of the night), vigil, wakefulness;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note0">perīculum<span><br><br></span></a>
+<a class="note1">augeātur.<span>augeo augere, auxi, auctus V (2nd) TRANS  <br>:increase, enlarge, augment; spread; honor, promote, raise; exalt; make a lot of;<br>(３人称 単数 現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>omnia excogitantur. 全てが考えられた。</p>
+<p>quare : 以下の様な方向性で</p>
+<p>nec maneatur sine periculo : 危険なくしては留まれない、</p>
+<p>periculum augeantur&nbsp; languore militum et vigiliis.&nbsp; periculumが主語。「危険は兵士の疲労と、夜警により増大される」<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>全ての事が、留まることは危険である、そして兵士の疲労と夜警の負荷は危険を増大させるという前提で考えられた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Prīma<span><br><br></span></a>
+<a class="note0">lūce<span><br><br></span></a>
+<a class="note1">sīc<span>sic ADV <br>:thus, so; as follows; in another way; in such a way;<br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">castrīs<span></span></a>
+<a class="note0">proficīscuntur,<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">esset<span></span></a>
+<a class="note0">persuāsum<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">hoste,<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">homine<span>homo hominis N (3rd) M  <br>:man, human being, person, fellow;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">amīcissimō<span><br><br></span></a>
+<a class="note0">Ambiorīge<span></span></a>
+<a class="note0">cōnsilium<span><br><br></span></a>
+<a class="note0">datum,<span></span></a>
+<a class="note1">longissimō<span>longus longa -um, longior -or -us, longissimus -a -um ADJ  最上級<br>:long; tall; tedious, taking long time; boundless; far; of specific length/time;<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note1">agmine<span>agmen agminis N (3rd) N  <br>:stream; herd, flock, troop, crowd; marching army, column, line; procession;<br>(n 単数 奪格)<br></span></a>
+<a class="note0">maximīsque<span><br><br></span></a>
+<a class="note0">impedīmentīs.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p><strong>sic ut quibus~</strong> : quibusは出発した人たち。与格でesset persuasumの間接目的語。quibus以下は<strong>特徴の節</strong>と呼ばれる関係節であり、先行詞の特徴と表す。（NewLatin283.3)</p>
+<p>datum (esse)</p>
+<p>longissimo agmine, maximis impedimentis : 独立奪格<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>夜明けに野営地から出発した。あたかも敵ではなく、非常に親しい友人である、Ambiorixからもらった忠告によってであると言う事に納得しているようであった。行軍列は長く、大変な荷物であった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

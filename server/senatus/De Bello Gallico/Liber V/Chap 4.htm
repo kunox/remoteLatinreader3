@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 4</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[4]<span></span></a>
+
+<a class="note0">Caesar,<span></span></a>
+<a class="note1">etsī<span>接続詞　;= although, even if<br><br></span></a>
+<a class="note0">intellegēbat<span><br><br></span></a>
+<a class="note0">quā<span></span></a>
+<a class="note0">dē<span></span></a>
+<a class="note0">causā<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note1">dīcerentur<span>dico 3複　未完了　受動　接続法<br><br></span></a>
+<a class="note1">quaeque<span>w/que ;= any, every, each, everythingだがここでは、que quisの合体したもの<br><br><br></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">rēs<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">īnstitūtō<span>institutum instituti N 単　奪格　;= custom, principle, decree, intention, arrangement, institution, habit, plan<br><br><br></span></a>
+<a class="note0">cōnsiliō<span></span></a>
+<a class="note1">dēterrēret,<span>deterreo deterrere, deterrui, deterritus TRANS ３単　未完了　接続法　;= deter, frighten away, discourage from, keep off, avert<br><br><br></span></a>
+<a class="note0">tamen,<span></span></a>
+<a class="note0">nē<span></span></a>
+<a class="note0">aestātem<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Trēverīs<span></span></a>
+<a class="note1">cōnsūmere<span>comsumo TRANS 不定詞　;= burn up, destroy, comsume, spend, <strong>waste</strong><br><br><br><br></span></a>
+<a class="note1">cōgerētur<span>cogo ３単　未完了　受動　接続法　;= collect, gather, round up, <strong>compel</strong><br><br><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Britannicum<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note0">rēbus<span></span></a>
+<a class="note1">comparātīs,<span>comparo 完了分詞　受動　複　奪格 ;= prepare<br><br><br></span></a>
+<a class="note0">Indūtiomārum<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">CC<span>ducentis = 200<br><br></span></a>
+<a class="note0">obsidibus<span></span></a>
+<a class="note0">venīre<span></span></a>
+<a class="note0">iussit.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p><strong>de qua causa ea dicerentur</strong> : 「何が原因でそれが言われたか」が逐語訳。「それ」とは前にでたIndutiomarusの言葉の事。</p>
+<p><strong>que quae res deterreret eum ab instituto consilio</strong> : quaequeはanyなどの意味ではなく、単純にque quaeである。instituto consilioは「考えていた計画」の様な意味。instituoは決める、とか準備すると言う意味。eumはIndutiomarusのこと。「何が彼を、以前の計画から撤退させたか」</p>
+<p>ne cogeretur comsumere aestatem : 目的の従属節で接続法。（NewLatin282) comsumereは浪費するの意。「（Treverisにおける)夏を浪費することを強いられないように」が逐語訳。</p>
+<p>omnibus rebus comparatis ad Britannicum bellum は独立奪格で、「全てをブリタニア戦の準備に充てるために、充てるべきで」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>カエサルは、彼がそう言った理由や、何が彼を元々の計画から変更させたのか解ってはいたが、全てをブリタニア征服に向けて準備するために、Treverisでの夏を無駄に使わないために、Indutiomarusに対し、２００人の人質を連れて自分の元にくるよう命じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span></span></a>
+<a class="note1">adductis,<span>adduco 完了分詞　受動　複　奪格　;= lead up, bring, induce<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eīs<span></span></a>
+<a class="note1">fīliō<span>filius fili M 単　奪格　;= son<br><br><br></span></a>
+<a class="note1">propinquīsque<span>propinquus, propinqui M 複　奪格　;= relative<br><br><br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">omnibus,<span></span></a>
+<a class="note0">quōs<span></span></a>
+<a class="note1">nōminātim<span>副詞　;= by name<br><br><br></span></a>
+<a class="note1">ēvocāverat,<span>evoco ３単　過去完了　;= call forth, lure, summon, evoke<br><br><br></span></a>
+<a class="note1">cōnsōlātus<span>consolor consolari, consolatus SUM DEP 完了分詞　受動　m単　主格　;= console, (be source of) comfort, soothe<br><br><br></span></a>
+<a class="note0">Indūtiomārum<span></span></a>
+<a class="note1">hortātusque<span>hortor hortari, hortatus sum DEP 完了分詞　受動　m」単　主格　;= encourage, cheer, incite<br><br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">utī<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">officiō<span></span></a>
+<a class="note1">manēret;<span>maneo ３単　未完了　接続法　;= remain, stay<br><br><br></span></a>
+<a class="note1">nihilō<span>nihilium nihili N 単　奪格　;=nothing<br><br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">sētius<span>副詞　;= less, worse<br><br></span></a>
+<a class="note0">prīncipibus<span></span></a>
+<a class="note0">Trēverōrum<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">convocātis<span><br><br></span></a>
+<a class="note0">hōs<span></span></a>
+<a class="note1">singillātim<span>副詞　;= one by one<br><br><br></span></a>
+<a class="note0">Cingetorīgī<span><br><br></span></a>
+<a class="note1">conciliāvit,<span>concilio conciliare, conciliavi, conciliatus TRANS ３単　完了　;= unite, attract favor of, bring together<br><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">meritō<span>meritum meriti N 単　奪格　;= merit, service, value, due, reward<br><br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">fierī<span></span></a>
+<a class="note0">intellegēbat,<span></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0">magnī<span></span></a>
+<a class="note1">interesse<span>intersum 不定詞　ここでは非人称的に用いられ　;= it matters, it concerns<br><br></span></a>
+<a class="note0">arbitrābātur<span><br><br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">auctōritātem<span><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">suōs<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">plūrimum<span><br><br></span></a>
+<a class="note0">valēre,<span><br><br></span></a>
+<a class="note0">cuius<span></span></a>
+<a class="note1">tam<span>副詞　；＝ so, so much , to such an extent<br><br></span></a>
+<a class="note1">ēgregiam<span>egregius egregia, egregium ｆ単　対格　;= singular, distinguished, exceptional<br><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note1">voluntātem<span>voluntas F 単　対格　;= good will, favor<br><br><br></span></a>
+<a class="note1">perspexisset.<span>perspicio perspicere, perspexi, perspectus ３単　過去完了　接続法　;= see through, examine, observe<br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>骨子は</p>
+<p><strong>est consolatus hortatusque Indutiomarum, nihilo setius conciliavit Cingetrigi principibus</strong>. 「Indutiomarusを心地よくさせ、励ましたが、他方Cingetorixを部族の主要人物達と仲介した。」<u>nihilo setius, nihilo minusは慣用句的に＝Nontherles</u>s。</p>
+<p><strong>eius filio omnibus propinquisque in eis, quos nominatim evocaverat</strong>. quos以下はfilio, propinquisを修飾「（それら人質の中で）彼の息子、及び全ての親類縁者、それは名指しで召喚した者達であったが、と共に」filio, propinquisは奪格で、この場合「<strong>付帯状況の奪格</strong>」か。つまり息子や親戚のいるところで、褒めたわけである。</p>
+<p><strong>cum ~, tum ~ = not only ~, but also ~</strong></p>
+<p><strong>intellegebat fieri quod a se cum merito eius. : </strong>cum merito eiusが判りにくいが、cum + 奪格で<strong>「態度の奪格</strong>」(NewLatin220.3)「彼（Cingetorix)の価値、受けるべき報いに則って」（彼自身によってなされることであると知っていたが）が逐語訳。</p>
+<p><strong>arbitrabatur magni interesse eius auctoritatem valere</strong>: これも判りにくい文章。　eius auctoritatem volelereは目的語を持つ不定詞で、「彼の権威を強くすること」。これ自身がinteresseの主語になっていて、「彼の権威を強化することが重要である、と考えた」interesseは非人称的に用いられている。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>これらがなされ、その人質の中にいる息子や親戚全員のいるところで、それらは名指して召喚されたのであったが、カエサルはIndutiomarusを称え、また今後とも誠実であるようにと励ました。他方、それにも拘わらず、カエサルはTreveriの指導者たちを自分の所に召喚し、Cingetorixにひとりずつ仲介をした。それは、Congetorixの価値に合うよう、彼自身でやるべきであると考えていたからでもあるが、それ以上に、覗えた彼のカエサルに対する忠誠から言っても、彼の彼の部族の中での権威を出来るかぎり強化しておく事が重要だと判断したからでもある。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Id<span>ｎ単　対格<br><br></span></a>
+<a class="note1">tulit<span>fero ferre, tuli, latus ３単　完了　;= bring, bear, tell, speak of, consider, carry off, win, receive, produce, get<br><br></span></a>
+<a class="note0">factum<span></span></a>
+<a class="note1">graviter<span>副詞　;= violently, deeply,. severely, reluctantly<br><br></span></a>
+<a class="note0">Indūtiomārus,<span></span></a>
+<a class="note0">suam<span></span></a>
+<a class="note1">grātiam<span>gratia gratiae F 単　対格　;= popularity, credit<br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">suōs<span></span></a>
+<a class="note1">minuī,<span>minuo minuere, minui, minutus 不定詞　; = lessen, reduce, diminish, impair<br><br></span></a>
+<a class="note0">et,<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note1">inimīcō<span>inimicus inimica, -um, inimicior, -or, -us, inimicissimus -a -um 形容詞　m単　与格　;= unfriendly, hostile, harmful<br><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">nōs<span></span></a>
+<a class="note1">animō<span>animus animi M 単　与格　;= mind, soul<br><br></span></a>
+<a class="note0">fuisset,<span></span></a>
+<a class="note0">multō<span></span></a>
+<a class="note1">gravius<span>gravis grave, 形容詞 比較級　ｎ単　対格　;= heavy, painful, important, serious, offensive<br><br><br></span></a>
+<a class="note0">hōc<span></span></a>
+<a class="note1">dolōre<span>dolor doloris M 単　奪格　;= pain, anguish, grief, sorrow, suffereing<br><br><br></span></a>
+<a class="note1">exārsit.<span>exardo exadere, exarsi, exarsus 3単　完了　;= kindle, inflame, break out<br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>Indutiomarus tulit id factum graviter. id factusは為されたこと。「Indutiomarusはこの行われたことを重大に受け取った。」</p>
+<p>qui fuisset inimico animo in nos ante. 所有の与格。彼はかって我々に対し敵対的な気持ちを持っていた。</p>
+<p>exarsit hoc dolore multo gravius. hoc doloreは奪格で、手段の奪格。「この悲劇によって更に激しく興奮した」<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>Indutiomarusはこのことを重大に受けとめた。自分の部族内での人気が落ちると。彼は以前には我々に対して敵対的な気持ちを持っていたが、この仕打によって更に敵愾心を燃やした。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

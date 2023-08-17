@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber II : Chap 15</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[15]<span></span></a>
+
+<a class="note0">Caesar<span></span></a>
+<a class="note1">honōris<span>honor honoris N (3rd) M  <br>:honor; respect/regard; mark of esteem, reward; dignity/grace; public office;<br>(X 単数 属格)<br></span></a>
+<a class="note0">Dīviciācī<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">Haeduōrum<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fidem<span></span></a>
+<a class="note1">receptūrum<span>recipio recipere, recepi, receptus V (3rd)  <br>:keep back; recover; undertake; guarantee; accept, take in; take back;<br>(未来 分詞 能動態 m 単数 対格),<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cōnservātūrum<span>conservo conservare, conservavi, conservatus V (1st)  <br>:keep safe/intact, save (from danger); preserve, maintain; spare; keep/observe;<br>(未来 分詞 能動態 m 単数 対格)<br><br></span></a>
+<a class="note0">dīxit,<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">cīvitās<span>主格　単　F<br></span></a>
+<a class="note0">magnā<span><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">Belgās<span><br><br></span></a>
+<a class="note1">auctōritāte<span>auctoritas auctoritatis N (3rd) F  <br>:title (legal), ownership; right to authorize/sanction, power; decree, order;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">hominum<span>属格　複数</span></a>
+<a class="note1">multitūdine<span>multitudo multitudinis N (3rd) F  <br>:multitude, great number; crowd; rabble, mob;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">praestābat,<span>praesto praestare, praestavi, praestatus V (1st)  <br>:excel, surpass, be outstanding/ superior/ best/ greater/ preferable (to); prevail;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note1">DC<span>sex centos<br><br></span></a>
+<a class="note1">obsidēs<span>obses obsidis C 複　対格　;= hostage<br></span></a>
+<a class="note1">poposcit.<span>posco poscere, poposci, - V (3rd)  <br>:ask, demand;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>honoris causa : for the sake of respect 慣用句　（原因の奪格）</p>
+<p>Diviciaci : 目的語の属格（NewLatin200) Diviciacusへの敬意により</p>
+<p>recepturum (esse) 未来不定詞　</p>
+<p><strong>Caesar dixit sese recepturum esse&nbsp;&nbsp;eos in fidem et conservaturum esse eos</strong> : 「カエサルは彼ら（ベルガエ）を忠義の中に留め彼らの命を助けるであろうと言った。recepturum in fidem : カエサルの保護に留める</p>
+<p>D = 500, C = 100</p>
+<p><strong>quod (because) civitas erat magna et praestabat in Belas auctoritate atque hominum multitudine,</strong></p>
+<p>auctoritate atque hominum multitudine : 指定の奪格　影響力と人の多さという点で</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Caesarは、DiviciacusとHaeduiに対する敬意から、彼らを（Bellovaci)を自分の保護のもとに留め、命を助けようと言った。そして、Belgaeの中での影響力が大きな部族であり、人数という点で勝っているので、６００名の人質を要求した。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span><br><br><br></span></a>
+<a class="note1">trāditīs<span>trado tradere, tradidi, traditus V (3rd)  <br>:hand over, surrender; deliver; bequeath; relate;<br>(完了 分詞 受動態  複数  奪格)<br><br></span></a>
+<a class="note1">omnibusque<span>omnis （all men)またはomne(all things, everything) 奪格　複</span></a>
+<a class="note1">armīs<span>armum armi N (2nd) N  <br>:arms (pl.), weapons, armor, shield; close fighting weapons; equipment; force;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note1">conlātis,<span>confero conferre, contuli, collatus V TRANS  <br>:bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span><br><br><br></span></a>
+<a class="note0">Ambīanōrum<span><br><br></span></a>
+<a class="note0">pervēnit;<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">suaque<span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note1">sine<span>奪格支配</span></a>
+<a class="note1">morā<span>mora morae N (1st) F  <br>:delay, hindrance, obstacle; pause;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">dēdidērunt.<span>dedo dedere, dedidi, deditus ３複　完了　;= give up, surrender<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>&nbsp;それら（人質）が渡され、武器が城塞の外に集められ、そこからAmbianiの領土に入った。彼らは早々に、降伏して彼ら自身と財産を差し出した。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eōrum<span><br><br></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Nerviī<span><br><br></span></a>
+<a class="note1">attingēbant.<span>attingo attingere, attigi, attactus ３複　未完了　;= touch, border on,<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼らの領土はNervians族と接していた。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quōrum<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">nātūrā<span>natura naturae N (1st) F  <br>:nature; birth; <strong>character</strong>;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">mōribusque<span>mos moris N (3rd) M  <br>:custom, habit; mood, manner, fashion; character (pl.), behavior, morals;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">quaereret,<span>quaero = search for seek</span></a>
+<a class="note0">sīc<span><br><br></span></a>
+<a class="note1">reperiēbat:<span>reperio reperire, repperi, repertus V (4th) TRANS  <br>:discover, learn; light on; find/obtain/get; find out/to be, get to know; invent;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note1">nūllum<span>nullus nulli N (2nd) M  <br>:no one;<br>(c 単数 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">aditum<span>adeo adire, adivi(ii), aditus V  <br>:approach; attack; visit, address; undertake; take possession (inheritance);<br>(完了 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">mercātōribus;<span><br><br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note1">patī<span>patior pati, passus sum V (3rd) DEP  <br>:suffer; allow; undergo, endure; permit;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">vīnī<span>vinum vini N (2nd) N  <br>:wine;<br>(n 単数 属格)<br></span></a>
+<a class="note1">reliquārumque<span>reliquus reliqua, reliquum ADJ  <br>:rest of/remaining/available/left; surviving; future/further; yet to be/owed;<br>(f 複数  属格)<br></span></a>
+<a class="note1">rērum<span>res 属格<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">lūxuriam<span>luxuria luxuriae N (1st) F  <br>:luxury; extravagance; thriving condition;<br>(c 単数 対格)<br></span></a>
+<a class="note1">pertinentium<span>pertineo pertinere, pertinui, pertentus V (2nd)  <br>:reach; extend; relate to; concerns, pertain to;<br>(現在 分詞 能動態  複数  属格)<br></span></a>
+<a class="note1">īnferrī,<span>infero inferre, intuli, illatus V TRANS  <br>:bring/carry in, import; advance, bring/march/step/move foward; impel, urge;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">relangūescere<span>relanguesco relanguescere, relangui, - V (3rd)  <br>:become faint, become weak; sink down;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">animōs<span><br><br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">remittī<span>remitto remittere, remisi, remissus V (3rd)  <br>:send back, remit; throw back, relax, diminish;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">virtūtem<span>virtus virtutis N (3rd) F  <br>:strength/power; courage/bravery; worth/ manliness/ virtue/ character/ excellence;<br>(c 単数 対格)<br></span></a>
+<a class="note1">exīstimārent;<span>existimo existimare, existimavi, existimatus V (1st) TRANS  <br>:value/esteem; form/hold opinion/view; think/suppose; estimate; judge/consider;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">hominēs<span><br><br></span></a>
+<a class="note1">ferōs<span>ferus fera, ferum ADJ  <br>:wild, savage; uncivilized; untamed; fierce;<br>(m 複数  対格)<br></span></a>
+<a class="note0">magnaeque<span></span></a>
+<a class="note1">virtūtis;<span>virtus virtutis N (3rd) F  <br>:strength/power; courage/bravery; worth/ manliness/ virtue/ character /excellence;<br>(X 単数 属格)<br></span></a>
+<a class="note1">increpitāre<span>increpito increpitare, increpitavi, increpitatus V (1st)  <br>:chide, utter (noisy) reproaches at;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">incūsāre<span>incuso incusare, incusavi, incusatus V (1st)  <br>:accuse, blame, criticize, condemn;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">reliquōs<span><br><br></span></a>
+<a class="note0">Belgās,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">populō<span><br><br></span></a>
+<a class="note1">Rōmānō<span>与格<br></span></a>
+<a class="note1">dēdidissent<span>dedo dedere, dedidi, deditus V (3rd) TRANS  <br>:give up/in, surrender; abandon/consign/devote (to); yield, hand/deliver over;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">patriamque<span>patrius patria, patrium ADJ  <br>:father's, paternal; ancestral;<br>(f 単数 対格)<br></span></a>
+<a class="note1">virtūtem<span>virtus ;= strength, courage, army, mighty work<br></span></a>
+<a class="note1">prōiēcissent;<span>proicio proicere, projeci, projectus V (3rd) TRANS  <br>:throw down, throw out; abandon; throw away;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">cōnfīrmāre<span>confirmo confirmare, confirmavi, confirmatus V (1st) TRANS  <br>:|assert positively; <strong>declare</strong>, prove, confirm, support; sanction; encourage;<br>(  現在 能動態 不定詞 )<br><br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">lēgātōs<span><br><br></span></a>
+<a class="note1">missūrōs<span>mitto mittere, misi, missus V (3rd)  <br>:send, throw, hurl, cast; let out, release, dismiss; disregard;<br>(未来 分詞 能動態 m 複数  対格)<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">ūllam<span><br><br></span></a>
+<a class="note1">condiciōnem<span>condicio condicinis F 単　対格　;= agreement, terms, <br></span></a>
+<a class="note0">pācis<span><br><br></span></a>
+<a class="note1">acceptūrōs.<span>accipio accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>(未来 分詞 能動態 m 複数  対格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>de natura moribusque</strong> : 特徴や慣習にかんして</p>
+<p>ここから間接話法。</p>
+<p><strong>nullum esse aditum mercatoribus</strong> : nullus aditus est mercatoribusの間接話法版、所有の与格　「商人たちは何のアクセスも持っていない」</p>
+<p><strong>pati inferri nihil vini et rerum</strong> : vini, rerumは部分の属格。「no wine and no things ~を輸入する」</p>
+<p>inferri nihil vini et rerum. : 主語の対格付きの不定詞(newLatin 331)「ワインやものが何も運び込まれない事」</p>
+<p>(eos) pati : eos（Nervii)が省略されている。「彼らは許されている事」（これも主語の対格付きの不定詞）</p>
+<p><strong>rerum ad luxuriam pertinentium </strong>: 贅沢品になるようなもの</p>
+<p><strong>quod existimare animo eorum relanguecere et virtutem remitti his rebus</strong>. 「何故なら、そういう物によって精神が弱くなり力が緩むと考えたからである。」</p>
+<p>remitti = relaxed 弓が緩む様、反対がintendo</p>
+<p><strong>qui dedidissent se populo Romano</strong> : 彼ら自身をローマに降伏し　（dedo は他動詞で目的語を取る。この場合seが目的語）</p>
+<p><strong>que projecissent patriam virtutem</strong> : patriam は形容詞で「先祖からの」という意味（patrius)と「祖国」（patria)両方ある。文法的には形容詞の方を取るべきであろう。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼らの特徴や慣習などについてCaesarは諮問して次のようなことがわかった。商人たちは彼らに近づいてはいない。酒やその他の贅沢品と思われる物品は輸入されることを許可されていない。何故ならそういうものは彼らの精神を惰弱なものにし、彼らの強さを緩めるものであると考えたからである。大変野蛮で強い人々である。&nbsp;&nbsp;彼らは残りのBelageたちを咎め非難している。それらは自身をローマに対し降伏し、祖国の名誉を投げ捨てたからである。そして彼ら自身は使者を送らないであろうし、平和の条件など一切受けつけないであろうと宣言している。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 28</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[28]<span></span></a>
+
+<a class="note1">Quod<span>quiの対格、「其のこと」即ち逃亡の事。</span></a>
+<a class="note1">ubi<span>ubi, 副詞   :where; in what place; (time) when, whenever; as soon as; in which; with whom;</span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">resciit,<span>=resciscit <br>rescisco, resciscere, rescivi, rescitus 動詞 (3rd)   :learn, find out, ascertain; bring to light;3 単 現在</span></a>
+<a class="note1">quōrum<span>先行詞はhis(与格） <br>属格<br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note1">ierant<span>eo 3 複 過去完了</span></a>
+<a class="note1">hīs<span>与格<br></span></a>
+<a class="note1">utī<span>uti, 接続詞   :in order that; that, so that; as, when;<br></span></a>
+<a class="note1">conquīrerent<span>conquiro, conquirere, conquisivi, conquisitus 動詞 (3rd) TRANS   :seek out; hunt/rake up; investigate; collect; search out/down/for diligently;3 複 未完了<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">redūcerent,<span>reduco, reducere, reduxi, reductus 動詞 (3rd)   :lead back, bring back; restore; reduce;3 複 未完了<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">sibi<span>与格（参照の与格） カエサルに取って<br></span></a>
+<a class="note1">pūrgātī<span>purgo, purgare, purgavi, purgatus 動詞 (1st)   :make clean, cleanse; excuse;完了分詞　受動<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">vellent,<span>3 複 未完了 能動態 接続法 <br>volo</span></a>
+<a class="note1">imperāvit;<span>impero, imperare, imperavi, imperatus 動詞 (1st)   :order, command, levy; rule (over) (w/DAT);(hisに命じる）<br></span></a>
+<a class="note1">reductōs<span>reduco, reducere, reduxi, reductus 動詞 (3rd)   :lead back, bring back; restore; reduce; 完了分詞受動　対格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">hostium<span>属格</span></a>
+<a class="note1">numerō<span>numero, numerare, numeravi, numerus, numeri 名詞 (2nd) M   :number/sum/total/rank; 単　奪格<br></span></a>
+<a class="note1">habuit;<span>3 単 完了</span></a>
+<a class="note1">reliquōs<span>reliquus, reliqua, reliquum 形容詞   :rest of/remaining/available/left; surviving; future/further; yet to be/owed;対格<br></span></a>
+<a class="note0">omnēs<span></span></a>
+<a class="note1">obsidibus,<span>obses, obsidis 名詞 (3rd) C   :hostage; pledge, security;奪格</span></a>
+<a class="note0">armīs,<span><br><br></span></a>
+<a class="note1">perfugīs<span>perfuga, perfugae 名詞 (1st) M   :deserter;奪格<br></span></a>
+<a class="note1">trāditīs<span>trado, tradere, tradidi, traditus 動詞 (3rd)   :hand over, surrender; deliver; bequeath; relate;完了分詞　受動　奪格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">dēditiōnem<span>対格 <br>deditio, deditionis 名詞 (3rd) F   :surrender, cession of right<br></span></a>
+<a class="note1">accēpit.<span>accipio, accipere, accepi, acceptus 動詞 (3rd) TRANS   :take, grasp, receive, accept,3 単 完了<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>his quorum per fines ierant：その人の領地を通られた、その人に <strong>hisはquorumの先行詞でimperavitの間接目的語</strong></p>
+<p>uti conquirerent et reducerent　：　imperavitの直接的な内容　追跡して連れ戻すように　<strong>hisが与格で間接目的語</strong></p>
+<p>si sibi purgati esse vellent　：　purgati esse = being clean 無実である事を　もし無実で有るように望むならば</p>
+<p>sibiは[参照の与格] [<strong>判断者の与格</strong>] (NewLatin188 2.c)</p>
+<p>reductos in hostium numero habuit　：連れ戻された者共を「敵」の数の中に保持した。敵とみなした。「殺戮した、または奴隷にした」reductosは完了分詞、対格であるが名詞として扱っている。次のreliquosも同様。</p>
+<p>reliquos in deditionem accepit.：残りのものを正式な降伏として受け入れる。deditioには権利の譲渡、という意味もあり、かつ条件付き降伏という意味もある。<strong>正式にローマ軍の支配下に入る</strong>、というニュアンス。つまり、義務もあるが保護もされるという関係。</p>
+<p>obsidibus traditis, armis traditis, perfugis traditis　で各々<strong>独立奪格</strong>。「人質、武器、遺棄された人の引き渡しによって」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルがそれを知った時、（逃亡者が）通った領地の人間に、もしそれに加担していないと思われたいなら、追跡し、連れ戻せと命じた。連れ戻された人は敵として扱われた。残りものは、即ち、人質、武器、遺棄された人などは引き渡しをもって正式な降伏として受け入れた。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Helvētiōs,<span><br><br></span></a>
+<a class="note0">Tulingōs,<span><br><br></span></a>
+<a class="note0">Latobrigōs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">suōs,<span><br><br></span></a>
+<a class="note1">unde<span>unde, 副詞   :from where, whence, from what or which place; from which; from whom;</span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">profectī,<span>proficiscor, proficisci, profectus sum 動詞 (3rd) DEP   :depart, set out; proceed;完了分詞受動<br></span></a>
+<a class="note1">revertī<span>reverto, revertere, reverti, - 動詞 (3rd)   :turn back, go back, return; recur (usually DEP);現在受動　不定詞<br></span></a>
+<a class="note0">iussit,<span></span></a>
+<a class="note0">et,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">frūgibus<span>frux, frugis 名詞 (3rd) F   :crops (pl.), fruits, produce, legumes; honest men; 奪格<br></span></a>
+<a class="note1">āmissīs<span>amitto, amittere, amisi, amissus 動詞 (3rd) TRANS   :lose; lose by death; send away, dismiss; part with; let go/slip/fall, drop;完了分詞受動　奪格<br></span></a>
+<a class="note1">domī<span>=at home domusは第2、第4変化の名詞で、domiは古い形式の処格で、at homeの意で使われる。<br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">quō<span>先行詞はnihil<br></span></a>
+<a class="note1">famem<span>fames, famis 名詞 (3rd) F   :hunger; famine; want; craving;対格</span></a>
+<a class="note1">tolerārent,<span>tolero, tolerare, toleravi, toleratus 動詞 (1st)   :bear, endure, tolerate;3 複 未完了 能動態 接続法<br></span></a>
+<a class="note1">Allobrogibus<span>与格</span></a>
+<a class="note0">imperāvit<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">iīs<span>Helvetiiの事。与格<br></span></a>
+<a class="note1">frūmentī<span>frumentum, frumenti 名詞 (2nd) N   :grain; crops;属格<br></span></a>
+<a class="note1">cōpiam<span>copia, copiae 名詞 (1st) F   :plenty, abundance, supply;<br></span></a>
+<a class="note1">facerent;<span>3 複 未完了 能動態 接続法</span></a>
+<a class="note1">ipsōs<span>Helvetiiのこと <br>restituoの主語<br></span></a>
+<a class="note1">oppida<span>対格oppidum oppidi N</span></a>
+<a class="note1">vīcōsque,<span>vicus, vici 名詞 (2nd) M   :village; hamlet; street, row of houses;対格<br></span></a>
+<a class="note1">quōs<span>M 複　対格<br></span></a>
+<a class="note1">incenderant,<span>incendo, incendere, incendi, incensus 動詞 (3rd) TRANS   :set on fire; set fire to, kindle, burn;3 複 過去完了</span></a>
+<a class="note1">restituere<span>restituo, restituere, restitui, restitutus 動詞 (3rd)   :restore; revive; bring back; make good; <br>不定詞</span></a>
+<a class="note0">iussit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>unde erant profecti　：profectiは proficiscor (proficioではなく)の完了分詞受動、出発した</p>
+<p>(omnibus) frugibus amissis :<strong>独立奪格</strong>、食料を捨てたので</p>
+<p>nihil erat quo famem tolerarent：<strong>quoの先行詞はnihil　</strong>餓えを耐えるためのものは何も</p>
+<p>tolerarentは接続法であるがこれは、quo以下が「<strong>特徴の節</strong>」になっているため。これは関係代名詞文で、明確な先行詞についての事実を述べるのではなく、先行詞の性質、特徴などを述べる場合である。</p>
+<p><strong>domi＝at home</strong> domiは古い形式の処格を残し、at homeの意で使われる。</p>
+<p>oppida vicosque, quos : quosはM、vicosもMで一致させているが、最も近いところに一致させており、意味的にはoppida(N)にもかかる。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>ヘルウェティ、トリンギ、ラトビッキは彼らが出発した自身の領地に戻るよう命じられた。全ての食料は捨てられたので祖国には彼らの餓えを凌ぐものがなにもないので、アロブロゲスに食料を供給するように命じ、ヘルウェティその他の自身には燃やされた家、村を再建するよう命じた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Id<span><strike>he=Caesar</strike></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note1">maximē<span>maxime, 副詞   :especially, chiefly;<br></span></a>
+<a class="note1">ratiōne<span>ratio, rationis 名詞 (3rd) F   :account, reckoning, invoice; plan; prudence; method; reasoning; rule; regard;奪格<br></span></a>
+<a class="note0">fēcit,<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">nōluit<span>nolo, nolle, nolui, - 動詞   :be unwilling; wish not to; refuse to; 3 単 完了<br></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">unde<span></span></a>
+<a class="note0">Helvētiī<span><br><br></span></a>
+<a class="note1">discesserant<span>discedo, discedere, discessi, discessus 動詞 (3rd)   :go/march off, depart, withdraw; scatter, dissipate; abandon;3 複 過去完了</span></a>
+<a class="note1">vacāre,<span>vaco, vacare, vacavi, vacatus 動詞 (1st)   :be empty; be vacant; be idle; be free from, be unoccupied;不定詞<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note1">propter<span>propter, 前置詞 (対格)  :near; on account of; by means of; because of;</span></a>
+<a class="note1">bonitātem<span>bonitas, bonitatis 名詞 (3rd) F   :goodness, integrity, moral excellence; kindness, benevolence, tenderness;対格<br></span></a>
+<a class="note1">agrōrum<span>ager, agri 名詞 (2nd) M   :field, ground; farm, land, 属格<br></span></a>
+<a class="note1">Germānī,<span>複　主格<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">trāns<span><br><br></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note0">incolunt,<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note0">fīnibus<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Helvētiōrum<span><br><br></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note1">trānsīrent<span>transeo, transire, transivi(ii), transitus 動詞   :go over, cross; <br>3 複 未完了 能動態 接続法<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">fīnitimī<span>finitimus, finitima, finitimum 形容詞   :neighboring, bordering, adjoining;<br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">prōvinciae<span><br><br></span></a>
+<a class="note0">Allobrogibusque<span></span></a>
+<a class="note0">essent.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>ea ratione ~ quod ~: for this reason that (原因の奪格？）</p>
+<p>noluit eum locum vacare : その場所が空いている事を望まなかった。</p>
+<p><strong>ne = lest (～しないかと心配で</strong>）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルはそれを、ヘルウェティが見捨てた場所が空き地になることを望まないという理由が主で、行った。すなわち、良い土地があると、ライン河の対岸に住むゲルマン人が自身の領地からでてヘルウェティの領地に渡り、ガリアの属州のアロブロゲスの隣人になるのが心配であったからである。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Boiōs<span>Boius, Boii N (2nd) M   :Boli (pl.), a people of Cisalpine Gaul - in Caesar's "Gallic War";対格<br></span></a>
+<a class="note1">petentibus<span>peto, petere, petivi, petitus 動詞 (3rd)   :attack; aim at; desire; beg, entreat, ask (for); reach towards, make for; 現在分詞 与格</span></a>
+<a class="note1">Haeduīs,<span>与格<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">ēgregiā<span>egregius, egregia, egregium 形容詞   :singular; distinguished; exceptional; extraordinary; eminent; excellent;<br></span></a>
+<a class="note1">virtūte<span>virtus, virtutis 名詞 (3rd) F   :strength/power; courage/bravery; worth/manliness/virtue/character/excellence; 奪格<br></span></a>
+<a class="note1">erant<span>3 複 未完了</span></a>
+<a class="note1">cognitī,<span>cognosco, cognoscere, cognovi, cognitus 動詞 (3rd) TRANS   :become acquainted with/aware of; recognize;完了分詞　受動態<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fīnibus<span><br><br></span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note1">conlocārent,<span>conloco, conlocare, conlocavi, conlocatus 動詞 (1st) TRANS   :place/put/set in order/proper position, arrange; station, post, position; apply; 3 複 未完了<br></span></a>
+<a class="note1">concessit;<span>concedo, concedere, concessi, concessus 動詞 (3rd)   :relinquish/give up/concede; depart; pardon;3 単 完了</span></a>
+<a class="note1">quibus<span>＝ Boiis　（与格）</span></a>
+<a class="note1">illī<span>Haedui<br></span></a>
+<a class="note1">agrōs<span>複　対格<br></span></a>
+<a class="note1">dedērunt<span>do 3 複 完了<br></span></a>
+<a class="note1">quōsque<span>= Boios 対格<br></span></a>
+<a class="note1">posteā<span>postea, 副詞   :afterwards;<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">parem<span>par, paris 名詞 (3rd) C   :|equal, counterpart; 対格</span></a>
+<a class="note1">iūris<span>jus, juris 名詞 (3rd) N   :law; legal system; code; right; duty; justice; court; binding decision; oath;属格<br></span></a>
+<a class="note1">lībertātisque<span>libertas, libertatis 名詞 (3rd) F   :freedom, liberty; frankness of speech, outspokenness; 属格<br></span></a>
+<a class="note1">condiciōnem<span>condicio, condicionis 名詞 (3rd) F   :agreement/contract; terms, proposal/option/alternative; situation; stipulation;対格<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ipsī<span><br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">recēpērunt.<span>recipio, recipere, recepi, receptus 動詞 (3rd)   :keep back; recover; undertake; guarantee; accept, take in; take back; 3 複 完了<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>concessit petentibus Haeduis ut conlocarent Boios in suis finibus.</strong> 強調のためBoiosが先頭に来ている。</p>
+<p>嘆願するハエドゥに対して彼らがボイ族を自分の領土内に定住させることを了解した。（ハエドゥのリクエストにより）</p>
+<p>egregia virtute erant cogniti. : virtuteは[<strong>性質の奪格</strong>]の<strong>叙述的用法</strong>　（NewLatin224.1)</p>
+<p><strong>illi dederunt agros quibus</strong> : illiはHaeduiでquibusはBoi（与格）で「彼らに領地を与え」</p>
+<p><strong>receperunt quosque postea in parem condicionem atque ipsi erant</strong>. <font style="background-color: rgb(255, 255, 0);">atqueはしばしば「～と同じ」という意味を持つ。（NewLatin341.1.c)</font> quosqueはBoiで目的語。Boiをipsi(Haedui)がある状況と同じ状況に受け入れる、というのが逐語訳。par　は同様の意で、receperuntは受け入れるの意。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>ボイ族、彼らは極めて戦闘的に優秀であるとの評判であったが、彼らを自分たちの領地に定住させたいというハエドゥ族の要求を、カエサルは了承した。ハエドゥはボイに領土を与え、ゆくゆくは法的な自由に関して自分たちと同じにするという事も受け入れた。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

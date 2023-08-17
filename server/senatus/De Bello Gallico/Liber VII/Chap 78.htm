@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 78</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[78]<span></span></a>
+
+<a class="note0">Sententiīs<span><br><br></span></a>
+<a class="note0">dictīs<span><br><br></span></a>
+<a class="note0">cōnstituunt<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">eī<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">valētūdine<span>valetudo valetudinis N (3rd) F  <br>:good health, soundness; condition of body/health; illness, indisposition;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">aetāte<span><br><br></span></a>
+<a class="note1">inūtilēs<span>inutilis inutilis, inutile ADJ  <br>:useless, unprofitable, inexpedient, disadvantageous; harmful, helpless;<br>(c 複数  主格)<br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">bellō<span>bellum belli N (2nd) N  <br>:war, warfare; battle, combat, fight; (at/in) (the) war(s); military force, arms;<br>(X 単数 与格)<br></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note1">excēdant,<span>excedo excedere, excessi, excessus V (3rd)  <br>:pass, withdraw, exceed; go away/out/beyond; die;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note0">prius<span></span></a>
+<a class="note1">experiantur,<span>experior experiri, expertus sum V (4th) DEP  <br>:test, put to the test; find out; attempt, try; prove, experience;<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Critognāti<span><br><br></span></a>
+<a class="note0">sententiam<span></span></a>
+<a class="note1">dēscendant:<span>descendo descendere, descendi, descensus V (3rd) INTRANS  <br>:descend, climb/ <strong>march</strong>/ come/ go/flow/ run/hang down; dismount; penetrate/sink;<br>(３人称 複数  現在 能動態 接続法 )<br><br></span></a>
+<a class="note0">illō<span><br><br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">potius<span>potius ADV <br>:rather, more, preferably;<br><br></span></a>
+<a class="note1">ūtendum<span>utor uti, usus sum V (3rd) DEP  <br>:use, make use of, enjoy; enjoy the friendship of (with ABL);<br>(未来 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note0">cōnsiliō,<span><br><br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note1">cōgat<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">auxilia<span></span></a>
+<a class="note1">morentur,<span>moror morari, moratus sum V (1st) DEP  <br>:delay; stay, stay behind; devote attention to;<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">dēditiōnis<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">pācis<span><br><br></span></a>
+<a class="note1">subeundam<span>subeo subire, subivi(ii), subitus V INTRANS  <br>:|place/be placed under/in support; come up w/aid; assume a form; undergo, endure<br>(未来 分詞 受動態 f 単数 対格)<br><br></span></a>
+<a class="note0">condiciōnem.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>experiantur omnia priusquam descendant ad Critognati sententiam. descendantは「降りる」というよりそちらに向かうというニュアンスであろう。「Critoganatusの意見に従う前に全ての便法が試された」</p>
+<p>tamen illo utendum (esse) consilio potius quam subeundam (esse) condicionem. : この部分は間接話法になっている。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>多くの意見が述べられ、次の事が決められた。健康上の問題または年齢の問題で戦闘に対して不適当なものは町を出る事。またCritognatusの案に従う前にあらゆる方法を試すことなどである。しかし、（皆思ったことだが）もし事態がそれを強要し、つまり救援が遅れるようであれば、如何なる降伏または和平の条件を差し出すよりもその計画を実行するべきである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Mandubiī,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note0">recēperant,<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">līberīs<span>liber liberi N (2nd) M  <br>:children (pl.); (sg. VOC) child;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">uxōribus<span><br><br></span></a>
+<a class="note1">exīre<span>exeo exire, exivi(ii), exitus V INTRANS  <br>:come/go/sail/march/move out/forth/away, leave; pass (away), expire/perish/die;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">cōguntur.<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/<strong>compel</strong>; convene; congeal;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>Mandubii族、彼がその軍勢を受け入れたものであったが、子供や女たちと共に追い出される事になった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hī,<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">mūnītiōnēs<span><br><br></span></a>
+<a class="note0">Rōmānōrum<span><br><br></span></a>
+<a class="note1">accessissent,<span>accedo accedere, accessi, accessus V (3rd)  <br>:come near, approach; agree with; be added to (w/ad or in + ACC); constitute;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">flentēs<span><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">precibus<span>prex precis N (3rd) F  <br>:prayer, request;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">ōrābant,<span>oro orare, oravi, oratus V (1st)  <br>:beg, ask for, pray; beseech, plead, entreat; worship, adore;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">servitūtem<span><br><br></span></a>
+<a class="note1">receptōs<span>recipio recipere, recepi, receptus V (3rd)  <br>:keep back; recover; undertake; guarantee; accept, take in; take back;<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note1">cibō<span>cibus cibi N (2nd) M  <br>:food; fare, rations; nutriment, sustenance, fuel; eating, a meal; bait;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">iuvārent.<span>juvat juvare, juvit, jutus est V (1st) IMPERS  <br>:it pleases/delights; it is enjoyable; it is helpful;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>flentes orabant omnibus precibus : prexと言うのは懇願の意であるが、ここではあらゆる懇願の動作と考え、手段の奪格。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>彼らはローマ軍の防衛設備の近くに来ると、泣きながらあらゆる懇願をしながら、自分たちを捕虜として受け入れ食料を与えるよう頼んだ。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">At<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">dispositīs<span>dispono disponere, disposui, dispositus V (3rd) TRANS  <br>:dispose, place here and there, distribute; set/lay out; administer/manage/order;<br>(完了 分詞 受動態  複数  与格),<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">vāllō<span><br><br></span></a>
+<a class="note1">cūstōdibus<span>custos custodis N (3rd) C  <br>:guard; sentry/watch; guardian/protector/keeper; doorkeeper/watchman/janitor;<br>&nbsp;(X 複数  与格),<br></span></a>
+<a class="note1">recipī<span>recipio recipere, recepi, receptus V (3rd)  <br>:keep back; recover; undertake; guarantee; accept, take in; take back;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">prohibēbat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>しかしCaesarは城壁に詰めている衛兵たちに対し、（彼らを）受け入れることを禁止した。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 54</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[54]<span></span></a>
+
+<a class="note0">At<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">prīncipibus<span><br><br></span></a>
+<a class="note0">cuiusque<span><br><br></span></a>
+<a class="note0">cīvitātis<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">ēvocātīs<span><br><br></span></a>
+<a class="note0">aliās<span><br><br></span></a>
+<a class="note1">territandō,<span>territo territare, territavi, territatus V (1st)  <br>:intimidate; keep on frightening;<br>&nbsp;(未来 分詞 受動態 n 単数 奪格)<br>動名詞、奪格<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">scīre<span>scio scire, scivi, scitus V (4th) TRANS  <br>:know, understand;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">fierent<span></span></a>
+<a class="note1">dēnūntiāret,<span>denuntio denuntiare, denuntiavi, denuntiatus V (1st)  <br>:|announce, give official information; declare; summon (witness)/deliver summons;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">aliās<span></span></a>
+<a class="note1">cohortandō<span>cohorto cohortare, cohortavi, cohortatus V (1st) TRANS  <br>:encourage, exhort;<br>&nbsp;(未来 分詞 受動態 n 単数 奪格)<br>動名詞　奪格<br></span></a>
+<a class="note0">magnam<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">officiō<span><br><br></span></a>
+<a class="note1">tenuit.<span>teneo tenere, tenui, tentus V (2nd)  <br>:hold, keep; comprehend; possess; master; preserve;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Caesar tenuit magnam partem Galliae in officio. が骨子。officiumはdutyの意味で、多分臣下の義務で、忠誠の状態、平和な状態を意味する。</p>
+<p>alias ~&nbsp; 「ある時は、ある場合はなど」</p>
+<p>territando, cohortando : 動名詞、奪格で、原因、手段を表す。（NewLatin 338.4.(a))</p>
+<p><strong>cum denuntiaret se scire quae fierent</strong>. 何が起きているかを彼は知っていると言って、</p>
+</div></div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>Caesarはといえば、各々の国から主だったものを彼の元に召喚し、あるものには、私は何が起きているか知っているぞと言って脅かし、またあるものには、勇気づける事によって、広いガリアの忠誠を保とうとしていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Tamen<span></span></a>
+<a class="note1">Senonēs,<span>Senones Senonis N (3rd) M  <br>:Senones; tribe of central Gaul (Seine valley);<br>(X 単数 主格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">cīvitās<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">prīmīs<span><br><br></span></a>
+<a class="note1">fīrma<span>firmus firma -um, firmior -or -us, firmissimus -a -um ADJ  <br>:firm/ steady; substantial / solid/ secure/ safe; strong/ robust/ sturdy/ stout/ durable;<br>(f 単数 主格),<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">magnae<span><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">Gallōs<span><br><br><br></span></a>
+<a class="note0">auctōritātis,<span><br><br></span></a>
+<a class="note1">Cavarinum,<span>Cavarinus Stonesのリーダー<br><br></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">rēgem<span><br><br></span></a>
+<a class="note1">cōnstituerat,<span>constituo constituere, constitui, constitutus V (3rd)  <br>:||establish/create/institute; draw up, arrange/set in order; make up, form; fix;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">cuius<span><br><br></span></a>
+<a class="note0">frāter<span><br><br></span></a>
+<a class="note0">Moritasgus<span></span></a>
+<a class="note0">adventū<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliam<span></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note0">cuiusque<span><br><br></span></a>
+<a class="note1">maiōrēs<span>major majoris N (3rd) M  <br>:ancestors (pl.);<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note0">rēgnum<span><br><br></span></a>
+<a class="note1">obtinuerant,<span>obtineo obtinere, obtinui, obtentus V (2nd)  <br>:get hold of; maintain; obtain; hold fast, occupy; prevail;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">interficere<span></span></a>
+<a class="note0">pūblicō<span><br><br></span></a>
+<a class="note0">cōnsiliō<span><br><br></span></a>
+<a class="note1">cōnātī,<span>conor conari, conatus sum V (1st) DEP  <br>:attempt/try/endeavor, make an effort; exert oneself; try to go/rise/speak;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">ille<span></span></a>
+<a class="note1">praesēnsisset<span>praesentio praesentire, praesensi, praesensus V (4th)  <br>:feel or perceive beforehand; have a presentiment of;<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">profūgisset,<span>profugio profugere, profugi, - V (3rd)  <br>:escape, escape from; run away from;<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note1">ūsque<span>usque ADV <br>:all the way, right on; all the time, continuously, at every point, always;<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note1">īnsecūtī<span>insequor insequi, insecutus sum V (3rd) DEP  <br>:follow/come after; attack; overtake; pursue (hostile); come after (time);<br>&nbsp;(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">rēgnō<span><br><br></span></a>
+<a class="note0">domōque<span><br><br></span></a>
+<a class="note1">expulērunt<span>expello expellere, expuli, expulsus V (3rd)  <br>:drive out, expel, banish; disown, reject;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">et,<span></span></a>
+<a class="note0">missīs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">satisfaciendī<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">lēgātīs,<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">is<span></span></a>
+<a class="note0">omnem<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">senātum<span><br><br></span></a>
+<a class="note0">venīre<span><br><br></span></a>
+<a class="note0">iussisset,<span></span></a>
+<a class="note1">dictō<span>dictum dicti N (2nd) N  <br>:words/utterance/remark; one's word/promise; saying/maxim; bon mot, witticism;<br>&nbsp;(X 単数 与格)<br><br></span></a>
+<a class="note0">audientēs<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">fuērunt.<span>sum esse, fui, futurus V  <br>:be;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>解りにくい文。</p>
+<p><strong>Senones, conari interficere Cavarinum, expulerunt</strong>. が最初の部分の骨子。</p>
+<p><strong>(Senones) fuerunt non audientes dicto</strong>. が後半の骨子。</p>
+<p>(est) magnae auctoritatis inter Gallos. auctoritatisは<u>性質の属格。</u></p>
+<p>Caesaris adventu in Galliam : Caesarがガリアに来た時、「時の奪格」</p>
+<p><strong>dicto audientes esse</strong> audientesは現在分詞で形容詞と同じ。与格＋形容詞の用法。（NewLatin192.１）esse audientes dictoでdictoは間接目的語。(sunt proximi Germanisと同じ構文）命令に従わない<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>しかしながら、Senones族、それは最も強い国の一つで、ガリアにおける大きな権威であったのだが、そこの王としてCaesarが立てた、Cavarinus、彼の兄弟であるMoritasgusがCaesarがガリアに来た頃王権を得ており、その祖先も同様であったが、を公開の会議で殺そうとしていた。（Cavarinusは)事前にそれを察知して逃走したが彼を王国に境界まで追い詰め、国からも故郷からも追放した。そしてCaesarに弁解のために使者を送ったが、Caesarが彼ら重鎮たち全員、Caesarのもとに出頭せよと命じられたが、応じなかった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Tantum<span>tantum ADV <br>:so much, so far; hardly, only;<br><br></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">hominēs<span><br><br></span></a>
+<a class="note0">barbarōs<span><br><br></span></a>
+<a class="note1">valuit<span>valeo valere, valui, valitus V (2nd)  <br>:be strong/ powerful/ <strong>influential</strong>/ healthy; prevail;<br>(３人称 単数 完了 能動態 直説法 )<br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">aliquōs<span>aliqui aliqua, aliquod PRON  <br>:any; some;<br>(m 複数  対格)<br></span></a>
+<a class="note1">repertōs<span>reperio reperire, repperi, repertus V (4th) TRANS  <br>:discover, learn; light on; find/obtain/get; find out/to be, get to know; invent;<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note1">prīncipēs<span>princeps principis N (3rd) M  <br>:leader/chief, first/leading member/citizen/man; master/expert; founder/proposer;<br>(c 複数  対格)<br></span></a>
+<a class="note0">inferendī<span><br><br></span></a>
+<a class="note0">bellī<span><br><br></span></a>
+<a class="note1">tantamque<span>tantus tanta, tantum ADJ  <br>:of such size; so great, so much;<br>(f 単数 対格)<br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">voluntātum<span>voluntas voluntatis N (3rd) F  <br>:will, desire; purpose; good will; wish, favor, consent;<br>(c 複数  属格)<br></span></a>
+<a class="note1">commūtātiōnem<span>commutatio commutationis N (3rd) F  <br>:change, reversal; upheaval; alteration; exchange, substitution; interchange;<br>(c 単数 対格)<br></span></a>
+<a class="note1">attulit,<span>affero afferre, attuli, allatus V TRANS  <br>:bring to (word/food), carry, convey; report, allege, announce; <strong>produce</strong>, <strong>cause</strong>;<br>(３人称 単数 完了 能動態 直説法 )<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">praeter<span>praeter PREP ACC <br>:besides, except, contrary to; beyond (rank), in front of, before; more than;<br><br></span></a>
+<a class="note0">Aeduōs<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Rēmōs,<span><br><br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note1">praecipuō<span>praecipuus praecipua, praecipuum ADJ  <br>:particular, especial;<br>&nbsp;(m 単数 奪格)<br></span></a>
+<a class="note0">semper<span></span></a>
+<a class="note1">honōre<span>honor honoris N (3rd) M  <br>:honor; respect/regard; mark of esteem, reward; dignity/grace; public office;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">habuit,<span></span></a>
+<a class="note1">alterōs<span>alter altera, alterum ADJ  <br>:one (of two); second/another; former/latter;<br>(m 複数  対格)<br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note1">vetere<span>vetus veteris (gen.), veterior -or -us, veterrimus -a -um ADJ  <br>:old, aged, ancient; former; veteran, experienced; long standing, chronic;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">perpetuā<span>perpetuus perpetua, perpetuum ADJ  <br>:continuous, uninterpreted; whole; perpetual, lasting; everlasting;<br>(f 単数 奪格)<br></span></a>
+<a class="note1">ergā<span>erga PREP ACC <br>:towards, opposite (friendly);<br><br></span></a>
+<a class="note0">populum<span></span></a>
+<a class="note0">Rōmānum<span><br><br></span></a>
+<a class="note1">fidē,<span>fides fidei N (5th) F  <br>:faith, loyalty; honesty; credit; confidence, trust, belief; good faith;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">alterōs<span><br><br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note0">recentibus<span></span></a>
+<a class="note0">Gallicī<span><br><br></span></a>
+<a class="note1">bellī<span>bellum belli N (2nd) N  <br>:war, warfare; battle, combat, fight; (at/in) (the) war(s); military force, arms;<br>(n 単数 属格)<br></span></a>
+<a class="note1">officiīs,<span>officium offici(i) N (2nd) N  <br>:duty, obligation; kindness; service, office;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">nūlla<span><br><br></span></a>
+<a class="note0">ferē<span><br><br></span></a>
+<a class="note0">cīvitās<span><br><br></span></a>
+<a class="note0">fuerit<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">suspecta<span>suspectus suspecta -um, suspectior -or -us, suspectissimus -a -um ADJ  <br>:<strong>suspected</strong>/ mistrusted; of doubtful character; believed without proof; suspicious;<br>(f 単数 主格)<br></span></a>
+<a class="note0">nōbīs.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>aliqos esse repertos</strong> 「あるものが見つかる」</p>
+<p><strong>principes inferendi belli</strong> は 動名詞属格＋目的語の属格で「戦争を遂行するリーダー」（NewLatin338.1)</p>
+<p>aliqosとprincipesは同格？このesseの不定詞句が、主語になっている。</p>
+<p><strong>valuit tantum apud homines barbaros</strong>. 蛮族らの間に大きな影響を与えた。</p>
+<p><strong>attulit tantam voluntatum commutationem omn</strong>ibus. omnibusは与格。皆に大きな意識上の変化をもたらした。</p>
+<p>alteros ~, alteros ~. 「一つは～で、もう一つは～」alterosは2つのうち1つの意。</p>
+<p>Gallici belli officiis : ここでofficiumはservie（貢献）の意。</p>
+<p><strong>nulla fere civitas fuerit non suspecta nobis</strong>.が主文。我々からみて疑わしくないものは殆どない。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>かくして、戦争を遂行する主体が見つかった、と言う事は、蛮族らの間におおきな影響を及ぼし、また皆に大きな意識上の変化をもたらした。その結果、AeduosとRemi、これらについてはCaesarは特別の変わらない尊敬を持っており、一つはその昔からのローマに対する忠誠心、もう一つは最新のガリアでの戦いでの貢献が故にであるが、その2つを除けば、我々にとって疑わしくないものは殆どないという状態であった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Idque<span></span></a>
+<a class="note1">adeō<span>adeo ADV <br>:to such a degree/pass/point; precisely, exactly; thus far; indeed, truly, even;<br><br></span></a>
+<a class="note1">haud<span>haud ADV <br>:not, not at all, by no means; not (as a particle);<br><br></span></a>
+<a class="note1">sciō<span>scio scire, scivi(ii), scitus V TRANS  <br>:know, understand;<br>(１人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">mīrandumne<span>miror mirari, miratus sum V (1st) DEP  <br>:be amazed/　surprised/　bewildered (at); look in wonder/awe/admiration at;<br>(未来 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">sit,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">complūribus<span><br><br></span></a>
+<a class="note0">aliīs<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">causīs,<span>causa causae N (1st) F  <br>:|occasion, subject; plea, position; lawsuit, case, trial; proviso/stipulation;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0">maximē<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">eī,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">virtūte<span><br><br></span></a>
+<a class="note0">bellī<span><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">gentibus<span>gens gentis N (3rd) F  <br>:<strong>tribe</strong>, clan; nation, people; Gentiles;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">praeferēbantur,<span>praefero praeferre, praetuli, praelatus V  <br>:carry in front; prefer; display; offer; give preference to;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">tantum<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note1">opīniōnis<span>opinio opinionis N (3rd) F  <br>:belief, idea, opinion; rumor (Plater);<br>(X 単数 属格)<br></span></a>
+<a class="note1">dēperdidisse<span>deperdo deperdere, deperdidi, deperditus V (3rd) TRANS  <br>:lose permanently/utterly (destruction); be deprived/desperate; destroy, ruin;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">populō<span></span></a>
+<a class="note0">Rōmānō<span><br><br></span></a>
+<a class="note0">imperia<span></span></a>
+<a class="note1">perferrent<span>perfero perferre, pertuli, perlatus V  <br>:carry through; bear, endure to the end, suffer; announce;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">gravissimē<span>gravis grave, gravior -or -us, gravissimus -a -um ADJ  最上級<br>:heavy; painful; important; serious; pregnant; grave, oppressive, burdensome;<br><strong>副詞</strong><br><br></span></a>
+<a class="note1">dolēbant.<span>doleo dolere, dolui, dolitus V (2nd)  <br>:hurt; feel/suffer pain; grieve; be afflicted/pained/sorry; cause pain/grief;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>scio haud, ne id sit mirandumne adeo</strong>. : mirandumneは ne mirandum で疑問文。ここでは間接疑問文。私はそれ(今の状況）が驚くべきかどうか知らないが（多分大した事ではない）</p>
+<p><strong>cum ~ tum -</strong> : not only ~ but also -</p>
+<p><strong>quod ei dolebant se deperdisse tantum eius opinionis</strong>. se 以下は<u>不定詞句になっていてdolebantの目的句</u>。逐語的には「何故なら、彼らは彼らがその評判の大きな部分を失った事を悲しんでいるからである。」tantumは形容詞名詞化で、opinionisは部分の属格。この場合[reputation]の意。</p>
+<p><strong>ut perferrent imperia a populo Romano</strong>. utは結果の名詞節。「結果としてローマからの支配に耐えている」</p>
+<p>dolebant, perferrentなどが未完了なのは、過去において継続していた事を示す。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>この状態になったことは驚くべきことではないだろう。その原因についてはたくさんあるが、その中でも最も大きのは次のことである。即ち、彼らは戦いの勇猛さにおいて、すべての部族から抜きん出ていたが、彼らはそお評判の大部分をを失い、結果的にローマの支配に耐えていると言う事を最も悲しんでいるからである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='remote latinreader' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function (event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+            if($("#saveoption").length){
+                $("#saveoption").hide();
+                $("#downloadsave").hide();
+            }
+            insertButtons2();
+            $("#outer").css("width","96%");
+        }
+        function insertButtons2(){
+            if(!$(".lbtn1").length){
+                $(".spacer").each(function(index, elem) {
+                    var target = $(elem);
+                    var tx1 = target.html();
+                    var color = "style='color:#5f9ea0;'";
+                    if (target.next().next().attr("class") != "spnote")
+                        color = "style='color:black;'";
+                    target.html(tx1 + "<button class='lbtn2'>Translation</button><button class='lbtn1'>Notes</button>");
+                });
+            }
+            $(".lbtn1").on("click", function() {
+                var target = $(this).parent().next().next();
+                if (target.attr("class") != "spnote") {
+                    target = target.next();
+                    if (target.attr("class") != "spnote") // 編集中の場合
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+            $(".lbtn2").on("click", function() {
+                var target = $(this).parent().next().next().next();
+                if (target.attr("class") != "translation") {
+                    target = target.next();
+                    if (target.attr("class") != "translation")
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+        }
+
+        function btoggle(obj, btn) {
+            obj.toggle(function() {
+                if ($(this).is(":visible"))
+                    btn.css("color", "black");
+                else
+                    btn.css("color", "#5f9ea0");
+            });
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 2.8rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+
+        /* 追加のボタン*/
+        .lbtn1,
+        .lbtn2,
+        .lbtn3,
+        .lbtn4 {
+            float: right;
+            margin-top: 2px;
+            margin-right: 6px;
+            height: 16px;
+            font-size: 10px;
+            padding: 1px;
+            font-weight: bold;
+            /* vertical-align: bottom; */
+            border: none;
+        }
+
+
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 2.8rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+
+        }
+
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+
+        a.note1:hover span {
+            display: block;
+        }
+
+        .latin span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 3.5rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        .latin span::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.8rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.5rem;
+            left: 2.0rem;
+        }
+    </style>
+</head>
+
+
+<body id="bodyportion">
+        <div id="outer">
+    
+		<a name="begin"></a>
+<div id="header">
+<h1> Liber I: Section 25 </h1>
+
+<div class="boxright">
+<input id="saveoption" class="rbtn1" type="button" value="保存する" style="font-size: 12px; font-family: meiryo; ">
+<input id="downloadsave" class="rbtn1" type="button" value="ダウンロード" style="font-size: 12px; font-family: meiryo; display: none;">
+</div></div>
+
+
+<div class="spacer">Line0<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+</a><a class="note0">[25]<span></span></a>
+<a class="note1">Expetuntur<span>expeto expetere, expeti, expetitus V (3rd)  <br>:ask for; desire; aspire to; demand; happen; fall on (person);<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">divitiae<span>divitia divitiae N (1st) F  <br>:riches (pl.), wealth;<br>(C 複数 主格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">usus<span></span></a>
+<a class="note0">vitae<span></span></a>
+<a class="note1">necessarios,<span>necessarius necessaria, necessarium ADJ  <br>:necessary/ needed/ essential/ indispensable; vital/ private (body part); close tied;<br>(M 複数 対格)<br></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">perfruendas<span><b>perfrŭor</b>,perfrui, perfructus sum V (3rd) DEP  <br><b>:have full enjoyment of, enjoy;</b><br>【動形容詞 (F 複数 対格) 】</span></a>
+<a class="note1">voluptates.<span>voluptas voluptatis N (3rd) F  <br>:pleasure, delight, enjoyment;<br>(C 複数 対格),<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>divitiae expetuntur : 「富は求められる」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>富は生活の必要性だけではなく、快楽を楽しむためにも求められる。<br></p>
+</div>
+</div>
+<div class="spacer">Line1<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">In<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">maior<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">animus,<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">is<span></span></a>
+<a class="note1">pecuniae<span>pecunia pecuniae N (1st) F  <br>:money; property;<br>(C 単数 属格), <br></span></a>
+<a class="note1">cupiditas<span>cupiditas cupiditatis N (3rd) F  <br>:enthusiasm/eagerness/passion; (carnal) desire; lust; greed/usury/fraud; ambition<br>(X 単数 主格)<br></span></a>
+<a class="note1">spectat<span>specto spectare, spectavi, spectatus V (1st)  <br>:observe, watch, look at, see; test; consider;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">opes<span>ops opis N (3rd) F  <br>:power, might; help; influence; resources/wealth (pl.);<br>(C 複数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">gratificandi<span><b>grātĭfĭcor</b>,gratificari, gratificatus sum V (1st) DEP  <br><b>:oblige, gratify, humor, show kindness to; bestow, make a present of;</b><br>【動名詞 (属格)】</span></a>
+<a class="note1">facultatem,<span>facultas facultatis N (3rd) F  <br>:means; ability, skill; opportunity, chance; resources (pl.), supplies;<br>(C 単数 対格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">nuper<span>nuper -, nuperrime ADV <br>:recently, not long ago; in recent years/our own time; (SUPER) latest in series;<br><br></span></a>
+<a class="note0">M.<span></span></a>
+<a class="note0">Crassus<span></span></a>
+<a class="note1">negabat<span>nego negare, negavi, negatus V (1st)  <br>:deny, refuse; say ... not;<br>(3 単数 未完了 能動態 直接法 )<br></span></a>
+<a class="note1">ullam<span>ullus ulla, ullum (gen -ius) ADJ  <br>:any;<br>(F 単数 対格)<br></span></a>
+<a class="note0">satis<span></span></a>
+<a class="note0">magnam<span></span></a>
+<a class="note1">pecuniam<span>pecunia pecuniae N (1st) F  <br>:money; property;<br>(C 単数 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">ei,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">re<span></span></a>
+<a class="note0">publica<span></span></a>
+<a class="note1">princeps<span>princeps (gen.), principis ADJ  <br>:first, foremost, leading, chief, front; earliest, original; most necessary;<br>&nbsp;(N 単数 対格)<br></span></a>
+<a class="note0">vellet<span></span></a>
+<a class="note0">esse,<span></span></a>
+<a class="note1">cuius<span>qui quae, quod PRON  <br>:who, which; (relative pronoun);<br>(X 単数 属格)<br></span></a>
+<a class="note1">fructibus<span>fructus fructus N (4th) M  <br>:produce, crops; fruit; profit; enjoyment; reward;<br>(X 複数 奪格)<br></span></a>
+<a class="note1">exercitum<span>exercitus exercitus N (4th) M  <br>:army, infantry; swarm, flock;<br>(C 単数 対格)<br></span></a>
+<a class="note1">alere<span>alo alere, alui, alitus V (3rd) TRANS  <br>:feed, nourish, rear, nurse, suckle; cherish; support, maintain, develop;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">posset.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>in isは in iisの間違い。（他のテキストではIISになっておりそうでないと訳すのが難しい）</p>
+<p>in quibus est maior anumus : 「それらの中に、偉大な精神のものがあり」</p>
+<p>in iis pecuniae cupiditas spectat ad ~ : 彼らの中では、財産に対する願望は～のためであると思われる。</p>
+<p>ullam magnam pecuniam esse satis ei, qui in re publica princeps vellet. 「大きな財産が公共の第一人者を望むものにとって十分なである事」</p>
+<p>(ullam~ satis) esse, cuius fructibus excercitum alere non posset. : 「自分の収入によって軍団を贖うことができないものに取って、（十分である）事　以上が逐語訳<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それらの中には偉大な精神のものをおり、彼らの中では財産にたいする願望は力を持ち、人に対して贈り物を授けるためであると思われる。そう昔でない時にMarcus Crassusは、公共の第一人者を望むものにとって、自分のお金で軍団を贖えない限りは十分な財産というのは無いと言ったように。<br></p>
+</div>
+</div>
+<div class="spacer">Line2<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Delectant<span>delector delectari, delectatus sum V (1st) DEP  <br>:delight, please, amuse, fascinate; charm, lure, entice; be a source of delight;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">magnifici<span>magnificus magnifica -um, magnificentior -or -us, magnificentissimus -a -u ADJ  <br>:splendid/ excellent/ sumptuous/ magnificent/ stately;&nbsp; noble/eminent; proud/boastful;<br>(M 単数 属格)<br><br></span></a>
+<a class="note1">apparatus<span>apparatus apparatus N (4th) M  <br>:preparation; instruments, equipment, supplies, stock; splendor, pomp, trappings;<br>&nbsp;(C 複数 主格)<br></span></a>
+<a class="note0">vitaeque<span></span></a>
+<a class="note1">cultus<span>cultus cultus N (4th) M  <br>:habitation; cultivation (land); <strong>civilization</strong>, refinement; polish, elegance;<br>(C 複数 主格),<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">elegantia<span>elegantia elegantiae N (1st) F  <br>:elegance; niceness; taste; politeness;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">copia,<span>copia copiae N (1st) F  <br>:plenty, abundance, supply; troops (pl.), supplies; forces; resources; wealth;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">rebus<span></span></a>
+<a class="note1">effectum<span>efficio efficere, effeci, effectus V (3rd)  <br>:bring about; effect, execute, cause; accomplish; make, produce; prove;<br>(完了 分詞 受動態 N 単数 主格)<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">infinita<span>infinitus infinita, infinitum ADJ  <br>:boundless, unlimited, endless; infinite;<br>(F 単数 主格), <br></span></a>
+<a class="note0">pecuniae<span></span></a>
+<a class="note0">cupiditas<span></span></a>
+<a class="note0">esset.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false"><p>magnifici apparatus que cultus : apparatusはここでは家、家具などなどをさす。そういうものと文化的な（生活）が主語。</p>
+<p>effectum est ut ~. ut以下が主語、または補語。「ut以下のようになる」<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>壮大な生活の装備類または優雅で裕福な生活は魅力的である。そしてそれらによって、財産に対する渇望はきりがなくなる。<br></p>
+</div>
+</div>
+<div class="spacer">Line3<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nec<span></span></a>
+<a class="note0">vero<span></span></a>
+<a class="note1">rei<span>res rei N (5th) F  <br>:thing; event/affair/business; fact; cause; <strong>property;</strong><br>(C 単数 与格)<br></span></a>
+<a class="note1">familiaris<span>familiaris familiaris N (3rd) C  <br>:member of household (family/servant/esp. slave); familiar acquaintance/friend;<br>(X 単数 属格)<br></span></a>
+<a class="note1">amplificatio<span>amplificatio amplificationis N (3rd) F  <br>:enlargement, amplification, augmentation, increasing, making greater;<br>(X 単数 主格)<br></span></a>
+<a class="note1">nemini<span>nemo neminis N (3rd) C  <br>:no one, nobody;<br>(X 単数 与格)<br></span></a>
+<a class="note1">nocens<span><b>nŏcens</b>,(gen.), nocentis ADJ  <br><b>:harmful; guilty; criminal;</b><br>&nbsp;(F 単数 主格)&nbsp;</span></a>
+<a class="note1">vituperanda<span>vitupero vituperare, vituperavi, vituperatus V (1st)  <br>:find fault with, blame, reproach, disparage, scold, censure;<br>(未来 分詞 受動態 N 複数 主格), <br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">fugienda<span><b>fŭgĭo</b>,fugere, fugi, fugitus V (3rd)  X<br><b>:flee, fly, run away; avoid, shun; go into exile;</b><br>【動形容詞 (F 単数 主格) 】</span></a>
+<a class="note0">semper<span></span></a>
+<a class="note1">iniuria<span><b>injūrĭa</b>,injuriae N (1st) F <br><b>:injury; injustice, wrong, offense; insult, abuse; sexual assault;</b><br>(単数 主格)&nbsp;</span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+
+    <div class="spnote" style="background-color: rgb(255, 255, 248);" contenteditable="false">
+<div class="innerdiv" spellcheck="false"><p>amplification rei familiaris : 個人の財産を増大させる事</p>
+<p>nemini nocens : 条件のニュアンスがあるそうで「誰にも害を与えないならば」<br></p><p>nemini norcens amplificatio : Nooneに害を与える増大 nocensは形容詞</p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>個人の財産を増やすことは、誰にも害を与えないならば非難されるべきことではない。しかし不正義はいつも避けられるべきである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+    </body>
+    <html>
+    

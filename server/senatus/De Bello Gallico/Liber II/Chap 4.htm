@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber II : Chap 4</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[4]<span></span></a>
+
+<a class="note0">Cum<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note1">quaereret<span>quaero quaerere, quaesivi, quaesitus V (3rd)  <br>:search for, seek, strive for; obtain; ask, inquire, demand;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note1">quae<span>quis 疑問代名詞　= what間接話法の疑問は接続法（この場合essent)を取る</span></a>
+<a class="note1">cīvitātēs<span>複数　　主格<br></span></a>
+<a class="note1">quantaeque<span>quantus quanta quantum 形容詞= how great, how much; of what size　f　複　主格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">armīs<span><br><br></span></a>
+<a class="note1">essent<span>sum esse, fui, futurus V  <br>:be;<br>(３人称 複数  未完了 能動態 <strong>接続法 </strong>)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">quid<span>quis quis, quid PRON  <br>:who?, which one?, what man?, what thing? (type/nature); what kind of; what?;<br><strike>(n 単数 主格),</strike> (n 単数 対格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">bellō<span><br><br></span></a>
+<a class="note0">possent,<span></span></a>
+<a class="note1">sīc<span>副詞　= thus, so, as follows<br></span></a>
+<a class="note1">reperiēbat:<span>reperio ３単　未完了　能動態= discover, lean, find<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>　<strong>ab iis</strong> : 奪格支配の前置詞ab quaeroのような「尋ねる」動詞は対格ではなく、前置詞付きの奪格を目的にとる。（<strong><font color="#3366ff">AG396</font>　petoはab, quaeroはab, ex, deを必ず取る</strong>)　quaero ab xx は今後とも頻繁に出てくる。「彼らに尋ねた」</p>
+<p>quae civitates essent in arimis, quantae (essent in armis), quid possent in bello →　間接疑問文。（NewLatin300. 1)これらは名詞節を作る。（間接疑問文は通常接続法）</p>
+<p>quid possent : How strong they are. 副詞対格と呼ばれる、対格の副詞的用法（NewLatin 176.3)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>（カエサルは）彼らにどの国がどの程度武装しているか、また戦争遂行能力はどのぐらいかを尋ねたとき、次のような返事を得た。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">plērōsque<span>plerus plera, plerum ADJ  <br>:(w/que) the majority, most, very great part; about all; very many, a good many;<br>(m 複数  対格)<br></span></a>
+<a class="note1">Belgōs<span>Belgasか？　Belga Belgae(pl)の複　対格<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">ortōs<span>orior oriri, ortus sum V (4th) DEP  <br>:|be born/ created; be born of, <strong>descend/ spring from</strong>; proceed/be derived (from);<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Germānīs<span><br><br></span></a>
+<a class="note0">Rhēnumque<span><br><br></span></a>
+<a class="note1">antīquitus<span>antiquitus ADV <br>:formerly, in former/ancient/olden times, from antiquity; long ago/before;<br><br></span></a>
+<a class="note1">trāductōs<span>traduco traducere, traduxi, traductus V (3rd) TRANS  <br>:|lead across; exhibit/display/carry past in parade/procession; pass/get through;<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note1">propter<span>対格支配前置詞　=near, on account of, by means of, because of</span></a>
+<a class="note1">locī<span>locum loci N (2nd) N  <br>:place, territory/ locality/ neighborhood/ region; position/point; aim point; site;<br>(n 単数 属格)<br></span></a>
+<a class="note1">fertilitātem<span>fertilitas fertilitatis N (3rd) F  <br>:fruitfulness, f<strong>ertility</strong>;<br>(c 単数 対格)<br></span></a>
+<a class="note1">ibi<span>副詞　= there, in that place</span></a>
+<a class="note1">cōnsēdisse<span>consido considere, consedi, consessus V (3rd) INTRANS  <br>:|encamp/bivouac; take up a position; stop/stay, make one's home, settle; lodge;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note1">Gallōsque<span>Gallus　複数　対格　＝(pl)the Gauls<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">loca<span></span></a>
+<a class="note0">incolerent<span></span></a>
+<a class="note1">expulisse,<span>expello expellere, expuli, expulsus V (3rd)  <br>:drive out, expel, banish; disown, reject;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">sōlōsque<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">quī,<span><br><br></span></a>
+<a class="note0">patrum<span></span></a>
+<a class="note0">nostrōrum<span><br><br></span></a>
+<a class="note0">memoriā<span><br><br></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note1">Galliā<span>Gallia Galliae N (1st) F  <br>:Gaul; (early Northern Italy, then South-East France, then France and Belgium);<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">vexātā,<span>vexo vexare, vexavi, vexatus V (1st)  <br>:shake, jolt, toss violently; annoy, trouble, harass, plague, disturb, vex;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note0">Teutonōs<span><br><br></span></a>
+<a class="note0">Cimbrōsque<span><br><br></span></a>
+<a class="note0">intrā<span><br><br></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note1">ingredī<span>ingredior ingredi, ingressus sum V (3rd) DEP  <br>:advance, walk; enter, step/go into; undertake, begin;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">prohibuerint;<span>prohibeo 3複完了　接続法＝hinder, restrain, prevent</span></a>
+<a class="note0">quā<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">rē<span></span></a>
+<a class="note1">fierī<span>fio feri, factus sum V SEMIDEP  <br><strong>:|be made</strong>/ created/ instituted/ elected /appointed /given; be prepared/done; develop;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">eārum<span><br><br></span></a>
+<a class="note0">rērum<span><br><br></span></a>
+<a class="note0">memoriā<span><br><br></span></a>
+<a class="note0">magnam<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">auctōritātem<span>auctoritas auctoritatis N (3rd) F  <br>:|authority, influence; responsibility; prestige, reputation; opinion, judgment;<br>(c 単数 対格)<br></span></a>
+<a class="note0">magnōsque<span><br><br></span></a>
+<a class="note1">spīritus<span>spiritus spiritus N (4th) M  <br>:breath, breathing, air, soul, life;<br>&nbsp;(c 複数  対格)<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note0">mīlitārī<span><br><br></span></a>
+<a class="note1">sūmerent.<span>sumo sumere, sumsi, sumtus V (3rd)  <br>:accept; begin; suppose; select; purchase; obtain; (sumpsi, sumptum);<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>以下は間接話法で　主語はBelgos （Belgasであるべき？）Belgasのテキスト多し</p>
+<p>Belgas</p>
+<p>①<strong>esse ortos -- tradutos</strong>,</p>
+<p>②<strong>consediise ibi propter loci fertilitatem</strong></p>
+<p>③<strong> expulisse Gallosque qui ea loca incolerent</strong></p>
+<p>③ <strong>solos esse qui prohibuerint Teutonos Cimbrosque ingredi intran suos fines</strong></p>
+<p>partum nostrorum memoria : 時の奪格(<strong>NewLatin 231</strong>)　　「我々の父の時代に」</p>
+<p><strong>omni Gallia</strong> vexata : 独立奪格　Gallia(奪格）「全ガリアが席巻された時に」(<strong>NewLatin 227.2.a</strong>)</p>
+<p><strong>Ex qua re</strong>：原因の奪格 (NewLatin219) 「その事により」</p>
+<p><strong>fieri uti ~ : uti以下がfieriの主語</strong>　～になった（fieriは不定詞でBelasの動詞）</p>
+<p>earum rerum memoria : 原因の奪格　それらの事柄の記憶によって</p>
+<p>sumerent sibi maganam auctoritatem magnosque spritus in re militari. 自分自身を軍事に関しては大いなるオーソリティであり軍事に関して偉大な魂をもっていると見做した。</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>多くのBelgae人はゲルマンの出身であり以前にライン河を渡って来ている。そしてその土地が豊かであったため、以前から住んでいたガリア人立ちを追い出して、そこに住み着いたのである。また我々の父親の時代にTeutonosやCimbrosに全ガリアが荒らされたとき、唯一彼らが自分たちの領地に進むのを阻止した部族であり、それが故に彼らは自分たちを軍事の熟練者とみなし、大きな態度を取るようになった。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dē<span><br><br></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">omnia<span>omne omnis N (3rd) N  <br>:all things (pl.); everything; a/the whole, entity, unit;<br>(n 複数  対格)<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">habēre<span><br><br></span></a>
+<a class="note1">explōrātā<span>exploro explorare, exploravi, exploratus V (1st)  <br>:<strong>search out</strong>, explore; test, try out; reconnoiter, investigate;<br>(完了 分詞 受動態 n 複数  対格)<br><br></span></a>
+<a class="note0">Rēmi<span></span></a>
+<a class="note1">dīcēbant,<span>dico ３複　未完了　直説法<br></span></a>
+<a class="note0">proptereā<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">propinquitātibus<span>propinquitas propinquitatis N (3rd) F  <br>:nearness, vicinity; propinquity; relationship;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">adfīnitātibus<span>adfinitas adfinitatis N (3rd) F  <br>:relation(ship) by marriage; relationship (man+wife), bond/union; neighborhood;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">quō<span></span></a>
+<a class="note1">coniūnctī<span>conjungo conjungere, conjunxi, conjunctus V (3rd) TRANS  <br>:connect, join/yoke together; marry; <strong>connect</strong>/compound (words) (w/conjunctions);<br>(完了 分詞 受動態 m 複数  主格)<br><br></span></a>
+<a class="note1">quantam<span>quantus quanta, quantum ADJ  <br>:how great; <strong>how much</strong>/many; of what size/ amount/ degree /number/ worth/ price;<br>(f 単数 対格)<br></span></a>
+<a class="note1">quisque<span>quisque quaeque,quodque ADJECT  <br>:(w/-que) any; each;<br>&nbsp;(m 複数  主格)<br></span></a>
+<a class="note1">multitūdinem<span>multitudo multitudinis F 単数　対格　= multitude, great number</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">commūnī<span>communis communis, commune ADJ  <br>:common/joint/public; general/universal;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">Belgārum<span><br><br></span></a>
+<a class="note1">conciliō<span>concilium concili(i) N (2nd) N  <br>:public gathering/meeting; popular assembly, council; hearing; debate/discussion;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">pollicitus<span>polliceor DEP polliceri, pollicitus sum完了分詞　受動　M 単　主格=promise</span></a>
+<a class="note1">sit<span>3単　接続法　quisqueの動詞</span></a>
+<a class="note1">cognōverint.<span>cognosco cognoscere, cognosvi, cognitus 他動詞　３　複　完了　接続法= become acquainted with, recognize, find to be</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>habere explorata omnia</strong> : have explored everything. と同じで、英語風にhave + 完了分詞という例。（NewLatin337.7)直接法、完了と同じ。</p>
+<p>propterea quod = because定型句</p>
+<p>propinquitatibus : 血縁により</p>
+<p>adfinitatisbus : 婚姻による、この後のquoが困る。<strong>多分queで、adfinitatisbusqueのこと</strong>。（このテキスト多い）</p>
+<p><strong>propinquitatibus adfinitatibusque coniuncti</strong> : で分詞構文。「場所が近いことと婚姻関係によって結びついている（我々は）」が逐語訳。</p>
+<font color="#ff0000">
+</font><p><font color="#ff0000"></font><font color="#000000"><strong>congnoverint quisque quantam multitudinem&nbsp;sit pollicitus</strong> : quisque以下がcognoverintの目的句　「各々がどの程度～約束したことを」知っている。</font><font color="#ff0000"></font></p>
+<font color="#ff0000">
+</font><p><font color="#ff0000"></font></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Remi族曰く　、彼らは数については全部調べて分かっている、何故なら血縁関係と婚姻関係とで密接に結びついているので、Belgaeのこの戦争に対する委員会？の中で各人がどの程度の約束をしたかを知ってるからである。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Plūrimum<span>multus 最上級=much, many, great, large<br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">Bellovacōs<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">virtūte<span>virtus virtutis N (3rd) F  <br>:|army; host; mighty works (pl.); class of Angels;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">auctōritāte<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note1">valēre:<span>valeo valere, valui, valitus V (2nd)  <br>:be strong/　powerful/　influential/　healthy; prevail;<br>(  現在 能動態 不定詞 )<br><br></span></a>
+<a class="note0">hōs<span><br><br></span></a>
+<a class="note0">posse<span></span></a>
+<a class="note1">cōnficere<span>conficio conficere, additional, forms V TRANS  <br>:|compose; amass, collect; <strong>raise</strong> (<strong>troops</strong>); traverse; eat up, consume; expend;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">armāta<span>armatus armata -um, armatior -or -us, armatissimus -a -um ADJ  <br>:armed, equipped; defensively armed, armor clad; fortified; of the use of arms;<br>&nbsp;(n 複数  対格),<br><br></span></a>
+<a class="note1">mīlia<span>milium mili(i) N (2nd) N  <br>:thousands (pl.);<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note0">centum,<span></span></a>
+<a class="note1">pollicitōs<span>polliceor polliceri, pollicitus sum V (2nd) DEP  <br>:promise;<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note1">ēlēcta<span>eligo eligere, elegi, electus V (3rd)  <br>:pick out, choose;<br>(完了 分詞 受動態 n 複数  対格), <br></span></a>
+<a class="note0">mīlia<span></span></a>
+<a class="note0">LX<span></span></a>
+<a class="note1">tōtīusque<span>totus tota, totum (gen -ius) ADJ  <br>:whole, all, entire, total, complete; every part; all together/at once;<br>(X 単数 属格)<br></span></a>
+<a class="note0">bellī<span><br><br></span></a>
+<a class="note0">imperium<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">postulāre.<span>postulo postulare, postulavi, postulatus V (1st)  <br>:<strong>demand</strong>, claim; require; ask/pray for;<br>(  現在 能動態 不定詞 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>Bellovacos valere</strong></p>
+<p><strong>hos posse amata milia centum, pollicitos mila LX electa ex eo numero</strong></p>
+<p><strong>postulare sibi belli imperium.　</strong>が骨子。ここから再度間接話法なので、不定詞句が使われている。pollicitosは分詞構文で主語であるBellovaco(対格）を文法上は修飾している。</p>
+<p>plurimum 時空の対格　ここでは中で最も大きい（程度）を表現している</p>
+<p><strong>et virtute auctoritate, hominum numero</strong> : 観点の奪格（NewLatin226)</p>
+<p><strong>miliaは「1000個のもの」という中性複数の名詞である。</strong>ここではconficereの目的語で対格、従ってamataもamatus形容詞の中性、複　対格で格の一致をなしている。 ただ一般的には属格を持ってきて「～の1000個のもの」とするのでarmatorum が使われることが多いがカエサルではarmataという表現が普通である（そうです）</p>
+<p>electa milia sexaginta = sixty thouthand selected men</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p> それらの中で力の点でも、威信においても、また人数からも、最も大きいのがBellovaci族である。彼らは武装兵１０万を招集できる能力があり、今回もその中から選りすぐりの６万を約束し、彼らが戦いの指揮権を持つことを要求している。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Suessiōnēs<span><br><br></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">fīnitimōs;<span>finitimus finitima, finitimum ADJ  <br>:neighboring, bordering, adjoining;<br>(m 複数  対格)<br></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note1">lātissimōs<span>latus lata -um, latior -or -us, latissimus -a -um ADJ  最上級<br>:wide, broad; spacious, extensive;<br>(m 複数  対格)<br></span></a>
+<a class="note1">ferācissimōsque<span>ferax feracis (gen.), feracior -or -us, feracissimus -a -um ADJ  最上級<br>:fruitful, fertile. prolific;<br>(m 複数  対格)<br></span></a>
+<a class="note0">agrōs<span><br><br></span></a>
+<a class="note1">possidēre.<span>possideo possidere, possedi, possessus V (2nd)  <br>:seize, hold, be master of; possess, take/hold possession of, occupy; inherit;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Suessiones:部族名</p>
+<p>suosは主文の主語、すなわちRemi族をさす。ここはまだ間接話法。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Suessionesが我々のの隣人であり、最も大きくて肥沃な領土を所有している。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Apud<span></span></a>
+<a class="note1">eōs<span>;= Suessiones<br></span></a>
+<a class="note1">fuisse<span>完了不定詞　SUM</span></a>
+<a class="note1">rēgem<span>rex regis M 単　対格; = king</span></a>
+<a class="note1">nostrā<span>noster 形容詞　F 単　奪格<br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">memoriā<span><br><br></span></a>
+<a class="note1">Dīviciācum,<span>Diviciacus Diviciaci N (2nd) M  <br>:Diviciacus; an Aeduan Gaul chief in Caesar; a Suessiones king;<br>(c 単数 対格)<br></span></a>
+<a class="note0">tōtīus<span><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">potentissimum,<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">magnae<span></span></a>
+<a class="note0">partis<span></span></a>
+<a class="note1">hārum<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(f 複数  属格)<br></span></a>
+<a class="note1">regiōnum,<span>regio regionis N (3rd) F  <br>:area, region; neighborhood; district, country; direction;<br>(c 複数  属格)<br></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">Britanniae<span></span></a>
+<a class="note0">imperium<span></span></a>
+<a class="note1">obtinuerit;<span>obtineo obtinere, obtinui, obtentus ３単　完了　接続法; = get hold of, maintain, obtain</span></a>
+<a class="note1">nunc<span>副詞　; = today, now</span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">rēgem<span><br><br></span></a>
+<a class="note0">Galbam:<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">hunc<span></span></a>
+<a class="note1">propter<span>副詞 ;= near, on account of, by means of, because of</span></a>
+<a class="note1">iūstitiam<span>justitia justitiae N (1st) F  <br>:justice; equality; righteousness (Plater);<br>(c 単数 対格)<br></span></a>
+<a class="note1">prūdentiamque<span>prudentia prudentiae N (1st) F  <br>:discretion; good sense, wisdom; prudence; foresight;<br>(c 単数 対格)<br></span></a>
+<a class="note1">summam<span>summus summa,summum　形容詞　最上級　;= highest, the top of　M 単　<b>対格でdeferriの主語</b></span></a>
+<a class="note1">tōtīus<span>totus = total 単　属格<br></span></a>
+<a class="note1">bellī<span>bellum N の単　属格<br></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note1">voluntāte<span>voluntas voluntatis F 単　奪格 ;= will, desire, purpose favor、<b>consent (方法の奪格）</b><br></span></a>
+<a class="note1">dēferrī;<span>defero deferre, detuli, delatus V  <br>:carry/bring/sink/fall down/off; convey/deliver/transfer; reduce/slope (down to);<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">oppida<span></span></a>
+<a class="note0">habēre<span><br><br></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note0">XII,<span></span></a>
+<a class="note1">pollicērī<span>polliceor polliceri, pollicitus sum V (2nd) DEP  <br>:promise;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">armāta<span></span></a>
+<a class="note0">L;<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p><strong>Diviciacum fuisse regem apud eos, potentissimum totius Galliae, etiam nostra memoria</strong>.</p>
+<p><strong>qui obtinuerit cum magnae partis harum regionum tum Britanniae imperium. </strong>harum regionumは「その地方の中で」</p>
+<p>potentissimum~ は同格でDiviciacumの事。「彼らの中でかっては、Diviciacumが王であった。全ガリアで最も力があり、」</p>
+<p>nostra memoria : memoriaはFで奪格（時の奪格）それに格を合わせてnostraもF　奪格</p>
+<p><font color="#ff0000">Line 2の　patrum nostrorum memoriaは　patrum, nostrorumは属格　何が違う？　</font>⇐patrumは名詞属格で、memoriaを修飾。形容詞と違って格の一致は不要。notrorumは実はpatrumを修飾しているので、属格として格を合わせている。</p>
+<font color="#ff0000">
+</font><p><font color="#ff0000"></font><font color="#0000ff">cum ~ tum ~ = not only ~ but also ~</font></p>
+<font color="#0000ff">
+</font><p><font color="#0000ff"></font><font color="#000000">propter justitiam prudentiamque : その公平さと賢明さが故に　= on account of ~</font></p>
+<font color="#000000">
+<p>summam deferri voluntate : summanは最上級形容詞summumの名詞化　単　対格でdeferriの主語　「最高位（指揮権？）が与えられた、皆の同意（consent)によって」</p>
+<p>totius belli omnium ：全ての戦いの　summamを修飾</p>
+</font><p><font color="#000000">oopida habere numero XII : 主語はeosでSuessiones ここでSuessiones全体の話に戻っている</font></p>
+<p>XII = duodecim</p>
+<p>numero XIIのnumeroは指定の奪格(NewLatin226)</p>
+<p>L = quinquaginta</p>
+<font color="#ff0000">
+</font><p><font color="#ff0000"></font></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その中では、我々の記憶にあるのはDiviciacumが王であったことで、彼は全ガリアでもっとも強力で、その中の大きな部分を所有するだけでなく、Britanniaの覇権も得ていた。現在の王はGalbamである。その公平さと賢明さが故に全ての戦いの最高指揮権が皆から与えられた。（Suessionesは）１２の城塞を持ち、5万人の兵を約束した。</p>
+</div>
+</div>
+<div class="spacer">Line7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">totidem<span>totidem 変化しない形容詞　; = as many, just so, the equivalent</span></a>
+<a class="note0">Nerviōs,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">maximē<span>副詞<br></span></a>
+<a class="note1">ferī<span>ferus fera ,ferum 形容詞　名詞(C)；＝wild, beast, fierce, uncivilized　名詞だとすると複　主格か？<br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">ipsōs<span><br><br></span></a>
+<a class="note1">habeantur<span>habeo ３複　受動　現在　接続法habeoはconsider, thinkと言う意味もある。</span></a>
+<a class="note0">longissimeque<span><br><br></span></a>
+<a class="note1">absint;<span>absum 3複　現在　接続法;= be away, absent, distance</span></a>
+<a class="note0">XV<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">Atrebates,<span><br><br></span></a>
+<a class="note0">Ambianos<span><br><br></span></a>
+<a class="note0">X<span></span></a>
+<a class="note0">mīlia,<span><br><br></span></a>
+<a class="note0">Morinōs<span><br><br></span></a>
+<a class="note0">XXV<span></span></a>
+<a class="note0">mīlia,<span><br><br></span></a>
+<a class="note0">Menapiōs<span><br><br></span></a>
+<a class="note0">VII<span></span></a>
+<a class="note0">mīlia,<span><br><br></span></a>
+<a class="note0">Caletos<span><br><br></span></a>
+<a class="note0">X<span></span></a>
+<a class="note0">mīlia,<span><br><br></span></a>
+<a class="note0">Veliocasses<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Viromanduos<span><br><br></span></a>
+<a class="note1">totidem,<span>totidem undeclined ADJ <br>:as many; just so/as many; the equivalent number of, same (as specified before);<br><br></span></a>
+<a class="note0">Atuatucōs<span><br><br></span></a>
+<a class="note0">XVIIII<span></span></a>
+<a class="note0">mīlia;<span><br><br></span></a>
+<a class="note0">Condrusos,<span><br><br></span></a>
+<a class="note0">Eburōnēs,<span><br><br></span></a>
+<a class="note0">Caerosos,<span><br><br></span></a>
+<a class="note0">Paemanos,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">ūnō<span><br><br></span></a>
+<a class="note0">nōmine<span><br><br></span></a>
+<a class="note0">Germānī<span><br><br></span></a>
+<a class="note0">appellantur,<span></span></a>
+<a class="note1">arbitrari<span>arbitror arbitrari, arbitratus sum V (1st) DEP  <br>:observe, witness; testify; decide, judge, sentence; believe, think, imagine;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">XL<span></span></a>
+<a class="note0">mīlia.<span><br><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>totidem Nervios : Nerviosも同じ（数の兵を約束した。 ）</p>
+<p>qui maxime feri inter ipsos habeantur: qui = Nnervios maximeは副詞で最大限にhabeanturを修飾</p>
+<p><font color="#ff0000">habeanturは何故受動形なのか？</font><font color="#0000ff">habeoはconsider, thinkの意味あり、補語でferiを伴い、「野蛮であると考えられている」</font></p>
+<p><font color="#0000ff"><strong>(NewLatin 168.2(b))</strong></font></p>
+<p><font color="#0000ff">XV: quindecim(15)</font></p>
+<p><font color="#0000ff">X : decem(10)</font></p>
+<p><font color="#0000ff">XXV : vigintiquinque(25)</font></p>
+<p><font color="#0000ff">XVIIII : decimnovem(19)</font></p>
+<p><font color="#0000ff">VII : septem(7) (VIIII novem</font><font color="#0000ff">のテキストもある）</font></p>
+<p><font color="#0000ff">XL : quadraginta(40)</font></p>
+<font color="#0000ff">
+</font><p><font color="#0000ff"></font></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>Nervios、彼らは全Belgaeの中で最も野蛮であると考えられていて、最も遠いところに住んでいるが、同数の兵を約束。Atrebatesは1万5千人、Ambianosは1万人、Morinos2万5千人、Menapiosは7千、Celetos、1万、VeliocassesとViromanduosが同じく１万、Atutucosは1万9千、Condrusos、Eburones,Caerosos, Paemanos、彼らは一括してゲルマニと呼ばれているが、約4万と考えられる。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

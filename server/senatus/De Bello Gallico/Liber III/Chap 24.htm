@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 24</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[24]<span></span></a>
+
+<a class="note0">Prīmā<span><br><br></span></a>
+<a class="note1">lūce<span>lux lucis F 単　奪格　;= light, daylight<br></span></a>
+<a class="note1">prōductīs<span>produco producere, produxi, productus 完了分詞　受動　複　奪格　;= lead forward, bring out<br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">cōpiīs<span>F 複　奪格<br></span></a>
+<a class="note0">duplicī<span><br><br></span></a>
+<a class="note0">aciē<span><br><br></span></a>
+<a class="note1">īnstitūtā,<span>instituo 完了分詞　受動　ｎ複　主格　;= set up<br></span></a>
+<a class="note0">auxiliīs<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">mediam<span></span></a>
+<a class="note0">aciem<span></span></a>
+<a class="note1">coniectīs,<span>conicio conicere, conjeci, conjectus TRANS 完了分詞　複　奪格　;= throw, put together, conclude<br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note0">cōnsiliī<span><br><br></span></a>
+<a class="note1">caperent<span>capio ３複　未完了　接続詞　;= take hold, put on</span></a>
+<a class="note1">expectābat.<span>expecto expectare, expectavi, expectatus ３単　未完了　;= await, expect, anticipate<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>prima lice : 独立奪格　「朝の光の前に＝夜明けに」</p>
+<p>in mediam aciem : aciemの真中に</p>
+<p>quid ~ ：間接疑問文　consilii は解決案（resolution)のニュアンス consiliiは属格で、部分の属格　idiomで　quid rei est = what is the matter?　(NewLatin201.2) quid consilii?</p>
+<p>caperent ：未完了、これは主文が未完了で第二時制なので、従文の第二時制は未来時制を表している。（NewLatin269)</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p>夜明けに、全軍を率いて、２重の戦線をひいた。予備軍は戦線の中央に配置し、敵がどんなやり方を持ってくるか待った。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Illī,<span><br><br></span></a>
+<a class="note1">etsī<span>接続詞　;= although, even if,<br></span></a>
+<a class="note0">propter<span></span></a>
+<a class="note0">multitūdinem<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">veterem<span></span></a>
+<a class="note0">bellī<span><br><br></span></a>
+<a class="note0">glōriam<span><br><br></span></a>
+<a class="note0">paucitātemque<span><br><br></span></a>
+<a class="note0">nostrōrum<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">tūtō<span>tuto tutius, tutissime 副詞　;= without risk, without danger, safely<br></span></a>
+<a class="note1">dīmicātūrōs<span>dumico dumicare, dumicavi, dumicatus INTRANS 未来分詞　能動　ｍ　複　対格　;= fight, battle<br></span></a>
+<a class="note0">exīstimābant,<span><br><br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">tūtius<span>tutoの比較級<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">arbitrābantur<span>arbitror arbitrari, arbitratus sum DEP&nbsp; 3複　未完了　受動　;= observe, witness, decide, judge, believe<br></span></a>
+<a class="note1">obsessīs<span>obsideo 完了分詞　受動　複　奪格　;= blockage<br></span></a>
+<a class="note1">viīs<span>viq viae F 複　奪格　;= way, road<br></span></a>
+<a class="note1">commeātū<span>commeatus M 単　奪格　;= supplies<br></span></a>
+<a class="note1">interclūsō<span>intercludo 完了分詞　受動　ｍ　単　奪格　;= cut off<br></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note1">vulnere<span>vulnus vulnis N 単　奪格　;= wound, injury</span></a>
+<a class="note0">victōriā<span><br><br></span></a>
+<a class="note1">potīrī,<span>portior porti portitus sum DEP 受動　不定詞　;= capture, seize, have<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">propter<span></span></a>
+<a class="note0">inopiam<span></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note0">frūmentāriae<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">recipere<span>recipio recipere, recepi, receptus 不定詞　;= keep back, take back</span></a>
+<a class="note0">coepissent,<span></span></a>
+<a class="note0">impedītōs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">agmine<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">sub<span></span></a>
+<a class="note0">sarcinīs<span><br><br></span></a>
+<a class="note1">īnfīrmiōrē<span>infirmus infirma, -um 単　奪格　;= weak, powerless<br></span></a>
+<a class="note1">animō<span>animus　単　奪格　「性質の奪格」<br></span></a>
+<a class="note1">adorīrī<span>adorior adoriri, adortus sum DEP 受動　不定詞　;= assult, attack, rise against<br></span></a>
+<a class="note1">cōgitābant.<span>cogito 3複　未完了　;= think, ponder, picture, <strong>intend</strong><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><strong>
+</strong><p>multitudinem と　verterem belli gloriam と　paucitatem nostrorum ：これら3つのことから</p>
+<p><strong>totu</strong> ：　副詞　形容詞 tutus から派生。単、属格の tuti から通常は　tute　となるが(tuteという副詞もある）時々eではなくoにするものもある。（NewLatin77.2)</p>
+<p>dimicaturos (esse) : 未来不定詞。existimabantの目的語であるので対格 </p>
+<p>obsessis viis, commeatu intercluso : 独立奪格　２つ</p>
+<p><strong>se dcimicaturos tuto</strong> :「 彼ら自身がリスク無しに戦うであろう事」</p>
+<p><strong>se recipere</strong> = withdraw, retreat <font style="background-color: rgb(255, 255, 0);">(Idiom)</font></p>
+<p>adoriri impedios (eos) : eos = Romaniが省略されていると考えadoririの目的語。「荷物をもって不自由な（ローマ軍）を攻撃する事</p>
+<p>in agmine : in a march</p>
+<p>sub sarcinis : soldier's packを持っている状態</p>
+<p>cogitabant : ここでは＝intend</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼らは（自分たちの）数や、過去の戦争での勝利、また味方の軍勢の少数さなどから、安全な戦いが出来るだろうと考えていた。しかし、もし、道路を遮断し補給路を断てば無傷の勝利を得られもっと危険性が低いと判断した。もし、食料の不足によりローマ軍が撤退を始めれば、行軍の途中と重い荷物を運んでいる状態で、気持ちも沈んでいる時に攻撃するという事を計画した。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hōc<span><br><br></span></a>
+<a class="note0">cōnsiliō<span><br><br></span></a>
+<a class="note1">probātō<span>probo probare, probavi, probatus TRANS 完了分詞　受動　ｎ単　奪格　;= approve, certify, give assert<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">ducibus,<span>dux 複　奪格　;= leader</span></a>
+<a class="note1">prōductīs<span>produco 完了分詞　受動　複　奪格　;= lead forward, bring out<br></span></a>
+<a class="note0">Rōmānōrum<span><br><br></span></a>
+<a class="note0">cōpiīs,<span><br><br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note1">castrīs<span>複　奪格　（場所の奪格）<br></span></a>
+<a class="note1">tenēbant.<span>teneo 3複　未完了　;= hold, keep, preserve<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>consilio probato : 独立奪格　「計画は承認され」</p>
+<p>productis copiis ：独立奪格　「ローマ軍が布陣しているにも拘わらず」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>この計画はリーダー達に承認され、ローマ軍が布陣しているにも拘わらず、彼らは砦にこもった。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hāc<span><br><br></span></a>
+<a class="note1">rē<span>単　奪格<br></span></a>
+<a class="note1">perspectā<span>perspicio perspicere, perspexi, perspectus 完了分詞　受動　ｆ単　奪格　;= see through, examine, observe<br></span></a>
+<a class="note0">Crassus,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">suā<span><br><br></span></a>
+<a class="note1">cunctātiōne<span>cunctatio cunctationis N (3rd) F  <br>:delay, hesitation; tardiness, inactivity; hesitating about/delaying of (w/GEN);<br>(c 単数 奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">opīniōne<span><br><br></span></a>
+<a class="note1">timōris<span>timor timoris M 単　属格<br></span></a>
+<a class="note1">hostēs<span>hostis hostis C 複　主格　;= enemy<br></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note1">alacriōrēs<span>alacer alacris -e arcerior -or -us, arcerrimus -a -um 形容詞　比較級　複　対格　;= eager, quick, courageous, cheerful<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">pugnandum<span></span></a>
+<a class="note1">effēcissent<span>efficio efficere, effeci, effectus ３複　過去完了　接続法　;= bring about, effect, execute, cause<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note1">vōcēs<span>vox vocis F 複　主格　;= voice<br></span></a>
+<a class="note1">audīrentur<span>audio ３複　未完了受動　接続法　<br></span></a>
+<a class="note1">expectārī<span>expecto 不定詞　受動　;= await, expect<br></span></a>
+<a class="note1">diūtius<span>diutius diuの比較級　副詞　;= a long time, long since<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">oportēre<span>oportet oprtere, oportuit,- IMPERS 不定詞　it is right, ought<br></span></a>
+<a class="note0">quīn<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">īrētur,<span>eo 3単　未完了受動　接続法　;= go, advance<br></span></a>
+<a class="note1">cohortātus<span>cohorto cohortare, cohortavi, cohortatus TRANS 完了分詞　受動　ｍ単　主格　Crassusを受ける<br></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">cupientibus<span>cupio 現在分詞　複　奪格　;= wish, eager, desire</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note0">contendit.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p>大変解りにくい文章。</p>
+<p><strong>Crassusが主語で動詞は？</strong>　→　多分<strong>contendit </strong>その前に分詞構文として　Crassus, cohortus suosというのがある。omnibus cupientibusは変則的独立奪格。「全員の熱狂と共に」のような感じか？</p>
+<p>その前の文章はもっと解りにくい。２つの文章。</p>
+<p>１）<strong>cum sua cunctatione atque opinione timoris, hostes nostros milites alacriores ad pugnandum effecissent</strong>.</p>
+<p>この文の主語はhostes、目的語はnostro milites.　ad pugnandumは「戦争をするために（ad + 動名詞）」敵が味方の兵たちをより戦争への意欲をかき立てので」其の理由は　sua .... timoris 二つの奪格、手段の奪格で、自身の遅れと（それによる）怯懦の印象により</p>
+<p>alacrioresは形容詞であり、複対格である。形容詞の名詞化で、二重対格と見倣すか？</p>
+<p><br></p>
+<p>２）<strong>atque omnis voces audirentur expectari... quin ad castra iretur</strong> : 前半は「全員の声が聞かれた」で問題ないが、expectari (不定詞）以下が解らない。意味的には聞こえた声の内容であろうが構造が解らない。</p>
+<p><strong>expectari diutius</strong> : 受動不定詞であるので、自動詞expecto(=await)の受け身で、非人称的な使い方。「より長く待たれること」<strong>non opertre</strong> : これも非人称動詞opertetの不定詞。正しく無いこと。<strong>quinは</strong>前の章でもでたが否定文で使われれる名詞節を導く。<u>expectariの目的語になっていて</u>「「砦に向かって攻めこむ事」が、長い間待たれる事」は正しくないこと。という名詞節で、この名詞節とvocesの文との関連が解らない。なんとなく、「というような声」という繋ぐものが省略されていると思われる。</p>
+<p>expectari~iretueは間接話法で、兵士たちの声を表している？<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Crassusはその様子を見て、その敵の逡巡が味方を恐れているという印象をあたえることで、味方の兵の戦いへの意欲をかき立てていると考え、また兵の声として、長い間攻撃を待つべきではないというのを聞いて、兵を励まし、熱狂した全員とともに敵の砦に突進した。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

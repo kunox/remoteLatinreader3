@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 38 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[38]<span></span></a>
+<a class="note0">Cum<span></span></a>
+<a class="note0">vero<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">imperio<span></span></a>
+<a class="note1">decertatur<span>decerto decertare, decertavi, decertatus V (1st)  <br>:fight (issue out/to the finish); contend/dispute/argue; struggle/compete over;<br>(3 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">belloque<span></span></a>
+<a class="note1">quaeritur<span>quaero quaerere, quaesivi, quaesitus V (3rd)  <br>:search for, seek, strive for; obtain; ask, inquire, demand;<br>(3 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note1">gloria,<span>gloria gloriae N (1st) F  <br>:glory, fame; ambition; renown; vainglory, boasting;<br>(C 単数 主格),<br></span></a>
+<a class="note0">causas<span></span></a>
+<a class="note1">omnino<span>omnino ADV <br>:entirely, altogether;<br><br></span></a>
+<a class="note1">subesse<span>subsum subesse, subfui, subfuturus V  <br>:be underneath/a basis for discussion/close at hand as a reserve, be near;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">oportet<span></span></a>
+<a class="note1">easdem,<span>idem eadem, idem PRON  <br>:(w/-dem ONLY, idem, eadem, idem) same, the same, the very same, also;<br>(F 複数 対格)<br></span></a>
+<a class="note0">quas<span></span></a>
+<a class="note0">dixi<span></span></a>
+<a class="note0">paulo<span></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note1">iustas<span>justus justa -um, justior -or -us, justissimus -a -um ADJ  <br>:just, fair, equitable; right, lawful, justified; regular, proper;<br>(F 複数 対格)<br></span></a>
+<a class="note0">causas<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">bellorum.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>cum decertatur bello</strong> : 自動詞の受動の非人称、「それが戦争によって戦われる時」ｰ&gt;「戦争が行われる時」</p>
+<p><strong>oportet easdem causas subesse</strong>. 「同じ理由の元であるべきである。」</p>
+<p><strong>quas dixi paulo ante</strong> : 「少し前に言ったように」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>統治権について戦争が起きる時、またそれが勝利を求めるときには、同じ理由によるべきである。それは少し前に言ったように、戦いの正当性である。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sed<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note1">bella,<span>bellum belli N (2nd) N  <br>:war, warfare; battle, combat, fight; (at/in) (the) war(s); military force, arms;<br>(N 複数 主格),<br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">imperii<span>imperium imperi(i) N (2nd) N  <br>:command; authority; rule, supreme power; the state, the empire;<br>(X 単数 属格)<br></span></a>
+<a class="note1">proposita<span>propono proponere, proposui, propositus V (3rd)  <br>:display; propose; relate; put or place forward;<br>(完了 分詞 受動態 F 単数 主格),<br></span></a>
+<a class="note0">gloria<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note1">acerbe<span>acerbe acerbius, acerbissime ADV <br>:stridently, with harsh sound; cruelly, harshly; with pain/severity; premature;<br><br></span></a>
+<a class="note1">gerenda<span>gero gerere, gessi, gestus V (3rd)  <br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>&nbsp;(未来 分詞 受動態 N 複数 主格), <br></span></a>
+<a class="note0">sunt.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>ea bella sunt gerenda minus acerbe. 「その戦争は少し苦痛がすくなく扱われるべきである。」</p>
+<p>ea, quibus imperii gloria est proposita「それにより統治権の勝利がもたらされる」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>しかし其の戦争により統治権の勝利がもたらされるならば、少し苦痛は少なくなるはずである。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ut<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">civi<span></span></a>
+<a class="note1">aliter<span>aliter ADV <br>:otherwise, differently; in any other way<br><br></span></a>
+<a class="note1">contendimus,<span>contendo contendere, contendi, contentus V (3rd)  <br>:|compete/contend (fight/law), dispute; compare/match/contrast; demand/press for;<br>(１ 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">inimicus,<span></span></a>
+<a class="note0">aliter<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note1">competitor<span>competitor competitoris N (3rd) M  <br>:rival, competitor; other candidate for office; rival claimant (to throne);<br>(X 単数 主格), <br></span></a>
+<a class="note0">(cum<span></span></a>
+<a class="note1">altero<span>alter altera, alterum ADJ  <br>:one (of two); second/another; former/latter;<br>(M 単数 奪格), <br></span></a>
+<a class="note0">certamen<span></span></a>
+<a class="note0">honoris<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">dignitatis<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">altero<span></span></a>
+<a class="note1">capitis<span>caput capitis N (3rd) N  <br>:head; person; <strong>life;</strong> leader; top; source/mouth (river); capital (punishment);<br>(X 単数 属格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">famae)<span>fama famae N (1st) F  <br>:rumor; <strong>reputation</strong>; tradition; <strong>fame</strong>, public opinion, ill repute; report, news;<br>(C 単数 属格),<br></span></a>
+<a class="note0">sic<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Celtiberis,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">Cimbris<span>Cimber Cimbri N (2nd) M  <br>:Cimberi (pl.), a German tribe, invaded Gaul - in Caesar's "Gallic War";<br>(X 複数 奪格)<br></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">inimicis<span></span></a>
+<a class="note0">gerebatur,<span></span></a>
+<a class="note0">uter<span></span></a>
+<a class="note0">esset,<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">uter<span></span></a>
+<a class="note1">imperaret,<span>impero imperare, imperavi, imperatus V (1st)  <br>:order, command, levy; rule (over) (w/DAT);<br>(3 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Latinis,<span></span></a>
+<a class="note0">Sabinis,<span></span></a>
+<a class="note0">Samnitibus,<span></span></a>
+<a class="note0">Poenis,<span></span></a>
+<a class="note1">Pyrrho<span>Pyrrhusの奪格<br><br></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">imperio<span></span></a>
+<a class="note0">dimicabatur.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>contendoは戦うという意味のときは自動詞である。したがって間接目的語として与格を取りうる？</p>
+<p>cum contendimus civi : 「同僚市民と戦うとき」cum=withの前置詞は奪格支配なのでここは副詞でWhenである。</p>
+<p><strong>contendimus aliter si est inimicus</strong>. aliterはalius（形容詞）からの副詞である。「もし敵対者ならば異なるように戦う」が逐語訳であるが、ここではもう一つaliter si competitorがあるので、「敵対者ならばある戦い方でもし競争者なら別の戦い方をする」というニュアンスであろう。</p>
+<p><strong>cum altero certamen honoris est, cum altero capitis et famae</strong>. : altero~ alteroの場合は最初のalteroは後者、次のが前者である。ここのalteroは奪格なのでcum alteroのcumはwithの意味。「後者との場合は任務と尊厳の戦いで、前者は生活と名誉の戦いである」</p>
+<p>(最初のhonorisはduty, officiumのニュアンスで、famaeはfameで評判というニュアンスであろう）</p>
+<p><strong>utter esset</strong> : このessetは存在するの意味。ここでは生き残る、というニュアンス。utter imperaretどちらが命令するか<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>同僚市民と戦うときでも、もし相手が敵対者なのか、競争相手なのかで戦い方が異なる。後者は名誉と尊厳の戦いであり、前者は命と声望の戦いである。かくして、CeltiberやCimbriとの戦いは敵対者との戦いの如くで、つまりどちらが生き残るか、どちらが優越するかではない戦いで、Latins、SabinesやSamnites, Poeni, Pyrrhoとは統治権の戦いであった。<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Poeni<span>Poenus Poena, Poenum ADJ  <br>:Carthaginian, Punic; of/associated w/Carthage; Phoenician; scarlet, bright red;<br>&nbsp;(M 複数 主格),<br></span></a>
+<a class="note1">foedifragi,<span>foedifragus foedifraga, foedifragum ADJ  <br>:treacherous, perfidious; league-breaking; that breaks treaties/agreements;<br>&nbsp;(M 複数 主格)<br></span></a>
+<a class="note1">crudelis<span>crudelis crudele, crudelior -or -us, crudelissimus -a -um ADJ  <br>:cruel/hardhearted/unmerciful/severe, bloodthirsty/savage/inhuman; harsh/bitter;<br>(C 単数 主格), <br><br></span></a>
+<a class="note1">Hannibal,<span>Hannibal Hannibalis N (3rd) M  <br>:Hannibal; (Carthaginian general in 2nd Punic War);<br>(X 単数 主格), <br></span></a>
+<a class="note0">reliqui<span></span></a>
+<a class="note1">iustiores.<span>justus justa -um, justior -or -us, justissimus -a -um ADJ  比較級<br>:just, fair, equitable; right, lawful, justified; regular, proper;<br>(C 複数 主格),<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Poeni foedifragi : 裏切りのカルタゴ人、</p>
+<p>crudelis Hannibal : 残酷なHannibal<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>裏切りのカルタゴ、残忍なHannnibal、他はもっと合法的であった。<br></p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Pyrrhi<span>Pyrrhus<br>複数、主格<br><br></span></a>
+<a class="note0">quidem<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note1">captivis<span>captivus captivi N (2nd) C  <br>:prisoner of war (likely male, but maybe female), captive;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note1">reddendis<span>reddo reddere, reddidi, redditus V (3rd)  <br>:return; restore; deliver; hand over, pay back, render, give back; translate;<br>(未来 分詞 受動態  複数 奪格)<br></span></a>
+<a class="note0">illa<span></span></a>
+<a class="note1">praeclara:<span>praeclarus praeclara, praeclarum ADJ  <br>:very clear; splendid; famous; bright, illustrious; noble, distinguished;<br>&nbsp;(N 複数 主格),<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>illa (sunt) praeclara. ：彼らは見事だった。</p>
+<p>PyrrhusはEpirusの王であり、民族名ではないので、Pyrrhiは属格。したがってPyrrhi illaとして「Pyrrhusの次のものは」と解釈。</p>
+<p>illeはこれから述べること,、また「有名な」としてによく使われる。（NewLatin246. 2,3)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>Pyrruhusの返すべき捕虜に関して有名な次のものが秀逸である。<br></p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nec<span></span></a>
+<a class="note1">mi<span>ここでは単数、与格<br><br></span></a>
+<a class="note1">aurum<span>aurum auri N (2nd) N  <br>:gold (metal/color), gold money, riches;<br>(N 単数 対格)<br></span></a>
+<a class="note1">posco<span>posco poscere, poposci, - V (3rd)  <br>:ask, demand;<br>(１ 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note0">mi<span></span></a>
+<a class="note1">pretium<span>pretium preti(i) N (2nd) N  <br>:price/value/worth; reward/pay; money; prayer/request;<br>&nbsp;(X 単数 対格)<br></span></a>
+<a class="note1">dederitis,<span>do dare, dedi, datus V (1st) TRANS  <br>:give; dedicate; sell; pay; grant/bestow/impart/offer/lend; devote; allow; make;<br>(2 複数 未来完了 能動態 直接法 ), <br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>mi : 詩では単数与格にmiが使われることがある。（NewLatin84.1)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>私は自分に黄金を求めない、あなたは私に何事も支払うことはないであろう。<br></p>
+</div>
+</div>
+<div class="spacer">Line7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nec<span></span></a>
+<a class="note1">cauponantes<span>cauponor cauponari, cauponatus sum V (1st) DEP  <br>:traffic/trade in, sell;<br>(現在 分詞 能動態 C 複数 主格), <br></span></a>
+<a class="note0">bellum,<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">belligerantes<span>belligero belligerare, belligeravi, belligeratus V (1st) INTRANS  <br>:wage or carry on war; be at war;<br>(現在 分詞 能動態 C 複数 主格), (現在 分詞 能動態 C 複数 対格), (現在 分詞 能動態 C 複数 呼格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="spacer">Line8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Ferro,<span>ferrum ferri N (2nd) N  <br>:iron; any tool of iron; weapon, sword;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">auro<span>aurum auri N (2nd) N  <br>:gold (metal/color), gold money, riches;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">vitam<span>vita vitae N (1st) F  <br>:life, career, livelihood; mode of life;<br>(C 単数 対格)<br></span></a>
+<a class="note1">cernamus<span>cerno cernere, crevi, cretus V (3rd) TRANS  <br>:sift, separate, distinguish, discern, resolve, determine; see; examine; decide;<br>(１ 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">utrique.<span>uter utra, utrum ADJ  <br>:|(w/que) each/either (of two); both (separately); each side (pl.), each set;<br>(M 複数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>cernamus vitam Fferro, non auro</strong>.「生死を黄金ではなく鉄（剣）で決める。」</p>
+<p>utriqueが解らない。これはuterque=eachの与格か複、主格の形容詞である。？</p>
+<p>uterqueは「２つとも別々」という意味。２つに別れたものが複数のときは複数形が用いられる。</p>
+<p>（Utrique duces clari fuerunt) NewLatin 355.2</p>
+<p>この場合、cernamusを動詞とする主語と解釈するしかないように思える。「各々が決める」というニュアンスか？<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>生死を黄金でなく剣で決めよう。<br></p>
+</div>
+</div>
+<div class="spacer">Line9</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Vosne<span>vos vetrum/vetri PRON PERS  <br>:you (pl.), ye;<br>(C 複数 主格), Vos + ne<br></span></a>
+<a class="note0">velit<span></span></a>
+<a class="note1">an<span>an CONJ <br>:|whether; (utrum ... an = whether ... or); or; either;<br><br></span></a>
+<a class="note0">me<span></span></a>
+<a class="note1">regnare<span>regno regnare, regnavi, regnatus V (1st)  <br>:reign, rule; be king; play the lord, be master;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">era,<span>era erae N (1st) F  <br>:mistress; lady of the house; woman in relation to her servants; Lady;<br>(C 単数 主格)<br></span></a>
+<a class="note0">quidve<span></span></a>
+<a class="note1">ferat<span>fero ferre, tuli, latus V  <br>:bring, bear; tell/speak of; consider; carry off, win, receive, produce; get;<br>(3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">Fors,<span>fors fortis N (3rd) F  <br>:chance; luck, <strong>fortune;</strong> accident;<br>(X 単数 主格)<br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>neは疑問文を作る後椅辞、ve=orのenclitic</p>
+<p>era Fors = dame Fortune 幸運の女神　詩なので自由な配置で前後に分かれている。</p>
+<p>vos an me regnare : 不定詞句で、貴方か私が統治する事</p>
+<p>era Fors velit vosne an me regare.　「幸運の女神は貴方か私かどちらが統治することを望むだろうか？」</p>
+<p>quid ferat : quidはwhich oneで「どちらが勝つか」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>幸運の女神は貴方か私のどちらの統治を望むか、またはどちらが勝つか？<br></p>
+</div>
+</div>
+<div class="spacer">Line10</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Virtute<span>virtus virtutis N (3rd) F  <br>:strength/power; courage/bravery;&nbsp;worth/ manliness / virtue/ character/ excellence;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note1">experiamur.<span>experior experiri, expertus sum V (4th) DEP  <br>:test, put to the test; find out; attempt, try; prove, experience;<br>(１ 複数 現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>武力で決しよう。<br></p>
+</div>
+</div>
+<div class="spacer">Line11</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Et<span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note1">simul<span>simul ADV <br>:at same time; likewise; also; simultaneously; at once;<br><br></span></a>
+<a class="note1">accipe<span>accipio accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>(2 単数 現在 能動態 命令法 )<br></span></a>
+<a class="note0">dictum:<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>accipeは命令形で、相手（Fabricius)に対して言っている。</p>
+<p>dictumは言った事、この場合Virtute experiamur.<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>同じように、この言葉を受け取れ！<br></p>
+</div>
+</div>
+<div class="spacer">Line12</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quorum<span></span></a>
+<a class="note1">virtuti<span>virtus virtutis N (3rd) F  <br>:strength/power; courage/ bravery; worth/ manliness/ virtue/ character/ excellence;<br>(X 単数 与格)<br></span></a>
+<a class="note0">belli<span></span></a>
+<a class="note0">Fortuna<span></span></a>
+<a class="note1">pepercit,<span>parco parcere, parcui, parsus V (3rd)  <br>:forbear, refrain from; spare; show consideration; be economical/thrifty with;<br>(3 単数 完了 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="spacer">Line13</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Eorundem<span>idem eadem, idem PRON  <br>:(w/-dem ONLY, idem, eadem, idem) same, the same, the very same, also;<br>(M 複数 属格), (N 複数 属格)<br></span></a>
+<a class="note1">libertati<span>libertas libertatis N (3rd) F  <br>:freedom, liberty; frankness of speech, outspokenness;<br>&nbsp;(X 単数 与格)<br></span></a>
+<a class="note0">me<span></span></a>
+<a class="note1">parcere<span>parco parcere, parcui, parsus V (3rd)  <br>:forbear, refrain from; spare; show consideration; be economical/thrifty with;<br>&nbsp;(  現在 能動態 不定詞 <br></span></a>
+<a class="note0">certum<span></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="spacer">Line14</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dono,<span></span></a>
+<a class="note0">ducite,<span></span></a>
+<a class="note0">doque<span></span></a>
+<a class="note0">volentibus<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">magnis<span></span></a>
+<a class="note0">dis.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

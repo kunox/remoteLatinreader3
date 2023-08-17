@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 51</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[51]<span></span></a>
+
+<a class="note0">Postrīdiē<span><br><br></span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note0">diēī<span><br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">praesidiō<span>praesidium, praesidi(i) 名詞 (2nd) N   :protection; help; guard; garrison, detachment;  <br>与格(目的の与格）</span></a>
+<a class="note1">utrīsque<span>uter = both 与格<br></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">satis<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">vīsum<span>video 完了分詞　受動主格 <br>visum est = it seemed</span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">relīquit,<span>relinquo, relinquere, reliqui, relictus 動詞 (3rd)   :leave behind, abandon; (pass.) be left, remain; bequeath;</span></a>
+<a class="note1">ālāriōs<span>alarius, alari(i) 名詞 (2nd) M   :auxiliary troops (pl.), posted on the wings of the army;対格<br></span></a>
+<a class="note0">omnēs<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">cōnspectū<span>conspectus, conspectus 名詞 (4th) M   :view, (range of) sight;<br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">minōribus<span><br><br></span></a>
+<a class="note1">cōnstituit,<span>constituo, constituere, constitui, constitutus 動詞 (3rd)   :set up/in position,<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note1">multitūdine<span>multitudo, multitudinis 名詞 (3rd) F   :multitude, great number; crowd; rabble, mob;奪格（観点の）<br></span></a>
+<a class="note1">mīlitum<span>miles, militis 名詞 (3rd) M   :soldier; foot soldier; soldiery;属格<br></span></a>
+<a class="note1">legiōnāriōrum<span>legionarius, legionaria, legionarium 形容詞   :legionary, of a legion; 属格<br></span></a>
+<a class="note1">prō<span>= in propotion to<br></span></a>
+<a class="note1">hostium<span>属格</span></a>
+<a class="note1">numerō<span>奪格<br></span></a>
+<a class="note1">valēbat,<span>valeo, valere, valui, valitus 動詞 (2nd)   :be strong/ powerful/ influential/ healthy; prevail; 3 単 未完了 能動態 直説法<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">speciem<span>species, speciei 名詞 (5th) F   :sight, appearance, show; 対格</span></a>
+<a class="note1">ālāriīs<span>複　奪格<br></span></a>
+<a class="note1">ūterētur;<span>utor, uti, usus sum 動詞 (3rd) DEP   :use, make use of,3 単 未完了 受動態 接続法<br></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note1">triplicī<span>triplex (gen.), triplicis ADJ  <br>:threefold, triple; three;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">īnstrūctā<span>instruo = construct <br>完了分詞受動<br></span></a>
+<a class="note1">aciē<span>battle line = acies奪格<br></span></a>
+<a class="note1">ūsque<span>usque, 副詞   :all the way, right on; all<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note1">accessit.<span>accedo, accedere, accessi, accessus 動詞 (3rd)   :come near, approach; agree</span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false">
+<p>quod visum est esse satis: それが十分であると思われる　satisは補語</p>
+<p><strong>quod esse satis (ei) visum est</strong></p>
+<p>visum est = it seemed, it has been seen</p>
+<p><strong>Caesar reliquit, praesidio quod visum est esse satis</strong> :カエサルは十分と思われるだけの軍勢を防衛のための残し、</p>
+<p>alarius = 正規兵とは異る予備軍（ガリアから成る）通常両翼に配置 ala = wingから</p>
+<p>quod valebat, minus multitudine militum legionariorum ：なぜならカエサルは師団の兵士の数の程度という観点からは弱かった。</p>
+<p>pro numero hostium ：敵の数との比較では</p>
+<p>ut uteretur; alariis ad speciem ：予備兵を見かけのために使う</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>次の日、カエサルは両方の野営地にちょうど十分と思われるだけの兵を防衛のために残し、全ての予備兵を両翼に従え敵の視野の中に、小さな野営地の前に陣取った。というのは数の上ではカエサルの軍団の兵は敵よりも少なかったので予備兵を見かけ上のために使ったのである。自身は３重に構成された戦列で、まっすぐに敵の野営地に近づいた。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Tum<span>then</span></a>
+<a class="note1">dēmum<span>demum, 副詞   :finally, at last; at length, in the end, eventually;<br></span></a>
+<a class="note1">necessāriō<span>necessarium, necessarii 名詞 (2nd) N   :necessities (pl.), what is needed;奪格<br></span></a>
+<a class="note1">Germānī<span>複　主格<br></span></a>
+<a class="note0">suās<span><br><br></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">ēdūxērunt<span>educo, educere, eduxi, eductus 動詞 (3rd)   :lead out; draw up; 3 複 完了 能動態 直説法<br></span></a>
+<a class="note1">generātimque<span>generatim, 副詞   :by tribes/kinds; generally;<br></span></a>
+<a class="note1">cōnstituērunt<span>constituo, constituere, constitui, constitutus 動詞 (3rd)   :set up/in position, 3 複 完了 能動態 直説法)<br></span></a>
+<a class="note1">paribus<span>par, paris (gen.), -, parissimus -a -um 形容詞   :equal (to); a match for;</span></a>
+<a class="note1">intervāllīs,<span>intervallum, intervalli 名詞 (2nd) N   :interval, space, distance; respite;奪格<br></span></a>
+<a class="note0">Harūdēs,<span><br><br></span></a>
+<a class="note0">Marcomanōs,<span><br><br></span></a>
+<a class="note0">Tribocōs,<span><br><br></span></a>
+<a class="note0">Vangionēs,<span><br><br></span></a>
+<a class="note0">Nemetēs,<span><br><br></span></a>
+<a class="note0">Sedusiōs,<span><br><br></span></a>
+<a class="note0">Suēbōs,<span><br><br></span></a>
+<a class="note0">omnemque<span></span></a>
+<a class="note0">aciem<span></span></a>
+<a class="note0">suam<span></span></a>
+<a class="note1">raedīs<span>raeda, raedae 名詞 (1st) F   :four wheeled wagon;<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">carrīs<span>carrus, carri 名詞 (2nd) M   :wagon; (Gallic type);<br></span></a>
+<a class="note0">circumdedērunt,<span><br><br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">quā<span></span></a>
+<a class="note1">spēs<span>主格　relinquereturの主語<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fugā<span><br><br></span></a>
+<a class="note1">relinquerētur.<span>relinquo, relinquere, reliqui, relictus 動詞 (3rd)   :leave behind, abandon;<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Germani eduxerunt suas copias ：自身の軍勢を引き出し</p>
+<p>constituerunt generatimque paribus intervallis, ：部族毎に等間隔に布陣した</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>ついに必要に駆られて、ゲルマンは野営地から自身の軍勢を連れ出し、部族毎に、等間隔で布陣した。Harudes, Marcormanoni, Tribocci, Vangiones, Nemetes, Sedussi, Suevi,　みんな自分たちの戦列えを組、馬車や４輪馬車で周りを囲い、退却の希望を持ていないようにしていた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span><br><br></span></a>
+<a class="note1">mulierēs<span>mulier, mulieris 名詞 (3rd) F   :woman; wife; mistress; 複　対格<br></span></a>
+<a class="note1">imposuērunt,<span>impono, imponere, imposui, impositus 動詞 (3rd)   :impose, put upon; establish; inflict;<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">proelium<span></span></a>
+<a class="note1">proficīscentēs<span>proficiscor, proficisci, profectus sum 動詞 (3rd) DEP   :depart, set out; proceed;現在 分詞 能動態<br></span></a>
+<a class="note1">mīlitēs<span>対格<br></span></a>
+<a class="note1">passīs<span>pando, pandere, pandi, passus 動詞 (3rd)   :spread out <br>完了分詞　受動　奪格<br></span></a>
+<a class="note1">manibus<span>manus, manus 名詞 (4th) F   :hand, fist; team; gang, band of soldiers;奪格</span></a>
+<a class="note1">flentēs<span>fleo, flere, flevi, fletus 動詞 (2nd)   :cry for; cry, weep; <br>現在分詞　主格<br></span></a>
+<a class="note1">implōrābant<span>imploro, implorare, imploravi, imploratus 動詞 (1st)   :appeal to, invoke; beg,3 複 未完了 能動態 直説法<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">servitūtem<span>servitus, servitutis 名詞 (3rd) F  <br> :slavery; slaves; servitude;<br></span></a>
+<a class="note0">Rōmānīs<span><br><br></span></a>
+<a class="note1">trāderent.<span>trado, tradere, tradidi, traditus 動詞 (3rd)   :hand over, surrender; 3 複 未完了 能動態 接続法)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>imposuerunt, Eo mulieres quae ～：～する女たちをそれらの上に載せた。</p>
+<p>quae implorabant milites proficiscentes ad proelium：戦場に向かう兵士たちに訴える</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>泣きながら、手を振りながら、戦場に行く兵士たちに、ローマ人の奴隷になるようなことにしないでくれと懇願する女達を、その上に載せた。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

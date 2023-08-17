@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='remote latinreader' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function (event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+            if($("#saveoption").length){
+                $("#saveoption").hide();
+                $("#downloadsave").hide();
+            }
+            insertButtons2();
+            $("#outer").css("width","96%");
+        }
+        function insertButtons2(){
+            if(!$(".lbtn1").length){
+                $(".spacer").each(function(index, elem) {
+                    var target = $(elem);
+                    var tx1 = target.html();
+                    var color = "style='color:#5f9ea0;'";
+                    if (target.next().next().attr("class") != "spnote")
+                        color = "style='color:black;'";
+                    target.html(tx1 + "<button class='lbtn2'>Translation</button><button class='lbtn1'>Notes</button>");
+                });
+            }
+            $(".lbtn1").on("click", function() {
+                var target = $(this).parent().next().next();
+                if (target.attr("class") != "spnote") {
+                    target = target.next();
+                    if (target.attr("class") != "spnote") // 編集中の場合
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+            $(".lbtn2").on("click", function() {
+                var target = $(this).parent().next().next().next();
+                if (target.attr("class") != "translation") {
+                    target = target.next();
+                    if (target.attr("class") != "translation")
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+        }
+
+        function btoggle(obj, btn) {
+            obj.toggle(function() {
+                if ($(this).is(":visible"))
+                    btn.css("color", "black");
+                else
+                    btn.css("color", "#5f9ea0");
+            });
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 2.8rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+
+        /* 追加のボタン*/
+        .lbtn1,
+        .lbtn2,
+        .lbtn3,
+        .lbtn4 {
+            float: right;
+            margin-top: 2px;
+            margin-right: 6px;
+            height: 16px;
+            font-size: 10px;
+            padding: 1px;
+            font-weight: bold;
+            /* vertical-align: bottom; */
+            border: none;
+        }
+
+
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 2.8rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+
+        }
+
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+
+        a.note1:hover span {
+            display: block;
+        }
+
+        .latin span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 3.5rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        .latin span::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.8rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.5rem;
+            left: 2.0rem;
+        }
+    </style>
+</head>
+
+<body id="bodyportion">
+        <div id="outer">
+    
+		<a name="begin"></a>
+	<div id="header">
+            <h1 style="color: rgb(0, 0, 0);"> 22 2 nd  LABOR- THE LERNEAN HYDRA.htm </h1>
+        
+<div class="boxright">
+<input id="saveoption" class="rbtn1" type="button" value="保存する" style="font-size: 12px; font-family: meiryo; ">
+<input id="downloadsave" class="rbtn1" type="button" value="ダウンロード" style="font-size: 12px; font-family: meiryo;">
+</div></div>
+        <div class="spacer">Line<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+        <div class="latin">
+            <p class="pop" style="margin-left: 10px;" name="latintext">
+                <a class="note0">Paulō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">post<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">iussus<span><b>jussus,jussus N (4th) M </b><br>:order, command, decree, ordinance;<br>(単数 主格)&nbsp;</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Eurystheō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Hydram<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">necāre.<span><b>nĕco,necare, necavi, necatus V (1st) TRANS  </b><br>:kill/murder; put to death; suppress, destroy; kill (plant); quench/drown (fire);<br>&nbsp;不定詞</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Hoc<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">mōnstrum<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">cui<span><b>quī,quae, qua PRON  ADJECT</b><br>:any; some; someone (preceded by si, nisi, numquid, ne), something, anyone;<br>&nbsp;(N 単数 与格)</span></a>
+<a class="note0">novem<span></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note0">capita.<span></span></a>
+<a class="note0">Herculēs<span></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">amīcō<span></span></a>
+<a class="note0">Iolaō<span></span></a>
+<a class="note0">profectus<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">palūdem<span></span></a>
+<a class="note0">Lernaeam,<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">quā<span></span></a>
+<a class="note0">Hydra<span></span></a>
+<a class="note0">habitābat.<span></span></a>
+<a class="note0">Mox<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">mōnstrum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">invēnit,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">quamquam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">rēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">perīculī,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">collum<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">sinistrā<span></span></a>
+<a class="note0">prehendit.<span></span></a>
+<a class="note0">Tum<span></span></a>
+<a class="note0">dextrā<span></span></a>
+<a class="note0">capita<span></span></a>
+<a class="note0">novem<span></span></a>
+<a class="note0">abscīdere<span></span></a>
+<a class="note0">coepit;<span></span></a>
+<a class="note0">quotiēns<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0">fēcerat,<span></span></a>
+<a class="note0">nova<span></span></a>
+<a class="note0">capita<span></span></a>
+<a class="note0">exoriēbantur.<span></span></a>
+<a class="note0">Diū<span></span></a>
+<a class="note0">frūstrā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">labōrābat;<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tandem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">hōc<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">cōnātū<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">dēstitit.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Deinde<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">arborēs<span></span></a>
+<a class="note0">succīdere<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ignem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">accendere<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">cōnstituit.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Hoc<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">fēcit,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">postquam<span></span></a>
+<a class="note0">ligna<span></span></a>
+<a class="note0">ignem<span></span></a>
+<a class="note0">comprehendērunt,<span></span></a>
+<a class="note0">face<span></span></a>
+<a class="note0">ārdente<span></span></a>
+<a class="note0">colla<span></span></a>
+<a class="note0">adūssit,<span></span></a>
+<a class="note0">unde<span></span></a>
+<a class="note0">capita<span></span></a>
+<a class="note0">exoriēbantur.<span></span></a>
+<a class="note0">Nec<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note0">magnō<span></span></a>
+<a class="note0">labōre<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">fēcit;<span></span></a>
+<a class="note0">vēnit<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">auxiliō<span></span></a>
+<a class="note0">Hydrae<span></span></a>
+<a class="note0">cancer<span></span></a>
+<a class="note0">ingēns,<span></span></a>
+<a class="note0">quī,<span></span></a>
+<a class="note0">dum<span></span></a>
+<a class="note0">Herculēs<span></span></a>
+<a class="note0">capita<span></span></a>
+<a class="note0">abscīdit,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">crūra<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">mordēbat.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Postquam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">mōnstrum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tālī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">modō<span></span></a>
+<a class="note0">interfēcit,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">sagittās<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">suās<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">sanguine<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">imbuit,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">itaque<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">mortiferās<span></span></a>
+<a class="note0">reddidit.<span></span></a>
+<a class="note0"><span></span></a>
+
+	</p>
+	</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p><br></p>
+</div>
+</div>
+
+	<div id="footer">
+	<a href="#begin"> ページの最初に </a><!-- div -->
+	</div>
+	</div>
+    </body>
+    <html>
+    

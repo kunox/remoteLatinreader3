@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='remote latinreader' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function (event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+            if($("#saveoption").length){
+                $("#saveoption").hide();
+                $("#downloadsave").hide();
+            }
+            insertButtons2();
+            $("#outer").css("width","96%");
+        }
+        function insertButtons2(){
+            if(!$(".lbtn1").length){
+                $(".spacer").each(function(index, elem) {
+                    var target = $(elem);
+                    var tx1 = target.html();
+                    var color = "style='color:#5f9ea0;'";
+                    if (target.next().next().attr("class") != "spnote")
+                        color = "style='color:black;'";
+                    target.html(tx1 + "<button class='lbtn2'>Translation</button><button class='lbtn1'>Notes</button>");
+                });
+            }
+            $(".lbtn1").on("click", function() {
+                var target = $(this).parent().next().next();
+                if (target.attr("class") != "spnote") {
+                    target = target.next();
+                    if (target.attr("class") != "spnote") // 編集中の場合
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+            $(".lbtn2").on("click", function() {
+                var target = $(this).parent().next().next().next();
+                if (target.attr("class") != "translation") {
+                    target = target.next();
+                    if (target.attr("class") != "translation")
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+        }
+
+        function btoggle(obj, btn) {
+            obj.toggle(function() {
+                if ($(this).is(":visible"))
+                    btn.css("color", "black");
+                else
+                    btn.css("color", "#5f9ea0");
+            });
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 2.8rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+
+        /* 追加のボタン*/
+        .lbtn1,
+        .lbtn2,
+        .lbtn3,
+        .lbtn4 {
+            float: right;
+            margin-top: 2px;
+            margin-right: 6px;
+            height: 16px;
+            font-size: 10px;
+            padding: 1px;
+            font-weight: bold;
+            /* vertical-align: bottom; */
+            border: none;
+        }
+
+
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 2.8rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+
+        }
+
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+
+        a.note1:hover span {
+            display: block;
+        }
+
+        .latin span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 3.5rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        .latin span::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.8rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.5rem;
+            left: 2.0rem;
+        }
+    </style>
+</head>
+
+
+<body id="bodyportion">
+        <div id="outer">
+    
+		<a name="begin"></a>
+<div id="header">
+<h1> Liber I: Section 29 </h1>
+
+<div class="boxright">
+<input id="saveoption" class="rbtn1" type="button" value="保存する" style="font-size: 12px; font-family: meiryo; ">
+<input id="downloadsave" class="rbtn1" type="button" value="ダウンロード" style="font-size: 12px; font-family: meiryo; display: none;">
+</div></div>
+
+
+
+
+<div class="spacer">Line0<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+</a><a class="note0">[29]<span></span></a>
+<a class="note0">Sunt<span></span></a>
+<a class="note0">etiam,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">studio<span>studium studi(i) N (2nd) N  <br>:eagerness, enthusiasm, zeal, spirit; devotion, pursuit, study;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">rei<span></span></a>
+<a class="note1">familiaris<span>familiaris familiaris N (3rd) C  <br>:member of household (family/servant/esp. slave); familiar acquaintance/friend;<br>(X 単数 属格)<br></span></a>
+<a class="note1">tuendae<span><b>tŭĕor</b>,tueri, tuitus sum V (2nd) DEP  <br><b>:see, look at; protect, watch; uphold;</b><br>【動形容詞 (F 単数 属格) 】</span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">odio<span>odium odi(i) N (2nd) N  <br>:hate/hatred/dislike/antipathy; odium, unpopularity; boredom/impatience;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">quodam<span>quidam quaedam, quoddam   <br>:(w/-dam) <strong>certain</strong>; as INDEF a certain thing; somebody, one, something;<br>(N 単数 奪格)<br></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note0">se<span></span></a>
+<a class="note0">negotium<span></span></a>
+<a class="note0">agere<span></span></a>
+<a class="note1">dicant<span><b>dīco</b>,dicere, dixi, dictus V (3rd)  X<br><b>:say, declare, state; allege, declare positively; assert; plead (case);</b><br>(3 複数 現在 能動態 接続法) </span></a>
+<a class="note0">nec<span></span></a>
+<a class="note0">facere<span></span></a>
+<a class="note1">cuiquam<span>quisquam quaequam, quidquam ADJECT  <br>:(w/-quam) any; anyone/anybody (no pl.) (INDEF) anything; any man, any person;<br>(X 単数 与格)<br></span></a>
+<a class="note1">videantur<span>video videre, vidi, visus V (2nd)  <br>:see, look at; consider; (PASS) seem, seem good, appear, be seen;<br>(3 複数 現在 受動態 接続法 )<br></span></a>
+<a class="note1">iniuriam.<span>injuria injuriae N (1st) F  <br>:injury; injustice, wrong, offense; insult, abuse; sexual assault;<br>(C 単数 対格)<br></span></a>
+</p>
+</div>
+
+    
+    <div class="spnote" style="background-color: rgb(255, 255, 248);" contenteditable="false">
+<div class="innerdiv" spellcheck="false"><p>sunt (is) qui ~ dicant, videantur. : qui以下の関係詞節で述べられるような人がいる。</p><p>familiaris tuendae : 動形容詞構文 familiarem tuendi -&gt; familiaris tuendae 「家族を守ること」</p>
+<p>qui dicant se agere suum negotium. se agere negotiumは不定詞句で「自身の仕事だけを行っている事」</p>
+<p>(qui) nec videantur facere iniuriam cuiquam 「決して誰かに害をなしているとは思わない」</p>
+<p>studio, odioは手段の奪格。rei, hominumは目的の属格。<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>守るべき家族の事柄に熱心なあまり、もしくは人に対する嫌悪から、自分は自分の事だけを行っていると言い、誰かに対して何か悪いことをしているとは決して考えない人がいる。<br></p>
+</div>
+</div>
+<div class="spacer">Line1<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Qui<span></span></a>
+<a class="note1">altero<span>alter altera, alterum ADJ  <br>:one (of two); second/another; former/latter;<br>&nbsp;(N 単数 奪格)<br></span></a>
+<a class="note0">genere<span></span></a>
+<a class="note1">iniustitiae<span>injustitia injustitiae N (1st) F  <br>:injustice; severity;<br>(C 単数 属格)<br></span></a>
+<a class="note1">vacant,<span>vaco vacare, vacavi, vacatus V (1st)  <br>:be empty; be vacant; be idle; <strong>be free from</strong>, be unoccupied;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">alterum<span></span></a>
+<a class="note1">incurrunt;<span>incurro incurrere, incucurri, incursus V (3rd)  <br>:run into or towards, attack, invade; meet (with); befall;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">deserunt<span>desero deserere, deserui, desertus V (3rd) TRANS  <br>:|cease to be concerned with; fail/fall short; (PASS w/ABL) be without/deprived;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">vitae<span></span></a>
+<a class="note1">societatem,<span>societas societatis N (3rd) F  <br>:society; alliance/partnership; trading company; fellowship, communion;<br>(C 単数 対格)<br></span></a>
+<a class="note1">quia<span>quia CONJ <br>:because;<br><br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note1">conferunt<span>confero conferre, contuli, collatus V TRANS  <br>:bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note1">studii,<span>studium studi(i) N (2nd) N  <br>:eagerness, enthusiasm, zeal, spirit; devotion, pursuit, study;<br>(X 単数 属格<br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note1">operae,<span>opera operae N (1st) F  <br>:work, care; aid; service, <strong>effort</strong>/trouble;<br>(C 単数 属格)<br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note1">facultatum.<span>facultas facultatis N (3rd) F  <br>:<strong>means;</strong> ability, skill; opportunity, chance; resources (pl.), supplies;<br>(C 複数 属格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false"><p>vacant altero genere iniustiae : 一つの不正からは逃れている</p>
+<p>incurrunt in alterum : 別の（不正）に入り混んでいる。</p>
+<p>conferunt nihil studii in eam. studiiは部分の属格で、「なんの熱意もそれに持ち込まない」貢献しないと言うこと。<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>そういう人は、ある一つの不正義からは逃れているが、別の不正義に入り込んでいる。それは生きている上での社会性からの逃避である。なぜなら彼らは如何なる熱意もなく、如何なる努力もせず、如何なる資産も持ち込まないからである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+    </body>
+    <html>
+    

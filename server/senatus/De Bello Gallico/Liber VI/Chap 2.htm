@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 2</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[2]<span></span></a>
+
+<a class="note0">Interfectō<span><br><br></span></a>
+<a class="note0">Indutiomārō,<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">docuimus,<span>doceo docere, docui, doctus V (2nd)  <br>:teach, show, point out;<br>(１人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note0">propinquōs<span><br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Trēverīs<span><br><br></span></a>
+<a class="note1">imperium<span>imperium imperi(i) N (2nd) N  <br>:command; authority; rule, supreme power; the state, the empire;<br>(n 単数 主格),<br></span></a>
+<a class="note1">dēfertur.<span>defero deferre, detuli, delatus V  <br>:carry/bring/sink/fall down/off; convey/deliver/transfer; reduce/slope (down to);<br>(３人称 単数 現在 受動態 直説法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>imperium defertur a Treveris ad eius pronpinquos</strong>. eiusはIndutiomarus<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>Indutiomarusが殺され、それは前に書いたが、派遣はTreveriによって彼の親族に渡されていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Illī<span><br><br></span></a>
+<a class="note0">fīnitimōs<span><br><br></span></a>
+<a class="note0">Germānōs<span><br><br></span></a>
+<a class="note1">sollicitāre<span>sollicito sollicitare, sollicitavi, sollicitatus V (1st)  <br>:disturb, worry; stir up, arouse, agitate, incite;<br>(  現在 能動態 不定詞 )<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">pecūniam<span>pecunia pecuniae N (1st) F  <br>:money; property;<br>(c 単数 対格)<br><br></span></a>
+<a class="note1">pollicērī<span>polliceor polliceri, pollicitus sum V (2nd) DEP  <br>:promise;<br>(  現在 受動態 不定詞 )<br><br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">dēsistunt.<span>desisto desistere, destiti, destitus V (3rd)  <br>:stop/cease/desist (from); give up, leave/stand off; dissociate oneself;<br>(３人称 複数  現在 能動態 直説法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>Illi non desistunt ~.<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>彼らは近隣のゲルマンを煽り立て、金銭を約束することを止めなかった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Cum<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">proximīs<span><br><br></span></a>
+<a class="note1">impetrāre<span>impetro impetrare, impetravi, impetratus V (1st)  <br>:obtain/procure (by asking/request/entreaty); succeed/achieve/be granted; obtain;<br>(  現在 能動態 不定詞 )<br><br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">possent,<span></span></a>
+<a class="note1">ulteriōrēs<span>ulterior -or -us, ultimus -a -um ADJ  比較級<br>:far; farther; farthest, latest; last; highest, greatest;<br>&nbsp;(c 複数  対格)<br><br></span></a>
+<a class="note1">temptant.<span>tempto temptare, temptavi, temptatus V (1st)  <br>:test, try; urge; worry; bribe;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>近くからは得られなかったので遠くを試した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Inventīs<span>invenio invenire, inveni, inventus V (4th)  <br>:come upon; discover, find; invent, contrive; reach, manage to get;<br>(完了 分詞 受動態  複数  奪格)<br><br></span></a>
+<a class="note0">nōnnūllīs<span><br><br></span></a>
+<a class="note0">cīvitātibus<span><br><br></span></a>
+<a class="note0">iūreiūrandō<span><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note1">cōnfīrmant<span>confirmo confirmare, confirmavi, confirmatus V (1st) TRANS  <br>:strengthen, develop, build up (w/troops); make secure/firm; reassure; secure;<br>(３人称 複数  現在 能動態 直説法 )<br><br></span></a>
+<a class="note0">obsidibusque<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">pecūniā<span><br><br></span></a>
+<a class="note1">cavent:<span>caveo cavere, cavi, cautus V (2nd)  <br>:beware, avoid, take precautions/defensive action; give/get surety; stipulate;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">Ambiorīgem<span><br><br></span></a>
+<a class="note1">sibi<span>与格<br><br></span></a>
+<a class="note1">societāte<span>societas societatis N (3rd) F  <br>:society; alliance/partnership; trading company; fellowship, communion;<br>&nbsp;(c 単数 奪格)<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">foedere<span>foedus foederis N (3rd) N  <br>:treaty, league, formal agreement (between states), alliance; P:peace, amity;<br>(n 単数 奪格)<br></span></a>
+<a class="note1">adiungunt.<span>adjungo adjungere, adjunxi, adjunctus V (3rd) TRANS  <br>:add, attach, join to, add to, support; apply to; harness, yoke; direct; confer;<br>(３人称 複数  現在 能動態 直説法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>nonnullis civitatibus inventis : 独立奪格「幾つかの国が見つかり」</p>
+<p>adjungunt Ambiorigem sibi societate et foedere. 逐語的には「彼らはAmbiorixを自身に同盟と条約で加えた」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>幾つかの国が見つかり、お互いに盟約を交わし、お金に関しては人質で保証した。彼らはAmbiorixと同盟と条約によって連携した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quibus<span></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">cognitīs<span><br><br></span></a>
+<a class="note0">Caesar,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">undique<span>undique ADV <br>:|everywhere; completely; allover; from every point of view, in all respects;<br><br></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">parārī<span>paro parare, paravi, paratus V (1st) TRANS  <br>:prepare; furnish/supply/provide; produce; obtain/get; buy; raise; put up; plan;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">vidēret,<span><br><br></span></a>
+<a class="note0">Nerviōs,<span><br><br></span></a>
+<a class="note0">Aduatucōs<span><br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">Menapiōs<span><br><br></span></a>
+<a class="note1">adjūnctīs<span>adjungo adjungere, adjunxi, adjunctus V (3rd) TRANS  <br>:add, attach, join to, add to, support; apply to; harness, yoke; direct; confer;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">Cisrhēnānīs<span>ラインのこちら側<br>cf: Cisalpina<br><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">Germānīs<span>Germanus Germani N (2nd) M  <br>:Germans (pl.);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">armīs,<span><br><br></span></a>
+<a class="note0">Senonēs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">imperātum<span>imperatum imperati N (2nd) N  <br>:command, order;<br>(n 単数 対格)<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">venīre<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Carnutibus<span></span></a>
+<a class="note0">fīnitimīsque<span><br><br></span></a>
+<a class="note0">cīvitātibus<span><br><br></span></a>
+<a class="note1">cōnsilia<span>consilium consili(i) N (2nd) N  <br>:|decision/resolution; intention/ purpose/ policy /plan/ action; diplomacy/ strategy;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note1">commūnicāre,<span>communico communicare, communicavi, communicatus V (1st) TRANS  <br>:|communicate, discuss, impart; make common cause; take common counsel, consult;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Trēverīs<span><br><br></span></a>
+<a class="note0">Germānōs<span><br><br></span></a>
+<a class="note1">crēbrīs<span>creber crebra -um, crebrior -or -us, creberrimus -a -um ADJ  <br>:thick/crowded/packed/close set; frequent/repeated, constant; numerous/abundant;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">lēgātiōnibus<span><br><br></span></a>
+<a class="note1">sollicitārī,<span>sollicito sollicitare, sollicitavi, sollicitatus V (1st)  <br>:disturb, worry; stir up, arouse, agitate, incite;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">mātūrius<span>maturus matura -um, maturior -or -us, maturissimus -a -um ADJ  :early, speedy; ripe; mature, mellow; timely, seasonable;<br>形容詞比較級<br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">bellō<span><br><br></span></a>
+<a class="note1">cōgitandum<span>cogito cogitare, cogitavi, cogitatus V (1st)  <br>:think; consider, reflect on, ponder; imagine, picture; intend, look forward to;<br>動形容詞<br><br></span></a>
+<a class="note0">putāvit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>adiunctis Germanis</strong> Cisrhenanis omnibus 独立奪格、「ライン河のこちら側のすべてのゲルマンを加え」</p>
+<p>putavit <strong>cogitandum (esse) sibi</strong> : 動形容詞＋SUMで、～しなければならない、と言う意味で、誰によっては与格で与えられる。「それは私によって考慮されなければならないと考えた」（Caesar主語）<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>これらの事を知り、Caesarは、すべてのところかで戦いが準備されていると見て取った。Nervi、Aduatuci、Menapiosはライン河のこちら側のゲルマンのすべてを加え武装している。SenonesはCaesarの指揮下に来ておらず、Carnutesや近隣諸国と意見を交換している。ゲルマンはTreveriからの度々の使者によって煽られている。（これらの状況で）いつもより早めに準備をしなければならないと（Caesarは）考えた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

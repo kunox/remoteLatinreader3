@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 15</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[15]<span></span></a>
+
+<a class="note0">Alterum<span></span></a>
+<a class="note0">genus<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">equitum.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>もう一つの階級は騎士である。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hī,<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">ūsus<span>usus usus N (4th) M  <br>:use, enjoyment; experience, skill, advantage; custom;<br>(c 単数 主格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">aliquod<span>aliqui aliqua, aliquod PRON  <br>:any; some;<br>(n 単数 主格)<br><br></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">incidit<span>incido incidere, incidi, incasus V (3rd)  <br>:happen; fall into, fall in with, meet; fall upon, assail;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">(quod<span></span></a>
+<a class="note0">ferē<span><br><br></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note1">adventum<span>adventus adventus N (4th) M  <br>:arrival, approach; visit, appearance, advent; ripening; invasion, incursion;<br>(c 単数 対格)<br></span></a>
+<a class="note1">quotannīs<span>quotannis ADV <br>:every year, yearly;<br><br></span></a>
+<a class="note0">accidere<span></span></a>
+<a class="note1">sōlēbat,<span>soleo solere, solitus sum V (2nd) SEMIDEP  <br>:be in the habit of; become accustomed to;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">uti<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">ipsī<span><br><br></span></a>
+<a class="note0">iniūriās<span><br><br></span></a>
+<a class="note1">īnferrent<span>infero inferre, intuli, illatus V TRANS  <br>:|inflict/cause/inflict/impose/inspire (w/DAT);<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">illātās<span>infero inferre, intuli, illatus V TRANS  <br>:|inflict/cause/inflict/impose/inspire (w/DAT);<br>(完了 分詞 受動態 f 複数  対格)<br></span></a>
+<a class="note1">prōpulsārent),<span>propulso propulsare, propulsavi, propulsatus V (1st)  <br>:repulse, drive back/off; ward off, repel, avert; pound, batter;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">omnēs<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">bellō<span><br><br></span></a>
+<a class="note1">versantur,<span>verso versare, versavi, versatus V (1st)  <br>:keep turning/going round, spin, whirl; turn over and over; stir; maneuver;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">ut<span>ut CONJ <br>:to (+ subjunctive), in order that/to; how, as, when, while; even if;<br><br></span></a>
+<a class="note1">quisque<span>quisque quaeque,quodque ADJECT  <br>:(w/-que) any; each;<br>(m 単数 主格), (m 複数  主格)<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">genere<span>genus generis N (3rd) N  <br>:birth/descent/origin; race/ <strong>family</strong>/ <strong>house</strong>/ stock/a ncestry; offspring/descent;<br>(n 単数 奪格)<br></span></a>
+<a class="note1">cōpiīsque<span>copia copiae N (1st) F  <br>:plenty, abundance, supply; troops (pl.), supplies; forces; resources; wealth;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note1">amplissimus,<span>amplus ampla -um, amplior -or -us, amplissimus -a -um ADJ  最上級<br>:great, large, spacious, wide, ample; distinguished, important, honorable;<br>(m 単数 主格)<br></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note1">plūrimōs<span>multus multa -um, -, plurimus -a -um ADJ  最上級<br>:much, many, great, many a; large, intense, assiduous; tedious;<br>(m 複数  対格)<br></span></a>
+<a class="note0">circum<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">ambactōs<span>ambactus ambacti N (2nd) M  <br>:vassal, dependent; retainer, servant;<br>(c 複数  対格)<br></span></a>
+<a class="note0">clientēsque<span><br><br></span></a>
+<a class="note0">habet.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>cum est usus</strong> : ususはこの場合名詞。cumが直説法,現在で用いられた場合は繰り返される行動を表す事がある。（NewLatin289.1)</p>
+<p>cum est ususは殆ど慣用的で「<strong>必要とされるときはいつも</strong>」の意。IVの２章にも出てくる。</p>
+<p><strong>quisque est amplissimus, ita habet plurimos</strong> : <u>不定代名詞quisqueが２つの最上級と共に使われるときは～に比例して～になる、の意味になる。（A&amp;G309.b)</u></p>
+<p>ut quisque eorum est amplissimus, ~ : utは多分、接続詞で、asの意味。「彼らの各々がより重要な地位になるに連れて」</p>
+<p>ambactos: Celtic語でservusと同等であると知られている。（A&amp;G)<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>必要とされた時、または何かの戦いが起きた時、（それはCaesarの来る前は毎年のように起きることが恒例になっており、あるときは彼らが何かの正義を犯し、または侵されて防衛するという具合であった）彼らは全員駆り出される。そして彼らの各々が家名によってまたは富によって重要になるにつれて、彼らの周りにより多くの奴隷や被保護者を持つようになる。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hanc<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(f 単数 対格)<br></span></a>
+<a class="note1">ūnam<span>unus una, unum (gen -ius) ADJ  <br>:alone, a single/sole; some, some one; <strong>only</strong> (pl.); one set of (denoting entity);<br>(f 単数 対格)<br></span></a>
+<a class="note1">grātiam<span>gratia gratiae N (1st) F  <br>:|favor/goodwill/ kindness/ friendship; influence; gratitude; thanks (pl.); Graces;<br>(c 単数 対格)<br></span></a>
+<a class="note1">potentiamque<span>potentia potentiae N (1st) F  <br>:force, power, political power;<br>(c 単数 対格)<br></span></a>
+<a class="note1">nōvērunt.<span>nosco noscere, novi, notus V (3rd) TRANS  <br>:get to know; learn, find out; become cognizant of/acquainted/familiar with;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>彼らはこれらのもののみを影響力や力として認めている。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

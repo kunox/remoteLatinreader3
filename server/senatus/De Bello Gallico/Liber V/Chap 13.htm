@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 13</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[13]<span></span></a>
+
+<a class="note0">Īnsula<span><br><br></span></a>
+<a class="note0">nātūrā<span><br><br></span></a>
+<a class="note1">triquetra,<span>triquetrus 形容詞　f単　主格　;= triangular<br><br></span></a>
+<a class="note0">cuius<span></span></a>
+<a class="note0">ūnum<span></span></a>
+<a class="note1">latus<span>latus lateris N 単　主格　;= side, flank<br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">contrā<span>前置詞　対格支配　;= against, facing, opposite<br><br><br></span></a>
+<a class="note0">Galliam.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>natura : ここでは　by nature, in shapeと訳される。ちょっと不自然か？<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>島は三角形のかたちをしており、その一つの辺はガリアに面している。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Huius<span>単　属格　Hic<br><br></span></a>
+<a class="note0">lateris<span></span></a>
+<a class="note0">alter<span></span></a>
+<a class="note1">angulus,<span>angulus anguli M 単　主格　;= angle, apex, corner,nook<br><br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">Cantium,<span>Kent?<br><br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">ferē<span><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Galliā<span></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note1">appelluntur,<span>appello ３複　受動　;= drive to, move up, bring along, force towards<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">orientem<span>oriens orientis M 単　対格　;= daybreak, sunrise, east<br><br></span></a>
+<a class="note0">sōlem,<span><br><br></span></a>
+<a class="note0">īnferior<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">merīdiem<span>meridies meridiei M C単　主格　;= noon, midday, south<br><br><br></span></a>
+<a class="note1">spectat.<span>specto spectare, spectavi, spectatus ３単　現在　;= observe, watch, look at, see<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>alter angulus huius lateris : その辺の一つの角は　（あとでinferiorと出てくるのでこれは上の方の角）</p>
+<p>qui : alter anglus</p>
+<p>quo&nbsp; fere : quoはCantiumを指す</p>
+<p>inferior (abgulus) : alterに対して下の方の角<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>その辺の一つの角は、そこはCantium（Kent)の側で、そこにはガリアからの船は殆ど全部が到着するところであるが、東を向いている。下の方の角は南を指している。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hōc<span></span></a>
+<a class="note1">pertinet<span>pertineo ３単　現在　;= reach, extend, related to<br><br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note0">quingenta.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これはおおよそ５００マイルに伸びている。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Alterum<span></span></a>
+<a class="note1">vergit<span>vergo vegere, -, - ３単　現在　;= incline, lie, slope<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Hispāniam<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">occidentem<span>occidens 形容詞　単　対格　;= connected with sunset, western<br><br></span></a>
+<a class="note0">sōlem;<span><br><br></span></a>
+<a class="note0">quā<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">Hibernia,<span>Hibernia HIberniae F C単　主格　;= Ireland<br><br></span></a>
+<a class="note1">dīmidiō<span>dimidium dimidii N　奪格　;= half, <br><br><br></span></a>
+<a class="note1">minor,<span>parvus minor, minimus 形容詞　比較級　C単　主格　;= small, little, cheap<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">aestimātur,<span>aestimo aestimare, aestimavi, aestimatus TRANS ３単　現在　受動　;= value, assess, estimate, reckon, esteem, judge<br><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">Britannia,<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">parī<span>par paris, -, parissimus 形容詞　X単　奪格 ;= equal, a match for<br><br><br><br></span></a>
+<a class="note1">spatiō<span>spatioum 単　奪格　;= space, room<br><br><br></span></a>
+<a class="note1">trānsmissūs<span>transmissus 形容詞　m単　主格　;= crossing, passage<br><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Britanniam.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>ex qua parte Hibernia est</strong>. : その部分からのところにHiberniaがある。</p>
+<p><strong>dimidio minor</strong> : 差異の奪格か。殆ど慣用句で、「半分の」</p>
+<p><strong>ut aestimatur</strong> : as considered, aestimaturではなくexistimaturのテキスト多し。殆ど同じ意味。「と思われている」</p>
+<p><strong>sed transmissus est pari spatio atque ex Gallia in Britanniam.</strong> : 「しかし距離はガリアからBritaniaへの距離とほぼ同じである。」</p>
+<p>spatioは[性質の奪格] (叙述的に用いることが出来る、NewLatin224.1)</p>
+<p><strong>atqueは「類似の意味の単語の後で使われると　～と同じ、意味となる</strong>」（NewLatin341.1.c) same asのasの意。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>もう一つの辺はHispaniaの方に向いていて、即ち西向きである。その方向にHibernia（Ireland)があり、それはBritaniaの半分程度の大きさであるが、距離的にはガリアからBritaniaへの距離とほぼ同じである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">In<span></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note1">mediō<span>medius media, medium 形容詞　ｍ単　奪格　;= middle, middle of<br><br><br><br></span></a>
+<a class="note1">cursū<span>cursus M単　奪格　;= course<br><br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">īnsula,<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">appellātur<span><br><br></span></a>
+<a class="note0">Mona:<span></span></a>
+<a class="note0">complūrēs<span><br><br></span></a>
+<a class="note1">praetereā<span>副詞　;= besides, thereafter, in addition<br><br><br></span></a>
+<a class="note1">minōrēs<span>parvus minor 形容詞　比較級　C複　主格　;= samll<br><br><br></span></a>
+<a class="note1">subiectae<span>subjectus subjecta -um 形容詞　ｆ複　主格　;= lying near, adjacent<br><br></span></a>
+<a class="note1">īnsulae<span>insula C複　主格<br><br><br></span></a>
+<a class="note0">exīstimantur,<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">īnsulis<span><br><br></span></a>
+<a class="note0">nōnnūllī<span><br><br></span></a>
+<a class="note1">scrīpsērunt<span>scribo scribere, scripsi, scriptus ３複　完了　;= write, compose<br><br><br></span></a>
+<a class="note0">diēs<span><br><br></span></a>
+<a class="note1">continuōs<span>continuus continua, continuum 形容詞　m複　対格　;= continuous, connected together<br><br><br></span></a>
+<a class="note1">triginta<span>30<br><br></span></a>
+<a class="note1">sub<span>奪格支配　;= under, beneath, behind<br>対格対格　;= under, up to, close to, until<br><br></span></a>
+<a class="note1">brūmā<span>bruma brumae F 単　奪格　;= winter, winter cold, shrtest day<br><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">noctem.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>quae appellatur Mona. Monaをマン島、と訳しているものが多いがKelseyによると、これは紛れなく、<strong>Anglesea</strong>のことである由。そこは今でもMon.と呼ばれており、かつマン島のLatin名は<strong>Monopia</strong>である。</p>
+<p>existimantur complures minores insulae (esse) subjectae. 「多くの小さな島が（その周りに）横たわっていると言われている」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>そこへの航路の半分ぐらいのところにMonaと呼ばれる島がある。多くの小さな島がその周りに横たわっていると言われており、多くの人がその島のことについて、冬のころには３０日間も連続で夜であると書いている。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nōs<span><br><br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">percontātiōnibus<span>percontatio percontationis F 複　奪格　;= questioning, inquiry<br><br><br></span></a>
+<a class="note1">reperiēbāmus,<span>reperio TRANS １複　未完了　;= discover, learn, find, obtain, get to know<br><br><br></span></a>
+<a class="note1">nisi<span>接続詞　;= if not, except, unless<br><br></span></a>
+<a class="note1">certīs<span>certus certa -um 形容詞　X複　奪格　;= fixed, settled, firm, certain, trusty, reliable<br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">aquā<span><br><br></span></a>
+<a class="note1">mēnsūrīs<span>mensura mensurae F 複　奪格　;= measure, length, area, capacity<br><br><br></span></a>
+<a class="note1">breviōrēs<span>brevis breve, brevior, brevissimus 形容詞　比較級　C複　主格　;= short, little<br><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">continentī<span><br><br></span></a>
+<a class="note1">noctēs<span>nox F 複　対格<br><br><br></span></a>
+<a class="note0">vidēbāmus.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Nos reperiebamus nihil de eo percontationibus. </p>
+<p><strong>nisi = except</strong></p>
+<p>ex certis aqua mensuris : aqua mensuraとは <strong><em>Clepsydra</em></strong>と言われる水時計の事。</p>
+<p>videbamus noctes esse breviores quam in continenti.<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>我々はその疑問に付いては何も知り得なかった。但し、正確な水時計でも計測により、夜が大陸よりも短い事は分かった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Huius<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">longitūdō<span>longtitudo F 単　主格　;= <strong>length</strong>, longtitude<br><br><br></span></a>
+<a class="note0">lateris,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">fert<span>fero ferre, tuli, latus ３単　現在　;= bring, tell, speak, produce, get<br><br></span></a>
+<a class="note0">illōrum<span><br><br></span></a>
+<a class="note1">opīniō,<span>opnio opinionis F 単　主格　;= belief, idea, opinion, rumor<br><br><br></span></a>
+<a class="note1">septingentōrum<span>700<br><br><br></span></a>
+<a class="note0">mīlium.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>ut fert illorum opinio : ut = asで「彼らの意見によれば」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>この辺の長さは、彼らの言うところによると、７００マイルである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Tertium<span>3 n単　主格　<br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">contrā<span><br><br></span></a>
+<a class="note1">septentriōnēs;<span>septentrio septentrionis M 複　対格　;= north, north reagion<br><br><br></span></a>
+<a class="note0">cui<span></span></a>
+<a class="note0">partī<span><br><br></span></a>
+<a class="note0">nūlla<span><br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">obiecta<span>objectus objecta, -um 形容詞　ｆ単　主格　;= opposite<br><br></span></a>
+<a class="note0">terrā,<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">angulus<span></span></a>
+<a class="note0">lateris<span></span></a>
+<a class="note1">maximē<span>副詞　;= chiefly<br><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Germāniam<span><br><br></span></a>
+<a class="note0">spectat.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>cui parti, nulla terra est objecta</strong>. : terraはLandの意。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>三番目のは北に向いており、その部分に面している土地はない。しかしその辺は主としてGermaniaの方に伸びている。<br></p>
+</div>
+</div>
+<div class="spacer">Line 9</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hōc<span><br><br></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note1">octingenta<span>800<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">longitūdinem<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">exīstimātur.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それは長さにして８００マイルほどと言われている。<br></p>
+</div>
+</div>
+<div class="spacer">Line 10</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ita<span></span></a>
+<a class="note0">omnis<span></span></a>
+<a class="note0">īnsula<span><br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">circuitū<span><br><br></span></a>
+<a class="note1">vīciēs<span>vicies 副詞　（数副詞）;= twenty times<br><br><br></span></a>
+<a class="note0">centum<span></span></a>
+<a class="note0">mīlium<span><br><br></span></a>
+<a class="note0">passuum.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>つまりその島全体で１００の２０倍程度のマイル数である。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

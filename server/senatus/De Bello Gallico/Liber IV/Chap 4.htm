@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 4</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[4]<span></span></a>
+
+<a class="note0">In<span></span></a>
+<a class="note0">eādem<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">fuērunt<span>sum esse, fui, futurus V  <br>:be;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">Usipetēs<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Tencterī,<span><br><br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note1">suprā<span>副詞　;= on top, more, above, before, formerly<br></span></a>
+<a class="note1">dīximus;<span>dico dicere, dixi, dictus V (3rd)  <br>:say, declare, state; allege, declare positively; assert; plead (case);<br>(１人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">complūrēs<span><br><br></span></a>
+<a class="note1">annōs<span>対格（時空の対格）</span></a>
+<a class="note0">Suēbōrum<span><br><br></span></a>
+<a class="note1">vim<span>vis viris(vis) F 単　対格　;= strength, force, power</span></a>
+<a class="note1">sustinuērunt,<span>sustineo sustinere, sustinui, sustentus V (2nd)  <br>:support; check; put off; put up with; sustain; hold back;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">extrēmum<span>extremum extremi N (2nd) N  <br>:limit, outside; end;<br>(n 単数 対格)<br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">agrīs<span>ager 複　奪格（分離の奪格）<br></span></a>
+<a class="note1">expulsī<span>expello expellere, expuli, expulsus V (3rd)  <br>:drive out, expel, banish; disown, reject;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">multīs<span><br><br></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note0">Germāniae<span><br><br></span></a>
+<a class="note1">triennium<span>triennium trienni(i) N (2nd) N  <br>:three years;<br>&nbsp;(X 単数 対格)<br></span></a>
+<a class="note1">vagātī<span>vagor vagari, vagatus sum V (1st) DEP  <br>:wander, roam;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note1">pervēnērunt,<span>pervenio pervenire, perveni, perventus ３複　完了　;= come to, reach, arrive<br></span></a>
+<a class="note1">quās<span>qui 対格<br></span></a>
+<a class="note1">regiōnēs<span>regio regionis F 複　対格　;= area, region, neighborhood, country<br></span></a>
+<a class="note0">Menapiī<span><br><br></span></a>
+<a class="note0">incolēbant.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Usipetes et Tencteri fuerunt in eadem causa. UsipetesとTencteriも同じ状況であった。</p>
+<p>supra diximus:　前に言ったように</p>
+<p><strong>ad extremum</strong> : 最後には</p>
+<p><strong>triennium</strong> : ３年間　４年まではannosを使わず、biennium, triennium, quadrienniumという。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>前に言及した、UsipetesとTencteriの状態も同じようであった。彼らはスエビの暴力に長い間抵抗して排除してきたが、最後には領地から追い出され、３年間の間ゲルマンのいろいろの土地を彷徨い、ライン河の辺りにたどり着いた。そこはMenapiiが住んでいる近くであった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hī<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">utramque<span>uter utra, utrum 形容詞　F単　対格　;= queと一緒に　each/either, both</span></a>
+<a class="note1">rīpam<span>ripa ripae f 単　対格　;= bank<br></span></a>
+<a class="note0">flūminis<span><br><br></span></a>
+<a class="note0">agrōs,<span><br><br></span></a>
+<a class="note1">aedificia<span>aedificum aedifici N 複　対格　;= building, edifice, structure</span></a>
+<a class="note1">vīcōsque<span>vicus vici M 複　対格　;= village, hamlet, row of&nbsp;houses<br></span></a>
+<a class="note0">habēbant;<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">tantae<span></span></a>
+<a class="note1">multitūdinis<span>multitudo multitudinis F 単　属格 ;= multitude<br></span></a>
+<a class="note1">adventū<span>adventu adventus M 単　奪格　;= arrival, approach, visit<br></span></a>
+<a class="note1">perterritī<span>perterreo perterrere, perterrui, perterritus V (2nd) TRANS  <br>:frighten greatly, terrify;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">aedificiīs<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">trāns<span><br><br></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note1">habuerant<span>3複　過去完了</span></a>
+<a class="note1">dēmigrāvērant,<span>demigro demigrare, demigiravi, demigratus INTRANS ３複　過去完了　;= emigrate, migrate, depart<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cis<span>前置詞　対格支配　;= on, to this, near side,</span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note1">dispositīs<span>dispono disponere, disposui, dispositus V (3rd) TRANS  <br>:dispose, place here and there, distribute; set/lay out; administer/manage/order;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">praesidiīs<span>praesidium praesidi(i) N 複　奪格　;= protection, guard, garrison<br></span></a>
+<a class="note0">Germānōs<span><br><br></span></a>
+<a class="note0">trānsīre<span><br><br></span></a>
+<a class="note0">prohibēbant.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>habebant fluminis agros, aedifcia vicosque</strong> : 流域の領地、建築物、村落を持っていた。</p>
+<p>adventus perterriti : 到着によって驚かされ（分詞構文）　<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼らは河の両岸に、川沿いの領地、建築物、村落などを持っていたが、あまりの規模の到着に驚かされ、河を渡ったところの建物から避難し、ライン側のこちら側に要塞を設置してゲルマンたちが河を渡ることを禁止した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Illī<span>複　主格<br></span></a>
+<a class="note1">omnia<span>omonis(形容詞）複　対格　の名詞化 または　副詞で　;= in all resspect</span></a>
+<a class="note1">expertī,<span>experior experiri, expertus sum V (4th) DEP  <br>:test, put to the test; find out; attempt, try; prove, experience;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note1">cum<span>When</span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">vī<span>vis viris N (3rd) F  <br>:strength (bodily) (pl.), force, power, might, violence; resources; large body;<br>(f 単数 奪格)<br></span></a>
+<a class="note0">contendere<span></span></a>
+<a class="note1">propter<span>前置詞　対格支配　;= on account of, by means of, because of</span></a>
+<a class="note1">inopiam<span>inopia inopiae F 単　対格　;= lack, need, poverty, destitution</span></a>
+<a class="note1">nāvium<span>navis 複　属格<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">clam<span>副詞　;= secretly, in secret</span></a>
+<a class="note0">trānsīre<span><br><br></span></a>
+<a class="note0">propter<span></span></a>
+<a class="note1">cūstōdiās<span>custodia custodiae N (1st) F  <br>:|watch/guard/picket; guard post/house; prison; confinement; protective space;<br>(c 複数  対格)<br></span></a>
+<a class="note0">Menapiōrum<span><br><br></span></a>
+<a class="note0">possent,<span></span></a>
+<a class="note1">revertī<span>revertor reverti, reversus sum V (3rd) DEP  <br>:turn back, go back, return; recur;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">suās<span><br><br></span></a>
+<a class="note1">sēdēs<span>sedes sedis N (3rd) F  <br>:seat; home, residence; settlement, habitation; chair;<br>(c 複数  対格)<br></span></a>
+<a class="note1">regiōnēsque<span>regio regionis N (3rd) F  <br>:area, region; neighborhood; district, country; direction;<br>(c 複数  対格)<br></span></a>
+<a class="note1">simulāvērunt<span>simulo simulare, simulavi, simulatus V (1st)  <br>:imitate, copy; pretend (to have/be); look like; simulate; counterfeit; feint;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">trīduī<span>triduum tridui N (2nd) N  <br>:three days;<br>(n 単数 属格)<br></span></a>
+<a class="note1">viam<span>via viae F 単　対格　;= way, road, street, journey</span></a>
+<a class="note1">prōgressī<span>progredior progredi, progressus sum V (3rd) DEP  <br>:go, come forth, go forward, march forward; advance. proceed. make progress;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note1">rūrsus<span>rursus ADV <br>:turned back, backward; on the contrary/other hand, in return, in turn, <strong>again</strong>;<br><br></span></a>
+<a class="note1">revertērunt<span>reverto revertere, reverti, - V (3rd)  <br>:turn back, go back, return; recur (usually DEP);<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">omnī<span>奪格　itinereを修飾<br></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note1">itinere<span>単　奪格</span></a>
+<a class="note0">ūnā<span><br><br></span></a>
+<a class="note1">nocte<span>nox 奪格</span></a>
+<a class="note1">equitātū<span>equitatus eqitatus M 単　奪格　;= calvalry, horse soldier<br></span></a>
+<a class="note1">cōnfectō<span>confecio conficere, confeci, confectus TRANS 完了分詞　m単　奪格　;=make, construct, prepare<br></span></a>
+<a class="note1">insciōs<span>inscius inscia, inscium ADJ  <br>:not knowing, ignorant; unskilled;<br>(m 複数  対格)<br></span></a>
+<a class="note1">inopīnantēs<span>inopinans (gen.), inopinantis ADJ  <br>:unaware, off guard; unexpected, not expecting;<br>&nbsp;(c 複数  対格)<br></span></a>
+<a class="note0">Menapiōs<span><br><br></span></a>
+<a class="note1">oppressērunt,<span>oppprimo opprimere, oppressi, oppressus ３複　完了　;= press down, overwhelm, crush</span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">Germānōrum<span><br><br></span></a>
+<a class="note1">discessū<span>discessus discessus N (4th) M  <br>:going apart; separation departure, marching off;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">explōrātōrēs<span>explorator exploratoris M 複　対格　;= investigator, search scout<br></span></a>
+<a class="note1">certiōrēs<span>certus certa -um, certior -or -us, certissimus -a -um ADJ  比較級<br>:fixed, settled, firm; certain; trusty/reliable; sure; resolved, determined;<br>(c 複数  主格)<br></span></a>
+<a class="note1">factī<span>完了分詞　受動　複　m主格　<br></span></a>
+<a class="note1">sine<span>奪格　支配　;= without</span></a>
+<a class="note1">metū<span>metus metus N (4th) M  <br>:fear, anxiety; dread, awe; object of awe/dread;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">trāns<span><br><br></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note1">vīcōs<span>vicus vici N (2nd) M  <br>:village; hamlet; street, row of houses;<br>(c 複数  対格)<br></span></a>
+<a class="note1">remigrāverant.<span>remigro remigrare, remigravi, remigratus V (1st)  <br>:move back; return;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Illi omnia experti :　IlliはUspectiら、いろいろ試したあと</p>
+<p>cum possent neque ~ neque ～: ~も～も可能でない時「ダメだと分かった時」</p>
+<p>simulaverunt reverti se in suas sedes :　自身が自分たちの場所に戻ることのふりをした。</p>
+<p><b>tridui viam progressi</b> : 分詞構文、３日旅程を進み</p>
+<p>reverterunt rursus : rursusはagainと訳したほうが良い？　再び戻って来た。ここもトートロジのニュアンス。</p>
+<p><b>omni hoc ininere confecto</b> : 独立奪格　これら全ての旅程が（一晩で）行われ</p>
+<p>una nocte : [時の奪格]どの位を表す（NewLatin231)</p>
+<p>equitatu : [手段の奪格] 騎兵によって</p>
+<p><b>oppresserunt</b> (inscios inopinantes) Menapios : 気が付かず無警戒であったMenapiosを制圧した。</p>
+<p>qui remigaraverant in suos vicos　：自分たちの村に戻って来た quiはMenapiosの事。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼らは色々試して、船がないので力で争うこともならず、Menapii族の監視のためにこっそり河を渡ることも出来ない事が判り、元いた場所に戻るふりをした。３日間の旅程を進み、その全てを騎兵により一晩で引き返し気が付かず無警戒なMenapiiを制圧した。Menapiiはゲルマンの出発に関して、彼らの偵察によって恐れることはないと報告を受けて、自分たちの村に戻って来たのであった。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hīs<span>複　奪格<br></span></a>
+<a class="note1">interfectīs<span>interficio interficere, interfeci, interfectus V (3rd)  <br>:kill; destroy;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">nāvibus<span><br><br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">occupātīs,<span>occupo occupare, occupavi, occupatus V (1st)  <br>:seize; gain; overtake; capture, occupy; attack;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">prius<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">pars<span></span></a>
+<a class="note0">Menapiōrum<span><br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">citrā<span><br><br></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">certior<span></span></a>
+<a class="note0">fieret,<span></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note1">trānsiērunt<span>transeo transire, transivi,, transitus ３複　完了　;= go over, cross (注）traducoは他動詞で渡す、これは自動詞で渡る。<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">aedificiīs<span>aedificium aedifici N 奪格　複　;= building structure<br></span></a>
+<a class="note0">occupātīs<span><br><br></span></a>
+<a class="note0">reliquam<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note1">hiemis<span>hiemps hiemis F　単　属格　;= winter, winter time</span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note0">cōpiīs<span><br><br></span></a>
+<a class="note1">aluērunt.<span>alo alere, alui, alitus V (3rd) TRANS  <br>:feed, nourish, rear, nurse, suckle; cherish; support, maintain, develop;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>his interfectis : 独立奪格　彼らを殺して、</p>
+<p>navibus eorum occupatis : 独立奪格　彼らの船を奪い</p>
+<p>prius quam : 一語で　priusquam もあり。～より前に</p>
+<p>ea pars Menapiorum cetior fieret : そちら側のMenapiiが気がつく、（より前に）quae erat citra Rhenum&nbsp;</p>
+<p>transierunt&nbsp;</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>彼らを殺戮して、彼らの船を奪い、ライン側のこちら側にいるMenapii族がそれと気がつく前に、河を渡り、彼らの全ての建物を占拠し、その冬の残りを彼らの食料で自分たちを養った。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

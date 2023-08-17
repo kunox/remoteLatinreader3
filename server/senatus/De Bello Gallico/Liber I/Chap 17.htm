@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 17</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[17]<span></span></a>
+
+<a class="note1">Tum<span>tum, 副詞   :then, next; besides; at that time;</span></a>
+<a class="note1">dēmum<span>demum, 副詞   :finally, at last; at length, in the end, eventually;<br></span></a>
+<a class="note0">Liscus<span></span></a>
+<a class="note1">ōrātiōne<span>oratio, orationis 名詞 (3rd) F   :speech, oration; eloquence; prayer; 奪格<br></span></a>
+<a class="note1">Caesaris<span>属格</span></a>
+<a class="note1">adductus<span>adduco, adducere, adduxi, adductus 動詞 (3rd) TRANS   :lead up/to/away; bring up/to; persuade, induce; lead, bring; contract, tighten;分詞構文</span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">anteā<span>antea, 副詞   :before, before this; formerly, previously, in the past;<br></span></a>
+<a class="note1">tacuerat<span>taceo, tacere, tacui, tacitus 動詞 (2nd)   :be silent; pass over in silence; leave unmentioned, be silent about something;3 単 過去完了</span></a>
+<a class="note1">prōpōnit:<span>propono, proponere, proposui, propositus 動詞 (3rd)   :display; propose; relate; put or place forward;(3 単 現在 能動態 直説法) <br>主語はLiscus<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">nūllōs,<span><br><br></span></a>
+<a class="note0">quōrum<span><br><br></span></a>
+<a class="note1">auctōritās<span>auctoritas, auctoritatis 名詞 (3rd) F   :|authority, influence; responsibility; prestige, reputation; opinion, judgment;主格　単数<br></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note1">plēbem<span>plebes, plebis 名詞 F   :common people, general citizens, commons/plebeians; lower class/ranks; 対格<br></span></a>
+<a class="note1">plūrimum<span>multus, multa -um, -, plurimus -a -um 形容詞   :much, many, great, many a; large, intense, assiduous; tedious; 最上級 n 単　対格<br></span></a>
+<a class="note1">valeat,<span>valeo, valere, valui, valitus 動詞 (2nd)   :be strong/ powerful/ influential/ healthy; prevail;(3 単 現在 能動態 接続法)<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">prīvātim<span>privatim, 副詞   :in private; as a private citizen;<br></span></a>
+<a class="note1">plūs<span>plus, (gen.), pluris 形容詞   :more; several. many; (COMP of multus)<strong> n 単　対格</strong></span></a>
+<a class="note1">possint<span>possum 3複現在接続法</span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">ipsī<span><br><br></span></a>
+<a class="note1">magistrātūs.<span>magistratus, magistratus 名詞 (4th) M   :magistracy, civil office; office; magistrate, functionary; 単　主格<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>oratione Caesaris adductus　：分詞構文、カエサルのスピーチによって促されて</p>
+<p><strong>Liscus propoint quod antea tacuerat　</strong>：リスクスは、それまで話されなかった事を示した。</p>
+<p>esse non nullos : 以下間接話法でリスクスの話した内容、ある人物がいる、</p>
+<p>plurimum, plus は形容詞であるが、中性、単数、対格の形容詞は副詞的に働く。</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>その時ついにリスクスがカエサルの言葉に対してそれまで話されなかった事を提示した。ある人物がいます。その人間の権威は平民の中で大変強力で、平民階級ながら支配階級の人間より強力です。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hōs<span>hic 対格 <br>意味上の主語、有る人物たちのこと<br></span></a>
+<a class="note1">sēditiōsā<span>seditiosus, seditiosa, seditiosum 形容詞   :mutinous; troubled; quarrelsome; f 単　奪格<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">improbā<span>improbus, improba, improbum 形容詞   :wicked/flagrant; morally unsound; greedy/rude　f　単　奪格<br></span></a>
+<a class="note1">ōrātiōne<span>oratio (f) 奪格<br></span></a>
+<a class="note1">multitūdinem<span>multitudo, multitudinis 名詞 (3rd) F   :multitude, great number; crowd; rabble, mob;対格 単<br></span></a>
+<a class="note1">dēterrēre,<span>deterreo, deterrere, deterrui, deterritus 動詞 (2nd) TRANS   :deter; frighten away; discourage (from), put/keep off, avert; frighten/terrify;不定詞<br></span></a>
+<a class="note1">nē<span>utの否定形<br></span></a>
+<a class="note0">frūmentum<span><br><br></span></a>
+<a class="note1">cōnferant<span>confero, conferre, contuli, collatus 動詞 TRANS   :bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;(3 複 現在 能動態 接続法<br></span></a>
+<a class="note1">quod<span>対格　frumentumを指す <br>または　Because</span></a>
+<a class="note1">dēbeant:<span>debeo, debere, debui, debitus 動詞 (2nd)   :owe; be indebted/responsible for/obliged/bound/destined; ought, must, should;3 複 現在 能動態 接続法)<br></span></a>
+<a class="note1">praestāre,<span>praesto, praestare, praestavi, praestatus 動詞 (1st)   :excel, surpass, be outstanding/superior/best/greater/preferable (to); prevail;〈不定詞<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">iam<span>jam, 副詞   :now, already, by/even now; besides;</span></a>
+<a class="note0">prīncipātum<span><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note1">obtinēre<span>obtineo, obtinere, obtinui, obtentus 動詞 (2nd)   :get hold of; maintain; obtain; hold fast, occupy; prevail;不定詞<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">possint,<span></span></a>
+<a class="note0">Gallōrum<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">Rōmānōrum<span><br><br></span></a>
+<a class="note1">imperia<span>imperium, imperi(i) 名詞 (2nd) N   :command; authority; rule, supreme power; the state, the empire;対格</span></a>
+<a class="note1">perferre,<span>perfero, perferre, pertuli, perlatus 動詞   :carry through; bear, endure to the end, suffer; announce;不定詞</span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">dubitāre<span>dubito, dubitare, dubitavi, dubitatus 動詞 (1st)   :doubt; deliberate; hesitate (over); be uncertain/irresolute;不定詞<br></span></a>
+<a class="note1">[dēbeant]<span>debeo debere, debui, debitus V (2nd)  <br>:owe; be indebted/responsible for/obliged/bound/destined; ought, must, should;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note1">quīn,<span>quin, 副詞   :why not, in fact;<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">Helvētiōs<span><br><br></span></a>
+<a class="note1">superāverint<span>supero, superare, superavi, superatus 動詞 (1st)   :overcome, conquer; survive; outdo; surpass, be above, have the upper hand;3 複 完了 能動態 接続法)<br></span></a>
+<a class="note1">Rōmānī,<span>複　主格<br></span></a>
+<a class="note1">ūnā<span>una, 副詞   :together, together with; at the same time; along with;<br></span></a>
+<a class="note1">cum<span>＝with</span></a>
+<a class="note1">reliquā<span>reliquus, reliqua, reliquum 形容詞   :rest of/remaining/available/left; surviving; future/further; yet to be/owed;<br></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note1">Haeduīs<span>与格　（分離の与格）<br></span></a>
+<a class="note1">lībertātem<span>libertas, libertatis 名詞 (3rd) F   :freedom, liberty; frankness of speech, outspokenness;対格<br></span></a>
+<a class="note1">sint<span>3複　現在　接続法</span></a>
+<a class="note1">ēreptūrī.<span>eripio, eripere, eripui, ereptus 動詞 (3rd)   :snatch away, take by force; rescue;未来分詞 能動　ｍ　複　主格　<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p> <strong>ne frumentum conferant quod debeant</strong> : deterrereの名詞節。「～しないように」　confrant, debeantは３複であるがこれはmultitudonem（これ自身は単数形であるが、意味的に多くの人なのでそれに引きずられて複数になっている。（NewLatin254.4.a)</p>
+<p>praestare,以下は、話者が変わって、Liscusではなくdeterrereした人間。(NewLatin314.2)</p>
+<p>以下は２つの文　</p>
+<p>praestat ~</p>
+<p>neque dubitare ~</p>
+<p>①<strong> praestat</strong> : 非人称動詞で、～の方が良い。</p>
+<p>② <strong>neque dubitare</strong> ~ : ～を疑うな　</p>
+<p><strong>Haeduis libertatem sint erepturi.</strong> Haeduisは与格、参照の与格の一種である、[<strong>分離の与格</strong>](NewLatin188.2.d) sint erepturiは未来分詞、能動の叙述的用法で、意図、目的を表す。sintが接続法なのはquinで始まる名詞節だから　（NewLatin298)</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>その彼らは乱暴で邪悪な演説で人々をおそれさせ、（割り当てられている）穀物を集めさせないようにしている。〈彼らいわく）もしハエドゥがガリアのリーダでいられない時には、ローマの支配よりガリア人（ヘルウェティ）の支配のほうが良い。もしローマがヘルウェティを制圧した時には、疑いもなく、残りのガリアと一緒にハエドゥから自由を強奪するに違いない。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ab<span></span></a>
+<a class="note1">īsdem<span>=eisdem  <br>idemの奪格<br></span></a>
+<a class="note0">nostra<span></span></a>
+<a class="note1">cōnsilia<span>consilium, consili(i) 名詞 (2nd) N   :|decision/resolution; intention/purpose/policy/plan/action; diplomacy/strategy;対格</span></a>
+<a class="note1">quaeque<span>ここの場合　quae(主格 複　qui）+ que</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">castrīs<span>castra, castrae 名詞 (1st) F   :camp, military camp/field; army; fort, fortress; war service; day's march;奪格<br></span></a>
+<a class="note1">gerantur<span>gero, gerere, gessi, gestus 動詞 (3rd)   :bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself); <br>(3 複 現在 受動態 接続法)</span></a>
+<a class="note1">hostibus<span>与格　敵に(利益の与格）</span></a>
+<a class="note1">ēnūntiārī;<span>enuntio, enuntiare, enuntiavi, enuntiatus 動詞 (1st)   :reveal; say; disclose; report; speak out, express, declare;不定詞</span></a>
+<a class="note0">hōs<span><br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note1">sē<span>Liscusの事<br></span></a>
+<a class="note1">coercērī<span>coerceo, coercere, coercui, coercitus 動詞 (2nd) TRANS   :enclose, confine; restrain, check, curb, repress; limit; preserve; punish; 不定詞<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">posse.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Ab isdem　：同じ人物たちにより</p>
+<p><strong>quaeque quaeは　quae gerantur in castrisでgeranturの主語</strong>。queはnostra consiliaにつながり[共々]の意味</p>
+<p><strong>nostra consilia quaeque in castris gerantur hostibus enuntiari</strong> : <u>nostra consilia(対格)がenuntiariされた</u>。</p>
+<p><strong>hos a se coerceri non posse</strong>.　：　hosが意味上の主語で「<u>彼らは私により罰せられることは可能でない</u>」の意。</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>この人物たちにより、彼らの〈我らの）計画や、キャンプで行われている事などが、敵に明かされてしまった。彼らを私（Liscus)は罰することができない。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quīn<span><br><br></span></a>
+<a class="note1">etiam,<span>quin etiamはよく一語でquineiamとかかれ、moreoverの意味　nay even</span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">necessāriam<span>necessarius, necessaria, necessarium 形容詞   :necessary/needed/essential/indispensable; vital/private (body part); close tied;対格<br></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note1">coāctus<span>cogo, cogere, coegi, coactus 動詞 (3rd) TRANS   :collect/gather, round up, restrict/confine; force/<b>compel</b>; convene; congeal;完了 分詞 受動態 m 単 主格　分詞構文<br></span></a>
+<a class="note0">Caesarī<span></span></a>
+<a class="note1">ēnūntiārit,<span>=enuntiaverit 3 単 完了 能動態 接続法);= reveal, disclose, express<br></span></a>
+<a class="note1">intellegere<span>intellego, intellegere, intellexi, intellectus 動詞 (3rd)   :understand; realize;不定詞</span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note1">quantō<span>quanto, 副詞   :(by) how much;<br></span></a>
+<a class="note1">id<span>quod以下の内容を指す</span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">perīculō<span>periculum, periculi 名詞 (2nd) N   :danger, peril; trial, attempt; risk; responsibility for damage, liability; 与格奪格</span></a>
+<a class="note1">fēcerit,<span>3 単 完了 能動態 接続法)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">ob<span>前置詞for the sake of ~</span></a>
+<a class="note0">eam<span></span></a>
+<a class="note0">causam,<span></span></a>
+<a class="note1">quam<span>quam dju= as long as</span></a>
+<a class="note0">diū<span><br><br></span></a>
+<a class="note0">potuerit<span></span></a>
+<a class="note1">tacuisse.<span>taceo, tacere, tacui, tacitus 動詞 (2nd)   :be silent; pass over in silence; leave unmentioned, be silent about something;不定詞</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Quin etiam　＝quinetial = moreover = nay even</strong> それ以上に</p>
+<p>quod : 文頭のquodは名詞節を作り、時々「～に関しては= as to the fact that」の意<font color="#0000ff">（AG572、NewLatin299.2)</font></p>
+<font color="#0000ff">
+</font><p><font color="#0000ff"></font>quod necessariam （rem） coactus : 必要に迫られて、とでも訳すべき？ <font color="#ff0000">何故necessariamが対格？</font></p>
+<p>① rem(対格でenuntiaritの目的語）を修飾して、同じ対格、必要な事を明かした　（ちょっと意味が違う？）</p>
+<p><strong>②neccessario (副詞:必要によって）というテキスト多し。　</strong></p>
+<p>enuntiarit rem Caesari: Caesariは<strong>利益の与格</strong> 　カエサルに事柄を打ち明けた</p>
+<p>sese intellegere : sese＝Liscus対格、意味上主語</p>
+<p><strong>cum quanto periculo</strong> = with how much of danger periculoは奪格（cum奪格支配）</p>
+<p>ob eam causam = for that reason</p>
+<p>quam diu <strong><font color="#ff0000">quamdiu</font> = for the proceding period　なる語（副詞）あり</strong> / <b>as long as (possible = potuerit)</b>と続く</p>
+<p>全体の文の動詞はintellegere (間接話法で不定詞になっている）彼は、それによって自分がどれだけのリスクを取ったかをよく知っていた。　「それ(id)」はquod以下のこと。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼は（Liscus)は必要に迫られてカエサルにそのことを打ち明けたが、そうすることによって自分がどれだけのリスクを取ったかを理解していた。それが故に出来る限り、秘密にしてきたのであった。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

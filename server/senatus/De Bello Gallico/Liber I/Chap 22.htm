@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 22</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[22]<span></span></a>
+
+<a class="note1">Prīma<span>primus, prima, primum 形容詞   :first, foremost/best, chief, principal; nearest/next;奪格<br></span></a>
+<a class="note1">lūce,<span>lux, lucis 名詞 (3rd) F   :light, daylight, light of day; life; world; day; 奪格 <br>一種の独立奪格　名詞＋形容詞 <br>luna clara: 月が明るかったので <br>（sumの現在分詞が省略されていると考えられる）<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">summus<span></span></a>
+<a class="note0">mōns<span><br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">[Lucio]<span></span></a>
+<a class="note0">Labiēnō<span><br><br></span></a>
+<a class="note1">tenērētur,<span>teneo, tenere, tenui, tentus 動詞 (2nd)   :hold, keep; comprehend; possess; master; preserve; 3単　未完了　受動　接続法<br></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">hostium<span>hostis 属格</span></a>
+<a class="note1">castrīs<span>castra=camp　奪格<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">longius<span></span></a>
+<a class="note0">mīlle<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">quīngentīs<span>５００ <br>奪格<br></span></a>
+<a class="note1">passibus<span>passus 奪格</span></a>
+<a class="note1">abesset<span>3 単 未完了 能動態 absum = be away</span></a>
+<a class="note0">neque,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">posteā<span>postea, 副詞   :afterwards;<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">captīvīs<span>captivus, captivi 名詞 (2nd) C   :prisoner of war (likely male, but maybe female), captive;<br></span></a>
+<a class="note1">comperit,<span>comperio, comperire, comperi, compertus 動詞 (4th) TRANS   :learn/discover/find (by investigation); verify/know for certain; find guilty; 3 単 現在 能動態</span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">ipsīus<span><br><br></span></a>
+<a class="note1">adventus<span>adventus, adventus 名詞 (4th) M   :arrival, approach;</span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">Labiēni<span><br><br></span></a>
+<a class="note1">cognitus<span>cognitus, cognita, cognitum 形容詞   :known (from experience/carnally)), tried/proved; noted, acknowledged/recognized;</span></a>
+<a class="note0">esset,<span></span></a>
+<a class="note0">Cōnsidius<span><br><br></span></a>
+<a class="note1">equō<span>equus, equi 名詞 (2nd) M   :horse; steed;奪格<br></span></a>
+<a class="note1">admissō<span>admitto, admittere, admisi, admissus 動詞 (3rd) TRANS   :urge on, put to a gallop; let in, admit, receive; grant, permit, let go;完了 分詞 受動態　奪格<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">eum<span>Caesarのこと</span></a>
+<a class="note1">accurrit,<span>accurro, accurrere, accucurri, accursus 動詞 (3rd)   :run/hasten to (help); come/rush up (inanim subj.); charge, rush to attack;3 単 現在 能動態</span></a>
+<a class="note1">dīcit<span>3 単 現在 能動態 dico<br></span></a>
+<a class="note0">montem,<span></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Labiēnō<span><br><br></span></a>
+<a class="note0">occupārī<span><br><br></span></a>
+<a class="note1">voluerit,<span>volo, velle, volui, - 動詞   :wish, want, prefer; be willing, will; <br>3 単 完了 能動態 接続法</span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">hostibus<span></span></a>
+<a class="note1">tenērī:<span>teneo, tenere, tenui, tentus 動詞 (2nd)   :hold, keep; comprehend; possess; master; preserve;不定詞<br></span></a>
+<a class="note1">id<span>前に述べた占領されていると言う事実</span></a>
+<a class="note1">sē<span>Considiusの事 <br>不定詞cognosvisseの主語<br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Gallicīs<span><br><br></span></a>
+<a class="note1">armīs<span>armum, armi 名詞 (2nd) N   :arms (pl.), weapons, armor, shield; close fighting weapons; equipment; force;<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">īnsīgnibus<span>insigne, insignis 名詞 (3rd) N   :mark, emblem, badge; ensign, honor, badge of honor;<br></span></a>
+<a class="note1">cognōvisse.<span>cognosco, cognoscere, cognovi, cognitus 動詞 (3rd) TRANS   :become acquainted with/aware of; recognize; learn, find to be; inquire/examine; 完了不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Prima luce</strong>　：一種の独立奪格　形容詞＋名詞　：夜が明けて、</p>
+<p>文章全体としての構造は　：<u>When ~, Considius accurrit, dicit ~.</u></p>
+<p>cum ~ teneretur : cumで始まる時の節で接続法の場合は状況を表す。（NewLatin288.1.b)</p>
+<p>passibus : passusの奪格　、<strong>比較の奪格</strong>で「～よりも」longius quamの代わりにlongiusが使用される。（NewLatin217.2)</p>
+<p>neque aut ipsius adventus aut Labieni cognitus esset : ipsium adventus もLabieni (adventus)も　neque cognitus esset</p>
+<p><strong>equo admisso</strong>: 独立奪格　urge the horse to rush</p>
+<p>dicit</p>
+<p>montem ab hostibus teneri</p>
+<p>id se a Gallicis armis atque insignibus cognovisse.：idは占領されているという事実 cognovisseの目的語　seはConsidiusのことで主語</p>
+<p><a class="imageshow">armis atque insignibusの図<span class="imshowspan">../images/Gallic Remains.jpg</span></a></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>夜が明けて、ラビエヌスによって山の尾根が確保されて、彼（カエサル）は敵のキャンプから遠くないところ、１.５ローママイルよりも離れておらず、そして後で捕虜に聴いて分かったのだが、彼の到着もラビエヌスの到着も敵に知られていなった、その頃コンシディウスはカエサルの元に全速力の騎馬で駆け寄り言った、ラビエヌスが占領したいと考えている山は敵によって占拠されている、それを（コンシディウス）はガリアの武器と記章、紋章から知ったと。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Caesar<span></span></a>
+<a class="note0">suās<span><br><br></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">proximum<span></span></a>
+<a class="note1">collem<span>collis, collis 名詞 (3rd) M   :hill, hillock, eminence, hill-top; mound; high ground; mountains (pl.) (poetic);</span></a>
+<a class="note1">subdūcit,<span>subduco, subducere, subduxi, subductus 動詞 (3rd)   :lead up, carry off; transfer; haul;(3 単 現在 能動態<br></span></a>
+<a class="note1">aciem<span>acies, aciei 名詞 (5th) F   :sharpness, sharp edge, point; battle line/array; sight, glance; pupil of eye;</span></a>
+<a class="note1">īnstruit.<span>instruo, instruere, instruxi, instructus 動詞 (3rd)   :construct, build; prepare, draw up; fit out; instruct, teach;<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>in collem subducit : 「丘の上に率いて」出来る限り上の方で布陣するのが常である。</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>カエサルは自軍を近くの丘の上にに進軍させ、戦闘態勢を取った。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Labiēnus,<span><br><br></span></a>
+<a class="note1">ut<span>＝as</span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">eī<span>与格<br></span></a>
+<a class="note1">praeceptum<span>Praecipio praecipere, praecepi, praeceptus 完了分詞　単　主格　受動　;= take, receive in advance, order</span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">Caesare<span></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note1">proelium<span>proelium, proeli(i) 名詞 (2nd) N   :battle/fight/bout/conflict/dispute; armed/hostile encounter; bout of strength;</span></a>
+<a class="note1">committeret,<span>committo, committere, commisi, commissus 動詞 (3rd)   :|engage (battle), set against; begin/start; bring about; commit; incur; forfeit;3 単 未完了 能動態 接続法</span></a>
+<a class="note1">nisi<span>nisi, 接続詞   :if not; except, unless;</span></a>
+<a class="note0">ipsīus<span><br><br></span></a>
+<a class="note0">cōpiae<span><br><br></span></a>
+<a class="note1">prope<span>prope, 前置詞 (対格)  :near;</span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">vīsae<span>video 完了分詞、受動態<br></span></a>
+<a class="note0">essent,<span></span></a>
+<a class="note1">ut<span>= so that</span></a>
+<a class="note1">undique<span>undique, 副詞   :from every side/direction/place/part/source; on all/both sides/surfaces;</span></a>
+<a class="note0">ūnō<span><br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note1">impetus<span>impetus, impetus 名詞 (4th) M   :attack, assault, charge; attempt; impetus, vigor; violent mental urge, fury; 単　主格</span></a>
+<a class="note1">fieret,<span>fio, feri, factus sum 動詞 SEMIDEP   :happen3 単 未完了 能動態 接続法 主語はimpetus</span></a>
+<a class="note1">monte<span>mons 奪格</span></a>
+<a class="note1">occupātō<span>occupo, occupare, occupavi, occupatus 動詞 (1st)   :seize; gain; overtake; capture, occupy; attack;完了分詞、受動態奪格<br></span></a>
+<a class="note1">nostrōs<span>対格noster<br></span></a>
+<a class="note1">expectābat<span>expecto, expectare, expectavi, expectatus 動詞 (1st)   :await, expect; anticipate; hope for; 3 単 未完了 能動態<br></span></a>
+<a class="note1">proeliōque<span>proelium 単　奪格<br></span></a>
+<a class="note1">abstinēbat.<span>abstineo, abstinere, abstinui, abstentus 動詞 (2nd)   :withhold, keep away/clear; abstain, fast; refrain (from); avoid; keep hands of;(3 単 未完了 能動態 直説法)<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Labienus nostros expectabat, proelioque abstinebat.:ラビエヌスは味方の軍勢を待ち、戦わずにいた。</p>
+<p>ut erat ei praeceptum a Caesare ne proelium committeret　：カエサルからの命令で戦いを始めないよう</p>
+<p><strong>erat praeceptum ei</strong> : it had been order (in advance) to him <u>自動詞として非人称的に使用される</u>。(NewLatin 187 II b)</p>
+<p>nisi ipsius copiae prope hostium castra visae essent : 彼自身（カエサル）の軍勢を敵のキャンプに近くで見ないうちは、</p>
+<p>ut undique uno tempore in hostes impetus fieret ：impetusが主語で動詞はfieret攻撃がなされる、全ての方向から、一度に敵に対する攻撃がなされるように、</p>
+<p>proelioque abstinebat : proelioは[<strong>分離の奪格</strong>] (NewLatin214.2)で「戦いから遠ざかる」の意</p>
+<p><strong>monte occupato　</strong>：独立奪格　山を占領したあとは</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>ラビエヌスはカエサルから、カエサルの軍勢が敵のキャンプの近くで見えない限りは、全ての方向から一度に攻撃がなされるよう、戦いを始めるなという命令があったので、尾根を占領したあと、味方を待ちながら戦いをしないでいた。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Multō<span><br><br></span></a>
+<a class="note1">dēnique<span>denique, 副詞   :finally, in the end; and then; at worst; in short, to sum up; in fact, indeed;<br></span></a>
+<a class="note0">diē<span><br><br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">explōrātōrēs<span><br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">cognōvit<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">montem<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note1">tenērī<span>teneo, tenere, tenui, tentus 動詞 (2nd)   :hold, keep; comprehend; possess; master; preserve; 不定詞<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Helvētiōs<span><br><br></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note0">mōvisse<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Cōnsidium<span><br><br></span></a>
+<a class="note1">timōre<span>timor, timoris 名詞 (3rd) M   :fear; dread;奪格<br></span></a>
+<a class="note1">perterritum<span>perterreo, perterrere, perterrui, perterritus 動詞 (2nd) TRANS   :frighten greatly, terrify;完了分詞、受動態　対格</span></a>
+<a class="note0">quod<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">vīdisset<span><br><br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note1">vīsō<span>visum = :vision; that which is seen 奪格 <br>pro visoで　as if seen <br>proは～の代わりに？<br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">renūntiāvisse.<span>renuntio, renuntiare, renuntiavi, renuntiatus 動詞 (1st)   :report, announce; reject;完了不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Multo die : late in the day : その日も遅くなってから 逐語的にはin the late day　multusは多いと言う意味でその日を多く消費してから、というニュアンスか？[<strong>時の奪格</strong>]</p>
+<p>timore perterritum　：恐怖によって怖気づかされた 分詞構文,手段の奪格</p>
+<p>quod non vidisset pro viso : visoは完了分詞Visusの中性、単　visumの奪格、ここは名詞化されていて「見たもの」</p>
+<p>逐語的には「見たものの代わりに見ていないもの」単数中性の形容詞の名詞化は少ない（NewLatin237)(ただし辞書にはvisum visi N という名詞が載っている）</p>
+<p>quodはidが省略の　<u><font style="background-color: yellow;">id quod</font></u>と考える。先行詞idの関係代名詞　対格でrenuntiavisseの目的語</p>
+<p>renuntiavisseの主語はConsidium(対格）</p>
+<p>visusはvideoの完了分詞、受動、おなじくVisoの完了分詞、受動でもある？　どっち？</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>その日も遅くなってから、斥候を通してカエサルは理解できたことだが、尾根は我々によって確保されており、ヘルウェティのキャンプは既に移動しており、恐怖で怖気づいたコンシディウスは見ていないものを見たように報告したのであった。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span><br><br></span></a>
+<a class="note0">diē<span><br><br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note1">cōnsuērat<span>consuesco consescere, consuevi, consuetus ３単　過去完了　;= accustom onself, become accustomed, habituate<br></span></a>
+<a class="note1">intervāllō<span>intervallum, intervalli 名詞 (2nd) N   :interval, space, distance; respite;奪格<br></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note1">sequitur<span>sequor, sequi, secutus sum 動詞 (3rd) DEP   :follow; escort/attend/accompany; aim at/reach after/strive for/make for/seek; 3 単 現在 受動態</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">mīlia<span>複　対格　;= thousand<br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note0">tria<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">castrīs<span>castrum, castri 名詞 (2nd) N   :|castle, fortress; (fortified) town;<br></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">pōnit.<span>pono, ponere, posui, positus 動詞 (3rd) TRANS   :put/place/set; station/post (troops); pitch (camp); situate; set up; erect;3 単 現在 能動態<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Eo die quo consuerat intervallo hostes sequitu　</strong>＝eo die sequitur hostes intervallo quo consuerat quoが関係代名詞でintervalloを修飾　(先行詞の埋め込み NewLatin 251.4)</p>
+<p><strong>intervallo</strong>　<strong>付帯状況の奪格</strong>（NewLatin221にほぼ同じ文例）</p>
+<p>consuerat : consueverat (consuesco) = acustomed「いつもの」（５～６マイル、Chap 15)</p>
+<p><strong>milla : 時空の対格</strong></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その日も敵を計画どおりの距離で追跡し、敵のキャンプから３ローママイルのところで設営した。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

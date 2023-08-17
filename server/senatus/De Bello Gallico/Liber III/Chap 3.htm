@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chapter 3</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[3]<span></span></a>
+<a class="note0">Hīs<span></span></a>
+<a class="note1">nūntiīs<span>nuntius nunti(i) M 複　奪格　;= messagge, warning,, report<br></span></a>
+<a class="note1">acceptīs<span>accipio accipere, accepi, acceptus TRANS 完了分詞　受動　複　奪格　;= takem grasp, receive, accept, undertake<br></span></a>
+<a class="note0">Galba,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">opus<span></span></a>
+<a class="note0">hībernōrum<span><br><br></span></a>
+<a class="note1">mūnītiōnēsque<span>minitio munitionis F 複　対格　;= fortifying, fortification<br></span></a>
+<a class="note1">plēnē<span>副詞　;= abundantly, entirely<br></span></a>
+<a class="note1">essent<span>３複　未完了　接続法</span></a>
+<a class="note1">perfectae<span>perficio perficere, perfeci, perfectus 完了分詞　受動　ｆ複　主格　;= complete, finish, execute</span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">frūmentō<span>frumentum N 単　奪格<br></span></a>
+<a class="note1">reliquōque<span>reliquus reliqua, reliquum 形容詞　n単　奪格　;= rest of, remaining<br></span></a>
+<a class="note1">commeātū<span>commeatus commeatus N (4th) M  <br>:supplies/provisions; goods; voyage; passage; convoy/caravan; furlough/leave;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">satis<span>副詞　;= enough</span></a>
+<a class="note0">esset<span></span></a>
+<a class="note1">prōvīsum<span>provideo providere, providi, provisus V (2nd)  <br>:foresee; provide for, make provision; with DAT;<br>(完了 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">dēditiōne<span>deditio deditionis N (3rd) F  <br>:surrender (of combatants/town/possessions); cession of right/title;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">factā<span><br><br></span></a>
+<a class="note0">obsidibusque<span></span></a>
+<a class="note0">acceptīs<span></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">bellō<span><br><br></span></a>
+<a class="note1">timendum<span>timeo timere, timui - 動形容詞　ｎ　単　対格　;= fear, dread, be afraid</span></a>
+<a class="note1">existimāverat,<span>existimo existimare, existimavi existimatus TRANS ３単　過去完了　;= value, esteem, estimate<br></span></a>
+<a class="note0">cōnsiliō<span><br><br></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note1">convocātō<span>convoco convocare, convocavi, convocatus V (1st) TRANS  <br>:call/bring together; assemble; convoke/convene; summon/muster; collect (thing);<br>(完了 分詞 受動態&nbsp;n 単数 奪格)<br><br></span></a>
+<a class="note1">sententiās<span>sententia sententiae N (1st) F  <br>:opinion, feeling, way of thinking; thought, meaning, sentence/period; purpose;<br>(c 複数  対格)<br></span></a>
+<a class="note1">exquīrere<span>exquiro exquirere, exquisivi, exquisitus V (3rd)  <br>:seek out, search for, hunt up; inquire into;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">coepit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>nuntiis acceptis:　独立奪格　「この報告を受けて」</p>
+<p>構成はGalba consilio celeriter convocato sententias exquirere coepit. 「ガルバは皆の意見を聴き始めた」</p>
+<p><br></p>
+<p>cum neque ... essent&nbsp;perfectae : perfectaeはmunitionesと性、数、格が一致、但し　opus hibernorumも掛かっている。</p>
+<p>de frumento reliquoque commeatu : 「食料とその他の必要なもの」</p>
+<p>&nbsp;quod = because</p>
+<p>deditione facta : 独立奪格、obsidibus acceptis : 独立奪格</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>この報告を受けてガルバは、冬営の作業も要塞化についても完成しておらず、食料、ひつような品々についても充分な手当ができていない状態であったので、と言うのは降伏が成され、人質が受け取られ戦いに関して恐れるものは何もないと考えていたからであるが、急遽、（作戦）会議が召集され、意見を集め始めた。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quō<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">cōnsiliō,<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">tantum<span>tantus tanta, tantum ADJ  <br>:of such size; so great, so much;<br>(N 単数 主格)<br></span></a>
+<a class="note1">repentīnī<span>repentinus repentina, repentinum ADJ  <br>:sudden, hasty; unexpected;<br>(m 単数 属格),<br></span></a>
+<a class="note1">perīculī<span>periculum periculi N (2nd) N  <br>:danger, peril; trial, attempt; risk; responsibility for damage, liability;<br>(n 単数 属格)<br><br></span></a>
+<a class="note1">praeter<span>前置詞　対格支配　;= besides, except, contrary to</span></a>
+<a class="note1">opīniōnem<span>opinio opinionis N (3rd) F  <br>:belief, idea, opinion; rumor (Plater);<br>(c 単数 対格)<br></span></a>
+<a class="note1">accidisset<span>accidit accidere, accidit, accisus est V (3rd) IMPERS  <br>:happens, turns out, befalls; fall upon; come to pass, occur;<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note1">omnia<span>omne omnis N 複　主格　対格　;= all things, everything</span></a>
+<a class="note1">ferē<span>副詞　；＝almost, nearly<br></span></a>
+<a class="note1">superiōra<span>superus supera -um, superior -or -us, supremus -a -um ADJ  比較級<br>:above, <strong>high</strong>; <strong>higher</strong>, upper, of this world; greatest, last, highest;<br>(n 複数  主格), (n 複数  対格), (n 複数  呼格)<br></span></a>
+<a class="note1">loca<span>locum n 複　主格</span></a>
+<a class="note1">multitūdine<span>multitudo multitudinis N (3rd) F  <br>:multitude, great number; crowd; rabble, mob;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">armātōrum<span>armo armare, armavi, armatus V (1st) TRANS  <br>:equip, fit with armor; arm; strengthen; rouse, stir; incite war; rig (ship);<br>(完了 分詞 受動態&nbsp;n 複数  属格)<br><br></span></a>
+<a class="note1">complēta<span>compleo complere, complevi, completus V (2nd) TRANS  <br>:fill (up/in); be big enough to fill; occupy space, crowd; furnish/supply/man;<br>&nbsp;(完了 分詞 受動態 n 複数  主格)<br></span></a>
+<a class="note1">cōnspicerentur<span>conspicio conspicere, conspexi, conspectus V (3rd) TRANS  <br>:observe/see/witness; notice; watch; gaze/stare on; catch/be in sight of; face;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">subsidiō<span>subsidium subsidi(i) N (2nd) N  <br>:help, relief; reinforcement;<br>(X 単数 与格)<br></span></a>
+<a class="note1">venīrī<span>venio venire, veni, ventus V (4th)  <br>:come;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">commeātūs<span>commeatus commeatus N (4th) M  <br>:supplies/provisions; goods; voyage; passage; convoy/caravan; furlough/leave;<br>(c 単数 主格) possentの主語<br></span></a>
+<a class="note1">supportārī<span>supporto supportare, supportavi, - V (1st)  <br>:carry up, transport;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">interclūsīs<span>intercludo intercludere, interclusi, interclusus V (3rd)  <br>:cut off; blockade; hinder, block up;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">itineribus<span>itiner N 複　奪格</span></a>
+<a class="note0">possent,<span></span></a>
+<a class="note0">prope<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note1">dēspērātā<span>despero desperare, desperavi, desperatus V (1st)  <br>:despair (of); have no/give up hope (of/that); give up as hopeless (of cure);<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note1">salūte<span>salus salutis N (3rd) F  <br>:health; prosperity; good wish; greeting; salvation, safety;<br>&nbsp;(c 単数 奪格)<br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">nūllae<span>nullus nulla, nullum (gen -ius) ADJ  <br>:no; none, not any; (PRONominal ADJ)<br>(f 複数  主格)<br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">modī<span>modus modi M 単数　属格　;= manner, mode, way, rule,
+ejusmodi　一つの単語として副詞　;= of this sort, of such kind<br></span></a>
+<a class="note1">sententiae<span>sententia sententiae N (1st) F  <br>:opinion, feeling, way of thinking; thought, meaning, sentence/period; purpose;<br>&nbsp;(C 複数 主格)<br></span></a>
+<a class="note1">dīcēbantur,<span>dico dicere, dixi, dictus V (3rd)  <br>:say, declare, state; allege, declare positively; assert; plead (case);<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">impedīmentīs<span>impedimentum impedimenti N (2nd) N  <br>:hindrance, impediment; heavy baggage (of an army) (pl.);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">relīctīs<span>relictus relicta -um, relictior -or -us, relictissimus -a -um ADJ  <br>:forsaken, abandoned, derelict; left untouched;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">ēruptiōne<span>eruptio eruptionis N (3rd) F  <br>:sortie, rush, sally, sudden rush of troops from a position;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">factā<span><br><br></span></a>
+<a class="note1">īsdem<span>= eisdem
+idem eadem, idem 代名詞　複　奪格　;= same, also<br></span></a>
+<a class="note0">itineribus<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">pervēnissent<span>pervenio pervenire, perveni, perventus V (4th)  <br>:come to; reach; arrive;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">salūtem<span>salus 対格　ここではsecurity, safetyの意<br></span></a>
+<a class="note1">contenderent.<span>contendo = rush to, hastenの３複　未完了　接続法 で願望の接続法</span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p><strong>quo in consilio</strong> : このquoはよくわからない関係詞。英語だと接続詞＋指示詞（by + thta)をラテン語はどんどん関係詞を使うらしい。（NewLatin251.6) = in quo consilio : で前に言った軍議を指す。「その会議の中で」= in which counsil</p>
+<p><strong>cum ~</strong> : 時の節を導くcumで、接続法が用いられていることから、その時の状況環境を表している事がわかる。（NewLatin288.1.b)</p>
+<p><font color="black"><strong>tantum repentini periculi</strong> : 部分の属格の用法の一つ。形容詞tantumの名詞的用法とともに「それだけたくさんの予期せぬ危機」(newLatin 201.2, AG3346.a)　<u>accidisset</u></font><u>の主語</u>「沢山の危機が起こり」</p>
+<p>praeter opinionem : 思っていたことと異なり、「思いもかけず」</p>
+<p><strong>loca completa conspicerentur</strong> : loca(複）が主語で、completaは完了分詞でlocaを修飾「満たされた場所」conspicerenturは受動態で「見られた」：　～で満たされた場所が見られた→　「その辺中で～があふれていた」</p>
+<p><strong>subsidio veniri</strong> : <u>subsidio は目的の与格</u> veniriはvenio(<u>自動詞）の受け身で非人称動詞</u>として働く(NewLatin 138.4)それは来られる＝誰かが来る　possetが省略されている（possentから類推）として「誰も来ることができない」</p>
+<p><strong>commeatus supportari possent neque</strong>&nbsp;: 必要な物は補給されない</p>
+<p>interclusis itineribus 独立奪格　「道筋が閉鎖されているため」</p>
+<p>desperata salute : 独立奪格　「身の安全については絶望的で」</p>
+<p><strong>eijus modi = ejusmodi一語の副詞もあり</strong>。＝of this sort, of such kind 「性質の属格」と考えられる。内容はut以下で説明される。</p>
+<p>non nullae sententiae dicebantur. : が骨子。「そういう意見も少なからず表明された」内容はut以下で述べられる。</p>
+<p><strong>impedimentis relictis</strong> : 独立奪格「重い装備を捨て」</p>
+<p><strong>erupione facta</strong> : 独立奪格「急襲をかけ」</p>
+<p><strong>isdem itineribus quibus eo pervenissent</strong> : 手段の奪格　来た道と同じ経路を使って<font color="#2980b9"><br></font></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>会議では次のような意見が少なくなかった。つまり、重い装備を捨て、突然の騒乱を起こし、来た道と同じ経路で、安全に向かって疾走しようと。というのも、想像だにできない大変な危機が起き、今や殆ど全ての高地には武装兵たちによってうめつくされ、如何なる援軍も来られない状況で、道を閉鎖されているため必要な物資の補給もできない状況であったからである。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Maiōri<span>magnus magna -um, major -or -us, maximus -a -um ADJ  比較級<br>:large/great/big/vast/huge; much; powerful; tall/long/broad; extensive/spacious;<br>(X 単数 与格)<br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">partī<span>pars partis N (3rd) F  <br>:part, region; share; direction; portion, piece; party, faction, side;<br>&nbsp;(X 単数 与格)<br><br></span></a>
+<a class="note1">placuit,<span>placeo placere, placui, placitus V (2nd) DAT  <br>:please, satisfy, give pleasure to (with dat.);<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note1">reservātō<span>reservo reservare, reservavi, reservatus V (1st)  <br>:reserve; spare; hold on to;<br>&nbsp;(完了 分詞 受動態 n 単数 奪格)<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">extrēmum<span><br><br></span></a>
+<a class="note0">cāsum<span></span></a>
+<a class="note1">cōnsiliō<span>consilium 計画　の単　奪格　N<br></span></a>
+<a class="note1">interim<span>副詞　;= meantime, in the mean time</span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note1">ēventum<span>eventus eventus N (4th) M  <br>:outcome, result, success; event, occurrence; chance, fate, accident;<br>(c 単数 対格)<br></span></a>
+<a class="note1">experīrī<span>experior experiri, expertus sum V (4th) DEP  <br>:test, put to the test; find out; attempt, try; prove, experience;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">castra<span>castrum 複　対格</span></a>
+<a class="note0">dēfendere.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Maiori parti placuit : placuitの主語はexperiri et defendereという不定詞。placuitは与格支配</p>
+<p>reservo consilio : 独立奪格　「その計画を取っておいて」</p>
+<p>ad exteremum casum : casumはcasus = caseの対格　最後の手段として</p>
+<p>experiri et defendere : Hys-te-ron Pro-te-ronと呼ばれる前後倒置法で、実際とは逆の順序　(New Latin 374.7)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>しかしながら、その考えは（突撃すると言う考え）最後に取っておいて、当面、要塞の守りを固めて、様子を見るという案が、大多数を満足させた。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

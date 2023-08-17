@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 3</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[3]<span></span></a>
+
+<a class="note0">Hīs<span></span></a>
+<a class="note1">rēbus<span>res :thing, fact 奪格)</span></a>
+<a class="note1">adductī<span>adduco, adducere, adduxi, adductus 動詞 (3rd) TRANS&nbsp;完了分詞　 ｍ　複　主格　;= lead up, bring up/to; persuade, induce; lead, bring; contract, tighten</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">auctōritāte<span>auctoritas, auctoritatis 名詞 (3rd) F 単　奪格 ;= title (legal), ownership; right to authorize, sanction, power; decree, order;</span></a>
+<a class="note1">Orgetorīgis<span>単 属格</span></a>
+<a class="note1">permōtī,<span>permoveo, permovere, permovi, permotus 動詞&nbsp;完了分詞　受動　ｍ　複　主格&nbsp;;=&nbsp;stir up; move deeply; influence; agitate;<br></span></a>
+<a class="note1">cōnstituērunt<span>constituo, constituere, constitui, constitutus３複　完了　;= set up, in position, decide, resolve; <br></span></a>
+<a class="note1">ea<span>those n 複　対格</span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">proficīscendum<span>proficiscor, proficisci, profectus sum DEP&nbsp; 未来分詞　受動　ｎ単　対格　；= depart, set out; proceed; 動名詞<br></span></a>
+<a class="note1">pertinērent<span>pertineo, pertinere, pertinui, pertentus 動詞 (2nd)  <br> :reach; extend; relate to; concerns, pertain to; <br>接続法　3複未完了</span></a>
+<a class="note1">comparāre,<span>comparo 不定詞 <br>:prepare; provide、:|place together</span></a>
+<a class="note1">iūmentōrum<span>jumentum, jumenti 名詞 (2nd) N :mule; beast of burden;属格</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">carrōrum<span>carrum, carri 名詞 (2nd) N  <br> :wagon; (Gallic type);属格</span></a>
+<a class="note1">quam<span>副詞　how as, than <br>quam + 最上級 = as ~as</span></a>
+<a class="note0">maximum<span></span></a>
+<a class="note1">numerum<span>number <br>対格</span></a>
+<a class="note1">coēmere,<span>coemo comere coemi, coemptus 現在 能動態 不定詞 ;= buy; buy up;</span></a>
+<a class="note1">sēmentēs<span>sementis, sementis 名詞 (3rd) F :sowing, planting; <br>対格</span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">maximās<span>maximus, 対格</span></a>
+<a class="note0">facere<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">itinere<span>itiner, itineris 名詞 (3rd) N  <br> :journey; road; passage, path; march　奪格</span></a>
+<a class="note1">cōpia<span>copia, copiae F 単　主格　;=&nbsp;plenty, abundance, supply; troops (pl.), supplies; forces; resources; wealth;</span></a>
+<a class="note1">frūmentī<span>frumentum, frumenti 名詞 (2nd) N   :grain; crops; 属格</span></a>
+<a class="note1">suppeteret,<span>suppeto, suppetere, suppetivi, suppetitus&nbsp;３単　未完了　接続法　;= be at hand; be equal to; be sufficient for</span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">proximīs<span>proximus, proxima, proximum 形容詞   :nearest/closest/next; most recent, immediately preceding, last; most/very like;</span></a>
+<a class="note1">cīvitātibus<span>与格</span></a>
+<a class="note1">pācem<span>対格</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">amīcitiam<span>amicitia, amicitiae 名詞 (1st) F   :friendship, bond between friends; alliance, association; friendly relations; 対格</span></a>
+<a class="note1">cōnfīrmāre.<span>confirmo 現在 能動態 不定詞</span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false">
+<p><strong>His rebus adducti</strong> 「これらの事柄によって導かれ」（分詞構文）</p>
+<p>et auctoritate Orgetorigis permoti：「Oretorixの権威によって影響されて」（分詞構文）</p>
+<p><strong>constituerunt ea comparare</strong> : 「eaを用意することを決める」eaはcomparareの目的語であり、comparareはconstitueruntの目的語になっている。eaは次の関係代名詞文で、説明されている。</p>
+<p>ea&nbsp;&nbsp;= (quae ad proficiscendum pertinerent) : eaはquae以下の文の先行詞</p>
+<p><strong>ad proficiscendum pertinerent　</strong>：proficiscendumは動名詞、対格でadを伴い目的を表す。（NewLatin338.3)</p>
+<p>pertineo : ad + 対格とともに用いられ、１）To reach 2)relate, concern この場合２）</p>
+<p>(somnium ad aliquamm rem pertinet, Plaut)</p>
+<p><u>接続法になっているのは自身の考えではなく誰か他の人の考えであることを示す。</u>これは文法的にはquodで導かれる原因の節ではそうなっているが、(NewLatin286) それ以外でもカエサルは、文法とは関係なく常に、この原則で接続法を使っているそうである。（AG)</p>
+<p>iumentorum et carrorum : 目的を表す属格</p>
+<p><strong>quam maximum</strong> ：quamはこの場合副詞で、最大級と一緒に使われ as much as possibleの意。(強意不変化詞、NewLatin240.2) 比較級と共に使われるときは　thanの意味になる。</p>
+<p>coēmere (買い集める）</p>
+<p><strong>sēmentēs quam māximās facere</strong>(最大限に種をまく）前のquamと同じ用法。</p>
+<p>ut ... suppeteret : utに導かれる目的の節（接続法）主語はcopia。</p>
+<p>cōnfīrmāre.</p>
+<p>全体としては、決めたことは不定詞句になっており、comparare, coemere, facere, confimareとなっている。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの事情に導かれ、かつオルゲトリックスの権威に動かされ、彼らは以下の事柄を決めた。まず出発に関連するであろうものを用意すること、馬車やそれを引く動物達を最大量確保すること、出発にあたって大量の穀物が手元に有るよう最大量の種をまくこと、近隣諸国と平和と友好を確認する事などである。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ad<span></span></a>
+<a class="note0">eās<span></span></a>
+<a class="note1">rēs<span>F 複　対格</span></a>
+<a class="note1">cōnficiendās<span>conficio : 　(V31) (未来分詞 f 複 対格)  make, finish <br>動形容詞で動名詞を置き換えたもの? <br>完了する事</span></a>
+<a class="note1">biennium<span>biennium, bienni(i) N 単　対格&nbsp; ;= two years (period of ...);</span></a>
+<a class="note1">sibi<span>sui 与格　＝for them</span></a>
+<a class="note0">satis<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">dūxērunt:<span>duco, ducere, additional, forms 動詞   :lead, command; think, consider, regard; prolong;</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">tertium<span></span></a>
+<a class="note0">annum<span></span></a>
+<a class="note1">profectiōnem<span>profectio, profectionis 名詞 (3rd) F   :departure; 対格</span></a>
+<a class="note1">lēge<span>lex 奪格　law</span></a>
+<a class="note1">cōnfīrmant.<span>confirmo, confirmare, confirmavi, confirmatus 動詞 (1st) TRANS   :confirm,  <br> 3 複 現在</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>Ad eas rēs cōnficiendās</strong> : conficiendas は動形容詞。元々は<strong>ad conficiendum</strong>と ad + 動名詞 でも良かったが、<font style="background-color: rgb(255, 255, 0);">動名詞で</font><font style="background-color: rgb(255, 255, 0);">直接の目的語（res)を取る場合には、必ず動形容詞文にする必要がある</font>。（NewLatin399.2)従ってここは動形容詞文になっている。この場合、動形容詞はその性、格、数を目的語にあわせる。（その目的語は別の理由で、格などが決定される。ここの場合Adが対格支配なので、resは対格になっている）そのためconficiendasと対格で、F、複となっている。意味はad+動名詞　と同様、目的を表すので、「これらの事を成し遂げるために」</p>
+<p><strong>biennium esse satis duxerunt</strong> : duxerunt動詞でbiennium ...　は従属文なので、bienniumは対格</p>
+<p>lēge : lex　むしろ盟約的なもの</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの事を執り行うのに彼らにとっては２年もあれば十分だと考え、３年目の出発を法で定めた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ad<span></span></a>
+<a class="note0">eās<span></span></a>
+<a class="note0">rēs<span></span></a>
+<a class="note0">cōnficiendās<span></span></a>
+<a class="note0">Orgetorīx<span></span></a>
+<a class="note1">dēligitur.<span>deligo, deligere, delegi, delectus&nbsp; TRANS ３単　受動&nbsp; ;= pick/pluck off, cull; choose, select, levy (soldiers), enroll; conduct a levy</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Ad eas res conficiendas : 全く前文と同じ。ラテン語は語の重複使用が随所で見られるように思う。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの事を行うためにOrgetorixが選ばれる。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Is<span></span></a>
+<a class="note1">sibi<span>与格)</span></a>
+<a class="note1">lēgātiōnem<span>legatio, legationis 名詞 (3rd) F   :embassy; member of an embassy; mission; 対格</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">cīvitātēs<span></span></a>
+<a class="note1">suscēpit.<span>suscipio, suscipere, suscepi, susceptus 動詞&nbsp;３単　完了&nbsp; :undertake; support; accept, receive, take up;</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Is(=Orgetorix) suscepit sibi legationem. 直接目的語を対格、間接目的語を与格。</p>
+<p>ad civitatesは（他の）国（部族）に対しての、というニュアンスで、legationemを修飾。こういう前置詞のプレーズが名詞を修飾するのはラテン語ではかなり稀、との事。（Bennett)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼は自分自身を大使に任命した。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">In<span></span></a>
+<a class="note1">eō<span>isの奪格（ｍ単）</span></a>
+<a class="note1">itinere<span>itiner, itineris 名詞 (3rd) N   :journey; road; passage, path; march奪格</span></a>
+<a class="note1">persuādet<span>persuadeo persuadere, persuasi, persuasus ３単　現在　;= persuade, convince (w/DAT)</span></a>
+<a class="note1">Casticō,<span>Casticus　与格　人名 <br>Persuadeoは与格を伴う動詞</span></a>
+<a class="note1">Catamantāloedis<span>Catmantaloedes 属格</span></a>
+<a class="note1">fīliō<span>fillius 奪格 <br>性質の与格　X <br>vir summo ingenio</span></a>
+<a class="note1">Sēquanō,<span>与格　セクアナ族 <br>Sequanus</span></a>
+<a class="note1">cuius<span>&nbsp;quis の属格</span></a>
+<a class="note0">pater<span></span></a>
+<a class="note0">rēgnum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Sēquanīs<span></span></a>
+<a class="note0">multōs<span></span></a>
+<a class="note0">annōs<span></span></a>
+<a class="note1">obtinuerat<span>obtineo, obtinere, obtinui, obtentus 動詞 (2nd)   :get hold of; maintain; obtain; hold fast, occupy; prevail３単過去完了</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note1">senātū<span>senatus 奪格 <br>元老院</span></a>
+<a class="note0">populī<span></span></a>
+<a class="note0">Rōmānī<span></span></a>
+<a class="note0">amīcus<span></span></a>
+<a class="note1">appellātus<span>完了 分詞 受動態 m 単 主格 <br>appello=call</span></a>
+<a class="note0">erat,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">rēgnum<span>対格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">cīvitāte<span>奪格</span></a>
+<a class="note1">suā<span>suus, sua, suum 形容詞   :his/one's (own), her (own), hers, its (own); (pl.) their (own), theirs; 奪格</span></a>
+<a class="note1">occupāret,<span>occupo, occupare, occupavi, occupatus 動詞 (1st)   :seize; gain; overtake; capture, occupy; attack; 3 単 未完了 能動態 接続法)</span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">pater<span></span></a>
+<a class="note1">ante<span>副詞　;= before, previously</span></a>
+<a class="note1">habuerat;<span>habeo ３単　過去完了</span></a>
+<a class="note1">itemque<span>item + que <br>item : likewise, also</span></a>
+<a class="note1">Dumnorīgī<span>Dumnorix, Dumnorigis N (3rd) M   :Dumnorix, name of a Gaul - in Caesar's Gallic War; 与格</span></a>
+<a class="note1">Aeduō<span>Aedui族　与格 <br>AeduoまたはHaedui</span></a>
+<a class="note1">frātrī<span>frater, fratris 名詞 (3rd) M   :brother; cousin; 与格</span></a>
+<a class="note1">Dīviciācī,<span>Diviciacus 人名　属格</span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">eō<span></span></a>
+<a class="note1">tempore<span>tempus, temporis 名詞 (3rd) N   :time, condition, right time; season, occasion; necessity;  <br>奪格</span></a>
+<a class="note1">prīncipātum<span>principatus, principatus 名詞 (4th) M   :first place; rule; leadership; supremacy; chief command　対格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">cīvitāte<span></span></a>
+<a class="note0">obtinēbat<span></span></a>
+<a class="note1">ac<span>ac, 接続詞   :and, and also, and besides;</span></a>
+<a class="note1">maximē<span>副詞　;= most, very much, certainly</span></a>
+<a class="note1">plēbī<span>plebs, plebis F 単 与格 ;=&nbsp;common people, general citizens, commons, plebeians; lower class</span></a>
+<a class="note1">acceptus<span>acceptus, accepta -um, acceptior -or -us, acceptissimus 形容詞　ｍ単　主格　;= welcome, pleasing, popular with</span></a>
+<a class="note0">erat,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">idem<span>idem, 代名詞  :(w/-dem ONLY, idem, eadem, idem) same, the same, the very same, also;</span></a>
+<a class="note1">cōnārētur<span>conor, conari, conatus sum 動詞 (1st) DEP   :attempt/try/endeavor, make an effort; exert oneself; try to go/rise/speak　3 単 未完了 受動態 接続法)</span></a>
+<a class="note1">persuādet,<span>3 単 現在 能動態 直説法</span></a>
+<a class="note1">eīque<span>ei (is 与格）+ que </span></a>
+<a class="note0">fīliam<span></span></a>
+<a class="note1">suam<span>suus, sua, suum 形容詞   :his/one's (own), her (own), hers, its (own); (pl.) their (own), theirs; 対格</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">mātrimōnium<span>matrimonium, matrimoni(i) 名詞 (2nd) N   :marriage; matrimony;</span></a>
+<a class="note0">dat.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>構文の骨子は</p>
+<p><strong>persadet Castico ut regnum in cvitate sua occuparet,</strong></p>
+<p><strong>persadet Dumnorigi ut idem conarentur</strong>. つまりCasticusとDumnorixに王権を奪え、と説得した。utに導かれる名詞節の動詞は接続法　(NewLatin282)</p>
+<p><strong>Catamantāloedis fīliō Sēquanō</strong>, cūius pater rēgnum in Sēquanīs multōs annōs obtinuerat et ā senātū populī Rōmānī amīcus appellātus erat, この文はCasticusを説明している文。<u>Casticoは与格</u>、persuadeoは与格支配の動詞。fillioはCasticoと同格で同じく与格。multos annosは[<strong>時空の対格</strong>]と呼ばれる用法。（NewLatin181)</p>
+<p><strong>Aeduō frātrī Dīviciācī</strong>, quī eō tempore prīncipātum in cīvitāte obtinēbat āc māximē plēbī acceptus erat,: Dumnorixを説明。eo tempore は[<strong>時の奪格</strong>]。（NewLatin230) plebi は与格。これは形容詞acceptusとの関係。一種の行為の向かう先の与格。（NewLatin192) maximeは「特に」の意。</p>
+<p>eīque fīliam suam in mātrimōnium dat. : suamはOrgetorixの事。ei(que)はDumnorixの事で、彼に（与格）</p>
+<p>a S.P.R a senatu populi Romani</p>
+<p>a S.P.Q.R a senatu populoque Romano</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>この（諸国への）旅、訪問において、彼はCasticusを父親がかつて持っていた王国を彼ら自身のもの奪還するよう説得した。CusticusはCatamantaloedesの息子でセクアナ族であり、その父親は長くセクアナにおいて王国を維持しており、ローマ元老院から「ローマ人の友人」と呼ばれていた人であった。また同様に、Dumnorixも同じようにするよう説得した。Dumnorixは、ハエドゥ族でDiviciacusの兄弟であり、彼はその時、部族の中で第一人者であり、特に平民から支持されていた人物である。またOrgetorixは、自身の娘をDumnorixに嫁がせた。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Perfacile<span>perfacilis perfacilis, perfacile 形容詞　n単　主格　;= very easy, very courteous</span></a>
+<a class="note1">factū<span>facio　spinum = factum 奪格　</span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">illīs<span>ille 与格　複 <br>CastcusとDumnorix</span></a>
+<a class="note1">probat<span>probo, probare, probavi, probatus TRANS&nbsp;&nbsp; ３単　現在　;= let; show to be real, get accepted</span></a>
+<a class="note1">cōnāta<span>conatum, conati N 複　対格　;=&nbsp; effort; attempt/design/attempted action (in pejorative sense);</span></a>
+<a class="note1">perficere,<span>perficio, perficere, perfeci, perfectus 不定詞　;= complete, finish; execute; bring about, accomplish; do thoroughly</span></a>
+<a class="note1">proptereā<span>propterea, 副詞   :therefore, for this reason;  <br>propterea quod = because</span></a>
+<a class="note1">quod<span>because</span></a>
+<a class="note1">ipse<span>ipse, 代名詞  主格　:himself/herself/</span></a>
+<a class="note0">suae<span></span></a>
+<a class="note1">cīvitātis<span>属格</span></a>
+<a class="note1">imperium<span>imperium, imperi(i) 名詞 (2nd) N   :command; authority; rule, supreme power; the state, the empire; 対格</span></a>
+<a class="note1">obtentūrus<span>obtineo, obtinere, obtinui, obtentus&nbsp;未来分詞　能動　ｍ単　主格 ;= get hold of; maintain; obtain; hold fast, occupy; prevail;</span></a>
+<a class="note1">esset:<span>3 単 未完了 能動態 接続法　sum</span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">dubium<span>dubius dubia, dubium ｎ単　主格　;= doubtful, dubious, uncertain</span></a>
+<a class="note1">quīn<span>quin, 接続詞   :so that not, without; that not; but that; that;</span></a>
+<a class="note0">tōtīus<span></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note1">plūrimum<span>plurimus plurima, plurimum 形容詞　ｎ単　対格　;= most, greatest, highest</span></a>
+<a class="note0">Helvētiī<span></span></a>
+<a class="note1">possent;<span>3 複 未完了 能動態 接続法 <br>possum　＝powerful,potentの意</span></a>
+<a class="note1">sē<span>sui 対格 不定詞の主語　（Orgetorixのこと）</span></a>
+<a class="note1">suīs<span>suus 与格・奪格</span></a>
+<a class="note1">cōpiīs<span>copia, copiae 名詞 (1st) F   :plenty, abundance, supply; troops (pl.), supplies; forces; resources; wealth; 奪格</span></a>
+<a class="note1">suōque<span>suus 奪格　of oneself</span></a>
+<a class="note1">exercitū<span>exercitus, exercitus 名詞 (4th) M   :army, infantry; swarm, flock; 奪格</span></a>
+<a class="note1">illīs<span>与格　CとD</span></a>
+<a class="note1">rēgna<span>対格 複</span></a>
+<a class="note1">conciliātūrum<span>concilio, conciliare, conciliavi, conciliatus TRANS 未来分詞　ｎ単　対格　;=&nbsp;unite, bring together; cause; win over, attract; acquire, procure</span></a>
+<a class="note1">cōnfīrmat.<span>confirmo, confirmare, confirmavi, confirmatus 動詞 (1st) TRANS   :|assert positively; declare, prove, confirm, support; sanction; encourage; ３単現</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>obtentūrus esset</strong> : <u>未来分詞、能動は通常、叙述的にのみ使用される。目的、意図を表す</u>。(NewLatin337.4)</p>
+<p><strong>ipse　obtentūrus esset</strong>:　彼は獲得するつもりであった。複文の従属節で接続法。(NewLatin314, AG580)</p>
+<p><strong>illīs probat </strong>: probatの主語はOrgetorix,　illisはCasticus,　Dumnorix</p>
+<p><strong>cōnāta perficere,Perfacile factū esse</strong> : conata（対格）を成し遂げること（不定詞）はperfacileである。不定詞は中性、単数なのでperfacileも中性単数。factuはfacioの目的分詞factumの奪格。<u>uで終わる目的分詞は[<strong>指定の奪格</strong>]として扱われる</u>。（～に関して）(NewLatin340.2,NewLatin226)即ち「試みを成し遂げることは、行うと言う観点からは大変容易であることを示した」が逐語訳。</p>
+<p><strong>nōn esse dubium quin ... possent</strong> : quinで始まる名詞節は、疑う、というニュアンスの語と使われ、主語または目的語になる。（NewLatin298)この場合quinの節が主語でesse non dubium.となる。即ち「quin以下のことは疑いがない」内容的には間接話法で、probatから「～が言った」を推測する。(NewLatin314.2)</p>
+<p><strong>quin totius Galliae plurimum Helvetii possent</strong> : totius Galliae [<strong>全体の属格</strong>]と云われる用法（NewLatin201.1)。「全ガリアの中で最も力がる事」plurimumは対格で、[<strong>なされた結果の対格</strong>]という用法。（NewLatin176.2(b))</p>
+<p><strong>suīs cōpiīs suōque exercitū　</strong>[<strong>手段の奪格</strong>]、「自身のレソースと自身の軍隊をもって」（因みに、exercitum軍隊と言うのは正規兵、というニュアンスがある。exerceo＝訓練する、ということか？）</p>
+<p><strong>se illis rēgna conciliātūrum (esse). :</strong>&nbsp;se = Orgetorixが主語で、illisは与格で、彼らに対し、王権を獲得することであろう事（esse 省略の未来不定詞）を。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼らに対し、そういう試みを成功する事は大変容易であると示してみせる、というのは彼自身が人民に対して統制をまさに得ようとしているところであったからである。</p>
+<p>またヘルウェイティ族がガリア全体で最も力が有ることは疑いがなく、彼は自身の富と軍隊を用い、彼らに王権を獲得する事を確約する。</p>
+</div>
+</div>
+<div class="spacer">Line7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hāc<span>hic=these 奪格</span></a>
+<a class="note1">ōrātiōne<span>oratio, orationis 名詞 (3rd) F   :speech, oration; eloquence; prayer;&nbsp; 単　奪格</span></a>
+<a class="note1">adductī<span>adduco 完了分詞　受動　ｍ複　主格　;= lead up, bring up</span></a>
+<a class="note1">inter<span>inter, 前置詞 (対格)  :between, among; during;</span></a>
+<a class="note0">sē<span></span></a>
+<a class="note1">fidem<span>fides, fidei 名詞 (5th) F   :faith, loyalty; honesty; credit; confidence, trust, belief; good faith; 対格</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">iūs<span>jus, juris N&nbsp;単　対格　;= law; legal system; code; right; duty; justice; court; binding decision; oath;</span></a>
+<a class="note1">iūrandum<span>jurandum, jurandi N 単　対格&nbsp;  :oath;</span></a>
+<a class="note1">dant,<span>3 複 現在  <br>Orgentorix,Casticus, dumnorix</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">rēgnō<span>regnum 奪格</span></a>
+<a class="note1">occupātō<span>occupo, occupare, occupavi, occupatus 動詞 (1st)   :seize; gain; overtake; capture, occupy; attack; 奪格</span></a>
+<a class="note1">per<span>前置詞　対格支配　through by</span></a>
+<a class="note1">trēs<span>populos, Sequani,Hevetii,Aedui</span></a>
+<a class="note1">potentissimōs<span>potens, potentis (gen.), potentior -or -us, potentissimus -a -um 形容詞   :powerful, strong; capable; mighty;  <br>最上級　対格</span></a>
+<a class="note1">ac<span>接続詞　そして　～もまた　同様に</span></a>
+<a class="note1">fīrmissimōs<span>firmus, firma -um, firmior -or -us, firmissimus -a -um 形容詞   :firm/steady; substantial/solid/secure/safe; strong/robust/sturdy/stout/durable; 対格</span></a>
+<a class="note1">populōs<span>populus, populi 名詞 (2nd) M   :people, nation, State; public/populace/multitude/crowd; a following; 対格</span></a>
+<a class="note0">tōtīus<span></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note1">sēsē<span>sui 対格</span></a>
+<a class="note1">potīrī<span>potior, poti, potitus sum 動詞 (3rd) DEP   :obtain, acquire; grasp; attain, reach (goal); come by (experiences);  <br>現在 受動態 不定詞</span></a>
+<a class="note1">posse<span>possum 不定詞</span></a>
+<a class="note1">spērant.<span>spero, sperare, speravi, speratus 動詞 (1st)   :hope for; trust; look forward to; hope;  <br>3 複 現在</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Hac oratione adducti : 分詞構文、「これらの演説に惹かれて」</p>
+<p><strong>inter sē dant</strong> :互いに与え合う</p>
+<p><strong>rēgnō occupātō　</strong>：独立奪格　（状況を表す）　王権を獲得した暁には</p>
+<p><strong>sese portiri posse sperant</strong> : sperant(望む）が動詞で目的語はposseの不定詞句。seseがportiri（保持すること）が可能であること。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの話に駆り立てられて、彼らはお互いに忠誠と宣誓を交換した。また王権を獲得した暁には、三者で、ガリア全体のなかで最も強くて最も安定した国を保持できることを望んだ。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

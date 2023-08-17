@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber II : Chap 6</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[6]<span></span></a>
+
+<a class="note0">Ab<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note0">Rēmōrum<span><br><br></span></a>
+<a class="note1">nōmine<span>nomen N の奪格</span></a>
+<a class="note0">Bibrax<span></span></a>
+<a class="note0">aberat<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note0">VIII.<span></span></a>
+<a class="note0">Id<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">itinere<span></span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note1">impetū<span>impetus impetus N (4th) M  <br>:attack, assault, charge; attempt; impetus, vigor; violent mental urge, fury;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">Belgae<span></span></a>
+<a class="note1">oppugnāre<span>oppugno oppugnare, oppugnavi, oppugnatus V (1st)  <br>:attack, assault, storm, besiege;<br>&nbsp;(  現在 能動態 不定詞 )<br><br></span></a>
+<a class="note1">coepērunt.<span>coepi coepisse, -, coeptus V (3rd)  <br>:begin, commence, initiate; (shows only PERFDEF);<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>nomine Bibrax : 指定の奪格　名前という観点では（NewLatin 226)</p>
+<p><strong>Oppidum nomine Bibrax anerat milia passuum VIII ab his castris</strong>.　Bibraxと言う名前の城塞が彼の陣地から８マイル離れたところにあった。</p>
+<p>milia passuum octo = 8 千　フット＝８マイル　milia ; milium 複対格で距離を表す場合、<b>空間距離の場合は対格、</b>困難さの場合は奪格（AG425)</p>
+<p>passuumは　passus(=step)の属格、部分の属格（NewLatin 201)</p>
+<p>impetu 方法の奪格　激しく</p>
+<p><strong>ex itinere</strong> : 直訳すると　行軍から　で、特に何の攻撃の兆しなどなく、突然そのまま攻撃した様を言っている。(III Chap21にも出てくる）</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>彼の陣地から８マイル離れたところにBibraxという名のRemi族の城塞があった。そこに、Belgaeが急行して大変激しく攻撃を始めた。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Aegrē<span>aegre aegrius, aegerrime ADV <br>:scarcely, with difficulty, painfully, hardly; reluctantly, uncomfortably;<br><br></span></a>
+<a class="note0">eō<span></span></a>
+<a class="note0">diē<span></span></a>
+<a class="note1">sustentatum<span>sustento sustentare, sustentavi, sustentatus 完了分詞　受動　M 単　主格</span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>aegereはChap1. 13. l-2にも出てくる。aeger形容詞の副詞　painfully, sorrowfullyの意。</p>
+<p>sustentatum est. sustentatumはsustentoの動形容詞である。自動詞の動形容詞迂言的用法は、非人称的に使われる。（NewLatin 337.8, AG195)　「それは持ちこたえた」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>その日１日、辛くも持ちこたえた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Gallōrum<span><br><br></span></a>
+<a class="note0">eadem<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">Belgārum<span><br><br></span></a>
+<a class="note1">oppugnātiō<span>oppugnatio oppugnationis N (3rd) F  <br>:assault, siege, attack; storming;<br>(X 単数 主格), <br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">haec:<span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note1">circumiectā<span>circumicio circumicere, circumjeci, circumjectus V (3rd) TRANS  <br>:cast/throw or place/put/build around; put on flank of; encompass/envelop;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note1">multitūdine<span>multitudo multitudinis F 奪格　;= multitude, great number, crowd<br></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note0">tōtis<span><br><br></span></a>
+<a class="note1">moenibus<span>moene moenis N (3rd) N  <br>:defensive/town walls (pl.), bulwarks; fortifications; fortified town; castle;<br>&nbsp;(X 複数  与格),<br><br></span></a>
+<a class="note1">undique<span>udique 副詞  :from every side/direction/place/part/source; on all/both sides/surfaces;</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">mūrum<span>murus muri N (2nd) M  <br>:wall, city wall;<br>(c 単数 対格)<br></span></a>
+<a class="note1">lapidēs<span>lapis lapis N (3rd) F  <br>:stone; milestone; jewel;<br>(c 複数  対格)<br></span></a>
+<a class="note1">iaci<span>jacio jacere, jeci, jactus V (3rd)  <br>:throw, hurl, cast; throw away; utter;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">coepti<span>coepio coepere, coepi, coeptus V (3rd)  <br>:begin, commence, initiate; set foot on; (usu. PERF PASS w/PASS INF; PRES early);<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">sunt,<span></span></a>
+<a class="note1">mūrusque<span>murus muri Mwall, city wall 主格<br></span></a>
+<a class="note1">dēfēnsōribus<span>defensor defensoris N (3rd) M  <br>:defender/protector; supporter/champion/apologist; defendant; defense advocate;<br>&nbsp;(X 複数  奪格)<br><br></span></a>
+<a class="note1">nūdātus<span>nudo nudare, nudavi, nudatus完了分詞　受動　主格;= lay bare, strip, leave unprotected<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">testūdine<span>testudo testudinis N (3rd) F  <br>:tortoise; testudo; armored movable shed; troops locking shields overhead;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">factā<span><br><br></span></a>
+<a class="note1">portās<span>porta portae N (1st) F  <br>:gate, entrance; city gates; door; avenue; goal (soccer);<br>(c 複数  対格)<br></span></a>
+<a class="note1">succēdunt<span>succedo succedere, successi, successus V (3rd)  <br>:climb; <strong>advance</strong>; follow; succeed in;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">mūrumque<span><br><br></span></a>
+<a class="note1">subruunt.<span>subruo subruere, subrui, subrutus V (3rd)  <br>:undermine;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p><strong>Gallorum oppugnatio est haec</strong> : ガリア人の戦い方はこれ（次のよう）である。</p>
+<strong>
+</strong><p><strong>ubi circumiecta multitudine hominum totis moenibus</strong> : <b>circumiecta multutudineは独立奪格　</b>「大勢の人を全ての城壁に配置して、」moenibus(walls)は与格、: circumで（その他もあり）始まる動詞は与格の間接目的語を持つ(NewLatin 187.3)</p>
+<p><strong>coepi (Activeのみの欠如動詞）</strong>　<strike>coepioの二つが紛らわしい、意味は同じ、coepiは能動のみなので</strike>、<strong>coepioは古代に使用され、この時期には全てcoepiが使われている。</strong>能動完了分詞がceptus、しかしcoepioの方は受動完了分詞がcoeptus ここではcoepiの能動完了分詞とかんがえられる、Jaciが受動不定詞なので、受動の不定詞をcoepiが支配するときは　coeptus est + 受動不定詞の形。coepitus est amari <font color="#ff0000">(NewLatin 133)</font></p>
+<font color="#ff0000">
+</font><p><font color="#ff0000"></font><strong>lapides jaci sunt coepi</strong> : 石が投げられること（対格＋受動不定詞）が始められる</p>
+<p><strong>undique in murum</strong> : 壁のすべての場所で</p>
+<p><strong>murusque est nudatus defensoribus</strong> : 城壁が守備隊から剥がされ（defensoribusは分離の奪格）</p>
+<p><strong>testudine facta portas sccedunt</strong> : 盾を頭上にかざして門に突進する。(testudoと言うのは盾を重なるように互いの頭の上において進む陣形の名前）</p>
+<p>murumque subruunt. 城壁を壊す。</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>ガリアたちの戦い方はBelgaeも同じだが、つぎの様である。まず大勢の人員で城塞全てを取り囲みながら、全ての壁に対して石を投げ始める。そして城壁は守備隊から剥がされると、盾を頭上にかかげ城門に突撃し、城壁を壊すのである。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quod<span></span></a>
+<a class="note1">tum<span>副詞で　at that time, then</span></a>
+<a class="note0">facile<span></span></a>
+<a class="note1">fiēbat.<span>fio feri, factus sum V SEMIDEP  <br>:happen, come about; result (from); take place, be held, occur, arise (event);<br>(３人称 単数 未完了 能動態 直説法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p> quodは前に述べた事（戦い方）を指す、関係代名詞の一種。quae remと同じ。（NewLatin 251.6)</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>&nbsp;この状況で、それは簡単であった。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Nam<span>接続詞　;= for, on the other hand, for instance</span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">tanta<span>tantus tanta tantum 形容詞; = of such size, so great</span></a>
+<a class="note1">multitūdō<span>単　主格;= great number, crowd<br></span></a>
+<a class="note1">lapidēs<span>lapis lapis N (3rd) F  <br>:stone; milestone; jewel;<br>&nbsp;(c 複数  主格)<br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">tēla<span>telum teli N (2nd) N  <br>:dart, spear; weapon, javelin; bullet (gun);<br>&nbsp;(n 複数  対格)<br><br></span></a>
+<a class="note1">coicerent,<span>coicio coicere, cojeci, cojectus ３複　未完了　接続法;= throw, together, pile together, conclude</span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">mūrō<span><br><br></span></a>
+<a class="note1">cōnsistendī<span>consisto consistere, constiti, constitus V (3rd)  <br>:stop/stand/halt/cease; pause, linger; stop spreading/flowing; take a position;<br>(未来 分詞 受動態 m 単数 属格)<br>動名詞<br></span></a>
+<a class="note1">potestās<span>potestas potestatis N (3rd) F  <br>:power, rule, force; strength, ability; chance, opportunity;<br>(X 単数 主格)<br></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">nūllī.<span>nullus nulla, nullum (gen -ius) ADJ  <br>:no; none, not any; (PRONominal ADJ)<br>(X 単数 与格), <strike>(m 複数  主格),</strike><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p><font color="#0000ff"><b>cum causal or concessiveは接続法を取る　（AG549）(NewLatin286.2)</b></font></p>
+<p>coicerentは複である。主語のMultitudoは形式は単数だが、多いという意味で複数を取ったか？(NewLatin 254.4)</p>
+<p>multitudo coicerent lapides ac tela. (multitudoは人の意味）</p>
+<p><strong>consistendiは動名詞、属格</strong>で形容詞的に名詞（potentas)に掛かる</p>
+<p>nulliとかneminiを文末に持ってくるのがカエサルの流儀？らしい（G.Long)</p>
+<p><strong>nulliは所有の与格</strong>で、直訳すると　[<strong>power of standing on wall is to no one</strong>]ということらしい。<font color="#3366ff">そもそも所有の与格は[to ~]と訳されている。それをhouse is to meをI haveと訳しているようであり、必ずしもhaveと訳すよりは～に属す、～にある、というニュアンスか？</font></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p> 大変大きな人数で石や投槍を投げるので、誰も壁にとどまっている事はできない。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Cum<span></span></a>
+<a class="note1">fīnem<span>finis finis N (3rd) C  <br>:boundary, end, limit, goal; (pl.) country, territory, land;<br>(c 単数 対格)<br></span></a>
+<a class="note1">oppugnandī<span>動名詞　属格<br></span></a>
+<a class="note1">nox<span>nox noctis F 単数　主格;= night</span></a>
+<a class="note1">fēcisset,<span>facio ３単　過去完了　接続法<br></span></a>
+<a class="note0">Iccius<span></span></a>
+<a class="note0">Rēmus,<span><br><br></span></a>
+<a class="note0">summā<span><br><br></span></a>
+<a class="note1">nōbilitāte<span>nobilitas nobilitatis F奪格;= nobility<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">grātiā<span>fratia gratae F 奪格;=favor kindness, influence<br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">suōs,<span><br><br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note1">praeerat,<span>praesum praeesse, praefui, praefuturus V  <br>:be in charge/ control/h ead (of) (<strong>w/DAT</strong>); take the lead (in); be present (at);<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">ūnus<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">lēgātī<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">pāce<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">vēnerant,<span>venio ３複　過去完了　<br></span></a>
+<a class="note1">nūntium<span>nuntius nunti(i) N (2nd) M  <br>:<strong>messenger</strong>/herald/envoy; message (oral), warning; report; messenger's speech;<br>(X 単数 対格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">mittit,<span></span></a>
+<a class="note1">nisi<span>接続詞;= if not, except, unless</span></a>
+<a class="note1">subsidium<span>subsidium subsidi N主格　（対格）;= help, relief, reinforcement</span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">submittātur,<span>submitto submitere, submisi, submissus ３単　現在　受動　接続法;= emit, put forth, raise, lower, relieve<br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note0">diūtius<span><br><br></span></a>
+<a class="note1">sustinēre<span>不定詞　sustinoe = support, sustain</span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">posse.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p><strong>cum&nbsp;nox fecciset finem oppugnandi</strong> : Since(When) night make end of fight</p>
+<p>nobilitate et gratia : 性質の奪格(NewLatin 224)</p>
+<p>praeerat oppido : oppidoは間接目的語の与格 praeで始まる語も、与格の間接目的語を持つ（NewLatin 187.3)</p>
+<p><strong>qui venerant ad Casarem legati</strong> : このlegatiは主格で、一種の同格と考える<strike>。「使節として」legatiはlegoの受動完了分詞、m主格で、quiを修飾</strike></p>
+<p>sibi : 受益の与格</p>
+<p><strong>nisi 以降は間接話法になっている</strong>、主語はIcciusである。nuntium(=Messenger) からそれは判る、[彼は言った]、というような語が省略されている。またnon posseからも推測できる。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>夜になって攻撃が止んだとき、Iccius、彼はRemi族のなかで最も高貴で影響力のある人で、当時城塞の責任者であった、また彼はCaesarのところに和平交渉にきた使節の一人でもあったが、彼はCaesarに伝令を送り言った、援軍がなければ、降伏させられる、もう長くは持ちこたえられない、と。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

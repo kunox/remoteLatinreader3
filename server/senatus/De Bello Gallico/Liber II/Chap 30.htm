@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber II : Chap 30</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">[30]<span></span></a>
+<a class="note0">Ac<span></span></a>
+<a class="note0">prīmō<span><br><br></span></a>
+<a class="note0">adventū<span><br><br></span></a>
+<a class="note1">exercitūs<span>ここでは単　属格<br></span></a>
+<a class="note0">nostrī<span><br><br></span></a>
+<a class="note1">crēbrās<span>creber crebra -um, crebrior -or -us, creberrimus -a -um ADJ  <br>:thick/ crowded/ packed/ close set; <strong>frequent</strong>/ <strong>repeated</strong>, constant; numerous /abundant;<br>(f 複数  対格)<br><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note1">excursiōnes<span>excursio excursionis N (3rd) F  <br>:running forth; sally;<br>(c 複数  対格)<br></span></a>
+<a class="note0">faciēbant<span><br><br></span></a>
+<a class="note1">parvulīsque<span>parvulus 形容詞　複　奪格　;= very small
+parvus + ulus (~let)<br></span></a>
+<a class="note0">proeliīs<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">nostrīs<span><br><br></span></a>
+<a class="note0">contendēbant;<span><br><br></span></a>
+<a class="note1">posteā<span>副詞　;= afterward<br></span></a>
+<a class="note1">vāllō<span>vallum valli N (2nd) N  <br>:wall, rampart; entrenchment, line of palisades, stakes;<br>X 単数 奪格)<br></span></a>
+<a class="note0">pedum<span></span></a>
+<a class="note1">XII<span>duodecim 12<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">circuitū<span>circuitus circuitus N (4th) M  <br>:going round; patrol/circuit; way/path round; circumference; outer surface/edge;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">quīndecim<span>quindecim quindecimus -a -um, quindeci -ae -a, quindecie(n)s NUM <br>:fifteen;<br><br></span></a>
+<a class="note0">mīlium<span></span></a>
+<a class="note0">crēbrīsque<span><br><br></span></a>
+<a class="note1">castellīs<span>castellum castelli 複　奪格　;= town, village<br></span></a>
+<a class="note1">circummūnītī<span>circummunio circummunire, circummunivi, circummunitus V (4th) TRANS  <br>:invest with walls/siege works; wall/hem in, secure; fence around; fortify;<br>(完了 分詞 受動態 m 複数　主格), <br><br></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note1">continēbant.<span>contineo continere, continui, contentus V (2nd) TRANS  <br>:secure, maintain, sustain; fasten/hold in position; retain, keep safe, preserve;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>primo adventu exercitus nostri : exercitus nostriは属格でadventu、<strike>primo</strike>を修飾「我軍の最初の部分が到着したとき」</p>
+<p>primoは奪格に由来する副詞があるので素直に「最初は」adventuはinを伴っていないが<strong>時の奪格</strong>（NewLatin230)</p>
+<p>parvulis = parvus + ulus で　book bookletのような感じ。</p>
+<p><strike>後半は　<strong>continebant see circummuniti oppido</strong> が大筋。「防護された城塞によって自身を閉じ込めた」</strike></p>
+<p>circummunitiが属格だとしてもoppidoを修飾するにはおかしい。形容詞であるから（名詞ではない）oppidoと同じ格でなければならない。<strong>複数の主格</strong>で、Adatuciを表し分詞構文。「～によって防御された自分たちが自身をoppidoに安全に確保した」が逐語訳</p>
+<p><font color="#008000" style="background-color: rgba(0, 0, 0, 0);">oppido奪格は「手段の奪格」の特殊な慣用句。castris se tenere.(陣営に留まる）NewLatin 218.7</font></p>
+<p>どうやって防御したかと言えば、</p>
+<p><strike>１）vallo : これは木製の杭,柵、１２フィートの高さで１５マイルの長さで取り囲んでいる。この１５マイルは長すぎる、ということで解釈が不能とされている。１５pedumの間違い？（これらはいずれも<strong>手段の奪格</strong>）</strike></p>
+<strike>
+</strike><p><strike>2) crebris castellis　: 沢山の都市と言う意味だが、これもよく判らない。城塞の周りに小さな砦を沢山作った？</strike></p>
+<p>壁と砦で15マイルの周囲を防御した、</p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p>我軍が到着した最初には、彼らは城塞から頻繁に打って出て、軽い戦いを我軍と行っていたが、後には、高さ１２フィート、長さ１５マイルの柵で周りを覆い防護した城塞に閉じこもってしまった。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ubi<span></span></a>
+<a class="note1">vīneīs<span>vinea vineae N (1st) F  <br>:vines in a vineyard/arranged in rows; vine; (movable) bower-like shelter;<br>(c 複数  奪格)<br><br></span></a>
+<a class="note1">āctīs<span>ago agere, egi, actus 完了分詞　受動　奪格　;= drive, urge, conduct<br></span></a>
+<a class="note1">aggere<span>agger aggeris M 単　奪格　;= rampart, causeway, piler, heap mound, dam, mud wall</span></a>
+<a class="note1">extrūctō<span>extruo extruere, extruxi, extructus V (3rd)  <br>:pile up; build up, raise;<br>(完了 分詞 受動態 m 単数 奪格)<br></span></a>
+<a class="note1">turrim<span>turris turris 対格　;= tower, high building turrisの対格はturremもある</span></a>
+<a class="note1">procul<span>procul 副詞　;= away, at distance, far off</span></a>
+<a class="note1">cōnstituī<span>constituo constituere, constitui, constitutus V (3rd)  <br>:||establish/create/institute; draw up, arrange/set in order; make up, form; fix;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">vīdērunt,<span><br><br></span></a>
+<a class="note1">prīmum<span>副詞　at first<br></span></a>
+<a class="note1">inrīdēre<span>inrideo inridere, inrisi, inrisus V (2nd)  <br>:laugh at, ridicule;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">mūrō<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">increpitāre<span>increpito increpitare, increpitavi, increpitatus V (1st)  <br>:chide, utter (noisy) reproaches at;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">vōcibus,<span>vox vocis N (3rd) F  <br>:voice, tone, expression;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">tanta<span>tantus tanta tantum 形容詞　単　主格　;= of such size, so great</span></a>
+<a class="note1">māchinātiō<span>machinatio machinationis N (3rd) F  <br>:machine; engine (of war), mechanism, contrivance, artifice; trick, device;<br>(X 単数 主格)<br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">tantō<span><br><br></span></a>
+<a class="note1">spatiō<span>spatium spati(i) N (2nd) N  <br>:space; area/expanse, room (for); intervening space, gap/interval; length/width;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">instituerētur:<span>instituo instituere, institui, institutus V (3rd)  <br>:set up, establish, found, make, institute; build; prepare; decide;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note0">quibusnam<span></span></a>
+<a class="note0">manibus<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">vīribus<span><br><br></span></a>
+<a class="note1">praesertim<span>副詞　;= especially</span></a>
+<a class="note0">hominēs<span><br><br></span></a>
+<a class="note1">tantulae<span>tantulus tantula, tantulum 単　属格　;= so very small, </span></a>
+<a class="note1">statūrae<span>statura staturae N (1st) F  <br>:height, stature;<br>(c 単数 属格),<br></span></a>
+<a class="note1">(nam<span>接続詞　;= for, on the other hand, for instance</span></a>
+<a class="note1">plērumque<span>副詞　;= generally, commonly<br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">Gallīs<span>複　与格<br></span></a>
+<a class="note1">prae<span>前置詞　（奪格支配）　;= before. in fornt, in view of</span></a>
+<a class="note0">magnitūdine<span><br><br></span></a>
+<a class="note1">corporum<span>複　属格</span></a>
+<a class="note0">quōrum<span><br><br></span></a>
+<a class="note1">brevitās<span>brevitas brevitatis N (3rd) F  <br>:shortness, smallness, narrowness; brevity, conciseness, terseness;<br>(X 単数 主格),<br></span></a>
+<a class="note0">nostra<span></span></a>
+<a class="note1">contemptuī<span>contemptus contemptus N (4th) M  <br>:contempt/scorn/despising (act/state); <strong>ignominy</strong>; disregard; object of contempt;<br>(c 単数 与格)<br></span></a>
+<a class="note0">est)<span></span></a>
+<a class="note1">tantī<span>tantus tanta -um 形容詞　単　属格　;= of such size, so great<br></span></a>
+<a class="note1">oneris<span>onus oneris N 単　属格　;= load, burden, cargo</span></a>
+<a class="note0">turrim<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">mūrō<span><br><br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note1">posse<span>possum 不定詞</span></a>
+<a class="note1">conlocāre<span>comloco conlocare, conlocavi, conlocatus 不定詞　;= place, set in order, arrange, station<br></span></a>
+<a class="note1">cōnfīderent?<span>confido confidere, confisus sum V (3rd) SEMIDEP  <br>:have confidence in, rely on, trust (to); believe, be confident/assured; be sure;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p>vineis actis aggere extructo : 独立奪格　２つ　「Vineaが引き出され、土塁が積まれ」&nbsp;<a class="imageshow"> veniaの図<span style="display: none;">vineae.jpg</span></a></p>
+<p>turrim procul costitui : 攻撃櫓が組まれる事&nbsp;&nbsp; <a class="imageshow">turris図<span style="display: none;">turris.jpg</span></a></p>
+<p><strong>inridere&nbsp;&nbsp; increpitare</strong> : 歴史的不定詞 (直説法未完了相当)<a class="imageshow"><span style="display: none;">turris.jpg</span></a></p>
+<p><strong>quibusnam</strong> :&nbsp;namは疑問を強調する。「一体何が？」など</p>
+<p><strong>prae magnitudine corporum quorum</strong> : 彼らの身体の大きさの前では</p>
+<p><strong>tantulae statuae</strong> : 性質の属格　man of~</p>
+<p><strong>brevitas nostra est contemptui omnibus Gallis</strong> : comtemptui, Gallisは共に与格で二重与格「～にとってーである」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Vineaが引き出され土塁が積まれ、攻撃櫓が遠くに建てられるのをみて（彼らは）最初は壁からあざ笑い、声で囃し立てたりした。と言うのはそういう大きさの機械をそんなに遠くで作って居たからである。一体どんな手で、またどういう力を使って、特に小さな身長の人間たちが、そんな大きな塔を壁に取り付けられるという自信があるのだろうか？（我々の体格の貧弱さは、彼らの身体の大きさと比較して、ガリア全般で嘲りの対象になっていた。）</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

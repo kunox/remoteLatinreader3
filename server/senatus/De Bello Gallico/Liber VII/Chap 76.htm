@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 76</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[76]<span></span></a>
+
+<a class="note1">Huius<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(X 単数 属格)<br></span></a>
+<a class="note1">operā<span>opera operae N (1st) F  <br>:work, care; aid; service, effort/trouble;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">Commī,<span>属格<br><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">anteā<span><br><br></span></a>
+<a class="note0">dēmōnstrāvimus,<span><br><br></span></a>
+<a class="note1">fidēlī<span>fidelis fidele, fidelior -or -us, fidelissimus -a -um ADJ  <br>:faithful/loyal/devoted; true/trustworthy/dependable/reliable; constant/lasting;<br>(X 単数 奪格)<br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">ūtilī<span>utilis utilis, utile ADJ  <br>:useful, profitable, practical, helpful, advantageous;<br>(X 単数 奪格)<br><br></span></a>
+<a class="note0">superiōribus<span><br><br></span></a>
+<a class="note0">annīs<span><br><br></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">ūsus<span>utor uti, usus sum V (3rd) DEP  <br>:use, make use of, enjoy; enjoy the friendship of (<strong>with ABL</strong>);<br>(完了 分詞 受動態 m 単数 主格)<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Britanniā<span><br><br></span></a>
+<a class="note0">Caesar;<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">ille<span></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note1">meritīs<span>meritum meriti N (2nd) N  <br>:merit, service; value, due <strong>reward</strong>;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">cīvitātem<span><br><br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">immūnem<span>immunis immunis, immune ADJ  <br>:free from taxes/tribute, exempt; immune;<br>(c 単数 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">iusserat,<span>jubeo jubere, jussi, jussus V (2nd) TRANS  <br>:order/tell/command/direct; enjoin/command; decree/enact; request/ask/bid; pray;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note1">iūra<span>jus juris N (3rd) N  <br>:law; legal system; code; right; duty; <strong>justice</strong>; court; binding decision; oath;<br>(n 複数  対格)<br><br></span></a>
+<a class="note1">lēgēsque<span>lex legis N (3rd) F  <br>:law; motion, bill, statute; principle; condition;<br>(c 複数  対格)<br></span></a>
+<a class="note1">reddiderat<span>reddo reddere, reddidi, redditus V (3rd)  <br>:return; restore; deliver; hand over, pay back, render, give back; translate;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ipsī<span><br><br></span></a>
+<a class="note0">Morinōs<span><br><br></span></a>
+<a class="note1">attribuerat.<span>attribuo attribuere, attribui, attributus V (3rd) TRANS  <br>:assign/allot/attribute/impute to; grant, pay; appoint, put under jurisdiction;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Caesar erat usus fideli atque utili opera huius Commi. 「CaesarはそのCommiusの忠実で有益な仕事を使った」</p>
+<p>pro quibus meritis, ille jusserat eius civitatem esse immunem. 「その見返りに彼はその部族に対し税を免除するよう命じた」</p>
+<p>attribuerat ipsi Morinos. ipsiはCommiusを指す。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>そのCommiusの忠実で有益な仕事を、前に言ったように、前年にはBritaniaで使っており、その見返りに、彼の国には税を免除し、正義と法を取り戻し、また彼にMoriniの国を与えた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Tamen<span></span></a>
+<a class="note0">tanta<span></span></a>
+<a class="note1">ūniversae<span>universus universa, universum ADJ  <br>:whole, entire; all together; all; universal;<br>(f 単数 属格)<br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note1">cōnsēnsiō<span>consensio consensionis N (3rd) M  <br>:agreement (opinion), consent, accordance, harmony; unanimity; plot, conspiracy;<br>(X 単数 主格)<br></span></a>
+<a class="note0">fuit<span></span></a>
+<a class="note0">lībertātis<span><br><br></span></a>
+<a class="note1">vindicandae<span>vindico vindicare, vindicavi, vindicatus V (1st)  <br>:claim, vindicate; punish, avenge;<br>(未来 分詞 受動態 f 単数 属格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">prīstinae<span>pristinus pristina, pristinum ADJ  <br>:former, oldtime, original; pristine;<br>(f 単数 属格)<br></span></a>
+<a class="note1">bellī<span>bellum belli N (2nd) N  <br>:war, warfare; battle, combat, fight; (at/in) (the) war(s); military force, arms;<br>(n 単数 属格), (X 単数 処格)<br></span></a>
+<a class="note1">laudis<span>laus laudis N (3rd) F  <br>:praise, approval, merit; glory; renown;<br>(X 単数 属格)<br></span></a>
+<a class="note1">recuperandae,<span>recupero recuperare, recuperavi, recuperatus V (1st)  <br>:regain, restore, restore to health; refresh, recuperate;<br>(未来 分詞 受動態 f 単数 属格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">beneficiīs<span>beneficium benefici(i) N (2nd) N  <br>:kindness, <strong>favor</strong>, benefit, service, help; privilege, right;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">amīcitiae<span>amicitia amicitiae N (1st) F  <br>:friendship, bond between friends; alliance, association; friendly relations;<br>(c 単数 属格),<br></span></a>
+<a class="note1">memōria<span>memoria memoriae N (1st) F  <br>:memory, recollection; history; time within memory<br>(c 単数 奪格)<br></span></a>
+<a class="note1">movērentur,<span>moveo movere, movi, motus V (2nd)  <br>:move, stir, agitate, affect, provoke, disturb;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+<a class="note0">omnēsque<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">animō<span>animus animi N (2nd) M  <br>:mind; intellect; soul; feelings; heart; spirit, courage, character, pride; air;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">opibus<span>ops opis N (3rd) F  <br>:power, might; help; influence; <strong>resources</strong>/wealth (pl.);<br>(X 複数  奪格)<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">incumberent.<span>incumbo incumbere, incumbui, incumbitus V (3rd)  <br>:lean forward/over/on, press on; attack, apply force; fall on (one's sword);<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p><strong>tamen tanta fuit universae Galliae cons</strong>ensio. : tantaは形容詞名詞化で主語。述語はconsensio, 続くlibertatis, laudisは目的語の属格で行為の向かう先を表す。（NewLatin 200)　</p>
+<p><strong>libertatis vindicandae</strong> : 要求すべき自由（を求めて）</p>
+<p><strong>recuperandae pristinae laudis belli</strong>. : belliがちょっと不明。取り戻すべき過去の栄光、belliはもしかすると処格で、戦いでの栄光の意か？</p>
+<p>utは結果の節で接続法。（NewLatin 284)(主節のtantusが使われている）</p>
+<p>omnes incumberent in id bellum animo et opibus.&nbsp; animo, opibusは手段の奪格？「みんな、この戦いに心も持ち物も全てを使って自身を捧げている」が逐語訳<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>しかしながら強力であったのは、全ガリアの団結でそれは主張すべき自由、取り戻すべき過去の戦いでの栄光などを求めていた。なので交情や友情の記憶にによって動かされることはなく、全員、この戦いに身も心も全てを捧げていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Coāctis<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; force/compel; convene; congeal;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">equitum<span>eques equitis N (3rd) M  <br>:horseman/cavalryman/rider; horsemen (pl.), cavalry; equestrian order;<br>(c 複数  属格)<br></span></a>
+<a class="note1">VIII<span>octo<br><br></span></a>
+<a class="note0">mīlibus<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">peditum<span></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note1">CCL<span>duocentis et quinquaginta 250<br><br></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Aeduōrum<span><br><br></span></a>
+<a class="note0">fīnibus<span><br><br></span></a>
+<a class="note1">recēnsēbantur,<span>recenseo recensere, recensui, recensitus V (2nd) TRANS  <br>:<strong>review</strong>/examine/survey/muster; enumerate/count, make census/roll; pass in review;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">numerusque<span></span></a>
+<a class="note1">inībātur,<span>ineo inire, inivi(ii), initus V  <br>:enter; undertake; begin; go in; enter upon;<br>(３人称 単数 未完了 受動態 直説法 )<br></span></a>
+<a class="note1">praefectī<span>praefectus praefecti N (2nd) M  <br>:commander; prefect;<br>&nbsp;(c 複数  主格),<br></span></a>
+<a class="note1">cōnstituebāntur.<span>constituo constituere, constitui, constitutus V (3rd)  <br>:|decide/resolve; decree/ordain; appoint, post/station (troops); settle (colony);<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>inibatur ineoは計算するという意味がある？Chap 71にもratione initaとある。普通の辞書には計算するとは出ていないのだが... numerus interfectorum haud facile initri potuit.(Liv. xxxVIII 23)<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>8千の騎兵、約２５万の歩兵を集めて、Auduiの領地で点検し、数を数えられ、指揮官が決められた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Commiō<span><br><br></span></a>
+<a class="note0">Atrebātī,<span><br><br></span></a>
+<a class="note0">Viridomārō<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Eporēdorīgī<span><br><br></span></a>
+<a class="note0">Aeduīs,<span></span></a>
+<a class="note0">Vercassivellaunō<span><br><br></span></a>
+<a class="note0">Arvernō,<span><br><br></span></a>
+<a class="note1">cōnsobrīnō<span>consobrinus consobrini N (2nd) M  <br>:first cousin (male); (on mother's side); children of sisters (L+S); relation;<br>(X 単数 与格), <br></span></a>
+<a class="note0">Vercingetorīgis,<span><br><br></span></a>
+<a class="note0">summa<span></span></a>
+<a class="note0">imperī<span></span></a>
+<a class="note1">trāditur.<span>trado tradere, tradidi, traditus V (3rd)  <br>:hand over, surrender; deliver; bequeath; relate;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Atrebates族のCommius、AuduiのViridomarusとEporedorix、ArveniのVercassivellaunus、彼はVercingetorixのいとこである、に最高指揮権が与えられた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hīs<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(X 複数  与格), <br></span></a>
+<a class="note1">dēlēctī<span>delectus delecta, delectum ADJ  <br>:picked, chosen, <strong>select</strong>; (for attaining high standard);<br>(m 複数  主格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">cīvitātibus<span><br><br></span></a>
+<a class="note1">attribuuntur,<span>attribuo attribuere, attribui, attributus V (3rd) TRANS  <br>:assign/allot/attribute/impute to; grant, pay; appoint, put under jurisdiction;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note0">quōrum<span><br><br></span></a>
+<a class="note1">cōnsiliō<span>consilium consili(i) N (2nd) N  <br>:debate/ discussion/ deliberation/ <strong>consultation</strong>; advice/ counsel/ suggestion; adviser;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">bellum<span>bellum belli N (2nd) N  <br>:war, warfare; battle, combat, fight; (at/in) (the) war(s); military force, arms;<br>(n 単数 主格),<br></span></a>
+<a class="note1">administrārētur.<span>administro administrare, administravi, administratus V (1st)  <br>:administer, manage, direct; assist; operate, conduct; maneuver (ship); bestow;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>delecti attribuuntur his : 彼らに対し選択されたものたちが割り当てられ</p>
+<p>bellum administraretur quorum consilio. <br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>彼らに対し、各部族から選ばれた者たちが充てられ、彼らとの相談で戦いが実行される。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Omnēs<span><br><br></span></a>
+<a class="note1">alacrēs<span>alacris alacris, alacre ADJ  <br>:eager/keen/spirited; quick/brisk; active/lively; courageous/ready; cheerful;<br>(c 複数  主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">fīdūciae<span>fiducia fiduciae N (1st) F  <br>:trust, confidence; faith, reliance; courage;<br>&nbsp;(c 複数  主格),<br></span></a>
+<a class="note1">plēnī<span>plenus plena -um, plenior -or -us, plenissimus -a -um ADJ  <br>:full, plump; satisfied;<br>(m 複数  主格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Alesiam<span></span></a>
+<a class="note1">proficīscuntur,<span>proficiscor proficisci, profectus sum V (3rd) DEP  <br>:depart, set out; proceed;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note1">quisquam<span>quisquam quaequam, quidquam ADJECT  <br>:(w/-quam) any; anyone/anybody (no pl.) (INDEF) anything; any man, <strong>any person</strong>;<br>(m 単数 主格)<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">aspectum<span>aspectus aspectus N (4th) M  <br>:appearance, aspect, mien; act of looking; <strong>sight</strong>, vision; <strong>glance</strong>, view; horizon;<br>(c 単数 対格)<br></span></a>
+<a class="note1">modo<span>modo ADV <br>:only, merely; just now/recently, lately; presently;<br><br></span></a>
+<a class="note0">tantae<span></span></a>
+<a class="note1">multitūdinis<span>multitudo multitudinis N (3rd) F  <br>:multitude, great number; crowd; rabble, mob;<br>(X 単数 属格)<br></span></a>
+<a class="note1">sustinērī<span>sustineo sustinere, sustinui, sustentus V (2nd)  <br>:support; check; put off; put up with; sustain; hold back;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">posse<span></span></a>
+<a class="note1">arbitrārētur,<span>arbitror arbitrari, arbitratus sum V (1st) DEP  <br>:observe, witness; testify; decide, judge, sentence; believe, think, imagine;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note1">praesertim<span>praesertim ADV <br>:especially; particularly;<br><br></span></a>
+<a class="note1">ancipitī<span>anceps (gen.), ancipitis ADJ  <br>:|<strong>on two sides</strong>/fronts (war/attack); undecided/drawn/hanging in balance (battle);<br>(X 単数 奪格)<br></span></a>
+<a class="note0">proeliō,<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">oppidō<span><br><br></span></a>
+<a class="note0">ēruptiōne<span></span></a>
+<a class="note0">pugnārētur,<span><br><br></span></a>
+<a class="note1">forīs<span>foris ADV <br>:out of doors, abroad;<br><br></span></a>
+<a class="note0">tantae<span></span></a>
+<a class="note0">cōpiae<span><br><br></span></a>
+<a class="note0">equitātūs<span><br><br></span></a>
+<a class="note0">peditātūsque<span><br><br></span></a>
+<a class="note1">cernerentur.<span>cerno cernere, crevi, cretus V (3rd) TRANS  <br>:sift, separate, distinguish, discern, resolve, determine; see; examine; decide;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>alacres et fiduciae omnes proficiscuntur ad Alesiam. 「士気が高い自信に溢れた全員がAlesiaに出発した」が逐語訳</p>
+<p>neque erat quisquam omnium qui ~. : 全員のうち～という人はいなかった。neque quisquamはneque quicquamと同じくnoone, nothingの意か？（II Chap17参照）noone exists who ~</p>
+<p>aspectumは、posse sustineriの目的語。「その威容を耐えることができる」が逐語訳。</p>
+<p>praesertim ancipiti proelio: 付帯状況の奪格？「特に両面作戦の戦いにおいては」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>みんな士気が高く、自信に満ちてAlesiaに向かって出発した。誰も、かくも大人数の威容に耐えられるとは考えなかった。特に両面作戦の戦い、つまり城塞からの突撃に依る戦いの時に、外側に大部隊の騎兵と歩兵が見られるような場合である。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

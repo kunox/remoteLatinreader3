@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 6</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[6]<span></span></a>
+
+<a class="note0">Caesar<span></span></a>
+<a class="note0">partītīs<span><br><br></span></a>
+<a class="note0">cōpiīs<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Gaio<span></span></a>
+<a class="note0">Fabiō<span><br><br></span></a>
+<a class="note0">lēgātō<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Marco<span></span></a>
+<a class="note0">Crassō<span><br><br></span></a>
+<a class="note0">quaestōre<span><br><br></span></a>
+<a class="note0">celeriterque<span></span></a>
+<a class="note1">effectīs<span>efficio efficere, effeci, effectus V (3rd)  <br>:bring about; effect, execute, cause; accomplish; make, produce; prove;<br>(完了 分詞 受動態  複数  奪格)<br><br></span></a>
+<a class="note1">pontibus<span>pons pontis N (3rd) M  <br>:bridge;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">adit<span>adeo adire, adivi(ii), aditus V  <br>:approach; attack; visit, address; undertake; take possession (inheritance);<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">tripertītō,<span>tripertito ADV <br>:in three parts;<br><br></span></a>
+<a class="note1">aedificia<span>aedificium aedifici(i) N (2nd) N  <br>:building; edifice, structure;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note1">vīcōsque<span>vicus vici N (2nd) M  <br>:village; hamlet; street, row of houses;<br>(c 複数  対格)<br></span></a>
+<a class="note1">incendit,<span>incendo incendere, incendi, incensus V (3rd) TRANS  <br>:set on fire; set fire to, kindle, burn; cause to flame/burn; keep fire burning;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note0">pecoris<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">hominum<span></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note1">potītur.<span>potior poti, potitus sum V (3rd) DEP  <br>:|seize, capture; control; have/possess; reign over; win sexually;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>mango numero : potiorは奪格を目的語にとる。（NewLatin218.1)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>Caesarは軍勢を、軍団長である、C.Fabiusと財務官のM.Crassusと分けて、直ちに橋を架け、3方面を攻撃した。村や建物には火をつけ、たくさんの人や家畜を捕らえた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quibus<span></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">coāctī<span>cogo cogere, coegi, coactus V (3rd) TRANS  <br>:collect/gather, round up, restrict/confine; <strong>force</strong>/<strong>compel</strong>; convene; congeal;<br>&nbsp;(完了 分詞 受動態 m 複数  主格), <br><br></span></a>
+<a class="note0">Menapiī<span><br><br></span></a>
+<a class="note0">lēgātōs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note1">pācis<span>pax pacis N (3rd) F  <br>:peace; harmony;<br>(X 単数 属格)<br></span></a>
+<a class="note0">petendae<span></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">mittunt.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらのことによりMenapiiは止むを得ず、Caesarに和平を請うために使者を送る。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ille<span></span></a>
+<a class="note0">obsidibus<span></span></a>
+<a class="note1">acceptīs<span>accipio accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">hostium<span>hostis hostis N (3rd) C  <br>:enemy (of the state); stranger, foreigner; the enemy (pl.);<br>(c 複数  属格)<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">habitūrum<span><br><br></span></a>
+<a class="note1">numerō<span>numerus numeri N (2nd) M  <br>:number/sum/total/rank; (superior) numerical strength/plurality; category; tally;<br>(X 単数 与格)<br></span></a>
+<a class="note0">cōnfīrmat,<span><br><br></span></a>
+<a class="note0">sī<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">Ambiorīgem<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">lēgātōs<span><br><br></span></a>
+<a class="note0">fīnibus<span><br><br></span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note1">recēpissent.<span>recipio recipere, recepi, receptus V (3rd)  <br>:keep back; recover; undertake; guarantee; accept, take in; take back;<br>(３人称 複数  過去完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>Ille confirmat se habiturum (esse) hostium numero si ~. もし～ならば敵の仲間に持つであろう、が逐語訳。<strong>hostium numero</strong>は慣用句として = as enemy。numeroにはカテゴリとか集計の意味があり、「敵の分類として数え上げる」事をもつであろう、ということか？numeroは多分間接目的語の与格？(Chap 13参照）<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>人質を受け入れ、次のように言い渡した。もし、Ambiorix及び彼の使者を領内に入れた場合は、敵として見倣すであろう、と。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hīs<span></span></a>
+<a class="note0">cōnfīrmātīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">Commium<span></span></a>
+<a class="note0">Atrebātem<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">equitātū<span><br><br></span></a>
+<a class="note1">custōdis<span>custos custodis N (3rd) C  <br>:guard; sentry/watch; guardian/protector/keeper; doorkeeper/watchman/janitor;<br>(X 単数 属格)<br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Menapiīs<span><br><br></span></a>
+<a class="note0">relinquit;<span></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Trēverōs<span><br><br></span></a>
+<a class="note0">proficīscitur.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>custodis loco : 与格、=as guardian この用法は他にもあり、上の行の、hostium numero, Chap 13にある servorum locoなど。</p>
+<p>[dat. propositi]とも呼ばれているらしい？（Mobery　V-5）<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらを言い渡して、AtrebatianのCommiusを騎兵とともに監視役として留め、自身はTreveriに向かって出発した。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

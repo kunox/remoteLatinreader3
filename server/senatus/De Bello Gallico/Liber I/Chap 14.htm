@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber I : Chap 14</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[14]<span></span></a>
+
+<a class="note1">Hīs<span>前のディウィコが言った事柄<br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note1">respondit:<span>3 単 完了 能動態 直説法 <br>respondeo</span></a>
+<a class="note1">eō<span>is 奪格 <br>原因の奪格<br>quod eas resで説明<br><br></span></a>
+<a class="note1">sibi<span>間接話法なので自分のこと　与格</span></a>
+<a class="note1">minus<span>minor(形容詞）の中性単数対格、名詞化してこの場合、主語</span></a>
+<a class="note1">dubitātiōnis<span>dubitatio, dubitationis 名詞 (3rd) F   :doubt, irresolution,uncertainty; wavering, hesitation; questioning; 属格</span></a>
+<a class="note1">darī,<span>do 不定詞　受動<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">eās<span><br><br></span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note1">quās<span>qui 対格　複数<br></span></a>
+<a class="note0">lēgātī<span><br><br></span></a>
+<a class="note0">Helvētiī<span><br><br></span></a>
+<a class="note1">commemorāssent<span>= commemoravissent <br>commemoro, commemorare, commemoravi, commemoratus 動詞 (1st) TRANS   :recall (to self/other); keep in mind, remember; <br>3 複 過去完了 能動態 接続法<br></span></a>
+<a class="note1">memoriā<span>奪格（手段の奪格）メモリによってホールドしている<br></span></a>
+<a class="note1">tenēret,<span>teneo, tenere, tenui, tentus 動詞 (2nd)   :hold, keep; comprehend; possess; master; preserve;<b>3 単 </b>未完了 能動態 接続法)主語はカエサル<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">eō<span>quo ~a(奪格) 、eo ~b  <br> = ~aすればするほど、～ｂ<br><br></span></a>
+<a class="note1">gravius<span>graviter 副詞　の比較級graviter ADV  :violently; deeply; severely; reluctantly;</span></a>
+<a class="note1">ferre<span>fero, ferre, tuli, latus 動詞   :bring, bear; tell/speak of; <u>consider</u>; carry off, win, receive, produce; get;suffer, endure 不定詞　目的語は書かれていないが前出のeas res</span></a>
+<a class="note1">quō<span>ｑui 奪格<br></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note1">meritō<span>meritum, meriti 名詞 (2nd) N   :merit, service; value, due reward; 奪格(手段） <br>＝by the deserving of the Roman people<br></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">accidissent;<span>accido, accidere, accidi, - 動詞 (3rd)   :fall upon/down/to/at or near, descend, alight; happen, occur; happen to (DAT);  <br>3 複 過去完了 能動態 接続法</span></a>
+<a class="note1">quī<span>先行詞はpopuli Romani <br>consciusの主語<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">alicuius<span>aliqui, 代名詞  :any; some; <br>単　属格（=alicujus)<br></span></a>
+<a class="note1">iniūriae<span>injuria, injuriae 名詞 (1st) F   :injury; injustice, wrong, offense; insult, abuse; sexual assault;属格(Alicuiusは属格）consciusは与格属格を取る<br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">cōnscius<span>conscius, conscia, conscium 形容詞   :conscious, aware of, knowing, privy (to); sharing (secret) knowledge; guilty;<br></span></a>
+<a class="note1">fuisset,<span>(3 単 過去完了 能動態 接続法)</span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">fuisse<span>不定詞</span></a>
+<a class="note1">difficile<span>difficilis, difficile, difficilior -or -us, difficillimus -a -um 形容詞   :difficult, troublesome;主格</span></a>
+<a class="note1">cavēre;<span>caveo, cavere, cavi, cautus 動詞 (2nd)   :beware, avoid, take precautions/defensive action; give/get surety; stipulate; <br>不定詞<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note1">dēceptum,<span>decipio, decipere, decepi, deceptus 動詞 (3rd) TRANS   :cheat/deceive/mislead/dupe/trap; elude/escape notice;  <br>完了 分詞 受動態 n 単 主格 <br>(esse)を補って　been deceived by this.(eoは奪格）<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">commissum<span>committo, committere, commisi, commissus 動詞 (3rd)   :|engage (battle), set against; begin/start; bring about; commit; incur; forfeit; <br>完了分詞　受動 <br>（esse省略）コミットされた</span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">intellegeret<span>intellego, intellegere, intellexi, intellectus 動詞 (3rd)   :understand; realize;3 単 未完了 能動態 接続法</span></a>
+<a class="note1">quārē<span>quare, 副詞   :in what way? how? by which means, whereby;  <br>= propter quod = because <br>commissumを説明<br></span></a>
+<a class="note1">timēret<span>timeo, timere, timui, - 動詞 (2nd)   :fear, dread, be afraid (ne + SUB = lest;3 単 未完了 能動態 接続法)<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">sine<span>sine, 前置詞 (奪格)  :without; (sometimes after object); lack;</span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">timendum<span>未来分詞　主格　受動態 <br>=which to be feared</span></a>
+<a class="note1">putāret.<span>puto, putare, putavi, putatus 動詞 (1st) TRANS   :think, believe, suppose,3 単 未完了 能動態 接続法)<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>His Caesar ita respondit:Divicoの言ったこと（hic)に対して答えた（以下、間接話法になる）</p>
+<p>eo sibi minus dubitationis dari,　：　eoは続くquod ear res以下で説明される事。原因の奪格</p>
+<p>dubitationisは[<strong>全体の属格</strong>]。意味は直訳すると、「其の点については少しの疑いがカエサルのために与えられた」dariが不定詞なのは間接話法の動詞、minusは形容詞の名詞化で「（疑い全部の内）の少し」(<b>minorの中性単数対格)</b></p>
+<p>quod eas res quas legati Helvetii commemorassent memoria teneret　：quodは becauseの意の副詞。memoria（奪格）記憶によってteneretホールドしている〈主語はカエサル）</p>
+<p>, atque eo gravius ferre quo minus merito populi Romani accidissent; ：　<strong>eo~ quo ~はthe~ the~と同様</strong>　[<strong>差異の度合いの奪格</strong>] (NewLatin223)の例文　（<i>quō plurā habēmus, eō cupimus ampliōra.たくさん持つほど沢山欲しくなる</i>）</p>
+<p>accidissentは３複数であることに注意。主語はear resかそれに類する事、起きたこと）</p>
+<p><b>graviusは形容詞ではなく副詞。graviterの比較級（副詞の比較級は対応する形容詞の比較級、中性対格）</b></p>
+<p>merito populi Romani :ローマ人民の過失によって（手段の奪格）</p>
+<p>qui si alicuius iniuriae sibi conscius fuisset, non fuisse difficile cavere;quiの先行詞はpopuli Romaniでconsciusの主語；</p>
+<p>sibiは彼ら自身に対し　<b>be concious to themselves of things</b></p>
+<p>sed eo deceptum,　＝　populum Romanum eo deceptum esse ; eo= by this(<b>eoは奪格）</b></p>
+<p>neque commissum a se intellegeret quare timeret : commissum esse intellegeret, timeretは３単数でここではpopulum Romanumが主語　；　自身から（彼らを脅かす事は）何もコミットしていないと考えていた</p>
+<p>neque sine causa timendum putaret. :　neque putaret timendum 恐れべきものが有るとは思わなかった。</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>それに対しカエサルは以下のように答えた。私も今ヘルウェティの使者が記憶を新たにした事柄についてはよく覚えているからこそ、躊躇うことは殆どない。そしてそのことに関して言えばローマ側の過失が少ないので、余計に残念に感じている。もしローマ側で何らかの攻撃がありそうだと感知していれば、防御するのは難しくなかった。しかし彼らは騙されたのだ。と言うのはローマ側は彼らにとって脅威となるようなものは何もしなかったと理解していたし、何かの恐るべきものが有るとかんがえる理由もなかった。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quod<span>quod si = but even if</span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">veteris<span>vetus, veteris (gen.), veterior -or -us, veterrimus -a -um 形容詞   :old, aged, ancient; former; veteran, experienced; long standing, chronic;属格〈単）</span></a>
+<a class="note1">contumēliae<span>contumelia, contumeliae 名詞 (1st) F   :indignity, affront, abuse/insult; 属格<br></span></a>
+<a class="note1">oblīvīscī<span>obliviscor, oblivisci, oblitus sum 動詞 (3rd) DEP   :forget; (with GEN);不定詞<br></span></a>
+<a class="note1">vellet,<span>volo, velle, volui, - 動詞   :wish, want, prefer; be willing, will; <br>3 単 未完了 能動態 接続法</span></a>
+<a class="note1">num<span>num, 副詞   :if, whether; now, surely not, really, then (asking question expecting neg);</span></a>
+<a class="note1">etiam<span>also</span></a>
+<a class="note1">recentium<span>recens, (gen.), recentis 形容詞   :fresh, recent; rested;複属格</span></a>
+<a class="note1">iniūriārum,<span>injuria, injuriae 名詞 (1st) F   :injury; injustice, wrong, offense; insult, abuse; sexual assault; 複属格<br></span></a>
+<a class="note1">quod<span>factのquod = the fact that <br>本当は直説法の場合であるがここは間接話法の中なので接続法になっている</span></a>
+<a class="note1">eō<span>is 奪格 <br>独立奪格　彼の意志に背いて <br>間接話法なのでカエサルの事<br></span></a>
+<a class="note1">invītō<span>invitus, invita, invitum 形容詞   :reluctant; unwilling; against one's will; 奪格<br></span></a>
+<a class="note0">iter<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">prōvinciam<span><br><br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">vim<span>対格vis force, power</span></a>
+<a class="note1">temptāssent,<span>=temptavissent <br>tempto, temptare, temptavi, temptatus 動詞 (1st)   :test, try; urge; worry; bribe; <br>3 複 過去完了 能動態 接続法<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">Haeduōs,<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">Ambarrōs,<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">Allobrogas<span><br><br></span></a>
+<a class="note1">vexāssent,<span>vexo, vexare, vexavi, vexatus 動詞 (1st)   :shake, jolt, toss violently; annoy, trouble, <br>3 複 過去完了 能動態 接続法)<br></span></a>
+<a class="note1">memoriam<span>対格 recentium injuriaum memoriam 最近の攻撃の記録</span></a>
+<a class="note1">dēpōnere<span>depono, deponere, deposivi, depositus 動詞 (3rd) TRANS   :put/lay down/aside/away; let drop/fall; give up; resign;不定詞<br></span></a>
+<a class="note1">posse?<span>possum 不定詞</span></a>
+<a class="note1">Quod<span>factのquod</span></a>
+<a class="note0">suā<span><br><br></span></a>
+<a class="note1">victōriā<span>victory (主格)　奪格<br></span></a>
+<a class="note1">tam<span>tam, 副詞   :so, so much (as); to such an extent/degree;</span></a>
+<a class="note1">īnsolenter<span>insolenter, insolentius, insolentissime 副詞   :haughtily, arrogantly, insolently;<br></span></a>
+<a class="note1">glōriārentur<span>glorior, gloriari, gloriatus sum 動詞 (1st) DEP   :boast, brag; glory, pride oneself;3 複 未完了 受動態 接続法)大言壮語<br></span></a>
+<a class="note1">quodque<span>qoud + que</span></a>
+<a class="note0">tam<span></span></a>
+<a class="note1">diū<span>diu, diutius, diutissime 副詞   :(for) a long/considerable time/while; long since;<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">impūne<span>impunis, impunis, impune 形容詞   :unpunished;対格<br></span></a>
+<a class="note1">iniūriās<span>injuria=injury対格<br></span></a>
+<a class="note1">tulisse<span>fero, ferre, tuli, latus 動詞   :bring, bear; tell/speak of; consider; carry off, win, receive, produce; get; 不定詞</span></a>
+<a class="note1">admīrārentur,<span>admiror, admirari, admiratus sum 動詞 (1st) DEP   :admire, respect; regard with wonder, <br>3 複 未完了 受動態 接続法)<br></span></a>
+<a class="note1">eōdem<span>eodem ADV  :to the same place/purpose;<br></span></a>
+<a class="note1">pertinēre.<span>pertineo, pertinere, pertinui, pertentus 動詞 (2nd)   :reach; extend; relate to; concerns, pertain to;不定詞 <br>主語は前のquod文<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Quod si＝Even if oblivisciは不定詞でforget、<strong>属格支配(</strong>NewLatin206)　昔の悪行を忘れるとしても</p>
+<p>num etiam recentium iniuriarum memoriam deponere posse? ：最近の悪行の記憶を横に置くことができようか？　間接話法の疑問文は接続法が動詞に使われなければならないがここでは不定詞(posse)になっている。これはこの文が疑問形なのは修辞的で、返事を求めていないカエサルの主張になっているので、一般の不定詞による間接話法の形式になっている。</p>
+<p><span style="background-color: rgb(255, 255, 0);">num etiam posse deponere recentium injuriarum memoriam</span></p>
+<p>quod eo invito iter per provinciam per vim temptassent, quod Haeduos, quod Ambarros, quod Allobrogas vexassent, <strong>事実のquodでthe fact thatと訳す。</strong>名詞節でiniuriarumを説明している。（NewLatin299)</p>
+<p>eo invito＝Caesare invito 独立奪格</p>
+<p><b>Quod ~gloriarentur quod ~ admirarentur は　pertinereの主語</b></p>
+<b>
+</b><p><b></b>gloriarentur : pride, boast　３複なので主語はヘルウェティ　おなじくadmirarentur(reagrd with wonder).</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>たとえ、昔の悪行は忘れるとしても、最近の悪行を横に置くことができようか？いわくカエサルの意志に反して属国の中を力ずくで通ろうとしたり、曰く、ハエドゥ族、アムバリ族、アロブロゲス族の領地を荒らしたような事柄を。彼らが傲岸に勝利を自慢することや、彼らが長い間罰せられずに災害を起こしていると考えていることなどは、同じところを示している。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Cōnsuēsse<span>=consuevisse <br>consuesco, consuescere, consuevi, consuetus 動詞 (3rd)   :accustom oneself; become/be accustomed/used; inure, habituate; familiarize;不定詞 完了<br></span></a>
+<a class="note1">enim<span>enim, 接続詞   :namely (postpos.); indeed; in fact; for; I mean, for instance, that is to say;</span></a>
+<a class="note1">deōs<span>deus対格〈複)<br></span></a>
+<a class="note1">immortāles,<span>immortalis, immortalis, immortale 形容詞   :immortal, not subject to death; eternal, <br>対格<br></span></a>
+<a class="note1">quō<span>quo, 副詞   :where, to what place; to what purpose; for which reason, therefore;<br></span></a>
+<a class="note1">gravius<span>前出のgravius同様、副詞、比較級、より一層厳しく</span></a>
+<a class="note1">hominēs<span>homo 複主格<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">commūtātiōne<span>commutatio, commutationis 名詞 (3rd) F   :change, reversal; upheaval; alteration; 奪格〈単）<br></span></a>
+<a class="note1">rērum<span>res 複属格 <br>commutationeを修飾 <br>change of circumstance<br></span></a>
+<a class="note1">doleant,<span>doleo, dolere, dolui, dolitus 動詞 (2nd)   :hurt; feel/suffer pain; grieve; 3 複 現在 能動態 接続法</span></a>
+<a class="note1">quōs<span>qui対格<br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note1">scelere<span>scelus, sceleris 名詞 (3rd) N   :crime; calamity; wickedness, sin, evil deed;奪格</span></a>
+<a class="note1">eōrum<span>属格<br></span></a>
+<a class="note1">ulcīscī<span>ulciscor, ulcisci, ultus sum 動詞 (3rd) DEP   :avenge; punish; <br>不定詞<br></span></a>
+<a class="note1">velint,<span>volo, velle, volui, - 動詞   :wish, want, prefer; be willing, will; <br>(3 複 現在 能動態 接続法)</span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note1">secundiōrēs<span>secundissimus -a -um 形容詞   :|favorable, fair (wind/current); fortunate, propitious; smooth, w/the grain;対格<br></span></a>
+<a class="note1">interdum<span>interdum, 副詞   :sometimes, now and then;</span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">diūturniōrem<span>diuturnus, diuturna -um, diuturnior -or -us, diuturnissimus -a -um 形容詞   :lasting, lasting long;対格<br></span></a>
+<a class="note1">impūnitātem<span>impunitas, impunitatis 名詞 (3rd) F   :impunity; freedom from punishment; safety;対格<br></span></a>
+<a class="note1">concēdere.<span>concedo, concedere, concessi, concessus 動詞 (3rd)   :relinquish/give up/concede; depart; pardon; submit, allow/grant/permit/condone; <br>不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>erim immortales deos consuesse concedere his.：不死の神々はそれを与えるのに慣れている。　consuesseは完了不定詞で、間接話法の平叙文。deosは対格で意味上の主語。<b>concedere hisが目的語。</b>hisは quos以下で説明される。</p>
+<p><b>quos velint ulscisci pro scelere eorum, </b>:　彼らの犯罪のために罰したがっている（<strike>神々を修飾）</strike></p>
+<p><b>secundiores res et diuturniorem impunitatem </b>： 幸運なものと長い罰せられない自由を　(concedereの目的）</p>
+<p>quo homines ex commutatione rerum gravius doleant. <b>このquoは　in order thatと訳す　</b>人々に対し、より大きな状況の変化で大変嘆き悲しむように　（幸運から不幸への変化激しいほど、悲しむ）ここは前にでたquo ~ ,</p>
+<p>eo ~の構文で、secundiores の前にeoが省略されている、とも考えられる。</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>不死の神々は、悪いことをした人々を罰したがっているが、よく（罰する前に）幸運と長い罰されない自由な期間を与えるものである。それは、より大きな状況の変化でより深く嘆き悲しむようにするためである。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Cum<span>Cum causal may usually be translated by since; cum concessive by although or while; either, occasionally, by when.（Benjamin D'oge) <br>although</span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note0">sint,<span></span></a>
+<a class="note0">tamen,<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">obsidēs<span>obses, obsidis 名詞 (3rd) C   :hostage; pledge, security; 主格　複数　（denturの主語）<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note1">sibi<span>間接話法の中なのでCaesarのこと</span></a>
+<a class="note1">dentur,<span>do (3 複 現在 受動態 接続法)  <br>主語はヘルウェティ</span></a>
+<a class="note1">utī<span>uti, 接続詞   :in order that; that, so that; as, when;<br></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note1">quae<span>qui n複対格 <br>which they promise</span></a>
+<a class="note1">polliceantur<span>polliceor, polliceri, pollicitus sum 動詞 (2nd) DEP   :promise;3 複 現在 受動態 接続法)</span></a>
+<a class="note1">factūrōs<span>facio 未来分詞　複　対格 essseが省略されていて不定詞</span></a>
+<a class="note1">intellegat,<span>intellego, intellegere, intellexi, intellectus 動詞 (3rd)   :understand; realize;(3 単 現在 能動態 接続法)</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">Haeduīs<span>与格　ipsisと同じ <br>faciuntの目的語<br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">iniūriīs<span>injuria, injuriae 名詞 (1st) F   :injury; injustice, wrong, offense; insult, abuse; sexual assault; 奪格<br></span></a>
+<a class="note1">quās<span>対格<br></span></a>
+<a class="note1">ipsīs<span>与格 <br>これによってinferoされた<br></span></a>
+<a class="note1">sociīsque<span>socius, soci(i) 名詞 (2nd) M   :associate, companion; ally;<br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">intulerint,<span>infero, inferre, intuli, illatus 動詞 TRANS :inflict/cause/ inflict/ impose/ inspire (w/DAT); <br>ipsisが与格</span></a>
+<a class="note1">item<span>item, 副詞   :likewise; besides, also, similarly;</span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">Allobrogibus<span></span></a>
+<a class="note1">satis<span>satis, undeclined 形容詞   :enough, adequate, sufficient; satisfactory;</span></a>
+<a class="note1">faciunt,<span>(3 複 現在 能動態 直説法) <br>facio　主語はヘルウェティ</span></a>
+<a class="note1">sēsē<span>対格　Caesarのこと<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">iīs<span><br><br></span></a>
+<a class="note0">pācem<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">factūrum.<span>facio 未来分詞　主格 <br>不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Cum ea ita sint：Cum causal may usually be translated by since; cum concessive by although or while; either, occasionally, by when.（Benjamin D'oge)</p>
+<p>Cum ea ita sint = Since things were thusのままでも良さそう。</p>
+<p>uti intelligat facturos = （結果として）彼（カエサル）が彼らが（ヘルウェティ）がやるであろうと理解できる</p>
+<p>ea quae polliceantur = 彼らが約束した事を</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>物事はそういうものであるが、もし人質がカエサルに与えられ、それが約束通り実行されることが確認でき、そしてもしハエドゥ族に、彼らとその同盟軍によって荒らされた被害に対して、また同様にアロブロゲス族に満足を与えるならば、彼らとの和平に応じるであろう。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dīvicō<span><br><br></span></a>
+<a class="note0">respondit:<span></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note0">Helvētiōs<span><br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note1">māiōribus<span>major, majoris 名詞 (3rd) M   :ancestors (pl.);<br></span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note1">īnstitūtōs<span>instituo, instituere, institui, institutus 動詞 (3rd)   :set up, establish, found, make, institute; build; prepare; decide;(完了 分詞 受動態 m 複 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">utī<span>so that<br></span></a>
+<a class="note1">obsidēs<span>obses(人質）複　対格<br></span></a>
+<a class="note1">accipere,<span>accipio, accipere, accepi, acceptus 動詞 (3rd) TRANS   :take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey; 不定詞</span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">dare,<span></span></a>
+<a class="note1">cōnsuērint;<span>=consueverit <br>consuesco の3 複 完了 能動態 接続法)  <br>acustom oneself<br></span></a>
+<a class="note1">eius<span>属格　is<br></span></a>
+<a class="note1">reī<span>res, rei 名詞 (5th) F   : fact;  <br>属格<br></span></a>
+<a class="note1">populum<span>対格</span></a>
+<a class="note0">Rōmānum<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">testem.<span>testis, testis 名詞 (3rd) C   :witness; 対格</span></a>
+<a class="note0">Hōc<span><br><br></span></a>
+<a class="note1">respōnsō<span>responsum, responsi 名詞 (2nd) N   :answer, response;奪格<br></span></a>
+<a class="note1">datō<span>do  <br>完了分詞　受動　奪格<br></span></a>
+<a class="note1">discessit.<span>discedo, discedere, discessi, discessus 動詞 (3rd)   :go/march off, depart, <br>３単　完了 <br>主語はDivico</span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>uti consuerit accipere obsides, non dare : 人質は受け取る事に慣れていて差し出すものではない</p>
+<p>eius rei populum Romanum esse testem : ローマ人民が目撃者である、Populim Romanus est testisの不定詞</p>
+<p>responso dato　：独立奪格</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>ディウィコは答えた。ヘルウェティは祖先から、我々は人質は受け取るものであり、差し出すものではないと習った。その目撃者は〈ほかならぬ）ローマ人民である。そう答えて去っていった。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

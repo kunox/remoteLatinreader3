@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 27</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[27]<span></span></a>
+
+<a class="note0">Mittitur<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note1">colloquendī<span>colloquor colloqui, collocutus sum V (3rd) DEP  <br>:talk/speak to/with; talk together/over; converse; discuss; confer, parley;<br>(未来 分詞 受動態 n 単数 属格)<br>動名詞　属格<br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note0">Gaius<span></span></a>
+<a class="note0">Arpineius,<span></span></a>
+<a class="note0">eques<span></span></a>
+<a class="note0">Rōmānus,<span><br><br></span></a>
+<a class="note0">familiāris<span><br><br></span></a>
+<a class="note0">Quinti<span></span></a>
+<a class="note0">Titūrī,<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Quīntus<span></span></a>
+<a class="note0">Iūnius<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">Hispāniā<span><br><br></span></a>
+<a class="note1">quīdam,<span>quidam quaedam, quoddam   <br>:(w/-dam) certain; as INDEF a certain thing; somebody, one, something;<br>(m 単数 主格), (m 複数  主格)<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note0">ante<span></span></a>
+<a class="note1">missū<span>missus missus N (4th) M  <br>:sending (away); dispatch; shooting, discharge of missiles;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Ambiorīgem<span><br><br></span></a>
+<a class="note0">ventitāre<span><br><br></span></a>
+<a class="note1">cōnsuērat;<span>=consueverat<br><br><br></span></a>
+<a class="note1">apud<span>apud PREP ACC <br>:at, by, near, among; at the house of; before, in the presence/writings/view of;<br><br></span></a>
+<a class="note0">quōs<span><br><br></span></a>
+<a class="note0">Ambiorīx<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">hunc<span></span></a>
+<a class="note1">modum<span>modus modi N (2nd) M  <br>:manner, mode, way, method; rule, rhythm, beat, measure, size; bound, limit;<br>(c 単数 対格)<br></span></a>
+<a class="note1">locūtus<span>loquor loqui, locutus sum V (3rd) DEP  <br>:speak, tell; talk; mention; say, utter; phrase;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">est:<span></span></a>
+<a class="note0">Sēsē<span><br><br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">beneficiīs<span><br><br></span></a>
+<a class="note1">plūrimum<span>形容詞　中性対格単数に由来する副詞<br><br><br></span></a>
+<a class="note0">eī<span><br><br></span></a>
+<a class="note1">cōnfitērī<span>confiteor confiteri, confessus sum V (2nd) DEP  <br>:confess (w/ACC), admit, acknowledge, reveal, disclose; concede, allow; denote;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">dēbēre,<span>debeo debere, debui, debitus V (2nd)  <br>:<strong>owe</strong>; be indebted/responsible for/obliged/bound/destined; ought, must, should;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">operā<span>opera operae N (1st) F  <br>:work, care; aid; service, effort/trouble;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">stīpendiō<span>stipendium stipendi(i) N (2nd) N  <br>:tribute, stipend; pay, wages; military service;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note1">līberātus<span>libero liberare, liberavi, liberatus V (1st)  <br>:free; acquit, absolve; manumit; liberate, release;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">esset,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">Aduatucīs,<span>第二変化で、複、与格？<br><br></span></a>
+<a class="note1">fīnitimīs<span>finitimus finitimi N (2nd) M  <br>:neighbors (pl.);<br>&nbsp;(X 複数  与格)<br></span></a>
+<a class="note0">suīs,<span><br><br></span></a>
+<a class="note1">pendere<span>pendo pendere, pependi, pensus V (3rd)  <br>:weigh out; pay, pay out;<br>&nbsp;(  現在 能動態 不定詞 ),<br></span></a>
+<a class="note0">cōnsuēsset,<span><br><br></span></a>
+<a class="note1">quodque<span>que quod<br><br></span></a>
+<a class="note0">eī<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">fīlius<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">frātris<span>frater fratris N (3rd) M  <br>:brother; cousin;<br>(X 単数 属格)<br></span></a>
+<a class="note0">fīlius<span><br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Caesare<span></span></a>
+<a class="note1">remissī<span>remitto remittere, remisi, remissus V (3rd)  <br>:send back, remit; throw back, relax, diminish;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">essent,<span></span></a>
+<a class="note0">quōs<span></span></a>
+<a class="note0">Aduatucī<span><br><br></span></a>
+<a class="note1">obsidum<span>obses obsidis N (3rd) C  <br>:hostage; pledge, security;<br>(c 複数 <strong> 属格</strong>)<br></span></a>
+<a class="note1">numerō<span>numerus numeri N (2nd) M  <br>:number/sum/total/<strong>rank</strong>; (superior) numerical strength/plurality; <strong>category</strong>; tally;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">missōs<span><br><br></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">servitūte<span>servitus servitutis N (3rd) F  <br>:slavery; slaves; servitude;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">catēnīs<span>catena catenae N (1st) F  <br>:chain; series; fetter, bond, restraint; imprisonment, captivity; (chain mail);<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note1">tenuissent;<span>teneo tenere, tenui, tentus V (2nd)  <br>:hold, keep; comprehend; possess; master; preserve;<br>(３人称 複数  過去完了 能動態 接続法 )<br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">id,<span>n単　対格<br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">fēcerit<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">oppugnātiōne<span><br><br></span></a>
+<a class="note0">castrōrum,<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">iūdiciō<span>judicium judici(i) N (2nd) N  <br>:|judgment/sentence/verdict; judging; jurisdiction/authority; opinion/belief;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">voluntāte<span>voluntas voluntatis N (3rd) F  <br>:will, desire; purpose; good will; wish, favor, consent;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">sua<span></span></a>
+<a class="note1">fēcisse,<span>facio facere, feci, factus V (3rd) TRANS  <br>:make/build/construct/create/cause/do; have built/made; fashion; work (metal);<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">coāctū<span>coactus coactus N (4th) M  <br>:compulsion, constraint, force, coercion;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">cīvitātis,<span><br><br></span></a>
+<a class="note0">suaque<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">eiusmodī<span>ejusmodi ADV <br>:of this sort; of such kind;<br><br></span></a>
+<a class="note1">imperia,<span>imperium imperi(i) N (2nd) N  <br>:command; authority; rule, supreme power; the state, the empire;<br>(n 複数  主格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note0">habēret<span><br><br></span></a>
+<a class="note1">iūris<span>jus juris N (3rd) N  <br>:law; legal system; code; right; duty; justice; court; binding decision; oath;<br>(X 単数 属格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">multitūdō<span>multitudo multitudinis N (3rd) F  <br>:multitude, great number; <strong>crowd</strong>; rabble, mob;<br>(X 単数 主格)<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">multitūdinem.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" style="display: block;" spellcheck="false"><p><strong>G. Arpineius mittiur et Q. Iunius.</strong></p>
+<p><strong>Ambiorix est locutus apud quos.</strong> が文の前半で、後半 Sese以降はAmbiorixの話し（間接話法）</p>
+<p>quidam = certain personでQ. Iuniusと同格。</p>
+<p><strong>missu Caesaris</strong> : 逐語的には「カエサルの派遣によって」「カエサルに送られて」</p>
+<p><strong>Sese confiteri debere pro Caesaris beficiis in se</strong> : 「私はカエサルの私に対する利益、好意について負うところがあることは認める」</p>
+<p><strong>ei plurimum</strong> : eiはカエサルの事。与格。plurimumは中性対格に由来する副詞。大変彼に対しては</p>
+<p><strong>quod esset liberatus stipendio eijus opera.</strong> stipendioは分離の奪格,　opera は手段の奪格。「何故なら、彼のお陰で税を払うことから解放された。」</p>
+<p><strong>quod consuesset pendere Aduatucis, finitimis suis.</strong> ：このquodは関係代名詞で、前のstipendinoを指す。その税は我らの隣人であるAduatucisに対し支払うことに慣れていたのだが。AduatucisはAduatucusの与格。</p>
+<p><strong>que quod filius et fratris filius essent remissi ab Caesare</strong>.: 「何故なら我々の息子、兄弟の息子たちがカエサルによって返還されたから」<strong>quos Aduatuci tenuissent obsidum numero missos in servitute et catenis</strong>. quosは関係代名詞で息子たちを指す。Aduatuciは複、主格で主語。</p>
+<p><strong>obsidum numero</strong>のnumeroは奪格で、「場所の奪格」<u>numero はRankの意で、比喩的に「人質の階級場所に</u>」missos 「送られた」これはquosを修飾。</p>
+<p><strong>quod fecerit de oppuganatione castorum</strong> : このquodは名詞節を作る接続詞で、文頭に来るときは～に関しては、と言う意味。（NewLatin 299.2) 「砦を攻撃したことに関して言えば」</p>
+<p>id neque aut iudicio aut sua voluntate fecisse　：Seseが依然主語で、動詞がfecisse(不定詞)　judicio, voluntateは原因の奪格。idはfecisseの目的語。「自分の判断、自分の意志で行なったものではない」</p>
+<p>sed coactu civitatis : むしろ国から強制されたものである。</p>
+<p>sua imperia esse ut ~ 「私の統率権はut~の様である」</p>
+<p>juris : 属格は全体の属格。「全体の属格のうち彼らが持っているものは」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>Gaius Arpineius、ローマの騎士階級で、Quiti Tituriの家族であったが、とQuintus Junius、かれはHispania出身のひとかどの人物であり、すでにカエサルの使者として何度もAbbiorixの元を訪問していたのだが、彼らが話し合いのために派遣された。彼らを前にAmbiorixが言うのは次のようであった。私はカエサルに対して、彼の私に対する好意に大変な恩義を感じていることは確かである。何故なら彼のお陰で、隣人であるAduatucusに対して払っていた税から解放されたし、また我らの息子、兄弟の息子たちはAduatucusのところに人質として送られ、彼はそれを奴隷として鎖に繋いて保持していたのだが、その息子たちもカエサルによって送り返されたのだから。今回の野営地に対する攻撃について言えば、それは私の判断、私の意志で行なったものではない。むしろ、国からの強制で行なった。私の覇権と言うのは、民衆が私に対して持っている権威は私が彼らに対して持っている権威より少ないはないのである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Cīvitātī<span>civitas civitatis N (3rd) F  <br>:community/city/town/state; citizens; citizen rights/citizenship; naturalization;<br>(X 単数 <strong>与格</strong>)<br></span></a>
+<a class="note1">porrō<span>porro ADV <br>:at distance, further on, far off, onward; of old, formerly, hereafter; again;<br><br></span></a>
+<a class="note0">hanc<span></span></a>
+<a class="note1">fuisse<span>sum esse, fui, futurus V  <br>:be;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">bellī<span><br><br><br></span></a>
+<a class="note0">causam,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">repentīnae<span>repentinus repentina, repentinum ADJ  <br>:sudden, hasty; unexpected;<br>(f 単数 与格)<br></span></a>
+<a class="note0">Gallōrum<span><br><br></span></a>
+<a class="note1">coniūrātiōni<span>conjuratio conjurationis N (3rd) F  <br>:conspiracy, plot, intrigue; alliance; band of conspirators; taking joint oath;<br>(X 単数 与格)<br></span></a>
+<a class="note1">resistere<span>resisto resistere, restiti, - V (3rd)  <br>:pause; continue; resist, oppose; reply; withstand,<strong> stand (DAT);</strong> make a stand;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">potuerit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>proro = moreover, further more</p>
+<p>Civitati fuisse belli causam : 所有の与格。国は戦いの理由を持っていた、が逐語訳。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>更に言えば、国は戦いを始めたのは、突然生じたガリアでの陰謀に対して拒否出来なかったためである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Id<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">facile<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">humilitāte<span>humilitas humilitatis N (3rd) F  <br>:insignificance/ unimportance/ degradation/ debasement/ humiliation; commonplaceness;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">suā<span><br><br></span></a>
+<a class="note1">probāre<span>probo probare, probavi, probatus V (1st) TRANS  <br>:approve (of), esteem/ commend/ recommend/ certify; give assent/approval/sanction;<br>(  現在 能動態 不定詞 )<br><br></span></a>
+<a class="note0">posse,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">adeō<span>adeo ADV <br>:to such a degree/pass/point; precisely, exactly; thus far; indeed, truly, even;<br><br><br></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note1">imperītus<span>imperitus imperita, imperitum ADJ  <br>:unskilled, inexperienced (in); unfamiliar,<strong> ignorant (of)</strong> (w/GEN);<br>(m 単数 主格)<br><br></span></a>
+<a class="note1">rērum<span>res rei N (5th) F  <br>:thing; event/affair/business; fact; cause; property;<br>(c 複数 <strong> 属格</strong>)<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note0">cōpiīs<span><br><br></span></a>
+<a class="note0">populum<span></span></a>
+<a class="note0">Rōmānum<span><br><br></span></a>
+<a class="note0">superārī<span><br><br></span></a>
+<a class="note0">posse<span></span></a>
+<a class="note1">cōnfīdat.<span>confido confidere, confisus sum V (3rd) SEMIDEP  <br>:have confidence in, rely on, trust (to); believe, be confident/assured; be sure;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>se posse probare facile ex sua humilitate. : 「我々のいい加減な攻撃からもそれは容易に証明出来る。」</p>
+<p>quod sit non imperitus renum : imperitusは属格支配で、renumは属格<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それは我々の弱さからも容易に証明されるであろう。と言うのは、私は我軍がローマ軍に勝ることが可能であると信じるほど諸事に通じていないわけではないからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sed<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note1">commūne<span>commune communis N (3rd) N  <br>:joint/common/public property/rights; public; public places/interests (pl.);<br>(n 単数 対格<br><br><br></span></a>
+<a class="note0">cōnsilium:<span><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">hībernīs<span><br><br></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note1">oppugnandīs<span>oppugno oppugnare, oppugnavi, oppugnatus V (1st)  <br>:attack, assault, storm, besiege;<br>(未来 分詞 受動態  複数  与格),動形容詞<br></span></a>
+<a class="note0">hunc<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">dictum<span></span></a>
+<a class="note0">diem,<span></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">quā<span></span></a>
+<a class="note0">legiō<span><br><br></span></a>
+<a class="note0">alterae<span></span></a>
+<a class="note0">legiōnī<span><br><br></span></a>
+<a class="note0">subsidiō<span><br><br></span></a>
+<a class="note0">venīre<span><br><br></span></a>
+<a class="note0">posset.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Galliae esse commune consilium. : としてGalliaeを「所有の与格」と考えるか</p>
+<p>(id) esse Galliae commune consilium. : としてGalliae ,属格として考えるか？</p>
+<p><strong>Hunc esse dies dictum omnibus Caesaris heibernis oppugnadis</strong>. <u>dies dictumeは慣用句で「決められた日」</u>Caesarisは属格。hiberinis oppugnandisは　与格＋動形容詞で、目的を表す。（NewLatin191.3)</p>
+<p><strong>legioni subsudio</strong> : Predecative dat (二重与格）<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それはガリア全体の共通の計画である。それが全ガリアのカエサルの冬営地を攻撃するための、決められた日であった。そうすることで、どの軍団も他の軍団を助けに行けないように。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nōn<span><br><br></span></a>
+<a class="note0">facile<span></span></a>
+<a class="note0">Gallōs<span><br><br></span></a>
+<a class="note0">Gallīs<span><br><br></span></a>
+<a class="note1">negāre<span>nego negare, negavi, negatus V (1st)  <br>:deny, refuse; say ... not;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">potuisse,<span>possum posse, potui, - V  <br>:be able, can;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note1">praesertim<span>praesertim ADV <br>:especially; particularly;<br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">recuperandā<span>recupero recuperare, recuperavi, recuperatus V (1st)  <br>:regain, restore, restore to health; refresh, recuperate;<br>&nbsp;未来 分詞 受動態 f 単数 奪格<br></span></a>
+<a class="note0">commūnī<span><br><br></span></a>
+<a class="note1">lībertāte<span>libertas libertatis N (3rd) F  <br>:freedom, liberty; frankness of speech, outspokenness;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">cōnsilium<span>consilium consili(i) N (2nd) N  <br>:debate/ discussion/ deliberation/ consultation; advice/counsel/suggestion; adviser;<br>(n 単数 主格),<br><br></span></a>
+<a class="note1">initum<span>ineo inire, inivi(ii), initus V  <br>:enter; undertake; begin; go in; enter upon;<br>(完了 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">vidērētur.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>Gallos non facele potuisse negare Gallis. Gallos主語。「ガリア人にとってガリアを否定するのは容易ではない」</p>
+<p>praesertim cum videretur consilium (esse) inititum de communi liberatate recupeeanda. : videreturの内容がconsilium以下の名詞節。conciliumが主語で、esse initumが動詞。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>ガリア人に取ってガリアを無視することは容易ではない。特にその計画が共通の回復すべき自由ということになっていると思えるときには。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quibus<span></span></a>
+<a class="note1">quoniam<span>quoniam CONJ <br>:because, since, seeing that;<br><br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note1">pietāte<span>pietas pietatis N (3rd) F  <br>:responsibility, sense of duty; loyalty; tenderness, goodness; pity; piety (Bee);<br>(c 単数 奪格)<br></span></a>
+<a class="note1">satisfēcerit,<span>satisfacio satisfacere, satisfeci, satisfactus V (3rd) TRANS  <br>:|give satisfactory assurance (to/that); give all (attention) that is required;<br>(３人称 単数 完了 能動態 接続法 )<br></span></a>
+<a class="note0">habēre<span><br><br></span></a>
+<a class="note0">nunc<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note1">ratiōnem<span>ratio rationis N (3rd) F  <br>:account, reckoning, invoice; plan; prudence; method; reasoning; rule; regard;<br>(c 単数 対格)<br></span></a>
+<a class="note1">officī<span>officium offici(i) N (2nd) N  <br>:duty, obligation; kindness; service, office;<br>(X 単数 属格)<br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note0">beneficiīs<span><br><br></span></a>
+<a class="note0">Caesaris:<span></span></a>
+<a class="note1">monēre,<span>moneo monere, monui, monitus V (2nd)  <br>:remind, advise, warn; teach; admonish; foretell, presage;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">ōrāre<span>oro orare, oravi, oratus V (1st)  <br>:beg, ask for, pray; beseech, plead, entreat; worship, adore;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">Titūrium<span><br><br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note1">hospitiō,<span>hospitium hospiti(i) N (2nd) N  <br>:hospitality, entertainment; lodging; guest room/lodging; inn;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">suae<span></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note1">salūtī<span>salus salutis N (3rd) F  <br>:health; prosperity; good wish; greeting; salvation, safety;<br>(X 単数 与格)<br></span></a>
+<a class="note1">cōnsulat.<span>consulo consulere, consului, consultus V (3rd)  <br>:|decide upon, adopt; look after/out for (DAT), pay attention to; refer to;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p><strong>satisfecerit pro pietate quibus</strong> : 主語はAmbiorix. quibusは漠然とそれまでに述べてきたガリアの事。「今やガリアのために必要とされることはやった」（攻撃したことを指している）</p>
+<p><strong>se habere nunc offici rationem</strong>: rationemは配慮、のようなニュアンス。officiは全体の属格で、義務の意。「いまや私はカエサルの好意に対して配慮する義務がある。</p>
+<p><strong>monere, orare Titurium pro hospitio</strong> : Tituriumに対しその友情が故に警告し祈る。</p>
+<p>ut suae ac militum saluti consulat.<u> consuloは与格支配の動詞</u>で、面倒を見るというニュアンスか。ut以下が祈る内容で、自分自身と彼の兵たちの安全の対策を講じる事。<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>ガリアに関して私の愛国的な義務は果たした。今や私はカエサルの今までの好意に対して配慮する義務がある。またTituriumに対し、その友情が故に、彼と彼の兵の安全に対し対策する事を警告し、祈るものである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Magnam<span></span></a>
+<a class="note1">manum<span>manus manus N (4th) F  <br>:hand, fist; team; gang, band of soldiers; handwriting; (elephant's) trunk;<br>(c 単数 対格)<br></span></a>
+<a class="note0">Germānōrum<span><br><br></span></a>
+<a class="note1">conductam<span>conductus conducta, conductum ADJ  <br>:hired; composed of hired men/mercenaries; taken under contract, leased;<br>(f 単数 対格)<br></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note1">trānsīsse;<span>transeo transire, transivi(ii), transitus V  <br>:go over, cross;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">hanc<span></span></a>
+<a class="note1">adfore<span>adsum adesse, adfui, adfuturus V  <br>:be near, be present, be in attendance, arrive, appear; aid (w/DAT);<br>(  未来 能動態 不定詞 )<br></span></a>
+<a class="note1">bīduō.<span>biduus bidua, biduum ADJ  <br>:continuing for two days, of/for two days;<br>&nbsp;(n 単数 奪格)<br><br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>magnam conductam Germanorum manum transisse Rhenum. 「大量の雇われたゲルマンの手勢がRhenum河を渡った。」</p>
+<p>biduo 2日間、だがローマ人は数え初めも数に入れたので実際は次の日の事。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>大勢の雇われたゲルマンの大軍がRhenum河を渡った。明日辺りにはこの辺りに来るであろう。<br></p>
+</div>
+</div>
+<div class="spacer">Line 8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ipsōrum<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">cōnsilium,<span><br><br></span></a>
+<a class="note1">velintne<span>velint -　neで疑問文<br>velint voloの３複　現在　接続法<br>（間接話法の疑問文は接続法）<br><br></span></a>
+<a class="note1">priusquam<span>priusquam CONJ <br>:before; until; sooner than;<br><br></span></a>
+<a class="note1">fīnitimī<span>finitimus finitimi N (2nd) M  <br>:neighbors (pl.);<br>(c 複数  主格)<br></span></a>
+<a class="note1">sentiant<span>sentio sentire, sensi, sensus V (4th)  <br>:perceive, feel, experience; think, realize, see, understand;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note1">ēductōs<span>educo educere, eduxi, eductus V (3rd)  <br>:lead out; draw up; bring up; rear;<br>(完了 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">hībernīs<span><br><br></span></a>
+<a class="note0">mīlitēs<span><br><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Cicerōnem<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Labiēnum<span><br><br></span></a>
+<a class="note1">dēdūcere,<span>deduco deducere, deduxi, deductus V (3rd) TRANS  <br>:lead/draw//pull/bring/stretch down/away/out/off; escort; eject/evict (claimant);<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">quōrum<span><br><br></span></a>
+<a class="note0">alter<span></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">quīnquāgintā,<span></span></a>
+<a class="note0">alter<span></span></a>
+<a class="note0">paulō<span><br><br></span></a>
+<a class="note1">amplius<span>amplus ampla -um, amplior -or -us, amplissimus -a -um ADJ  比較級<br>:great, large, spacious, wide, ample; distinguished, important, honorable;<br>&nbsp;(n 単数 対格),<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eīs<span><br><br></span></a>
+<a class="note1">absit.<span>absum abesse, abfui, abfuturus V  <br>:be away/absent/distant/missing; be free/removed from; be lacking; be distinct;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>consilium esse ipsorum</strong> : 「決断は貴方達のものである」</p>
+<p><strong>velintne deducere milites eductos ex hebernis ad ~.</strong> velintneはvelint + neで疑問文。間接話法なので接続法。逐語的には「冬営地から連れ出した軍隊を～に向かって率いるか否か」<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>決断はあなた方次第である。敵が気がつく前に、兵を冬営地から引き出し、CiceroのところかLabienusのとこに向かって率いるか否かは。それらは一つは約5０マイル、もう一つはそれよりやや遠いところにあるが。<br></p>
+</div>
+</div>
+<div class="spacer">Line 9</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Illud<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">pollicērī<span>polliceor polliceri, pollicitus sum V (2nd) DEP  <br>:promise;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">iūreiūrandō<span><br><br><br></span></a>
+<a class="note1">cōnfīrmāre<span>confirmo confirmare, confirmavi, confirmatus V (1st) TRANS  <br>:|assert positively; declare, prove, confirm, support; sanction; encourage;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">tūtum<span>tutus tuta -um, tutior -or -us, tutissimus -a -um ADJ  <br>:safe, prudent; secure; protected;<br>(n 単数 対格), <br><br></span></a>
+<a class="note1">iter<span>iter itineris N (3rd) N  <br>:journey; road; passage, path; march<br>(n 単数 対格)<br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">datūrum.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>daturum (esse)　の未来不定詞<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>私は領地内での安全な行路を約束し、神明にかけて保証する。<br></p>
+</div>
+</div>
+<div class="spacer">Line 10</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quod<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">faciat,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">cīvitātī<span><br><br></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note1">cōnsulere,<span>consulo consulere, consului, consultus V (3rd)  <br>:|decide upon, adopt; <strong>look after/out for (DAT)</strong>, pay attention to; refer to;<br>&nbsp;(  現在 能動態 不定詞 )<br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">hībernīs<span><br><br></span></a>
+<a class="note1">levētur,<span>levo levare, levavi, levatus V (1st) TRANS  <br>:|undo, take off; release, rid; free from (worry/expense); refresh/restore;<br>(３人称 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Caesarī<span><br><br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">meritīs<span>meritum meriti N (2nd) N  <br>:merit, service; value, due reward;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">grātiam<span><br><br></span></a>
+<a class="note1">referre.<span>refero referre, rettuli, relatus V  <br>:||give/pay back, render, tender; restore; redirect; revive, repeat; recall;<br>(  現在 能動態 不定詞 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>quod cum faciat : quodは前に言った事。「それを為した時」が逐語訳。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それが為されると、私は国家に対する義務を果たせる。何故なら冬営地を解放したのだから。またカエサルに対しその恩恵に恩返しすることになる。<br></p>
+</div>
+</div>
+<div class="spacer">Line 11</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hāc<span><br><br></span></a>
+<a class="note0">ōrātiōne<span><br><br></span></a>
+<a class="note0">habitā<span><br><br></span></a>
+<a class="note0">discēdit<span><br><br></span></a>
+<a class="note0">Ambiorīx.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>以上の演説を行い、Ambiorixは去って行った。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

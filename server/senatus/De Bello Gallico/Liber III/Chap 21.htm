@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber III : Chap 21</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[21]<span></span></a>
+
+<a class="note0">Pugnātum<span><br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">diū<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">ācriter,<span>acriter acrius acerrime 副詞　;= sharply, vigilantly, fiercely, severely<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">Sōtiātēs<span><br><br></span></a>
+<a class="note1">superiōribus<span>superus 比較級　複　奪格　;= former<br></span></a>
+<a class="note0">victōriīs<span><br><br></span></a>
+<a class="note1">frētī<span>fretus freta, fretum 形容詞　m　複　主格　;= relying on, trusting to (w/ABL)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">suā<span><br><br></span></a>
+<a class="note0">virtūte<span><br><br></span></a>
+<a class="note0">tōtīus<span><br><br></span></a>
+<a class="note0">Aquitāniae<span><br><br><br></span></a>
+<a class="note1">salūtem<span>salus salutis F 単　対格　;= health, prosperity, good wish, safety<br></span></a>
+<a class="note1">positam<span>pono ponere, posui, positus TRANS 完了分詞　受動　ｆ　単　対格　;= lay down, put out,</span></a>
+<a class="note1">putārent,<span>puto putare putavi, putatus&nbsp; TRANS ３複　未完了　接続法　;= think, believe, suppose, hold, value<br></span></a>
+<a class="note0">nostrī<span><br><br></span></a>
+<a class="note1">autem<span>接続詞　;= but, on the other hand</span></a>
+<a class="note1">quid<span>疑問代名詞　what ｎ単　主格</span></a>
+<a class="note0">sine<span></span></a>
+<a class="note1">imperātōre<span>単　奪格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note0">reliquīs<span><br><br></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note1">adulēscentulō<span>adulescentulus 形容詞　m 単　奪格　;= quite young<br></span></a>
+<a class="note1">duce<span>dux ducis M 単　奪格　;= leader, guide, commander</span></a>
+<a class="note1">efficere<span>effico efficere, effeci, effectus 不定詞　;= bring about, effect, execute, accomplish, make</span></a>
+<a class="note0">possent<span></span></a>
+<a class="note1">perspicī<span>perspicio perspicere, perspexi, perspectus 不定詞　;= see through, examine, observe, <strong>prove</strong>, recoganize<br></span></a>
+<a class="note1">cuperent;<span>cupio ３複　未完了　接続法　;= wish, desire, <strong>eager</strong></span></a>
+<a class="note1">tandem<span>副詞　;= finally, at last</span></a>
+<a class="note1">cōnfectī<span>conficio conficere, confeci, confectus TRANS 完了分詞 受動　ｍ複　主格　;= compose, chop up, collect<br></span></a>
+<a class="note0">vulneribus<span></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note0">terga<span></span></a>
+<a class="note0">vertērunt.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>pugnum est</strong>. : 自動詞受動、で非人称 「それは戦われた、戦いであった」</p>
+<p><strong>victoriis freti</strong> : 「手段の奪格」の一つの特別な変種　fretus＋奪格＝（奪格）に支えられている、の意。（NewLatin218.3)</p>
+<p><strong>putarent salutem positam in sua virtute</strong> : 逐語的には「自身の勇猛の中に横たわっている命運を持っている」「命運は自身の勇猛さに掛かっていると思う」</p>
+<p><strong>quid adulescentulo duce efficere possent</strong> : <u>間接疑問文</u>　「若い指導者によって何が成し遂げられるか」<u>perscipiの主語</u></p>
+<p><strong>duxは単数</strong>なので、Crassusを指していると思われる。</p>
+<u>
+</u></div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>戦いは長く厳しいものであった。Sotiatesは以前の戦いでの勝利に支えられ、全Aquitaniaの安全は自身の勇猛さに懸かっていると考え、一方で味方は、最高司令官なしに、また他の軍団なしで、若い指導者に何が成し遂げられるかを、証明したがっていた。最後に、ついに傷に覆われた敵は背中を見せた。</p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quōrum<span><br><br></span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note0">numerō<span><br><br></span></a>
+<a class="note0">interfectō<span><br><br></span></a>
+<a class="note0">Crassus<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">itinere<span></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note0">Sōtiātium<span><br><br></span></a>
+<a class="note0">oppugnāre<span><br><br></span></a>
+<a class="note0">coepit.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>ex itinere : 行軍がはずれて、行軍を止めて　（休む間もなしに野営準備などを始める）（II chap6にもあり）</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>このような甚大な数の敵兵を殺し、Crassusは行軍からすぐにSotiatesの都市の攻略を始めた。</p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quibus<span></span></a>
+<a class="note1">fortiter<span>副詞　;= strongly, bravely</span></a>
+<a class="note1">resistentibus<span>resisto resistere, restiti, - 現在分詞　複　奪格　;= pause, resist, reply</span></a>
+<a class="note1">vīneās<span>vinea vineae 複　対格　；＝shelterの一種<br></span></a>
+<a class="note1">turrēsque<span>turris turris f 複　対格　;= tower<br></span></a>
+<a class="note1">ēgit.<span>ago agere, egi, actus V (3rd)  <br>:drive/urge/conduct/act; spend (time w/cum); thank (w/gratias); deliver (speech);<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false">
+<p>quibus fortier resistentibus : resistentibusは現在分詞　奪格, quibus と共に独立奪格か？　quibusは文の先頭の関係代名詞で、前文を受けるのと、接続詞の両方の働きをしていると考えられる。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>激しい敵の抵抗にあって、（Crassusは）VineaとTurrusを引き出した。</p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Illī<span>that, those 複　主格<br></span></a>
+<a class="note1">aliās<span>alius alia aliud 形容詞　複　対格　;= other, another<br></span></a>
+<a class="note1">ēruptiōne<span>eruptio erpitionis F 単　奪格　;= sirtie, rush, sally<br></span></a>
+<a class="note1">temptātā,<span>tempto temptare, temptavi, temptatus 完了分詞　受動　ｆ単　奪格　;= test, try, urge<br></span></a>
+<a class="note0">aliās<span><br><br></span></a>
+<a class="note1">cunīculīs<span>cuniculus cuniculi M 複　奪格　;= underground tunnel, channel<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">aggerem<span>agger aggeris M 単　対格　;= rampart, causeway, pier, dam, dike, mud wall</span></a>
+<a class="note0">vīneāsque<span><br><br></span></a>
+<a class="note1">āctīs<span>ago agere, egi, actus 完了分詞　奪格　;= drive, urge, conduct, act<br></span></a>
+<a class="note0">(cuius<span></span></a>
+<a class="note1">reī<span>res 単　属格<br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">longē<span><br><br></span></a>
+<a class="note1">perītissimī<span>peritus perita -um, pertior, pertissimus 最上級　形容詞　m複　主格　;= skilled, skillful, experienced, expert<br></span></a>
+<a class="note1">Aquītānī,<span>複　主格<br></span></a>
+<a class="note0">proptereā<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">multīs<span><br><br></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note1">aerāriae<span>aeraria aerariae F 単　主格　;= copper mine, copper refinery<br></span></a>
+<a class="note1">sectūraeque<span>sectura secturae F 複　主格　;= quarry<br></span></a>
+<a class="note0">sunt),<span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note1">dīligentiā<span>diligentia diligentiae F 単　奪格　;= diligence, inductry<br></span></a>
+<a class="note0">nostrōrum<span><br><br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">prōficī<span>proficio = make 不定詞<br></span></a>
+<a class="note0">posse<span></span></a>
+<a class="note0">intellēxērunt,<span><br><br></span></a>
+<a class="note0">lēgātōs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Crassum<span></span></a>
+<a class="note0">mittunt<span></span></a>
+<a class="note0">sēque<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">dēditiōnem<span>deditio deditionis&nbsp; F 単　対格　;= surrender<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">recipiat<span>recipio ３単　現在　;= undertake, keep back, guarantee, accept</span></a>
+<a class="note1">petunt.<span>peto ３複　現在　;= desire, beg</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>eruptio は陣地などから出撃する、と言う意味があるので、ここではSotiatesのこと</p>
+<p><strong>alias ~ alias</strong> - ：一方では～、他方ではー</p>
+<p><strong>eruptione temptata</strong>,<strong> cuniculis actis</strong>&nbsp; : 独立奪格　「突撃をしてみたり」「トンネルを掘ったり」</p>
+<p><strong>cuius rei</strong> : 属格 形容詞とともにその適用範囲を表す。（NewLatin204.1)この場合pertiusと共に「それに熟達した」「それ」は穴掘りの事を指している。</p>
+<p><strong>diligentia nostrorum</strong> : 原因の奪格、「味方の勤勉さによって」（Bennettは、対抗して同様に反対側から穴を掘る、とコメントしている）</p>
+<p><strong>ut recipat petunt</strong> : 短いけれど、複文でutに導かれる名詞節</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>Sotiatesは一方では出撃してみたり、また他方では、塀やVineaに対しトンネルを掘る　（というのも、Aquitaniaの人はこの種の事柄に大変秀でている、なぜかといえば、彼らの土地の中では多くの場所が銅山や石切り場などがたくさんあるからである）ということをしたが、味方が勤勉に対応したため何も効果がないということを知り、使節をCrassusに送り降伏することを嘆願した。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

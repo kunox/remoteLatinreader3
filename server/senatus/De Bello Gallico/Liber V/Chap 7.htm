@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 7</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[7]<span></span></a>
+
+<a class="note0">Quā<span></span></a>
+<a class="note0">rē<span></span></a>
+<a class="note0">cognitā<span><br><br></span></a>
+<a class="note0">Caesar,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">tantum<span></span></a>
+<a class="note1">cīvitātī<span>f 単　与格<br><br><br></span></a>
+<a class="note1">Aeduae<span>与格<br><br></span></a>
+<a class="note1">dignitātis<span>dignitas dignitatis F 単　属格　;= <br>worth, dignity, honor, merit<br><br></span></a>
+<a class="note1">tribuēbat,<span>triburo tribuere, tribui, tributus ３単　未完了　;= divide, assign, present, grant<br><br><br></span></a>
+<a class="note1">coercendum<span>coerceo TRANS 動形容詞　m単　対格　;= enclosed, confine, restrain, punish<br><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">dēterrendum<span>deterreo TRANS 動形容詞　ｍ単　対格　;= deter, frighten away, discourage<br><br><br></span></a>
+<a class="note1">quibuscumque<span>quicum 複　奪格　;= (w/-cum) with whom, with which<br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">posset<span></span></a>
+<a class="note0">Dumnorīgem<span></span></a>
+<a class="note0">statuēbat;<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">longius<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">āmentiam<span>amentia, amentiae F 単　対格　;= madness, extreme folly, stupidity, insanity<br><br><br></span></a>
+<a class="note1">prōgredī<span>progredior progredi, progressus sum DEP 受動不定詞　;= go, come, advance, proceed<br><br><br></span></a>
+<a class="note0">vidēbat,<span><br><br></span></a>
+<a class="note1">prōspiciendum,<span>prospicio prospicere, prospexi, prospectus 動形容詞　m単　主格　;= foresee, watch for, provide for, look out for<br><br><br><br></span></a>
+<a class="note0">nē<span></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">reī<span></span></a>
+<a class="note0">pūblicae<span><br><br></span></a>
+<a class="note1">nocēre<span>noceo 不定詞　;= harm, hurt, injure (w/DAT)<br><br><br></span></a>
+<a class="note0">posset.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>quod tribuebat tantum dignitatis Aeduae civitati ：　quodは becasue である。　tantum dignitastisは全体の属格で「全ての属格の中のたくさん（対格）」という構文.</p>
+<p>quod tribuebat ~ , statuebat Dumnorigem coercendum (esse), deterrendum (esse),&nbsp;prospiendum (esse)&nbsp;最初のquodはニュアンスとしては、たくさんの特権をあげていたので、その分厳しく罰した、という流れか？</p>
+<p>coercendum以下の３つは動形容詞で、叙述的に使用され、「～されなければならない」</p>
+<p>quibusque rebus posset : whatever it is possible</p>
+<p>prospiciendum, ne quid posset nocere sibi reipublicae. quidがよく解らない。ne以下は、「彼と公共に害を与えないように」と目的の節である。prospicioには見張る、という意味もあるから、「(Dumnorix)は～しないよう見張られなければならない」と訳せる。<font color="#ff6600">quidは？</font><br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>これらの事が露見し、カエサルは、それまでAeduiには多くの特権を認めてきたことでもあるので、Dumnorixを監禁し、何か可能なものを使って阻止しなければならないと決めた。また、彼の狂気が進行するのを見ていたので、何か彼とローマに対して害を及ぼす事がないように、彼を監視すべきであるとも決めた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Itaque<span></span></a>
+<a class="note0">diēs<span></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note1">XXV<span>viginta et quin<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eō<span></span></a>
+<a class="note0">locō<span></span></a>
+<a class="note1">commorātus,<span>commoror comoravi, commoratus sum DEP 完了分詞　受動　ｍ　単　主格　;= stop, stay, remain<br><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">Cōrus<span>corus cori M 単　主格　;= north-west wind<br><br><br></span></a>
+<a class="note1">ventus<span>ventus ;= wind<br><br></span></a>
+<a class="note0">nāvigātiōnem<span><br><br></span></a>
+<a class="note1">impediēbat,<span>impedio ３単未完了　;= hinder, impede, hamper, obstruct<br><br><br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">magnam<span><br><br></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note0">omnis<span></span></a>
+<a class="note1">temporis<span>;= season<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note1">flāre<span>flo flare, flavi, flatus 不定詞　;=<br>breathe, blow<br><br><br></span></a>
+<a class="note1">cōnsuēvit,<span>consuesco ３単　完了　;= accustom oneself, become accustom<br><br><br></span></a>
+<a class="note0">dabat<span></span></a>
+<a class="note1">operam<span>opera operae F 単　対格　;= work, care, aid, service, effort, trouble<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">officiō<span></span></a>
+<a class="note0">Dumnorīgem<span></span></a>
+<a class="note1">continēret,<span>contineo continere, continui, contentus TRANS ３単　未完了　接続法　;= secure, hinder, keep<br><br><br></span></a>
+<a class="note0">nihilō<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">sētius<span>副詞　;= less, worse<br><br><br></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">cōnsilia<span><br><br></span></a>
+<a class="note0">cognōsceret:<span><br><br></span></a>
+<a class="note1">tandem<span>副詞　;= finally, at last<br><br></span></a>
+<a class="note1">idōneam<span>idoneus idonea, idoneum 形容詞　f 単　対格　;= suitable, appropriate<br><br><br></span></a>
+<a class="note1">nactus<span>nanciscor nancisci, nactus sum DEP 完了分詞　受動　ｍ　単　主格　;= obtain, get, find<br><br></span></a>
+<a class="note1">tempestātem<span>;= weather<br><br><br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note0">equitēsque<span><br><br></span></a>
+<a class="note1">cōnscendere<span>conscendo 不定詞　;= clib up, accend, board<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note0">iubet.<span></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>itaqueがしっくり来ない。あまり意味のないsoか？</p>
+<p>omnis temporis ：季節の全ての、＝毎年その季節には</p>
+<p>datbat operam 「努力した」？　「注意を払った」？　nihil以下の文からは努力した、であろう。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>約２５日間、その場所にとどまっていた。と言うのは、北西の風が吹いて航海出来なかったからである。その風は、毎年この季節にはよく吹くことが知られてはいたが、その間（私は）Dumnorixを通常業務に留めておこうと努力をしていた。彼の計画を全て解ったうえでのことである。遂に適当な天気になり、歩兵、騎兵に乗船を命じた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">At<span></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note1">impedītīs<span>impeditis 形容詞　X　複　奪格　;= hindered, hampered, inaccessible<br><br><br></span></a>
+<a class="note1">animīs<span>animus anima M 複　奪格　;= mind, intellect, soul<br><br></span></a>
+<a class="note0">Dumnorīx<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">equitibus<span></span></a>
+<a class="note0">Aeduōrum<span><br><br></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">castrīs<span></span></a>
+<a class="note1">īnsciente<span>insciens inscientis 形容詞　ｘ単　奪格　;= unkowing, unaware <br><br><br></span></a>
+<a class="note1">Caesare<span>奪格<br><br></span></a>
+<a class="note0">domum<span></span></a>
+<a class="note1">discēdere<span>discedo discedere, discessi, disceesus 不定詞　;= go, march off, deaprt<br><br><br></span></a>
+<a class="note0">coepit.<span></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>impeditis animis :　impeditisは忙しくて、他に気が回らない状態の事。形容詞＋名詞で一種の独立奪格。</p>
+<p>insciente Caesare : これも形容詞　＋名詞の独立奪格。「カエサルの知らない間に」<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>然しながら、皆が忙しくして気が回っていない時に、DumnorixはAeduiの騎兵とともに、カエサルの知らない間に、故郷を目指して行進を始めた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quā<span><br><br></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note1">nūntiātā<span>nuntio 完了分詞　受動　ｆ単　奪格　;= announce, report<br><br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">intermissā<span>intermitto 完了分詞　受動　ｆ　単　奪格　;= interrupt, omit, stop<br><br></span></a>
+<a class="note1">profectiōne<span>profectio profectionis F 単　奪格　;= departure<br><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">rēbus<span></span></a>
+<a class="note1">postpositīs<span>postpono 完了分詞　受動　複　奪格　;= neglect, disregard, put after, set aside, postpone<br><br></span></a>
+<a class="note0">magnam<span><br><br></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note0">equitātūs<span><br><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note1">īnsequendum<span>insequor insequi, insectus sum DEP 動名詞　ｍ単　対格　;= follow, come after, pursue<br><br></span></a>
+<a class="note0">mittit<span></span></a>
+<a class="note1">retrahīque<span>retraho retrahere, retraxi, retractus 不定詞　受動　;= draw back, withdraw<br><br></span></a>
+<a class="note0">imperat;<span></span></a>
+<a class="note0">sī<span></span></a>
+<a class="note0">vim<span></span></a>
+<a class="note1">faciat<span>facio ３単　接続法　;= do, make<br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">pāreat,<span>pareo parere, parui, paritus INTRANS ３単　接続法　;= obey<br><br><br></span></a>
+<a class="note1">interficī<span>interficio 受動　不定詞　;= kill, destroy<br><br></span></a>
+<a class="note0">iubet,<span></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note1">hunc<span>hic m単　対格　＝Dumnorix<br><br></span></a>
+<a class="note1">sē<span>C 奪格<br><br></span></a>
+<a class="note1">absente<span>absens absentis 形容詞　ｘ単　奪格　;= absent, missing<br><br></span></a>
+<a class="note0">prō<span></span></a>
+<a class="note1">sānō<span>sanus sana, sanum 形容詞　ｍ単　奪格　;= sound, healthy, sensible, sane<br><br><br></span></a>
+<a class="note1">factūrum<span>facio 未来分詞　能動　ｍ単　対格　<br><br><br></span></a>
+<a class="note1">arbitrātus,<span>arbitro の完了分詞受動　ｍ　単　主格　;= think, consider<br><br><br><br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">praesentis<span>praesens X単　属格　;= present, at hand, existing, in person<br><br><br></span></a>
+<a class="note0">imperium<span></span></a>
+<a class="note0">neglēxisset.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>qua re nuntiata : 独立奪格　「このことが報告されて」</p>
+<p>intermissa profectione : 独立奪格 「出発を止めて」</p>
+<p>omnibus rebus postpositis : 独立奪格　「あらゆるものを後回しにして」</p>
+<p><strong>Caesar mittit equitatus ad insequendum eum, imperat retrahi</strong>.が主な文。</p>
+<p>si faciat vim, neque pareat, jubet interfici. 後半は受動の間接話法　ここはDumnorixが主語。「もしDumnorixが兵を使う、または従わない時には、殺させるよう、命じた」が逐語訳。</p>
+<p>se absente : これも独立奪格「自分がいない時に」</p>
+<p>nihil arbitratus pro sano hunc facturum (esse), qui ~ : nihil=nothingで主語、arbitratus 完了分詞受動で、分詞構文。「～と考えられることは何もない」pro sano = as a sane、hunc facturrum esseは未来不定詞で、彼がやろうとしている事、その内容はqui以下に説明される。「彼がやろうとしていることにはまともな人間がすることは何もないと考えられ」</p>
+<p>praesentis (Caesaris) imperium ：praesentisは属格で省略されたCaesarisに掛かる。「（カエサル）の直接命令」<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>このことがカエサルに報告され、カエサルは出発を取りやめ、全ての事を後回しにして、かなりの部分の騎兵を彼を追跡するために送り出した。そして連れ戻すよう命令した。もし、彼が力に訴える、または命令に従わない場合は殺すよう、命じた。それは、まともな人間がすることとは考えられないからである。即ち、カエサルの直接命令を無視したわけである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ille<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">revocātus<span><br><br></span></a>
+<a class="note1">resistere<span>resisto 不定詞　;= pause, continue, resist, oppose<br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">manū<span></span></a>
+<a class="note0">dēfendere<span><br><br></span></a>
+<a class="note0">suōrumque<span><br><br></span></a>
+<a class="note0">fidem<span></span></a>
+<a class="note1">implōrāre<span>imploro 不定詞　;= appeal to, invoke, beg, implore, ask for<br><br><br></span></a>
+<a class="note0">coepit,<span></span></a>
+<a class="note0">saepe<span></span></a>
+<a class="note1">clāmitāns<span>clamito&nbsp; clamitare, clamitavi, clamitatus 現在分詞　単　主格　;= cry out, yell, shout<br><br><br></span></a>
+<a class="note0">līberum<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">līberaeque<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">cīvitātis.<span>単　属格<br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>ille revocatus : 分詞構文「呼び戻された彼は」</p>
+<p>coepit resistere, defendere, implorare 「抵抗、防御、哀願を始めた」</p>
+<p>clamitans "se esse liberum, civitatis esse liberae" この現在分詞はimplrare に掛かる？[現在分詞は主節の動詞と同時の行動を表す](NewLatin 336)</p>
+<p><strong>esse liberae civitatis</strong> 「<strong>所有の属格（述語属格</strong>）」で慣用句、「自由州に属す」（私は自由な州のものだ）<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>呼び戻されたDumnorixは抵抗しかつ手で防御しまた自分の配下達に哀願を始めた。「私は自由である、自由の州に属している」と叫びながら。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Illī,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">imperātum,<span><br><br></span></a>
+<a class="note1">circumsistunt<span>circumsisto ３複　現在　;= stand around, surround<br><br></span></a>
+<a class="note0">hominem<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">interficiunt:<span>interfacio 3複　;= kill<br><br></span></a>
+<a class="note0">at<span></span></a>
+<a class="note0">equitēs<span></span></a>
+<a class="note0">Aeduī<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">omnēs<span></span></a>
+<a class="note0">revertuntur.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>彼らは、命令されたように、押し囲み殺した。しかしAeduiの騎兵はずべてカエサルのもとに戻った。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

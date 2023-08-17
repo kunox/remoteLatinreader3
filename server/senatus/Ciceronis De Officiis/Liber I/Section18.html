@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 18 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[18]<span></span></a>
+<a class="note0">Ex<span></span></a>
+<a class="note0">quattuor<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">locis,<span>locus loci N (2nd) M  <br>:place, territory/ locality/ neighborhood/ <strong>region</strong>; position/point; aim point; site;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">quos<span></span></a>
+<a class="note1">honesti<span>honestus honesta -um, honestior -or -us, honestissimus -a -um ADJ  <br>:distinguished, reputable, respected, honorable, upright, honest; worthy;<br>&nbsp;(N 単数 属格)<br></span></a>
+<a class="note1">naturam<span>natura naturae N (1st) F  <br>:nature; birth; <strong>character</strong>;<br>(C 単数 対格)<br></span></a>
+<a class="note1">vimque<span>vis viris N (3rd) F  <br>:strength (bodily) (pl.), force, power, might, violence; resources; large body;<br>(F 単数 対格)<br></span></a>
+<a class="note1">divisimus,<span>divido dividere, divisi, divisus V (3rd)  <br>:divide; separate, break up; share, distribute; distinguish;<br>(１ 複数 完了 能動態 直接法 )<br></span></a>
+<a class="note0">primus<span></span></a>
+<a class="note0">ille,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">veri<span>verum veri N (2nd) N  <br>:truth, reality, fact;<br>(N 単数 属格)<br></span></a>
+<a class="note1">cognitione<span>cognitio cognitionis N (3rd) F  <br>:examination, inquiry/investigation (judicial); acquiring knowledge; recognition;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note1">consistit,<span>consisto consistere, constiti, constitus V (3rd)  <br>:|stand together/fast; <strong>consist of</strong>/be reckoned in; rest/depend upon; be unaltered;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">maxime<span></span></a>
+<a class="note1">naturam<span>natura naturae N (1st) F  <br>:nature; birth; character;<br>(C 単数 対格)<br></span></a>
+<a class="note0">attingit<span></span></a>
+<a class="note1">humanam.<span>humanus humana -um, humanior -or -us, humanissimus -a -um ADJ  <br>:human; kind; humane, civilized, refined;<br>(F 単数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>ex quattuor locis : locisは前述の４つの徳のことを比喩的に。</p>
+<p>primus ille attingit maxime humanam naturam.&nbsp; : 「最初のものは最も人の特質にふれるものである。」構文的にはこの訳でよいが、内容的には関係代名詞で述べている部分、「真理の知識から成る」の方が重要かも。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>我々が議論してきたHonestusの特質と力を内在する、これらの４つの徳のうち、最初のそれは、真理の知識から成る、最も人間の特質に触れるものである。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Omnes<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note1">trahimur<span>traho trahere, traxi, tractus V (3rd)  <br>:draw, drag, haul; derive, get;<br>(１ 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">ducimur<span>duco ducere, additional, forms V  <br>:lead, command; think, consider, regard; prolong;<br>(１ 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">cognitionis<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">scientiae<span></span></a>
+<a class="note1">cupiditatem,<span>cupiditas cupiditatis N (3rd) F  <br>:enthusiasm/eagerness/passion; (carnal) desire; lust; greed/usury/fraud; ambition<br>(C 単数 対格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">qua<span></span></a>
+<a class="note1">excellere<span>excello excellere, -, excelsus V (3rd)  <br>:be eminent/preeminent; excel;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">pulchrum<span>pulcher pulchra -um, pulchrior -or -us, pulcherrimus -a -um ADJ  <br>:pretty; beautiful; handsome; <strong>noble</strong>, illustrious;<br>(N 単数 主格<br></span></a>
+<a class="note0">putamus,<span></span></a>
+<a class="note1">labi<span>labor labi, lapsus sum V (3rd) DEP  <br>:slip, slip and fall; slide, glide, drop; perish, go wrong;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">autem,<span></span></a>
+<a class="note1">errare,<span>erro errare, erravi, erratus V (1st)  <br>:wander, go astray; make a mistake, err; vacillate;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">nescire,<span>nescio nescire, nescivi, nescitus V (4th)  <br>:not know (how); be ignorant/ unfamiliar/ unaware/ unacquainted/ unable/ unwilling;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">decipi<span>decipio decipere, decepi, deceptus V (3rd) TRANS  <br>:cheat/ deceive/ mislead/ dupe/ trap; elude/ escape notice; disappoint/frustrate/foil;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">malum<span>malum mali N (2nd) N  <br>:evil, mischief; disaster, misfortune, calamity, plague; punishment; harm/hurt;<br>(N 単数 主格), (N 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">turpe<span>turpe turpis N (3rd) N  <br>:disgrace; shame, reproach; base/shameful thing;<br>(N 単数 対格), (X 単数 主格), (X <br></span></a>
+<a class="note1">ducimus.<span>duco ducere, additional, forms V  <br>:lead, command; think, consider, regard; prolong;<br>(１ 複数 現在 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>omnes trahimur et ducimur ad cognitionis et scientiae cupiditatem : 「認識と知識に対する熱望に向かって引きずられ、導かれてきたすべてのもの」（逐語訳）構文的にはomnesという名詞。</p>
+<p>putamus pulchrum excellere in qua : quaはそれらのすべてを指し「それらに於いて秀でることが高貴である考える」</p>
+<p>ducimus malum et turpe. : malum, turpeは対格。labi etcの補語。「悪であり恥であると考える」</p>
+<p>labi, errare, nescire, decipi : malum turpeと一緒に<font color="#0000ff">esse省略の不定詞句</font>になっている。<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>我々は認識や知識に対し渇望し、それらの分野で秀でることが高貴であると考える。他方、失敗、迷い、無知、欺瞞などを悪であり恥であると考える。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">In<span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0">genere<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">naturali<span>naturalis naturalis, naturale ADJ  <br>:|natural; (not adoptive, parents); (parts of body/genitals, excretory outlets);<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">honesto<span>honestus honesta -um, honestior -or -us, honestissimus -a -um ADJ  <br>:distinguished, reputable, respected, honorable, upright, honest; worthy;<br>&nbsp;(N 単数 奪格)<br></span></a>
+<a class="note0">duo<span></span></a>
+<a class="note1">vitia<span>vitium viti(i) N (2nd) N  <br>:fault, vice, crime, sin; defect;<br>(N 複数 主格), <br></span></a>
+<a class="note1">vitanda<span>vito vitare, vitavi, vitatus V (1st)  <br>:avoid, shun; evade;<br>(未来 分詞 受動態 N 複数 主格),<br></span></a>
+<a class="note0">sunt,<span></span></a>
+<a class="note0">unum,<span></span></a>
+<a class="note0">ne<span></span></a>
+<a class="note1">incognita<span>incognitus incognita, incognitum ADJ  <br>:unknown; not known; untried, untested;<br>(N 複数 対格), <br></span></a>
+<a class="note1">pro<span>pro PREP ABL <br><strong>:on behalf of</strong>; before; in front/instead of; for; about; according to;<strong> as</strong>, like;<br><br></span></a>
+<a class="note1">cognitis<span>cognitus cognita, cognitum ADJ  <br>:known (from experience/carnally)), tried/proved; noted, acknowledged/recognized;<br>(X 複数 奪格)<br></span></a>
+<a class="note1">habeamus<span>habeo habere, habui, habitus V (2nd)  <br>:have, hold, consider, think, reason; manage, keep; spend/pass (time);<br>(１ 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">hisque<span></span></a>
+<a class="note1">temere<span>temere ADV <br>:rashly, blindly;<br><br></span></a>
+<a class="note1">assentiamur,<span>assentior assentiri, assensus sum V (4th) DEP  <br>:assent to, agree, approve, comply with; admit the truth of (w/PREP);<br>(１ 複数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">vitium<span>vitium viti(i) N (2nd) N  <br>:fault, vice, crime, sin; defect;<br>&nbsp;(X 単数 対格)<br></span></a>
+<a class="note1">effugere<span>effugio effugere, effugi, effugitus V (3rd)  <br>:flee/escape; run/slip/keep away (from), eschew/avoid; baffle, escape notice;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">volet<span>volo velle, volui, - V  <br>:wish, want, prefer; be willing, will;<br>(3 単数 未来 能動態 直接法 )<br></span></a>
+<a class="note0">–<span></span></a>
+<a class="note0">omnes<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">velle<span></span></a>
+<a class="note0">debent<span></span></a>
+<a class="note0">–<span></span></a>
+<a class="note1">adhibebit<span>adhibeo adhibere, adhibui, adhibitus V (2nd) TRANS  <br>:summon, invite, bring in; consult; put, add; use, employ, apply; hold out to;<br>(3 単数 未来 能動態 直接法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">considerandas<span>considero considerare, consideravi, consideratus V (1st) TRANS  <br>:examine/look at/inspect; consider closely, reflect on/contemplate; investigate;<br>(未来 分詞 受動態 F 複数 対格)<br></span></a>
+<a class="note0">res<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">tempus<span>tempus temporis N (3rd) N  <br>:time, condition, right time; season, occasion; necessity;<br>(N 単数 対格),<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">diligentiam.<span>diligentia diligentiae N (1st) F  <br>:diligence/care/attentiveness; economy/frugality/thrift; industry; love (Souter);<br>(C 単数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>in hoc genere et naturali et honesto : 「それらの自然で名誉ある類のものの中で」</p>
+<p>duo vitia sunt vitanda : 「２つの避けるべき過ちがある」</p>
+<p>ne habeamus incognia pro cognitis, 「知らないことを知っていると思わないよう」</p>
+<p>(ne) assentiamur his temere 「性急に判断しないよう」</p>
+<p>quod vitium effugere qui volet : 「これらの過ちから逃れる事を望む人」（二重の関係代名詞になっている）</p>
+<p>ad considerandas res : ad + 動名詞　「物事を理解するために」<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>これらの自然で名誉ある類の中で、２つ、避けるべき過ちがある。一つは、知らないことを知っていると思わないことである。また性急に判断を行わないことである。それらを避けたいと思う人はーみんなそう思うべきであるがー物事を理解するために時間と細心の注意を用いるべきである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

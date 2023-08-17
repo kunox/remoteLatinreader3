@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 15</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[15]<span></span></a>
+
+<a class="note1">Posterō<span>posterus, postera -um, posterior -or -us, postremus -a -um 形容詞   :coming after, following, next;奪格<br></span></a>
+<a class="note0">diē<span><br><br></span></a>
+<a class="note1">castra<span>castra, castrae 名詞 (1st) F   :camp, military camp/field; army;</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note1">movent.<span>moveo, movere, movi, motus 動詞 (2nd)   :move, stir, agitate, affect, provoke, disturb; 3 複 現在 能動態 直説法</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>翌日、（ヘルウェティの〉軍のキャンプは其の場所から移動した。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Idem<span></span></a>
+<a class="note1">facit<span>3 単 現在 能動態 直説法</span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note1">equitātumque<span>equitatus, equitatus 名詞 (4th) M   :cavalry, horse-soldiers; <br>対格<br></span></a>
+<a class="note1">omnem,<span>omnis, omnis 名詞 (3rd) C   :all men (pl.), all persons; 対格</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">numerum<span>numerus m 単対格</span></a>
+<a class="note1">quattuor<span>quattuor, quartus -a -um, quaterni -ae -a, - 数詞   :four;</span></a>
+<a class="note1">mīlium,<span>milium, mili(i) 名詞 (2nd) N   :thousands (pl.);単主格　対格<br></span></a>
+<a class="note1">quem<span>qui対格</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note0">prōvinciā<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Haeduīs<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">sociīs<span>socius, soci(i) 名詞 (2nd) M   :associate, companion; ally; <br>奪格<br></span></a>
+<a class="note1">coāctum<span>cogo, cogere, coegi, coactus 動詞 (3rd) TRANS   :collect/gather, round up, restrict/confine; force/compel; <br>完了 分詞 受動態 m単対格</span></a>
+<a class="note0">habēbat,<span></span></a>
+<a class="note1">praemittit,<span>praemitto, praemittere, praemisi, praemissus 動詞 (3rd)   :send ahead or forward; <br>3 単 現在 能動態 直説法)</span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">videant<span>video 3複現在　接続法</span></a>
+<a class="note1">quās<span>qui, 代名詞  :which?, what?; what kind of?;f 複　対格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">partēs<span><br><br></span></a>
+<a class="note0">hostēs<span><br><br></span></a>
+<a class="note0">iter<span></span></a>
+<a class="note1">faciant.<span>facio ３複現在 接続法)</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Idem facit Caesar; praemittit equitatumque　：カエサルも同様にした。そして自分の騎兵を送った。</p>
+<p>ad numerum quattuor milium　：数にして４０００</p>
+<p>quem ex omni provincia et Haeduis atque eorum sociis coactum habebat,：quemはequitatumを指す。</p>
+<p><strong>coactum habetat</strong>:&nbsp;<font style="background-color: rgb(0, 255, 255);">&nbsp;habeō が述語名詞の位置に受動完了分詞をとるとき、その分詞は直説法完了か過去完了と同じような意味であることがあります</font>。(AG497 b, NewLatin 337.7) equitātus quem coāctum habēbat. 彼が集めた騎兵隊</p>
+<p><strong>qui videant</strong>: 見るために〈目的） 関係代名詞(quī) や関係副詞(ubi, unde, quō) が目的の節を導くことが頻繁にあります。(new Latin p182 目的の節）</p>
+<p>Helvētiī lēgātōs mittunt, quī dīcerent. ヘルウェティア人はものを言うための使節を送った。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルも同様に出発した。そして彼がハエドゥとその同盟国から集めた騎兵、その数約４０００であったが、を敵がどの地方に道をと取ったかを見るために派遣した。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quī<span><br><br></span></a>
+<a class="note1">cupidius<span>cupidus, cupida -um, cupidior -or -us, cupidissimus -a -um 形容詞   :eager/passionate;単　主格</span></a>
+<a class="note1">novissimum<span>novissimum, novissimi 名詞 (2nd) N   :rear (pl.), those at the rear (the freshest troops);  <br>ｎ単対格</span></a>
+<a class="note1">agmen<span>agmen, agminis 名詞 (3rd) N   :stream; herd, flock, troop, crowd; marching army, <br>対格</span></a>
+<a class="note1">īnsecūtī<span>insequor, insequi, insecutus sum 動詞 (3rd) DEP   :follow/come after; attack; overtake; pursue (hostile); come after (time); <br>完了 分詞 受動態 m 複 主格<br></span></a>
+<a class="note1">aliēnō<span>alienus, alieni 名詞 (2nd) M   :foreigner; outsider; stranger to the family;奪格<br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">equitātū<span>単奪格（手段の奪格）<br></span></a>
+<a class="note0">Helvētiōrum<span><br><br></span></a>
+<a class="note1">proelium<span>proelium, proeli(i) 名詞 (2nd) N  :battle/fight/bout/conflict/dispute; armed/hostile encounter; bout of strength;対格</span></a>
+<a class="note1">committunt;<span>committo, committere, commisi, commissus 動詞 (3rd)   :|engage (battle), set against; begin/start; (3 複 現在 能動態 直説法)</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">paucī<span>paucus, pauci 名詞 (2nd) M   :only a small/an indefinite number of people (pl.), few; a few; a select few;</span></a>
+<a class="note0">dē<span></span></a>
+<a class="note0">nostrīs<span></span></a>
+<a class="note1">cadunt.<span>cado, cadere, cecidi, casus 動詞 (3rd) INTRANS   :fall, sink, drop, plummet, topple; be slain, die;(3 複 現在 能動態 直説法)</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>Qui</strong> :These,前出の騎兵隊</p>
+<p><strong>cupidius </strong>: cupidior(比較級）の主格で、比較級は時々too~の意味で使われる。（AG291) (NewLatin240)</p>
+<p>insecuti novissimum : 分詞構文,後尾を追跡して</p>
+<p><strong>alieno loco</strong> : 形容詞に修飾された名詞で[場所の奪格]　前置詞なしの奪格になる。（NewLatin228.1.b)</p>
+<p>qui committunt proelium</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの騎兵隊は、熱心すぎて〈敵）の後尾の部隊を追跡して、不利な場所でヘルウェティの騎兵と戦端を開き、少数を失った。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quō<span><br><br></span></a>
+<a class="note1">proeliō<span>proelium 奪格<br></span></a>
+<a class="note1">sublātī<span>sublatus, sublata, sublatum 形容詞   :elated;意気をあげる <br>ヘルウェティを修飾 <br>複主格<br></span></a>
+<a class="note0">Helvētiī,<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">quīngentīs<span>quingenti, -ae -a, quingentesimus -a -um, quingeni -ae -a, quingentie(n)s 数詞   :five hundred; <br>複奪格<br></span></a>
+<a class="note1">equitibus<span>eques, equitis 名詞 (3rd) M   :horseman/cavalryman/rider; horsemen (pl.), cavalry; equestrian order;奪格</span></a>
+<a class="note1">tantam<span>tantus, tanta, tantum 形容詞   :of such size; so great, so much;対格</span></a>
+<a class="note1">multitūdinem<span>multitudo, multitudinis 名詞 (3rd) F   :multitude, great number; crowd; rabble, mob;  <br>対格<br></span></a>
+<a class="note0">equitum<span></span></a>
+<a class="note1">prōpulerant,<span>propello, propellere, propuli, propulsus 動詞 (3rd)   :drive forward/forth; drive away/out/off; defeat; <br>3 複 過去完了 能動態 直説法 <br>主語はヘルウェティ<br></span></a>
+<a class="note1">audācius<span>audax, audacis (gen.), audacior -or -us, audacissimus -a -um 形容詞   :bold, daring; courageous; reckless, rash; audacious, presumptuous; desperate; <br>比較級　主格　対格<br></span></a>
+<a class="note1">subsistere<span>subsisto, subsistere, substiti, - 動詞 (3rd)   :halt, stand; cause to stop; 不定詞</span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">numquam<span>numquam, 副詞   :never; <br>nonnumquamと一語の場合もあり <br>= sometime</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">novissimō<span>novissimus, novissima, novissimum 形容詞   :last, rear; most recent; utmost;奪格 <br>場所の奪格<br></span></a>
+<a class="note1">agmine<span>agmen, agminis 名詞 (3rd) N   :stream; herd, flock, troop, crowd; marching army, column, line; procession;奪格</span></a>
+<a class="note1">proeliō<span>proelium 奪格　battle <br>= by attack <br>手段の奪格<br></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note1">lacessere<span>lacesso, lacessere, lacessivi, lacessitus 動詞 (3rd)   :provoke, excite, harass, challenge, harass; attack, assail; 不定詞</span></a>
+<a class="note1">coepērunt.<span>coepi coepisse, -, coeptus V (3rd)  <br>:begin, commence, initiate; (shows only PERFDEF);<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Helvetii coeperunt</p>
+<p>audacius subsistere　突然の停止</p>
+<p>lacessere nostros　我々の兵士に対する挑発</p>
+<p>non numquam = nonnumquam = sometime</p>
+<p>novissimo agmine : <strong>場所の奪格</strong>　部隊の後尾部分で</p>
+<p>proelio : 手段の奪格　攻撃によって</p>
+<p>quod quingentis equitibus tantam multitudinem equitum propulerant:主語はヘルウェティ。quingentis equitibus(<strong>手段の奪格</strong>、500の騎兵により）tantam multitudinem equitum(すごく沢山の騎兵隊を）Defeatしたので</p>
+<p>coepiは欠如動詞で完了形のみが使用される。（NewLatin133)</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>この戦いによって士気のあがったヘルウェティは、何しろ５００の騎兵で非常に大きな数の騎兵に勝ったので、度々突然停止したり、またその後尾部分で我々の兵士を攻撃するなどして挑発を始めた。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Caesar<span></span></a>
+<a class="note1">suōs<span>suus, sui 名詞 (2nd) M   :his men (pl.), his friends; <br>対格<br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">proeliō<span><br><br></span></a>
+<a class="note1">continēbat,<span>contineo, continere, continui, contentus 動詞 (2nd) TRANS   :secure, maintain, sustain; fasten/hold in position; retain, keep safe, preserve; <br>3 単 未完了<br></span></a>
+<a class="note1">ac<span>ac, 接続詞   :and, and also, and besides;</span></a>
+<a class="note1">satis<span>satis, 副詞   :enough, adequately; sufficiently; well enough, quite; fairly, pretty;</span></a>
+<a class="note1">habēbat<span>この場合 consider, <strong>think</strong>の意<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">praesentiā<span>praesentia, praesentiae 名詞 (1st) F   :present time; presence;奪格<br></span></a>
+<a class="note1">hostem<span>hostis, hostis 名詞 (3rd) C   :enemy (of the state); stranger, foreigner; the enemy (pl.); 対格</span></a>
+<a class="note1">rapīnīs,<span>rapina, rapinae 名詞 (1st) F   :robbery, plunder, booty; rape; <br>奪格<br></span></a>
+<a class="note1">populātiōnibusque<span>populatio, populationis 名詞 (3rd) F   :plundering, ravaging, spoiling; laying waste, devastation; plunder, booty;&nbsp; <br>奪格<br></span></a>
+<a class="note1">prohibēre.<span>prohibeo, prohibere, prohibui, prohibitus 動詞 (2nd)   :hinder, restrain; forbid, prevent; 不定詞</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Caesar</p>
+<p>continebat</p>
+<p><strong>habebat: hostem rapinis,~ prohibereが直接目的語で、satis が述語対格</strong>。（satisは変化しない）habeoはthinkの意。(NewLatin177.2 <u>述語対格は形容詞でも良い</u>）</p>
+<p>in praesentia : inの付く[時の奪格]　（NewLatin230.2)</p>
+<p>hostem(対格、意味上の主語）</p>
+<p>rapinis,~ [<strong>分離の奪格</strong>]でそれらから</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルは彼らの部下たちを戦いからは離しておき、敵を強奪や食料調達やまた場所を荒らすことから禁止するにはそれで十分であると考えた。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Ita<span>ita, 副詞   :thus, so; therefore;</span></a>
+<a class="note1">diēs<span>dies 複　対格<br></span></a>
+<a class="note1">circiter<span>circiter, 副詞   :nearly, not far from, almost, approximately, around, about;</span></a>
+<a class="note0">XV<span></span></a>
+<a class="note1">iter<span>対格</span></a>
+<a class="note1">fēcērunt<span>(3 複 完了 能動態 直説法)<br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">novissimum<span></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">agmen<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">nostrum<span></span></a>
+<a class="note0">prīmum<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">amplius<span>amplus ampla -um, amplior -or -us, amplissimus -a -um 形容詞　比較級　n単　主格</span></a>
+<a class="note1">quīnīs<span>配分数　５　複　奪格<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">sēnis<span>配分数　６　奪格<br></span></a>
+<a class="note1">mīlibus<span>mille, milis 名詞 (3rd) N   :thousand; thousands (men/things); miles; [比較の奪格]<br><br></span></a>
+<a class="note1">passuum<span>passus, passus 名詞 (4th) M   :step, pace;属格</span></a>
+<a class="note1">interesset.<span>intersum, interesse, interfui, interfuturus 動詞   :be/lie between, be in the midst; be present; take part in; be different;3 単 未完了 能動態 接続法)</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>dies : <strong>時の対格</strong>　（経過の時間）（NewLatin181)</p>
+<p>ita ~ uti ~ : uti以下に記述されているように</p>
+<p>(they) fecerunt iter (for) dies circiter XV １５日間の間、〈彼らは行軍した）</p>
+<p><strong>amplius quinis aut senis milibus</strong> : [<strong>比較の奪格</strong>] 比較級と一緒に使われて「～よりも」という意味を表す。（NewLatin217) quinis, senisという配分数が使われているのは、毎日５，６マイルずつ、というニュアンス。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>敵の後尾と自軍の先頭の間が、多くても５，６〈ローマ〉マイル以上と離れていない状態で、約１５日の間進んだ。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

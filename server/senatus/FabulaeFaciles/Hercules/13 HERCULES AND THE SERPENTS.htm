@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 13 HERCULES AND THE SERPENTS.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Īphiclēs,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">frāter<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Herculis,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vōce<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">exclāmāvit;<span>exclāmo exclamare, exclamavi, exclamatus V (1st)  X<br>:exclaim, shout; cry out, call out;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Herculēs<span></span></a>
+<a class="note0">ipse,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">fortissimus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">puer,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">haudquāquam<span>haudquaquam ADV <br>&gt;:by no means, in no way; not at all;<br><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">territus<span>terrĕo terrere, terrui, territus V (2nd)  X<br>:frighten, scare, terrify, deter;<br>【完了分詞 ( 受動態 ) (M 単数 主格) 】<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">est.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Parvīs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">manibus<span></span></a>
+<a class="note0">serpentēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">statim<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">prehendit,<span>prĕhendo prehendere, prehendi, prehensus V (3rd) TRANS  <br>:catch/capture; take hold of/possession of/in hand, arrest; occupy; seize/grasp;<br>(3 単数 現在 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">colla<span>collum colli N (2nd) N <br>:neck; throat; head and neck; severed head; upper stem (flower); mountain ridge;<br>&nbsp;(複数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">eārum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">vī<span>vīs vis N (3rd) F  <br>:strength (sg. only), force, power, might, violence;<br>(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">compressit.<span>comprĭmo comprimere, compressi, compressus V (3rd) TRANS  <br>:press/squeeze together, fold, crush; hem/shut/keep/hold in; copulate (male);<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note1">Tālī<span>tālis talis, tale ADJ  <br>:such; so great; so excellent; of such kind;<br>&nbsp;(M 単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">modō<span>mŏdus modi N (2nd) M <br>:manner, mode, way, method; rule, rhythm, beat, measure, size; bound, limit;<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">serpentēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">puerō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">interfectae<span>interfĭcĭo interficere, interfeci, interfectus V (3rd)  X<br>:kill; destroy;<br>【完了分詞 ( 受動態 ) (F 複数 主格) 】<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">sunt.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Alcmēna<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">autem,<span></span></a>
+<a class="note0">māter<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">puerōrum,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">clamōrem<span>clāmor clamoris N (3rd) M <br>:shout, outcry/protest; loud shouting (approval/joy), applause; clamor/noise/din;<br>(単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">audīverat,<span>audĭo audire, audivi, auditus V (4th)  X<br>:hear, listen, accept, agree with; obey; harken, pay attention; be able to hear;<br>(3 単数 過去完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">marītum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ē<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">somnō<span>somnus somni N (2nd) M <br>:sleep;<br>&nbsp;(単数 奪格) <br></span></a>
+<a class="note0">excitāverat.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Ille<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">lūmen<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">accendit<span>accendo accendere, accendi, accensus V (3rd) TRANS  <br>:kindle, set on fire, light; illuminate; inflame, stir up, arouse; make bright;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">gladium<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">rapuit;<span>răpĭo rapere, rapui, raptus V (3rd)  X<br>:drag off; snatch; destroy; seize, carry off; pillage; hurry;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">puerōs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">properābat,<span>prŏpĕro properare, properavi, properatus V (1st)  X<br>:hurry, speed up; be quick;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vēnit,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">mīram<span>mīrus mira, mirum ADJ  <br>:wonderful, strange, remarkable, amazing, surprising, extraordinary;<br>(F 単数 対格) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vīdit,<span></span></a>
+<a class="note0">Herculēs<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note1">rīdēbat<span>rīdĕo ridere, risi, risus V (2nd)  X<br>:laugh at (with dat.), laugh; ridicule;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">serpentēs<span></span></a>
+<a class="note1">mortuās<span>mortŭus mortua, mortuum ADJ  <br>:dead, deceased; limp;<br>(F 複数 対格) <br></span></a>
+<a class="note1">mōnstrābat.<span>monstro monstrare, monstravi, monstratus V (1st)  X<br>:show; point out, reveal; advise, teach;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>tali modo : ABl of mannerか付帯状況の奪格 （B.220 B.221) 「そのようにして」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 2rem;" spellcheck="false"><p>Herculesの兄弟であるIphiclesは大きな声で叫んだが、最も強い少年である、Herculesは少しも怖がる様子はなかった。簡単な動作で蛇を捉え、その頭を非常な力で圧迫した。そのようにして蛇は少年により殺された。他方、母であるAlcmeneは叫び声を聞き、夫を眠りから起こした。彼は明かりを点け、剣を抜いて子どもたちのところに急いだ。しかしその場所で見たものは驚くべきものであった。Herculesが笑いながら、死んだ蛇を見せたのである。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

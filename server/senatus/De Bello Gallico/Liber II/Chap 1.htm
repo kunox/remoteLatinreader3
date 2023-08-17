@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber II : Chap 1</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[1]<span></span></a>
+
+<a class="note0">Cum<span></span></a>
+<a class="note1">esset<span>3 単数　未完了　接続法</span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">citeriōre<span>citer 形容詞　near, ealier
+比較級　citerior 奪格
+<br></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note0">[in<span></span></a>
+<a class="note1">hībernīs,]<span>hibernum hiberime 名詞、中性
+＝冬営地
+<br></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note1">utī<span>= as<br></span></a>
+<a class="note1">suprā<span>副詞
+=on top, more, above, formerly
+<br></span></a>
+<a class="note1">dēmōnstrāvimus,<span>demonstro demonstrare, demonstravi, demonstratus
+=demonstrate, reveal
+1 p 完了
+<br></span></a>
+<a class="note1">crēbrī<span>creber crebra -um, crebrior -or -us, creberrimus -a -um  :thick/crowded/packed/close set; <b>frequent/repeated</b>, constant; numerous/abundant; 形容詞 複　主格ｍ<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note1">rūmōrēs<span>rumor rumoris N (3rd) M  <br>:hearsay, rumor, gossip; reputation; shouting;<br>&nbsp;(c 複数  主格),<br></span></a>
+<a class="note1">adferēbantur<span>adfero adferre, adtuli, adlatus V TRANS  <br>:bring to, carry, convey; report, bring word, allege, announce; produce, cause;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note1">litterīs<span>littera litterae N (1st) F  :letter (alphabet); (pl.) letter, epistle; literature, books, records, account;奪格　複<br></span></a>
+<a class="note1">item<span>item ADV  :likewise; besides, also, similarly;</span></a>
+<a class="note0">Labiēni<span><br><br></span></a>
+<a class="note0">certior<span></span></a>
+<a class="note1">fiēbat<span>fio feri, factus sum V SEMIDEP  :|be made/ created/ instituted/ elected/ appointed/ given; be prepared/done; develop;<br><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">Belgās,<span><br><br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">tertiam<span>tertius <br>序数 3<br>(f 単数 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">partem<span></span></a>
+<a class="note1">dīxerāmus,<span>dico  V (１人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note1">contrā<span>contra PREP ACC  :against, facing, opposite; weighed against; as against; in resistance/reply to;<br></span></a>
+<a class="note0">populum<span></span></a>
+<a class="note0">Rōmānum<span><br><br></span></a>
+<a class="note1">conjūrāre<span>conjuro conjurare, conjuravi, conjuratus V (1st) INTRANS  :swear/act together, join in an oath/plot; conspire, plot; form alliance/league;不定詞<br></span></a>
+<a class="note0">obsidēsque<span><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">dare.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>esset : 接続法＋Cumは時制を表すCumで、「カエサルが内ガリアにいたとき 」（<u>ｃum + 接続法　は過去の「状況」を表す</u>。</p>
+<p>ita uti supra demonstravimus : as it has showed formerly （前に示したように）前回の終わりは、巡回裁判のため内ガリアに発った、と言っているのでそれを指す。</p>
+<p><strong>litteris</strong> (複数　奪格（手段））　：<strong>複数で手紙、単数だと文字の意</strong></p>
+<p>quam (qui 対格）Partemと一致しており、意味上の主語、実質的な先行詞はBelgas</p>
+<p>dixeramus : 1人称、単数、過去完了　：had said (前に言ったように）第一巻で話をしたように</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルが、前に示したように、内ガリアに居たとき、彼にたくさんの噂が届けられ、またラビエヌスからの手紙で報告された事であるが、ベルガエ族全部が、前に言ったようにガリアの３つ目の領地であったが、ローマ人民に対抗して結束して（陰謀を企み）互いに人質を交換しているとのことであった。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Coniūrandī<span>conjuro conjurare, conjuravi, conjuratus V (1st) INTRANS  <br>:swear/act together, <strong>join in an oath/plot</strong>; conspire, plot; form alliance/league;<br>(未来 分詞 受動態 m 単数 属格)<br>動名詞<br></span></a>
+<a class="note1">hās<span>hic haec, hoc PRON  <br>:this; these (pl.); (also DEMONST);<br>(f 複数  対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">causās:<span>causa F 複数　対格<br></span></a>
+<a class="note0">prīmum<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">verērentur<span>vereor vereri, veritus sum V (2nd) DEP  <br>:revere, respect; fear; dread;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+<a class="note0">nē,<span><br><br></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note1">pācātā<span>paco pacare, pacavi, pacatus V (1st)  :pacify, subdue;完了分詞 受動　単　奪格<br></span></a>
+<a class="note1">Galliā,<span>Galliaの奪格<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">exercitus<span></span></a>
+<a class="note1">noster<span>＝our ラビエヌスから見ているので、ローマ軍のこと</span></a>
+<a class="note1">addūcerētur;<span>adduco adducere, adduxi, adductus V (3rd) TRANS  :lead up/to/away; bring up/to; persuade, induce; lead, bring; contract, tighten;３　単　未完了　受動、接続法<br></span></a>
+<a class="note1">deinde<span>deinde ADV  :then/next/afterward; thereon/henceforth/from there/then; in next position/place;<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">nūllīs<span><br><br></span></a>
+<a class="note1">Gallīs<span>Gallus Galla, Gallum ADJ  <br>:Gallic, of Gaul/the Gauls; class of gladiator w/Gallic armor; (also Galatian?);<br>(X 複数  奪格)<br></span></a>
+<a class="note1">sollicitārentur,<span>sollicito sollicitare, sollicitavi, sollicitatus V (1st)  :disturb, worry; stir up, arouse, agitate, incite;３複　未完了　受動　接続法<br></span></a>
+<a class="note0">partim<span></span></a>
+<a class="note0">quī,<span><br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">Germānōs<span><br><br></span></a>
+<a class="note0">diūtius<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note1">versāri<span>verso 受動　不定詞（DEP)keep turning, spin ,stir<br></span></a>
+<a class="note1">nōluerant,<span>nolo 3複過去完了be unwilling, wish not to<br></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note0">populī<span><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note1">hiemāre<span>hiemo 不定詞winter, winter pass, keep winter quarters<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">inveterāscere<span>inveterasco inveterascere, inveteravi, - V (3rd)  <br>:grow old; become established/customary;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note1">molestē<span>molestus molestius, molestissime 副詞annoyingly, in a vexing<br><br></span></a>
+<a class="note1">ferēbant,<span>fero ferre, tuli, latus V  <br>:bring, bear; tell/speak of; consider; carry off, win, receive, produce; get;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">partim<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note1">mōbilitāte<span>mobilitas mobilitatis N (3rd) F  <br>:mobility, agility; speed; quickness of mind; inconstancy;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">levitāte<span>levitas levitatis N (3rd) F  <br>:levity; lightness, mildness; fickleness; shallowness;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">animī<span>animus animi N (2nd) M  <br>:mind; intellect; soul; feelings; heart; spirit, courage, character, pride; air;<br>(X 単数 属格)<br></span></a>
+<a class="note0">novīs<span><br><br></span></a>
+<a class="note1">imperiīs<span>imperium 名詞　与格command, authority<br></span></a>
+<a class="note1">studēbant;<span>studeo studere, studui, - V (2nd)  <br>:desire, be eager for; busy oneself with; strive;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p> conjurandi ： conjurioの動名詞(conjurandus)の属格で、causasを形容　「陰謀の原因は」</p>
+<p><strong>causa esse : quod ~ quod ~.</strong> : quod = because. ここまでが間接話法。</p>
+<strong>
+</strong><p><strong>omni pacata Gallia</strong> : 独立奪格 全ガリアが制圧されて</p>
+<p>ad eosは本来はad seの意味であるが、間接話法の中なので、「彼ら（Belgae)の方に」となる。</p>
+<p><strong>partim qui ~, q partim qui ~</strong> : quiは前のGallisを説明している。Gallisは行為者の奪格。</p>
+<p><strong>qui, ut noluerant Germanos versari, ita ferebant moleste Romani hiemare</strong>. : ut=asでut以下と同様にの意。この比較の副詞節では事実だと直接法、推測では接続法が使われる。</p>
+<p>diutius : diuの比較級＝longer</p>
+<p>moleste ferebant = were annoyed</p>
+<p><strong>qui studebant novis imperiis mobilitate animi.</strong>　「気持ちの流動性によって」が逐語訳。手段、原因の奪格。animiは属格。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらの陰謀の原因は以下のようである。</p>
+<p>第一に彼らは、全ガリアが制圧された後、我軍が彼らののほうに向かってくるのでないかと、恐れていること。次の理由は、何人かのガリア人から煽動されたことである。煽動した人のある部分は、ゲルマンがガリアの中にいることを望まない人で、同様にローマ人がガリアの中で越冬したりして、永続化することは望ましくないと考えている人たちである。また別の人達は、軽率で不安定な気持ちから新しい政府を望む者達であった。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">ab<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">nūllīs<span><br><br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note1">potentiōribus<span>potens potentis (gen.), potentior -or -us, potentissimus -a -um ADJ  比較級<br>:powerful, strong; capable; mighty;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">iīs<span>is ea, id PRON  <br>:he/she/it/they (by GENDER/NUMBER); DEMONST: that, he/she/it, they/them;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">conducendōs<span>conduco conducere, conduxi, conductus V (3rd) TRANS  <br>:|employ, hire; rent; borrow; contract for, undertake; farm the taxes;<br>(未来 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note0">hominēs<span><br><br></span></a>
+<a class="note1">facultātēs<span>facultas facultatis N (3rd) F  <br>:means; ability, skill; opportunity, chance; resources (pl.), supplies;<br>(c 複数  対格)<br></span></a>
+<a class="note0">habēbant<span><br><br></span></a>
+<a class="note1">vulgō<span>vulgo ADV <br>:generally, usually; universally; publicly, in/to the crowd/multitude/world;<br><br></span></a>
+<a class="note1">rēgna<span>regnum 名詞　（n)Royal power, kingdom複　主格<br></span></a>
+<a class="note1">occupābantur;<span>occupo 3 単　未完了　受動seize, gain, overtake<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">minus<span></span></a>
+<a class="note0">facile<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note1">imperiō<span>imperium imperi(i) N (2nd) N  <br>:command; authority; rule, supreme power; the state, the empire;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">nostrō<span><br><br></span></a>
+<a class="note1">cōnsequī<span>consequor consequi, consecutus sum V (3rd) DEP  <br>:follow, go/come after; attend on; pursue; catch up with, overtake; follow up;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">poterant.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>ab non nullis etiam = ab non nullis sollicitarentur</p>
+<p>ad conducendos homines = for hiring, to hire, to take into pay イタリア語のcondottire(傭兵)の語源</p>
+<p><strong>(</strong>元々は、ad conducendum homines ad+動名詞＋動名詞目的語で「人を雇うため」の意。<u>しかし前置詞付きの動名詞＋目的語では必ず動形容詞構文を使う。(NewLatin339.2)</u>のでここでは<strong>動形容詞conducendos</strong>が使われている。(hominesは男性、複、対格なのでconducendusの男性、複、対格のconduncendosを使う）</p>
+<p><strong>iis, qui habebant facultates homines ad conducendos</strong> : 人を雇うためのリソースを持っている人, iisを説明する関係代名詞節</p>
+<p>a potentioribus : より強い（能力のある）人によって（形容詞の名詞化）</p>
+<p>potentioribus atque iis qui ad conducendos</p>
+<p>vulgo regna occupabantur: 一般的には王権が奪われる、王権が奪われるのは一般的である</p>
+<p>qui poterant consequi minus facile. (その人は）簒奪することが易しくない。quiの先行詞はnonnullisである。</p>
+<p>imperio nostro ：状況の奪格、我が軍の統治下に置いては</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>他の何人かによって同様に煽動されたのは次のような事情である。と言うのはガリアにおいては、より強いもの、つまり傭兵を持ている財力をもったものなどによって、王権（支配権）が簒奪されることが多くあったが、そのことは、ローマの統治下に置いてはそういう事を追いかけるのはより易しくなくなる（難しくなる）という事情である。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 19 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[19]<span></span></a>
+<a class="note1">Alterum<span>alter altera, alterum ADJ  <br>:|second/further/next/other/latter/some person/thing (PRONominal ADJ); either;<br>(N 単数 主格)<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">vitium,<span>vitium viti(i) N (2nd) N  <br>:fault, vice, crime, sin; defect;<br>(N 単数 主格<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">quidam<span>quidam quaedam, quoddam   <br>:(w/-dam) certain; as INDEF a certain thing; somebody, one, <strong>something;</strong><br>(M 単数 主格)<br></span></a>
+<a class="note1">nimis<span>nimis ADV <br>:very much; too much; exceedingly;<br><br></span></a>
+<a class="note0">magnum<span></span></a>
+<a class="note1">studium<span>studium studi(i) N (2nd) N  <br>:eagerness, enthusiasm, zeal, spirit; devotion, pursuit, study;<br>(X 単数 対格)<br></span></a>
+<a class="note0">multamque<span></span></a>
+<a class="note0">operam<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">res<span></span></a>
+<a class="note1">obscuras<span>obscurus obscura -um, obscurior -or -us, obscurissimus -a -um ADJ  <br>:dim, dark, obscure; dusky, shadowy, only faintly/dimly seen; dingy; gloomy;<br>(F 複数 対格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">difficiles<span>difficilis difficile, difficilior -or -us, difficillimus -a -um ADJ  <br>:difficult, troublesome; hard; hard to please/manage/deal with/carry out;<br>(C 複数 対格)<br></span></a>
+<a class="note1">conferunt<span>confero conferre, contuli, collatus V TRANS  <br>:bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">easdemque<span>idem eadem, idem PRON  <br>:(w/-dem ONLY, idem, eadem, idem) same, the same, the very same, also;<br>(F 複数 対格)<br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">necessarias.<span>necessarius necessaria, necessarium ADJ  <br>:necessary/needed/essential/indispensable; vital/private (body part); close tied;<br>(F 複数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>quod conferunt magnum studium in obscuras res : quodは名詞節を導く（直接法）ここではvitiumと同格で説明。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>２つ目の誤りは、曖昧で困難、同時に必要のない事柄に、多大な熱意とたくさんの作業を注ぎ込むことである。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quibus<span></span></a>
+<a class="note1">vitiis<span>vitium viti(i) N (2nd) N  <br>:fault, vice, crime, sin; defect;<br>(X 複数 奪格)<br></span></a>
+<a class="note1">declinatis<span>declino declinare, declinavi, declinatus V (1st)  <br>:|avoid/stray; vary/be different; bend/sink down, subside/decline; lower/descend;<br>&nbsp;(完了 分詞 受動態  複数 奪格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">rebus<span></span></a>
+<a class="note1">honestis<span>honestus honesta -um, honestior -or -us, honestissimus -a -um ADJ  <br>:distinguished, reputable, respected, <strong>honorable</strong>, upright, honest; worthy;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cognitione<span>cognitio cognitionis N (3rd) F  <br>:examination, inquiry/investigation (judicial); acquiring knowledge; recognition;<br>(C 単数 奪格)<br></span></a>
+<a class="note1">dignis<span>dignus digna -um, dignior -or -us, dignissimus -a -um ADJ  <br>:appropriate/suitable; worthy, deserving, meriting; worth (w/ABL/GEN);<br>X 複数 奪格)<br></span></a>
+<a class="note1">operae<span>opera operae N (1st) F  <br>:work, care; aid; service, effort/trouble;<br>&nbsp;(C 複数 主格)<br></span></a>
+<a class="note1">curaeque<span>cura curae N (1st) F  <br>:concern, worry, anxiety, trouble; <strong>attentio</strong>n, care, pains, zeal; cure, treatment;<br>&nbsp;(C 複数 主格)<br></span></a>
+<a class="note1">ponetur,<span>pono ponere, posui, positus V (3rd) TRANS  <br>:||||esteem/value/count; impose; ordain; lend, put out, offer, wager; rid/drop;<br>(3 単数 未来 受動態 直接法 )<br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note1">iure<span>jure ADV <br>:by right, rightly, with justice; justly, deservedly;<br><br></span></a>
+<a class="note1">laudabitur,<span>laudo laudare, laudavi, laudatus V (1st)  <br>:recommend; praise, approve, extol; call upon, name; deliver eulogy on;<br>(3 単数 未来 受動態 直接法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">astrologia<span>astrologia astrologiae N (1st) F  <br>:<strong>astronomy</strong>, astrology, science/study of the heavenly bodies; book on astronomy;<br>(C 単数 主格), <br></span></a>
+<a class="note0">C.<span></span></a>
+<a class="note0">Sulpicium<span></span></a>
+<a class="note1">audimus,<span>audio audire, audivi, auditus V (4th)  <br>:hear, listen, accept, agree with; obey; harken, pay attention; be able to hear;<br>(１ 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">geometria<span></span></a>
+<a class="note0">Sex.<span></span></a>
+<a class="note0">Pompeium<span></span></a>
+<a class="note0">ipsi<span></span></a>
+<a class="note0">cognovimus,<span></span></a>
+<a class="note0">multos<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">dialecticis,<span>dialecticus dialectici N (2nd) M  <br>:dialectician, logician; Academic philosopher; one who studies logic;弁証法<br>(X 複数 奪格)<br></span></a>
+<a class="note0">plures<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">iure<span></span></a>
+<a class="note1">civili,<span>civilis civilis, civile ADJ  <br>:of/affecting fellow citizens; civil; <strong>legal</strong>; public; political; unassuming;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">omnes<span></span></a>
+<a class="note0">artes<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">veri<span></span></a>
+<a class="note1">investigatione<span>investigatio investigationis N (3rd) F  <br>:search; inquiry, investigation; research;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note1">versantur,<span>versor versari, versatus sum V (1st) DEP  <br>:move about; live, dwell; be;<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note1">cuius<span>quisquis quisquis, quidquid  <br>:whoever; every one who; whoever it be; everyone; each;<br>(X 単数 与格)<br></span></a>
+<a class="note0">studio<span></span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">rebus<span></span></a>
+<a class="note1">gerendis<span>gero gerere, gessi, gestus V (3rd)  <br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>動形容詞<br>&nbsp;(未来 分詞 受動態  複数 奪格)<br></span></a>
+<a class="note1">abduci<span>abduco abducere, abduxi, abductus V (3rd) TRANS  <br>:lead away, carry off; detach, attract away, entice, seduce, charm; withdraw;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">contra<span></span></a>
+<a class="note0">officium<span></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>quod operae curaeque ponetur in rebus honestis et diginis cognitione. : quodが難しいが、例えば名詞節を導くと考えて「名誉があり意味のある知識欲に注ぎ込まれる努力と苦労に関して言えば」</p>
+<p>id jure laudabitur　：idは前のquod節と同格で「それは認められるであろう」</p>
+<p>cuius studio a rebus gerendis aduci contra officium est. : cuius studioは与格、「こういう熱意にとって」</p>
+<p>aduci a rebus gerendis : gerendisは動形容詞で義務を表し「行うべきことからの逃避」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>これらの誤りを避けることで、名誉あるかつ意味のある調査に注ぎ込まれる努力、労苦というものは報われるであろう。天文学におけるC. Sulpicium、彼のことを我々は聞いているが、のように。また幾何学におけるSex. Ponpeius、彼は私の知り合いであるが、のように。また論理学においても沢山の人、法学についても多くの人があり、それらのすべての学問は真理の探求に存しているのである。それらの熱意にとって、行うべきことを避けることはOfficiumに反することである。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Virtutis<span>virtus virtutis N (3rd) F  <br>:strength/power; courage/ bravery; worth/ manliness/ virtue/ character/ excellence;<br>(X 単数 属格)<br></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note1">laus<span>laus laudis N (3rd) F  <br>:praise, approval, merit; glory; renown;<br>(X 単数 主格)<br></span></a>
+<a class="note0">omnis<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">actione<span></span></a>
+<a class="note1">consistit,<span>consisto consistere, constiti, constitus V (3rd)  <br>:||make a stand; stay, remain (fixed), stand still/erect/upright; correspond to;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">qua<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">fit<span></span></a>
+<a class="note1">intermissio<span>intermissio intermissionis N (3rd) F  <br>:intermission; pause;<br>(X 単数 主格)<br></span></a>
+<a class="note0">saepe<span></span></a>
+<a class="note0">multique<span></span></a>
+<a class="note1">dantur<span>do dare, dedi, datus V (1st) TRANS  <br>:give; dedicate; sell; pay; grant/bestow/impart/offer/lend; devote; allow; make;<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">studia<span>studium studi(i) N (2nd) N  <br>:eagerness, enthusiasm, zeal, spirit; devotion, pursuit, study;<br>&nbsp;(N 複数 対格)<br></span></a>
+<a class="note1">reditus;<span>reditus reditus N (4th) M  <br>:return, returning; revenue, income, proceeds; produce (Plater);<br>&nbsp;(C 複数 対格)<br></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note1">agitatio<span>agitatio agitationis N (3rd) F  <br>:brandishing / waving/ shaking/ moving violently; movement; exercise; working (land);<br>(X 単数 主格),<br></span></a>
+<a class="note1">mentis,<span>mens mentis N (3rd) F  <br>:mind; reason, intellect, judgment; plan, intention, frame of mind; courage;<br>(X 単数 属格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">numquam<span>numquam ADV <br>:never;<br><br></span></a>
+<a class="note1">adquiescit,<span>adquiesco adquiescere, adquiei, adquietus V (3rd) INTRANS  <br>:lie with (w/cum), rest, relax; repose (in death); acquiesce, assent; subside;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">potest<span></span></a>
+<a class="note0">nos<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">studiis<span>studium studi(i) N (2nd) N  <br>:eagerness, enthusiasm, zeal, spirit; devotion, pursuit, study;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note1">cognitionis<span>cognitio cognitionis N (3rd) F  <br>:examination, inquiry/investigation (judicial); acquiring knowledge; recognition;<br>(X 単数 属格)<br></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">sine<span>sine PREP ABL <br>:without; (sometimes after object); lack;<br><br></span></a>
+<a class="note1">opera<span>opera operae N (1st) F  <br>:work, care; aid; service,<strong> effort</strong>/ trouble;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note0">nostra<span></span></a>
+<a class="note1">continere.<span>contineo continere, continui, contentus V (2nd) TRANS  <br>:||keep/hold/hang together/fast; surround, enclose, contain, limit; concentrate;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>omnis virtutis laus consistit in acti</strong>one. : 「すべての徳の栄光は行動にある。」</p>
+<p><strong>a qua intermisso fit saepe</strong>: quaはactioneを指す。「そこからの中断がしばしば起きる。」</p>
+<p><strong>multi dantur ad studia reditus</strong> . 「熱意に戻るたくさんのものが与えられる」が逐語訳。たくさんの機会があるの意。studiaは行動ではなく真理の追求とか、意味のある知識欲などの意。</p>
+<p><strong>agitatio mentis, quae numquam adquiescit</strong> : 「精神の躍動、それは決して休むことがないものだが」</p>
+<p><strong>potest nos continere in studiis cognitionis:</strong> nos continereは不定詞句。我々が真理の探求を続けることを可能にする」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>すべての徳の栄光は行動にある。しかしながら行動は度々中断があり、真理の探求に戻る機会が与えられる。また、決して休まない精神の躍動は、特に努力することもなく知識を追い求めることを可能にする。<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Omnis<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">cogitatio<span>cogitatio cogitationis N (3rd) F  <br>:thinking, meditation, reflection; thought; intention; plan; opinion, reasoning;<br>(X 単数 主格)<br></span></a>
+<a class="note1">motusque<span>motus motus N (4th) M  <br>:movement, motion; riot, commotion, disturbance; gesture; emotion;<br>(C 単数 主格)<br></span></a>
+<a class="note0">animi<span></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">consiliis<span></span></a>
+<a class="note1">capiendis<span>capio capere, cepi, captus V (3rd) TRANS  <br>:take hold, seize; <strong>gras</strong>p; take bribe; arrest/capture; put on; occupy; captivate;<br>(未来 分詞 受動態  複数 奪格)<br></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">rebus<span></span></a>
+<a class="note0">honestis<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">pertinentibus<span>pertineo pertinere, pertinui, pertentus V (2nd)  <br>:reach; extend; relate to; concerns, pertain to;<br>&nbsp;(現在 分詞 能動態  複数 奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">bene<span>bene melius, optime ADV <br>:well, very, quite, rightly, agreeably, cheaply, in good style; better; best;<br><br></span></a>
+<a class="note1">beateque<span>beate beatius, beatissime ADV <br>:happily; excellently, felicitously; lavishly, abundantly;<br><br></span></a>
+<a class="note1">vivendum<span>vivo vivere, vixi, victus V (3rd)  <br>:be alive, live; survive; reside;<br>(未来 分詞 受動態 N 単数 対格),<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">studiis<span></span></a>
+<a class="note0">scientiae<span></span></a>
+<a class="note1">cognitionisque<span>cognitio cognitionis N (3rd) F  <br>:examination, inquiry/investigation (judicial); acquiring knowledge; recognition;<br>(X 単数 属格)<br></span></a>
+<a class="note1">versabitur.<span>versor versari, versatus sum V (1st) DEP  <br>:move about; live, dwell; be;<br>(3 単数 未来 受動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>cognitio et amini motus versabitur in ~.</strong> が骨子。「考え、精神の機能は～に存する」</p>
+<p>pertinetibus ad vivendum : ad + 動名詞で目的。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>すべての考え、精神の機能というものは、名誉ある事柄（honestus)に関する計画や、またはより良くより幸せに生きるための関心か、または知識への探求熱意に存するものである。<br></p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ac<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note0">primo<span></span></a>
+<a class="note1">quidem<span>quidem ADV <br>:indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;<br><br></span></a>
+<a class="note0">officii<span></span></a>
+<a class="note1">fonte<span>fons fontis N (3rd) M  <br>:spring, fountain, well; <strong>source</strong>/fount; principal cause; font; baptistry;<br>(C 単数 奪格)<br></span></a>
+<a class="note1">diximus.<span>dico dicere, dixi, dictus V (3rd)  <br>:say, declare, state; allege, declare positively; assert; plead (case);<br>(１ 複数 <strong>完了</strong> 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>diximus de primo officii fonte. 「最初のOfficiumの源泉について話した。」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>（以上）Officiumの最初の要素について、話しを行った。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

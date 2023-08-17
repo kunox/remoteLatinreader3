@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 11</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[11]<span></span></a>
+
+<a class="note0">Helvētiī<span><br><br></span></a>
+<a class="note1">iam<span>jam, 副詞   :now, already, by/even now; besides</span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">angustiās<span>angustia, angustiae 名詞 (1st) F   :narrow passage/place/space (pl.),対格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note0">Sēquanōrum<span><br><br></span></a>
+<a class="note1">suās<span>(f 複 対格) Helvetiiのこと<br></span></a>
+<a class="note1">cōpiās<span>copia, copiae 名詞 (1st) F   :plenty, abundance, supply; troops (pl.), supplies; forces; resources; wealth; 複 対格<br></span></a>
+<a class="note1">trādūxerant<span>3 複 過去完了 <br>traduco, traducere, traduxi, traductus 動詞 (3rd) TRANS   :bring across/over, move/transfer;<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Haeduōrum<span><br><br></span></a>
+<a class="note0">fīnēs<span><br><br></span></a>
+<a class="note1">pervēnerant<span>pervenio, pervenire, perveni, perventus 動詞 (4th)   :come to; reach; arrive;3 複 過去完了<br></span></a>
+<a class="note0">eōrumque<span><br><br></span></a>
+<a class="note1">agrōs<span>ager 複対格</span></a>
+<a class="note1">populābantur.<span>populo, populare, populavi, populor, populari, populatus sum 動詞 (1st) DEP   :ravage, devastate, lay waste; plunder; despoil, strip;3 複 未完了 受動態<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>構文の骨子は</p>
+<p>Helvetii, traduxerant, pervenerant, populabantur.「ヘルウェティは移動し、到着して、略奪した」</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>ヘルウェティは隘路とセクイアの領土を通って彼らの隊列を移動し、ハエドゥ族の領地に至り、そこを略奪した。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Haeduī,<span><br><br></span></a>
+<a class="note1">cum<span>quum, 接続詞   :when, while, as, since, although; as soon;</span></a>
+<a class="note1">sē<span>sui 対格 <br>Haedui自身の事<br></span></a>
+<a class="note1">suaque<span>suum, sui 名詞 (2nd) N   :his property (pl.);</span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">iīs<span>奪格　from them<br></span></a>
+<a class="note1">dēfendere<span>defendo, defendere, defendi, defensus 動詞 (3rd) TRANS   :defend/guard/protect, look after;不定詞<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">possent,<span></span></a>
+<a class="note0">lēgātōs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">mittunt<span>mitto, mittere, additional, forms 動詞   :send, throw, <br>３複現在</span></a>
+<a class="note1">rogātum<span>rogo, rogare, rogavi, rogatus 動詞 (1st)   :ask, ask for; invite; introduce;目的分詞<br></span></a>
+<a class="note1">auxilium:<span>auxilium, auxili(i) 名詞 (2nd) N   :help, assistance; remedy/antidote; supporting resource/force; auxiliaries (pl.); <br>対格 単</span></a>
+<a class="note1">ita<span>ita, 副詞   :thus, so; therefore;</span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">omnī<span></span></a>
+<a class="note1">tempore<span>奪格</span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">populō<span><br><br></span></a>
+<a class="note1">Rōmānō<span>奪格<br></span></a>
+<a class="note1">meritōs<span>mereor mereri, meritus sum DEP 完了分詞　受動　ｍ複　対格　;= earn, deserve, merit, serve<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">paene<span>paene, 副詞   :nearly, almost; mostly;</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">cōnspectū<span>conspectus, conspectus 名詞 (4th) M   :view, (range of) sight; aspect, appearance/look; <br>奪格 単<br></span></a>
+<a class="note1">exercitūs<span>exercitus, exercitus 名詞 (4th) M   :army, infantry; swarm, flock、属格<br></span></a>
+<a class="note1">nostrī<span>exercitusにかかる。我らの軍隊<br></span></a>
+<a class="note0">agrī<span><br><br></span></a>
+<a class="note1">vastārī,<span>vasto, vastare, vastavi, vastatus 動詞 (1st)   :lay waste, ravage, devastate; <br>不定詞<br></span></a>
+<a class="note1">liberī<span>liber, liberi 名詞 (2nd) M   :children (pl.); (sg. VOC) child;主格<br></span></a>
+<a class="note0">[eōrum]<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">servitūtem<span>servitus, servitutis 名詞 (3rd) F   :slavery; slaves; servitude; <br>対格<br></span></a>
+<a class="note1">abdūcī,<span>abduco, abducere, abduxi, abductus 動詞 (3rd) TRANS   :lead away, carry off; detach, attract away,受動態 不定詞<br></span></a>
+<a class="note0">oppida<span></span></a>
+<a class="note1">expūgnārī<span>expugno, expugnare, expugnavi, expugnatus 動詞 (1st)   :assault, storm; conquer, plunder; accomplish; persuade; <br> 受動態 不定詞<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">dēbuerint.<span>debeo, debere, debui, debitus 動詞 (2nd)   :owe; be indebted/responsible for/obliged/bound/destined; ought, must, should; <br>3 複 完了 能動態 接続法<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>se suaque　： sui (自身、ハエドゥのこと）et suum(彼らの財産、持ち物）</p>
+<p><strong>ita se　～：は間接話法</strong>としてハエドゥ族の言葉、言い分を記している。（カエサルの通例として不定詞を使っている）sayingと同等の言葉を補う。（NewLatin314.2)</p>
+<p><strong>se de populo Romano meritos esse　</strong>＝　be deserved of Roman people= ローマ人民の利点（逐語的）であった　seが主語、esseが動詞の不定詞文</p>
+<p><strong>ut paene in conspectu exercitus　nostri non debuerint</strong>:我々の軍隊の視野の限りは～であってはならない。</p>
+<p>（meritos esseは歴史的現在であるが実際には過去完了（第二時制）である。第二時制のあとは通常未完了が来ることで時制の一致がなされるが、ut節で結果の節の場合には歴史的過去が第二時制として扱われる）(NewLatin268.6)</p>
+<p>agri vastari :領地が荒らされる事</p>
+<p>liberi [eorum] in servitutem abduci　：（彼らの）子供が奴隷として連れ去られる事</p>
+<p>oppida expugnari　：　都市が略奪されること</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>ハエドゥ族は彼ら（ヘルウェティ）から自身とその財産を守り切ることができないので、カエサルに使者を送って援軍を依頼した。（彼らの言い分は）これまで長きに渡りローマ人民に対する貢献を考えれば、我々の軍隊の視野の限りは、領地が荒らされるとか、子供が人質に取られるとか、都市が略奪されるようなことがあってはならない（はずである）</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Eōdem<span>eodem, 副詞   :to the same place/purpose;<br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note1">quō<span>？</span></a>
+<a class="note0">Haeduī<span><br><br></span></a>
+<a class="note0">Ambarrī,<span><br><br></span></a>
+<a class="note1">necessāriī<span>necessarius, necessari(i) 名詞 (2nd) M   :relative; connection, one closely connected by friendship/family/obligation;主格複<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cōnsanguineī<span>consanguineus, consanguinei 名詞 (2nd) C   :kinsman, blood relation; brother (M); a sister (F); kindred/relations (pl.); <br>複　主格<br></span></a>
+<a class="note0">Haeduōrum,<span><br><br></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">certiōrem<span>certus, certa -um, certior -or -us, certissimus -a -um 形容詞   :fixed, settled, firm; certain; <br>対格<br></span></a>
+<a class="note1">faciunt<span>3 複 現在</span></a>
+<a class="note1">sēsē<span>sui 対格<br></span></a>
+<a class="note1">dēpopulātīs<span>depopulor, depopulari, depopulatus sum 動詞 (1st) DEP   :sack/plunder/pillage/rob/despoil; ravage/ devastate/ destroy/ lay waste; overgraze; <br>完了 分詞 受動態 X 複 奪格<br></span></a>
+<a class="note1">agrīs<span>奪格</span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">facile<span>facile, facilius, facillime 副詞   :easily, readily, without difficulty; generally, often; willingly; heedlessly;</span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">oppidīs<span><br><br></span></a>
+<a class="note1">vim<span>vis (vis) = force, power <br>単　対格</span></a>
+<a class="note1">hostium<span>hostis, hostis 名詞 (3rd) C   :enemy (of the state); stranger, foreigner; the enemy (pl.);複　属格</span></a>
+<a class="note1">prohibēre.<span>prohibeo, prohibere, prohibui, prohibitus 動詞 (2nd)   :hinder, restrain; forbid, prevent; <br>不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>quo Haedui Ambarri,　：　いろんな表記あり　１）quoなし、２）quo Haedui Ambarii 3) quo Haedui, Ambarrii quoque, など</p>
+<p>１）Bennett: eodem tempore quo でas the same as のあとのasと同じ。quoも時間の奪格である、ラテン語では same who, same whichというふうに言う。</p>
+<p>２）AG : quo無し</p>
+<p>Caesarem certiorem faciunt　：　make Caesar certain : カエサルにはっきりさせた(二重対格）</p>
+<p>sese, : 意味上の主語　（動詞はprohibere)</p>
+<p>depopulatis agris : 独立奪格、 having wasted field,&nbsp;<u>depopulorはDEPで、完了分詞受動態であるが、やはり受動の意味を持っている。時々はこういうことがある。（NewLatin112.2)</u></p>
+<p><strong>non facile ab oppidis vim hostium prohibere</strong> ：hostium vim(敵の力を）ab oppidis(都市から）prohibere(遠ざける）のはnon facileであること　＝with difficulty to keep off the violence of the enemy from thier town</p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>それと同じ時に、ハエドゥのアムバリ族が、それはハエドゥ族の親戚であり友人でもあったが、カエサルのもとに、彼らの領地は既に荒らされており、彼らは彼らの都市を敵の暴力から守ることが困難であることを伝えてきた。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Item<span>item, 副詞   :likewise; besides, also, similarly;</span></a>
+<a class="note0">Allobroges,<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">trāns<span><br><br></span></a>
+<a class="note0">Rhodanum<span></span></a>
+<a class="note1">vīcōs<span>vicus, vici 名詞 (2nd) M   :village; hamlet; street, row of houses;対格<br></span></a>
+<a class="note1">possessiōnēsque<span>possessio, possessionis 名詞 (3rd) F   :possession, property; <br>対格<br></span></a>
+<a class="note1">habēbant,<span>３複未完了<br></span></a>
+<a class="note1">fugā<span>fuga, fugae 名詞 (1st) F   :flight, fleeing, escape; avoidance; exile;奪格</span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note1">recipiunt<span>recipio, recipere, recepi, receptus 動詞 (3rd)   :keep back; recover; undertake; guarantee; accept, take in; take back;３複現在</span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">dēmōnstrant<span>demonstro, demonstrare, demonstravi, demonstratus 動詞 (1st) TRANS   :point out/at/to, draw attention to; explain/describe/show, give an account of;３複現在<br></span></a>
+<a class="note0">sibi<span></span></a>
+<a class="note1">praeter<span>praeter, 前置詞 (対格)  :besides, except, contrary to;</span></a>
+<a class="note1">agrī<span>agerの属格 <br>ageri solumで祖国の土（対格）<br></span></a>
+<a class="note1">sōlum<span>solum, soli 名詞 (2nd) N   :bottom, ground, floor; soil, land;中性　主格対格　単<br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">reliquī.<span>reliquus, reliqua, reliquum 形容詞   :rest of/remaining/available/left; surviving; future/further; yet to be/owed;複主格<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>fuga se ad Caesarem recipiunt　：　(they) take in themselves in flight to Caesar.</p>
+<p><strong>sibi esse nihil</strong> : [<strong>所有の与格</strong>]</p>
+<p><strong>nihi reliqui</strong> : reliquiは[<strong>全体の属格</strong>]で、残っているもの全部のうちのnihil が逐語的。</p>
+<p><font style="background-color: rgb(255, 204, 0);">nihil esse reliqui : reliquiを形容詞主格として、＝nothing is leftと訳す事もできないか？その場合sibiは参照の与格で、彼らにとって、の様なニュアンス。全体の属格というのはちょっと無理があるようだけれども、他に同じ用例はあるのか？</font></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false">
+<p>同じように、アロブロゲス、彼らはロダヌム河の向こうに部落や財産を持っていたが、カエサルの元に飛んできて、彼らのところには祖国の土以外に何も残っていないと告げた。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Quibus<span>奪格</span></a>
+<a class="note1">rēbus<span>奪格<br></span></a>
+<a class="note1">adductus<span>adduco, adducere, adduxi, adductus 動詞 (3rd) TRANS   :lead up/to/away; bring up/to; persuade, induce; lead, <br>完了分詞　受動　主格(単）</span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">expectandum<span>expecto, expectare, expectavi, expectatus 動詞 (1st)   :await, expect; anticipate; hope for; <br>未来分詞　受動　対格（動形容詞） <br></span></a>
+<a class="note1">sibi<span>sui 与格</span></a>
+<a class="note1">statuit<span>statuo, statuere, statui, statutus 動詞 (3rd)   :set up, establish, set, place, build; decide, think;３単現</span></a>
+<a class="note1">dum,<span>dum, 接続詞   :while, as long as, until; provided that;</span></a>
+<a class="note0">omnibus,<span></span></a>
+<a class="note1">fortūnīs<span>fortuna, fortunae 名詞 (1st) F   :chance, luck, fate; prosperity; condition, wealth, property; <br>奪格<br></span></a>
+<a class="note1">sociōrum<span>socius, soci(i) 名詞 (2nd) M   :associate, companion; ally; <br>属格<br></span></a>
+<a class="note1">cōnsūmptīs,<span>consumo, consumere, consumpsi, consumptus 動詞 (3rd) TRANS   :burn up, destroy/kill; put end to; <br>完了分詞　受動　奪格<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Santonōs<span><br><br></span></a>
+<a class="note0">Helvētiī<span><br><br></span></a>
+<a class="note1">pervenīrent.<span>3 複 未完了 <br>come, rrive<br></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p>Quibus rebus :カエサルの得意の常套句（またはhis rebus) = by all this, by these reason</p>
+<p>⇔　His rebus adducti (Chap 3)　adductiは複数　主格、adductusは単数　主格</p>
+<p><strong>Caesar statuit non expectandum (esse)&nbsp;sibi</strong> : expectandumはesseが省略された、<u>動形容詞の迂言的用法</u>(NewLatin337.8) で義務、必要のニュアンス、sibiは[<strong>行為者の与格</strong>]で、動形容詞と共に使われている。（NewLatin189.1)</p>
+<p>逐語的に訳せば「カエサルはそのことは彼自身によって待たれるべきではないと考えた。」(迂言的用法では自動詞は非人称的ににのみ使われる。）</p>
+<p>dum = until</p>
+<p><strong>omnibus, fortunis sociorum consumptis</strong> <strong>独立奪格</strong>　omnibus fortunis sociorum = all properties of allies</p>
+<p>Helvetii pervenirent : 接続法なのはdumに導かれる時の節で、予測、期待を表しているから。（NewLatin293.3.(b))</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>以上のような状況をふまえ、カエサルは、同盟者たちの全ての財産を焼き払いながらサントニに到着するであろうヘルウェティを待つべきでないと考えた。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 49 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[49]<span></span></a>
+<a class="note0">Acceptorum<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">beneficiorum<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">dilectus<span>dīlectus dilectus N (4th) M  <br>:|selection/choosing; choice (between possibilities), discrimination/<strong>distinction</strong>;<br>(複数 主格),<br><br><br></span></a>
+<a class="note1">habendi,<span>hăbĕo habere, habui, habitus V (2nd)  <br>:have, hold, consider, think, reason; manage, keep; spend/pass (time);<br>未来分詞 受動態(M 複数 主格), <br></span></a>
+<a class="note0">nec<span></span></a>
+<a class="note0">dubium,<span></span></a>
+<a class="note1">quin<span>quin CONJ <br>&gt;:so that not, without; that not; but that; that;<br><br></span></a>
+<a class="note0">maximo<span></span></a>
+<a class="note0">cuique<span></span></a>
+<a class="note0">plurimum<span></span></a>
+<a class="note1">debeatur.<span>dēbĕo debere, debui, debitus V (2nd)  <br>:owe; be indebted/responsible for/obliged/bound/destined; ought, must, should;<br>( 3 単数 現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>delectus sunt habendi. 動形容詞叙述用法。～すべきである。acceptorum beneficiorumはdelectusを修飾。「好意の受け取りについては区別をつけるべきである。」</p>
+<p>maximo (beneficio) cuique debeatur plumimum. maximoは与格。「最も大きな親切に対して最も多く義務が生じる」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>好意を受け取るには区別をつけるべきである。疑いなく、最も大きな好意に対しては最も多く義務が生ずる。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">In<span></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">inprimis,<span>inprimis ADV <br>&gt;:in the first place, first, chiefly; especially, above all, more than any other;<br><br></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note1">quisque<span>quisque quaeque,quidque INDEF  INDEF<br>:(w/-que) each, each one; every, everybody, everything (more than 2); whatever;<br>(M 単数 主格)<br></span></a>
+<a class="note0">animo,<span></span></a>
+<a class="note0">studio,<span></span></a>
+<a class="note1">benivolentia<span>benivolentia benivolentiae N (1st) F  <br>&gt;:benevolence, kindness, goodwill; favor; endearments;<br>(単数 奪格),<br><br></span></a>
+<a class="note0">fecerit,<span></span></a>
+<a class="note1">ponderandum<span>pondĕro ponderare, ponderavi, ponderatus V (1st)  <br>:weigh; weigh up;<br>未来分詞 受動態(N 単数 主格),<br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>est ponderandum. 重み付けを行うべきである。</p>
+<p><br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Multi<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">faciunt<span></span></a>
+<a class="note0">multa<span></span></a>
+<a class="note0">temeritate<span></span></a>
+<a class="note0">quadam<span></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note0">iudicio,<span></span></a>
+<a class="note0">vel<span></span></a>
+<a class="note0">morbo<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omnes<span></span></a>
+<a class="note0">vel<span></span></a>
+<a class="note0">repentino<span></span></a>
+<a class="note0">quodam<span></span></a>
+<a class="note0">quasi<span></span></a>
+<a class="note0">vento<span></span></a>
+<a class="note0">impetu<span></span></a>
+<a class="note0">animi<span></span></a>
+<a class="note0">incitati;<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">beneficia<span></span></a>
+<a class="note0">aeque<span></span></a>
+<a class="note0">magna<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">habenda<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ea,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">iudicio,<span></span></a>
+<a class="note0">considerate<span></span></a>
+<a class="note0">constanterque<span></span></a>
+<a class="note0">delata<span></span></a>
+<a class="note0">sunt.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sed<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">collocando<span></span></a>
+<a class="note0">beneficio<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">referenda<span></span></a>
+<a class="note0">gratia,<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">cetera<span></span></a>
+<a class="note0">paria<span></span></a>
+<a class="note0">sunt,<span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0">maxime<span></span></a>
+<a class="note0">officii<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">quisque<span></span></a>
+<a class="note0">opis<span></span></a>
+<a class="note0">indigeat,<span></span></a>
+<a class="note0">ita<span></span></a>
+<a class="note0">ei<span></span></a>
+<a class="note0">potissimum<span></span></a>
+<a class="note0">opitulari;<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">contra<span></span></a>
+<a class="note0">fit<span></span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">plerisque;<span></span></a>
+<a class="note0">a<span></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">plurimum<span></span></a>
+<a class="note0">sperant,<span></span></a>
+<a class="note0">etiamsi<span></span></a>
+<a class="note0">ille<span></span></a>
+<a class="note0">iis<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">eget,<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">ei<span></span></a>
+<a class="note0">potissimum<span></span></a>
+<a class="note0">inserviunt.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

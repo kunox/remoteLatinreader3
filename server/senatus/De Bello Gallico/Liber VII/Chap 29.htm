@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 29</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[29]<span></span></a>
+
+<a class="note0">Posterō<span><br><br></span></a>
+<a class="note0">diē<span><br><br></span></a>
+<a class="note0">conciliō<span><br><br></span></a>
+<a class="note0">convocātō<span><br><br></span></a>
+<a class="note1">cōnsōlātus<span>consolor consolari, consolatus sum V (1st) DEP  <br>:console, (be source of) comfort/solace; soothe; alleviate/allay/assuage (grief);<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note1">cohortātusque<span>cohortor cohortari, cohortatus sum V (1st) DEP  <br>:encourage, cheer up; exhort, rouse, incite; admonish;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">admodum<span>admodum ADV <br>:very, exceedingly, greatly, quite; excessively; just so; certainly, completely;<br><br></span></a>
+<a class="note0">animō<span><br><br></span></a>
+<a class="note1">dēmitterent,<span>demitto demittere, demisi, demissus V (3rd) TRANS  <br>:drop, let fall; sink; send/cast/go/flow/float/slope down; flow/shed/let (blood);<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">nē<span></span></a>
+<a class="note1">perturbārentur<span>perturbo perturbare, perturbavi, perturbatus V (1st)  <br>:confuse, throw into confusion; disturb, perturb, trouble; alarm;<br>(３人称 複数  未完了 受動態 接続法 )<br></span></a>
+<a class="note1">incommodō.<span>incommodum incommodi N (2nd) N  <br>:disadvantage, inconvenience, setback, harm, detriment; defeat/disaster; ailment;<br>&nbsp;(X 単数 奪格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>postero die est consolatus cohortatusque. 主語はVercingetorixで、動詞はconsolatus est, cohortus est. 受動、完了。</p>
+<p>ne demitterent se amino, ne perturbarentur incommodo. : neで導かれる意志法から派生の名詞節。(NewLatin 295.1)</p>
+<p>animo, incommodoは(多分）手段、原因の奪格。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>翌日、Vercingetorixは会議を開催し、あまり過度に落胆したり、失った物に煩わされないように、慰め、励ました。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nōn<span></span></a>
+<a class="note0">virtūte<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">aciē<span><br><br></span></a>
+<a class="note1">vīcisse<span>vinco vincere, vici, victus V (3rd)  <br>:conquer, defeat, excel; outlast; succeed;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">Rōmānōs,<span><br><br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">artificiō<span>artificium artifici(i) N (2nd) N  <br>:art/craft/trade; skill/talent/craftsmanship; art work; method/trick; technology;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">quōdam<span>quidam quaedam, quoddam   <br>:(w/-dam) certain; as INDEF a certain thing; somebody, one, something;<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">scientiā<span>scientia scientiae N (1st) F  <br>:knowledge, science; skill;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">oppugnātiōnis,<span>oppugnatio oppugnationis N (3rd) F  <br>:assault, siege, attack; storming;<br>(X 単数 属格)<br></span></a>
+<a class="note0">cuius<span></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note1">fuerint<span>sum esse, fui, futurus V  <br>:be;<br>(３人称 複数  未来完了 能動態 直説法 )<br></span></a>
+<a class="note0">ipsī<span><br><br></span></a>
+<a class="note1">imperītī.<span>imperitus imperita, imperitum ADJ  <br>:unskilled, inexperienced (in); unfamiliar, ignorant (of) (w/GEN);<br>&nbsp;(m 複数  主格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>ここからVercingetorixの言ったことを間接話法で。</p>
+<p>Romanos vicisse non virtute, neque in acie. virtuteは強さ、in acieは戦いでを比喩的に。「ローマ軍はその勇猛さによって勝った訳ではない、また戦いで勝ったわけでもない」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>ローマ軍はその強さや戦いで勝ったわけではない。それは何か技術的なものや戦い方の知識によって、それは我々が不得意とするところだが、それらによってである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Errāre,<span>erro errare, erravi, erratus V (1st)  <br>:wander, go astray; make a mistake, err; vacillate;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">bellō<span><br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">secundōs<span>secor seci, secutus sum V (3rd) DEP  <br>:follow; escort/attend/accompany; aim at/reach after/strive for/make for/seek;<br>(未来 分詞 受動態 m 複数  対格)<br></span></a>
+<a class="note1">rērum<span>res rei N (5th) F  <br>:thing; event/affair/business; fact; cause; property;<br>(c 複数  属格)<br></span></a>
+<a class="note1">prōventūs<span>proventus proventus N (4th) M  <br>:outcome, result; success;<br>(c 複数  対格)<br></span></a>
+<a class="note1">exspectent.<span>exspecto exspectare, exspectavi, exspectatus V (1st)  <br>:lookout for, await; expect, anticipate, hope for;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>(eos) errare, si qui exspectent omenes secundos rerum proventus. ：quiはeosの様な省略された主語を指す関係代名詞。</p>
+<p>omnes secundos rerum proventusは二重対格。直接目的語がomnes、述語対格がsecunods rerum proventus.　「全てが、伴われるべき成功である」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>もし（誰かが）戦いにおいて全てが成功裏に終わることを期待するとすれば、それは誤りである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sibi<span></span></a>
+<a class="note1">numquam<span>numquam ADV <br>:never;<br><br></span></a>
+<a class="note1">placuisse<span>placeo placere, placui, placitus V (2nd) DAT  <br>:please, satisfy, give pleasure to (with dat.);<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">Avaricum<span></span></a>
+<a class="note1">dēfendī,<span>defendo defendere, defendi, defensus V (3rd) TRANS  <br>:defend/guard/protect, look after; act/speak/plead/write for defense; prosecute;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">cuius<span></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note1">testēs<span>testis testis N (3rd) C  <br>:witness;<br>(c 複数  対格), <br></span></a>
+<a class="note0">ipsōs<span><br><br></span></a>
+<a class="note0">habēret;<span><br><br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">factum<span></span></a>
+<a class="note1">imprūdentiā<span>imprudentia imprudentiae N (1st) F  <br>:<strong>ignorance</strong>; lack of knowledge/thought/awareness/judgment/foresight/intention;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">Biturīgum<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">nimiā<span>nimius nimia, nimium ADJ  <br>:excessive, too great;<br>(f 単数 奪格)<br></span></a>
+<a class="note1">obsequentiā<span>obsequentia obsequentiae N (1st) F  <br>:obsequiousness; complaisance;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">reliquōrum<span><br><br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">hōc<span></span></a>
+<a class="note1">incommodum<span>incommodum incommodi N (2nd) N  <br>:disadvantage, inconvenience, setback, harm, detriment; defeat/disaster; ailment;<br>(n 単数 対格)<br></span></a>
+<a class="note1">acciperētur.<span>accipio accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>(３人称 単数 未完了 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>sibi = vercingetorix</p>
+<p>Avaricum defendi : 不定詞句。主語Avaricum「Avaricumが防衛される事」</p>
+<p>cuius rei haberet testes ipsos. ipsos= testesで述語対格。「それらのことには（私は）お前たちを証人としてもっている」「そのことはお前たちもよく知ってのとおりである。」</p>
+<p>sed (esse)factum uti acciperetur hoc incommodum. 「かくもの被害を被ることになった」</p>
+<p>imprudentia, obsenquentiaは原因の奪格。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>私は、お前らもよく知ってのとおり、Avariucmの防衛にたいしては決して賛成だった訳ではない。しかしBiturigesの無知と、残りの者たちの安易な譲歩によって、これらの被害を被ることになった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Id<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">celeriter<span></span></a>
+<a class="note1">māiōribus<span>magnus magna -um, major -or -us, maximus -a -um ADJ  比較級<br>:|great (achievement); mighty; distinguished; skilled; bold/confident; proud;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">commodīs<span>commodus commoda -um, commodior -or -us, commodissimus -a -um ADJ  <br>:suitable, convenient, obliging; opportune/timely; favorable/lucky; advantageous;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">sānātūrum.<span>sano sanare, sanavi, sanatus V (1st)  <br>:cure, heal; correct; quiet;<br>(未来 分詞 能動態 n 単数 主格)<br>esse 省略　未来不定詞<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>しかしそれは私が素早く更に良い事で回復するであろう。<br></p>
+</div>
+</div>
+<div class="spacer">Line 6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">reliquīs<span><br><br></span></a>
+<a class="note0">Gallīs<span><br><br></span></a>
+<a class="note0">cīvitātēs<span><br><br></span></a>
+<a class="note1">dissentīrent,<span>dissentio dissentire, dissensi, dissensus V (4th)  <br>:dissent, disagree; differ;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">hās<span><br><br></span></a>
+<a class="note0">suā<span><br><br></span></a>
+<a class="note0">dīligentiā<span><br><br></span></a>
+<a class="note1">adiūnctūrum<span>adjungo adjungere, adjunxi, adjunctus V (3rd) TRANS  <br>:add, attach, join to, add to, support; apply to; harness, yoke; direct; confer;<br>(未来 分詞 能動態 m 単数 対格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ūnum<span><br><br></span></a>
+<a class="note0">cōnsilium<span><br><br></span></a>
+<a class="note0">tōtīus<span><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note1">effectūrum,<span>efficio efficere, effeci, effectus V (3rd)  <br>:bring about; effect, execute, cause; accomplish; make, produce; prove;<br>(未来 分詞 能動態 n 単数 主格) <br></span></a>
+<a class="note0">cuius<span></span></a>
+<a class="note1">cōnsēnsuī<span>consensus consensus N (4th) M  <br>:agreement (opinion), consent, harmony; unanimity; conclusion, plot, conspiracy;<br>(c 単数 与格)<br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note1">orbis<span>orbis orbis N (3rd) M  <br>:circle; territory/region; sphere;<br>(X 単数 主格)<br></span></a>
+<a class="note0">quidem<span></span></a>
+<a class="note1">terrārum<span>terra terrae N (1st) F  <br>:earth, land, ground; country, region;<br>(c 複数  属格)<br></span></a>
+<a class="note0">possit<span></span></a>
+<a class="note1">obsistere;<span>obsisto obsistere, obstiti, obstitus V (3rd)  <br>:oppose, resist; stand in the way; make a stand against, withstand;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">idque<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">prope<span></span></a>
+<a class="note0">iam<span></span></a>
+<a class="note1">effectum<span>efficio efficere, effeci, effectus V (3rd)  <br>:bring about; effect, execute, cause; accomplish; make, produce; prove;<br>(完了 分詞 受動態 m 単数 対格), (完了 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">habēre.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p><strong>adiuncturum (esse) civitates quae dissentirent ab reliquis G</strong>allis. 「残りのガリア人に反対していた部族を付け加えるであろう」Vercingetorix主語の未来不定詞句。civitatesは対格で、quaeの先行詞であるが関係詞節に組み込まれている。（NewLatin251.4)</p>
+<p>effecturum (esse) unum consilium totius Galliae. 「全ガリアの一つの共同体を達成するであろう。」</p>
+<p>cuius consensui ne orbis terrarum possit obsistere. orbis terrarumは直訳すると地球の領土で全世界というニュアンス。cuius consensuiは与格。</p>
+<p>effectum habere = effecisse 英語のhave + 完了分詞と同じ。（NewLatin337.7)<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>私は、今まで反対していたガリア部族を付け加え、全ガリアの一つの共同体を作るであろう。それは全世界といえども反対できない結束である。私はそれを今や殆ど達成しているのである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Intereā<span>interea ADV <br>:meanwhile;<br><br></span></a>
+<a class="note1">aequum<span>aequum aequi N (2nd) N  <br>:level ground; equal footing/terms; <strong>what is right</strong>/ fair/ equitable, equity;<br>(n 単数 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eīs<span><br><br></span></a>
+<a class="note0">commūnis<span><br><br></span></a>
+<a class="note0">salūtis<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">impetrārī<span>impetro impetrare, impetravi, impetratus V (1st)  <br>:obtain/procure (by asking/request/entreaty); succeed/achieve/be granted; obtain;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note1">mūnīre<span>munio munire, munivi, munitus V (4th)  <br>:fortify; strengthen; protect, defend, safeguard; build (road);<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">īnstituerent,<span>instituo instituere, institui, institutus V (3rd)  <br>:set up, establish, found, make, institute; build; prepare; decide;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">quō<span>quo ADV <br>:where, to what place; to what purpose; for which reason, therefore;<br><br></span></a>
+<a class="note0">facilius<span></span></a>
+<a class="note1">repentīnōs<span>repentinus repentina, repentinum ADJ  <br>:sudden, hasty; unexpected;<br>(m 複数  対格)<br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">impetūs<span><br><br></span></a>
+<a class="note0">sustinērent.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>aequum esse impetrari ab eis ut ~ . 正しいことは彼らからut以下のことが得られる事である、が逐語訳。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>当面のところ、共同体の安全という観点からは、砦の要塞化を始める事が良いと思われる。それは敵の突然の攻撃に対しより容易に耐えられる様にするためである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

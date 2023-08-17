@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber II : Chap 8</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[8]<span></span></a>
+
+<a class="note0">Caesar<span></span></a>
+<a class="note0">prīmō<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">propter<span>前置詞 ;= near, on account of , by means of, because of(対格支配）</span></a>
+<a class="note0">multitūdinem<span><br><br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">propter<span></span></a>
+<a class="note1">eximiam<span>eximius exmia exmium 形容詞 複　対格　;= outstanding, exceptional, remarkable</span></a>
+<a class="note1">opīniōnem<span>opinio opinionis N (3rd) F  <br>:belief, idea, opinion; rumor (Plater);<br>(c 単数 対格)<br></span></a>
+<a class="note1">virtūtis<span>属格　army, mighty works<br></span></a>
+<a class="note1">proeliō<span>奪格</span></a>
+<a class="note1">supersedere<span>supersedeo supersedere, supersedi, supersessus V (2nd)  <br>:refrain (from), <strong>desist</strong> (from);<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">statuit;<span>statuo statuere, statui, statutus V (3rd)  <br>:set up, establish, set, place, build; decide, think;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note1">cotīdiē<span>cotidie ADV <br>:daily, every day; day by day; usually, ordinarily, commonly;<br><br><br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">equestribus<span></span></a>
+<a class="note0">proeliīs<span><br><br></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">hostis<span></span></a>
+<a class="note0">virtūte<span><br><br></span></a>
+<a class="note0">posset<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">quid<span></span></a>
+<a class="note0">nostrī<span><br><br></span></a>
+<a class="note1">audērent<span>audeo audere, ausus sum V (2nd) SEMIDEP  <br>:intend, be prepared; dare/have courage (to go/do), act boldly, venture, risk;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note1">perīclitābātur.<span>periclitor periclitari, periclitatus sum V (1st) DEP  <br>:try, prove, test, make a trial of, put to the test/in peril; risk, endanger;<br>(３人称 単数 未完了 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>eximiam opinionem virtutis</strong> : virtutisは属格、opnio(名詞）のようなfeelingの名詞は属格の目的語をもつ。これは所有の属格の拡張と考えられる。「戦いに関しての高い評価 」(AG348)</p>
+<p>proelio suersedere statuit : [戦いをしないことを決めた]　proelioは「分離の奪格」（refrain <strong>from</strong>と同じ感じ？）</p>
+<p>quid hostis virtute posset : 間接疑問文。　virtuteは観点の奪格「敵が武勇と言う観点から何ができるか」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カエサルは最初、敵の規模とか、敵の武勇についての高い評判などの理由から、戦いをしないことを考えた。しかし毎日、騎兵による戦いで、敵が武勇の点でどの程度できるのか、味方がどの程度士気が上がるのかを試すことにした。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ubi<span></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">inferiōres<span>infer infera -um 形容詞複数　主格　対格; = below, infeior<br></span></a>
+<a class="note0">intellēxit,<span><br><br></span></a>
+<a class="note1">locō<span>単　奪格　N<br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">aciem<span>acies aciei F 単　対格　;= sharpness sharp edge point, <b>battle line</b>, array</span></a>
+<a class="note1">īnstruendam<span>instruo instruere, instruxi, instructus V (3rd)  <br>:construct, build; prepare, draw up; fit out; instruct, teach;<br>(未来 分詞 受動態 f 単数 対格)<br></span></a>
+<a class="note1">nātūrā<span>natura naturae N (1st) F  <br>:nature; birth; character;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">oportūnō<span>oportunus oportuna -um, oportunior -or -us, oportunissimus -a -um ADJ  <br>:suitable; <strong>advantageous</strong>; useful, fit, favorable/opportune, ready; liable/exposed;<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">idōneō,<span>idoneus idonea, idoneum ADJ  <br>:<strong>suitable</strong>, appropriate, adequate, having right qualities; qualified, able; apt;<br>&nbsp;(n 単数 奪格)<br></span></a>
+<a class="note0">((quod<span><br><br><br></span></a>
+<a class="note0">is<span></span></a>
+<a class="note1">collis<span>collis collis M主格 単数　;= hill, hillock, hill-top</span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note1">castra<span>castrum castri N 複　主格;= castle, millitary camp</span></a>
+<a class="note1">posita<span>pono ponere posivi postus 完了分詞　受動　主格;= put place set station</span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">paululum<span>副詞　a little to small extent, somewhat形容詞、名詞もありpaululus(ADJ) paululum(N)</span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">plānitiē<span>planities planitiei N (5th) F  <br>:<strong>plain</strong>, plateau, a flat/plane/level surface; a plane (geometry); flatness;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">ēditus<span>edo edare, edidi, editus V (1st) TRANS  <br>:||||||present (documents for inspection; put on (play); hold (banquet); uplift;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note1">tantum<span>tantum 副詞　so much, so far, hardly, only tantus 形容詞</span></a>
+<a class="note1">adversus<span>adversus adversa -um 形容詞　ｍ　単数　主格　;= opposite, directory facing, ranged against</span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">lātitūdinem<span>latitudo latitudis F 対格;= width, breath, extent<br></span></a>
+<a class="note1">patēbat<span>pateo patere, patui, - V (2nd)  <br>:stand open, be open; extend; be well known; lie open, be accessible;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note1">quantum<span>quantum ADV <br>:so much as; how much; how far;<br><br></span></a>
+<a class="note1">locī<span>locum 属格<br></span></a>
+<a class="note0">aciēs<span><br><br></span></a>
+<a class="note1">īnstrūctā<span>instructus instructa -um 形容詞　主格、奪格;= equipped, fitted out, prepared<br></span></a>
+<a class="note1">occupāre<span>ocuupo 不定詞　;= seize, gain, overtake, ocuupy<br></span></a>
+<a class="note0">poterat,<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false">
+<p><strong>loco oprtuno atque idoneo</strong> : 一種の独立奪格「その場所は～に適しており便利であったので」</p>
+<p><strong>ad aciem instuendam natura</strong> ：ortuno, idoneoはこれにかかり「戦陣を配置するために」naturaは奪格で「自然により」</p>
+<p>ad + 動名詞で目的であるが、<u>直接目的語を持つ動名詞の場合は必ず、動形容詞構文にしなければならない</u>（NewLtin 339.2)なので、動形容詞構文である。</p>
+<p><strong>quod is collis ubi castra posita erant</strong> : ubiは副詞でwhere で「その丘、そこに陣地が設営されたのだが」</p>
+<p>castraは<b>castrum</b>の複、主格、似たような語で<b>castra</b>（F)があるが、ここはerantが３複なのでcatrumだと判る。</p>
+<p>((quodから次の行のredibat))まで　続く長い説明、何故、先陣を引くのに適した場所であったかという説明。</p>
+<p>collis(M単数）が主語で、動詞はpatebat(拡がっていた）habebat(持っていた）redibat(下がっていった）</p>
+<p><strong>collis editus paululum ex planitie</strong> : 平原から少しだけ上がっていて(editus、edoは多くの意味があり解りにくいが、lift, elevateの意もある。完了分詞、主格で分詞構文)</p>
+<p><strong>collis patebat in latitudinem adversus tantum&nbsp; loci</strong>~. 横方向には敵と相対するように拡がっておりその広さは</p>
+<p><strong>quantum acies instructa occupare poterat</strong> : ocuupareが主語　武装した軍翼が展開する（占拠する）ことが可能であるだけの広さ. <u>quantumは副詞で so much as ~の意。</u><strong>tantum loci quantum ~ ：~するのに十分な大きさ</strong></p>
+<p>quantum loci :lociは<font color="#ff0000">部分の属格（<font color="#333">NewLatin 201)(AG346)</font></font></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p> カエサルは自軍がそう敵に対して劣っているわけでもないと判断したとき、陣地の場所の前が戦陣を展開するのに適したおり便利な自然であったので（と言うのは、陣地が引かれていた場所は丘でありその丘は平地から少し上がっており、敵に相対するように横に拡がっており、その広さはちょうど武装した軍勢を配置するのに十分であった　（次の行に続く）</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">atque<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">utrāque<span>uter utra, utrum ADJ  <br>:|(w/que) <strong>each</strong>/either (of two); both (separately); each side (pl.), each set;<br>(f 単数 奪格), <br><br></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note1">lateris<span>latus lateris N (3rd) N  <br>:side; flank;<br>(X 単数 属格)<br></span></a>
+<a class="note1">dēiectus<span>dejectus dejectus N (4th) M  <br>:<strong>slope</strong>, sloping surface, declivity; act of throwing/causing to fall/felling;<br>(c 複数  対格)<br></span></a>
+<a class="note0">habēbat<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">fronte<span>frons frontis C 奪格　;= forehead, brow, face, front</span></a>
+<a class="note1">lēniter<span>leniter lenius, lenissime ADV <br>:gently/mildly/lightly/slightly; w/gentle movement/incline; smoothly; moderately;<br><br></span></a>
+<a class="note1">fastīgātus<span>fastigatus fastigata, fastigatum ADJ  <br>:pointed, sharp; wedge shaped; sloping, <strong>descending</strong>;<br>(m 単数 主格)<br><br></span></a>
+<a class="note1">paulātim<span>paulatim ADV <br>:little by little, by degrees, gradually; a small amount at a time, bit by bit;<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">plānitiem<span>planities planitiei N (5th) F  <br>:plain, plateau, a flat/plane/level surface; a plane (geometry); flatness;<br>(c 単数 対格)<br></span></a>
+<a class="note1">redībat,))<span>redeo redire, redivi(ii), reditus V  <br>:return, go back, give back; fall back on, revert to; respond, pay back;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">utrōque<span>utroque ADV <br>:to both places; in both directions; <strong>to both sides</strong> (in conflict);<br><br></span></a>
+<a class="note1">latere<span>latus lateris N (3rd) N  <br>:side; flank;<br>(n 単数 奪格),<br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">collis<span>属格</span></a>
+<a class="note1">trānsversam<span>transversus transversa, transversum ADJ  <br>:lying across/from side to side; flanking/oblique; moving across/at right angle;<br>(f 単数 対格)<br></span></a>
+<a class="note1">fossam<span>F 対格　単</span></a>
+<a class="note1">obdūxit<span>obduco obducere, obduxi, obductus V (3rd)  <br>:lead or draw before; cover/lay over; overspread; wrinkle; screen;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note0">CCCC<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">extrēmās<span>exter extera -um, exterior -or -us, extremus -a -um ADJ  最上級<br>:outer/external; outward; <strong>on</strong> <strong>outside</strong>, far; of another country, foreign; strange;<br>(f 複数  対格)<br><br></span></a>
+<a class="note1">fossās<span>複　対格</span></a>
+<a class="note1">castella<span>castellum castelli N (2nd) N  <br>:redoubt, fortress, stronghold, fortified settlement, refuge; castle, citadel;<br>&nbsp;(n 複数  対格)<br></span></a>
+<a class="note1">cōnstituit<span>constituo constiture constitutus ３単　完了;= set up, create, arrange<br></span></a>
+<a class="note0">ibique<span></span></a>
+<a class="note1">tormenta<span>tormentum tormenti N 複　対格　;= 投石機　実際にはCatapulta, ballistae scorpionesの３種類からなる矢、石、槍などを発射する装置を指す</span></a>
+<a class="note1">conlocāvit,<span>conloco conlocare, conlocavi, conlocatus V (1st) TRANS  <br>:place/put/set in order/proper position, arrange; station, post, position; apply;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">nē,<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">aciem<span></span></a>
+<a class="note1">īnstrūxisset,<span>instruo instruere, instruxi, instructus V (3rd)  <br>:construct, build; prepare, draw up; fit out; instruct, teach;<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">hostēs,<span><br><br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">tantum<span></span></a>
+<a class="note0">multitūdine<span><br><br></span></a>
+<a class="note0">poterant,<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">lateribus<span></span></a>
+<a class="note1">pugnantēs<span>pugno pugnare, pugnavi, pugnatus V (1st)  <br>:fight; dispute;<br>(現在 分詞 能動態 c 複数&nbsp; 主格）<br></span></a>
+<a class="note0">suōs<span></span></a>
+<a class="note0">circumvenīre<span><br><br></span></a>
+<a class="note0">possent.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p><strong>habebat lateris dejectus ex utraque parte</strong> : 「側面の下り坂を持ち」が逐語訳</p>
+<p><strong>leniter fastigatus in fronte paullatim redibat ad planitiem</strong>. :「 正面は少しずつ下がり、徐々に平らに戻る」</p>
+<p>redibat ad planitiem ~ ：前面は徐々に平地に向かって下がって行っていた</p>
+<p><strong>obduxit transversam fossam ab utroque latere eius collis</strong>.「その丘の両側から横断するように堀を作り」</p>
+<p>CCCC : quadringenti (ae, a) 400 ここではquadringentrorum(属格)でfossamを修飾</p>
+<p><strong>constituit castella ad extremas</strong> : 「両端に砦を得利」</p>
+<p>&nbsp;&nbsp;&nbsp; <strong>ibique conlocavit torementa</strong> : 「そこに投石機を配置した。」</p>
+<p>ne cum aciem instruxisset, hostes possent circumvenire suos ab lateribus.「戦翼が構成された時に、両側から自軍を取り囲むことがないように」が逐語訳。</p>
+<p>ne 以下は目的を表す副詞節で接続法になっている、但し、quod tantum multitudine poterantは接続法にはなっていないので、括弧でくくる感じの説明になっている。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>（十分であった）し、両側は切り立った崖になっており前面はゆるやかに平地に向かって下がっているからである）</p>
+<p>その丘の両側から端から端までの塹壕を堀り、それはおおよそ４００フィートぐらいであったが、その塹壕の両端に砦を建てそこに各種の投石、投矢などの装置を設置した。それはそこに戦陣を張った時に、何しろ敵は数だけは大変なものだったので、自軍が戦っている時に側面から取り囲まれないようにするためであった。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Hōc<span><br><br></span></a>
+<a class="note0">factō,<span><br><br></span></a>
+<a class="note1">duābus<span>duo F 複　奪格<br></span></a>
+<a class="note0">legiōnibus<span><br><br></span></a>
+<a class="note0">quās<span><br><br></span></a>
+<a class="note0">proximē<span></span></a>
+<a class="note1">cōnscrīpserat<span>conscribo conscribere, conscripsi, conscriptus V (3rd) TRANS  <br>:enroll/enlist/raise (army); write on/down, commit to/cover with writing; compose<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">relīctīs<span>relinquo relinquere relinqui relictus 完了分詞　受動　与格　奪格　;= leave behinde, be left<br></span></a>
+<a class="note0">ut,<span></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">quō<span>副詞　where, to what place, to what purpose<br></span></a>
+<a class="note1">opus<span>opus operis N 主格　単　;= need, work</span></a>
+<a class="note0">esset,<span></span></a>
+<a class="note1">subsidiō<span>subsidium subsidi 与格　単数;= help, relief<br></span></a>
+<a class="note1">dūci<span>duco ducere, additional, forms V  <br>:lead, command; think, consider, regard; prolong;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">possent,<span></span></a>
+<a class="note0">reliquās<span><br><br></span></a>
+<a class="note0">VI<span></span></a>
+<a class="note0">legiōnēs<span><br><br></span></a>
+<a class="note0">prō<span></span></a>
+<a class="note0">castrīs<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">aciē<span><br><br></span></a>
+<a class="note0">cōnstituit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>hoc facto : これらをやって置いてから、独立奪格</p>
+<p>duabus legionibus relictis ; 独立奪格　、２個師団を残しておいて</p>
+<p><strong>si quo opus esset (duci)</strong> : si quoで「もしどこかで=if anywhere」(quoは副詞）</p>
+<p>opus estは必要がある、という慣用句。（NewLatin218.2) ここではduci est opusで後のduciが省略されていると考える。「率い出すことが必要ならば」</p>
+<p><strong>ut subsidio duci possent</strong> : subsidioはpredicative dative ～として</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>これらを行って、カエサルは最近編成した２個師団を、万一の場合は援軍として引き出せるように、陣地に残し、残りの６師団で陣地の前に布陣した。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Hostēs<span>hostis N　複　主格<br></span></a>
+<a class="note1">item<span>item ADV <br>:likewise; besides, also, similarly;<br><br></span></a>
+<a class="note0">suās<span><br><br></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">ēductās<span>educo educere, eduxi, eductus V (3rd)  <br>:lead out; <strong>draw up</strong>; bring up; rear;<br>(完了 分詞 受動態 f 複数  対格)<br></span></a>
+<a class="note1">īnstrūxērunt.<span>instruo instrere instruxi instrctus ３複　完了　<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>educats instruxerunt : have led out and drawn up と二つの文になるところを、不定詞を使わずに完了分詞を使ってこのように一つにすることがラテン語では好まれるとの由。他の例：captam urbem incendit = he took the city and burned it.</p>
+<p>「引き出した軍勢を布陣した」「捕らえた都市を焼いた」１０章にも同様の文がある。（１０章　Line3　circumventos interfecerunt 「取り囲まれたものを殺した、取り囲んで殺した」</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>敵も同様に陣地から軍勢を出して、布陣した。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

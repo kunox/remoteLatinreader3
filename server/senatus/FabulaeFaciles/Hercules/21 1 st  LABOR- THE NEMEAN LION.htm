@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='remote latinreader' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function (event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+            if($("#saveoption").length){
+                $("#saveoption").hide();
+                $("#downloadsave").hide();
+            }
+            insertButtons2();
+            $("#outer").css("width","96%");
+        }
+        function insertButtons2(){
+            if(!$(".lbtn1").length){
+                $(".spacer").each(function(index, elem) {
+                    var target = $(elem);
+                    var tx1 = target.html();
+                    var color = "style='color:#5f9ea0;'";
+                    if (target.next().next().attr("class") != "spnote")
+                        color = "style='color:black;'";
+                    target.html(tx1 + "<button class='lbtn2'>Translation</button><button class='lbtn1'>Notes</button>");
+                });
+            }
+            $(".lbtn1").on("click", function() {
+                var target = $(this).parent().next().next();
+                if (target.attr("class") != "spnote") {
+                    target = target.next();
+                    if (target.attr("class") != "spnote") // 編集中の場合
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+            $(".lbtn2").on("click", function() {
+                var target = $(this).parent().next().next().next();
+                if (target.attr("class") != "translation") {
+                    target = target.next();
+                    if (target.attr("class") != "translation")
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+        }
+
+        function btoggle(obj, btn) {
+            obj.toggle(function() {
+                if ($(this).is(":visible"))
+                    btn.css("color", "black");
+                else
+                    btn.css("color", "#5f9ea0");
+            });
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 2.8rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+
+        /* 追加のボタン*/
+        .lbtn1,
+        .lbtn2,
+        .lbtn3,
+        .lbtn4 {
+            float: right;
+            margin-top: 2px;
+            margin-right: 6px;
+            height: 16px;
+            font-size: 10px;
+            padding: 1px;
+            font-weight: bold;
+            /* vertical-align: bottom; */
+            border: none;
+        }
+
+
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 2.8rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+
+        }
+
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+
+        a.note1:hover span {
+            display: block;
+        }
+
+        .latin span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 3.5rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        .latin span::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.8rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.5rem;
+            left: 2.0rem;
+        }
+    </style>
+</head>
+
+<body id="bodyportion">
+        <div id="outer">
+    
+		<a name="begin"></a>
+	<div id="header">
+            <h1 style="color: rgb(0, 0, 0);"> 21 1 st  LABOR- THE NEMEAN LION.htm </h1>
+        
+<div class="boxright">
+<input id="saveoption" class="rbtn1" type="button" value="保存する" style="font-size: 12px; font-family: meiryo; ">
+<input id="downloadsave" class="rbtn1" type="button" value="ダウンロード" style="font-size: 12px; font-family: meiryo;">
+</div></div>
+        <div class="spacer">Line<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+        <div class="latin">
+            <p class="pop" style="margin-left: 10px;" name="latintext">
+                <a class="note0">Prīmum<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">Eurystheō<span></span></a>
+<a class="note0">iussus<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">Herculēs<span></span></a>
+<a class="note1">leōnem<span><b>lĕo</b>,leonis N (3rd) M <br><b>:lion;</b><br>(単数 対格)</span></a>
+<a class="note0">occīdere<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">illō<span></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">vallem<span><b>valles,vallis N (3rd) F </b><br>:valley, vale, hollow;<br>(単数 対格)</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Nemeaeam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">reddēbat<span><b>reddo,reddere, reddidi, redditus V (3rd)  X</b><br>:return; restore; deliver; hand over, pay back, <b><i>render</i></b>, give back; translate;<br>(3人称 単数 未完了 能動態 直説法)</span></a>
+<a class="note0"><span></span></a>
+<a class="note1">īnfēstam.<span><b>infestus,infesta -um, infestior -or -us, infestissimus -a -um ADJ  </b><br>:unsafe, dangerous; hostile; disturbed, molested, infested, unquiet;<br>(F 単数 対格)</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">In<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">silvās<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note0">leō<span></span></a>
+<a class="note0">habitābat<span></span></a>
+<a class="note1">statim<span><b>statim,ADV </b><br>:at once, immediately;<br></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note1">contulit.<span><b>confĕro,conferre, contuli, collatus V TRANS  </b><br>:bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;<br>(3人称 単数 完了 能動態 直説法)</span></a>
+<a class="note1">Mox<span><b>mox,ADV </b><br>:soon, next (time/position);<br></span></a>
+<a class="note1">feram<span><b>fĕra,ferae N (1st) F </b><br>:wild beast/animal;<br>(単数 対格)</span></a>
+<a class="note0">vīdit,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">arcum,<span></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note0">sēcum<span></span></a>
+<a class="note1">attulerat,<span><b>affĕro,afferre, attuli, allatus V TRANS  </b><br>:bring to (word/food), carry, convey; report, allege, announce; produce, cause;<br>(3人称 単数 過去完了 能動態 直説法)</span></a>
+<a class="note1">intendit;<span><b>intendo,intendere, intendi, intentus V (3rd)  X</b><br>:hold out; stretch, strain, exert;<br>(3人称 単数 完了 能動態 直説法)</span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note1">pellem,<span><b>pellis,pellis N (3rd) F </b><br>:skin, hide; pelt;<br>(単数 対格)</span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">dēnsissima<span><b>densus,densa -um, densior -or -us, densissimus -a -um ADJ  最上級</b><br>:thick/dense/solid; (cloud/shadow); crowded/thick_planted/packed/covered (with);<br>(F 単数 主格)</span></a>
+<a class="note0">erat,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">trāicere<span><b>trāĭcĭo,traicere, trajeci, trajectus V (3rd)  X</b><br>:transfer; transport; pierce, transfix;<br>&nbsp;不定詞</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">potuit.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Tum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">clāvā<span><b>clāva,clavae N (1st) F </b><br>:club, cudgel; staff; knotty/rough/wooden stick; exercise sword; Spartan scytale;<br>&nbsp;(単数 奪格)&nbsp;</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">semper<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">gerēbat<span><b>gĕro,gerere, gessi, gestus V (3rd)  X</b><br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>(3人称 単数 未完了 能動態 直説法)</span></a>
+<a class="note0">leōnem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">percussit,<span><b>percŭtĭo,percutere, percussi, percussus V (3rd)  X</b><br>:beat, strike; pierce;<br>(3人称 単数 完了 能動態 直説法)</span></a>
+<a class="note0"><span></span></a>
+<a class="note1">frūstrā<span><b>frustra,ADV </b><br>:in vain; for nothing, to no purpose;<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tamen;<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">hōc<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">modō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">occīdere<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">potuit.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Tum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dēmum<span><b>demum,ADV </b><br>:finally, at last; at length, in the end, eventually;<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">collum<span><b>collum,colli N (2nd) N </b><br>:neck; throat; head and neck; severed head; upper stem (flower); mountain ridge;<br>(単数 対格)</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">mōnstrī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">bracchiīs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">suīs<span></span></a>
+<a class="note1">complexus<span><b>complector,complecti, complexus sum V (3rd) DEP  </b><br>:|lay hold of, grip; seize; grasp, take in/up; sum up; include in scope, cover;<br>【完了分詞（受動） (M 単数 主格)】</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">faucēs<span><b>faux,faucis N (3rd) F </b><br>:pharynx (usu pl.), gullet/throat/neck/jaws/maw; narrow pass/shaft/strait; chasm;<br>&nbsp;(複数 対格)</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">vīribus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">compressit.<span><b>comprĭmo,comprimere, compressi, compressus V (3rd) TRANS  </b><br>:press/squeeze together, fold, crush; hem/shut/keep/hold in; copulate (male);<br>(3人称 単数 完了 能動態 直説法)</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Hōc<span></span></a>
+<a class="note0">modō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">leō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">brevī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">exanimātus<span><b>exănĭmo,exanimare, exanimavi, exanimatus V (1st)  X</b><br>:kill, deprive of life; scare, alarm greatly; tire, exhaust; be out of breath;<br>【完了分詞（受動） (M 単数 主格)】</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">est;<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">nūlla<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">respīrandī<span><b>rēspīro,respirare, respiravi, respiratus V (1st)  X</b><br>:breathe out; take breath; enjoy a respite;<br>【動形容詞 (M 複数 主格) 】</span></a>
+<a class="note1">facultās<span><b>făcultas,facultatis N (3rd) F </b><br>:means; ability, skill; opportunity, chance; resources (pl.), supplies;<br>(単数 主格)&nbsp;</span></a>
+<a class="note0">eī<span></span></a>
+<a class="note0">dabātur.<span></span></a>
+<a class="note0">Tum<span></span></a>
+<a class="note0">Herculēs<span></span></a>
+<a class="note1">cadāver<span><b>cădāver,cadaveris N (3rd) N </b><br>:corpse, cadaver, dead body; ruined city;<br>&nbsp;(単数 対格)&nbsp;</span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">oppidum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">umerīs<span><b>ŭmĕrus,umeri N (2nd) M </b><br>:upper arm, shoulder;<br>&nbsp;(複数 奪格)</span></a>
+<a class="note0">rettulit;<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">pellem,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">dētrāxerat,<span><b>dētrăho,detrahere, detraxi, detractus V (3rd) TRANS  </b><br>:drag/pull/strip/take down/away/off; remove; exclude, omit, cut out; subtract;<br>(3人称 単数 過去完了 能動態 直説法)</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">posteā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">prō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">veste<span><b>vestis,vestis N (3rd) F </b><br>:garment, clothing, blanket; clothes; robe;<br>(単数 奪格)</span></a>
+<a class="note0"><span></span></a>
+<a class="note1">gerēbat.<span><b>gĕro,gerere, gessi, gestus V (3rd)  X</b><br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>(3人称 単数 未完了 能動態 直説法)</span></a>
+<a class="note0">Omnēs<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note1">regiōnem<span><b>rĕgĭo,regionis N (3rd) F </b><br>:area, region; neighborhood; district, country; direction;<br>(単数 対格)</span></a>
+<a class="note0">incolēbant,<span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note1">fāmam<span><b>fāma,famae N (1st) F </b><br>:rumor; reputation; tradition; fame, public opinion, ill repute; report, news;<br>(単数 対格)</span></a>
+<a class="note0">dē<span></span></a>
+<a class="note1">morte<span><b>mors,mortis N (3rd) F </b><br>:death; corpse; annihilation;<br>(単数 奪格)</span></a>
+<a class="note0">leōnis<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">accēpērunt,<span><b>accĭpĭo,accipere, accepi, acceptus V (3rd) TRANS  </b><br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>(3人称 複数 完了 能動態 直説法)</span></a>
+<a class="note0"><span></span></a>
+<a class="note1">vehementer<span><b>vehementer,vehementius, vehementissime ADV </b><br>:vehemently, vigorously; exceedingly, very much;<br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">gaudēbant<span><b>gaudĕo,gaudere, gavisus sum V (2nd) SEMIDEP  </b><br>:be glad, rejoice;<br>(3人称 複数 未完了 能動態 直説法)</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Herculem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnō<span></span></a>
+<a class="note1">honōre<span><b>hŏnor,honoris N (3rd) M </b><br>:honor; respect/regard; mark of esteem, reward; dignity/grace; public office;<br>(単数 奪格)</span></a>
+<a class="note0">habēbant.<span></span></a>
+<a class="note0"><span></span></a>
+
+	</p>
+	</div>
+
+    
+    <div class="spnote" contenteditable="false" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Primum est Hercules leonem occidere. 最初はHerculesがライオンを殺すことであった。「Herculesがライオンを殺すこと」というのは不定詞句だとすれば、主語は対格で有るべきではないだろうか？Heculem leonem occidereでは？</p><p>respirandi facultas : 「息をするための機会」 動名詞属格は「目的」を表す。（NL339.6)</p></div>
+</div>
+
+    
+    <div class="translation" contenteditable="false" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Eurystheusが命じた最初のものは、当時Nemeaeamの谷を危険な場所にしていたライオンを殺すことであった。そこでライオンが住んでいた林の中に一気に行くことにした。獣を見るや否や、一緒に持ってきた弓を使った。しかし躰を覆ってしる皮膚が固く刺さらない。そこでいつも携帯している大きな棍棒でライオンを叩いたが、効果がなく、こういうやり方では殺すことは不可能であった。そこで最終的には首を己の腕で巻き付けその喉をできる限りの力で締め付けて、息をする機会を全く与えなかった。こうしてHerculesは死体を肩に乗せて都市に帰った。剥ぎ取った皮は後でベストにして着ることにした。其の地に住んでいた人全員が、ライオンの死の噂を聞き、たいそう喜びHerculsを大いに称えた。</p></div>
+</div>
+
+	<div id="footer">
+	<a href="#begin"> ページの最初に </a><!-- div -->
+	</div>
+	</div>
+    </body>
+    <html>
+    

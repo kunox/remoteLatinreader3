@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 15</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[15]<span></span></a>
+
+<a class="note0">Equitēs<span><br><br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note1">essedāriīque<span>essedarius essedarii M soldier fighting from chariot<br><br><br></span></a>
+<a class="note1">ācriter<span>副詞　;= sharply, vigilantly, fiercely<br><br><br></span></a>
+<a class="note1">proeliō<span>proelioum proelii N 単　奪格　;= battle, hostile encounter<br><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">equitātū<span><br><br></span></a>
+<a class="note0">nostrō<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">itinere<span></span></a>
+<a class="note1">cōnflīxērunt,<span>confligo confligere, conflixi conflictus ３複　完了　;= clash, collide, contend<br><br><br></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">nostrī<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">partibus<span></span></a>
+<a class="note0">superiōrēs<span><br><br></span></a>
+<a class="note1">fuerint<span>3複　未完了<br>３複　完了　接続法<br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">silvās<span><br><br></span></a>
+<a class="note1">collēsque<span>collis collis M 複　対格　;= hill, hillock, mound, high ground<br><br><br></span></a>
+<a class="note1">compulerint;<span>compello complellare, compellavi, compellatus TRANS 3複　完了　接続法　;= drive together<br><br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">complūribus<span>complus 奪格　;= many<br><br><br></span></a>
+<a class="note1">interfectīs<span>interficio 完了分詞　受動　複　奪格　;= kill<br><br><br></span></a>
+<a class="note1">cupidius<span>副詞　cupideの比較級　;=<br><br></span></a>
+<a class="note1">īnsecūtī<span>insquor DEP 完了分詞　受動　m複　主格　;= follow, come after, attack<br><br><br></span></a>
+<a class="note0">nōnnūllōs<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">suīs<span></span></a>
+<a class="note1">āmisērunt.<span>amitto TRANS ３複　完了　;= lose;, lose by death<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p><strong>hostium equites essedariique conflixerunt aciter proelio cum equitatu nostro in itinere</strong>. : proelioは手段の奪格？　逐語訳は「敵の騎兵、一輪馬車の兵は我軍の騎兵と進軍の途中で激しい戦いによって衝突した。」</p>
+<p><strong>ut nostri fuerint superiores omnibus partibus, atque compulerint eos in silvas collesque</strong>. : utは結果の節で、そのために<u>fuerint, compulerintと完了接続法</u>になっており、歴史的時制になっている。（NewLatin268.6) 「結果は我軍のほうが全てにおいて勝っており」</p>
+<p>compluribus interfectis, sed cupidius insecuti amiserunt nonnullos ex suis. <br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>敵の騎兵、一輪馬車兵と我軍の騎兵は、進軍の途中で、激しくぶつかり合った。結果は我軍の方が全てに渡って勝っており、敵を森や丘に追いやった。多くを殺害したが、我軍もあまりに敵を深追いして、ある程度の損失を負った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">At<span>but<br><br></span></a>
+<a class="note0">illī<span><br><br></span></a>
+<a class="note1">intermissō<span>intermisso 完了分詞　受動　ｍ単　奪格　;= interrupt, omit, stop, leave off<br><br><br></span></a>
+<a class="note1">spatiō<span>spatium N 単　奪格　;= space, area, interval time<br><br><br></span></a>
+<a class="note1">imprūdentibus<span>imperudens 形容詞　X 複　奪格　;= ignorant, unaware<br><br><br></span></a>
+<a class="note1">nostrīs<span>noster nostri M 複　奪格<br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">occupātīs<span>occupatus 形容詞　X複　奪格　;= occupied, busy<br><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">mūnītiōne<span>munitio munitionis F 単　奪格　;= fortifying, fortification<br><br><br></span></a>
+<a class="note0">castrōrum<span><br><br></span></a>
+<a class="note0">subitō<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">statiōne<span>station stationis F 単　奪格　;= outpost, picket, station, watch<br><br><br></span></a>
+<a class="note0">prō<span></span></a>
+<a class="note0">castrīs<span><br><br></span></a>
+<a class="note1">collocātī,<span>colloco TRANS 完了分詞　受動　m複　主格　;= place, station, post position<br><br><br></span></a>
+<a class="note0">ācriter<span></span></a>
+<a class="note0">pugnāvērunt,<span><br><br></span></a>
+<a class="note1">duābusque<span>duo&nbsp; duae o, secundus -a -um, bini - ae -a, bis 数詞　ｆ複　奪格　;= two<br><br><br></span></a>
+<a class="note1">missīs<span>mitto 完了分詞　受動　複　奪格　;= send<br><br><br></span></a>
+<a class="note1">subsidiō<span>subsidium N 単　与格　;= help, relief<br><br><br><br></span></a>
+<a class="note1">cohortibus<span>cohors cohortis F　複　奪格　;= cohort, legionの1/10<br><br></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">Caesare<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">eīs<span></span></a>
+<a class="note0">prīmīs<span><br><br></span></a>
+<a class="note0">legiōnum<span><br><br></span></a>
+<a class="note1">duārum,<span>duo ｆ属格　;= 2<br><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">hae<span></span></a>
+<a class="note1">perexiguō<span>perexiguus perexigua -um 形容詞　n単　奪格　;= very small<br><br><br><br></span></a>
+<a class="note1">intermissō<span>intermitto 完了分詞　受動　n単　奪格　;= leave a gap<br><br><br><br></span></a>
+<a class="note0">locī<span><br><br></span></a>
+<a class="note1">spatiō<span>spatium N 単　奪格　；= space<br><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">cōnstitissent,<span>consto constare, constiti, constatus INTRANS ３複　過去完了　接続法　;= stand firm,<br><br><br></span></a>
+<a class="note1">novō<span>novus -a, -um 形容詞　ｎ単　奪格　;= new<br><br><br></span></a>
+<a class="note1">genere<span>genus generis N 単　奪格　;= mode, method, style<br><br></span></a>
+<a class="note1">pugnae<span>pugna pugae F 単　奪格　;= battle<br><br></span></a>
+<a class="note1">perterritīs<span>perterritus perterrita, -um 形容詞　X　複　奪格　;= very frightened, throughly frigtened<br><br></span></a>
+<a class="note1">nostrīs<span>noster nostri M 複　奪格　;= our men<br><br></span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">mediōs<span>medius medii M 複　対格　;= mediator, one who comes between<br><br><br></span></a>
+<a class="note0">audācissimē<span><br><br></span></a>
+<a class="note1">perrūpērunt<span>perrumpo ３複　完了　;= break through<br><br><br></span></a>
+<a class="note0">sēque<span><br><br></span></a>
+<a class="note0">inde<span></span></a>
+<a class="note1">incolumēs<span>incolunis incolumis, incolume ｍ複　対格　;= unharmed, uninjured, alive, safe<br><br><br></span></a>
+<a class="note1">recēpērunt.<span>recipio ３複　完了　;= keep back, recover, undertake<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>subito se ex <strong><em>silvis eiecerunt, impetuque in eos facto, qui erant in</em></strong> statione pro castris collocati　左のゴシックの文が落ちている。他のいろいろのテキストでは入っているので、これを入れた訳を考える。（このテキストのオリジナルはPerseusのオンラインテキストである）</p>
+<p><u>またここはA&amp;GのNewLatin Grammarの中で独立奪格を説明する場所で引用されている部分で、非常に独立奪格が多い</u>。（A&amp;G420,Note)</p>
+<p><strong>intermisso spatio</strong> : 独立奪格。spatioは空間的なものと時間的なものがある。ここは時間と捕らえ「小休止のあと」</p>
+<p><strong>nostris imprudentibus</strong>, (nostri) occupatis : 独立奪格　「我軍が気がつかないうちに」「我軍は～に忙しかったので」</p>
+<p>eiecerunt se ex silvis, impetuque facto in eos, qui erant in statione ~ .<strong> impetu facto</strong>は独立奪格「攻撃を行い」</p>
+<p>qui erant collocati pro castris : <strong>erant collocat</strong>iで歩哨として立っている。</p>
+<p><strong>duabusque cohoribus missis</strong> : <strong>独立奪格</strong>　「２個大隊が送られ」</p>
+<p>atque eis promis duarum legiorum : atqueの後にis, hicが続くと感嘆表現になる。（Kesley)　これらは軍団の最初の２大隊であったのだ！（最初の大隊は最も強い兵が集まっている）</p>
+<p><strong>perexiguo spatio loci intermisso</strong> : 独立奪格　「その間の場所は大層狭く」</p>
+<p>novo genere pugnae : これは原因の奪格か。</p>
+<p><strong>perterritis nostris</strong> : 独立奪格　「味方は怯えきっていたので」<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>しかしながら敵は、我軍の兵士が警戒をゆるめ、野営地の要塞化に忙しくしているとき、突然森から出てきて、野営地の前の歩哨達に激しく攻撃をかけてきた。カエサルのところから軍団の最初の２大隊が援軍として送られた。それらは非常に狭い場所で、互いに戦闘態勢をとったが、敵は、奇妙な戦いかたに我軍が怯えきっていたので、大胆にも中央を突破して自分たちを無事に戻した。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Eō<span><br><br></span></a>
+<a class="note0">diē<span><br><br></span></a>
+<a class="note0">Quīntus<span></span></a>
+<a class="note0">Laberius<span></span></a>
+<a class="note0">Dūrus,<span><br><br></span></a>
+<a class="note0">tribūnus<span><br><br></span></a>
+<a class="note0">mīlitum,<span><br><br></span></a>
+<a class="note0">interficitur.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>その日、兵士のTribunusである、Quintus Laberius Durumは殺された。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Illī<span><br><br></span></a>
+<a class="note1">plūribus<span>plus pluris N 複　奪格　;= more, too much<br><br><br></span></a>
+<a class="note1">submissīs<span>submitto 完了分詞　受動　複　奪格　;= submit, put forth<br><br></span></a>
+<a class="note0">cohortibus<span></span></a>
+<a class="note1">repelluntur.<span>repello TRANS３複　現在　;= drive, push<br><br></span></a>
+</p>
+</div>
+<div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p>pluribus cohortibus submissis, illi repelluntur.<br></p>
+</div>
+</div>
+<div class="translation"  >
+<div class="innerdiv" spellcheck="false"><p>更に多くの大隊が送られ、敵は引き上げた。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

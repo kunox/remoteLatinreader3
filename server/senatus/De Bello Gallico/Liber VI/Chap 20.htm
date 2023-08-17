@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 20</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[20]<span></span></a>
+
+<a class="note0">Quae<span></span></a>
+<a class="note0">cīvitātēs<span><br><br></span></a>
+<a class="note1">commodius<span>commodus commoda -um, commodior -or -us, commodissimus -a -um ADJ  比較級 :suitable, convenient, obliging; opportune/timely; favorable/ lucky; advantageous;<br>&nbsp;(n 単数 対格)<br></span></a>
+<a class="note0">suam<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note0">pūblicam<span><br><br></span></a>
+<a class="note1">administrāre<span>administro administrare, administravi, administratus V (1st)  <br>:administer, manage, direct; assist; operate, conduct; maneuver (ship); bestow;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">exīstimantur,<span>existimo existimare, existimavi, existimatus V (1st) TRANS  <br>:value/esteem; form/hold opinion/view; think/suppose; estimate; judge/consider;<br>(３人称 複数  現在 <strong>受動態</strong> 直説法 )<br></span></a>
+<a class="note0">habent<span></span></a>
+<a class="note0">lēgibus<span><br><br></span></a>
+<a class="note1">sānctum,<span>sancio sancire, sanxi, sanctus V (4th) TRANS  <br>:confirm, ratify; sanction; fulfill (prophesy); enact (law); ordain; dedicate;<br>(完了 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note1">quis<span>anyone<br><br></span></a>
+<a class="note1">quid<span>quis quis, quid PRON  <br>:who?, which one?, what man?, what thing? (type/nature); what kind of; what?;<br>&nbsp;(n 単数 対格)<br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note0">pūblicā<span><br><br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note1">fīnitimīs<span>finitimus finitimi N (2nd) M  <br>:neighbors (pl.);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">rūmōre<span>rumor rumoris N (3rd) M  <br>:hearsay, rumor, gossip; reputation; shouting;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">fāmā<span>fama famae N (1st) F  <br>:rumor; reputation; tradition; fame, public opinion, ill repute; <strong>report</strong>, <strong>news</strong>;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">accēperit,<span><br><br></span></a>
+<a class="note0">utī<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">magistrātum<span>magistratus magistratus N (4th) M  <br>:magistracy, civil office; office; magistrate, functionary;<br>(c 単数 対格)<br></span></a>
+<a class="note0">dēferat<span><br><br></span></a>
+<a class="note0">nēve<span><br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">quō<span>quis quis, quid PRON  <br>:who?, which one?, what man?, what thing? (type/nature); what kind of; what?;<br>&nbsp;(m 単数 奪格)<br></span></a>
+<a class="note1">aliō<span>alius alia, aliud ADJ  <br>:other, another; different, changed;<br>(m 単数 奪格)<br></span></a>
+<a class="note1">commūnicet,<span>communicor communicari, communicatus sum V (1st) DEP  <br>:share; share/divide with/out; receive/take a share of; receive; join with;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">saepe<span></span></a>
+<a class="note1">hominēs<span>homo hominis N (3rd) M  <br>:man, human being, person, fellow;<br>(c 複数  対格),<br></span></a>
+<a class="note1">temerāriōs<span>temerarius temeraria, temerarium ADJ  <br>:casual, rash, accidental; reckless;<br>(m 複数  対格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">imperītōs<span>imperitus imperita, imperitum ADJ  <br>:unskilled, inexperienced (in); unfamiliar, ignorant (of) (w/GEN);<br>(m 複数  対格)<br></span></a>
+<a class="note1">falsīs<span>falsus falsa, falsum ADJ  <br>:<strong>wrong</strong>, lying, fictitious, spurious, false, deceiving, feigned, deceptive;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">rūmōribus<span><br><br></span></a>
+<a class="note1">terrērī<span>terreo terrere, terrui, territus V (2nd)  <br>:frighten, scare, terrify, deter;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">facinus<span>facinus facinoris N (3rd) N  <br>:deed; crime; outrage;<br>(n 単数 対格)<br></span></a>
+<a class="note1">impellī<span>impello impellere, impuli, impulsus V (3rd) TRANS  <br>:<strong>drive</strong>/persuade/impel; urge on/action; push/thrust/strike against; overthrow;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">summīs<span><br><br></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note0">cōnsilium<span><br><br></span></a>
+<a class="note0">capere<span></span></a>
+<a class="note1">cognitum<span>cognosco cognoscere, cognovi, cognitus V (3rd) TRANS  <br>:become acquainted with/aware of; recognize; learn, find to be; inquire/examine;<br>&nbsp;(完了 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>commodiusはcommodusの対格、中性、単。副詞の比較級は、対応する形容詞の対格、中性、単なので、これは副詞。</p>
+<p><strong>quae civitates existimantur administare commodius</strong>. 先行詞はcivitates : うまく管理していると考えられている国では、</p>
+<p><strong>habent sanctuｍ legibus</strong> : habeo + 完了分詞の構文で、完了を表す。（NewLatin337.7) legibusは手段の奪格で「法によって」</p>
+<p><strong>si quis acceperit quid de re publica rumore aut fama, a finitimis</strong> : rumoreもfamaも似たような意味で、噂とか風のたよりなどのニュアンス。手段の奪格。「もし誰かが国の公のことについて、近隣から、噂とかニュースによって聞いたことがあれば」</p>
+<p><strong>uti deferat ad magistratum neve communicet cum quo alio</strong>. utiで始まる名詞節。habent sanctumの意味上の主語。quoは不定代名詞でanyoneの意。「官僚のところに他の誰とも話さず持っていくこと」</p>
+<p>homines terreri et impelli ad facinus et capere consilium est cognitum. hominesは対格で、不定詞句の主語。不定詞は3つ、怯え、駆られ、計画を作る。これらが主語でest cognitumが動詞。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>よく管理されていると考えられる国では、次のようなことが法で定められていた。即ち、もし誰かが近隣から国の公のことに関して噂または一報によって、何かを知った場合には、誰とも話す前に役人のもとに届けることである。それは、一般の未経験の人間たちは偽の噂にでも怯えたり、また犯罪に駆り立てられたり、さりとて重大な事態についての計画を立てたりすることがよく知られているからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Magistrātūs<span>magistratus magistratus N (4th) M  <br>:magistracy, civil office; office; magistrate, functionary;<br>&nbsp;(c 複数  主格)<br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">vīsa<span><br><br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">occultant<span>occulto occultare, occultavi, occultatus V (1st)  <br>:hide; conceal;<br>(３人称 複数  現在 能動態 直説法 )<br></span></a>
+<a class="note0">quaeque<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">ūsū<span>usus usus N (4th) M  <br>:use, enjoyment; experience, skill, advantage; custom;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">iūdicāvērunt<span>judico judicare, judicavi, judicatus V (1st)  <br>:judge, give judgment; sentence; conclude, decide; declare, appraise;<br>(３人称 複数  完了 能動態 直説法 )<br><br></span></a>
+<a class="note0">multitūdinī<span><br><br></span></a>
+<a class="note1">prōdunt.<span>prodo prodere, prodidi, proditus V (3rd) TRANS  <br>:|institute; extend, prolong; hand down (lore); <strong>publish</strong> /record, <strong>reveal</strong>, uncover;<br>(３人称 複数  現在 能動態 直説法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>Magistratus occultant quae vista sunt.</strong> quae vista (occultanda) で「(隠した方が良い)と思われる事は隠した」間接疑問文。</p>
+<p><strong>que produnt multidini quae judicaverunt esse ex usu.　：</strong>有用であると判断したものを大衆に開示した。</p>
+<p>ex usu = of advantage<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dē<span><br><br></span></a>
+<a class="note0">rē<span><br><br></span></a>
+<a class="note0">pūblicā<span><br><br></span></a>
+<a class="note0">nisi<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">concilium<span></span></a>
+<a class="note0">loquī<span><br><br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">concēditur.<span>concedo concedere, concessi, concessus V (3rd)  <br>:relinquish/give up/concede; depart; <strong>pardon</strong>; submit, <strong>allow</strong>/grant/permit/condone;<br>(３人称 単数 現在 受動態 直説法 )<br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>公に関することは、評議会を通すことなしで話すことは許されていなかった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

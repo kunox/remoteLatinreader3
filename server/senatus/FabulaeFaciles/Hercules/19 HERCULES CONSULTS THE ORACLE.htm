@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='remote latinreader' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function (event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+            if($("#saveoption").length){
+                $("#saveoption").hide();
+                $("#downloadsave").hide();
+            }
+            insertButtons2();
+            $("#outer").css("width","96%");
+        }
+        function insertButtons2(){
+            if(!$(".lbtn1").length){
+                $(".spacer").each(function(index, elem) {
+                    var target = $(elem);
+                    var tx1 = target.html();
+                    var color = "style='color:#5f9ea0;'";
+                    if (target.next().next().attr("class") != "spnote")
+                        color = "style='color:black;'";
+                    target.html(tx1 + "<button class='lbtn2'>Translation</button><button class='lbtn1'>Notes</button>");
+                });
+            }
+            $(".lbtn1").on("click", function() {
+                var target = $(this).parent().next().next();
+                if (target.attr("class") != "spnote") {
+                    target = target.next();
+                    if (target.attr("class") != "spnote") // 編集中の場合
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+            $(".lbtn2").on("click", function() {
+                var target = $(this).parent().next().next().next();
+                if (target.attr("class") != "translation") {
+                    target = target.next();
+                    if (target.attr("class") != "translation")
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+        }
+
+        function btoggle(obj, btn) {
+            obj.toggle(function() {
+                if ($(this).is(":visible"))
+                    btn.css("color", "black");
+                else
+                    btn.css("color", "#5f9ea0");
+            });
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 2.8rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+
+        /* 追加のボタン*/
+        .lbtn1,
+        .lbtn2,
+        .lbtn3,
+        .lbtn4 {
+            float: right;
+            margin-top: 2px;
+            margin-right: 6px;
+            height: 16px;
+            font-size: 10px;
+            padding: 1px;
+            font-weight: bold;
+            /* vertical-align: bottom; */
+            border: none;
+        }
+
+
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 2.8rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+
+        }
+
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+
+        a.note1:hover span {
+            display: block;
+        }
+
+        .latin span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 3.5rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        .latin span::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.8rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.5rem;
+            left: 2.0rem;
+        }
+    </style>
+</head>
+
+<body id="bodyportion">
+        <div id="outer">
+    
+		<a name="begin"></a>
+	<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 19 HERCULES CONSULTS THE ORACLE.htm </h1>
+
+<div class="boxright">
+<input id="saveoption" class="rbtn1" type="button" value="保存する" style="font-size: 12px; font-family: meiryo; ">
+<input id="downloadsave" class="rbtn1" type="button" value="ダウンロード" style="font-size: 12px; font-family: meiryo;">
+</div>
+</div>
+
+<div class="spacer">Line<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Herculēs<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">tantum<span><b>tantus</b>,tanta, tantum ADJ  <br><b>:of such size; so great, so much;</b><br>&nbsp;(N 単数 対格)&nbsp;</span></a>
+<a class="note0"><span></span></a>
+<a class="note1">scelus<span><b>scĕlus</b>,sceleris N (3rd) N <br><b>:crime; calamity; wickedness, sin, evil deed;</b><br>(単数 対格)&nbsp;</span></a>
+<a class="note0"><span></span></a>
+<a class="note1">expiāre<span><b>expĭo</b>,expiare, expiavi, expiatus V (1st)  X<br><b>:expiate, atone for; avert by expiatory rites;</b><br>&nbsp;不定詞</span></a>
+<a class="note0"><span></span></a>
+<a class="note1">magnopere<span><b>magnopere</b>,ADV <br><b>:greatly, exceedingly; with great effort; very much; particularly, especially;</b><br></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">cupiēbat.<span><b>cŭpĭo</b>,cupere, cupivi, cupitus V (3rd) TRANS  <br><b>:wish/long/be eager for; desire/want, covet; desire as a lover; favor, wish well;</b><br>(3人称 単数 未完了 能動態 直説法)</span></a>
+<a class="note0"><span></span></a>
+<a class="note1">Cōnstituit<span><b>constĭtŭo</b>,constituere, constitui, constitutus V (3rd)  X<br><b>:set up/in position, erect; place/dispose/locate; (call a) halt; plant (trees);</b><br>(3人称 単数 現在 能動態 直説法)</span></a>
+<a class="note0">igitur<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">ōrāculum<span><b>ōrācŭlum</b>,oraculi N (2nd) N <br><b>:oracle (place/agency/mouthpiece); prophecy; oracular saying/precept/maxim;</b><br>(単数 対格)&nbsp;</span></a>
+<a class="note0">Delphicum<span></span></a>
+<a class="note1">īre;<span><b>ĕo</b>,ire, ivi(ii), itus V  X<br><b>:go, walk; march, advance; pass; flow; pass (time); ride; sail;</b><br>不定詞</span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">ōrāculum<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note1">celeberrimum.<span><b>cĕlĕber</b>,celebris -e, celebrior -or -us, celeberrimus -a -um ADJ  最上級<br><b>:famous, celebrated, renowned; honored, distinguished; famed; notorious;</b><br>(N 単数 主格)&nbsp;</span></a>
+<a class="note0">Ibi<span></span></a>
+<a class="note0">templum<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">Apollinis<span></span></a>
+<a class="note0">plūrimīs<span></span></a>
+<a class="note0">dōnīs<span></span></a>
+<a class="note1">ornātum.<span><b>ornātus</b>,ornata -um, ornatior -or -us, ornatissimus -a -um ADJ  <br><b>:well equipped/endowed, richly adorned, ornate; distinguished, honored;</b><br>(N 単数 主格)&nbsp;</span></a>
+<a class="note0">Hōc<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">templō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">sedēbat<span><b>sĕdeo</b>,sedere, sedi, sessus V (2nd)  X<br><b>:sit, remain; settle; encamp;</b><br>(3人称 単数 未完了 能動態 直説法)</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">fēmina<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">quaedam,<span><b>quīdam</b>,quaedam, quoddam  PRONADECT<br><b>:(w/-dam) certain;  a certain thing; somebody, one, something;</b><br>(F 単数 主格)</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">nōmine<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Pythia,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cōnsilium<span><b>consĭlĭum</b>,consili(i) N (2nd) N <br><b>:debate/discussion/deliberation/consultation; advice/counsel/suggestion; adviser;</b><br>&nbsp;(単数 対格)&nbsp;</span></a>
+<a class="note1">dabat<span><b>do</b>,dare, dedi, datus V (1st) TRANS  <br><b>:give; dedicate; sell; pay; grant/bestow/impart/offer/lend; devote; allow; make;</b><br>(3人称 単数 未完了 能動態 直説法)</span></a>
+<a class="note0">eīs<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">ōrāculum<span></span></a>
+<a class="note0">veniēbant.<span></span></a>
+<a class="note0">Haec<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">fēmina<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ipsō<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Apolline<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">docēbātur,<span><b>dŏcĕo</b>,docere, docui, doctus V (2nd)  X<br><b>:teach, show, point out;</b><br>(3人称 単数 未完了 受動態 直説法)</span></a>
+<a class="note0"><span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">voluntātem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">deī<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">hominibus<span><b>hŏmo</b>,hominis N (3rd) M <br><b>:man, human being, person, fellow;</b><br>(複数 与格)&nbsp;</span></a>
+<a class="note1">ēnūntiābat.<span><b>ēnuntĭo</b>,enuntiare, enuntiavi, enuntiatus V (1st)  X<br><b>:reveal; say; disclose; report; speak out, express, declare;</b><br>(3人称 単数 未完了 能動態 直説法)</span></a>
+<a class="note0">Herculēs<span></span></a>
+<a class="note0">igitur,<span></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">Apollinem<span></span></a>
+<a class="note1">praecipuē<span><b>praecipue</b>,ADV <br><b>:especially; chiefly;</b><br></span></a>
+<a class="note1">colēbat,<span><b>cŏlo</b>,colere, colui, cultus V (3rd)  X<br><b>:|honor, cherish, worship; tend, take care of; adorn, dress, decorate, embellish;</b><br>(3人称 単数 未完了 能動態 直説法)</span></a>
+<a class="note0">hūc<span></span></a>
+<a class="note0">vēnit.<span></span></a>
+<a class="note0">Tum<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note0">tōtam<span></span></a>
+<a class="note1">exposuit,<span><b>expōno</b>,exponere, exposui, expositus V (3rd)  X<br><b>:set/put forth/out; abandon, expose; publish; explain, relate; disembark;</b><br>(3人称 単数 完了 能動態 直説法)</span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">scelus<span></span></a>
+<a class="note1">cēlāvit.<span><b>cēlo</b>,celare, celavi, celatus V (1st) TRANS  <br><b>:conceal, hide, keep secret; disguise; keep in dark/in ignorance; shield;</b><br>(3人称 単数 完了 能動態 直説法)</span></a>
+<a class="note0"><span></span></a>
+
+	</p>
+	</div>
+
+    
+    <div class="spnote" contenteditable="false" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Herculesはsその大変な犯罪を贖うことを非常に願った。なのでデルフィの神託に行くことにした。</p></div>
+</div>
+
+    <div class="translation" contenteditable="false" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>Herculesは、その大変な犯罪を償いたいと心から願った。そこでデルフィの神託を求めて行くことにした。そこはすべての中で最も有名な神託であった。その神殿はアポロ神に対する捧げ物で飾られていた。神殿の中にはとある女性、その名前をPythiaという、が座っており、神託を求める人に助言を与えていた。しかしながら、その女性はアポロ神その人に導かれており、つまりは神の御心を人間に話していたということである。Herculesはアポロ神を特別に嘉しており、そこを選んだのだった。そして全てについて明らかにされ、隠された犯罪はなかった。</p></div>
+</div>
+<div id="footer">
+	<a href="#begin"> ページの最初に </a><!-- div -->
+	</div>
+	</div>
+    </body>
+    <html>
+    

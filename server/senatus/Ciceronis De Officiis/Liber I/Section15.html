@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 15 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[15]<span></span></a>
+<a class="note0">Formam<span></span></a>
+<a class="note1">quidem<span>quidem ADV <br>:indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;<br><br></span></a>
+<a class="note1">ipsam,<span>ipse ipsa, ipsum PRON  <br>:himself/herself/itself; the <strong>very</strong>/real/actual one; in person; themselves (pl.);<br>(F 単数 対格)<br></span></a>
+<a class="note0">Marce<span></span></a>
+<a class="note0">fili,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">tamquam<span>tamquam CONJ <br>:as, just as, just as if; as it were, so to speak; as much as; so as;<br><br></span></a>
+<a class="note1">faciem<span>facies faciei N (5th) F  <br>:shape, face, look; presence, appearance; beauty; achievement;<br>(C 単数 対格)<br></span></a>
+<a class="note1">honesti<span>honestus honesta -um, honestior -or -us, honestissimus -a -um ADJ  <br>:distinguished, reputable, respected, honorable, upright, honest; worthy;<br>(M 単数 属格)<br></span></a>
+<a class="note1">vides,<span>video videre, vidi, visus V (2nd)  <br>:see, look at; consider; (PASS) seem, seem good, appear, be seen;<br>(2 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">"quae<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note1">oculis<span>oculus oculi N (2nd) M  <br>:eye;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note1">cerneretur,<span>cerno cernere, crevi, cretus V (3rd) TRANS  <br>:sift, separate, distinguish, discern, resolve, determine; see; examine; decide;<br>(3 単数 未完了 受動態 接続法 )<br></span></a>
+<a class="note1">mirabiles<span>mirabilis mirabilis, mirabile ADJ  <br>:wonderful, marvelous, astonishing, extraordinary; remarkable; admirable;<br>(C 複数 主格), <br></span></a>
+<a class="note1">amores<span>amor amoris N (3rd) M  <br>:love; affection; the beloved; Cupid; affair; sexual/illicit/homosexual passion;<br>&nbsp;(C 複数 主格)<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">ait<span>aio -, - V  <br>:say (defective), assert; say yes/so, affirm, assent; prescribe/lay down (law);<br>&nbsp;(3 単数 完了 能動態 直接法 )<br></span></a>
+<a class="note0">Plato,<span></span></a>
+<a class="note1">excitaret<span>excito excitare, excitavi, excitatus V (1st)  <br>:wake up, stir up; cause; raise, erect; incite; excite, arouse;<br>(3 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note1">sapientiae".<span>sapientia sapientiae N (1st) F  <br>:wisdom (goal of philosopher, Stoic virtue); judgment/understanding; reason;<br>(C 単数 属格)<br></span></a>
+</p>
+</div><div class="construction" id="sheet0" style="display: none;">
+<div class="constline" id="00" spellcheck="false">
+<p><br></p>
+</div>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>formam : 体、 faciem:顔　いずれもHonestusを擬人化している。</p>
+<p>quae si cerneretur oculis : 擬人化したことを受けて、「もし目で見られたら」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>息子、マルクスよ、君はHonestusのその体そしてその顔を見ている。それは、Platoの言うようにもし目で見ることができれば、素晴らしい人智の愛が湧き上がるであろう。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sed<span></span></a>
+<a class="note0">omne,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">honestum,<span>honestus honesta -um, honestior -or -us, honestissimus -a -um ADJ  <br>:distinguished, reputable, respected, honorable, upright, honest; worthy;<br>(N 単数 主格<br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">quattuor<span></span></a>
+<a class="note0">partium<span></span></a>
+<a class="note1">oritur<span>orior ori, oritus sum V (3rd) DEP  <br>:rise (sun/river); arise/emerge, crop up; get up (wake); begin; originate from;<br>(3 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">aliqua.<span>aliqua ADV <br>:somehow, in some way or another, by some means or other; to some extent;<br><br></span></a>
+</p>
+</div><div class="construction" id="sheet1" style="display: none;">
+<div class="constline" id="10" spellcheck="false">
+<p><br></p>
+</div>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>id oritur ex quattuor partium aliqua.<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>しかし、そのHonestum全体は4つの部分から生じている。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Aut<span></span></a>
+<a class="note1">enim<span>enim CONJ <br>:namely (postpos.); indeed; in fact; for; I mean, for instance, <strong>that is to say</strong>;<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">perspicientia<span>perspicientia perspicientiae N (1st) F  <br>:full knowledge;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note1">veri<span>verum veri N (2nd) N  <br>:truth, reality, fact;<br>(N 単数 属格)<br></span></a>
+<a class="note1">sollertiaque<span>sollertia sollertiae N (1st) F  <br>:skill, cleverness; resourcefulness;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note1">versatur<span>versor versari, versatus sum V (1st) DEP  <br>:move about; <strong>live</strong>, dwell; <strong>be</strong>;<br>(3 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">hominum<span>homo hominis N (3rd) M  <br>:man, human being, person, fellow;<br>(C 複数 属格)<br></span></a>
+<a class="note1">societate<span>societas societatis N (3rd) F  <br>:society; alliance/partnership; trading company; fellowship, communion;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note1">tuenda<span>tueor tueri, tuitus sum V (2nd) DEP  <br>:see, look at; protect, watch; <strong>uphold</strong>;<br>&nbsp;(未来 分詞 受動態 F 単数 奪格)<br></span></a>
+<a class="note1">tribuendoque<span>tribuo tribuere, tribui, tributus V (3rd)  <br>:divide, assign; present; grant, allot, bestow, attribute;<br>(未来 分詞 受動態 N 単数 奪格)<br><br></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note1">cuique<span>quisque quaeque,quodque ADJECT  <br>:(w/-que) any; each;<br>(X 単数 与格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">rerum<span></span></a>
+<a class="note1">contractarum<span>contraho contrahere, contraxi, contractus V (3rd) TRANS  <br>:enter into/upon relationship/ agreement/ business/ marriage/ loan/battle, deal with;<br>(完了 分詞 受動態 F 複数 属格)<br></span></a>
+<a class="note1">fide<span>fides fidei N (5th) F  <br>:faith, loyalty; honesty; credit; confidence, trust, belief; good faith;<br>(C 単数 奪格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">animi<span></span></a>
+<a class="note1">excelsi<span>excelsus excelsa -um, excelsior -or -us, excelsissimus -a -um ADJ  <br>:lofty/high; tall; exalted; elevated; noble; of high position/rank/reputation;<br>&nbsp;(N 単数 属格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">invicti<span>invictus invicta, invictum ADJ  <br>:unconquered; unconquerable, invincible;<br>&nbsp;(N 単数 属格)<br></span></a>
+<a class="note0">magnitudine<span></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">robore<span>robur roboris N (3rd) N  <br>:|strength/firmness/solidity; vigor, robustness; potency, force, effectiveness;<br>(N 単数 奪格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omnium,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">fiunt<span>fio feri, factus sum V SEMIDEP  <br>:<strong>happen,</strong> come about; result (from); take place, be held, occur, arise (event);<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">quaeque<span></span></a>
+<a class="note0">dicuntur<span></span></a>
+<a class="note1">ordine<span>ordo ordinis N (3rd) M  <br>:row, order/rank; succession; series; class; bank (oars); order (of monks) (Bee);<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">modo,<span>modus modi N (2nd) M  <br>:manner, mode, way, method; rule, rhythm, beat, measure, size; bound, limit;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note1">inest<span>insum inesse, infui, infuturus V  <br>:be in/on/there; belong to; be involved in;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">modestia<span>modestia modestiae N (1st) F  <br>:restraint, temperateness; discipline; modesty;<br>(C 単数 主格), <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">temperantia.<span>temperantia temperantiae N (1st) F  <br>:self control; moderation;<br>(C 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>１．versatur in veri perspicientia sollertiaque : 真実の完全な知識と賢さに存している。</p>
+<p>２．hominum societate tuenda, tribuendo suum cuique, rerum contractarum fide 「保持すべき人間の社会、自身に属するものを皆に与えること、契約の事などの信頼性」(<strong>justitia</strong>)</p>
+<p>tribuendo suum cuique : みんなに（与格）自分のものを（suum)分配する</p>
+<p>３．高貴で打ち壊され難い精神の偉大さと強靭さに (<strong>Fortitudo</strong>)</p>
+<p>4. in omnium quae fiunt, que quae dicuntur,&nbsp;ordine et modo, ：「すべての行動、言質の秩序と方法のなかに」</p>
+<p>&nbsp; in quo modestria et temperantia inest. : quoは関係代名詞。ordine et modoを指す。(<strong>temperantia</strong>)<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それらは、あるいは真実の完全な知識と賢さであり、あるいは、保持すべ人間の社会、つまりその人に属するものをその人に与え、契約など約束事に対する信頼などであり、または、高貴で打ち負かされない精神の偉大さと強靭さに、そして、行動、言葉のすべての秩序と方法、その中に、抑制、自己制御などがあるのであるが、などである。<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quae<span></span></a>
+<a class="note0">quattuor<span></span></a>
+<a class="note1">quamquam<span>quamquam CONJ <br>:though, although; yet; nevertheless;<br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">se<span></span></a>
+<a class="note1">colligata<span>colligo colligare, colligavi, colligatus V (1st) TRANS  <br>:bind/tie/pack together/up, connect, unite/unify; fetter/bind; immobilize, stop;<br>(完了 分詞 受動態 N 複数 主格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">implicata<span>implicatus implicata, implicatum ADJ  <br>:entangled, confused, obscure; implicated, involved;<br>&nbsp;(N 複数 主格)<br></span></a>
+<a class="note0">sunt,<span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">singulis<span>singulus singula, singulum ADJ  <br>:apiece (pl.); <strong>every</strong>; one each/at a time; <strong>individual</strong>/separate/single; several;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note1">certa<span>certus certa -um, certior -or -us, certissimus -a -um ADJ  <br>:fixed, settled, firm; certain; trusty/reliable; sure; resolved, determined;<br>&nbsp;(N 複数 主格)<br></span></a>
+<a class="note1">officiorum<span>officium offici(i) N (2nd) N  <br>:duty, obligation; kindness; service, office;<br>(X 複数 属格)<br></span></a>
+<a class="note1">genera<span>genus generis N (3rd) N  <br>:birth/descent/<strong>origin</strong>; race/ family/ house/ stock/ ancestry; offspring/descent;<br>(N 複数 主格<br></span></a>
+<a class="note1">nascuntur,<span>nascor nasci, natus sum V (3rd) DEP  <br>:be produced spontaneously, come into existence/being; spring forth, grow; live;<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note1">velut<span>velut ADV <br>:just as, as if;<br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">parte,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">prima<span></span></a>
+<a class="note0">discripta<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">qua<span></span></a>
+<a class="note0">sapientiam<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">prudentiam<span>prudentia prudentiae N (1st) F  <br>:discretion; good sense, wisdom; prudence; foresight;<br>(C 単数 対格)<br></span></a>
+<a class="note1">ponimus,<span>pono ponere, posui, positus V (3rd) TRANS  <br>:put/place/set; station/post (troops); pitch (camp); situate; set up; erect;<br>(１ 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">inest<span>insum inesse, infui, infuturus V  <br>:be in/on/there; belong to; be involved in;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">indagatio<span>indagatio indagationis N (3rd) F  <br>:act of tracking down/searching out; investigation;<br>(X 単数 主格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">inventio<span>inventio inventionis N (3rd) F  <br>:invention/discovery (action/thing); action of devising/planning; plan/stratagem;<br>(X 単数 主格)<br></span></a>
+<a class="note0">veri,<span></span></a>
+<a class="note0">eiusque<span></span></a>
+<a class="note0">virtutis<span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note1">munus<span>munus muneris N (3rd) N  <br>:service; duty, office,<strong> function</strong>; gift; tribute, offering; bribes (pl.);<br>&nbsp;(X 単数 主格)<br><br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">proprium.<span>proprius propria, proprium ADJ  <br>:own, very own; individual; special, particular, characteristic;<br>(N 単数 主格),<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>quae quattuor sunt collogata atque implicanta inter se. : それら４つは互いに関連し結びついているのである。</p>
+<p>certa officiorum genera nascuntur ex singlis. 「ある特定のOfficiumの起源はそれら一つづつからも導かれる。」</p>
+<p>velut : just as、ちょうど次のようである。</p>
+<p>ex ea parte, qua prima discripta est, in qua pnonimus sapientiam et prudentiam. parte先行詞で、quae, quaは関係代名詞。「最初に言及された、また私が賢明さと思慮深さをその中に置いたその部分からは」</p>
+<p>veri indagatio atque inventio inest ：「真実の探求と発見が（そこに）属す、関連する」</p>
+<p>hoc virtutis munus est proprium : 逐語的には「この徳の機能は独特である」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらの４つのものは互いに関連し結びついているのであるが、しかしながら、それらの一つづつからもある特定のOfficiumの起源に関連するものである。例えば、我々が最初に言及し、その中に賢明、思慮深さをおいた部分（Honestusの)からは真実の探求と発見が関連してくる。これらの徳性の働きは全く奇妙なものである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

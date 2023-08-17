@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 3</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[3]<span></span></a>
+
+<a class="note0">Haec<span></span></a>
+<a class="note1">cīvitās<span>単　主格　F<br><br></span></a>
+<a class="note1">longē<span>副詞　;= far, by far<br><br></span></a>
+<a class="note1">plūrimum<span>plurimum plurimi N 単　対格　;= most/great, very much<br><br></span></a>
+<a class="note0">tōtīus<span><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note1">equitātū<span>equitatus M 単　奪格　;= cavalry<br><br><br></span></a>
+<a class="note1">valet<span>valeo valere, valui, valitus ３単　現在　;= be strong, be powerful<br><br></span></a>
+<a class="note1">magnāsque<span>magnus magna, magnum ｆ複　対格　;= great, mighty<br><br><br></span></a>
+<a class="note0">habet<span></span></a>
+<a class="note0">cōpiās<span><br><br></span></a>
+<a class="note0">peditum<span></span></a>
+<a class="note0">Rhēnumque,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">suprā<span></span></a>
+<a class="note0">dēmōnstrāvimus,<span><br><br></span></a>
+<a class="note1">tangit.<span>tango ３単　現在　;= touch, strike, border on<br><br></span></a>
+</p>
+</div>
+    <div class="spnote"  >
+<div class="innerdiv" spellcheck="false"><p><strong>haec civitas valet longe plurimum totius Galliae equitatu.</strong></p>
+<p>ここでplurimumは名詞で、中性単数であり、valetの目的語？である。これは<strong>「同族対格」</strong>と言われる用法で、<u>自動詞はよく、関連ある名詞を対格に持って、その名詞の形容詞的な意味で、修飾される、という用法である。（A&amp;G390 c) (NewLatin176.4)</u></p>
+<p>例として　 plus valeo, plurimum potestなどがある。したがってここでは、「最も強い」と訳す。</p>
+<p>Totalius Galliaeは全体の属格でplurimumを修飾しており、文法的には、単なるplurimumではなく、totius Galliae plurimumが同族対格になっている、という構造である。<strong>equitatuは指定の奪格で「～に関しては」の意</strong>。(newLatin226)<br></p>
+</div>
+</div>
+<div class="translation" >
+<div class="innerdiv" spellcheck="false"><p>その部族は、騎兵という点では全ガリアのなかで群を抜いて強かった。また大変よい歩兵も持っており、前に言ったように、ライン河を侵している。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">In<span></span></a>
+<a class="note0">eā<span></span></a>
+<a class="note0">cīvitāte<span></span></a>
+<a class="note1">duo<span>m複　主格<br><br></span></a>
+<a class="note0">dē<span></span></a>
+<a class="note1">principātū<span>principatus principatus M 単　奪格　;= first place, rule, leadership, chief command<br><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note1">contendēbant,<span>contendo ３複　未完了　;= compete<br><br><br></span></a>
+<a class="note0">Indūtiomārus<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Cingetorix;<span></span></a>
+<a class="note0">ē<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">alter,<span>alter altera, -um 形容詞　m単　主格　;= one (of two), former, latter<br><br></span></a>
+<a class="note0">simul<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">dē<span></span></a>
+<a class="note0">Caesaris<span></span></a>
+<a class="note0">legiōnumque<span><br><br></span></a>
+<a class="note0">adventū<span></span></a>
+<a class="note1">cognitum<span>cognosco 完了分詞　ｎ単　主格　;= become aquinted<br><br><br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">vēnit,<span></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">suōsque<span></span></a>
+<a class="note0">omnēs<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">officiō<span>officium offici n 単　奪格　;= duty, obligation<br><br></span></a>
+<a class="note0">futūrōs<span><br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">ab<span>from 奪格支配<br><br><br></span></a>
+<a class="note0">amīcitiā<span><br><br></span></a>
+<a class="note0">populī<span></span></a>
+<a class="note0">Rōmānī<span></span></a>
+<a class="note1">dēfectūros<span>deficio deficere, defeci, defectus INTRANS 未来分詞　能動　ｍ複　対格　;= fail, revolt, defect, come to end<br><br><br></span></a>
+<a class="note0">cōnfirmāvit<span><br><br></span></a>
+<a class="note1">quaeque<span>&nbsp;= et quae<br><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Trēverīs<span><br><br></span></a>
+<a class="note1">gererentur<span>gero ３複　未完了　受動　接続法　;= carry, bear<br><br></span></a>
+<a class="note0">ostendit.<span></span></a>
+</p>
+</div>
+<div class="spnote" >
+<div class="innerdiv" spellcheck="false"><p>duo contendebant inter se de principatu. : duoが主語。「二人が互いに、州の主導権をめぐって争っていた」</p>
+<p>e quibus alter : その中から一人</p>
+<p>cognitum estは自動詞の受動で非人称的に用いられている。「カエサルとその軍団の到着を知るところとなって」</p>
+<p>confirmavit ~, ostendit quae gererentur in Treveris.: ~と宣言して、Treviriで起きている事を話した。</p>
+<p>se suosque omnes (esse) futuros, neque (esse) defecturos ab populi Romani amicitia. esse省略の未来不定詞。対格主語はse suosque　「私とその郎党一族は今後も忠誠でありますし、ローマ人民から反乱をおこすような事はありません」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>その州では二人の人間、IndutiomarusとCingetri、が互いに主導権争いをしていた。その中のひとりは、カエサル軍の到着を知って、彼を訪ねてきた。「曰く）私と一族郎党は今後共忠誠でありますし、ローマ人民の好意に背くような事はありません、と言って、Treviri州で起きているについて述べた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">At<span></span></a>
+<a class="note0">Indūtiomārus<span><br><br></span></a>
+<a class="note0">equitātum<span><br><br></span></a>
+<a class="note0">peditātumque<span><br><br></span></a>
+<a class="note1">cōgere,<span>cogo cogere, coegi, coatus TRANS 不定詞　;= collect, gather, round up<br><br><br></span></a>
+<a class="note1">eīsque<span>複　奪格<br><br><br></span></a>
+<a class="note0">quī<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note1">aetātem<span>aetas aetatis F 単　対格　;= lifetime, age, generation<br><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">armīs<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">poterant<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">silvam<span></span></a>
+<a class="note0">Arduennam<span></span></a>
+<a class="note1">abditīs,<span>abdo abdere, abdidi, abditus TRANS 完了分詞　受動　複　奪格　;= remove, put away, set aside, hide<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">ingentī<span>ingens ingentis, ingentior, ingentissimus 形容詞　単　奪格　;= not natural, huge, vast, enormous, mighty<br><br></span></a>
+<a class="note0">magnitūdine<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">mediōs<span></span></a>
+<a class="note0">fīnēs<span></span></a>
+<a class="note0">Trēverōrum<span></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note0">flūmine<span></span></a>
+<a class="note0">Rhēnō<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">initium<span></span></a>
+<a class="note0">Rēmōrum<span></span></a>
+<a class="note1">pertinet,<span>pertineo ３単　;= reach, extend, relate to<br><br></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note1">parāre<span>paro 不定詞　;= prepare<br><br><br></span></a>
+<a class="note1">īnstituit.<span>instito ３単　完了　;= set up, establish, make, decide<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>骨子は</p>
+<p><strong>Indutiomarus instituit cogere equitatum peditatumque (que) parare bellum</strong>. 「Indutiomarusは騎兵、歩兵を集め戦いの準備を始めた」<u>cogereとparareを繋ぐqueは、eisqueのqueである。</u></p>
+<p>eis abditis : 独立奪格　「武器を持てない年齢の人間をArduennamの森に隠して」</p>
+<p>quae ingenti magnitudine pertinet ad initium Remorum. : 「その森は、大変な規模の大きさで、Remi始まりののところまで伸びていた。」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>他方、Indutiomarusは騎兵と歩兵を集め、武器を持てない年年齢の人間をArduennamの森、それはたいへん大きな森で、ライン河からTreveriの領土の真中を通り、Remi族の領土の始まるところまで伸びていたが、戦争の準備を始めていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Sed<span></span></a>
+<a class="note1">posteāquam<span>前置詞　;= after<br><br></span></a>
+<a class="note0">nōnnūllī<span></span></a>
+<a class="note1">prīncipēs<span>M 複　主格<br><br><br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">cīvitāte<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">familiāritāte<span>familiaritas familiaritatis F 単　奪格　;= intmacy, close friend ship<br><br><br></span></a>
+<a class="note0">Cingetorīgis<span><br><br></span></a>
+<a class="note0">adductī<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">adventū<span></span></a>
+<a class="note0">nostrī<span></span></a>
+<a class="note1">exercitūs<span>M 複　属格<br><br></span></a>
+<a class="note1">perterritī<span>perterreo perterrere, perterrui, perterritus TRANS 完了分詞　受動　ｍ　複　主格 ;= frighten greately, terrify<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">vēnērunt<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">dē<span></span></a>
+<a class="note0">suīs<span></span></a>
+<a class="note1">prīvātim<span>副詞　;= in private, as a private citizen<br><br><br></span></a>
+<a class="note0">rēbus<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">eō<span></span></a>
+<a class="note0">petere<span></span></a>
+<a class="note0">coepērunt,<span><br><br></span></a>
+<a class="note1">quoniam<span>quoniam 前置詞　;= becauses, since, seeing that<br><br></span></a>
+<a class="note1">cīvitātī<span>f 単　与格<br><br><br></span></a>
+<a class="note1">cōnsulere<span>consulo 不定詞　;= ask information of , consult, advise<br><br><br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note0">possent,<span></span></a>
+<a class="note1">veritus<span>vereor vereri, veritus sum DEP 完了分詞　受動　ｍ単　主格　;= revere, fear, dread<br><br><br><br></span></a>
+<a class="note0">nē<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">dēsererētur<span>desero deserere, deserui, desertus TRANS 3単　未完了　受動　接続法　;= leave, depart, quit, cease, <strong>abandon</strong><br><br><br><br></span></a>
+<a class="note0">Indūtiomārus<span></span></a>
+<a class="note0">lēgātōs<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">mittit:<span></span></a>
+<a class="note0">sēsē<span></span></a>
+<a class="note1">idcirco<span>副詞　;= on that account, therefore<br><br></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note0">suīs<span></span></a>
+<a class="note1">discēdere<span>discedo discedere, disccessi, discessus 不定詞　;= go&nbsp; march off, depart, dispate<br><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">venīre<span></span></a>
+<a class="note1">nōluisse,<span>nolo 完了　不定詞　;= be unwilling, wish no to,<br><br></span></a>
+<a class="note1">quō<span>副詞　;= for which reason, to what purpose<br><br></span></a>
+<a class="note1">facilius<span>facilis faclius, facillime 副詞 比較級　;= easuly, readily<br><br></span></a>
+<a class="note0">cīvitātem<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">officiō<span></span></a>
+<a class="note1">continēret,<span>contineo continere, continui, contentus TRANS 3単　未完了　接続法　;= secure, sustain, hold in position<br><br></span></a>
+<a class="note0">nē<span></span></a>
+<a class="note0">omnis<span></span></a>
+<a class="note1">nōbilitātis<span>nobilitas F 単　属格<br><br></span></a>
+<a class="note1">discessū<span>discensus discessis M 単　奪格奪格;= going apart, separation, departure<br><br></span></a>
+<a class="note1">plēbs<span>plebs F 単　主格<br><br></span></a>
+<a class="note1">propter<span>対格支配　前置詞　;= near, by means of, because of, on account of<br><br><br></span></a>
+<a class="note1">imprūdentiam<span>imprudentia inpridentiae F 単　対格　;= ignorance, lack of knowledge、<strong>judgment</strong>, intention<br><br><br></span></a>
+<a class="note1">lāberētur:<span>labor labi, lapsus sum DEP 3複　未完了　受動　接続法　;= slip and fall, drop, perish<br><br><br></span></a>
+<a class="note0">itaque<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">cīvitātem<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">sua<span></span></a>
+<a class="note0">potestāte,<span></span></a>
+<a class="note0">sēsēque,<span></span></a>
+<a class="note0">sī<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">permitteret,<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">castra<span></span></a>
+<a class="note0">ventūrum,<span></span></a>
+<a class="note0">suās<span></span></a>
+<a class="note0">cīvitātisque<span></span></a>
+<a class="note1">fortūnās<span>fortuna F 複　対格<br><br><br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">fideī<span>fides fidei F 単　与格（属格？）;= faith, loyalty, godd faith<br><br></span></a>
+<a class="note1">permissūrum.<span>permitto 未来分詞　ｍ　単　対格　;= let through, let go through, entrust, hurl<br><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>骨子は次のとおり</p>
+<p><strong>posteaquam nonnulli princeipes venerunt et coeperunt ~, Indutiomarus mittit legatos ad Caesarem</strong>. 「少なくないリーダー達が、訪れ、～を始めると、Indutiomarusはカエサルに使者を送ってきた。」</p>
+<p>familiaritate Cingettorgis adducti : 分詞構文　「Cingetorixとの厚情により」</p>
+<p>nostri exercitus adventu perrriti : 我軍の到着により驚いてか</p>
+<p><strong>coeperunt petere privatim ab eo de suis rebus</strong>, : eoはIndutiomarusの事。「彼から自身の事柄に関して個人的に嘆願を始めた」</p>
+<p>veritus ne desereretur ab omnibus, 「見捨てられるのではないかと恐れた（Indutiomarus)は」neは～しないように、と言う意味の接続詞。従って逐語的には「見捨てられることがないようにと、心配している」で心配なのは見捨てられる事である。</p>
+<p><u>sese ~ noluisse, quo ~ , ne ~. 間接話法で、主文の動詞がnoluisse 不定詞であり、それに対句的に二つの従属節がある。quo~で～するために、ne~で～しないために、（NewLatin 282.1)</u></p>
+<p><strong>quo contineret facilius civitatem in officio</strong>. 「州をより簡単に秩序ある状態のしておくため」</p>
+<p><strong>ne plebs laberetur propter imprudentiam omnis noblilitais descessu</strong> . discessuは原因の奪格。「全ての主要人物がいなくなることで、平民たちが自身の判断で、反乱を起こさないように」</p>
+<p>permissurum (esse). fotunasが主語</p>
+</div></div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>然しながら、少ないない数のリーダー達が、Cingetorixへの厚情のためか、それとも我軍の到着に驚いたかして、カエサルの元を訪れ、彼ら自身のことに関して個人的に嘆願を始めた。と言うのは彼らは州に対して相談する事は出来なかったからである。皆から見捨てられるのではないかと心配したIndutiomarusは、カエサルに使者を送ってきてこう言った。私は自分を出立させたり、カエサルの元を尋ねることを望んではいなかった。それは一つには、より簡単に州を秩序ある状態に保つためであり、また大勢のリーダー不在により平民が自身の判断で、反乱を起こさないようにするためであった。</p>
+<p>そういうことで、州は私の支配下にある。もしカエサルが許せば、彼の駐屯地に行き、彼と州の全てをカエサルに委ねるであろう。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>
+

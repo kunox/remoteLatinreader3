@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 62.5%;
+        }
+        
+        html {
+            font-size: 50%;     /* 保存したときに文字が大きくなりすぎないように */
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.4rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);"> 10 POLYDECTES IS TURNED TO STONE.htm </h1>
+</div>
+<div class="spacer">Line</div>
+<div class="latin" style="font-size: 3.4rem;">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Postquam<span></span></a>
+<a class="note0">Perseus<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">īnsulam<span></span></a>
+<a class="note0">nāvem<span></span></a>
+<a class="note1">appulit,<span>appello appellere, appuli, appulsus V (3rd)  X<br>:drive to, move up, bring along, force towards; put ashore at, land (ship);<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">sē<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note1">contulit<span>confĕro conferre, contuli, conlatus V TRANS  <br>:bring together, carry/convey; collect/gather, compare; unite, add; direct/aim;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0">māter<span></span></a>
+<a class="note0">ōlim<span><br><br></span></a>
+<a class="note1">habitāverat,<span>hăbĭto habitare, habitavi, habitatus V (1st)  X<br>:inhabit, dwell; live, stay;<br>(3 単数 過去完了 能動態 直接法) <br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">domum<span>dŏmus domi N (2nd) F <br>:house, building; home, household; (N 4 1, older N 2 1);<br>(単数 対格) <br></span></a>
+<a class="note1">invēnit<span>invĕnĭo invenire, inveni, inventus V (4th)  X<br>:come upon; discover, find; invent, contrive; reach, manage to get;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note1">vacuam<span>văcŭus vacua, vacuum ADJ  <br>:empty, vacant, unoccupied; devoid of, free of;<br>(F 単数 対格) <br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">omnīnō<span></span></a>
+<a class="note1">dēsertam.<span>dēsertus deserta -um, desertior -or -us, desertissimus -a -um ADJ  <br>:deserted, uninhabited, without people; solitary/lonely; forsaken; desert/waste;<br>(F 単数 対格) <br></span></a>
+<a class="note0">Trēs<span></span></a>
+<a class="note0">diēs<span></span></a>
+<a class="note0">per<span></span></a>
+<a class="note0">tōtam<span></span></a>
+<a class="note0">īnsulam<span></span></a>
+<a class="note0">mātrem<span></span></a>
+<a class="note1">quaerēbat;<span>quaero quaerere, quaesivi, quaesitus V (3rd)  X<br>:search for, seek, strive for; obtain; ask, inquire, demand;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0">tandem<span></span></a>
+<a class="note0">quartō<span></span></a>
+<a class="note1">diē<span>dĭes diei N (5th) C <br>:day; daylight; (sunlit hours); (24 hours from midnight); open sky; weather;<br>(単数 奪格) <br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">templum<span>templum templi N (2nd) N <br>:temple, church; shrine; holy place;<br>&nbsp;(単数 対格)<br></span></a>
+<a class="note0">Diānae<span></span></a>
+<a class="note1">pervēnit.<span>pervĕnĭo pervenire, perveni, perventus V (4th)  X<br>:come to; reach; arrive;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Hūc<span></span></a>
+<a class="note0">Danaë<span></span></a>
+<a class="note1">refūgerat,<span>rĕfŭgĭo refugere, refugi, - V (3rd)  X<br>:flee back; run away, escape;<br>(3 単数 過去完了 能動態 直接法) <br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Polydectem<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">timēbat.<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Perseus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">cognōvit,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">īrā<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">magnā<span></span></a>
+<a class="note1">commōtus<span>commŏvĕo commovere, commovi, commotus V (2nd) TRANS  <br>:shake/stir up, agitate; displace, disturb, trouble/worry, upset; jolt; excite;<br>【完了分詞 ( 受動態 ) (M 単数 主格) 】<br></span></a>
+<a class="note0">est;<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">rēgiam<span></span></a>
+<a class="note0">Polydectis<span></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note0">morā<span></span></a>
+<a class="note0">contendit,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ubi<span></span></a>
+<a class="note0">eō<span></span></a>
+<a class="note0">vēnit,<span></span></a>
+<a class="note0">statim<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">ātrium<span>ātrĭum atri(i) N (2nd) N <br>:atrium, reception hall in a Roman house; auction room; palace (pl.), house;<br>&nbsp;(単数 対格) <br></span></a>
+<a class="note1">irrūpit.<span>irrumpo irrumpere, irrupi, irruptus V (3rd)  X<br>:invade; break/burst/force/rush in/upon/into, penetrate; intrude on; interrupt;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">Polydectēs<span></span></a>
+<a class="note0">magnō<span></span></a>
+<a class="note0">timōre<span></span></a>
+<a class="note0">affectus<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">fugere<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note1">volēbat.<span>vŏlo velle, volui, - V  X<br>:wish, want, prefer; be willing, will;<br>(3 単数 未完了 能動態 直接法) <br></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Dum<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">tamen<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">ille<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">fugit,<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Perseus<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">caput<span></span></a>
+<a class="note0"><span></span></a>
+<a class="note0">Medūsae<span></span></a>
+<a class="note1">mōnstrāvit;<span>monstro monstrare, monstravi, monstratus V (1st)  X<br>:show; point out, reveal; advise, teach;<br>(3 単数 完了 能動態 直接法) <br></span></a>
+<a class="note0">ille<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">simul<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0">vīdit,<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">saxum<span></span></a>
+<a class="note1">versus<span>verto vertere, verti, versus V (3rd)  X<br>:turn, turn around; change, alter; overthrow, destroy;<br>【完了分詞 ( 受動態 ) (M 単数 主格) 】<br></span></a>
+<a class="note0">est.<span></span></a>
+<a class="note0"><span></span></a>
+<br>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" style="font-size: 2.4rem;" spellcheck="false"><p>ira commotus est : iraは主格奪格あるが、主格で主語だとするとcommotus が男性なので、ira女性と合わない。したがって主語はPerseusで、iraは原因の奪格。</p>
+<p>quarto die : 時の奪格、「いつ」を表す。「４日めに」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" style="font-size: 2.4rem;" spellcheck="false"><p>Perseusが船を島の方に進め、母親がかって住んでいた場所に行くが、家は空き家ですべて壊れていることを見つけました。３日間にわたり島全体で母親を探しました。４日めにしてついにDianaの神社を行き着きました。そこはPolydectusを恐れたDianaが避難した場所でした。Perseusはそれを知り怒り狂いました。時をおかず、Polydectusの家に向かい、到着するやいきなりアトリウムに侵入しました。Polydectusは恐怖で動転し逃走を図ります。彼が逃走するのを見てPerseusはMedusaの頭を見せました。それを見るやいなや彼は石に変わりました。<br></p>
+</div>
+</div>
+</div>
+</body>
+</html>

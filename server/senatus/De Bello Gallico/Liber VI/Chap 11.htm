@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VI : Chap 11</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[11]<span></span></a>
+
+<a class="note1">Quoniam<span>quoniam CONJ <br>:because, since, seeing that;<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">hunc<span></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">perventum<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">aliēnum<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">vidētur<span><br><br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">Galliae<span></span></a>
+<a class="note0">Germāniaeque<span><br><br></span></a>
+<a class="note1">mōribus<span>mos moris N (3rd) M  <br>:<strong>custom</strong>, habit; mood, manner, fashion; character (pl.), behavior, morals;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">quō<span>quo ADV <br>:where, to what place; to what purpose; for which reason, therefore;<br><br></span></a>
+<a class="note1">differant<span>differo differre, distuli, dilatus V  <br>:postpone/delay/differ; put off, keep waiting; give respite to; <strong>differ</strong>, disagree;<br>(３人称 複数  現在 能動態 接続法 )<br></span></a>
+<a class="note0">hae<span></span></a>
+<a class="note0">nātiōnēs<span><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">sēsē<span><br><br></span></a>
+<a class="note1">prōpōnere.<span>propono proponere, proposui, propositus V (3rd)  <br>:display; propose; relate; put or place forward;<br>(  現在 能動態 不定詞 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>videtur proponere ~ non esse alienum.&nbsp; videturは自動詞受動の非人称。(NewLatin 138.4) =it seems </p>
+<p>non esse alienum : alienumは多分　alienと同じで、「外国のもの」変じて「おかしな、そぐわないもの」</p>
+<p>quo differant hae nationes: quoは疑問副詞で、間接疑問文になっている。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>さてここまで来たので、ガリアとゲルマニアの慣習についてや、どうそれらの国が互いに違っているかを話をしても不適当ではないと思われる。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">In<span></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">sōlum<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">cīvitātibus<span><br><br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">pāgīs<span><br><br></span></a>
+<a class="note0">partibusque,<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">paene<span>paene ADV <br>:nearly, almost; mostly;<br><br></span></a>
+<a class="note1">etiam<span>etiam CONJ <br>:and also, besides/furthermore, in addition/as well; even, actually; yes/indeed;<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">singulīs<span><br><br></span></a>
+<a class="note0">domibus<span></span></a>
+<a class="note1">factiōnēs<span>factio factionis N (3rd) F  <br>:<strong>party</strong>, faction; partisanship;<br>&nbsp;(c 複数  主格)<br></span></a>
+<a class="note0">sunt,<span></span></a>
+<a class="note0">eārumque<span><br><br></span></a>
+<a class="note0">factiōnum<span><br><br></span></a>
+<a class="note0">prīncipēs<span><br><br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">summam<span></span></a>
+<a class="note1">auctōritātem<span>auctoritas auctoritatis N (3rd) F  <br>:|<strong>authority</strong>, influence; responsibility; prestige, reputation; opinion, judgment;<br>(c 単数 対格)<br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">iūdiciō<span>judicium judici(i) N (2nd) N  <br>:trial, <strong>legal action/process</strong>; court/tribunal; courts; administration of justice;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">habēre<span><br><br></span></a>
+<a class="note0">exīstimantur,<span><br><br></span></a>
+<a class="note0">quōrum<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">arbitrium<span>arbitrium arbitri(i) N (2nd) N  <br>:arbitration; choice, judgment, decision; sentence; will, mastery, authority;<br>&nbsp;(X 単数 対格)<br></span></a>
+<a class="note1">iūdiciumque<span>judicium judici(i) N (2nd) N  <br>:trial, legal action/process; court/tribunal; courts; administration of justice;<br>&nbsp;(X 単数 対格)<br></span></a>
+<a class="note1">summa<span>summum summi N (2nd) N  <br>:top; summit, end, last; highest place; top surface; (voice) highest, loudest;<br>(n 複数  主格), <br></span></a>
+<a class="note0">omnium<span></span></a>
+<a class="note0">rērum<span><br><br></span></a>
+<a class="note1">cōnsiliōrumque<span>consilium consili(i) N (2nd) N  <br>:|decision/resolution; intention/purpose/policy/plan/action; diplomacy/strategy;<br>(X 複数  属格)<br></span></a>
+<a class="note1">redeat.<span>redeo redire, redivi(ii), reditus V  <br>:return, go back, give back; fall back on, revert to; respond, pay back;<br>(３人称 単数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>In Gallia, factiones sunt non solum in omnibus~ sed paene etiam in singulis domibus</strong>. 「ガリアでは、すべての～だけではなく一つの家庭にまで派閥がある。」</p>
+<p><strong>factionum principes sui (iis) qui habere summam auctoritatem eorum judicio</strong>. judicioは手段の奪格で「彼らの法体系によって」</p>
+<p>「派閥の領袖は彼らの法体系により最高の権威を持つものと」考えられていた。</p>
+<p><strong>summa omnium rerum consiliorumque redeat ad quorum arbitrium iudiciumque</strong>. : summaはここでは名詞で「重要な事」の意。「すべての事柄、決定の重要なことは彼らの意志、判断に戻る」が逐語訳。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>ガリアではすべての国、州、地方にだけではなく、一家庭にすら派閥が存在する。そしてその派閥の領袖は彼らの法律体系により最高の権威を持つものと考えられている。すべての事柄、決定は彼らの意志、判断に依存している。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Itaque<span></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note0">reī<span><br><br></span></a>
+<a class="note0">causā<span><br><br></span></a>
+<a class="note1">antīquitus<span>antiquitus ADV <br>:formerly, in former/ancient/olden times, from antiquity; long ago/before;<br><br></span></a>
+<a class="note1">īnstitūtum<span>instituo instituere, institui, institutus V (3rd)  <br>:set up, <strong>establish</strong>, found, make, institute; build; prepare; decide;<br>(完了 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note0">vidētur,<span><br><br></span></a>
+<a class="note0">nē<span><br><br></span></a>
+<a class="note0">quis<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">plēbe<span>plebs plebis N (3rd) F  <br>:common people, general citizens, commons/plebeians; lower class/ranks; mob/mass;<br>(c 単数 奪格)<br></span></a>
+<a class="note1">contrā<span>contra PREP <strong>ACC</strong> <br>:against, facing, opposite; weighed against; as against; in resistance/reply to;<br><br></span></a>
+<a class="note1">potentiōrem<span>potens potentis (gen.), potentior -or -us, potentissimus -a -um ADJ  比較級<br>:powerful, strong; capable; mighty;<br>(c 単数 対格)<br></span></a>
+<a class="note1">auxilī<span>auxilium auxili(i) N (2nd) N  <br>:help, assistance; remedy/antidote; supporting resource/force; auxiliaries (pl.);<br>(X 単数 属格)<br></span></a>
+<a class="note1">egēret:<span>egeo egere, egui, - V (2nd)  <br>:need (w/GEN/ABL), lack, want; require, be without;<br>(３人称 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note1">enim<span>enim CONJ <br>:namely (postpos.); indeed; in fact; for; I mean, for instance, that is to say;<br><br></span></a>
+<a class="note1">quisque<span>quisque quaeque,quodque ADJECT  <br>:(w/-que) any; each;<br>(m 単数 主格), (m 複数  主格)<br></span></a>
+<a class="note1">opprimī<span>opprimo opprimere, oppressi, oppressus V (3rd)  <br>:press down; suppress; overthrow; crush, overwhelm, fall upon, oppress;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">circumvenīrī<span>circumvenio circumvenire, circumveni, circumventus V (4th) TRANS  <br>:encircle, surround; assail, beset; enclose; circumvent; <strong>defraud</strong>/<strong>trick</strong>; surpass;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">nōn<span></span></a>
+<a class="note1">patitur,<span>patior pati, passus sum V (3rd) DEP  <br>:suffer; <strong>allow</strong>; undergo, endure; permit;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">neque,<span></span></a>
+<a class="note1">aliter<span>aliter ADV <br>:otherwise, differently; in any other way<br><br></span></a>
+<a class="note0">sī<span><br><br></span></a>
+<a class="note0">faciat,<span></span></a>
+<a class="note0">ūllam<span><br><br></span></a>
+<a class="note0">inter<span></span></a>
+<a class="note0">suōs<span><br><br></span></a>
+<a class="note0">habet<span></span></a>
+<a class="note0">auctōritātem.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>videtur <strong>(esse) institutum antiquitus eius rei causa</strong>, ne ~. 「それは昔に～の理由で作られた様である。」ne以下が名詞節。</p>
+<p><strong>ne quis ex plebe egeret auxili contra potentiorem</strong>. auxiliが属格なのは <u>egeret(egeo)が属格支配のため</u>。（NewLatin212)</p>
+<p>「一般の人がより有力な人に対抗するのに助けが得られない事がないように」</p>
+<p>enim quisque non patitur suos opprimi et circumvenriri : quisqueはprincipesを指す。「自身の配下の者が抑圧され、騙されている事に苦しまないものは誰でも」動詞はneque habet<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>それは昔に、一般の人が有力者に対抗するための援助を得られないことがないようにするために作られたようである。（つまり）配下のものが抑圧され、騙されていることで苦しまない指導者は、もしそれがそうでないように起きれば、誰も一人としてその権威を配下の間で持つことは出来ない。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Haec<span></span></a>
+<a class="note0">eadem<span></span></a>
+<a class="note1">ratiō<span>ratio rationis N (3rd) F  <br>:account, reckoning, invoice; plan; prudence; method; reasoning; <strong>rule</strong>; regard;<br>(X 単数 主格), (X 単数 呼格)<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">summā<span><br><br></span></a>
+<a class="note0">tōtīus<span><br><br></span></a>
+<a class="note0">Galliae:<span></span></a>
+<a class="note1">namque<span>namque CONJ <br>:for and in fact, on the other hand; insomuch as (strengthened nam);<br><br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note0">cīvitātēs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">partēs<span></span></a>
+<a class="note0">dīvīsae<span><br><br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">duās.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>同じ決まりが全ガリアに存在する。つまり国には2つの派閥に分かれている。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

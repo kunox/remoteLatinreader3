@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber II : Chap 3</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[3]<span class="baloonleft baloonoff"></span></a>
+
+<a class="note1">Eō<span class="baloonleft baloonoff">この場合副詞 = thereそちらの方向への意<br></span></a>
+<a class="note0">cum<span class="baloonleft baloonoff"></span></a>
+<a class="note0">dē<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note1">imprōvīsō<span class="baloonleft baloonoff">improvisus improvisa, improvisum ADJ  <br>:unforeseen/unexpected;<br>(m 単数 奪格), (n 単数 奪格)<br></span></a>
+<a class="note1">celeriusque<span>celer celeris -e, celerior -or -us, celerrimus -a -um ADJ  比較級<br>:swift, quick, agile, rapid, speedy, fast; rash, hasty, hurried; lively; early;<br>&nbsp;(n 単数 対格), <strong>n単対格に由来する副詞</strong><br></span></a>
+<a class="note1">omnium<span class="baloonleft baloonoff">omnis omnis N (3rd) C  <br>:all men (pl.), all persons;<br>(c 複数  属格)<br></span></a>
+<a class="note1">opīniōne<span class="baloonleft baloonoff">opinio opinionis N (3rd) F  <br>:belief, idea, opinion; rumor (Plater);<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note1">vēnisset,<span class="baloonleft baloonoff">venio venire, veni, ventus V (4th)  <br>:come;<br>(３人称 単数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">Rēmi,<span><br><br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">proximī<span><br><br></span></a>
+<a class="note0">Galliae<span class="baloonleft baloonoff"></span></a>
+<a class="note0">ex<span class="baloonleft baloonoff"></span></a>
+<a class="note0">Belgīs<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">sunt,<span class="baloonleft baloonoff"></span></a>
+<a class="note0">ad<span class="baloonleft baloonoff"></span></a>
+<a class="note0">eum<span class="baloonleft baloonoff"></span></a>
+<a class="note0">lēgātōs<span><br><br></span></a>
+<a class="note0">Iccium<span></span></a>
+<a class="note0">et<span class="baloonleft baloonoff"></span></a>
+<a class="note0">Andebrogium,<span></span></a>
+<a class="note0">prīmōs<span><br><br></span></a>
+<a class="note0">cīvitātis,<span><br><br></span></a>
+<a class="note1">mīsērunt,<span>mitto mittere, misi, missus: send 3複　完了　直説法<br></span></a>
+<a class="note0">quī<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note1">dīcerent<span>dico ３複　未完了　接続法<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">suaque<span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note0">in<span class="baloonleft baloonoff"></span></a>
+<a class="note1">fidem<span class="baloonleft baloonoff">fides fedei 名詞　単　対格＝ faith, loyalty, trust</span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">potestātem<span>potestas potestatis 名詞　F= power, rule<br></span></a>
+<a class="note0">populī<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">Rōmānī<span><br><br></span></a>
+<a class="note1">permittere,<span>permitto permittere, permisi, permissus V (3rd)  <br>:let through; let go through; relinquish; <strong>permit</strong>, allow; <strong>entrust</strong>; hurl;<br>(  現在 能動態 不定詞 <br><br></span></a>
+<a class="note0">neque<span class="baloonleft baloonoff"></span></a>
+<a class="note0">sē<span class="baloonleft baloonoff"></span></a>
+<a class="note0">cum<span class="baloonleft baloonoff"></span></a>
+<a class="note0">reliquīs<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">Belgīs<span><br><br></span></a>
+<a class="note1">cōnsēnsisse<span>consentio consentire, consensi, consensus V (4th)  <br>:||agree, consent; fit/be consistent/in sympathy/unison with; favor; assent to;<br>(  完了 能動態 不定詞 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">contrā<span>前置詞　対格支配= contrary to , not in conformance<br></span></a>
+<a class="note0">populum<span></span></a>
+<a class="note0">Rōmānum<span><br><br></span></a>
+<a class="note1">coniurāsse,<span>conjuro conjurare, conjuravi, conjuratus V (1st) INTRANS  <br>:swear/act together, join in an oath/plot; conspire, plot; form alliance/league;<br>(  完了 能動態 不定詞 )<br><strong>=coniuravisse</strong><br></span></a>
+</p>
+</div>    <div class="construction" id="sheet1" style="display: block; background-color: rgb(255, 255, 248);">
+<div class="constline" id="10" style="border: currentColor; border-image: none;" spellcheck="false">cum (caesar) vēnisset, Eō</div>
+</div>
+<div class="spnote">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p>eo ：Latinではhuc（こちらへ）eo(そちらへ）を必要とする。= there</p>
+<p>cum = quum = as</p>
+<p>de improvis(奪格）で　<b>de tertia vigilia </b>(第３watchに　book1 chap 21, Book1&nbsp; Chap 12)と同じ使い方？　de = fromで直後の意味らしい。</p>
+<p><u>de improvis中性単奪格の形容詞は名詞的に使われ、deと共に英語の口語的な副詞句を構成する。of sudden,とかall of suddenのようにである。ここでは<strong>unexpectedly</strong>の意。</u>&nbsp; (Kelsey) Liber V　Chap39にも出てくる。</p>
+<p>omnium opinione　比較の奪格で　（皆が）思っているより　（New Latin217)　quam + 主格、対格の代わりに使用</p>
+<p>(omniumは名詞、属格）</p>
+<p><strong>Remi</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp; qui sunt proximi Galliae ex Belgis,</strong></p>
+<p><strong>miserunt Iccium et Andebogium</strong></p>
+<p><strong>&nbsp;&nbsp;&nbsp; qui dicerent</strong> </p>
+<p>qui dicerent 以下の事を言った。（ここから間接話法）</p>
+<p>(se) <strong>permittere se suaque omnia in popui Romani fidem atque potestatem</strong>. : permittereは不定詞で主語のもう一つのseは省略　se suaque omnia = selves and selves' all things</p>
+</div>
+</div>
+<div class="translation">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p>その地の誰が考えるよりも早く、到着したら、レミ族、彼らはベルガエ族から近いところに居たが、有力者であるイキウスとアンデロギウス、を送ってきて、言った。彼らは自身と自身の全てのものをローマ人民の信頼と統治に委ねる、決して他のベルガエに賛同するものではないし、ローマ人民に対抗する事に加担するものでない、と。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">parātōsque<span class="baloonleft baloonoff">paro parare, paravi, paratus完了分詞、受動　複　主格= prepare, furmish<br></span></a>
+<a class="note0">esse<span class="baloonleft baloonoff"></span></a>
+<a class="note0">et<span class="baloonleft baloonoff"></span></a>
+<a class="note0">obsidēs<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">dare<span class="baloonleft baloonoff"></span></a>
+<a class="note0">et<span class="baloonleft baloonoff"></span></a>
+<a class="note1">imperāta<span class="baloonleft baloonoff">imperatum imperati N (2nd) N  <br>:command, order;<br>(n 複数  対格)<br></span></a>
+<a class="note0">facere<span class="baloonleft baloonoff"></span></a>
+<a class="note0">et<span class="baloonleft baloonoff"></span></a>
+<a class="note1">oppidīs<span class="baloonleft baloonoff">oppidum の与格　奪格　手段の奪格、by mean of<br></span></a>
+<a class="note1">recipere<span class="baloonleft baloonoff">recipio recipere, recepi, receptus 現在　不定詞= keep back, recover, accept</span></a>
+<a class="note0">et<span class="baloonleft baloonoff"></span></a>
+<a class="note1">frūmentō<span class="baloonleft baloonoff">frumentum の奪格　oppidis同様　手段の奪格<br></span></a>
+<a class="note1">cēterīsque<span class="baloonleft baloonoff">ceterus cetera, ceterum ADJ  <br>:the_other; the_others (pl.). the_remaining/rest, all the_rest;<br>&nbsp;(X 複数  奪格)<br><br></span></a>
+<a class="note1">rēbus<span class="baloonleft baloonoff">res rei N (5th) F  <br>:thing; event/affair/business; fact; cause; property;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note1">iuvāre;<span class="baloonleft baloonoff">juvo juvare, juvi, jutus V (1st)  <br>:help, assist, aid, support, serve, further; please, delight, gratify;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">reliquōs<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">omnēs<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">Belgās<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">in<span class="baloonleft baloonoff"></span></a>
+<a class="note1">armīs<span class="baloonleft baloonoff">armum armi, 名詞　複　奪格=arms(pl) armor<br></span></a>
+<a class="note0">esse,<span class="baloonleft baloonoff"></span></a>
+<a class="note0">Germanōsque<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">quī<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note1">cis<span class="baloonleft baloonoff">対格支配　前置詞= near side, to this</span></a>
+<a class="note0">Rhēnum<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">incolant<span class="baloonleft baloonoff"></span></a>
+<a class="note0">sēsē<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">cum<span class="baloonleft baloonoff"></span></a>
+<a class="note0">hīs<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note1">coniūnxisse,<span class="baloonleft baloonoff">conjungo conjungere, conjunxi, conjunctus 完了不定詞= connect, join together<br></span></a>
+<a class="note1">tantumque<span class="baloonleft baloonoff">tantus tanta tantum 形容詞対格= so great, so muchここでは名詞化</span></a>
+<a class="note0">esse<span class="baloonleft baloonoff"></span></a>
+<a class="note0">eōrum<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">omnium<span class="baloonleft baloonoff"></span></a>
+<a class="note1">furōrem<span class="baloonleft baloonoff">furor furoris N (3rd) M  <br>:madness, rage, fury, frenzy; passionate love;<br>(c 単数 対格)<br></span></a>
+<a class="note0">ut<span class="baloonleft baloonoff"></span></a>
+<a class="note0">nē<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">Suessiōnēs<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note1">quidem,<span class="baloonleft baloonoff">副詞= indeep, certainly, even ne ~ quidem = not even</span></a>
+<a class="note0">frātrēs<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note1">cōnsanguineōsque<span class="baloonleft baloonoff">consanguineus consanguinei N (2nd) C  <br>:kinsman, blood relation; brother (M); a sister (F); kindred/relations (pl.);<br>(c 複数  対格)<br></span></a>
+<a class="note0">suōs,<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">quī<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">eōdem<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note1">iūre<span class="baloonleft baloonoff">jus juris N (3rd) N  <br>:law; legal system; code; right; duty; justice; court; binding decision; oath;<br>(n 単数 奪格)<br></span></a>
+<a class="note0">et<span class="baloonleft baloonoff"></span></a>
+<a class="note1">īsdem<span class="baloonleft baloonoff">=iisdem idemの与格、奪格eisdem=iisdem= same, the very same<br></span></a>
+<a class="note1">lēgibus<span class="baloonleft baloonoff">lex legis N (3rd) F  <br>:law; motion, bill, statute; principle; condition;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">ūtantur,<span class="baloonleft baloonoff">utor uti, usus sum V (3rd) DEP  <br>:use, make use of, enjoy; enjoy the friendship of (with ABL);<br>(３人称 複数  現在 受動態 接続法 )<br></span></a>
+<a class="note0">ūnum<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">imperium<span class="baloonleft baloonoff"></span></a>
+<a class="note0">ūnumque<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note1">magistrātum<span class="baloonleft baloonoff">magistratus magistratus N (4th) M  <br>:magistracy, civil office; office; magistrate, functionary;<br>(c 単数 対格)<br></span></a>
+<a class="note0">cum<span class="baloonleft baloonoff"></span></a>
+<a class="note0">ipsīs<span class="baloonleft baloonoff"><br><br></span></a>
+<a class="note0">habeant,<span class="baloonleft baloonoff"></span></a>
+<a class="note1">dēterrēre<span class="baloonleft baloonoff">deterreo deterrere, deterrui, deterritus 不定詞　= deter, frighten awaｙ, 怯えさせる　で英語のdeterの語源<br></span></a>
+<a class="note1">potuerint<span class="baloonleft baloonoff">possum ３複　完了　接続法</span></a>
+<a class="note1">quīn<span class="baloonleft baloonoff">quin CONJ <br>:so that not, without; that not; but that; that;<br><br></span></a>
+<a class="note0">cum<span class="baloonleft baloonoff"></span></a>
+<a class="note0">iīs<span class="baloonleft baloonoff"></span></a>
+<a class="note1">cōnsentīrent.<span class="baloonleft baloonoff">consentio consentire, consensi, consensus V (4th)  <br>:join/share in sensation/feeling; be in agreement/harmony; be of the same mind;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p><strong>paratos esse et obsides dare = be prepared to give hostages</strong>, 以下の不定詞句はesse paratosのいわば主語。</p>
+<p><strong>imperata facere,&nbsp;&nbsp;oppidis recipere,&nbsp;&nbsp;frumento ceterisque rebus juvare</strong> 「</p>
+<p>oppidisは場所の奪格（NewLatin 228.1)eum(=Caesar)の様な目的語が省略されていると考え「都市に（彼らを）受け入れる」</p>
+<p>frumento ceterisque rebus : 手段の奪格「食料その他の事柄に於いて」（援助する事）</p>
+<p><br></p>
+<p><strong>omnes reliquos Belgas esse in armis, 「</strong>残りのすべてのBelgaeは武装している」</p>
+<p><strong>Germanos conjunxisse sese cum his</strong>,　「ゲルマンは自分たちを彼らと盟約を結んだ」</p>
+<p>&nbsp;&nbsp;&nbsp; qui incolant cis Rhenum　「Rhenus河のこちら側に住んでいる」</p>
+<p><strong>tantumque esse eorum omnium furorem</strong> : 凄いのは彼らの熱気、狂気であり、</p>
+<p><strong>&nbsp;&nbsp;&nbsp; ut ne Suessiones quidem potuerint deterrere</strong> . 結果の従属節。　ne quidemでnot even　Suessionesですら翻意させることができなかった。Suessionesはレミ族と血を分けた兄弟分にも拘わらず、というニュアンス</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>qui utantur eodem jure et isdem, habeant unum imperium unumque magistrtum cum ipsis</strong>. quiはSuessionesが先行詞。最後にipsiは話し手の自分、即ちRemiの事。</p>
+<p>eodem jure et iisdem legius utantur : jure, legiusは奪格</p>
+<p>→　ūtor, fruor, fungor, potior, vescorなどの形式受動態動詞は<b>奪格支配である</b>。（NewLatin 218)</p>
+</div>
+</div>
+<div class="translation">
+<div align="right">
+</div>
+<div class="innerdiv" spellcheck="false">
+<p>また彼らは、人質を出すこと、命令に従うこと、城塞に受け入れること、食料その他の必要な物を供給することなどを準備していると言った。残りのベルガエは全て武装しており、ライン河のこちらにいるゲルマンも彼ら自身をそれに連携しており、彼らの熱意、狂気は大変なものである。（我々と）血を分けた兄弟分であるSueniones族、彼らとは同じ法、同じ原則をもっており、一つの政府、一つの庁舎をお互いに持ち合っているほどであるが、彼らを、それらに合意することを辞めさせることはできなかったぐらいである。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

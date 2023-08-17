@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber VII : Chap 22</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[22]<span></span></a>
+
+<a class="note1">Singulārī<span>singularis singularis, singulare ADJ  <br>:alone, unique; single, one by one; singular, <strong>remarkable</strong>, unusual;<br>(X 単数 与格)<br><br></span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note0">nostrōrum<span><br><br></span></a>
+<a class="note0">virtūtī<span><br><br></span></a>
+<a class="note0">cōnsilia<span><br><br></span></a>
+<a class="note1">cuiusque<span>quisque quaeque,quidque INDEF <br>:(w/-que) each, each one; every, everybody, everything (more than 2); whatever;<br>(X 単数 属格)<br></span></a>
+<a class="note0">modī<span><br><br></span></a>
+<a class="note0">Gallōrum<span></span></a>
+<a class="note1">occurrēbant,<span>occurro occurrere, occucurri, occursus V (3rd)  <br>:run to meet; oppose, resist; come to mind, occur (with DAT);<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">summae<span></span></a>
+<a class="note1">genus<span>genus generis N (3rd) N  <br>:|noble birth; kind/sort/variety; class/rank; mode/ method/ style/ fashion/ way;<br>(X 単数 主格)<br></span></a>
+<a class="note1">sollertiae<span>sollertia sollertiae N (1st) F  <br>:skill, cleverness; resourcefulness;<br>(c 単数 属格),<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note1">imitanda<span>imitor imitari, imitatus sum V (1st) DEP  <br>:imitate/copy/mimic; follow; make an imitation/reproduction; resemble; simulate;<br>(未来 分詞 受動態 n 複数  対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">efficienda,<span>efficio efficere, effeci, effectus V (3rd)  <br>:bring about; effect, execute, cause; accomplish; make, produce; prove;<br>&nbsp;(未来 分詞 受動態 n 複数  対格<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">ab<span></span></a>
+<a class="note1">quōque<span>quisque quaeque,quodque ADJECT  <br>:(w/-que) any; each;<br>(m 単数 奪格), (n 単数 奪格)<br></span></a>
+<a class="note1">trāduntur,<span>trado tradere, tradidi, traditus V (3rd)  <br>:hand over, surrender; deliver; bequeath; relate;<br>(３人称 複数  現在 受動態 直説法 )<br></span></a>
+<a class="note1">aptissimum.<span>aptus apta -um, aptior -or -us, aptissimus -a -um ADJ  最上級<br>:suitable, adapted; ready; apt, proper; tied, attached to; dependent on (w/ex);<br>(n 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>consilia cuisque modi Gallorum occurrebant singulari virtuti nostrorum militum. ここでsingulariは一つではなくRemarkableの意。「いろいろなやり方でのガリアの計画が非常に勇敢な我軍の兵士を阻んだ。」</p>
+<p>ut est ~ : utで始まる（多分）特徴の節。(NewLatin 283. 3) 「～なので」</p>
+<p>est genus summae sollertiae : genusは単数。非常に器用な種類の人　</p>
+<p>aptissimum ad imitanda et efficienda omnia, quae~ : ad + 動名詞は直接目的語を持てないので動形容詞。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>ガリア人たちは色々な方法で、我々の大変勇敢な兵士たちに対抗した。と言うのは彼らは非常に器用で誰かから教わった事をすぐに真似して実行するということに長けた人であったからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">laqueīs<span>laqueus laquei N (2nd) M  <br>:noose; snare, trap;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">falcēs<span>falx falcis N (3rd) F  <br>:sickle. scythe; pruning knife; curved blade; <strong>hook for tearing down walls</strong>;<br>(c 複数  対格)<br><br></span></a>
+<a class="note1">āvertēbant,<span>averto avertere, averti, aversus V (3rd)  <br>:turn away from/aside, divert, rout; disturb; withdraw; steal, misappropriate;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note1">quās,<span>qui quae, quod PRON  <br>:which?, what?; what kind of?;<br>(f 複数  対格)<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">dēstināverant,<span>destino destinare, destinavi, destinatus V (1st) TRANS  <br>:fix/bind/fasten down; fix (in mind), make up mind; aim/fix on target, mark out;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">tormentīs<span><br><br></span></a>
+<a class="note0">intrōrsus<span><br><br></span></a>
+<a class="note0">redūcēbant,<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">aggerem<span></span></a>
+<a class="note0">cunīculīs<span><br><br></span></a>
+<a class="note0">subtrahēbant,<span><br><br></span></a>
+<a class="note1">eō<span>eo ADV <br>:therefore, for that reason, consequently; <strong>by that degree</strong>; <strong>so much the more</strong>/less;<br><br></span></a>
+<a class="note1">scientius<span>sciens scientis (gen.), scientior -or -us, scientissimus -a -um ADJ  比較級<br>:conscious of (one's acts); aware/cognizant; knowledgeable/skilled, expert;<br>(n 単数 対格),<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">eōs<span><br><br></span></a>
+<a class="note0">magnae<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">ferrāriae<span>ferraria ferrariae N (1st) F  <br>:iron mine;<br>(c 複数  主格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">omne<span>omnis omnis, omne ADJ  <br>:each, every, every one (of a number); all (pl.); all/the whole of;<br>(n 単数 主格)<br></span></a>
+<a class="note1">genus<span>genus generis N (3rd) N  <br>:|noble birth; kind/sort/variety; class/rank; mode/method/style/fashion/way;<br>&nbsp;(X 単数 主格)<br></span></a>
+<a class="note0">cunīculōrum<span><br><br></span></a>
+<a class="note1">nōtum<span>notus nota -um, notior -or -us, notissimus -a -um ADJ  <br>:well known, familiar, notable, famous, esteemed; notorious, of ill repute;<br>(n 単数 主格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note1">ūsitātum<span>usitatus usitata -um, usitatior -or -us, usitatissimus -a -um ADJ  <br>:usual, customary, ordinary, common, familiar, everyday; commonly used/practiced;<br>(n 単数 主格)<br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>falceは先端が鈎になっている棒、鈎柄。壁を崩すために使う。（船を引っ掛けるのにも使ったLiber III)</p>
+<p>avertebant falces laquis. 「鈎柄を投げ縄を使って外し」</p>
+<p>tormentis は巻き上げ機。reducebant intorosus tormentis 「巻き上げ機を使って中に引き込む」</p>
+<p>subtrahebant aggerem cuniculis. aggerは攻撃のための堤防、土塁、通路。土だけではなく木材も使われている。「攻撃用土手をトンネルと使って崩す」</p>
+<p>eo scientius : eoはここでは副詞、for the reason ~の意味。scientiusは形容詞比較級であるが、n単、対格で副詞。</p>
+<p>onme genus cuniculorum est noctum atque usitatum. genusは単数。「あらゆるタイプのトンネルが知られ使われていた」<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>例えば、鈎柄は、それが（壁に）固定されると、投げ縄でそれを外し、巻き上げ機で中に引き込んだ。攻撃土塁をトンネルうを掘って崩す。その技術には、彼らのところには大きな鉄鉱山がありあらゆるタイプのトンネルが知られ使われていたので、長けていた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Tōtum<span><br><br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">mūrum<span>murus muri N (2nd) M  <br>:wall, city wall;<br>(c 単数 対格)<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">omnī<span><br><br></span></a>
+<a class="note0">parte<span></span></a>
+<a class="note1">turribus<span>turris turris N (3rd) F  <br>:tower; high building, palace, citadel; dove tower, dove cot;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">contabulāverant<span>contabulo contabulare, contabulavi, contabulatus V (1st) TRANS  <br>:board over, cover with boards; furnish with roof/floor/bridge; build; bridge;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">hās<span><br><br></span></a>
+<a class="note1">coriīs<span>corius cori(i) N (2nd) M  <br>:skin/leather/hide; peel/rind/shell/outer cover; layer/coating; thong/strap/whip;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">intēxerant.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>contabulaverant totum murum turribus. turrisは塔であるが、ここでは城壁についている櫓、矢倉のようなものであろう。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>更に、全ての城壁に櫓を立て、それを毛皮で覆った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Tum<span></span></a>
+<a class="note1">crēbrīs<span>creber crebra -um, crebrior -or -us, creberrimus -a -um ADJ  <br>:thick/crowded/packed/close set; frequent/repeated, constant; numerous/abundant;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">diurnīs<span>diurnus diurna, diurnum ADJ  <br>:by day, of the day; daily;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">nocturnīsque<span>nocturnus nocturna, nocturnum ADJ  <br>:nocturnal, of night, at night, by night;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">ēruptiōnibus<span>eruptio eruptionis N (3rd) F  <br>:sortie, rush, sally, sudden rush of troops from a position;<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">aggerī<span>agger aggeris N (3rd) M  <br>:rampart (or material for); causeway, pier; heap/pile/mound; dam/dike; mud wall;<br>&nbsp;(X 単数 与格)<br></span></a>
+<a class="note0">īgnem<span></span></a>
+<a class="note1">īnferēbant<span>infero inferre, intuli, illatus V TRANS  <br>:|inflict/cause/inflict/impose/inspire (w/DAT);<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note0">occupātōs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">opere<span></span></a>
+<a class="note1">adoriēbantur,<span>adorior adoriri, adortus sum V (4th) DEP  <br>:assail/assault/attack, rise against (military/political/plague); accost/address;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">nostrārum<span>noster nostra, nostrum ADJ  <br>:our;<br>(f 複数  属格)<br></span></a>
+<a class="note0">turrium<span></span></a>
+<a class="note0">altitūdinem,<span><br><br></span></a>
+<a class="note1">quantum<span>quantum ADV <br>:so much as; how much; how far;<br><br></span></a>
+<a class="note0">hās<span><br><br></span></a>
+<a class="note1">cōtidiānus<span>cotidianus cotidiana, cotidianum ADJ  <br>:daily, everyday; usual/ habitual, normal/ regular; ordinary/ common/ unremarkable;<br>(m 単数 主格)<br></span></a>
+<a class="note0">agger<span></span></a>
+<a class="note1">expresserat,<span>exprimo exprimere, expressi, expressus V (3rd)  <br>:squeeze, squeeze/press out; imitate, copy; portray; pronounce, express;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note1">commissīs<span>committo committere, commisi, commissus V (3rd)  <br>:bring together, unite/join, connect/attach; put together, construct; entrust;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">suārum<span><br><br></span></a>
+<a class="note1">turrium<span>turris turris N (3rd) F  <br>:tower; high building, palace, citadel; dove tower, dove cot;<br>(c 複数  属格)<br></span></a>
+<a class="note1">mālīs<span>malus mali N (2nd) M  <br>:mast; beam; tall pole, upright pole; standard, prop, staff;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">adaequābant,<span>adaequo adaequare, adaequavi, adaequatus V (1st)  <br>:equalize, make equal in height, come up to level; compare (to); be equal; raze;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">apertōs<span>apertus aperta -um, apertior -or -us, apertissimus -a -um ADJ  <br>:open/public/free; uncovered/exposed/opened; frank/clear/manifest; cloudless;<br>(m 複数  対格)<br></span></a>
+<a class="note1">cunīculōs<span>cuniculus cuniculi N (2nd) M  <br>:rabbit; underground tunnel/burrow/hole; mine/excavation; channel; secret device;<br>(c 複数  対格)<br></span></a>
+<a class="note1">praeustā<span>praeustus praeusta, praeustum ADJ  <br>:burnt at the end; hardened by burning;<br>&nbsp;(f 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">praeacūtā<span>praeacutus praeacuta, praeacutum ADJ  <br>:sharpened, pointed;<br>&nbsp;(f 単数 奪格)<br></span></a>
+<a class="note1">māteriā<span>materia materiae N (1st) F  <br>:wood (building material), lumber, timber; woody branch/growth/part of tree;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">pice<span>pix picis N (3rd) F  <br>:pitch, tar;<br>(c 単数 奪格)<br><br></span></a>
+<a class="note1">fervefactā<span>fervefacio fervefacere, fervefeci, fervefactus V (3rd) TRANS  <br>:heat; melt; boil; make (intensely) hot;<br>(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">maximī<span><br><br></span></a>
+<a class="note1">ponderis<span>pondus ponderis N (3rd) N  <br>:weight, burden, impediment;<br>(X 単数 属格)<br></span></a>
+<a class="note0">saxīs<span><br><br></span></a>
+<a class="note1">morābantur<span>moror morari, moratus sum V (1st) DEP  <br>:<strong>delay</strong>; stay, stay behind; devote attention to;<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+<a class="note1">moenibusque<span>moene moenis N (3rd) N  <br>:defensive/town walls (pl.), bulwarks; fortifications; fortified town; castle;<br>&nbsp;(X 複数  与格)<br></span></a>
+<a class="note0">appropinquāre<span><br><br></span></a>
+<a class="note0">prohibēbant.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p><strong>crebris diurnis nocturnisque eruptiobibus</strong> : 手段の奪格？「頻繁な、昼夜を問わない突撃によって」</p>
+<p>inferebant ignem aggeri : 土塁は全てが土ではなく、木材も使われた由。</p>
+<p><strong>adaequabant nostraurum turrium altitudinem malis suarum turrium commissis</strong>. commissisは完了分詞でmalisを修飾。「我らの攻撃櫓の高さに、彼らの櫓を一緒に合わせてきた。」</p>
+<p><strong>quantum cotidianus agger expresserat</strong>. expresserat(exprimo)は「固めて形成する」という意味があり、ここでは盛り上げるのようなニュアンス。「如何に毎日の土塁が盛り上がっても」が逐語訳</p>
+<p><strong>morabantur apertos coniculos</strong> ~.&nbsp; agger土塁は攻撃用の通路であり敵の城壁に向かって近づくように上り坂に積んでいくものである。その先端部分は覆われてなくapertosな状態である。そこに石とか色々なものを投げて、形成するのを遅らせている、という記述。<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>そして、昼夜を問わない頻繁な突撃で攻撃土塁に火を掛けたり、作業中の兵士たちを襲ったりした。毎日、土塁を積んで高くしても、敵もそれに合わせるように彼らの矢倉の高さを揃えてくる。また、土塁の先端の開けた部分を（伸びていくのを）焼いて尖らせた木材や熱くしたタール、または最大級の重さの石などで、遅らせ、城壁に接近することを妨害した。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='remote latinreader' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+
+    <script>
+        window.onload = function () {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function (event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+            if($("#saveoption").length){
+                $("#saveoption").hide();
+                $("#downloadsave").hide();
+            }
+            insertButtons2();
+            $("#outer").css("width","96%");
+        }
+        function insertButtons2(){
+            if(!$(".lbtn1").length){
+                $(".spacer").each(function(index, elem) {
+                    var target = $(elem);
+                    var tx1 = target.html();
+                    var color = "style='color:#5f9ea0;'";
+                    if (target.next().next().attr("class") != "spnote")
+                        color = "style='color:black;'";
+                    target.html(tx1 + "<button class='lbtn2'>Translation</button><button class='lbtn1'>Notes</button>");
+                });
+            }
+            $(".lbtn1").on("click", function() {
+                var target = $(this).parent().next().next();
+                if (target.attr("class") != "spnote") {
+                    target = target.next();
+                    if (target.attr("class") != "spnote") // 編集中の場合
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+            $(".lbtn2").on("click", function() {
+                var target = $(this).parent().next().next().next();
+                if (target.attr("class") != "translation") {
+                    target = target.next();
+                    if (target.attr("class") != "translation")
+                        return;
+                }
+                btoggle(target, $(this));
+            });
+        }
+
+        function btoggle(obj, btn) {
+            obj.toggle(function() {
+                if ($(this).is(":visible"))
+                    btn.css("color", "black");
+                else
+                    btn.css("color", "#5f9ea0");
+            });
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 75%;
+            text-align: left;
+            color: black;
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 2.8rem;
+            font-family: 'Times New Roman', serif;
+        }
+
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+
+        /* 追加のボタン*/
+        .lbtn1,
+        .lbtn2,
+        .lbtn3,
+        .lbtn4 {
+            float: right;
+            margin-top: 2px;
+            margin-right: 6px;
+            height: 16px;
+            font-size: 10px;
+            padding: 1px;
+            font-weight: bold;
+            /* vertical-align: bottom; */
+            border: none;
+        }
+
+
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 2.8rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+
+        }
+
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+
+        a.note1:hover span {
+            display: block;
+        }
+
+        .latin span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 3.5rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+
+        .latin span::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.8rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.5rem;
+            left: 2.0rem;
+        }
+    </style>
+</head>
+
+
+<body id="bodyportion">
+        <div id="outer">
+    
+		<a name="begin"></a>
+<div id="header">
+<h1> Liber I: Section 31 </h1>
+
+<div class="boxright">
+<input id="saveoption" class="rbtn1" type="button" value="保存する" style="font-size: 12px; font-family: meiryo; ">
+<input id="downloadsave" class="rbtn1" type="button" value="ダウンロード" style="font-size: 12px; font-family: meiryo; display: none;">
+</div></div>
+
+
+
+
+<div class="spacer">Line0<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+</a><a class="note0">[31]<span></span></a>
+<a class="note0">Sed<span></span></a>
+<a class="note1">incidunt<span>incido incidere, incidi, incasus V (3rd)  <br>:happen; fall into, fall in with, meet; fall upon, assail;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">saepe<span></span></a>
+<a class="note1">tempora,<span>tempus temporis N (3rd) N  <br>:time, condition, right time; season, <strong>occasion</strong>; necessity;<br>(N 複数 主格<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">ea,<span>is ea, id PRON  <br>:he/she/it/they (by GENDER/NUMBER); DEMONST: that, he/she/it, <strong>they</strong>/them;<br>(N 複数 主格), <br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">maxime<span></span></a>
+<a class="note0">videntur<span></span></a>
+<a class="note1">digna<span>dignus digna -um, dignior -or -us, dignissimus -a -um ADJ  <br>:appropriate/suitable; worthy, deserving, meriting; worth (w/ABL/GEN);<br>(F 単数 主格),<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">iusto<span>justus justa -um, justior -or -us, justissimus -a -um ADJ  <br>:just, fair, equitable; right, lawful, justified; regular, proper;<br>(M 単数 奪格), <br><br></span></a>
+<a class="note1">homine,<span>homo hominis N (3rd) M  <br>:man, human being, person, fellow;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note0">eoque<span></span></a>
+<a class="note0">quem<span></span></a>
+<a class="note1">virum<span>vir viri N (2nd) M  <br>:man; husband; hero; person of courage, honor, and nobility;<br>(C 単数 対格)<br></span></a>
+<a class="note0">bonum<span></span></a>
+<a class="note1">dicimus,<span>dico dicere, dixi, dictus V (3rd)  <br>:say, declare, state; allege, declare positively; assert; plead (case);<br>(１ 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">commutantur<span>commuto commutare, commutavi, commutatus V (1st) TRANS  <br>:change; alter wholly, rearrange, replace; transform; exchange, barter, sell;<br>(3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note1">fiuntque<span><b>fīo</b>,feri, factus sum V SEMIDEP  <br><b>:||be made/become; (facio PASS);</b><br>(3 複数 現在 能動態 直接法) </span></a>
+<a class="note1">contraria,<span>contrarium contrarii N (2nd) N  <br>:opposite (quantity), reverse/contrary (fact/argument); argument from contraries;<br>&nbsp;(N 複数 対格)<br></span></a>
+<a class="note0">ut<span><br><br></span></a>
+<a class="note1">reddere<span>reddo reddere, reddidi, redditus V (3rd)  <br>:return; restore; deliver; hand over, pay back, render, give back; translate;<br>&nbsp;(  現在 能動態 不定詞 ),<br></span></a>
+<a class="note1">depositum,<span>depositum depositi N (2nd) N  <br>:deposit, trust; money placed on deposit/safe keeping; <strong>contract on trust money</strong>;<br>(N 単数 対格)<br></span></a>
+<a class="note0">[etiamne<span></span></a>
+<a class="note0">furioso?]<span></span></a>
+<a class="note0">facere<span></span></a>
+<a class="note1">promissum<span>promissum promissi N (2nd) N  <br>:promise;<br>(N 単数 対格)<br></span></a>
+<a class="note1">quaeque<span>quisque quaeque,quidque INDEF <br>:(w/-que) each, each one; every, everybody, everything (more than 2); whatever;<br>(F 単数 主格), <br></span></a>
+<a class="note0">pertinent<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">veritatem<span>veritas veritatis N (3rd) F  <br>:truth, fact, accuracy; honesty, truthfulness, frankness; sincerity, uprightness;<br>(C 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">fidem;<span>fides fidei N (5th) F  <br>:faith, loyalty; honesty; credit; confidence, trust, belief; good faith;<br>(C 単数 対格)<br></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note1">migrare<span>migro migrare, migravi, migratus V (1st)  <br>:transport; move; change residence/condition; go away; depart; remove;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">interdum<span>interdum ADV <br>:sometimes, now and then;<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">servare<span>servo servare, servavi, servatus V (1st)  <br>:watch over; protect, store, keep, guard, preserve, save;<br>&nbsp;(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">fit<span>fio feri, factus sum V SEMIDEP  <br>:happen, come about; result (from); take place, be held, occur, arise (event);<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note1">iustum.<span>justum justi N (2nd) N  <br>:justice; what is fair/equitable/right/due/proper; funeral rites/offerings;<br>(N 単数 主格？)<br><br></span></a>
+</p>
+</div>
+
+    
+    <div class="spnote" contenteditable="false" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p><strong>sed tempora saepe incidunt</strong>. 「度々、出来事が生じる」どういう場合かが、続くcum節で記述される。</p>
+<p><strong>cum ea commutatur fiuntque contraria.</strong> eaはjustitiaとかaequitasなどを指しているか？「それが全くの反対に変化する時」</p><p>commutantur : 受動なので、「変更されて」のようなニュアンス。fiunt contraria contrariaは対角なので目的語。とするとfiuntはfioの能動態で、becomeの意味か？それにしても対角目的語を合わない感じ？？？</p>
+<p>ea, quae videntur digna esse iusto homine. dignusは指定の奪格を伴う形容詞である。（その奪格に関しては値するの意）（NewLatin226.2)　「それは大変正義の人にふさわしいものと思われるもの」</p>
+<p>eoqueは１章にでたidqueと同様で、and that tooの意。eoはこの場合、奪格であり、dignusにかかる。</p>
+<p>quem virum bonum dicimus「更には我々が言うところの良い人にも」</p>
+<p>utはここでは<strong> as for example</strong>の意。（ceteri morbi, ut gloriae cupiditas. (Tusc.4 25))</p>
+<p>as for exampleとして３つ挙げている。</p>
+<p>１）reddere depositum : depositumはdepositであり、信託されたお金。それを<s>変換</s>返還すること</p>
+<p>2) facere promissum : 約束を成す。約束を果たす。</p>
+<p>３）que quae pertinent ad veitatem et ad fidem, ea migrare interdum quaeはeaが先行詞で説明されている。migrareは「度がすぎる、法を犯す」のようなニュアンス。「誠実と信頼に関することが時には限界を超えること」</p>
+<p>non servare fit iustum. non servareが主語で、「見張らないこと」「見張らないことが正義に合致する」<br></p>
+</div>
+</div>
+
+    <div class="translation" contenteditable="false" style="background-color: rgb(255, 255, 248);">
+<div class="innerdiv" spellcheck="false"><p>しばしば、ある出来事が起きることがある。それは、そのもの、それは実に正義の人にふさわしく、更には我々が良き人と呼ぶ人に大変ふさわしいものであるが、それが全くの反対に変化するような時である。例えば、信託された金を<s>変換</s>返還すること、約束を果たすこと、はたまた、信頼、誠実に関することが度を超えるような場合であり、注視しないほうが良いことがある。<br></p>
+</div>
+</div>
+<div class="spacer">Line1<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Referri<span>refero referre, rettuli, relatus V  <br>:bring/carry back/again/home; move/draw/force back, withdraw; <strong>go back</strong>, return;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note1">decet<span>decet decere, decuit, - V (2nd) IMPERS  <br>:it is fitting/ right/ seemly/ suitable/ proper; it ought; become/adorn/grace;<br>(3 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">ea,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">posui<span>pono ponere, posivi, postus V (3rd) TRANS  <br>:put, place, set; station; (archaic form of perf. of pono);<br>(１ 単数 完了 能動態 直接法 )<br></span></a>
+<a class="note1">principio<span>principium principi(i) N (2nd) N  <br>:beginning;<br>(X 単数 与格)<br></span></a>
+<a class="note0">fundamenta<span></span></a>
+<a class="note0">iustitiae,<span></span></a>
+<a class="note0">primum<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ne<span></span></a>
+<a class="note0">cui<span></span></a>
+<a class="note1">noceatur,<span>noceo nocere, nocui, nocitus V (2nd)  <br>:harm, hurt; injure (with DAT);<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">deinde<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note1">communi<span>communis communis, commune ADJ  <br>:|ordinary; sociable, courteous obliging; related, having something in common;<br>(X 単数 与格)<br></span></a>
+<a class="note1">utilitati<span>utilitas utilitatis N (3rd) F  <br>:usefulness, advantage;<br>(X 単数 与格)<br></span></a>
+<a class="note1">serviatur.<span>servio servire, servivi, servitus V (4th)  <br>:serve; be a slave to; with DAT;<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false"><p>ad ea, quae funndamentia iustitiae posui principio. 動詞はposuiであり、目的語がfundamenta, 間接目的語がprincipioか？<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>（そんなときは）私が最初に設定した正義の基本に戻るのが良い。最初に、害をなさない、次に公共に対し有益である、ということである。<br></p>
+</div>
+</div>
+<div class="spacer">Line2<button class="lbtn2">Translation</button><button class="lbtn1">Notes</button></div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ea<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">tempore<span>tempus temporis N (3rd) N  <br>:time, condition, right time; season, occasion; necessity;<br>(N 単数 奪格)<br></span></a>
+<a class="note0">commutantur,<span></span></a>
+<a class="note0">commutatur<span></span></a>
+<a class="note0">officium<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">semper<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">idem.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="">
+<div class="innerdiv" spellcheck="false"><p>cum ea commutantur tempore, : temporeは原因の奪格。「出来事によって」<br></p>
+</div>
+</div>
+<div class="translation" style="">
+<div class="innerdiv" spellcheck="false"><p>それらが環境により変化するときには、Officiumも変化する。それはいつも同じであるわけではない。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+    </body>
+    <html>
+    

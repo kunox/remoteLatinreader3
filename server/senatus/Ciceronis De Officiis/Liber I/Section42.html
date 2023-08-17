@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 42 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[42]<span></span></a>
+<a class="note0">Deinceps,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note0">propositum,<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note1">beneficentia<span>bĕnĕfĭcentĭa beneficentiae N (1st) F  <br>:beneficence, kindness; honorable treatment;<br>(単数 奪格)<br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note0">de<span></span></a>
+<a class="note1">liberalitate<span>lībĕrālĭtas liberalitatis N (3rd) F  <br>:courtesy, kindness, nobleness; generosity; frankness; gift;<br>(単数 奪格)<br></span></a>
+<a class="note0">dicatur,<span></span></a>
+<a class="note0">qua<span></span></a>
+<a class="note1">quidem<span>quidem ADV <br>&gt;:indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;<br><br></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">naturae<span>nātūra naturae N (1st) F  <br>:nature; birth; character;<br>&nbsp;(単数 与格)<br></span></a>
+<a class="note0">hominis<span></span></a>
+<a class="note1">accommodātius,<span>accommŏdātus accommodata -um, accommodatior -or -us, accommodatissimus -a -um ADJ  比較級<br>:fit/suitable/appropriate; suiting the interest (of); favorably disposed (to);<br>(N 単数 主格<br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note0">habet<span></span></a>
+<a class="note0">multas<span></span></a>
+<a class="note1">cautiones.<span>cautĭo cautionis N (3rd) F  <br>:bail/pledge/security, undertaking, guarantee; caution/wariness; circumspection;<br>&nbsp;(複数 対格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>ut erat propositum : 提示したように、section 20でbeneficentia lineralitate(慈善と気前良さ）について話している。</p>
+<p>dicatur : 願望の接続法「話したい」</p>
+<p>nihil est accommodatius naturae hominis. 「これ以外に人間の性質により当てはまるものはない」</p>
+<p>quaは副詞か？<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>次には前に示した通り善行と寛大について話したい。それはそれ以外により人間の本性に当てはまるものはないものであるが、いささかの注意を要するものでもある。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Videndum<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">enim,<span></span></a>
+<a class="note0">primum<span></span></a>
+<a class="note0">ne<span></span></a>
+<a class="note1">obsit<span>obsum obesse, offui, offuturus V  <br>:hurt; be a nuisance to, tell against;<br>( 3 単数 現在 能動態 接続法 )<br></span></a>
+<a class="note1">benignitas<span>bĕnignĭtas benignitatis N (3rd) F  <br>:kindness, courtesy; friendliness, benevolence; liberality, favor; bounty; mercy;<br>(単数 主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">iis<span>is ea, id PRON  <br>:he/she/it/they (by GENDER/NUMBER); DEMONST: that, he/she/it, they/them;<br>(M 複数 与格),<br></span></a>
+<a class="note0">ipsis,<span></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">benigne<span>benigne benignius, benignissime ADV <br>&gt;:kindly, benevolently, obligingly; courteously, cheerfully; freely, generously;<br><br></span></a>
+<a class="note1">videbitur<span>vĭdĕo videre, vidi, visus V (2nd)  <br>:see, look at; consider; (PASS) seem, seem good, appear, be seen;<br>( 3 単数 未来 受動態 直接法 )<br></span></a>
+<a class="note1">fieri,<span>fīo feri, factus sum V SEMIDEP  <br>:happen, come about; result (from); take place, be held, occur, arise (event);<br>不定詞<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ceteris,<span></span></a>
+<a class="note1">deinde<span>deinde ADV <br>&gt;:then/next/afterward; thereon/henceforth/from there/then; in next position/place;<br><br></span></a>
+<a class="note0">ne<span></span></a>
+<a class="note0">maior<span></span></a>
+<a class="note0">benignitas<span></span></a>
+<a class="note0">sit,<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">facultates,<span></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">pro<span></span></a>
+<a class="note1">dignitate<span>dignĭtas dignitatis N (3rd) F  <br>:worth, excellence; fitness/suitability (for task),; honor, esteem, standing;<br>(単数 奪格)<br></span></a>
+<a class="note0">cuique<span></span></a>
+<a class="note1">tribuatur;<span>trĭbŭo tribuere, tribui, tributus V (3rd)  <br>:divide, assign; present; grant, allot, bestow, attribute;<br>( 3 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">enim<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">iustitiae<span></span></a>
+<a class="note0">fundamentum,<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">haec<span></span></a>
+<a class="note1">referenda<span>rĕfĕro referre, rettuli, relatus V  <br>:|report (on), bring back news; record/enter; propose/open debate; assign/<strong>count</strong>;<br>未来分詞 受動態(F 単数 主格),<br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">omnia.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>videndum est = cavendum est : 「知っておくべきことは」</p>
+<p><strong>benignitas ne obsit et iis ipsis</strong> . 「親切が彼ら、彼ら自身に対して害をなさないこと。」</p>
+<p>quibus 関係代名詞でiisを修飾。quibus videbitur foeri 「その人達に対してなされることが考えられるであろう（人たち）」</p>
+<p>benignitas ne sit major quam facultates. 「善行は能力を超えないこと」</p>
+<p><strong>tum ut pro dignitate cuique tribuatur</strong>. 　ut pro dignitae 「（その人の）価値に応じて」</p>
+<p>id est iustitiae fundamentum. 「これは正義の基盤である。」idは前の「受益者の価値に応じて与えられること」</p>
+<p>ad quam, haec omnia sunt referenda. quamはfundamentumを指す。「それに向かってすべての事柄はreferされるべきである。」refereの訳が難しい。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>まず最初に知っておくべきは、善行がそれを受益する人、あるいはその他の人に対し害をなさないことである。そして次には善行がその能力を超えてなされないようにし、その受益者の価値に応じて与えるようにすることである。これは正義の基盤であり、それに向かってすべての事柄を当てはめるべきである。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">gratificantur<span>grātĭfĭcor gratificari, gratificatus sum V (1st) DEP  <br>:oblige, gratify, humor, show kindness to; bestow, make a present of;<br>( 3 複数 現在 受動態 直接法 )<br></span></a>
+<a class="note1">cuipiam,<span>quispĭam quaepiam, quidpiam INDEF <br>:(w/-piam) any/somebody, any, some, any/something;<br>(M 単数 与格), (F 単数 与格), (N 単数 与格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">obsit<span></span></a>
+<a class="note0">illi,<span></span></a>
+<a class="note0">cui<span></span></a>
+<a class="note1">prodesse<span>prōsum prodesse, profui, profuturus V  <br>:be useful, be advantageous, benefit, profit (with DAT);<br>不定詞<br></span></a>
+<a class="note1">velle<span>vŏlo velle, volui, - V  <br>:wish, want, prefer; be willing, will;<br>不定詞<br></span></a>
+<a class="note1">videantur,<span>vĭdĕo videre, vidi, visus V (2nd)  <br>:see, look at; consider; (PASS) seem, seem good, appear, be seen;<br>( 3 複数 現在 受動態 接続法 )<br></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">benefici<span>bĕnĕfĭcus benefica -um, beneficentior -or -us, beneficentissimus -a -um ADJ  <br>:beneficent, kind, generous, liberal, serviceable;<br>(M 複数 主格), <br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note1">liberales,<span>lībĕrālis liberalis, liberale ADJ  <br>:honorable; courteous, well bred, gentlemanly; liberal; generous;<br>(M 複数 主格), <br></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">perniciōsi<span>pernĭcĭōsus perniciosa, perniciosum ADJ  <br>:destructive, dangerous, pernicious;<br>(M 複数 主格),<br><br></span></a>
+<a class="note1">assentatores<span>assentātor assentatoris N (3rd) M  <br>:yes-man, flatterer, toady;<br>(複数 主格), <br></span></a>
+<a class="note1">iudicandi<span>jūdĭco judicare, judicavi, judicatus V (1st)  <br>:judge, give judgment; sentence; conclude, decide; declare, appraise;<br>未来分詞 受動態(M 複数 主格),<br></span></a>
+<a class="note0">sunt,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">aliis<span>ălĭus alia, aliud ADJ  <br>:other, another; different, changed;<br>(M 複数 与格), (F 複数 与格), (N 複数 与格)<br></span></a>
+<a class="note1">nocent,<span>nŏcĕo nocere, nocui, nocitus V (2nd)  <br>:harm, hurt; injure (with DAT);<br>( 3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">alios<span></span></a>
+<a class="note1">liberales<span>lībĕrālis liberalis, liberale ADJ  <br>:honorable; courteous, well bred, gentlemanly; liberal; generous;<br>(M 複数 主格), <br></span></a>
+<a class="note0">sint,<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eadem<span></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note0">iniustitia,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">suam<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note1">aliena<span>alienum alieni N (2nd) N  <br>&gt;:another's property/land/possessions; foreign soil; other's affairs/views (pl.);<br>&nbsp;(複数 対格), <br></span></a>
+<a class="note1">convertant.<span>converto convertere, converti, conversus V (3rd)  <br>:turn upside down/side-to-side; invert/transpose/convulse; turn over (soil)/dig;<br>( 3 複数 現在 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>qui gratificantur cuipiam : 誰かに（恩恵を）与えようとする人、</p>
+<p>quod obsit illi : 誰かに何かの害をなす　illiは続くcui関係代名詞で修飾</p>
+<p>cui prodesse velle videantur. : (彼らに）役に立ちたいと望んでいることが見られる。</p>
+<p>sed sunt iudicandi perniciosi assentatores：危険な追従者と判断される。</p>
+<p>qui nocent allis ut sint liberales in alios. : 他の人に寛大であろうとしてあるものを害するもの</p>
+<p><br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>誰に恩恵を与えようとする人が、役に立ちたいと思っていると思われる人に対して何らかの害をなすことは寛大ではないし、名誉あることでもない。むしろ危険な追従者と判断されるであろう。また誰か他の人に寛大であろうと別の人に害する人は他人のものを自分のものと付け替えるの同じで、不正義である。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

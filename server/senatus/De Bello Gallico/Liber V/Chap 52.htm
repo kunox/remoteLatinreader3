@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber V : Chap 52</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[52]<span></span></a>
+
+<a class="note1">Longius<span>longus longa -um, longior -or -us, longissimus -a -um ADJ  比較級<br>:long; tall; tedious, taking long time; boundless; far; of specific length/time;<br>(n 単数 対格に由来する副詞<br></span></a>
+<a class="note1">prōsequi<span>prosequor prosequi, prosecutus sum V (3rd) DEP  <br>:pursue; escort; describe in detail;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">veritus,<span>vereor vereri, veritus sum V (2nd) DEP  <br>:revere, respect; fear; dread;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">silvae<span>silva silvae N (1st) F  <br>:wood, forest (sylvan);<br>(c 複数  主格)<br></span></a>
+<a class="note1">palūdēsque<span>palus paludis N (3rd) F  <br>:swamp, marsh;<br>(c 複数  主格),<br><br></span></a>
+<a class="note1">intercēdēbant<span>intercedo intercedere, intercessi, intercessus V (3rd)  <br>:intervene; intercede, interrupt; hinder; veto; exist/come between;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">parvulō<span>parvulus parvula, parvulum ADJ  <br>:very small, very young; unimportant; slight, petty;<br>(n 単数 与格)<br><br><br></span></a>
+<a class="note1">dētrīmentō<span>detrimentum detrimenti N (2nd) N  <br>:diminishment, material reduction; detriment; harm/loss/damage; reverse/defeat;<br>(X 単数 与格)<br><br></span></a>
+<a class="note0">illōrum<span><br><br></span></a>
+<a class="note0">locum<span></span></a>
+<a class="note0">relinquī<span><br><br></span></a>
+<a class="note0">vidēbat,<span><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note0">suīs<span><br><br></span></a>
+<a class="note1">incolumibus<span>incolumis incolumis, incolume ADJ  <br>:unharmed, uninjured; alive, <strong>safe</strong>; unimpaired;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">cōpiīs<span></span></a>
+<a class="note0">eōdem<span><br><br></span></a>
+<a class="note0">diē<span><br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">Cicerōnem<span><br><br></span></a>
+<a class="note0">pervēnit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>videbat neque locum relinqui etiam parvulo detrimento illorum</strong>. locumは場所ではなく「機会」の意。大意は機会は残っていない、と言う事。parvulo deterimentoは多分「目的、方向に与格」illorumは「目的語の属格」</p>
+<p>「たとえ極わずかの抹殺の機会が残っているとは考えなかった。」<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>深追いを恐れて、無傷の軍団と共にその日のうちにCiceroのところに向かった。と言うのは森や沼で覆われていて、たとえ僅かな数のさらなる抹殺の余地はないと考えたからである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Īnstitūtās<span>instituo instituere, institui, institutus V (3rd)  <br>:set up, establish, found, make, institute; build; prepare; decide;<br>(完了 分詞 受動態 f 複数  対格)<br></span></a>
+<a class="note0">turrēs,<span><br><br></span></a>
+<a class="note0">testūdines<span><br><br></span></a>
+<a class="note0">mūnītiōnēsque<span><br><br></span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note1">admīrātur;<span>admiror admirari, admiratus sum V (1st) DEP  <br>:admire, respect; regard with wonder, wonder at; be surprised at, be astonished;<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">legiōne<span><br><br></span></a>
+<a class="note1">prōductā<span>produco producere, produxi, productus V (3rd)  <br>:lead forward, bring out; reveal; induce; promote; stretch out; prolong; bury;<br>&nbsp;(完了 分詞 受動態 f 単数 奪格)<br></span></a>
+<a class="note0">cognōscit<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">decimum<span>decimus <br>序数 10<br>(m 単数 対格),<br></span></a>
+<a class="note1">quemque<span>quisque quaeque,quidque INDEF <br>:(w/-que) each, each one; every, everybody, everything (more than 2); whatever;<br>(m 単数 対格)<br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">reliquum<span></span></a>
+<a class="note0">mīlitem<span><br><br></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note0">vulnere:<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">iūdicat<span>judico judicare, judicavi, judicatus V (1st)  <br>:judge, give judgment; sentence; conclude, decide; declare, appraise;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">rēbus,<span><br><br></span></a>
+<a class="note1">quantō<span>quantus quanta, quantum ADJ  <br>:how great; how much/many; of what size/amount/degree/number/worth/price;<br>&nbsp;(n 単数 奪格)<br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">perīculō<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">quantā<span>quantus quanta, quantum ADJ  <br>:how great; how much/many; of what size/amount/degree/number/worth/price;<br>&nbsp;(f 単数 奪格),<br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">virtūte<span><br><br></span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note0">sint<span></span></a>
+<a class="note0">administrātae.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>admiratur institutas turres ~. 「～に感嘆した。」</p>
+<p>legione producta : 独立奪格「軍団が引き出され」</p>
+<p><strong>quemque decimum&nbsp;militem</strong> : 直訳は every 10th soldier</p>
+<p><strong>ex his omnibus resbus</strong>, judicat 「これらすべての事から、判断した」</p>
+<p><strong>res sint administratae cum quanto periculo et cum quanta virtute　「</strong>如何に大変な危機と、偉大な勇気により物事が遂行された」judicatの目的語。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>設置された攻撃櫓、亀甲車、また敵の要塞化などを見て驚いた。引き出された軍団をみて、無傷なものが１０人に一人であることを知った。これらの事から、彼らが如何に大変な危のもとで、偉大な勇気で物事を遂行したかが解った。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Cicerōnem<span><br><br></span></a>
+<a class="note0">prō<span><br><br></span></a>
+<a class="note0">eius<span></span></a>
+<a class="note1">meritō<span>meritum meriti N (2nd) N  <br>:merit, service; value, due reward;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">legiōnemque<span><br><br></span></a>
+<a class="note1">collaudat;<span>collaudo collaudare, collaudavi, collaudatus V (1st) TRANS  <br>:praise/extol highly; commend; eulogize;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">centuriōnēs<span><br><br></span></a>
+<a class="note1">singillātim<span>singillatim ADV <br>:one by one, singly, separately;<br><br></span></a>
+<a class="note1">tribūnōsque<span>tribunus tribuni N (2nd) M  <br>:tribune;<br>(c 複数  対格)<br></span></a>
+<a class="note0">mīlitum<span><br><br></span></a>
+<a class="note1">appellat,<span>appello appellare, appellavi, appellatus V (1st) TRANS  <br>:call (upon); address; dun; solicit; appeal (to); bring to court; accuse; name;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">quōrum<span><br><br></span></a>
+<a class="note1">ēgregiam<span>egregius egregia, egregium ADJ  <br>:singular; distinguished; exceptional; extraordinary; eminent; excellent;<br>(f 単数 対格)<br></span></a>
+<a class="note0">fuisse<span></span></a>
+<a class="note0">virtūtem<span><br><br></span></a>
+<a class="note1">testimōniō<span>testimonium testimoni(i) N (2nd) N  <br>:testimony; deposition; evidence; witness; (used of ark and tabernacle) (Plater);<br>(X 単数 与格), (X 単数 奪格)<br></span></a>
+<a class="note0">Cicerōnis<span><br><br></span></a>
+<a class="note0">cognōverat.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>collaudata</strong> Ciceronem legionemque pro eius merito. pro eius merito は「その貢献に対して」</p>
+<p><strong>appellat</strong> centiones que militum tribuno singillatim.</p>
+<p><strong>cognoverat </strong>quorum virtutem fuisse egregiam tetimonio Circeronis.　testimonio Circeronis : 手段の奪格<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>CaesarはCiceroとその軍団に対し、彼らの貢献に応じて賞賛した。百人隊長、軍財務官に対しては一人づつ、触れていった。その彼らの強さが如何に優れていたか、Ciceroの証言により知ったのである。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Dē<span><br><br></span></a>
+<a class="note1">cāsū<span>casus casus N (4th) M  <br>:fall, overthrow; chance/fortune; accident, emergency, calamity, plight; fate;<br>(X 単数 奪格)<br></span></a>
+<a class="note0">Sabīnī<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Cottae<span></span></a>
+<a class="note0">certius<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">captīvīs<span><br><br></span></a>
+<a class="note0">cognōscit.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>SbinusとCottaの悲劇については捕虜からより知ることとなった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Posterō<span><br><br></span></a>
+<a class="note0">diē<span><br><br></span></a>
+<a class="note1">contiōne<span>contio contionis N (3rd) F  <br>:meeting/assembly; audience/speech; public opinion; parade addressed by general;<br>(c 単数 奪格)<br></span></a>
+<a class="note0">habitā<span><br><br></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note1">gestam<span>gero gerere, gessi, gestus V (3rd)  <br>:bear, carry, wear; carry on; manage, govern; (se gerere = to conduct oneself);<br>(完了 分詞 受動態 f 単数 対格)<br></span></a>
+<a class="note1">prōpōnit,<span>propono proponere, proposui, propositus V (3rd)  <br>:display; propose; relate; put or place forward;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">mīlitēs<span><br><br></span></a>
+<a class="note1">cōnsōlātur<span>consolor consolari, consolatus sum V (1st) DEP  <br>:console, (be source of) <strong>comfort</strong>/solace; soothe; alleviate/allay/assuage (grief);<br>(３人称 単数 現在 受動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">cōnfīrmat:<span>confirmo confirmare, confirmavi, confirmatus V (1st) TRANS  <br>:|assert positively; declare, prove, confirm, support; sanction; encourage;<br>(３人称 単数 現在 能動態 直説法 )<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">dētrīmentum<span>detrimentum detrimenti N (2nd) N  <br>:diminishment, material reduction; detriment; harm/ loss/ damage; reverse/defeat;<br>(n 単数 主格),<br></span></a>
+<a class="note1">culpā<span>culpa culpae N (1st) F  <br>:fault/blame/responsibility (w/GEN); crime (esp. against chastity); negligence;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">temeritāte<span>temeritas temeritatis N (3rd) F  <br>:rashness; temerity;<br>&nbsp;(c 単数 奪格)<br></span></a>
+<a class="note0">lēgātī<span><br><br></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note0">acceptum,<span></span></a>
+<a class="note0">hōc<span><br><br></span></a>
+<a class="note1">aequiōre<span>aequus aequa -um, aequior -or -us, aequissimus -a -um ADJ  比較級<br>:<strong>level</strong>, even, equal, like; just, kind, impartial, fair; <strong>patient</strong>, contented;<br>(X 単数 奪格)<br><br></span></a>
+<a class="note1">animō<span>animus animi N (2nd) M  <br>:mind; intellect; soul; feelings; heart; spirit, courage, character, pride; air;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">ferendum<span>fero ferre, tuli, latus V  <br>:bring, <strong>bear</strong>; tell/speak of; consider; carry off, win, <strong>receive</strong>, produce; get;<br>(未来 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note0">docet,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">beneficiō<span><br><br></span></a>
+<a class="note0">deōrum<span><br><br></span></a>
+<a class="note0">immortālium<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">virtūte<span><br><br></span></a>
+<a class="note0">eōrum<span><br><br></span></a>
+<a class="note1">expiātō<span>expio expiare, expiavi, expiatus V (1st)  <br>:expiate, <strong>atone</strong> for; avert by expiatory rites;<br>(完了 分詞 受動態 n 単数 奪格)<br></span></a>
+<a class="note1">incommodō<span>incommodum incommodi N (2nd) N  <br>:disadvantage, inconvenience, setback, <strong>harm</strong>, detriment; defeat/ <strong>disaster</strong>; ailment;<br>&nbsp;(X 単数 奪格)<br><br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">hostibus<span></span></a>
+<a class="note1">diūtina<span>diutinus diutina, diutinum ADJ  <br>:long lasting, long;<br>(f 単数 主格),<br></span></a>
+<a class="note1">laetatio<span>laetatio laetationis N (3rd) F  <br>:rejoicing; joy;<br>(X 単数 主格)<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">ipsīs<span><br><br></span></a>
+<a class="note0">longior<span></span></a>
+<a class="note1">dolor<span>dolor doloris N (3rd) M  <br>:pain, anguish, grief, sorrow, suffering; resentment, indignation;<br>(X 単数 主格)<br></span></a>
+<a class="note1">relinquātur.<span>relinquo relinquere, reliqui, relictus V (3rd)  <br>:leave behind, abandon; (pass.) be left, remain; bequeath;<br>(３人称 単数 現在 受動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>rem gestam</strong> : 直訳すれば「行われた事」で「起きたこと、Sabinus, Cottaの事件」</p>
+<p><strong>docet detrimentum, quod sit acceptum culpa et temeritate legati, (esse) ferendum hoc aequiore animo</strong>. quod detrimentumは関係詞の埋め込みと言われるもの。関係詞が先行詞の前に現れるもの。よくある。（NewLatin251.4) ferendumは「受け止める」というニュアンスか。動形容詞で、必要のニュアンスあり。aequioreはaequusの比較級で、平静または冷静、というニュアンス。「損害は冷静に受け止める必要がある」</p>
+<p><strong>quod neque laetatio hostibus, neque dolor ipsis relinquatur</strong> .&nbsp; このquodはBecauseの意。「何故なら、どんな喜びも敵に,どんな痛みも我々に残されない」hostibus, ipsisは与格。ipsisは間接話法の中なのでローマ軍の事。</p>
+<p>expiato incommodo 独立奪格「悲劇は贖われており」（すでに戦いで敵を破ったと言う事）<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>翌日、集会が持たれ（Sabinus、Cottaに）起きたことを説明した。Caesarは兵士を宥め、積極的に断言した。その損害は、指揮官の失策と焦りから起きたが、これは平静な気持ちで受け止めなければならないと諭した。何故なら、不死の神々の恩寵に、またその威力により、すでにその不利は贖われており、敵に対しては長続きする喜びは残されていないし、我々にとっての痛みも長続きしないであろうから。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

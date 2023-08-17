@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1>Liber I : Chap 53</h1>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[53]<span></span></a>
+
+<a class="note0">Ita<span></span></a>
+<a class="note0">proelium<span></span></a>
+<a class="note1">restitūtum<span>restituo restituere, restitui, restitutus V (3rd)  <br>:restore; revive; bring back; make good;<br>(完了 分詞 受動態 n 単数 主格<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">hostēs<span>主格<br></span></a>
+<a class="note1">terga<span>tergum, tergi 名詞 (2nd) N   :back, rear; reverse/far side; outer covering/surface;対格</span></a>
+<a class="note1">vertērunt<span>verto, vertere, verti, versus 動詞 (3rd)   :turn, turn around; change, alter; overthrow, destroy;3 複 完了 能動態 直説法<br></span></a>
+<a class="note1">nec<span>nec, 副詞   :nor; and not, not, neither, not even;</span></a>
+<a class="note1">prius<span>priusquamと一語のテキスト多し</span></a>
+<a class="note1">fugere<span>fugio, fugere, fugi, fugitus 動詞 (3rd)   :flee, fly, run away; avoid, shun; go into exile;不定詞</span></a>
+<a class="note1">dēstitērunt<span>desisto, desistere, destiti, destitus 動詞 (3rd)   :stop/cease/desist (from); 3 複 完了 能動態 直説法<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">flūmen<span><br><br></span></a>
+<a class="note0">Rhēnum<span><br><br></span></a>
+<a class="note0">mīlia<span><br><br></span></a>
+<a class="note0">passuum<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note0">eō<span><br><br></span></a>
+<a class="note0">locō<span><br><br></span></a>
+<a class="note0">circiter<span></span></a>
+<a class="note1">L<span>quinquaginta = 50<br></span></a>
+<a class="note1">pervēnērunt.<span>pervenio, pervenire, perveni, perventus 動詞 (4th)   :come to; reach; arrive; 3 複 完了 能動態 直説法)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>proelium est, restitutum : 戦いは新しい展開を示した。</p>
+<p>omnes hostes verterunt terga ：敵は全軍、背なかを返し敗走を始めた</p>
+<p>nec destiterunt fugere priusquam pervenerunt.: 到着するまで走るのを止めなかった</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>こうして戦況は好転し、敵は全軍を上げて、背中を返して敗走を始め　その場所から約５0マイル離れたところにあるライン河に到着するまで敗走を止めなかった。</p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ibi<span></span></a>
+<a class="note1">perpaucī<span>perpaucus, perpauca, perpaucum 形容詞   :very few (pl.); select; 複　主格<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">vīribus<span>vis, viris 名詞 (3rd) F   :strength (bodily) (pl.), force, power, 与格 <br>但し　G.Stuartによると与格ではなく、奪格と注がある<br></span></a>
+<a class="note1">cōnfīsī<span>confido, confidere, confisus sum 動詞 (3rd) SEMIDEP   :have confidence in, rely on, trust (to); believe, be confident/assured; be sure; 完了分詞　受動　主格<br></span></a>
+<a class="note1">trānāre<span>trano, tranare, tranavi, tranatus 動詞 (1st)   :swim across;不定詞<br></span></a>
+<a class="note1">contendērunt<span>contendo, contendere, contendi, contentus 動詞 (3rd)   :||strain/tense; make effort, strive for; 3 複 完了 能動態 直説法)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">lintribus<span>linter, lintris 名詞 (3rd) C   :boat, skiff, small light boat; trough, vat; 奪格</span></a>
+<a class="note1">inventīs<span>invenio invenire, inveni, inventus V (4th)  <br>:come upon; discover, find; invent, contrive; reach, manage to get;<br>(完了 分詞 受動態  複数  奪格)<br>独立奪格<br></span></a>
+<a class="note1">sibi<span>受益の与格</span></a>
+<a class="note1">salūtem<span>salus, salutis 名詞 (3rd) F   :health; prosperity; good wish; greeting; salvation, safety; 対格<br></span></a>
+<a class="note1">repperērunt.<span>reperio, reperire, repperi, repertus 動詞 (4th) TRANS   :discover, learn; light on; find/obtain/get;<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Ibi perpauci reppererunt.salutem sibi ：非常に稀な人しか自身の保全を自分のために獲得できなかった。</p>
+<p>viribus confisi contenderunt tranare ：分詞構文　強さに自信があり（または強さによって裏付けられた自信により）河を泳いで渡る努力をした人たち<strong> viribusは原因の奪格だが、confidoと一緒の場合は与格となる</strong>。(NewLatin219.1.(a))</p>
+<p>lintribus inventis ：独立奪格　船を発見して</p>
+<p>invenioは偶然発見する、 reperioは目的をもって探して発見する</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そこでは、非常に少ない人が、頑健さに自信があり河を泳いで渡ったものまたは船を発見して、自分の安全をはかる事ができた。</p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">In<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">fuit<span></span></a>
+<a class="note0">Ariovistus,<span></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note1">nāviculam<span>navicula, naviculae 名詞 (1st) F   :small ship;対格<br></span></a>
+<a class="note1">dēligātam<span>deligo, deligare, deligavi, deligatus 動詞 (1st) TRANS   :bind fast, tie (up), fasten; 完了分詞　受動　対格<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">rīpam<span>ripa, ripae 名詞 (1st) F   :bank;<br></span></a>
+<a class="note1">nactus<span>nanciscor nancisci, nanctus sum V (3rd) DEP  <br>:obtain, get; find, meet with, receive, stumble on, light on;<br>(完了 分詞 受動態 m 単数 主格)<br></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note1">profūgit;<span>profugio, profugere, profugi, - 動詞 (3rd)   :escape, escape from; run away from; 3 単 完了 能動態 直説法<br></span></a>
+<a class="note1">reliquōs<span>reliquus reliqua, reliquum 形容詞 :rest of/remaining 対格<br></span></a>
+<a class="note0">omnēs<span><br><br></span></a>
+<a class="note1">cōnsecūtī<span>cōnsequor, consequi, consecutus sum 動詞 (3rd) DEP   :follow, go/come after; <br>完了分詞　受動　主格<br></span></a>
+<a class="note1">equitēs<span>主格<br></span></a>
+<a class="note0">nostrī<span><br><br></span></a>
+<a class="note1">interfēcērunt.<span>interficio, interficere, interfeci, interfectus 動詞 (3rd)   :kill; destroy;<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Ariovistus, fuit In his</p>
+<p>naviculam nactus profugit　ea; 小さな船を見つけて、逃走した。(分詞構文）</p>
+<p>nostri equites consecuti omnes reliquos interfecerunt.我軍の騎兵が追いかけて殺した</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>アリオウィストゥスはその中のひとりであった。彼は岸に繋いでいた小さな船を見つけてそれに載って逃げた。残ったものは我が騎兵が追いかけて殺した。</p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Duae<span>duo -ae o, secundus -a -um, bini -ae -a, bis NUM  2<br>:two (pl.);<br>(f 複数  主格)<br></span></a>
+<a class="note0">fuērunt<span><br><br></span></a>
+<a class="note0">Ariovistī<span><br><br></span></a>
+<a class="note0">uxōrēs,<span><br><br></span></a>
+<a class="note0">ūna<span><br><br></span></a>
+<a class="note0">Suēba<span><br><br></span></a>
+<a class="note1">nātiōne,<span>出自の奪格<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">domō<span><br><br></span></a>
+<a class="note0">sēcum<span><br><br></span></a>
+<a class="note1">edūxerat,<span>educo, educere, eduxi, eductus 動詞 (3rd)   :lead out; draw up; bring up; rear;<br></span></a>
+<a class="note0">altera<span></span></a>
+<a class="note0">Nōrica,<span><br><br></span></a>
+<a class="note0">rēgis<span><br><br></span></a>
+<a class="note0">Vocciōnis<span><br><br></span></a>
+<a class="note1">soror,<span>soror, sororis 名詞 (3rd) F   :sister; (applied also to half sister, sister-in-law, and mistress!);</span></a>
+<a class="note0">quam<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Galliā<span><br><br></span></a>
+<a class="note1">dūxerat<span>duco, ducere, duxi, ductus 動詞 (3rd)   :lead, command; think, consider, regard; prolong; 3 単 過去完了 能動態 直説法　duco uxorem で結婚する<br></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note0">frātre<span><br><br></span></a>
+<a class="note1">missam:<span>完了分詞　受動　対格</span></a>
+<a class="note0">utrāque<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">eā<span><br><br></span></a>
+<a class="note0">fugā<span><br><br></span></a>
+<a class="note1">periit;<span>pereo, perire, perivi(ii), peritus 動詞   :die, pass away; be ruined, be destroyed; go to waste;</span></a>
+<a class="note0">duae<span></span></a>
+<a class="note0">fīliae:<span><br><br></span></a>
+<a class="note0">hārum<span><br><br></span></a>
+<a class="note0">altera<span></span></a>
+<a class="note1">occīsa,<span>occido, occidere, occidi, occisus 動詞 (3rd)   :kill, murder, slaughter,完了分詞　受動<br></span></a>
+<a class="note0">altera<span></span></a>
+<a class="note0">capta<span></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>fuerunt Duae uxores, Ariovisti ：アリオウィストゥスには二人の妻がいた。</p>
+<p>duco uxorem = lead a wife = I marry</p>
+<p>quam duxerat in Gallia missam a fratire. duxeratの主語はAriovistus、quamは関係代名詞で妻をさす。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>アリオウィストゥスには二人の妻がいた。一人はスエビ族で、故郷から一緒に連れてきた。もう一人はノリカ族でVoccio王の姉妹であり、兄弟によって送られガリアで結婚した。両方共逃走途中で死んだ。二人の娘は、一人は殺され、もう一人は捕らえられた。</p>
+</div>
+</div>
+<div class="spacer">Line5</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">C.<span></span></a>
+<a class="note0">Valerius<span></span></a>
+<a class="note0">Procillus,<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">ā<span><br><br></span></a>
+<a class="note1">cūstōdibus<span>custos custodis N (3rd) C  <br>:guard; sentry/watch; guardian/protector/keeper; doorkeeper/watchman/janitor;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fugā<span><br><br></span></a>
+<a class="note1">trīnīs<span>配分数　３　３つづつ<br></span></a>
+<a class="note1">catēnīs<span>catena, catenae 名詞 (1st) F   :chain; series; fetter, 奪格<br></span></a>
+<a class="note1">vinctus<span>vincio, vincire, vinxi, vinctus 動詞 (4th)   :bind, fetter; restrain; vincio, vincire, vinxi, (完了 分詞 受動態 m 単 主格)</span></a>
+<a class="note1">traherētur,<span>traho, trahere, traxi, tractus 動詞 (3rd)   :draw, drag, haul; derive, get;3 単 未完了 受動態 接続法<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">ipsum<span></span></a>
+<a class="note0">Caesarem<span></span></a>
+<a class="note0">hostēs<span></span></a>
+<a class="note0">equitātū<span><br><br></span></a>
+<a class="note1">insequentem<span>insequor, insequi, insecutus sum 動詞 (3rd) DEP   :follow/come after; attack; overtake; pursue (hostile); come after (time);;現在 分詞 能動態 m,f 単 対格</span></a>
+<a class="note1">incidit.<span>incido, incidere, incidi, incasus 動詞 (3rd)   :happen; fall into, fall in with, 3 単 完了 能動態 直説法)</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>cum traheretur, a custodibus in fuga incidit.in Caesarem ipsum ：護衛によって3重の鎖に繋がれ、逃走中にカエサル自身の中に落ちた。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>カイウス　ワレリウス　プロキルム、彼は護衛によって３重の鎖に繋がれ、逃走している時に、馬で敵を追っているカエサルその人のところに出くわした。</p>
+</div>
+</div>
+<div class="spacer">Line6</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quae<span></span></a>
+<a class="note1">quidem<span>quidem, 副詞   :indeed (postpositive), certainly, even, at least; ne...quidem -- not...even;</span></a>
+<a class="note0">rēs<span><br><br></span></a>
+<a class="note0">Caesarī<span><br><br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">minōrem<span>parvus 比較級でminor 対格<br></span></a>
+<a class="note0">quam<span></span></a>
+<a class="note1">ipsa<span>ipse ipsa, ipsum PRON  <br>:himself/herself/itself; the very/real/actual one; in person; themselves (pl.);<br>(f 単数 主格<br></span></a>
+<a class="note1">victōria<span>victoria victoriae N (1st) F  <br>:victory;<br>(c 単数 主格)<br></span></a>
+<a class="note1">voluptātem<span>voluptas, voluptatis 名詞 (3rd) F   :pleasure, delight, enjoyment;対格<br></span></a>
+<a class="note1">attulit,<span>affero, afferre, attuli, allatus 動詞 TRANS   :bring to (word/food), carry, convey; report, allege, announce; produce, cause; 3 単 完了 能動態 直説法</span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">hominem<span></span></a>
+<a class="note1">honestissimum<span>honestus, honesta -um, honestior -or -us, honestissimus -a -um 形容詞   :distinguished, reputable, respected, honorable, upright, honest; worthy;最上級　対格</span></a>
+<a class="note0">prōvinciae<span><br><br></span></a>
+<a class="note0">Galliae,<span></span></a>
+<a class="note0">suum<span></span></a>
+<a class="note1">familiārem<span>familiaris = family 対格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">hospitem,<span>hospes (gen.), hospitis ADJ  <br>:of relation between host and guest; that hosts; that guests; foreign, alien;<br>(c 単数 対格)<br></span></a>
+<a class="note1">ēreptum<span>eripio, eripere, eripui, ereptus 動詞 (3rd)   :snatch away, take by force; rescue;完了分詞　受動　対格<br></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">manibus<span>manus = hand 奪格</span></a>
+<a class="note0">hostium<span></span></a>
+<a class="note1">sibi<span>カエサルのこと</span></a>
+<a class="note1">restitūtum<span>restituo, restituere, restitui, restitutus 動詞 (3rd)   :restore; revive; bring back; make good; 完了分詞　受動　対格<br></span></a>
+<a class="note1">vidēbat<span>Caesarが省略<br></span></a>
+<a class="note1">neque<span>nor</span></a>
+<a class="note0">eius<span><br><br></span></a>
+<a class="note1">calamitāte<span>calamitas, calamitatis 名詞 (3rd) F   :loss, damage, harm; <br>手段の奪格<br></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note1">tantā<span>tantus, tanta, tantum 形容詞   :of such size; so great, so much;<br></span></a>
+<a class="note1">voluptāte<span>voluptas, voluptatis 名詞 (3rd) F   :pleasure, delight, enjoyment; deによって奪格<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">grātulātiōne<span>gratulatio, gratulationis 名詞 (3rd) F   :congratulation; rejoicing; 奪格<br></span></a>
+<a class="note1">quicquam<span>代名詞　anything <br>ここでは副詞的に何も</span></a>
+<a class="note1">fortūna<span>主格　demininueratの主語<br></span></a>
+<a class="note1">dēminuerat.<span>deminuo, deminuere, deminui, deminutus 動詞 (3rd) TRANS   :make smaller; cut up small; 3 単 過去完了 能動態 直説法<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Quae res attulit, Caesari non minorem voluptatem quam ipsa victoria その事はカエサルに勝利に劣らないぐらいの喜びを与えた。</p>
+<p>quod ～videbat, ereptum restitutum,</p>
+<p>fortuna&nbsp;neque quicquam&nbsp;deminuerat de tanta voluptate et gratulatione:大きな喜び、感謝から何も差し引かなかった。</p>
+<p>neque quicquamは慣用句で、「何も」の意味。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>そのことはカエサルに勝利そのものに劣らないぐらいの喜びを与えた。ガリアの中で最も尊敬されるべき人間であるとみなし、自身の友であり、ゲストでもある人が、敵の手から助けだされ元に戻されるのだから。彼らの災厄によって、（勝利の）大きな喜びと感謝が損なわれることは無かった。</p>
+</div>
+</div>
+<div class="spacer">Line7</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note1">Is<span>Procillusを指す</span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">praesente<span>praesens, (gen.), praesentis 形容詞   :present; at hand; existing; prompt, in person; propitious;奪格 <br>se presenteで独立奪格</span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note1">ter<span>ter, 副詞   :three times; on three occasions;</span></a>
+<a class="note1">sortibus<span>sors, sortis 名詞 (3rd) F   :lot, fate; oracular response;</span></a>
+<a class="note1">cōnsultum<span>consulo, consulere, consului, consultus 動詞 (3rd)   :ask information/advice of; consult,  <br>完了分詞　受動　対格　fuisse省略の完了不定詞<br></span></a>
+<a class="note0">dīcēbat,<span><br><br><br></span></a>
+<a class="note1">utrum<span>utrum, 副詞   :whether; (introducing an indirect question);</span></a>
+<a class="note0">īgnī<span><br><br></span></a>
+<a class="note1">statim<span>statim, 副詞   :at once, immediately;</span></a>
+<a class="note1">necārētur<span>neco, necare, necavi, necatus 動詞 (1st) TRANS   :kill/murder; put to death; 3 単 未完了 受動態 接続法)<br></span></a>
+<a class="note0">an<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">aliud<span>alius, alia, aliud 形容詞   :other, another; different, changed;</span></a>
+<a class="note0">tempus<span></span></a>
+<a class="note1">reservārētur:<span>reservo, reservare, reservavi, reservatus 動詞 (1st)   :reserve; spare; hold on to;<br></span></a>
+<a class="note1">sortium<span>sors sortis N (3rd) F  <br>:lot, fate; oracular response;<br>(c 複数  属格)<br></span></a>
+<a class="note1">beneficiō<span>beneficium benefici(i) N (2nd) N  <br>:kindness, <strong>favor</strong>, benefit, service, <strong>help</strong>; privilege, right;<br>&nbsp;(X 単数 奪格)<br></span></a>
+<a class="note0">sē<span><br><br></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note1">incolumem.<span>incolumis, incolumis, incolume 形容詞   :unharmed, uninjured; alive, safe; unimpaired;</span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p>Is dicebat, consultum (fuisse) ter sortibus de se :彼自身の事で３回の占いを行った、と言った。</p>
+<p>se praesente ：　名詞　＋形容詞の独立奪格：彼のいるところで</p>
+<p>se esse incolumem.sortium beneficio ：くじ運のお陰で、無事である。</p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>彼が言うには、彼らは彼のことに関して３回、占いを行った。すぐに火によって殺されるかそれとも今しばらく生かされるか。くじ運のお陰で無事に生き残った、と。</p>
+</div>
+</div>
+<div class="spacer">Line8</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Item<span></span></a>
+<a class="note0">M.<span></span></a>
+<a class="note0">Metius<span></span></a>
+<a class="note1">repertus<span>reperio, reperire, repperi, repertus 動詞 (4th) TRANS   :discover, learn; light on; <br>完了分詞　受動</span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">eum<span></span></a>
+<a class="note1">reductus<span>reduco, reducere, reduxi, reductus 動詞 (3rd)   :lead back, bring back; restore; reduce;</span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false">
+<p></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false">
+<p>同じように、マルクス　メテウスも発見され連れ戻された。</p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

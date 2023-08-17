@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 8 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[8]<span></span></a>
+<a class="note0">Atque<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note0">alia<span></span></a>
+<a class="note1">divisio<span>divisio divisionis N (3rd) F  <br>:division; distribution;<br>(X 単数 主格)<br></span></a>
+<a class="note0">est<span></span></a>
+<a class="note0">officii.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>alia diviso officii est. : 異なるOfficiumの分類もある。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>そしてまた異なるOfficiumの分類もある。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Nam<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">medium<span></span></a>
+<a class="note1">quoddam<span>quidam quaedam, quoddam   <br>:(w/-dam) certain; as INDEF a certain thing; somebody, one, something;<br>(N 単数 主格),<br><br></span></a>
+<a class="note0">officium<span></span></a>
+<a class="note0">dicitur<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">perfectum.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>quoddam dicitur medium, (quoddam dicitur) perfectum. 「あるものは[中間]と言われ、あるのもは[完全]と言われる。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>あるOfficiumは中間と言われ、またあるものは完全と言われる。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Perfectum<span></span></a>
+<a class="note1">officium<span>officium offici(i) N (2nd) N  <br>:duty, obligation; kindness; service, office;<br>&nbsp;(X 単数 対格)<br></span></a>
+<a class="note1">rectum,<span>rectum recti N (2nd) N  <br>:virtue; the_right<br>&nbsp;(N 単数 対格)<br></span></a>
+<a class="note1">opinor,<span>opinor opinari, opinatus sum V (1st) DEP  <br>:suppose, imagine;<br>(１ 単数 現在 受動態 直接法 )<br></span></a>
+<a class="note1">vocemus,<span>voco vocare, vocavi, vocatus V (1st)  <br>:call, summon; name; call upon;<br>(１ 複数 現在 能動態 接続法 )<br></span></a>
+<a class="note0">quoniam<span></span></a>
+<a class="note0">Graeci<span></span></a>
+<a class="note0">katorthoma,<span></span></a>
+<a class="note0">hoc<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">commune<span>communis communis, commune ADJ  <br>:||neutral; impartial (Mars); applicable on either side; same form for two cases;<br>&nbsp;(N 単数 対格), <br><br></span></a>
+<a class="note0">officium<span></span></a>
+<a class="note0">kathekon<span></span></a>
+<a class="note1">vocant.<span>voco vocare, vocavi, vocatus V (1st)  <br>:call, summon; name; call upon;<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>vocemus perfectum officium rectum. 二重対格（叙述対格）完全なOfficiumを[権利]と呼び、</p>
+<p>vocant hoc (=medium officium) commune officium 「中間Officiumは普通のOfficiumと呼ぶ」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>私が思うに、完全Officiumを[正当,仁]と呼びたい。というのはギリシャ語ではkatorthomaであり、他方中間officiumは普通のOfficium (kathekon)と呼ぶ。<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Atque<span></span></a>
+<a class="note0">ea<span></span></a>
+<a class="note0">sic<span></span></a>
+<a class="note1">definiunt,<span>definio definire, definivi, definitus V (4th) TRANS  <br>:define/bound/fix/limit/mark; restrict/confine; assign, ordain; lay down (rule);<br>(3 複数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">rectum<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">sit,<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">officium<span></span></a>
+<a class="note0">perfectum<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">definiant;<span></span></a>
+<a class="note0">medium<span></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note0">officium<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">esse<span></span></a>
+<a class="note0">dicunt,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">cur<span>cur ADV <br>:why, wherefore; for what reason/purpose?; on account of which?; because;<br><br></span></a>
+<a class="note1">factum<span>factum facti N (2nd) N  <br>:fact, deed, <strong>act</strong>; achievement;<br>(N 単数 主格), <br></span></a>
+<a class="note0">sit,<span></span></a>
+<a class="note1">ratio<span>ratio rationis N (3rd) F  <br>:account, reckoning, invoice; plan; prudence; method; <strong>reasoning</strong>; rule; regard;<br>(X 単数 主格),<br></span></a>
+<a class="note1">probabilis<span>probabilis probabile, probabilior -or -us, probabilissimus -a -um ADJ  <br>:commendable/admirable; justifiable; plausible/credible/demonstrable; probable;<br>&nbsp;(C 複数 対格)<br></span></a>
+<a class="note1">reddi<span>reddo reddere, reddidi, redditus V (3rd)  <br>:return; restore; deliver; hand over, pay back, render, give back; translate;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">possit.<span></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>ea definiunt sic ut ~ : 「ut以下のように定義する」</p>
+<p><strong>definiant perfectum officium esse id, quod sit rectum</strong> : 「完全なOffciumは、何であれ正しいもの」</p>
+<p>dicunt medium officium esse id , quod sit cur factum, ratio possit reddi probabilis&nbsp; : <strong>cur = for what reason</strong> であり<strong>関係副詞</strong>。「その理由で」</p>
+<p>「中間Officiumは次のように言われる。つまりある行動のための、それが正当化できる理由を与えるものである。」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>次のように定義する。つまり完全なOfficiumは何であれ正しいものであり、中間Officiumとはなにかの行動の正当化できる理由を与えるものである。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

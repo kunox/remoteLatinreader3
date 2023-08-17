@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 24</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[24]<span></span></a>
+
+<a class="note0">At<span></span></a>
+<a class="note0">barbarī,<span><br><br></span></a>
+<a class="note0">cōnsiliō<span><br><br></span></a>
+<a class="note0">Rōmānōrum<span><br><br></span></a>
+<a class="note1">cognitō<span>cognosco cognoscere, cognovi, cognitus V (3rd) TRANS  <br>:become acquainted with/aware of; recognize; learn, find to be; inquire/examine;<br>&nbsp;(完了 分詞 受動態 n 単数 奪格)<br></span></a>
+<a class="note0">praemissō<span><br><br></span></a>
+<a class="note0">equitātū<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">essedāriīs,<span>essedarius essedari(i) N (2nd) M  <br>:gladiator, <strong>soldier fighting from a chariot;</strong><br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note1">plērumque<span>副詞　;= geneally, commonly, often<br><br><br></span></a>
+<a class="note1">genere<span>genus generis N 単　奪格　;= kind, sort, class, rank, mode<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">proeliīs<span><br><br></span></a>
+<a class="note1">ūtī<span>utor uti, usus sum V (3rd) DEP  <br>:use, make use of, enjoy; enjoy the friendship of (with ABL);<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note1">cōnsuērunt,<span>consuo consuere, consui, consutus V (3rd) TRANS  <br>:sew together/up, stitch/join; make by sewing together; patch up; devise, plan;<br>(３人称 複数  完了 能動態 直説法 )<br></span></a>
+<a class="note1">reliquīs<span>reliquus 複　奪格<br><br><br></span></a>
+<a class="note1">cōpiīs<span>copia 複　奪格<br><br><br></span></a>
+<a class="note1">subsecūtī<span>subsequor subsequi, subsecutus sum V (3rd) DEP  <br>:follow close after; pursue; support;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">nostrōs<span><br><br></span></a>
+<a class="note0">nāvibus<span><br><br></span></a>
+<a class="note1">ēgredī<span>egredior egredi, egressus sum V (3rd) DEP  <br>:go/march/come out; set sail; land, disembark; surpass, go beyond;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">prohibēbant.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>骨子は　<strong>barbari prohibebant nostros egredi navius</strong>. 「野蛮人どもは味方が船から降りることを邪魔した」</p>
+<p>cognito Romanorum consilio : 独立奪格　「ローマの計画を知っていて」</p>
+<p>praemisso equitatu et essedariis : 独立奪格　「騎兵と単騎馬車兵を予め送っていた」</p>
+<p><strong>quo genere consuerunt plerumque uti in proeliis</strong> : quo genere が難しい、genereは奪格でutiの目的語(utorは目的語に奪格を取る　NewLatin 218) quoは関係代名詞でessedariisを指していると思われるが、<font color="#ff6600">なぜ単数なのか</font>？quoと数の一致でgenereも単数になっている？？？　「その種類のものを戦いで使うことに慣れている」→ <strong>quo genere</strong>でその種類の、で種類は一つなので単数か？（因みにutorは目的語に奪格を取る）<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>野蛮人たちは、ローマの計画を察していて予め騎兵と二輪戦車を送っており、それらは彼らが戦いで使うことに慣れているものであったが、残りの軍勢もすぐあとに迫り、我らが下船するのを妨げた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Erat<span></span></a>
+<a class="note0">ob<span></span></a>
+<a class="note0">hās<span><br><br></span></a>
+<a class="note1">causās<span>causa causae N (1st) F  <br>:cause/reason/motive; origin, source, derivation; responsibility/blame; symptom;<br>(c 複数  対格)<br></span></a>
+<a class="note0">summa<span></span></a>
+<a class="note1">difficultās,<span>difficultas difficultatis N (3rd) F  <br>:difficulty; trouble; hardship/want/distress/poverty (L+S); obstinacy;<br>(X 単数 主格)<br></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note0">propter<span></span></a>
+<a class="note0">magnitūdinem<span><br><br></span></a>
+<a class="note1">nisi<span>接続詞　;= if not, except, unless<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">altō<span>altum alti N (2nd) N  <br>:the_deep, the_sea; deep water; a height/depth; remote/obscure period/source;<br>(X 単数 奪格)<br></span></a>
+<a class="note1">cōnstituī<span>constituo constituere, constitui, constitutus V (3rd)  <br>:set up/in position, erect; place/dispose/locate; (call a) halt; plant (trees);<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">poterant,<span></span></a>
+<a class="note1">mīlitibus<span>miles militis N (3rd) M  <br>:soldier; foot soldier; soldiery; knight (Latham); knight's fee/service;<br>&nbsp;(X 複数  与格)<br></span></a>
+<a class="note0">autem,<span></span></a>
+<a class="note1">ignōtīs<span>ignotus ignota, ignotum ADJ  <br>:unknown, strange; unacquainted with, ignorant of;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">locīs,<span><br><br></span></a>
+<a class="note1">impedītīs<span>impeditus impedita -um, impeditior -or -us, impeditissimus -a -um ADJ  <br>:hindered / obstructed/ encumbered/ hampered; difficult/ impeded; inaccessible;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">manibus,<span>manus manus N (4th) F  <br>:hand, fist; team; gang, band of soldiers; handwriting; (elephant's) trunk;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">magnō<span><br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">gravī<span><br><br></span></a>
+<a class="note1">onere<span>onus oneris N 単　奪格　;= load, burden<br><br></span></a>
+<a class="note0">armōrum<span><br><br></span></a>
+<a class="note1">oppressīs<span>opprimo opprimere, oppressi, oppressus V (3rd)  <br>:press down; suppress; overthrow; crush, overwhelm, fall upon, oppress;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note1">simul<span>副詞　;= at the same time, likewise<br><br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">dē<span><br><br></span></a>
+<a class="note0">nāvibus<span><br><br></span></a>
+<a class="note1">dēsiliendum<span>desilio desilire, desilui, desultus V (4th) TRANS  <br>:leap/jump down, dismount, alight; (chariot); jump headlong, venture heedlessly;<br>(未来 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">fluctibus<span>fluctus fluctus N (4th) M  <br>:wave; disorder; flood, flow, tide, billow, surge; turbulence, commotion;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">cōnsistendum<span>consisto consistere, constiti, constitus V (3rd)  <br>:stop/stand/halt/cease; pause, linger; stop spreading/flowing; take a position;<br>(未来 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">hostibus<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">pugnandum,<span>pugno pugnare, pugnavi, pugnatus 未来分詞　受動　ｎ単　主格　;= fight, dispute<br><br></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note0">illī<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">ex<span></span></a>
+<a class="note1">āridō<span>aridus arida -um, aridior -or -us, aridissimus -a -um ADJ  <br>:dry, arid, parched; water/rain-less; used dry, dried; thirsty; poor; shriveled;<br>(n 単数 奪格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">paulum<span>副詞　;= a little bit, a small extent<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">aquam<span></span></a>
+<a class="note0">prōgressī<span><br><br></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">membrīs<span>membrum membri N (2nd) N  <br>:member, <strong>limb</strong>, organ; (esp.) male genital member; apartment, room; section;<br>&nbsp;(X 複数  奪格)<br><br></span></a>
+<a class="note1">expedītīs,<span>expedio expedire, expedivi, expeditus V (4th)  <br>:disengage, loose, <strong>set free</strong>; be expedient; procure, obtain, make ready;<br>(完了 分詞 受動態  複数  奪格)<br><br></span></a>
+<a class="note1">nōtissimīs<span>notus nota -um, notior -or -us, notissimus -a -um ADJ  最上級<br>:well known, familiar, notable, famous, esteemed; notorious, of ill repute;<br>(X 複数  奪格)<br></span></a>
+<a class="note0">locīs,<span><br><br></span></a>
+<a class="note1">audācter<span>audacter audacius audacissime 副詞　;= boldly, confidently<br><br><br></span></a>
+<a class="note0">tēla<span><br><br></span></a>
+<a class="note1">coicerent<span>coicio coicere, cojeci, cojectus V (3rd) TRANS  <br>:throw/put/pile together; conclude, infer, guess; assign, make go; classify, put;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">equōs<span>m複　対格　;= horse<br><br><br></span></a>
+<a class="note1">īnsuēfactōs<span>insuefactus insuefacta, insuefactum ADJ  <br>:well trained;<br>(m 複数  対格)<br></span></a>
+<a class="note1">incitārent.<span>incito incitare, incitavi, incitatus V (1st)  <br>:enrage; urge on; inspire; arouse;<br>(３人称 複数  未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>erat summa difficultas. 非人称的に「それらが最も困難であった。」</p>
+<p>ob has causa : on account of these reasons　下船の時に邪魔をされたことが最も困難だった、という意味か？</p>
+<p><strong>erat desiliendum de navis simul, (erat) consistendum in fluctibus et (erat) pugnandum cum hostibus</strong> ：<u>動形容詞　＋SUMの構文で、動形容詞は中性、単数で<strong>行為者は与格</strong>（militibus)で表される。</u></p>
+<p>ignotis locis, impeditis manibus, magno ... oppressis と独立奪格が続く<font color="#0000ff">。→ ignotis locis, impeditis manibusは独立奪格ではなく「付帯状況の奪格」か？</font></p>
+<p>cum illi ~ : while, although ~ で野蛮人側の状況を対比的に述べている</p>
+<p>membriss expeditis ; 独立奪格　自由な手足で<br></p>
+</div>
+</div>
+<div class="translation" style="background-color: rgb(255, 255, 248);" >
+<div class="innerdiv" spellcheck="false"><p>これらの中で一番困難だったのでは下船」の時である。と言うのは船はその大きさのため深いところまでしか行く事ができず、兵士たちは、全く知らない場所で、重くたくさんの武器の装備に押しつぶされながら、船から飛び降り、またその水の中で立って位置を定め、敵と戦わなくてはならなかったのだから。他方敵は、乾いた場所かほんの少し水がかかる程度のところから、自由な手足を使って、良く知っている場所で、投槍を投げてきたり、良く訓練された馬を駆り立てた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Quibus<span></span></a>
+<a class="note0">rēbus<span><br><br></span></a>
+<a class="note1">nostrī<span>noster nostri m複　主格　;= our men<br><br><br></span></a>
+<a class="note1">perterritī<span>perterreo perterrere, perterrui, perterritus V (2nd) TRANS  <br>:frighten greatly, terrify;<br>(完了 分詞 受動態 m 複数  主格)<br></span></a>
+<a class="note0">atque<span></span></a>
+<a class="note0">huius<span></span></a>
+<a class="note1">omnīnō<span>副詞　;= entirely, altogether<br><br><br></span></a>
+<a class="note1">generis<span>genus generis N 単　属格　;= kind, class, sort<br><br></span></a>
+<a class="note1">pugnae<span>pugna F 単　属格<br><br></span></a>
+<a class="note1">imperītī,<span>imperitus imperita, imperitum ADJ  <br>:unskilled, inexperienced (in); unfamiliar, ignorant (of) (w/GEN);<br>(m 複数  主格),<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note1">eādem<span>idem eadem, idem PRON  <br>:(w/-dem ONLY, idem, eadem, idem) same, the same, the very same, also;<br>(f 単数 奪格)<br></span></a>
+<a class="note1">alacritāte<span>alacritas alacritatis F 単　奪格　;= eagerness, enthusiasm, ardor, alacrity<br><br><br></span></a>
+<a class="note0">ac<span></span></a>
+<a class="note1">studiō<span>studium studi(i) N 単　奪格　;= eagerness, zeal, sprit, study<br><br><br></span></a>
+<a class="note0">quō<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">pedestribus<span></span></a>
+<a class="note0">ūtī<span><br><br></span></a>
+<a class="note0">proeliīs<span><br><br></span></a>
+<a class="note1">cōnsuērant<span>consuesco consuescere, consuevi, consuetus V (3rd)  <br>:accustom oneself; become/be accustomed/used; inure, habituate; familiarize;<br>(３人称 複数  過去完了 能動態 直説法 )<br></span></a>
+<a class="note1">ūtebāntur.<span>utor uti, usus sum V (3rd) DEP  <br>:use, make use of, enjoy; enjoy the friendship of (with ABL);<br>(３人称 複数  未完了 受動態 直説法 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>quibus rebus nostri perterriti : これらのことに恐慌をきたした味方は、（分詞構文）</p>
+<p>imperiti generis pugnae omnino : 全くこの種類の戦いに慣れておらず　（分詞構文）</p>
+<p>non utebantur eadem alacritate ac studio : 同じ果敢さと熱意を使うことができず</p>
+<p>quo consuevierant uti in pedestribus proeliis. それは歩兵の戦いで使うことに慣れている、</p>
+<p>文法的には、最初の分詞構文で修飾されるnostriが主語で、動詞は(non) utebantur.<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>これらの事柄に恐慌をきたした味方は、全くこの類の戦いに慣れておらず、いつもの歩兵の戦いで使い慣れている、果敢さ、熱意を全く使うことができなかった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0px;
+            text-shadow: 0px 0px 0px #000;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+        
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;
+            width: 86%;
+            text-align: left;
+            color: black;
+        }
+        
+        #header {
+            text-align: center;
+            padding: 20px 0px 0px 0px;
+            height: 80px;
+            background: #00ffff;
+        }
+        
+        .spacer {
+            height: 2.0rem;
+            color: #ffffff;
+            background: #000fff;
+            padding-left: 14px;
+            font-weight: bold;
+            line-height: 18px;
+        }
+        
+        h1 {
+            margin: 10px;
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        #footer {
+            padding-top: 10px;
+            color: #666666;
+            font-size: 1.2rem;
+            height: 100px;
+            clear: left;
+            text-align: center;
+        }
+        
+        div.latin {
+            border-width: 1px;
+            border-style: solid;
+            margin: 0px 0px 0px 0px;
+            font-size: 3.0rem;
+            line-height: 110%;
+            background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        
+        div.translation,
+        div.spnote {
+            border: solid 1px;
+            background-color: #fffff8;
+        }
+        
+        div.innerdiv {
+            color: black;
+            font-size: 1.8rem;
+            line-height: 130%;
+            margin: 0.7rem;
+            word-wrap: break-word;
+        }
+        
+        .innerdiv p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .pop {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0px 10px 0px 10px;
+        }
+        
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        
+        .note1 {
+            text-decoration: none;
+            color: #0000ff;
+        }
+        
+        .note0 {
+            text-decoration: none;
+            color: Black;
+        }
+        
+        a.note1:hover span {
+            display: block;
+        }
+        
+        span {
+            position: absolute;
+            z-index: 100;
+            left: -10px;
+            top: 4.0rem;
+            color: #ffffff;
+            background: blue;
+            width: 24rem;
+            margin-bottom: 2.0rem;
+            padding: 5px;
+            display: none;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            opacity: 1.0;
+            line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute;
+            border-bottom: 1.6rem solid blue;
+            border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent;
+            top: -1.6rem;
+            left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+
+</head>
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1> Liber I: Section 35 </h1>
+</div>
+<div class="spacer">Line0</div>
+<div class="latin"><a name="begin">
+</a><p class="pop" style="margin-left: 10px;" name="latintext"><a name="begin">
+<a class="note0">[35]<span></span></a>
+<a class="note1">Quare<span>quare ADV <br>:in what way? how? by which means, whereby; why; wherefore, therefore, hence;<br><br></span></a>
+<a class="note1">suscipienda<span>suscipio suscipere, suscepi, susceptus V (3rd)  <br>:undertake; support; accept, receive, take up;<br>(未来 分詞 受動態 N 複数 主格)<br></span></a>
+<a class="note0">quidem<span></span></a>
+<a class="note1">bella<span>bellum belli N (2nd) N  <br>:war, warfare; battle, combat, fight; (at/in) (the) war(s); military force, arms;<br>(N 複数 主格), <br></span></a>
+<a class="note0">sunt<span></span></a>
+<a class="note1">ob<span>ob PREP ACC <br>:on account of,<strong> for the sake of</strong>, for; instead of; right before;<br><br></span></a>
+<a class="note0">eam<span></span></a>
+<a class="note0">causam,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">sine<span></span></a>
+<a class="note0">iniuria<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">pace<span></span></a>
+<a class="note1">vivatur,<span>vivo vivere, vixi, victus V (3rd)  <br>:be alive, live; survive; reside;<br>(3 単数 現在 受動態 接続法 )<br></span></a>
+<a class="note1">parta<span>pario parire, peperi, paritus V (4th)  <br>:bear; give birth to; beget, bring forth; produce, lay (eggs); create; acquire;<br>(完了 分詞 受動態 F 単数 奪格)<br></span></a>
+<a class="note0">autem<span></span></a>
+<a class="note1">victoria<span>victoria victoriae N (1st) F  <br>:victory;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note1">conservandi<span>conservo conservare, conservavi, conservatus V (1st)  <br>:keep safe/intact, save (from danger); preserve, maintain; spare; keep/observe;<br>(未来 分詞 受動態 M 複数 主格)<br></span></a>
+<a class="note0">i,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">crudeles<span>crudelis crudele, crudelior -or -us, crudelissimus -a -um ADJ  <br>:cruel/hardhearted/unmerciful/severe, bloodthirsty/savage/inhuman; harsh/bitter;<br>(C 複数 主格),<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">bello,<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note1">inmanes<span>inmanis inmane, inmanior -or -us, inmanissimus -a -um ADJ  <br>:huge/ vast/ immense/ tremendous/ extreme/ monstrous; inhuman/ savage/ brutal/ frightful;<br>(C 複数 主格),<br></span></a>
+<a class="note0">fuerunt,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">maiores<span></span></a>
+<a class="note0">nostri<span></span></a>
+<a class="note0">Tusculanos,<span></span></a>
+<a class="note0">Aequos,<span></span></a>
+<a class="note0">Volscos,<span></span></a>
+<a class="note0">Sabinos,<span></span></a>
+<a class="note0">Hernicos<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">civitatem<span></span></a>
+<a class="note0">etiam<span></span></a>
+<a class="note1">acceperunt,<span>accipio accipere, accepi, acceptus V (3rd) TRANS  <br>:take, grasp, receive, accept, undertake; admit, let in, hear, learn; obey;<br>(3 複数 完了 能動態 直接法 )<br></span></a>
+<a class="note1">at<span>at CONJ <br>:but, but on the other hand; on the contrary; while, whereas; but yet; at least;<br><br></span></a>
+<a class="note1">Karthaginem<span>Carthago Carthaginis N (3rd) F  <br>:Carthage;<br>(C 単数 対格)<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">Numantiam<span></span></a>
+<a class="note1">funditus<span>funditus ADV <br>:utterly/completely/without exception; from the bottom/to the ground/by the root;<br><br></span></a>
+<a class="note1">sustulerunt;<span>tollo tollere, sustuli, sublatus V (3rd) TRANS  <br>:lift, raise; destroy; remove, steal; take/lift up/away;<br>(3 複数 完了 能動態 直接法 )<br></span></a>
+<a class="note1">nollem<span>nolo nolle, nolui, - V  <br>:be unwilling; wish not to; refuse to;<br>(１ 単数 未完了 能動態 接続法 )<br></span></a>
+<a class="note0">Corinthum,<span></span></a>
+<a class="note0">sed<span></span></a>
+<a class="note1">credo<span>credo credere, credidi, creditus V (3rd)  <br>:trust, entrust; commit/consign; believe, trust in, rely on, confide; suppose;<br>(１ 単数 現在 能動態 直接法 )<br></span></a>
+<a class="note0">aliquid<span></span></a>
+<a class="note1">secutos,<span>secor seci, secutus sum V (3rd) DEP  <br>:follow; escort/ attend/ accompany; aim at/reach after/strive for/make for/seek;<br>(完了 分詞 受動態 M 複数 対格)<br></span></a>
+<a class="note1">oportunitatem<span>oportunitas oportunitatis N (3rd) F  <br>:convenience, advantageousness; right time; opportuneness; opportunity, chance;<br>(C 単数 対格)<br></span></a>
+<a class="note0">loci<span></span></a>
+<a class="note0">maxime,<span></span></a>
+<a class="note0">ne<span></span></a>
+<a class="note0">posset<span></span></a>
+<a class="note1">aliquando<span>aliquando ADV <br>:sometime (or other), at any time, ever; finally; before too late; at length;<br><br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">bellum<span></span></a>
+<a class="note0">faciendum<span></span></a>
+<a class="note0">locus<span></span></a>
+<a class="note0">ipse<span></span></a>
+<a class="note1">adhortari.<span>adhortor adhortari, adhortatus sum V (1st) DEP  <br>:encourage, urge on; rally; exhort;<br>(  現在 受動態 不定詞 )<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>bella sunt suscipienda ob eam causam</strong>: 「戦争はこのような理由から引き受けるべきである。」causamと続くutで始まる名詞節は同格。</p>
+<p><strong>ut sine iniuria pace vivantur</strong>. 「すなわち不正なしで平和に暮らせることである。」</p>
+<p><strong>parta victoria (sunt) conservandi ii</strong> : iはii = ei のテキスト多し<strong>。(i, iiはM複主格で同じ）</strong>eiは続く関係代名詞節で説明される。suntがないと動詞がなくなる。parta victoriaは独立奪格「勝利を得た場合には彼らは維持されるべきである。」</p>
+<p><strong>ut miores nostri</strong> : このutはasで「偉大な我らの祖先がしたように」</p>
+<p><strong>in civitatem etiam</strong> : 彼らの部族にいる状態で、すなわち、部族としてまるごと維持した、というニュアンスであろう。</p>
+<p>Karthaginem = Carthaginem なぜKで始まるのか解らない。</p>
+<p><strong>nollem Corinthum (esse sublatam )</strong> : 直前にsustuleruntと同じ単語があるので省略されたのであろう。「滅ぼされる事は望まなかった」</p>
+<p><strong>sed credo aliquid (esse) secutos</strong> : 間接話法に成っている。「何かが続いたと信じる」secorのニュアンスが難しい。secor = sequor</p>
+<p>何かが（征服のあとに）起きた、何かがあった、ぐらいのニュアンスか？</p>
+<p><strong>ad locus faciendum bellum</strong> : 戦争を起こすべき立場、位置<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>それゆえ、戦争を始める理由は次のようであるべきである。つまり、不正なく平和に暮らせるということである。また勝利を得た場合には彼らは維持されるべきである。ちょうど我らの偉大な祖先が、Tusclanos, Aequos, Volscos, Sabinos, Hernicosなどを部族ごと受け入れたように。しかしCarthagoとNumantiamが根こそぎ滅ぼされたが。Corinthusについては私は滅ぼされたくはなかったが、何かの事情があったと思われる。それは彼らの非常に有利な場所、位置であり、彼らがいつかまた戦争を起こす気にならないように、滅ぼした。<br></p>
+</div>
+</div>
+<div class="spacer">Line1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Mea<span></span></a>
+<a class="note0">quidem<span></span></a>
+<a class="note1">sententia<span>sententia sententiae N (1st) F  <br>:opinion, feeling, way of thinking; thought, meaning, sentence/period; purpose;<br>(C 単数 主格), (C 単数 奪格)<br></span></a>
+<a class="note1">paci,<span>pax pacis N (3rd) F  <br>:peace; harmony;<br>&nbsp;(X 単数 与格)<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">nihil<span></span></a>
+<a class="note0">habitura<span></span></a>
+<a class="note0">sit<span></span></a>
+<a class="note1">insidiarum,<span>insidia insidiae N (1st) F  <br>:ambush/ambuscade (pl.); plot; treachery, treacherous attack/device; trap/snare;<br>(C 複数 属格)<br></span></a>
+<a class="note0">semper<span></span></a>
+<a class="note0">est<span></span></a>
+<a class="note1">consulendum.<span>consulo consulere, consului, consultus V (3rd)  <br>:|decide upon, adopt;<strong> look after</strong>/out for (DAT), pay attention to; refer to;<br>(未来 分詞 受動態 N 単数 主格), <br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>paci est consulendum. 動形容詞　＋与格で行為者の与格(NewLatin189.1)逐語的には「平和によって追求されるべきだ」</p>
+<p>quae sit habitura nihil insidiarum. nihilはhabituraの目的語であり、insidiarumによって修飾されている。「いかなる欺瞞も持たない（平和）」(能動未来分詞は通常迂言的に使用される。（NewLatin337.4))<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>私の意見では、常に、いかなる欺瞞（裏切り）がないであろう平和を追求すべきである。<br></p>
+</div>
+</div>
+<div class="spacer">Line2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">In<span></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">mihi<span></span></a>
+<a class="note0">esset<span></span></a>
+<a class="note1">obtemperatum,<span>obtempero obtemperare, obtemperavi, obtemperatus V (1st) INTRANS  <br>:obey; comply with the demands of; <strong>be submissive to</strong>; (w/DAT);<br>(完了 分詞 受動態 N 単数 主格), <br></span></a>
+<a class="note0">si<span></span></a>
+<a class="note0">non<span></span></a>
+<a class="note0">optimam,<span></span></a>
+<a class="note1">at<span>at CONJ <br>:but, but on the other hand; on the contrary; while, whereas; but yet; <strong>at least</strong>;<br><br></span></a>
+<a class="note0">aliquam<span></span></a>
+<a class="note0">rem<span></span></a>
+<a class="note0">publicam,<span></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note1">nunc<span>nunc ADV <br>:now, today, at present;<br><br></span></a>
+<a class="note0">nulla<span></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note1">haberemus.<span>habeo habere, habui, habitus V (2nd)  <br>:have, hold, consider, think, reason; manage, keep; spend/pass (time);<br>(１ 複数 未完了 能動態 接続法 )<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p><strong>mihi esset obtemperatum</strong> : これは「自動詞の受動態で間接目的語に与格を取る」用法であり、感覚的には日本語にはないものである。自動詞受動態は必ず、非人称で、逐語的には「それは私に対して従われた　＝私は従われた」である。（NewLatin187.2(b))</p>
+<p><strong>haberemus at aliquam rem publicam</strong>: 最低でも何か公的なものを持っている。</p>
+<p>si non optimam : 理想的ではないが、</p>
+<p>quae nulla est nunc : 今は全く無いが、</p>
+<p>要するに「もし私の主張が聞き入れられていれば、何らかの公的なものを持ってるはずである。（が聞き入れられなかった）」というニュアンスであろうか。publicamは独裁制ではないというニュアンスか？<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>この点について、もし私の意見が聞き入れられていれば、理想的ではないかもしれないが何らかの公的なものを持っているはずであるが、（実際には）何もない。<br></p>
+</div>
+</div>
+<div class="spacer">Line3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Et<span></span></a>
+<a class="note0">cum<span></span></a>
+<a class="note1">iis,<span>is ea, id PRON  <br>:he/she/it/they (by GENDER/NUMBER); DEMONST: that, he/she/it, they/them;<br>(X 複数 与格),<br></span></a>
+<a class="note0">quos<span></span></a>
+<a class="note0">vi<span></span></a>
+<a class="note1">deviceris<span>devinco devincere, devici, devictus V (3rd) TRANS  <br>:subdue; defeat decisively, conquer/overcome entirely;<br>(2 単数 完了 能動態 接続法 )<br></span></a>
+<a class="note1">consulendum<span>consulo consulere, consului, consultus V (3rd)  <br>:|decide upon, adopt;<strong> look after/out for (DAT)</strong>, pay attention to; refer to;<br>&nbsp;(未来 分詞 受動態 N 単数 主格)<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">tum<span></span></a>
+<a class="note1">ii,<span>is ea, id PRON  <br>:he/she/it/they (by GENDER/NUMBER); DEMONST: that, he/she/it, they/them;<br>(M 複数 主格)<br></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">armis<span>armum armi N (2nd) N  <br>:arms (pl.), weapons, armor, shield; close fighting weapons; equipment; force;<br>&nbsp;(X 複数 奪格)<br></span></a>
+<a class="note1">positis<span>pono ponere, posui, positus V (3rd) TRANS  <br>:|||put/<strong>lay down</strong> (load/arms), take off (clothes); shed (leaves); cut (nails);<br>&nbsp;(完了 分詞 受動態  複数 奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">imperatorum<span></span></a>
+<a class="note0">fidem<span></span></a>
+<a class="note1">confugient,<span>confugio confugere, confugi, confugitus V (3rd) INTRANS  <br>:flee (for refuge/safety/protection); take refuge; have recourse/appeal to;<br>(3 複数 未来 能動態 直接法 )<br></span></a>
+<a class="note1">quamvis<span>quamvis CONJ <br>:however much; <strong>although</strong>;<br><br></span></a>
+<a class="note1">murum<span>murus muri N (2nd) M  <br>:wall, city wall;<br>(C 単数 対格)<br></span></a>
+<a class="note1">aries<span>aries arietis N (3rd) M  <br>:ram (sheep);<strong> battering ram</strong>; the Ram (zodiac); large unidentified marine animal;<br>(X 単数 主格)<br></span></a>
+<a class="note1">percusserit,<span>percutio percutere, percussi, percussus V (3rd)  <br>:beat, strike; pierce;<br>(3 単数 未来完了 能動態 直接法 ), (3 単数 完了 能動態 接続法 )<br></span></a>
+<a class="note1">recipiendi.<span>recipio recipere, recepi, receptus V (3rd)  <br>:keep back; recover; undertake; guarantee; accept, take in; take back;<br>&nbsp;(未来 分詞 受動態 M 複数 主格)<br>動形容詞<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>cum ~,tum ~ : Not only ~,but also~</p>
+<p><strong>iis consulendum est</strong> : 「それは彼らに面倒を見られるべきだ」行為者の与格で「彼らは保護されるべきである。」</p>
+<p>quos deviceris vi : 彼らを（我々が）力により征服した。iisにかかる関係詞節。</p>
+<p><strong>tum ii(ei) (sunt) recipiendi</strong>. eiは複数、recipiendiは動形容詞で、叙述用法。（動名詞は主格はないし、複数形もない）</p>
+<p>quamvis aries percusserit murum. : 「たとえ、破城槌が城壁を打っても」Romaの慣例として、破城槌が城壁を打つ前に降伏すれば助けるということがあった由。（BGII 32)<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>我らが征服した彼らは面倒を見られるべきであるのみならず、武器を置き、皇帝に忠誠を誓えば、たとえ破城槌が城壁にあたっても、彼らは保護されるべきである。<br></p>
+</div>
+</div>
+<div class="spacer">Line4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">In<span></span></a>
+<a class="note0">quo<span></span></a>
+<a class="note1">tantopere<span>tantopere ADV <br>:so much, so hard;<br><br></span></a>
+<a class="note0">apud<span></span></a>
+<a class="note0">nostros<span></span></a>
+<a class="note1">iustitia<span>justitia justitiae N (1st) F  <br>:justice; equality; righteousness (Plater);<br>(C 単数 主格), <br></span></a>
+<a class="note1">culta<span>cultus culta -um, cultior -or -us, cultissimus -a -um ADJ  <br>:cultivated/tilled/farmed (well); ornamented, neat/well groomed; polished/elegant<br>(F 単数 主格)<br></span></a>
+<a class="note0">est,<span></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">ii,<span></span></a>
+<a class="note0">qui<span></span></a>
+<a class="note1">civitates<span>civitas civitatis N (3rd) F  <br>:community/city/town/state; citizens; citizen rights/citizenship; naturalization;<br>(C 複数 対格)<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">nationes<span></span></a>
+<a class="note1">devictas<span>devinco devincere, devici, devictus V (3rd) TRANS  <br>:subdue; defeat decisively, conquer/overcome entirely;<br>(完了 分詞 受動態 F 複数 対格)<br></span></a>
+<a class="note0">bello<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">fidem<span></span></a>
+<a class="note1">recepissent,<span>recipio recipere, recepi, receptus V (3rd)  <br>:keep back; recover; undertake; guarantee; accept, take in; take back;<br>(3 複数 過去完了 能動態 接続法 )<br></span></a>
+<a class="note0">earum<span></span></a>
+<a class="note1">patroni<span>patronus patroni N (2nd) M  <br>:patron; advocate; defender, protector;<br>&nbsp;(C 複数 主格)<br></span></a>
+<a class="note0">essent<span></span></a>
+<a class="note1">more<span>mos moris N (3rd) M  <br>:custom, habit; mood, manner, fashion; character (pl.), behavior, morals;<br>&nbsp;(C 単数 奪格)<br></span></a>
+<a class="note1">maiorum.<span>major majoris N (3rd) M  <br>:ancestors (pl.);<br>(C 複数 属格)<br></span></a>
+</p>
+</div>
+<div class="spnote" style="" >
+<div class="innerdiv" spellcheck="false"><p>in quo : quoは前に出たこと全般を受けている。「この点において」</p>
+<p><strong>justitia est culta apud nostros</strong>. 「我々のなかでは正義が養成されている」</p>
+<p>ut ~ ：結果の節。</p>
+<p>ii essent eorum patroni more maiorum. 「祖先からの慣習により彼らの保護者である。」</p>
+<p>qui recepissent civitates devictas bello. 「彼らが戦争によって征服された部族を受け取った」iiにかかる関係詞節。<br></p>
+</div>
+</div>
+<div class="translation" style="" >
+<div class="innerdiv" spellcheck="false"><p>この点については我々は大層文明化しており、ある部族、国を戦いにより忠誠をもって受領したものが、先祖よりの慣習により保護者になっている。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin"> ページの最初に </a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>

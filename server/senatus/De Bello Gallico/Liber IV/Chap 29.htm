@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11">
+    <meta name='application-name' content='Display Only Version of De Bello Gallico'>
+    <meta name="viewport" content="width=device-width">
+    <title>Display_Only</title>
+    <script>
+        window.onload = function() {
+            var touchdevice = ('ontouchstart' in window || navigator.msPointerEnabled) ? true : false;
+            if (touchdevice == true) {
+                var moevent = new Event('mouseover');
+
+                var obj = document.getElementsByClassName('note1');
+                for (var i = 0; i < obj.length; i++) {
+                    obj[i].addEventListener('touchstart', function(event) {
+                        event.target.dispatchEvent(moevent);
+                    }, false);
+                }
+            }
+        }
+    </script>
+
+    <style type='text/css'>
+        h1,h2, h3,h4,h5,h6 {font-size: 100%;}
+        html {font-size: 62.5%;}
+        body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+            background-color: #f0f8ff;margin: 0px;
+            text-shadow: 0px 0px 0px #000;font-size: 1.4em;font-weight: 500;
+        }
+        #outer {
+            background-color: #f0f8ff;
+            margin: 0px auto 0px auto;width: 86%;text-align: left;color: black;
+        }
+        #header {
+            text-align: center;padding: 20px 0px 0px 0px;
+            height: 80px;background: #00ffff;
+        }
+        .spacer {
+            height: 2.0rem;color: #ffffff;background: #000fff;padding-left: 14px; font-weight: bold; line-height: 18px;
+        }
+        h1 { margin: 10px;font-size: 2.6rem;  font-family: 'Times New Roman', serif;}
+        #footer { padding-top: 10px; color: #666666; font-size: 1.2rem;height: 100px; clear: left;text-align: center; }
+        div.latin {
+            border-width: 1px; border-style: solid;
+            margin: 0px 0px 0px 0px; font-size: 3.0rem;
+            line-height: 110%; background-color: #ffffe8;
+            font-family: 'Times New Roman', 'Book Antiqua', serif;
+        }
+        div.translation, div.spnote { border: solid 1px; background-color: #fffff8; }
+        div.innerdiv { color: black; font-size: 1.8rem; line-height: 130%; margin: 0.7rem; word-wrap: break-word;}  
+        .innerdiv p { margin: 0; padding: 0; }
+        .pop { margin-top: 10px; margin-bottom: 10px; padding: 0px 10px 0px 10px; }
+        .pop a:hover {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            opacity: 1.0;
+        }
+        .note1 { text-decoration: none;color: #0000ff;}      
+        .note0 { text-decoration: none;color: Black;}
+        a.note1:hover span { display: block;}
+        span {
+            position: absolute; z-index: 100; left: -10px; top: 4.0rem; color: #ffffff;
+            background: blue; width: 24rem; margin-bottom: 2.0rem; padding: 5px;
+            display: none; text-decoration: none; border-radius: 12px;
+            font-size: 1.8rem; opacity: 1.0; line-height: 130%;
+            font-family: 'Helvetica', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif;
+        }
+        
+        span:before {
+            content: '';
+            position: absolute; border-bottom: 1.6rem solid blue; border-right: 0.8rem solid transparent;
+            border-left: 0.8rem solid transparent; top: -1.6rem; left: 2.0rem;
+        }
+        
+        @media print {
+            #outer {
+                background-color: #ffffe8;
+                width: 96%;
+                border: solid 1px black;
+                color: black;
+                margin: 0 auto
+            }
+            #header {
+                padding: 10px 0px 0px 0px;
+                height: 20px;
+                background: #00ffff;
+            }
+            .spacer {
+                height: 18px;
+                color: #ffffff;
+                background: #000fff;
+                font-weight: bold;
+                margin: 0px;
+                padding: 4px;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                color: #003333;
+                margin: 10px;
+                font-size: 22px;
+                font-family: 'Times New Roman', serif;
+            }
+            div.latin {
+                border: 1px solid;
+                margin: 0px;
+                font-family: 'Times New Roman', serif;
+                font-size: 18px;
+                line-height: 120%;
+                background-color: #ffffe8;
+            }
+            div.translation,
+            div.spnote {
+                border: solid 1px;
+                background-color: #ffffe8;
+            }
+            div.innerdiv {
+                font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, sans-serif;
+                font-size: 12px;
+                line-height: 130%;
+                margin: 0.5em;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body id = "bodyportion">
+<a name="begin"></a>
+<div id="outer">
+<div id="header">
+<h1 style="color: rgb(0, 0, 0);">Liber IV : Chap 29</h1>
+</div>
+<div class="spacer">Line 1</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+
+<a class="note0">[29]<span></span></a>
+
+<a class="note0">Eādem<span><br><br></span></a>
+<a class="note1">nocte<span>nox F 単　奪格　（時の奪格）<br><br></span></a>
+<a class="note1">accidit<span>accidit 非人称　;= happens, occur<br><br></span></a>
+<a class="note0">ut<span></span></a>
+<a class="note0">esset<span></span></a>
+<a class="note0">lūna<span><br><br></span></a>
+<a class="note1">plēna,<span>plenus plena -um, plenior -or -us, plenissimus -a -um ADJ  <br>:full, plump; satisfied;<br>(f 単数 主格)<br></span></a>
+<a class="note0">quī<span><br><br></span></a>
+<a class="note0">diēs<span><br><br></span></a>
+<a class="note0">ā<span></span></a>
+<a class="note1">maritimōs<span>maritimus maritima, maritimum ADJ  <br>:maritime; of/near/by the sea; coastal; relating/used to sea; seafaring/naval;<br>(m 複数  対格)<br></span></a>
+<a class="note1">aestūs<span>aestus aestus N (4th) M  <br>:agitation, passion, seething; raging, boiling; heat/fire; sea tide/spray/swell;<br>(c 複数  対格)<br></span></a>
+<a class="note1">maximōs<span>maximus maxima, maximum ADJ  最上級<br>:greatest/biggest/largest; longest; oldest; highest, utmost; leading, chief;<br>(m 複数  対格)<br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Ōceanō<span><br><br></span></a>
+<a class="note1">efficere<span>efficio efficere, effeci, effectus V (3rd)  <br>:bring about; effect, execute, cause; accomplish; make, produce; prove;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note1">cōnsuēvit,<span>consueo consuere, consuevi, consuetus V (2nd) TRANS  <br>:accustom; become accustomed; be accustomed, inure, habituate. familiarize;<br>(３人称 単数 完了 能動態 直説法 )<br></span></a>
+<a class="note0">nostrīsque<span><br><br></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">incognitum.<span>incognitus incognita, incognitum ADJ  <br>:unknown; not known; untried, untested;<br>(n 単数 主格)<br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>accidit eadem nocte ut luna esset plena : 逐語的には「満月であることが同じ夜に起きた」「その夜はたまたま満月だった」</p>
+<p><strong>qui dies (a) consuevit efficere</strong> （<font color="#ff0000">a はないテキスト多し。aがあると困る！）<font color="#000000">その日は～をなすのが普通であった。<u>diesが主語で、consuevitが動詞、目的語がefficere不定詞</u></font></font></p>
+<p>efficere maritumos aestus maximos : 海の潮を最大にする(aestusが直接目的語、maximosは述語対格、<u>述語対格は形容詞でも良い</u>NewLatin 177.2)</p>
+<p>que id erat incognitum nostri : nostriは与格で、「それは味方には知られていなかった」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>その夜はたまたま満月であった。そしてその日は大洋では潮位が最大になることが普通であったが、それを味方は知らなかった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 2</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Ita<span></span></a>
+<a class="note0">ūnō<span><br><br></span></a>
+<a class="note0">tempore<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">longas<span><br><br></span></a>
+<a class="note1">nāvēs,<span>F　複　対格<br><br><br></span></a>
+<a class="note0">[quibus<span></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">exercitum<span></span></a>
+<a class="note0">trānsportandum<span><br><br></span></a>
+<a class="note1">cūrāverat,]<span>curo curare, curavi, curatus V (1st)  <br>:arrange/see/attend to; take care of; provide for; worry/care about; heal/cure;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note0">quās<span><br><br></span></a>
+<a class="note0">Caesar<span></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">āridum<span>aridum aridi N (2nd) N  <br>:dry land; dry place; dry surface; dryness;<br>(n 単数 対格)<br></span></a>
+<a class="note1">subdūxerat,<span>subduco subducere, subduxi, subductus V (3rd)  <br>:lead up, carry off; transfer; haul;<br>(３人称 単数 過去完了 能動態 直説法 )<br></span></a>
+<a class="note1">aestus<span>aestus aestus N (4th) M  <br>:agitation, passion, seething; raging, boiling; heat/fire; <strong>sea tide</strong>/spray/swell;<br>(c 単数 主格),<br></span></a>
+<a class="note1">complēbat,<span>compleo complere, complevi, completus V (2nd) TRANS  <br>:fill (up/in); be big enough to fill; occupy space, crowd; furnish/supply/man;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">et<span></span></a>
+<a class="note1">onerāriās,<span>onerarius 形容詞　f複　対格　;= of burden<br><br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note0">ancorās<span><br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">dēligātae,<span>deligo deligare, deligavi, deligatus V (1st) TRANS  <br>:bind fast, tie (up), fasten; make fast by tying; bandage; tie (bandage);<br>(完了 分詞 受動態 f 複数  主格)<br></span></a>
+<a class="note0">tempestās<span><br><br></span></a>
+<a class="note1">adflīctābat,<span>adflicto adflictare, adflictavi, adflictatus V (1st) TRANS  <br>:shatter, damage, strike repeatedly, buffet, wreck; oppress, afflict; vex;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note0">neque<span></span></a>
+<a class="note0">ūlla<span><br><br></span></a>
+<a class="note0">nostrīs<span><br><br></span></a>
+<a class="note0">facultās<span><br><br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note1">administrandī<span>administro administrare, administravi, administratus V (1st)  <br>:administer, manage, direct; assist; operate, conduct; maneuver (ship); bestow;<br>(未来 分詞 受動態 m 単数 属格)<br>facultasを修飾<br></span></a>
+<a class="note0">aut<span></span></a>
+<a class="note0">auxiliandī<span><br><br></span></a>
+<a class="note0">dabātur.<span><br><br></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>uno tempore, <strong>aestsus complebat longas naves</strong>, et <strong>tempetas adflictabat onerarias</strong> (naves).&nbsp;が骨子。「一度に、潮が戦闘船に満ち、嵐が貨物船を破壊した。」</p>
+<p>quibus Caesar curaverat transportandum exercitum. <u>動形容詞はcuroなどの動詞とともに使われ目的を表すために用いられる</u>。（NewLatin 337.8.b.2) 「それはカエサルが軍勢を運ぶために作らせたものであったが」</p>
+<p>Caesar subduxerat in aridum 「カエサルは岸に上げておいた」</p>
+<p><strong>neque ulla facultas ~ dabatur nostris</strong>: いかなる力も我々には与えられていなかった。<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>かくして同時に、軍船は、それは軍勢を運ぶために作らせたのもで、それをカエサルは岸に引き上げていたのだが、潮に満たされ（流され）、貨物船は、それは錨に繋いでいたのだが、嵐によって被害を受けた。我々には、処理をするための、または助けるための手段は何も与えられていなかった。<br></p>
+</div>
+</div>
+<div class="spacer">Line 3</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Complūribus<span><br><br></span></a>
+<a class="note0">nāvibus<span><br><br></span></a>
+<a class="note1">frāctīs,<span>frango frangere, fregi, fractus V (3rd)  <br>:break, shatter, crush; dishearten, subdue, weaken; move, discourage;<br>(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">reliquae<span></span></a>
+<a class="note1">cum<span>while, in that の意か？<br><br></span></a>
+<a class="note0">essent<span></span></a>
+<a class="note1">fūnibus,<span>funis funis N (3rd) M  <br>:rope; line, cord, sheet, cable; measuring-line/rope, lot (Plater);<br>&nbsp;(X 複数  奪格)<br></span></a>
+<a class="note1">ancorīs<span>ancora ancorae N (1st) F  <br>:anchor; grappling iron/hook;<br>&nbsp;(c 複数  奪格)<br></span></a>
+<a class="note0">reliquīsque<span><br><br></span></a>
+<a class="note1">armāmentīs<span>armamentum armamenti N (2nd) N  <br>:<strong>equipment</strong> (pl.), rigging/sailing gear (of a ship); implements, utensils;<br>(X 複数  奪格)<br></span></a>
+<a class="note1">āmissīs<span>amitto amittere, amisi, amissus V (3rd) TRANS  <br>:lose; lose by death; send away, dismiss; part with; let go/slip/fall, drop;<br>&nbsp;(完了 分詞 受動態  複数  奪格)<br></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">nāvigandum<span>navigo navigare, navigavi, navigatus V (1st)  <br>:sail; navigate;<br>(未来 分詞 受動態 m 単数 対格)<br></span></a>
+<a class="note1">inūtilēs,<span>inutilis inutilis, inutile ADJ  <br>:useless, unprofitable, inexpedient, disadvantageous; harmful, helpless;<br>(c 複数  主格)<br></span></a>
+<a class="note0">magna,<span></span></a>
+<a class="note0">id<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note1">necesse<span>necesse <strong>undelined 形容詞　;= </strong>necessary, inevitable, essential<br><br></span></a>
+<a class="note0">erat<span></span></a>
+<a class="note1">accidere,<span>accidit 受動　不定詞　;= happens, turns out<br><br></span></a>
+<a class="note0">tōtīus<span><br><br></span></a>
+<a class="note0">exercitūs<span><br><br></span></a>
+<a class="note1">perturbātiō<span>perturbatio perturbationis N (3rd) F  <br>:disturbance; commotion;<br>(X 単数 主格)<br></span></a>
+<a class="note1">facta<span>fio 完了分詞受動　単　主格<br><br></span></a>
+<a class="note0">est.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p>compluribus navibus fractis : 独立奪格「非常に多くの船が破壊された」</p>
+<p>cum reliquae essent inutiles ad navigandum, （funibus, ancoris que reliquis amamentis amissis) 残りは航海には適していない。後半の独立奪格、３つは原因を表している。cumがよくわからない。前半の「破壊された」に対し、「他方」程度の意味でwhileか？</p>
+<p><strong>magna perturbatio est facta</strong>. 「大きな驚愕が起きた」factaはfio（自動詞）の受動。</p>
+<p>id quod accidere erat necesse idは驚愕が起きたことと同格。quodはaccidereの主語で、quod accidereがerat necesseの主語。つまり「それが起きることは避けられなかった」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>非常に多くの船が破壊された。他方、残った船も、ロープや、錨やその他の索具が失われており、航海にはとても向いていない状態であった。当然であるが、全軍に大きな驚愕が起きた。<br></p>
+</div>
+</div>
+<div class="spacer">Line 4</div>
+<div class="latin">
+<p class="pop" style="margin-left: 10px;" name="latintext">
+<a class="note0">Neque<span></span></a>
+<a class="note1">enim<span>;= indeed, in fact, for<br><br></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">aliae<span>ｆ複　主格<br><br></span></a>
+<a class="note0">quibus<span></span></a>
+<a class="note1">reportārī<span>reporto reportare, reportavi, reportatus V (1st)  <br>:carry back; report;<br>(  現在 受動態 不定詞 )<br></span></a>
+<a class="note0">possent,<span></span></a>
+<a class="note0">et<span></span></a>
+<a class="note0">omnia<span></span></a>
+<a class="note1">deerant<span>desum deesse, defui, defuturus V  <br>:be wanting/lacking; fail/miss; abandon/desert, neglect; be away/absent/missing;<br>(３人称 複数  未完了 能動態 直説法 )<br></span></a>
+<a class="note0">quae<span></span></a>
+<a class="note0">ad<span></span></a>
+<a class="note1">reficiendās<span>reficio reficere, refeci, refectus V (3rd)  <br>:rebuild, repair, restore;<br>(未来 分詞 受動態 f 複数  対格)<br></span></a>
+<a class="note0">nāvēs<span><br><br></span></a>
+<a class="note0">erant<span></span></a>
+<a class="note1">ūsuī,<span>usus usus M 単　与格　;= use, skill, experience, advantage<br><br><br><br></span></a>
+<a class="note0">et,<span></span></a>
+<a class="note0">quod<span></span></a>
+<a class="note0">omnibus<span></span></a>
+<a class="note1">cōnstābat<span>consto constare, constiti, constatus V (1st) INTRANS  <br>:|be certain/ decided/ consistent/ sure/ fixed/ established/ well-known/ apparent/ plain;<br>(３人称 単数 未完了 能動態 直説法 )<br></span></a>
+<a class="note1">hiemārī<span>hiemo hiemare, hiemavi, hiematus V (1st)  <br>:winter, pass the winter, keep winter quarters; be wintry/frozen/stormy;<br>(  現在 受動態 不定詞 )<br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">Gallia<span></span></a>
+<a class="note1">oportēre,<span>oportet oportere, oportuit, - V (2nd) IMPERS  <br>:it is right/proper/necessary; it is becoming; it behooves; ought;<br>(  現在 能動態 不定詞 )<br></span></a>
+<a class="note0">frūmentum<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note0">hīs<span><br><br></span></a>
+<a class="note0">locīs<span><br><br></span></a>
+<a class="note0">in<span></span></a>
+<a class="note1">hiemem<span>hiemps heimis F 単　対格　;= winter, winter time<br><br></span></a>
+<a class="note1">prōvīsum<span>provideo providere, providi, provisus V (2nd)  <br>:foresee; provide for, make provision; with DAT;<br>(完了 分詞 受動態 n 単数 主格)<br></span></a>
+<a class="note0">nōn<span><br><br></span></a>
+<a class="note0">erat.<span></span></a>
+</p>
+</div>
+<div class="spnote">
+<div class="innerdiv" spellcheck="false"><p><strong>aliae naves, quibus reportari possent, neque erant.</strong> 「それによって、連れ戻せるような他の船はなかった」</p>
+<p><strong>omnia deerant quae erant usui ad refiendas naves</strong> 「船を修理するのに有用なものはすべて欠乏していた」</p>
+<p><strong>quod constabat oportere hiemari in Gallia omnibus</strong>. omnibusは与格。逐語的には「すべての者にとって、ガリアで越冬する事(hiemari)が適切であること(oportere)と同意されてたため」「みんなガリアで越冬するものと考えていたので」<br></p>
+</div>
+</div>
+<div class="translation">
+<div class="innerdiv" spellcheck="false"><p>連れ戻すために使える船はなく、修理に必要なものはすべて足りない状態であった。また、みんなガリアで越冬すると考えていたので、彼の地で越冬する食料は用意されていなかった。<br></p>
+</div>
+</div>
+<div id="footer">
+<a href="#begin">ページの最初に</a></div>
+<a name="myText"></a>
+</div>
+</body>
+</html>
