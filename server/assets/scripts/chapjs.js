@@ -17,7 +17,7 @@ window.onload = function () {
     //spnote translationをeditmodeに
     $("div.innerdiv").parent().on("dblclick", editingmode);
 
-    window.onbeforeunload = calledwhenunload
+    window.onbeforeunload = calledwhenunload;
 
     // word クリックで辞書を動かす部分
     $('[class ^="note"]').on("click", xeditNote3);
@@ -40,7 +40,8 @@ window.onload = function () {
         title:"message",
         width:300,
         height:250,
-        draggable:false,
+        draggable:true,
+        zindex:1000,
         buttons: {
             "OK":function(){
                 $(this).dialog("close");
@@ -78,6 +79,7 @@ var wboxhtml = `
 
   <button type="button" id ="closebtn" class="save-close"> x </button>
   <button type="button" id="savebtn" class="save-close">save</button>
+  <button type="button" id="jabtn" class="save-close">e2ja</button>
 </div>
 <div>
   <input type="text" class ="ta" id="word"/>
@@ -117,6 +119,24 @@ function initializeWordbox(){
     popbox.init();
     $("#closebtn").on("click",wcancel);
     $("#savebtn").on("click", wordsave);
+    $("#jabtn").on("click", function(){
+        var t = window.getSelection().toString()
+        if(t.length > 0){
+            var data = {"eword": t};
+            $.post("/englishDic",data,null, "script")
+            .done(function(rvalue) {
+                if(rvalue != "null"){
+                    msgbox(rvalue)
+                }
+                else {
+                    // do nothing msgbox("Save中エラーがありました。")
+                }
+            });
+        }
+        else{
+            msgbox("textが選択されていません。")
+        }
+    });
 
     $("#nbold").on("click", function() { if(checkSelection()) {document.execCommand("bold", false, true);} });
     $("#nunder").on("click", function() { if(checkSelection()) {document.execCommand("underline", false);} });
@@ -153,7 +173,7 @@ function xeditNote3() {
         var wx3 = $(this).children(".dw3").text();
         var wx4 = $(this).children(".dw4").text();
 
-        $("#meanings").html("<b>"+wx1 +"</b>," + wx2 +"<br/>" + "<b>" + wx3 + "</b><br/>" + wx4);  //***************** */
+        $("#meanings").html("<b>"+wx1 +"," + wx2 +"</b><br/>" +  wx3 + "<br/>" + wx4);  //***************** */
     })
 }
 
@@ -327,7 +347,6 @@ function getpagedata() {
     // $(".wordbox").remove();
     // $("#msgbox").remove();
     
-
     var allcontent = $("#outer").html();
     var pre = `<body id="bodyportion">
         <div id="outer">

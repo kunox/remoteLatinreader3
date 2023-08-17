@@ -33,6 +33,7 @@ func main() {
 		fmt.Println("Error")
 		return
 	}
+	ejinit()
 
 	router := gin.Default()
 	router.LoadHTMLGlob("templates/*.html")
@@ -163,6 +164,12 @@ func main() {
 		// c.JSONはstructをうまくrenderして、httpで送り返す。
 		// 受け側ではJSONデータなのでstringfyすること
 		c.JSON(http.StatusOK, result)
+	})
+
+	router.POST("/englishDic", func(c *gin.Context) {
+		eword, _ := c.GetPostForm("eword")
+		result := ejtranlate(eword)
+		c.String(200, result)
 	})
 
 	router.Run(":8080")
