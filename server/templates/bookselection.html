@@ -35,8 +35,9 @@
                 </ul> -->
             </div> 
 
-            <div class="sidetabs">ダウンロードしたTextを編集する</div>
+            <div class="sidetabs" id="upload">ファイルをアップロードして編集</div>
             <div class="sidetab"></div>
+
         </section>
 
         <section class="main">
@@ -130,10 +131,10 @@
 
         var username = "";      // UserNameはこちらで持つ
         var foldername= "";         // 後で、ファイルロードのときに使う
-        var liber = [];             // Liberの名前が入る （Directoryの名前）
+        // var liber = [];             // Liberの名前が入る （Directoryの名前）
         var extension;
-        var whichCell = "books";              // 現在の表示がOriginal TextかWorkingか
-        var array = [];                        // geifilelistで戻ってきた文字列の配列
+        // var whichCell = "books";              // 現在の表示がOriginal TextかWorkingか
+        // var array = [];                        // geifilelistで戻ってきた文字列の配列
 
         function bookselected() {
             foldername = $(this).text();
@@ -141,9 +142,9 @@
         }
 
 
-        function showindex2(bookname){
-            foldername = bookname;
-            $.post("/getBookIndex", { "fname": bookname,"uname":username })  //URL, data,success data, data type
+        function showindex2(folder){
+            // foldername = bookname;
+            $.post("/getBookIndex", { "fname": folder,"uname":username })  //URL, data,success data, data type
                 .done(function (data) {
                     $("#bookindex").empty();
                     $("#bookindex").append(data);
@@ -185,12 +186,24 @@
         function pclick() {
             var volname = $(this).parent().prev().text();       // liebel Iなど
             var name = $(this).text();                      // chap 1など
-            if($(this).hasClass('exist'))
-                var param = { "cell": username, "uname":username, "bookname": foldername, "vol": volname, "fname": name, "ext": extension }
-            else
-                var param = { "cell": "", "uname":username, "bookname": foldername, "vol": volname, "fname": name, "ext": extension }
-            postForm2("/showpage", param, "_blank");
-            // $(this).addClass("exist");
+            var jobj = $(this);
+            var param = { "cell": username, "uname":username, "bookname": foldername, "vol": volname, "fname": name, "ext": extension }
+            if($(this).hasClass('exist')){
+                // var param = { "cell": username, "uname":username, "bookname": foldername, "vol": volname, "fname": name, "ext": extension }
+                postForm2("/showpage", param, "_blank");
+            }
+            else{
+                $.post("/ifexists", param)
+                    .done(function(data){
+                        if(data=="yes"){
+                            jobj.addClass('exist');         // exist属性がないのに実際のファイルがある場合
+                            showindex2(foldername);
+                        }
+                        else
+                            param =  { "cell": "", "uname":username, "bookname": foldername, "vol": volname, "fname": name, "ext": extension }
+                        postForm2("/showpage", param, "_blank");
+                    });
+            }
         }
 
         function addIndexTabHandler() {

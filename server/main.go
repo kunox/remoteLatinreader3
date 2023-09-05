@@ -13,10 +13,7 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
-
-	"path/filepath"
-	_ "path/filepath"
-
+	 "path/filepath"
 	"github.com/gin-gonic/gin"
 )
 
@@ -172,9 +169,64 @@ func main() {
 		c.String(200, result)
 	})
 
+	router.POST("/ifexists", func(ctx *gin.Context){
+		vol,_ := ctx.GetPostForm("vol")
+		chap, _ := ctx.GetPostForm("fname")
+		foldername, _ := ctx.GetPostForm("bookname")
+		ext, _ := ctx.GetPostForm("ext")
+		uname, _ := ctx.GetPostForm("uname")
+		fpath := filepath.Join("./"+uname, foldername,vol, chap+ext)
+		if f, err :=os.Stat(fpath) ; os.IsNotExist(err) || f.IsDir() {
+			ctx.String(200,"no")
+		}else {
+			ctx.String(200,"yes")
+		}
+	})
+
+	router.POST("/tblcreation", func(ctx *gin.Context){
+		var inexdc S.ExdicContent
+		ctx.BindJSON(&inexdc)
+		table := Dictionary.CreateTable(inexdc)
+		if  len(table) == 0 {
+			ctx.String(200, "")
+		}
+		var tname string
+		// if len(table) == 2 {
+		// 	tname = "NounTable.htm"
+		// } else if len(table) <= 7 {
+		// 	tname ="AdjTable.htm"
+		// } else {
+		// 	tname = "VerbTable.htm"
+		// }
+		switch {
+		case len(table) == 2 : tname = "NounTable.htm"
+		case len(table) <= 7 : tname ="AdjTable.htm"
+		default: 	tname = "VerbTable.htm"
+		}
+		htmlstring := tablecommon(tname,  table)
+		fmt.Println(htmlstring)
+		ctx.String(200,htmlstring)
+	})
+
 	router.Run(":8080")
 }
 
+
+
+
+func tablecommon(tname string, table [][]string) string{
+	fpath := filepath.Join("./tables", tname)
+	tdata, _ := os.ReadFile(fpath)
+	tdata2 := string(tdata)
+	for  x:=0; x < len(table); x++ {
+		for y:=0; y < len(table[0]) ; y++ {
+			snew := table[x][y]
+			sold := fmt.Sprintf("{%d,%d}",x,y)
+			tdata2 = strings.Replace(tdata2, sold, snew, 1)
+		}
+	}
+	return tdata2
+}
 
 
 func createBookIndex(folder string) (string, indexstruct) {
@@ -373,8 +425,7 @@ func extractbody(indata string , fname string) string {
 	`
 	prefix2 := strings.Replace(prefix, "%", fname, 1)
 	editabletext := prefix2 + newcontent + postfix
-	// return newcontent
-	ioutil.WriteFile("./tempfile.txt",[]byte(editabletext),os.ModePerm)
+	// ioutil.WriteFile("./tempfile.txt",[]byte(editabletext),os.ModePerm)
 	return editabletext
 }
 

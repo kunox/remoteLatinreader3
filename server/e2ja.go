@@ -30,7 +30,7 @@ func ejinit() {
 
 func ejtranlate(text string) string {
 	// sb := strings.Builder{}
-	 cut := ";|:|,| "
+	 cut := newFunction()
 	 text2 := strings.Trim(text,cut)
 	for i, word := range wordarray {
 		if word == text2 {
@@ -43,4 +43,9 @@ func ejtranlate(text string) string {
 		}
 	}
 	return ""
+}
+
+func newFunction() string {
+	cut := ";|:|,| "
+	return cut
 }

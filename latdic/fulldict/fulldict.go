@@ -107,10 +107,10 @@ func Lookup(instring string, macronflag bool) []S.DicContent {
 	for i:=0; i <lenhere ; i++ {
 		if strings.ToLower(Primaryword[i + index]) == instr {
 			var tword string
-			if !macronflag {
-				tword = Primaryword[i + index]
-			} else {
+			if macronflag && len( Pwordmacron[i + index]) > 0 {
 				tword = Pwordmacron[i + index]
+			} else {
+				tword = Primaryword[i + index]
 			}
 			dc := S.DicContent {
 				WORD : tword,

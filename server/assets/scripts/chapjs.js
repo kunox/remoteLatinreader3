@@ -32,6 +32,7 @@ window.onload = function () {
 
     // wordbox関連の初期化
     initializeWordbox();
+    initializeTablebox();
 
     $("#msgbox").dialog({
         modal:true,
@@ -52,14 +53,47 @@ window.onload = function () {
     $("div.latin").removeAttr('style');
     $("div.innerdiv").removeAttr('style');
 // 活用表の表示
-    // $("#disp").on("contextmenu", ".ditems", function (e) {
-    //     e.preventDefault();
-    //     var msg = "tcreation#" + $(this).children(".exdc").text();
-    //     window.chrome.webview.postMessage(msg);    // send back exdc comparables
-
-    //     //alert($(this).children(".exdc").text());
-    //     return false;           // defaultの右クリックメニュが出ないように
-    // });
+    $("#disp").on("contextmenu", ".ditems", function (e) {
+        e.preventDefault();
+        var jsonmsg = $(this).children(".exdc").text();  // exdxにはJSONをstringifyしたものが入っている
+        jsondata = {"data": jsonmsg}
+                //alert($(this).children(".exdc").text());
+        // $.ajax({
+        //     type:"post",
+        //     url : "/tblcreation",
+        //     data: jsonmsg,
+        //     contentType: 'application/json',
+        //     dataType : 'String',
+        //     success: function(rvalue){
+        //         var tblstring;
+        //         if(rvalue.length > 0){
+        //             tblstring = rvalue;
+        //             // flecbox.openbox();
+        //             // $("#htmltable").empty().append(tblstring);
+        //         }
+        //         else {
+        //             tblstring ="<p>変化しない語です</p>";
+        //         }
+        //         flecbox.openbox();
+        //         $("#htmltable").empty().append(tblstring);
+        //     }
+        // });
+        $.post("/tblcreation",jsonmsg,null, "script")
+        .done(function(rvalue) {
+                var tblstring;
+                if(rvalue.length > 0){
+                    tblstring = rvalue;
+                    // flecbox.openbox();
+                    // $("#htmltable").empty().append(tblstring);
+                }
+                else {
+                    tblstring ="<p>変化しない語です</p>";
+                }
+                flecbox.openbox();
+                $("#htmltable").empty().append(tblstring);
+            });
+        return false;           // defaultの右クリックメニュが出ないように
+    });
 }
 
 var spacebutton = `
@@ -92,6 +126,15 @@ var wboxhtml = `
 <div id="msgbox" style="display:none;">
 <p id="msgtxt">Dialog</p>
 </div>
+
+<div class="wordbox" id="tablebox">
+    <div class="wb-header">
+        <button type="button" id ="closebtn2" class="save-close"> x </button>
+    </div>
+    <div class = "wb-content" id="htmltable">
+        
+    </div>
+</div>
 `
 
 
@@ -107,6 +150,16 @@ var tempdiv = `
 function msgbox(msg){
     $("#msgtxt").html(msg);
     $("#msgbox").dialog("open");
+}
+
+
+var flecbox;
+function initializeTablebox(){
+    flecbox = new $.wordbox($("#tablebox"));
+    flecbox.init();
+    $("#closebtn2").on("click",function(){
+        flecbox.closebox();
+    })
 }
 
 
@@ -453,7 +506,8 @@ function postjson2() {
             // $("#message").text(data2);
             var datajson = $.parseJSON(data2);
             for (var i in datajson) {
-                var result = tempdiv.replace("%s0",datajson[i]);        // 全体をdisplay:noneの場所に入れておく（CrreationTableのため）
+                var result = tempdiv.replace("%s0",JSON.stringify(datajson[i]));        // 全体をdisplay:noneの場所に入れておく（CrreationTableのため）
+                console.log(JSON.stringify(datajson[i]));
                 result = result.replace("%s1", datajson[i].Dic.WORD);
                 result = result.replace("%s2", datajson[i].Dic.NOTES);
                 result = result.replace("%s3", datajson[i].Dic.MEANINGS);
