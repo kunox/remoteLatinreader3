@@ -200,11 +200,11 @@ func main() {
 		// }
 		switch {
 		case len(table) == 2 : tname = "NounTable.htm"
-		case len(table) <= 7 : tname ="AdjTable.htm"
+		case len(table[0]) <= 7 : tname ="AdjTable.htm"
 		default: 	tname = "VerbTable.htm"
 		}
 		htmlstring := tablecommon(tname,  table)
-		fmt.Println(htmlstring)
+		// fmt.Println(htmlstring)
 		ctx.String(200,htmlstring)
 	})
 
